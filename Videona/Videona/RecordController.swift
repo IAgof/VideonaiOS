@@ -36,6 +36,10 @@ class RecordController: UIViewController,RecordViewInterface {
         output?.pushSettings()
     }
     
+    @IBAction func pushGoToShareView(sender: AnyObject) {
+        output?.pushShare()
+    }
+    
     //MARK: - Protocol Interface
     func showRecordButton(){
         

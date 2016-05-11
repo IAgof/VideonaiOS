@@ -13,11 +13,22 @@ class RecordPresenter: NSObject, RecordPresenterInterface{
     //MARK: - Variables VIPER
     var output: RecordViewInterface?
     var recordWireframe: RecordWireframe?
-    var navigatorWireframe: NavigationWireframe?
+    var settingsWireframe: SettingsWireframe?
+    var shareWireframe: ShareWireframe?
+    
+    //    var navigatorWireframe: NavigationWireframe?
+
     
     func pushSettings() {
         print("Record presenter pushSettings")
-        let navigatorViewController = navigatorWireframe?.NavigationViewControllerFromStoryboard()
+        let navigatorViewController = settingsWireframe?.settingsViewControllerFromStoryboard()
+        
+        output?.navigateToNewViewController(navigatorViewController!)
+    }
+    
+    func pushShare() {
+        print("Record presenter pushShare")
+        let navigatorViewController = shareWireframe?.shareViewControllerFromStoryboard()
         
         output?.navigateToNewViewController(navigatorViewController!)
     }

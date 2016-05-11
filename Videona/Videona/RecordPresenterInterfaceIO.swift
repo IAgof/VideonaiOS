@@ -18,4 +18,5 @@ protocol RecordPresenterOutput{
 
 protocol RecordPresenterInterface{
     func pushSettings()
+    func pushShare()
 }

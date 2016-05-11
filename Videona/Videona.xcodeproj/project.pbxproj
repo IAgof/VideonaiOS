@@ -25,11 +25,21 @@
 		A965BDBF1CDA076C002579CA /* IntroWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A965BDBE1CDA076C002579CA /* IntroWireframe.swift */; };
 		A965BDC11CDA0F1D002579CA /* IntroViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A965BDC01CDA0F1D002579CA /* IntroViewInterface.swift */; };
 		A965BDC31CDA1171002579CA /* IntroPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A965BDC21CDA1171002579CA /* IntroPresenterInterface.swift */; };
+		A99278501CE3647B009DC364 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A992784F1CE3647B009DC364 /* SettingsPresenter.swift */; };
+		A99278531CE364E6009DC364 /* SettingsPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99278521CE364E6009DC364 /* SettingsPresenterInterface.swift */; };
+		A99278551CE3650C009DC364 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99278541CE3650C009DC364 /* SettingsViewController.swift */; };
+		A99278571CE36517009DC364 /* SettingsInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99278561CE36517009DC364 /* SettingsInterface.swift */; };
+		A99278591CE36524009DC364 /* SettingsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99278581CE36524009DC364 /* SettingsWireframe.swift */; };
 		A9A0686D1CDA498C00ACF1BF /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0686C1CDA498C00ACF1BF /* NavigationViewController.swift */; };
 		A9A0686F1CDA49A500ACF1BF /* NavigationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0686E1CDA49A500ACF1BF /* NavigationPresenter.swift */; };
 		A9A068711CDA49B300ACF1BF /* NavigationWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A068701CDA49B300ACF1BF /* NavigationWireframe.swift */; };
 		A9A068731CDA4A4200ACF1BF /* NavigationInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A068721CDA4A4200ACF1BF /* NavigationInterface.swift */; };
 		A9A068751CDA4AA200ACF1BF /* NavigationPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A068741CDA4AA200ACF1BF /* NavigationPresenterInterface.swift */; };
+		A9B118171CE378B9001A1177 /* SharePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B118161CE378B9001A1177 /* SharePresenter.swift */; };
+		A9B118191CE378C2001A1177 /* SharePresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B118181CE378C2001A1177 /* SharePresenterInterface.swift */; };
+		A9B1181B1CE378D3001A1177 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1181A1CE378D3001A1177 /* ShareViewController.swift */; };
+		A9B1181D1CE378DC001A1177 /* ShareInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1181C1CE378DC001A1177 /* ShareInterface.swift */; };
+		A9B1181F1CE378E8001A1177 /* ShareWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1181E1CE378E8001A1177 /* ShareWireframe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,11 +84,21 @@
 		A965BDBE1CDA076C002579CA /* IntroWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroWireframe.swift; sourceTree = "<group>"; };
 		A965BDC01CDA0F1D002579CA /* IntroViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewInterface.swift; sourceTree = "<group>"; };
 		A965BDC21CDA1171002579CA /* IntroPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroPresenterInterface.swift; sourceTree = "<group>"; };
+		A992784F1CE3647B009DC364 /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		A99278521CE364E6009DC364 /* SettingsPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenterInterface.swift; sourceTree = "<group>"; };
+		A99278541CE3650C009DC364 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A99278561CE36517009DC364 /* SettingsInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInterface.swift; sourceTree = "<group>"; };
+		A99278581CE36524009DC364 /* SettingsWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsWireframe.swift; sourceTree = "<group>"; };
 		A9A0686C1CDA498C00ACF1BF /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		A9A0686E1CDA49A500ACF1BF /* NavigationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationPresenter.swift; sourceTree = "<group>"; };
 		A9A068701CDA49B300ACF1BF /* NavigationWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationWireframe.swift; sourceTree = "<group>"; };
 		A9A068721CDA4A4200ACF1BF /* NavigationInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationInterface.swift; sourceTree = "<group>"; };
 		A9A068741CDA4AA200ACF1BF /* NavigationPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationPresenterInterface.swift; sourceTree = "<group>"; };
+		A9B118161CE378B9001A1177 /* SharePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharePresenter.swift; sourceTree = "<group>"; };
+		A9B118181CE378C2001A1177 /* SharePresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharePresenterInterface.swift; sourceTree = "<group>"; };
+		A9B1181A1CE378D3001A1177 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		A9B1181C1CE378DC001A1177 /* ShareInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareInterface.swift; sourceTree = "<group>"; };
+		A9B1181E1CE378E8001A1177 /* ShareWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareWireframe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +190,8 @@
 		A95B24631CD8895E00F78AAF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A9B118111CE37887001A1177 /* Share */,
+				A99278491CE3642D009DC364 /* Settings */,
 				A9A068661CDA494100ACF1BF /* Navigator */,
 				A95B24851CD8EA7500F78AAF /* Intro */,
 				A95B24641CD8896600F78AAF /* Recorder */,
@@ -297,6 +319,50 @@
 			name = Wireframe;
 			sourceTree = "<group>";
 		};
+		A99278491CE3642D009DC364 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A992784A1CE36438009DC364 /* User Interface */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		A992784A1CE36438009DC364 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				A992784B1CE36440009DC364 /* Presenter */,
+				A992784D1CE36450009DC364 /* View */,
+				A992784E1CE36455009DC364 /* Wireframe */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		A992784B1CE36440009DC364 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A992784F1CE3647B009DC364 /* SettingsPresenter.swift */,
+				A99278521CE364E6009DC364 /* SettingsPresenterInterface.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		A992784D1CE36450009DC364 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A99278541CE3650C009DC364 /* SettingsViewController.swift */,
+				A99278561CE36517009DC364 /* SettingsInterface.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A992784E1CE36455009DC364 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				A99278581CE36524009DC364 /* SettingsWireframe.swift */,
+			);
+			name = Wireframe;
+			sourceTree = "<group>";
+		};
 		A9A068661CDA494100ACF1BF /* Navigator */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +405,50 @@
 				A9A068701CDA49B300ACF1BF /* NavigationWireframe.swift */,
 			);
 			name = Wireframe;
+			sourceTree = "<group>";
+		};
+		A9B118111CE37887001A1177 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				A9B118121CE3788D001A1177 /* User Interface */,
+			);
+			name = Share;
+			sourceTree = "<group>";
+		};
+		A9B118121CE3788D001A1177 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				A9B118151CE378AC001A1177 /* Presenter */,
+				A9B118141CE378A9001A1177 /* View */,
+				A9B118131CE378A4001A1177 /* Wireframe */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		A9B118131CE378A4001A1177 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				A9B1181E1CE378E8001A1177 /* ShareWireframe.swift */,
+			);
+			name = Wireframe;
+			sourceTree = "<group>";
+		};
+		A9B118141CE378A9001A1177 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A9B1181A1CE378D3001A1177 /* ShareViewController.swift */,
+				A9B1181C1CE378DC001A1177 /* ShareInterface.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A9B118151CE378AC001A1177 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A9B118161CE378B9001A1177 /* SharePresenter.swift */,
+				A9B118181CE378C2001A1177 /* SharePresenterInterface.swift */,
+			);
+			name = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,19 +585,29 @@
 			files = (
 				A9A068751CDA4AA200ACF1BF /* NavigationPresenterInterface.swift in Sources */,
 				A95B248B1CD8ED2200F78AAF /* IntroViewController.swift in Sources */,
+				A9B118171CE378B9001A1177 /* SharePresenter.swift in Sources */,
+				A99278551CE3650C009DC364 /* SettingsViewController.swift in Sources */,
+				A9B1181F1CE378E8001A1177 /* ShareWireframe.swift in Sources */,
+				A9B1181B1CE378D3001A1177 /* ShareViewController.swift in Sources */,
 				A965BDC31CDA1171002579CA /* IntroPresenterInterface.swift in Sources */,
 				A95B24761CD8B90700F78AAF /* AppDependencies.swift in Sources */,
 				A95B24371CD8890900F78AAF /* RecordController.swift in Sources */,
 				A965BDC11CDA0F1D002579CA /* IntroViewInterface.swift in Sources */,
+				A99278531CE364E6009DC364 /* SettingsPresenterInterface.swift in Sources */,
 				A95B247A1CD8B96E00F78AAF /* RootWireframe.swift in Sources */,
+				A99278591CE36524009DC364 /* SettingsWireframe.swift in Sources */,
 				A9A068711CDA49B300ACF1BF /* NavigationWireframe.swift in Sources */,
+				A9B1181D1CE378DC001A1177 /* ShareInterface.swift in Sources */,
+				A99278501CE3647B009DC364 /* SettingsPresenter.swift in Sources */,
 				A95B246B1CD88AC100F78AAF /* RecordWireframe.swift in Sources */,
+				A9B118191CE378C2001A1177 /* SharePresenterInterface.swift in Sources */,
 				A965BDBF1CDA076C002579CA /* IntroWireframe.swift in Sources */,
 				A9A0686F1CDA49A500ACF1BF /* NavigationPresenter.swift in Sources */,
 				A95B24351CD8890900F78AAF /* AppDelegate.swift in Sources */,
 				A95B24711CD88C4B00F78AAF /* RecordPresenter.swift in Sources */,
 				A95B247C1CD8B9F200F78AAF /* RecordPresenterInterfaceIO.swift in Sources */,
 				A95B246E1CD88C2D00F78AAF /* RecordViewInterface.swift in Sources */,
+				A99278571CE36517009DC364 /* SettingsInterface.swift in Sources */,
 				A9A068731CDA4A4200ACF1BF /* NavigationInterface.swift in Sources */,
 				A9A0686D1CDA498C00ACF1BF /* NavigationViewController.swift in Sources */,
 				A965BDBC1CDA0758002579CA /* IntroPresenter.swift in Sources */,
@@ -634,13 +754,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = Videona/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Videona.Kamarada;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0ccf2c44-4a8a-4dfd-b2b5-54aa4ca24e5d";
+				PROVISIONING_PROFILE = "b7bf3e75-0f70-4b41-988e-112cb77127d9";
 			};
 			name = Debug;
 		};
@@ -648,13 +768,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = Videona/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Videona.Kamarada;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0ccf2c44-4a8a-4dfd-b2b5-54aa4ca24e5d";
+				PROVISIONING_PROFILE = "b7bf3e75-0f70-4b41-988e-112cb77127d9";
 			};
 			name = Release;
 		};

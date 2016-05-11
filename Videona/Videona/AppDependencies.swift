@@ -14,7 +14,9 @@ class AppDependencies {
     var recordWireframe = RecordWireframe()
     var introWireframe = IntroWireframe()
     var navigatorWireframe = NavigationWireframe()
-
+    var settingsWireframe = SettingsWireframe()
+    var shareWireframe = ShareWireframe()
+    
     init(){
         configureDependencies()
     }
@@ -23,6 +25,8 @@ class AppDependencies {
         let introPresenter = IntroPresenter()
         let recordPresenter = RecordPresenter()
         let navigatorPresenter = NavigationPresenter()
+        let settingsPresenter = SettingsPresenter()
+        let sharePresenter = SharePresenter()
         
         //INTRO MODULE
         introPresenter.introWireframe = introWireframe
@@ -33,7 +37,8 @@ class AppDependencies {
 
         //RECORD MODULE
         recordPresenter.recordWireframe = recordWireframe
-        recordPresenter.navigatorWireframe = navigatorWireframe
+        recordPresenter.settingsWireframe = settingsWireframe
+        recordPresenter.shareWireframe = shareWireframe
         
         recordWireframe.recordPresenter = recordPresenter
         recordWireframe.rootWireframe = rootWireframe
@@ -45,6 +50,19 @@ class AppDependencies {
         navigatorWireframe.navigationPresenter = navigatorPresenter
         navigatorWireframe.rootWireframe = rootWireframe
         
+        //SETTINGS MODULE
+        settingsPresenter.wireframe = settingsWireframe
+        settingsPresenter.recordWireframe = recordWireframe
+        
+        settingsWireframe.settingsPresenter = settingsPresenter
+        settingsWireframe.rootWireframe = rootWireframe
+        
+        //SHARE MODULE
+        sharePresenter.wireframe = shareWireframe
+        sharePresenter.recordWireframe = recordWireframe
+        
+        shareWireframe.sharePresenter = sharePresenter
+        shareWireframe.rootWireframe = rootWireframe
     }
     
     func installIntroToRootViewControllerIntoWindow(window: UIWindow){
