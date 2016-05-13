@@ -18,6 +18,9 @@ class RecordPresenter: NSObject, RecordPresenterInterface{
     
     //    var navigatorWireframe: NavigationWireframe?
 
+    //MARK: - Constants
+    var colorFilterViewIsShowin = false
+    var shaderFilterViewIsShowin = false
     
     func pushSettings() {
         print("Record presenter pushSettings")
@@ -31,5 +34,44 @@ class RecordPresenter: NSObject, RecordPresenterInterface{
         let navigatorViewController = shareWireframe?.shareViewControllerFromStoryboard()
         
         output?.navigateToNewViewController(navigatorViewController!)
+    }
+    
+    func pushShowHideColorFilters() {
+        if(shaderFilterViewIsShowin){
+            shaderFilterViewIsShowin = false
+            
+            self.recordWireframe?.dismissFilterListInterface()
+            self.recordWireframe?.presentColorFilterListInterface()
+            self.colorFilterViewIsShowin = true
+            return
+        }else if(colorFilterViewIsShowin){
+            recordWireframe?.dismissFilterListInterface()
+            
+            colorFilterViewIsShowin = false
+            return
+        }else{
+            recordWireframe?.presentColorFilterListInterface()
+            colorFilterViewIsShowin = true
+            return
+        }
+    }
+    
+    func pushShowHideShaderFilters() {
+        if(colorFilterViewIsShowin){
+            colorFilterViewIsShowin = false
+            recordWireframe?.dismissFilterListInterface()
+            self.recordWireframe?.presentShaderFilterListInterface()
+            self.shaderFilterViewIsShowin = true
+            return
+        }else if(shaderFilterViewIsShowin){
+            recordWireframe?.dismissFilterListInterface()
+            
+            shaderFilterViewIsShowin = false
+            return
+        }else{
+            recordWireframe?.presentShaderFilterListInterface()
+            shaderFilterViewIsShowin = true
+            return
+        }
     }
 }

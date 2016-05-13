@@ -16,6 +16,8 @@ class AppDependencies {
     var navigatorWireframe = NavigationWireframe()
     var settingsWireframe = SettingsWireframe()
     var shareWireframe = ShareWireframe()
+    var filterListWireframe = FilterListWireframe()
+    var playerWireframe = PlayerWireframe()
     
     init(){
         configureDependencies()
@@ -26,7 +28,14 @@ class AppDependencies {
         let recordPresenter = RecordPresenter()
         let navigatorPresenter = NavigationPresenter()
         let settingsPresenter = SettingsPresenter()
+        
         let sharePresenter = SharePresenter()
+        let shareInteractor = ShareInteractor()
+       
+        let filterListPresenter = FilterListPresenter()
+        let filterListInteractor = FilterListInteractor()
+       
+        let playerPresenter = PlayerPresenter()
         
         //INTRO MODULE
         introPresenter.introWireframe = introWireframe
@@ -42,6 +51,7 @@ class AppDependencies {
         
         recordWireframe.recordPresenter = recordPresenter
         recordWireframe.rootWireframe = rootWireframe
+        recordWireframe.filterListWireframe = filterListWireframe
         
         //NAVIGATOR MODULE
         navigatorPresenter.wireframe = navigatorWireframe
@@ -60,9 +70,26 @@ class AppDependencies {
         //SHARE MODULE
         sharePresenter.wireframe = shareWireframe
         sharePresenter.recordWireframe = recordWireframe
+        sharePresenter.interactor = shareInteractor
         
         shareWireframe.sharePresenter = sharePresenter
         shareWireframe.rootWireframe = rootWireframe
+        shareWireframe.playerWireframe = playerWireframe
+        
+        //FILTER LIST MODULE
+        filterListPresenter.wireframe = filterListWireframe
+        filterListPresenter.recordWireframe = recordWireframe
+        filterListPresenter.interactor = filterListInteractor
+        
+        filterListWireframe.filterListPresenter = filterListPresenter
+        filterListWireframe.rootWireframe = rootWireframe
+        
+        //PLAYER MODULE
+        playerPresenter.wireframe = playerWireframe
+        playerPresenter.recordWireframe = recordWireframe
+        
+        playerWireframe.playerPresenter = playerPresenter
+        playerWireframe.rootWireframe = rootWireframe
     }
     
     func installIntroToRootViewControllerIntoWindow(window: UIWindow){

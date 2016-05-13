@@ -15,10 +15,11 @@ class ShareWireframe : NSObject {
     var rootWireframe : RootWireframe?
     var shareViewController : ShareViewController?
     var sharePresenter : SharePresenter?
+    var playerWireframe: PlayerWireframe?
     
     func presentShareInterfaceFromWindow(window: UIWindow) {
         let viewController = shareViewControllerFromStoryboard()
-        viewController.output = sharePresenter
+        viewController.eventHandler = sharePresenter
         
         shareViewController = viewController
         sharePresenter?.controller = viewController
@@ -30,7 +31,7 @@ class ShareWireframe : NSObject {
         let storyboard = mainStoryboard()
         let viewController = storyboard.instantiateViewControllerWithIdentifier(shareViewControllerIdentifier) as! ShareViewController
         
-        viewController.output = sharePresenter
+        viewController.eventHandler = sharePresenter
         shareViewController = viewController
         sharePresenter?.controller = viewController
         
@@ -41,5 +42,7 @@ class ShareWireframe : NSObject {
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         return storyboard
     }
-    
+    func presentPlayerInterface() {
+        playerWireframe?.presentPlayerInterfaceFromViewController(shareViewController!)
+    }
 }

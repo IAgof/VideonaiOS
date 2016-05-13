@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A93846E81CE47E82007FB6BC /* FilterListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846E71CE47E82007FB6BC /* FilterListPresenter.swift */; };
+		A93846EA1CE47E9C007FB6BC /* FilterListPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846E91CE47E9C007FB6BC /* FilterListPresenterInterface.swift */; };
+		A93846EC1CE47EE2007FB6BC /* FilterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846EB1CE47EE2007FB6BC /* FilterListView.swift */; };
+		A93846EE1CE47EF0007FB6BC /* FilterListInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846ED1CE47EF0007FB6BC /* FilterListInterface.swift */; };
+		A93846F01CE47F67007FB6BC /* FilterListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846EF1CE47F67007FB6BC /* FilterListWireframe.swift */; };
+		A93846F31CE4809F007FB6BC /* FilterListDismissalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846F21CE4809F007FB6BC /* FilterListDismissalTransition.swift */; };
+		A93846F51CE480AA007FB6BC /* FilterListPresentationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846F41CE480AA007FB6BC /* FilterListPresentationTransition.swift */; };
+		A93846F71CE49340007FB6BC /* FilterListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93846F61CE49340007FB6BC /* FilterListView.xib */; };
+		A943015F1CE5CF2000DC0DF8 /* PlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A943015E1CE5CF2000DC0DF8 /* PlayerPresenter.swift */; };
+		A94301611CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301601CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift */; };
+		A94301631CE5CF3900DC0DF8 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301621CE5CF3900DC0DF8 /* PlayerView.swift */; };
+		A94301651CE5CF4600DC0DF8 /* PlayerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301641CE5CF4600DC0DF8 /* PlayerInterface.swift */; };
+		A94301671CE5CF4F00DC0DF8 /* PlayerWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301661CE5CF4F00DC0DF8 /* PlayerWireframe.swift */; };
+		A94301691CE5CF5800DC0DF8 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A94301681CE5CF5800DC0DF8 /* PlayerView.xib */; };
+		A943016E1CE5D99E00DC0DF8 /* SocialNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A943016D1CE5D99E00DC0DF8 /* SocialNetwork.swift */; };
+		A94301701CE5DAA100DC0DF8 /* SocialNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A943016F1CE5DAA100DC0DF8 /* SocialNetworkProvider.swift */; };
+		A94301721CE5DD8B00DC0DF8 /* ShareInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301711CE5DD8B00DC0DF8 /* ShareInteractor.swift */; };
+		A94301741CE5DFA100DC0DF8 /* ShareInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301731CE5DFA100DC0DF8 /* ShareInteractorInterface.swift */; };
+		A94301761CE5EEE200DC0DF8 /* FilterListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301751CE5EEE200DC0DF8 /* FilterListInteractor.swift */; };
+		A94301781CE5EEED00DC0DF8 /* FilterListInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301771CE5EEED00DC0DF8 /* FilterListInteractorInterface.swift */; };
 		A95B24351CD8890900F78AAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B24341CD8890900F78AAF /* AppDelegate.swift */; };
 		A95B24371CD8890900F78AAF /* RecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B24361CD8890900F78AAF /* RecordController.swift */; };
 		A95B243A1CD8890900F78AAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95B24381CD8890900F78AAF /* Main.storyboard */; };
@@ -40,6 +60,16 @@
 		A9B1181B1CE378D3001A1177 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1181A1CE378D3001A1177 /* ShareViewController.swift */; };
 		A9B1181D1CE378DC001A1177 /* ShareInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1181C1CE378DC001A1177 /* ShareInterface.swift */; };
 		A9B1181F1CE378E8001A1177 /* ShareWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1181E1CE378E8001A1177 /* ShareWireframe.swift */; };
+		A9E066D91CE4B4E000D4E11D /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E066D81CE4B4E000D4E11D /* Effect.swift */; };
+		A9E066DB1CE4B4EE00D4E11D /* OverlayEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E066DA1CE4B4EE00D4E11D /* OverlayEffect.swift */; };
+		A9E066DD1CE4B4F500D4E11D /* ShaderEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E066DC1CE4B4F500D4E11D /* ShaderEffect.swift */; };
+		A9E066DF1CE4BA0700D4E11D /* EffectProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E066DE1CE4BA0700D4E11D /* EffectProvider.swift */; };
+		A9E066E41CE4BB8300D4E11D /* ConfigPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E066E21CE4BB8300D4E11D /* ConfigPreferences.swift */; };
+		A9E066E51CE4BB8300D4E11D /* AnalitycsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E066E31CE4BB8300D4E11D /* AnalitycsConstants.swift */; };
+		A9E066E71CE4C5C700D4E11D /* FilterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E066E61CE4C5C700D4E11D /* FilterViewCell.swift */; };
+		A9E066E91CE4C85900D4E11D /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9E066E81CE4C85900D4E11D /* FilterCell.xib */; };
+		A9E066EB1CE4E13800D4E11D /* ShareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9E066EA1CE4E13800D4E11D /* ShareCell.xib */; };
+		A9E066ED1CE4E4E200D4E11D /* ShareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E066EC1CE4E4E200D4E11D /* ShareCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +90,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A93846E71CE47E82007FB6BC /* FilterListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListPresenter.swift; sourceTree = "<group>"; };
+		A93846E91CE47E9C007FB6BC /* FilterListPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListPresenterInterface.swift; sourceTree = "<group>"; };
+		A93846EB1CE47EE2007FB6BC /* FilterListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListView.swift; sourceTree = "<group>"; };
+		A93846ED1CE47EF0007FB6BC /* FilterListInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListInterface.swift; sourceTree = "<group>"; };
+		A93846EF1CE47F67007FB6BC /* FilterListWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListWireframe.swift; sourceTree = "<group>"; };
+		A93846F21CE4809F007FB6BC /* FilterListDismissalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListDismissalTransition.swift; sourceTree = "<group>"; };
+		A93846F41CE480AA007FB6BC /* FilterListPresentationTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListPresentationTransition.swift; sourceTree = "<group>"; };
+		A93846F61CE49340007FB6BC /* FilterListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterListView.xib; sourceTree = "<group>"; };
+		A943015E1CE5CF2000DC0DF8 /* PlayerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerPresenter.swift; sourceTree = "<group>"; };
+		A94301601CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerPresenterInterface.swift; sourceTree = "<group>"; };
+		A94301621CE5CF3900DC0DF8 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		A94301641CE5CF4600DC0DF8 /* PlayerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInterface.swift; sourceTree = "<group>"; };
+		A94301661CE5CF4F00DC0DF8 /* PlayerWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerWireframe.swift; sourceTree = "<group>"; };
+		A94301681CE5CF5800DC0DF8 /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
+		A943016D1CE5D99E00DC0DF8 /* SocialNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialNetwork.swift; sourceTree = "<group>"; };
+		A943016F1CE5DAA100DC0DF8 /* SocialNetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialNetworkProvider.swift; sourceTree = "<group>"; };
+		A94301711CE5DD8B00DC0DF8 /* ShareInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareInteractor.swift; sourceTree = "<group>"; };
+		A94301731CE5DFA100DC0DF8 /* ShareInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareInteractorInterface.swift; sourceTree = "<group>"; };
+		A94301751CE5EEE200DC0DF8 /* FilterListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListInteractor.swift; sourceTree = "<group>"; };
+		A94301771CE5EEED00DC0DF8 /* FilterListInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListInteractorInterface.swift; sourceTree = "<group>"; };
 		A95B24311CD8890900F78AAF /* Videona.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Videona.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A95B24341CD8890900F78AAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A95B24361CD8890900F78AAF /* RecordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordController.swift; sourceTree = "<group>"; };
@@ -99,6 +149,16 @@
 		A9B1181A1CE378D3001A1177 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		A9B1181C1CE378DC001A1177 /* ShareInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareInterface.swift; sourceTree = "<group>"; };
 		A9B1181E1CE378E8001A1177 /* ShareWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareWireframe.swift; sourceTree = "<group>"; };
+		A9E066D81CE4B4E000D4E11D /* Effect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
+		A9E066DA1CE4B4EE00D4E11D /* OverlayEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayEffect.swift; sourceTree = "<group>"; };
+		A9E066DC1CE4B4F500D4E11D /* ShaderEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShaderEffect.swift; sourceTree = "<group>"; };
+		A9E066DE1CE4BA0700D4E11D /* EffectProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectProvider.swift; sourceTree = "<group>"; };
+		A9E066E21CE4BB8300D4E11D /* ConfigPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigPreferences.swift; sourceTree = "<group>"; };
+		A9E066E31CE4BB8300D4E11D /* AnalitycsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalitycsConstants.swift; sourceTree = "<group>"; };
+		A9E066E61CE4C5C700D4E11D /* FilterViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewCell.swift; sourceTree = "<group>"; };
+		A9E066E81CE4C85900D4E11D /* FilterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
+		A9E066EA1CE4E13800D4E11D /* ShareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareCell.xib; sourceTree = "<group>"; };
+		A9E066EC1CE4E4E200D4E11D /* ShareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +186,136 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A93846E21CE47E57007FB6BC /* Filter List */ = {
+			isa = PBXGroup;
+			children = (
+				A9E066D41CE4B46900D4E11D /* AppLogic */,
+				A93846E31CE47E63007FB6BC /* User Interface */,
+			);
+			name = "Filter List";
+			sourceTree = "<group>";
+		};
+		A93846E31CE47E63007FB6BC /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				A93846F11CE48081007FB6BC /* Transition */,
+				A93846E61CE47E74007FB6BC /* Presenter */,
+				A93846E51CE47E70007FB6BC /* View */,
+				A93846E41CE47E6B007FB6BC /* Wireframe */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		A93846E41CE47E6B007FB6BC /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				A93846EF1CE47F67007FB6BC /* FilterListWireframe.swift */,
+			);
+			name = Wireframe;
+			sourceTree = "<group>";
+		};
+		A93846E51CE47E70007FB6BC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A93846F61CE49340007FB6BC /* FilterListView.xib */,
+				A93846EB1CE47EE2007FB6BC /* FilterListView.swift */,
+				A93846ED1CE47EF0007FB6BC /* FilterListInterface.swift */,
+				A9E066E81CE4C85900D4E11D /* FilterCell.xib */,
+				A9E066E61CE4C5C700D4E11D /* FilterViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A93846E61CE47E74007FB6BC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A93846E71CE47E82007FB6BC /* FilterListPresenter.swift */,
+				A93846E91CE47E9C007FB6BC /* FilterListPresenterInterface.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		A93846F11CE48081007FB6BC /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				A93846F21CE4809F007FB6BC /* FilterListDismissalTransition.swift */,
+				A93846F41CE480AA007FB6BC /* FilterListPresentationTransition.swift */,
+			);
+			name = Transition;
+			sourceTree = "<group>";
+		};
+		A94301591CE5CEE400DC0DF8 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				A943015A1CE5CEEE00DC0DF8 /* User Interface */,
+			);
+			name = Player;
+			sourceTree = "<group>";
+		};
+		A943015A1CE5CEEE00DC0DF8 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				A943015D1CE5CEFE00DC0DF8 /* Presenter */,
+				A943015C1CE5CEFA00DC0DF8 /* View */,
+				A943015B1CE5CEF400DC0DF8 /* Wireframe */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		A943015B1CE5CEF400DC0DF8 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				A94301661CE5CF4F00DC0DF8 /* PlayerWireframe.swift */,
+			);
+			name = Wireframe;
+			sourceTree = "<group>";
+		};
+		A943015C1CE5CEFA00DC0DF8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A94301681CE5CF5800DC0DF8 /* PlayerView.xib */,
+				A94301621CE5CF3900DC0DF8 /* PlayerView.swift */,
+				A94301641CE5CF4600DC0DF8 /* PlayerInterface.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A943015D1CE5CEFE00DC0DF8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A943015E1CE5CF2000DC0DF8 /* PlayerPresenter.swift */,
+				A94301601CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		A943016A1CE5D95100DC0DF8 /* App Logic */ = {
+			isa = PBXGroup;
+			children = (
+				A943016C1CE5D96900DC0DF8 /* Interactor */,
+				A943016B1CE5D96500DC0DF8 /* Model */,
+			);
+			name = "App Logic";
+			sourceTree = "<group>";
+		};
+		A943016B1CE5D96500DC0DF8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A943016D1CE5D99E00DC0DF8 /* SocialNetwork.swift */,
+				A943016F1CE5DAA100DC0DF8 /* SocialNetworkProvider.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A943016C1CE5D96900DC0DF8 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A94301711CE5DD8B00DC0DF8 /* ShareInteractor.swift */,
+				A94301731CE5DFA100DC0DF8 /* ShareInteractorInterface.swift */,
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
 		A95B24281CD8890900F78AAF = {
 			isa = PBXGroup;
 			children = (
@@ -190,11 +380,13 @@
 		A95B24631CD8895E00F78AAF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A95B24851CD8EA7500F78AAF /* Intro */,
+				A95B24641CD8896600F78AAF /* Recorder */,
+				A93846E21CE47E57007FB6BC /* Filter List */,
+				A94301591CE5CEE400DC0DF8 /* Player */,
 				A9B118111CE37887001A1177 /* Share */,
 				A99278491CE3642D009DC364 /* Settings */,
 				A9A068661CDA494100ACF1BF /* Navigator */,
-				A95B24851CD8EA7500F78AAF /* Intro */,
-				A95B24641CD8896600F78AAF /* Recorder */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -262,6 +454,7 @@
 		A95B24771CD8B95800F78AAF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A9E066E11CE4BB6B00D4E11D /* Constants */,
 				A95B24781CD8B96200F78AAF /* View */,
 			);
 			name = Common;
@@ -410,6 +603,7 @@
 		A9B118111CE37887001A1177 /* Share */ = {
 			isa = PBXGroup;
 			children = (
+				A943016A1CE5D95100DC0DF8 /* App Logic */,
 				A9B118121CE3788D001A1177 /* User Interface */,
 			);
 			name = Share;
@@ -438,6 +632,8 @@
 			children = (
 				A9B1181A1CE378D3001A1177 /* ShareViewController.swift */,
 				A9B1181C1CE378DC001A1177 /* ShareInterface.swift */,
+				A9E066EA1CE4E13800D4E11D /* ShareCell.xib */,
+				A9E066EC1CE4E4E200D4E11D /* ShareCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -449,6 +645,44 @@
 				A9B118181CE378C2001A1177 /* SharePresenterInterface.swift */,
 			);
 			name = Presenter;
+			sourceTree = "<group>";
+		};
+		A9E066D41CE4B46900D4E11D /* AppLogic */ = {
+			isa = PBXGroup;
+			children = (
+				A9E066D51CE4B47400D4E11D /* Interactor */,
+				A9E066D61CE4B48B00D4E11D /* Model */,
+			);
+			name = AppLogic;
+			sourceTree = "<group>";
+		};
+		A9E066D51CE4B47400D4E11D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A94301751CE5EEE200DC0DF8 /* FilterListInteractor.swift */,
+				A94301771CE5EEED00DC0DF8 /* FilterListInteractorInterface.swift */,
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		A9E066D61CE4B48B00D4E11D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A9E066D81CE4B4E000D4E11D /* Effect.swift */,
+				A9E066DE1CE4BA0700D4E11D /* EffectProvider.swift */,
+				A9E066DA1CE4B4EE00D4E11D /* OverlayEffect.swift */,
+				A9E066DC1CE4B4F500D4E11D /* ShaderEffect.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A9E066E11CE4BB6B00D4E11D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				A9E066E21CE4BB8300D4E11D /* ConfigPreferences.swift */,
+				A9E066E31CE4BB8300D4E11D /* AnalitycsConstants.swift */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -556,9 +790,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A94301691CE5CF5800DC0DF8 /* PlayerView.xib in Resources */,
 				A95B243F1CD8890900F78AAF /* LaunchScreen.storyboard in Resources */,
+				A93846F71CE49340007FB6BC /* FilterListView.xib in Resources */,
 				A95B243C1CD8890900F78AAF /* Assets.xcassets in Resources */,
+				A9E066EB1CE4E13800D4E11D /* ShareCell.xib in Resources */,
 				A95B243A1CD8890900F78AAF /* Main.storyboard in Resources */,
+				A9E066E91CE4C85900D4E11D /* FilterCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,34 +821,60 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A94301741CE5DFA100DC0DF8 /* ShareInteractorInterface.swift in Sources */,
+				A9E066E71CE4C5C700D4E11D /* FilterViewCell.swift in Sources */,
 				A9A068751CDA4AA200ACF1BF /* NavigationPresenterInterface.swift in Sources */,
 				A95B248B1CD8ED2200F78AAF /* IntroViewController.swift in Sources */,
 				A9B118171CE378B9001A1177 /* SharePresenter.swift in Sources */,
 				A99278551CE3650C009DC364 /* SettingsViewController.swift in Sources */,
+				A943015F1CE5CF2000DC0DF8 /* PlayerPresenter.swift in Sources */,
+				A94301651CE5CF4600DC0DF8 /* PlayerInterface.swift in Sources */,
 				A9B1181F1CE378E8001A1177 /* ShareWireframe.swift in Sources */,
 				A9B1181B1CE378D3001A1177 /* ShareViewController.swift in Sources */,
+				A93846F31CE4809F007FB6BC /* FilterListDismissalTransition.swift in Sources */,
+				A94301701CE5DAA100DC0DF8 /* SocialNetworkProvider.swift in Sources */,
 				A965BDC31CDA1171002579CA /* IntroPresenterInterface.swift in Sources */,
+				A93846EE1CE47EF0007FB6BC /* FilterListInterface.swift in Sources */,
 				A95B24761CD8B90700F78AAF /* AppDependencies.swift in Sources */,
+				A9E066ED1CE4E4E200D4E11D /* ShareCell.swift in Sources */,
 				A95B24371CD8890900F78AAF /* RecordController.swift in Sources */,
 				A965BDC11CDA0F1D002579CA /* IntroViewInterface.swift in Sources */,
+				A9E066D91CE4B4E000D4E11D /* Effect.swift in Sources */,
+				A93846EC1CE47EE2007FB6BC /* FilterListView.swift in Sources */,
+				A94301611CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift in Sources */,
 				A99278531CE364E6009DC364 /* SettingsPresenterInterface.swift in Sources */,
+				A94301631CE5CF3900DC0DF8 /* PlayerView.swift in Sources */,
+				A9E066DB1CE4B4EE00D4E11D /* OverlayEffect.swift in Sources */,
 				A95B247A1CD8B96E00F78AAF /* RootWireframe.swift in Sources */,
 				A99278591CE36524009DC364 /* SettingsWireframe.swift in Sources */,
+				A94301721CE5DD8B00DC0DF8 /* ShareInteractor.swift in Sources */,
+				A9E066E41CE4BB8300D4E11D /* ConfigPreferences.swift in Sources */,
 				A9A068711CDA49B300ACF1BF /* NavigationWireframe.swift in Sources */,
+				A943016E1CE5D99E00DC0DF8 /* SocialNetwork.swift in Sources */,
 				A9B1181D1CE378DC001A1177 /* ShareInterface.swift in Sources */,
 				A99278501CE3647B009DC364 /* SettingsPresenter.swift in Sources */,
+				A9E066DF1CE4BA0700D4E11D /* EffectProvider.swift in Sources */,
+				A9E066E51CE4BB8300D4E11D /* AnalitycsConstants.swift in Sources */,
+				A94301781CE5EEED00DC0DF8 /* FilterListInteractorInterface.swift in Sources */,
+				A93846EA1CE47E9C007FB6BC /* FilterListPresenterInterface.swift in Sources */,
 				A95B246B1CD88AC100F78AAF /* RecordWireframe.swift in Sources */,
 				A9B118191CE378C2001A1177 /* SharePresenterInterface.swift in Sources */,
 				A965BDBF1CDA076C002579CA /* IntroWireframe.swift in Sources */,
 				A9A0686F1CDA49A500ACF1BF /* NavigationPresenter.swift in Sources */,
 				A95B24351CD8890900F78AAF /* AppDelegate.swift in Sources */,
 				A95B24711CD88C4B00F78AAF /* RecordPresenter.swift in Sources */,
+				A94301761CE5EEE200DC0DF8 /* FilterListInteractor.swift in Sources */,
+				A93846F51CE480AA007FB6BC /* FilterListPresentationTransition.swift in Sources */,
+				A93846E81CE47E82007FB6BC /* FilterListPresenter.swift in Sources */,
 				A95B247C1CD8B9F200F78AAF /* RecordPresenterInterfaceIO.swift in Sources */,
+				A9E066DD1CE4B4F500D4E11D /* ShaderEffect.swift in Sources */,
+				A93846F01CE47F67007FB6BC /* FilterListWireframe.swift in Sources */,
 				A95B246E1CD88C2D00F78AAF /* RecordViewInterface.swift in Sources */,
 				A99278571CE36517009DC364 /* SettingsInterface.swift in Sources */,
 				A9A068731CDA4A4200ACF1BF /* NavigationInterface.swift in Sources */,
 				A9A0686D1CDA498C00ACF1BF /* NavigationViewController.swift in Sources */,
 				A965BDBC1CDA0758002579CA /* IntroPresenter.swift in Sources */,
+				A94301671CE5CF4F00DC0DF8 /* PlayerWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

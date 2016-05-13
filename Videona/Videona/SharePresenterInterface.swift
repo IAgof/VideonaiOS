@@ -7,8 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
 protocol SharePresenterInterface {
     
+    func viewDidLoad()
     func pushBack()
+    func getListData()
+    func setListTitleData(titleArray:Array<String>)
+    func setListImageData(imageArray:Array<UIImage>)    
 }

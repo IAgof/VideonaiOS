@@ -15,11 +15,12 @@ class RecordWireframe : NSObject {
     var rootWireframe : RootWireframe?
     var recordViewController : RecordController?
     var recordPresenter : RecordPresenter?
+    var filterListWireframe: FilterListWireframe?
     
     func presentRecordInterfaceFromWindow(window: UIWindow) {
         let viewController = RecordViewControllerFromStoryboard()
         
-        viewController.output = recordPresenter
+        viewController.eventHandler = recordPresenter
         recordViewController = viewController
         recordPresenter?.output = viewController
         
@@ -30,7 +31,7 @@ class RecordWireframe : NSObject {
         let storyboard = mainStoryboard()
         let viewController = storyboard.instantiateViewControllerWithIdentifier(RecordViewControllerIdentifier) as! RecordController
         
-        viewController.output = recordPresenter
+        viewController.eventHandler = recordPresenter
         recordViewController = viewController
         recordPresenter?.output = viewController
         
@@ -42,4 +43,16 @@ class RecordWireframe : NSObject {
         return storyboard
     }
     
+    func presentColorFilterListInterface() {
+        filterListWireframe?.presentColorFilterListInterfaceFromViewController(recordViewController!)
+    }
+    func presentShaderFilterListInterface() {
+        filterListWireframe?.presentShaderFilterListInterfaceFromViewController(recordViewController!)
+    }
+    
+    func dismissFilterListInterface() {
+        filterListWireframe?.dismissFilterListInterface({ finished in
+            print("Record Wireframe dismissFilterListInterface")
+        })
+    }
 }

@@ -19,4 +19,6 @@ protocol RecordPresenterOutput{
 protocol RecordPresenterInterface{
     func pushSettings()
     func pushShare()
+    func pushShowHideColorFilters()
+    func pushShowHideShaderFilters()
 }

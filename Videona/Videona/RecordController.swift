@@ -11,7 +11,7 @@ import UIKit
 class RecordController: UIViewController,RecordViewInterface {
     
     //MARK: - Variables VIPER
-    var output: RecordPresenter?
+    var eventHandler: RecordPresenter?
     
     
     //MARK: - View Config
@@ -33,13 +33,19 @@ class RecordController: UIViewController,RecordViewInterface {
     
     //MARK: - Button Actions
     @IBAction func pushGoToSettings(sender: AnyObject) {
-        output?.pushSettings()
+        eventHandler?.pushSettings()
     }
     
     @IBAction func pushGoToShareView(sender: AnyObject) {
-        output?.pushShare()
+        eventHandler?.pushShare()
     }
     
+    @IBAction func pushColorFilter(sender: AnyObject) {
+        eventHandler?.pushShowHideColorFilters()
+    }
+    @IBAction func pushShaderFilter(sender: AnyObject) {
+        eventHandler?.pushShowHideShaderFilters()
+    }
     //MARK: - Protocol Interface
     func showRecordButton(){
         
