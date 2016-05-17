@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ShareInteractor: NSObject {
+class ShareInteractor: NSObject,ShareInteractorInterface {
     
     func findSocialNetworks()->(socialNetworkTitleArray:Array<String>, socialNetworkImageArray:Array<UIImage>){
         let socialNetworks = SocialNetworkProvider().getSocialNetworks()

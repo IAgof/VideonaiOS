@@ -316,19 +316,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fd3-me-Fu7">
-                                <rect key="frame" x="248" y="289" width="105" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <navigationBar hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xuX-Ih-0u8">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="Tfq-Pk-qt1"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BK7-1P-oLh">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsCell" id="6pQ-WE-Dns">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6pQ-WE-Dns" id="5zz-OB-SA2">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="emM-0d-dkm" id="Oid-No-wii"/>
+                                    <outlet property="delegate" destination="emM-0d-dkm" id="AVJ-2o-g0Y"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fd3-me-Fu7" firstAttribute="centerX" secondItem="ENy-FY-AaG" secondAttribute="centerX" id="GXl-iU-tYW"/>
-                            <constraint firstItem="fd3-me-Fu7" firstAttribute="centerY" secondItem="ENy-FY-AaG" secondAttribute="centerY" id="Kap-dq-PT4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xuX-Ih-0u8" secondAttribute="trailing" constant="-20" id="D0E-eE-JGo"/>
+                            <constraint firstItem="ToU-wA-fiQ" firstAttribute="top" secondItem="BK7-1P-oLh" secondAttribute="bottom" id="DQv-Br-9Qm"/>
+                            <constraint firstItem="BK7-1P-oLh" firstAttribute="leading" secondItem="ENy-FY-AaG" secondAttribute="leadingMargin" constant="-20" id="JrL-Ek-AWe"/>
+                            <constraint firstItem="BK7-1P-oLh" firstAttribute="top" secondItem="xuX-Ih-0u8" secondAttribute="bottom" constant="20" id="OOt-tO-qrg"/>
+                            <constraint firstItem="xuX-Ih-0u8" firstAttribute="leading" secondItem="ENy-FY-AaG" secondAttribute="leadingMargin" constant="-20" id="Ow1-41-U74"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BK7-1P-oLh" secondAttribute="trailing" constant="-20" id="a7i-7x-HhW"/>
+                            <constraint firstItem="xuX-Ih-0u8" firstAttribute="top" secondItem="ENy-FY-AaG" secondAttribute="topMargin" id="yB8-GB-Dze"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="xuX-Ih-0u8"/>
+                                <exclude reference="BK7-1P-oLh"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="D0E-eE-JGo"/>
+                                <exclude reference="Ow1-41-U74"/>
+                                <exclude reference="yB8-GB-Dze"/>
+                                <exclude reference="JrL-Ek-AWe"/>
+                                <exclude reference="OOt-tO-qrg"/>
+                                <exclude reference="a7i-7x-HhW"/>
+                                <exclude reference="DQv-Br-9Qm"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <include reference="xuX-Ih-0u8"/>
+                                <include reference="BK7-1P-oLh"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="D0E-eE-JGo"/>
+                                <include reference="Ow1-41-U74"/>
+                                <include reference="yB8-GB-Dze"/>
+                                <include reference="JrL-Ek-AWe"/>
+                                <include reference="OOt-tO-qrg"/>
+                                <include reference="a7i-7x-HhW"/>
+                                <include reference="DQv-Br-9Qm"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="settingsTableView" destination="BK7-1P-oLh" id="5I2-FX-pU2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyg-Y8-Mcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -357,7 +414,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tJl-W0-3b9" id="FLl-BF-7iM">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>

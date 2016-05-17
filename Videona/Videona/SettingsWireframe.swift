@@ -18,7 +18,7 @@ class SettingsWireframe : NSObject {
     
     func presentSettingsInterfaceFromWindow(window: UIWindow) {
         let viewController = settingsViewControllerFromStoryboard()
-        viewController.output = settingsPresenter
+        viewController.eventHandler = settingsPresenter
         
         settingsViewController = viewController
         settingsPresenter?.controller = viewController
@@ -30,7 +30,7 @@ class SettingsWireframe : NSObject {
         let storyboard = mainStoryboard()
         let viewController = storyboard.instantiateViewControllerWithIdentifier(settingsViewControllerIdentifier) as! SettingsViewController
         
-        viewController.output = settingsPresenter
+        viewController.eventHandler = settingsPresenter
         settingsViewController = viewController
         settingsPresenter?.controller = viewController
         

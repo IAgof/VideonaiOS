@@ -15,12 +15,15 @@ class SharePresenter:NSObject,SharePresenterInterface{
     var controller: ShareInterface?
     var interactor: ShareInteractor?
     var recordWireframe: RecordWireframe?
+    var playerPresenter: PlayerPresenter?
     
     //LifeCicle
     func viewDidLoad() {
         controller!.createNavigationBar()
         controller!.registerNib()
         wireframe?.presentPlayerInterface()
+        
+        playerPresenter?.createVideoPlayer()
         self.getListData()
     }
     

@@ -27,7 +27,9 @@ class AppDependencies {
         let introPresenter = IntroPresenter()
         let recordPresenter = RecordPresenter()
         let navigatorPresenter = NavigationPresenter()
+    
         let settingsPresenter = SettingsPresenter()
+        let settingsInteractor = SettingsInteractor()
         
         let sharePresenter = SharePresenter()
         let shareInteractor = ShareInteractor()
@@ -36,6 +38,7 @@ class AppDependencies {
         let filterListInteractor = FilterListInteractor()
        
         let playerPresenter = PlayerPresenter()
+        let playerInteractor = PlayerInteractor()
         
         //INTRO MODULE
         introPresenter.introWireframe = introWireframe
@@ -63,7 +66,8 @@ class AppDependencies {
         //SETTINGS MODULE
         settingsPresenter.wireframe = settingsWireframe
         settingsPresenter.recordWireframe = recordWireframe
-        
+        settingsPresenter.interactor = settingsInteractor
+            
         settingsWireframe.settingsPresenter = settingsPresenter
         settingsWireframe.rootWireframe = rootWireframe
         
@@ -71,6 +75,7 @@ class AppDependencies {
         sharePresenter.wireframe = shareWireframe
         sharePresenter.recordWireframe = recordWireframe
         sharePresenter.interactor = shareInteractor
+        sharePresenter.playerPresenter = playerPresenter
         
         shareWireframe.sharePresenter = sharePresenter
         shareWireframe.rootWireframe = rootWireframe
@@ -87,7 +92,8 @@ class AppDependencies {
         //PLAYER MODULE
         playerPresenter.wireframe = playerWireframe
         playerPresenter.recordWireframe = recordWireframe
-        
+        playerPresenter.playerInteractor = playerInteractor
+            
         playerWireframe.playerPresenter = playerPresenter
         playerWireframe.rootWireframe = rootWireframe
     }

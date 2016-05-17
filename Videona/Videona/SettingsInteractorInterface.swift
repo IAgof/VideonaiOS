@@ -1,5 +1,5 @@
 //
-//  PlayerInterface.swift
+//  SettingsInteractorInterface.swift
 //  Videona
 //
 //  Created by Alejandro Arjonilla Garcia on 13/5/16.
@@ -7,10 +7,7 @@
 //
 
 import Foundation
-import UIKit
 
-protocol PlayerInterface {
- 
-    func createVideoPlayer()
-    func setPlayerMovieURL(movieURL:NSURL)
+protocol SettingsInteractorInterface {
+    func findSettings()->(Array<String>,Array<Array<String>>)
 }

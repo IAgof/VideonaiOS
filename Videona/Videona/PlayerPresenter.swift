@@ -14,9 +14,15 @@ class PlayerPresenter:NSObject,PlayerPresenterInterface{
     var controller: PlayerInterface?
     var playerDelegate: PlayerDelegate?
     var recordWireframe: RecordWireframe?
-    
+    var playerInteractor: PlayerInteractorInterface?
         
     func configureUserInterfaceForPresentation(addViewUserInterface: PlayerInterface) {
         
     }
+    
+    func createVideoPlayer() {
+        controller?.setPlayerMovieURL((playerInteractor?.findVideosToPlay())!)
+        controller?.createVideoPlayer()
+    }
+    
 }

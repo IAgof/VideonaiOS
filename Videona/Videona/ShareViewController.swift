@@ -102,7 +102,7 @@ UITableViewDelegate, UITableViewDataSource{
 
     //MARK: - UITableView Delegate
    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("You selected filter in position #\(indexPath.item)\n filter name: \(listTitles[indexPath.item])!")
+        print("You selected in position #\(indexPath.item)\n filter name: \(listTitles[indexPath.item])!")
         tableView.cellForRowAtIndexPath(indexPath)?.selected = false
     }
 }
