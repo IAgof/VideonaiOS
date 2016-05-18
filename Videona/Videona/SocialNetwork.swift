@@ -11,15 +11,20 @@ import UIKit
 
 class SocialNetwork:NSObject{
     var iconId:String?
+    var iconIdPressed:String?
     var title:String?
     
-    init(iconId:String, title: String) {
+    init(iconId:String,iconIdPressed:String, title: String) {
         self.iconId = iconId
         self.title = title
+        self.iconIdPressed = iconIdPressed
     }
     
     func getIconId()->String{
         return iconId!
+    }
+    func getIconIdPressed()->String{
+        return iconIdPressed!
     }
     func getTitle()->String{
         return title!

@@ -21,4 +21,6 @@ protocol RecordPresenterInterface{
     func pushShare()
     func pushShowHideColorFilters()
     func pushShowHideShaderFilters()
+    func showWarningOrientationImage()
+    func hideWarningOrientationImage()
 }

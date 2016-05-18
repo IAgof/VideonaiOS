@@ -15,12 +15,15 @@ class SharePresenter:NSObject,SharePresenterInterface{
     var controller: ShareInterface?
     var interactor: ShareInteractor?
     var recordWireframe: RecordWireframe?
+    var playerPresenter: PlayerPresenter?
     
     //LifeCicle
     func viewDidLoad() {
         controller!.createNavigationBar()
         controller!.registerNib()
         wireframe?.presentPlayerInterface()
+        
+        playerPresenter?.createVideoPlayer()
         self.getListData()
     }
     
@@ -36,6 +39,7 @@ class SharePresenter:NSObject,SharePresenterInterface{
         
         self.setListImageData((socialNetworks?.socialNetworkImageArray)!)
         self.setListTitleData((socialNetworks?.socialNetworkTitleArray)!)
+        self.setListImagePressedData((socialNetworks?.socialNetworkImagePressedArray)!)
     }
     
     func setListTitleData(titleArray:Array<String>){
@@ -44,5 +48,7 @@ class SharePresenter:NSObject,SharePresenterInterface{
     func setListImageData(imageArray:Array<UIImage>){
         controller?.setImageList(imageArray)
     }
-    
+    func setListImagePressedData(imageArray:Array<UIImage>){
+        controller?.setImagePressedList(imageArray)
+    }
 }

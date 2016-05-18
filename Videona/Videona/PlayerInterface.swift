@@ -10,5 +10,7 @@ import Foundation
 import UIKit
 
 protocol PlayerInterface {
-    
+ 
+    func createVideoPlayer()
+    func setPlayerMovieURL(movieURL:NSURL)
 }

@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -24,10 +23,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="qHu-jk-bZx" secondAttribute="bottom" id="3G9-YA-XrH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qHu-jk-bZx" secondAttribute="trailing" constant="-20" id="52Z-aZ-rSj"/>
-                            <constraint firstItem="qHu-jk-bZx" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="SPX-1Z-e9s"/>
-                            <constraint firstItem="qHu-jk-bZx" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="XWL-yf-6JD"/>
+                            <constraint firstItem="qHu-jk-bZx" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ScG-iw-cQ8"/>
+                            <constraint firstAttribute="trailing" secondItem="qHu-jk-bZx" secondAttribute="trailing" id="TgJ-Tb-3xj"/>
+                            <constraint firstItem="qHu-jk-bZx" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="db6-Kf-LrE"/>
+                            <constraint firstItem="qHu-jk-bZx" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="xqJ-nc-oFv"/>
                         </constraints>
                     </view>
                 </viewController>

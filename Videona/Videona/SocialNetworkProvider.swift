@@ -13,12 +13,22 @@ class SocialNetworkProvider:NSObject{
     func getSocialNetworks() ->Array<SocialNetwork>{
         var socialNetworks = Array<SocialNetwork>()
         
-        socialNetworks.append( SocialNetwork(iconId: "activity_record_icon_stop_normal", title: "Facebook"))
-        socialNetworks.append( SocialNetwork(iconId: "activity_record_icon_stop_normal", title: "Instagram"))
-        socialNetworks.append(SocialNetwork(iconId: "activity_record_icon_stop_normal", title: "Twitter"))
-        socialNetworks.append(SocialNetwork(iconId: "activity_record_icon_stop_normal", title: "Gmail"))
-        socialNetworks.append(SocialNetwork(iconId: "activity_record_icon_stop_normal", title: "Save to gallery"))
-
+        socialNetworks.append( SocialNetwork(iconId: "share_icon_facebook_normal",
+            iconIdPressed: "share_icon_facebook_pressed",
+            title: "Facebook"))
+        socialNetworks.append( SocialNetwork(iconId: "share_icon_instagram_normal",
+            iconIdPressed: "share_icon_instagram_pressed",
+            title: "Instagram"))
+        socialNetworks.append(SocialNetwork(iconId: "share_icon_twitter_norma",
+            iconIdPressed: "share_icon_twitter_pressed",
+            title: "Twitter"))
+        socialNetworks.append(SocialNetwork(iconId: "share_icon_whatsapp_normal",
+            iconIdPressed: "share_icon_whatsapp_pressed",
+            title: "Whatsapp"))
+        socialNetworks.append(SocialNetwork(iconId: "share_icon_youtube_norma",
+            iconIdPressed: "share_icon_youtube_pressed",
+            title: "Youtube"))
+        
         return socialNetworks
     }
 }

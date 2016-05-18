@@ -23,6 +23,7 @@ UITableViewDelegate, UITableViewDataSource{
     let reuseIdentifierCell = "shareCell"
     let shareNibName = "ShareCell"
     var listImages = Array<UIImage>()
+    var listImagesPressed = Array<UIImage>()
     var listTitles = Array<String>()
     
     //MARK: - Outlets
@@ -50,7 +51,9 @@ UITableViewDelegate, UITableViewDataSource{
     func setImageList(imageList: Array<UIImage>) {
         self.listImages = imageList
     }
-    
+    func setImagePressedList(imageList: Array<UIImage>) {
+        self.listImagesPressed = imageList
+    }
     func createNavigationBar(){
         // Create the navigation bar
         let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 44)) // Offset by 20 pixels vertically to take the status bar into account
@@ -102,7 +105,7 @@ UITableViewDelegate, UITableViewDataSource{
 
     //MARK: - UITableView Delegate
    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("You selected filter in position #\(indexPath.item)\n filter name: \(listTitles[indexPath.item])!")
+        print("You selected in position #\(indexPath.item)\n filter name: \(listTitles[indexPath.item])!")
         tableView.cellForRowAtIndexPath(indexPath)?.selected = false
     }
 }

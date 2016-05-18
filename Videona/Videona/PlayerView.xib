@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10116"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,18 +11,34 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlayerView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBA-hB-iqL">
-                    <rect key="frame" x="258" y="289" width="84" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TEy-Dd-gKH">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" red="0.30980392159999998" green="0.76470588240000004" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.75294117650000003" green="0.79215686269999996" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="SBA-hB-iqL" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Wbt-LI-Nm9"/>
-                <constraint firstItem="SBA-hB-iqL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="k5h-uJ-Zdr"/>
+                <constraint firstItem="TEy-Dd-gKH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Bg6-zn-Sbp"/>
+                <constraint firstItem="TEy-Dd-gKH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KWy-i0-meE"/>
+                <constraint firstItem="TEy-Dd-gKH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PU4-Rv-VRe"/>
+                <constraint firstAttribute="trailing" secondItem="TEy-Dd-gKH" secondAttribute="trailing" id="TE2-ns-ZLb"/>
+                <constraint firstItem="TEy-Dd-gKH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XsJ-hL-2mW"/>
+                <constraint firstAttribute="trailing" secondItem="TEy-Dd-gKH" secondAttribute="trailing" id="bvN-kr-82Y"/>
+                <constraint firstAttribute="bottom" secondItem="TEy-Dd-gKH" secondAttribute="bottom" id="iZS-L7-Owk"/>
+                <constraint firstAttribute="bottom" secondItem="TEy-Dd-gKH" secondAttribute="bottom" id="lKB-jA-ct5"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Bg6-zn-Sbp"/>
+                    <exclude reference="KWy-i0-meE"/>
+                    <exclude reference="TE2-ns-ZLb"/>
+                    <exclude reference="iZS-L7-Owk"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="videoPlayerView" destination="TEy-Dd-gKH" id="fTu-yB-vEo"/>
+            </connections>
+            <point key="canvasLocation" x="50" y="127"/>
         </view>
     </objects>
 </document>

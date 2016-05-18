@@ -10,5 +10,6 @@ import Foundation
 
 protocol SettingsPresenterInterface {
     
-   func pushBack()
+    func pushBack()
+    func viewDidLoad()
 }

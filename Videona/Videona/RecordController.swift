@@ -8,19 +8,25 @@
 
 import UIKit
 
-class RecordController: UIViewController,RecordViewInterface {
+class RecordController: UIViewController,RecordViewInterface,UINavigationControllerDelegate {
     
     //MARK: - Variables VIPER
     var eventHandler: RecordPresenter?
     
+    @IBOutlet weak var warningOrientationImage: UIImageView!
     
     //MARK: - View Config
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RecordController.checkOrientation), name: UIDeviceOrientationDidChangeNotification, object: nil)
     }
-    
+    func forceLandsCapeOnInit(){
+        //Force landscape mode
+        let value = UIInterfaceOrientation.LandscapeLeft.rawValue
+        UIDevice.currentDevice().setValue(value, forKey: "orientation")
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -29,8 +35,11 @@ class RecordController: UIViewController,RecordViewInterface {
     
     func configureView() {
         self.navigationController?.navigationBarHidden = true
+        self.forceLandsCapeOnInit()
     }
-    
+    override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
+        return UIInterfaceOrientation.LandscapeLeft
+    }
     //MARK: - Button Actions
     @IBAction func pushGoToSettings(sender: AnyObject) {
         eventHandler?.pushSettings()
@@ -100,11 +109,11 @@ class RecordController: UIViewController,RecordViewInterface {
     //    func showCameraEffectOverlay(List<Effect> effects)
     
     func lockScreenRotation(){
-        
+        warningOrientationImage.hidden = false
     }
     
     func unlockScreenRotation(){
-        
+        warningOrientationImage.hidden = true
     }
     
     func reStartScreenRotation(){
@@ -163,9 +172,52 @@ class RecordController: UIViewController,RecordViewInterface {
         
     }
     
+    func checkOrientation(){
+        var text=""
+        switch UIDevice.currentDevice().orientation{
+        case .Portrait:
+            text="Portrait"
+            eventHandler?.showWarningOrientationImage()
+        case .PortraitUpsideDown:
+            text="PortraitUpsideDown"
+            eventHandler?.showWarningOrientationImage()
+        case .LandscapeLeft:
+            text="LandscapeLeft"
+            eventHandler?.hideWarningOrientationImage()
+        case .LandscapeRight:
+            text="LandscapeRight"
+            eventHandler?.hideWarningOrientationImage()
+        default:
+            text="Another"
+        }
+//        NSLog("You have moved: \(text)")
+    }
     //MARK: - Navigation
     func navigateToNewViewController(controller: UIViewController) {
         self.presentViewController(controller, animated: true, completion: nil)
+    }
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+            return UIInterfaceOrientationMask.Landscape
+    }
+    override func shouldAutorotate() -> Bool {
+        return true
+    }
+    
+}
+extension UINavigationController {
+    
+    override public func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        if let controller = visibleViewController{
+            print("controller = visibleViewController")
+            return controller.supportedInterfaceOrientations()
+        }else{
+            print("ELSE -- controller = visibleViewController")
+            return UIInterfaceOrientationMask.Portrait
+        }
+    }
+    public override func shouldAutorotate() -> Bool {
+        return visibleViewController!.shouldAutorotate()
     }
 }
 

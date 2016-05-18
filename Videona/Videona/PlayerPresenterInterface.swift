@@ -10,6 +10,7 @@ import Foundation
 
 protocol PlayerPresenterInterface {
     
+    func createVideoPlayer()
 }
 
 

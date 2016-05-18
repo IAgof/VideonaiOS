@@ -41,7 +41,11 @@ class RecordPresenter: NSObject, RecordPresenterInterface{
             shaderFilterViewIsShowin = false
             
             self.recordWireframe?.dismissFilterListInterface()
-            self.recordWireframe?.presentColorFilterListInterface()
+            //Wait to hide filterlist
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(500 * NSEC_PER_MSEC)), dispatch_get_main_queue(), {
+                self.recordWireframe?.presentColorFilterListInterface()
+                });
+
             self.colorFilterViewIsShowin = true
             return
         }else if(colorFilterViewIsShowin){
@@ -55,12 +59,15 @@ class RecordPresenter: NSObject, RecordPresenterInterface{
             return
         }
     }
-    
+
     func pushShowHideShaderFilters() {
         if(colorFilterViewIsShowin){
             colorFilterViewIsShowin = false
             recordWireframe?.dismissFilterListInterface()
-            self.recordWireframe?.presentShaderFilterListInterface()
+            //Wait to hide filterlist
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(500 * NSEC_PER_MSEC)), dispatch_get_main_queue(), {
+                self.recordWireframe?.presentShaderFilterListInterface()
+            });
             self.shaderFilterViewIsShowin = true
             return
         }else if(shaderFilterViewIsShowin){
@@ -73,5 +80,11 @@ class RecordPresenter: NSObject, RecordPresenterInterface{
             shaderFilterViewIsShowin = true
             return
         }
+    }
+    func showWarningOrientationImage(){
+        output?.lockScreenRotation()
+    }
+    func hideWarningOrientationImage(){
+        output?.unlockScreenRotation()
     }
 }

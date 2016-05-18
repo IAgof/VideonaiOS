@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ShareInteractorInterface {
-    func findSocialNetworks()
+    func findSocialNetworks()->(socialNetworkTitleArray:Array<String>, socialNetworkImageArray:Array<UIImage>,socialNetworkImagePressedArray:Array<UIImage>)
 }
