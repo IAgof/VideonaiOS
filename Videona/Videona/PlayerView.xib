@@ -13,19 +13,32 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TEy-Dd-gKH">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                    <color key="backgroundColor" red="0.2277473364" green="1" blue="0.1442887309" alpha="0.56664870690000002" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.30980392159999998" green="0.76470588240000004" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.75294117650000003" green="0.79215686269999996" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="TEy-Dd-gKH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Bg6-zn-Sbp"/>
                 <constraint firstItem="TEy-Dd-gKH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KWy-i0-meE"/>
+                <constraint firstItem="TEy-Dd-gKH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PU4-Rv-VRe"/>
                 <constraint firstAttribute="trailing" secondItem="TEy-Dd-gKH" secondAttribute="trailing" id="TE2-ns-ZLb"/>
+                <constraint firstItem="TEy-Dd-gKH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XsJ-hL-2mW"/>
+                <constraint firstAttribute="trailing" secondItem="TEy-Dd-gKH" secondAttribute="trailing" id="bvN-kr-82Y"/>
                 <constraint firstAttribute="bottom" secondItem="TEy-Dd-gKH" secondAttribute="bottom" id="iZS-L7-Owk"/>
+                <constraint firstAttribute="bottom" secondItem="TEy-Dd-gKH" secondAttribute="bottom" id="lKB-jA-ct5"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Bg6-zn-Sbp"/>
+                    <exclude reference="KWy-i0-meE"/>
+                    <exclude reference="TE2-ns-ZLb"/>
+                    <exclude reference="iZS-L7-Owk"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="videoPlayerView" destination="TEy-Dd-gKH" id="fTu-yB-vEo"/>
             </connections>
+            <point key="canvasLocation" x="50" y="127"/>
         </view>
     </objects>
 </document>

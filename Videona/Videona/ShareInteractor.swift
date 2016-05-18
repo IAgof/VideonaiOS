@@ -11,13 +11,14 @@ import UIKit
 
 class ShareInteractor: NSObject,ShareInteractorInterface {
     
-    func findSocialNetworks()->(socialNetworkTitleArray:Array<String>, socialNetworkImageArray:Array<UIImage>){
+    func findSocialNetworks()->(socialNetworkTitleArray:Array<String>, socialNetworkImageArray:Array<UIImage>,socialNetworkImagePressedArray:Array<UIImage>){
         let socialNetworks = SocialNetworkProvider().getSocialNetworks()
         
         let socialNetworkImage = self.setArraySocialNetworksUIImage(socialNetworks)
+        let socialNetworkImagePressed = self.setArraySocialNetworksUIImage(socialNetworks)
         let socialNetworkTitle = self.setArraySocialNetworksTitle(socialNetworks)
         
-        return (socialNetworkTitle,socialNetworkImage)
+        return (socialNetworkTitle,socialNetworkImage,socialNetworkImagePressed)
     }
     
     func setArraySocialNetworksTitle(sNArray:Array<SocialNetwork>)->Array<String>{
@@ -39,5 +40,14 @@ class ShareInteractor: NSObject,ShareInteractorInterface {
         
         return imageArray
     }
-    
+    func setArraySocialNetworksUIImagePressed(sNArray:Array<SocialNetwork>)->Array<UIImage>{
+        var imageArray = Array<UIImage>()
+        
+        for imageName in sNArray{
+            let image = UIImage.init(named: imageName.getIconIdPressed())
+            imageArray.append(image!)
+        }
+        
+        return imageArray
+    }
 }

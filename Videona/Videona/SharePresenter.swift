@@ -39,6 +39,7 @@ class SharePresenter:NSObject,SharePresenterInterface{
         
         self.setListImageData((socialNetworks?.socialNetworkImageArray)!)
         self.setListTitleData((socialNetworks?.socialNetworkTitleArray)!)
+        self.setListImagePressedData((socialNetworks?.socialNetworkImagePressedArray)!)
     }
     
     func setListTitleData(titleArray:Array<String>){
@@ -47,5 +48,7 @@ class SharePresenter:NSObject,SharePresenterInterface{
     func setListImageData(imageArray:Array<UIImage>){
         controller?.setImageList(imageArray)
     }
-    
+    func setListImagePressedData(imageArray:Array<UIImage>){
+        controller?.setImagePressedList(imageArray)
+    }
 }
