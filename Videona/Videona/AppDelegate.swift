@@ -47,6 +47,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             appDependencies.installRecordToRootViewControllerIntoWindow(window!)
         }
     }
-
 }
 

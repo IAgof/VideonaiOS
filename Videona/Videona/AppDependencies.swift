@@ -85,6 +85,7 @@ class AppDependencies {
         filterListPresenter.wireframe = filterListWireframe
         filterListPresenter.recordWireframe = recordWireframe
         filterListPresenter.interactor = filterListInteractor
+        filterListPresenter.recordPresenter = recordPresenter
         
         filterListWireframe.filterListPresenter = filterListPresenter
         filterListWireframe.rootWireframe = rootWireframe

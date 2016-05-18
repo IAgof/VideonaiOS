@@ -1118,9 +1118,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = Videona/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Videona.Kamarada;
+				PRODUCT_BUNDLE_IDENTIFIER = com.videona.videona;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b7bf3e75-0f70-4b41-988e-112cb77127d9";
+				PROVISIONING_PROFILE = "e0f5a145-4063-4cf8-a2fe-042239f6cdb8";
 			};
 			name = Debug;
 		};
@@ -1132,9 +1132,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = Videona/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Videona.Kamarada;
+				PRODUCT_BUNDLE_IDENTIFIER = com.videona.videona;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b7bf3e75-0f70-4b41-988e-112cb77127d9";
+				PROVISIONING_PROFILE = "e0f5a145-4063-4cf8-a2fe-042239f6cdb8";
 			};
 			name = Release;
 		};

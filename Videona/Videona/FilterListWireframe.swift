@@ -64,7 +64,6 @@ class FilterListWireframe : NSObject{//, UIViewAnimationTransition {
         FilterListDismissalTransition().animateTransition(presentedView!, completion: { finished in
             print("Filter list wireframe dismissFilterListInterface")
             self.presentedView?.removeFromSuperview()
-            completion!(true)
         })
     }
     
