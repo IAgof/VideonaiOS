@@ -13,10 +13,9 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TEy-Dd-gKH">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                    <color key="backgroundColor" red="0.30980392159999998" green="0.76470588240000004" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.75294117650000003" green="0.79215686269999996" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="TEy-Dd-gKH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Bg6-zn-Sbp"/>
                 <constraint firstItem="TEy-Dd-gKH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KWy-i0-meE"/>
