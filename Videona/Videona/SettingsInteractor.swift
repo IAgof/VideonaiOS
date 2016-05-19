@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class SettingsInteractor: NSObject,SettingsInteractorInterface {
+    var orderArray = Dictionary<Int,String>()
     
     func findSettings()->(Array<String>,Array<Array<String>>){
     
@@ -20,13 +21,15 @@ class SettingsInteractor: NSObject,SettingsInteractorInterface {
         return settingsContent
     }
     
-    func setSettingsContent(sNArray:Array<SettingsContent>)->(Array<String>,Array<Array<String>>){
+    func setSettingsContent(settingsContentArray:Array<SettingsContent>)->(Array<String>,Array<Array<String>>){
         
         var settingsDictionary = Dictionary<String,Array<String>>()
-                
+        
+        orderArray = self.getOrderArrays(settingsContentArray)
+        
         var items = Array<String>()
 
-        for settingsItem in sNArray{
+        for settingsItem in settingsContentArray{
             let section = settingsItem.getSection()
             
             if settingsDictionary.indexForKey(section) == nil{//First insertion
@@ -42,27 +45,46 @@ class SettingsInteractor: NSObject,SettingsInteractorInterface {
         
         print("setSettingsContent: -\n \(settingsDictionary)")
         
-        let returnSections = self.setSections(settingsDictionary)
+        let returnSectionsAndTitles = self.setSectionsAndTitles(settingsDictionary)
         
-        var returnTitles = Array<Array<String>>()
         
-        for array in settingsDictionary{
-            returnTitles.append(array.1)
-        }
-        
-        return (returnSections,returnTitles)
+        return returnSectionsAndTitles
     }
     
-    func setSections(dictionary: Dictionary<String,Array<String>>)->Array<String>{
+    func setSectionsAndTitles(dictionary: Dictionary<String,Array<String>>)->(Array<String>,Array<Array<String>>){
         var sections = Array<String>()
+        var titles = Array<Array<String>>()
+
+
+        for var i = 0; i <= orderArray.count; i += 1 {
+            if let key = orderArray[i]{
+                if let titleArray = dictionary[key]{
+                    sections.append(key)
+                    titles.append(titleArray)
+                }
+            }
+        }
+        print("setSections: -\n \(sections)")
+        return (sections,titles)
+    }
+    
+    func getOrderArrays(settingsContent:Array<SettingsContent>)->Dictionary<Int,String>{
+        var orderByKey = Dictionary<Int,String>()
         
-        for sectionDic in dictionary{
-            sections.append(sectionDic.0)
+        var prevSection = ""
+        for setting in settingsContent{
+           let actualSection = setting.getSection()
+            if actualSection != prevSection{
+               prevSection = actualSection
+                orderByKey[setting.getPriority()] = actualSection
+            }
         }
         
-        print("setSections: -\n \(sections)")
-        return sections
+//        print("getOrderArrays\n \(orderByKey)")
+        return orderByKey
     }
+    
+    
     
 //    func setSections(sNArray:Array<SettingsContent>)->Array<String>{
 //        var sections = Array<String>()

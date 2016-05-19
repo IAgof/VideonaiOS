@@ -12,17 +12,20 @@ class SettingsContent:NSObject{
     var section:String?
     var title:String?
     var subTitle:String?
+    var priority:Int!
     
-    init(title:String, subTitle:String,section:String) {
+    init(title:String, subTitle:String,section:String,priority:Int) {
         self.title = title
         self.subTitle = subTitle
         self.section = section
+        self.priority = priority
     }
     
-    init(title:String, section:String) {
+    init(title:String, section:String,priority:Int) {
         self.title = title
         self.subTitle = ""
         self.section = section
+        self.priority = priority
     }
     
     
@@ -44,5 +47,8 @@ class SettingsContent:NSObject{
     
     func getSection()->String{
         return section!
+    }
+    func getPriority()->Int{
+        return priority!
     }
 }
