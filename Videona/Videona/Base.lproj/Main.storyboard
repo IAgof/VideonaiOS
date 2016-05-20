@@ -316,75 +316,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xuX-Ih-0u8">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5d-6Y-9Tg">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="Tfq-Pk-qt1"/>
+                                    <navigationItem title="Settings" id="RLq-yT-3zu">
+                                        <barButtonItem key="leftBarButtonItem" image="activity_edit_back_normal" id="lMd-Eu-bsL">
+                                            <connections>
+                                                <action selector="pushBackBarButton:" destination="emM-0d-dkm" id="Nm8-Bh-2vU"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BK7-1P-oLh">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FKW-HS-Fdr">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsCell" id="6pQ-WE-Dns">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="91e-dS-he8">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6pQ-WE-Dns" id="5zz-OB-SA2">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="91e-dS-he8" id="i8q-NB-glI">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="emM-0d-dkm" id="Oid-No-wii"/>
-                                    <outlet property="delegate" destination="emM-0d-dkm" id="AVJ-2o-g0Y"/>
+                                    <outlet property="dataSource" destination="emM-0d-dkm" id="EHM-kB-n9q"/>
+                                    <outlet property="delegate" destination="emM-0d-dkm" id="nuU-GJ-xHQ"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="xuX-Ih-0u8" secondAttribute="trailing" constant="-20" id="D0E-eE-JGo"/>
-                            <constraint firstItem="ToU-wA-fiQ" firstAttribute="top" secondItem="BK7-1P-oLh" secondAttribute="bottom" id="DQv-Br-9Qm"/>
-                            <constraint firstItem="BK7-1P-oLh" firstAttribute="leading" secondItem="ENy-FY-AaG" secondAttribute="leadingMargin" constant="-20" id="JrL-Ek-AWe"/>
-                            <constraint firstItem="BK7-1P-oLh" firstAttribute="top" secondItem="xuX-Ih-0u8" secondAttribute="bottom" constant="20" id="OOt-tO-qrg"/>
-                            <constraint firstItem="xuX-Ih-0u8" firstAttribute="leading" secondItem="ENy-FY-AaG" secondAttribute="leadingMargin" constant="-20" id="Ow1-41-U74"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="BK7-1P-oLh" secondAttribute="trailing" constant="-20" id="a7i-7x-HhW"/>
-                            <constraint firstItem="xuX-Ih-0u8" firstAttribute="top" secondItem="ENy-FY-AaG" secondAttribute="topMargin" id="yB8-GB-Dze"/>
+                            <constraint firstItem="FKW-HS-Fdr" firstAttribute="leading" secondItem="ENy-FY-AaG" secondAttribute="leadingMargin" constant="-20" id="6d7-bD-ghZ"/>
+                            <constraint firstItem="ToU-wA-fiQ" firstAttribute="top" secondItem="FKW-HS-Fdr" secondAttribute="bottom" id="7Fl-iy-3ef"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FKW-HS-Fdr" secondAttribute="trailing" constant="-20" id="Aim-Tj-0sb"/>
+                            <constraint firstItem="h5d-6Y-9Tg" firstAttribute="top" secondItem="El6-KS-fen" secondAttribute="bottom" id="MMz-qq-hef"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="h5d-6Y-9Tg" secondAttribute="trailing" constant="-20" id="YqN-R7-bhK"/>
+                            <constraint firstItem="h5d-6Y-9Tg" firstAttribute="leading" secondItem="ENy-FY-AaG" secondAttribute="leadingMargin" constant="-20" id="n0t-DE-DOQ"/>
+                            <constraint firstItem="FKW-HS-Fdr" firstAttribute="top" secondItem="h5d-6Y-9Tg" secondAttribute="bottom" id="w35-kj-R7g"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="xuX-Ih-0u8"/>
-                                <exclude reference="BK7-1P-oLh"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="DQv-Br-9Qm"/>
-                                <exclude reference="D0E-eE-JGo"/>
-                                <exclude reference="Ow1-41-U74"/>
-                                <exclude reference="yB8-GB-Dze"/>
-                                <exclude reference="JrL-Ek-AWe"/>
-                                <exclude reference="OOt-tO-qrg"/>
-                                <exclude reference="a7i-7x-HhW"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=compact">
-                            <mask key="subviews">
-                                <include reference="xuX-Ih-0u8"/>
-                                <include reference="BK7-1P-oLh"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="DQv-Br-9Qm"/>
-                                <include reference="D0E-eE-JGo"/>
-                                <include reference="Ow1-41-U74"/>
-                                <include reference="yB8-GB-Dze"/>
-                                <include reference="JrL-Ek-AWe"/>
-                                <include reference="OOt-tO-qrg"/>
-                                <include reference="a7i-7x-HhW"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
-                        <outlet property="settingsTableView" destination="BK7-1P-oLh" id="5I2-FX-pU2"/>
+                        <outlet property="settingsTableView" destination="FKW-HS-Fdr" id="m2g-im-6jO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyg-Y8-Mcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -515,14 +490,29 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wuH-v3-UEb">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Share video" id="DME-9U-oFj">
+                                        <barButtonItem key="leftBarButtonItem" image="activity_edit_back_normal" id="1LM-Sq-yPf">
+                                            <connections>
+                                                <action selector="pushBackBarButton:" destination="0Ip-P7-Gfh" id="8np-Yc-5iV"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aKb-7v-cwk" firstAttribute="top" secondItem="dmg-gd-HYD" secondAttribute="bottom" id="1By-LW-1mH"/>
                             <constraint firstItem="Bjj-Rq-Koz" firstAttribute="leading" secondItem="X5r-Pd-Bmm" secondAttribute="leadingMargin" constant="-20" id="44i-CG-IoU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wuH-v3-UEb" secondAttribute="trailing" constant="-20" id="6m7-fq-40n"/>
                             <constraint firstItem="dmg-gd-HYD" firstAttribute="leading" secondItem="Bjj-Rq-Koz" secondAttribute="trailing" id="Bou-S2-hoF"/>
                             <constraint firstItem="Bjj-Rq-Koz" firstAttribute="top" secondItem="H0h-dv-FaV" secondAttribute="bottom" constant="44" id="Brr-nG-jef"/>
+                            <constraint firstItem="wuH-v3-UEb" firstAttribute="leading" secondItem="X5r-Pd-Bmm" secondAttribute="leadingMargin" constant="-20" id="GkH-rW-bu6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dmg-gd-HYD" secondAttribute="trailing" constant="-20" id="RsF-p6-as4"/>
+                            <constraint firstItem="wuH-v3-UEb" firstAttribute="top" secondItem="H0h-dv-FaV" secondAttribute="bottom" id="Voy-dH-O8e"/>
                             <constraint firstItem="dmg-gd-HYD" firstAttribute="top" secondItem="H0h-dv-FaV" secondAttribute="bottom" constant="44" id="Vt1-Qw-wc1"/>
                             <constraint firstItem="aKb-7v-cwk" firstAttribute="top" secondItem="Bjj-Rq-Koz" secondAttribute="bottom" id="k0s-TH-S2h"/>
                         </constraints>
@@ -532,13 +522,13 @@
                                 <exclude reference="Bjj-Rq-Koz"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="1By-LW-1mH"/>
-                                <exclude reference="k0s-TH-S2h"/>
                                 <exclude reference="44i-CG-IoU"/>
                                 <exclude reference="Brr-nG-jef"/>
                                 <exclude reference="Bou-S2-hoF"/>
                                 <exclude reference="RsF-p6-as4"/>
                                 <exclude reference="Vt1-Qw-wc1"/>
+                                <exclude reference="1By-LW-1mH"/>
+                                <exclude reference="k0s-TH-S2h"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -547,13 +537,13 @@
                                 <include reference="Bjj-Rq-Koz"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="1By-LW-1mH"/>
-                                <include reference="k0s-TH-S2h"/>
                                 <include reference="44i-CG-IoU"/>
                                 <include reference="Brr-nG-jef"/>
                                 <include reference="Bou-S2-hoF"/>
                                 <include reference="RsF-p6-as4"/>
                                 <include reference="Vt1-Qw-wc1"/>
+                                <include reference="1By-LW-1mH"/>
+                                <include reference="k0s-TH-S2h"/>
                             </mask>
                         </variation>
                     </view>
@@ -1260,6 +1250,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="activity_edit_back_normal" width="18" height="18"/>
         <image name="activity_record_change_camera_normal" width="32" height="34"/>
         <image name="activity_record_drawer_normal" width="40" height="11"/>
         <image name="activity_record_filter_normal" width="34" height="35"/>

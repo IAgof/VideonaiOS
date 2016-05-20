@@ -22,7 +22,6 @@ class SettingsPresenter:NSObject,SettingsPresenterInterface{
         controller?.navigateToNewViewController(recordViewController!)
     }
     func viewDidLoad() {
-        controller?.createNavigationBar()
         controller?.registerClass()
         self.getListData()
     }

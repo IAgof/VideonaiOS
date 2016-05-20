@@ -19,7 +19,6 @@ class SharePresenter:NSObject,SharePresenterInterface{
     
     //LifeCicle
     func viewDidLoad() {
-        controller!.createNavigationBar()
         controller!.registerNib()
         wireframe?.presentPlayerInterface()
         
