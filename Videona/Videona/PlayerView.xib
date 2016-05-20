@@ -2,41 +2,16 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10116"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PlayerView" customModule="Videona" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="185"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TEy-Dd-gKH">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                </view>
-            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="TEy-Dd-gKH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Bg6-zn-Sbp"/>
-                <constraint firstItem="TEy-Dd-gKH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KWy-i0-meE"/>
-                <constraint firstItem="TEy-Dd-gKH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PU4-Rv-VRe"/>
-                <constraint firstAttribute="trailing" secondItem="TEy-Dd-gKH" secondAttribute="trailing" id="TE2-ns-ZLb"/>
-                <constraint firstItem="TEy-Dd-gKH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XsJ-hL-2mW"/>
-                <constraint firstAttribute="trailing" secondItem="TEy-Dd-gKH" secondAttribute="trailing" id="bvN-kr-82Y"/>
-                <constraint firstAttribute="bottom" secondItem="TEy-Dd-gKH" secondAttribute="bottom" id="iZS-L7-Owk"/>
-                <constraint firstAttribute="bottom" secondItem="TEy-Dd-gKH" secondAttribute="bottom" id="lKB-jA-ct5"/>
-            </constraints>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="Bg6-zn-Sbp"/>
-                    <exclude reference="KWy-i0-meE"/>
-                    <exclude reference="TE2-ns-ZLb"/>
-                    <exclude reference="iZS-L7-Owk"/>
-                </mask>
-            </variation>
-            <connections>
-                <outlet property="videoPlayerView" destination="TEy-Dd-gKH" id="fTu-yB-vEo"/>
-            </connections>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="50" y="127"/>
         </view>
     </objects>

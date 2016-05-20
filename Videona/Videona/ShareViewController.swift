@@ -28,7 +28,7 @@ UITableViewDelegate, UITableViewDataSource{
     
     //MARK: - Outlets
     @IBOutlet weak var shareTableView: UITableView!
-    @IBOutlet weak var playerView: UIView!
+    @IBOutlet weak var playerView: PlayerView!
     
     
     override func viewDidLoad() {

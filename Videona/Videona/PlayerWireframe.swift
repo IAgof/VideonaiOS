@@ -14,25 +14,21 @@ let playerViewIdentifier = "PlayerView"
 class PlayerWireframe : NSObject{//, UIViewAnimationTransition {
     
     var playerPresenter : PlayerPresenter?
-    var presentedView : UIView?
+    var presentedView : PlayerView?
     var rootWireframe : RootWireframe?
     
     func presentPlayerInterfaceFromViewController(viewController: UIViewController) {
-        let newView = playerView()
-        
-        newView.eventHandler = playerPresenter
-        playerPresenter?.controller = newView
-        
-        playerPresenter?.configureUserInterfaceForPresentation(newView)
         
         if  viewController is ShareViewController
         {
             let shareViewController = viewController as! ShareViewController
-            print("presentPlayerInterfaceFromViewController \n shareViewController.playerView.bounds = \(shareViewController.playerView.bounds)")
-            newView.frame = shareViewController.playerView.frame
-            shareViewController.playerView.addSubview(newView)
+            let playerView = shareViewController.playerView
             
-            presentedView = newView
+            playerView.eventHandler = playerPresenter
+            playerPresenter?.controller = playerView
+            
+            playerPresenter?.configureUserInterfaceForPresentation(playerView)
+            presentedView = shareViewController.playerView
         }
 
     }

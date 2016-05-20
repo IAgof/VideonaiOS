@@ -390,15 +390,12 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HDf-Fy-I5e">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HDf-Fy-I5e" customClass="PlayerView" customModule="Videona" customModuleProvider="target">
                                 <rect key="frame" x="193" y="145" width="240" height="128"/>
                                 <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HDf-Fy-I5e" secondAttribute="height" multiplier="16:9" id="8Is-SN-lyb"/>
                                 </constraints>
-                                <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="64" width="352" height="198"/>
-                                </variation>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h18-mE-dqd">
                                 <rect key="frame" x="193" y="359" width="240" height="128"/>
@@ -491,7 +488,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="playerView" destination="HDf-Fy-I5e" id="NCV-xi-41W"/>
+                        <outlet property="playerView" destination="HDf-Fy-I5e" id="uwo-BX-4hO"/>
                         <outlet property="shareTableView" destination="h18-mE-dqd" id="8ex-hy-Ecf"/>
                     </connections>
                 </viewController>
