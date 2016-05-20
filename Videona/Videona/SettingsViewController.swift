@@ -39,10 +39,6 @@ class SettingsViewController: UIViewController,SettingsInterface ,
         eventHandler?.pushBack()
     }
     
-    func navigateToNewViewController(controller: UIViewController) {
-        self.presentViewController(controller, animated: true, completion: nil)
-    }
-    
     func setTitleList(titleList: Array<Array<String>>) {
         self.items = titleList
     }

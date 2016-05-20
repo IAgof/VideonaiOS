@@ -58,10 +58,7 @@ UITableViewDelegate, UITableViewDataSource{
     @IBAction func pushBackBarButton(sender: AnyObject) {
         eventHandler?.pushBack()
     }
-    func navigateToNewViewController(controller: UIViewController) {
-        self.presentViewController(controller, animated: true, completion: nil)
-    }
-    
+
     //MARK: - UITableView Datasource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        

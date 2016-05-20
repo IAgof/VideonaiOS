@@ -13,7 +13,7 @@ class IntroPresenter:NSObject, IntroPresenterInterface {
     
     //MARK: - VIPER
     var introWireframe: IntroWireframe?
-    var controller: IntroViewInterface?
+    var controller: IntroViewController?
     var recordWireframe: RecordWireframe?
     
     //MARK: - Constants
@@ -46,9 +46,7 @@ class IntroPresenter:NSObject, IntroPresenterInterface {
     
     func pushSkip(){
         print("Intro presenter onSkipPush")
-       let nextViewController = recordWireframe?.RecordViewControllerFromStoryboard()
-        
-        controller?.navigateToNewViewController(nextViewController!)
+       recordWireframe?.presentRecordInterfaceFromViewController(controller!)
     }
     
 }

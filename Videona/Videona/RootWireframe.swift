@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class RootWireframe : NSObject {
+    
     func showRootViewController(viewController: UIViewController, inWindow: UIWindow) {
         let navigationController = navigationControllerFromWindow(inWindow)
         navigationController.viewControllers = [viewController]

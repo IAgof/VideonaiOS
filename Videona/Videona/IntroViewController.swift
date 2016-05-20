@@ -137,8 +137,6 @@ IntroViewInterface {
         return currentIndex!
     }
     
-    
-    
     //MARK: - Interface
     func goToNextView() {
         
@@ -150,10 +148,6 @@ IntroViewInterface {
                                                    direction: UIPageViewControllerNavigationDirection.Forward,
                                                    animated: true,
                                                    completion: nil)
-    }
-        
-    func navigateToNewViewController(controller: UIViewController) {
-        self.presentViewController(controller, animated: true, completion: nil)
     }
     
     func changeNextFinishButtonTitle(title:String){

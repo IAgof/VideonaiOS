@@ -11,7 +11,6 @@ import UIKit
 
 protocol IntroViewInterface {
     func goToNextView()
-    func navigateToNewViewController(controller: UIViewController)
     func changeNextFinishButtonTitle(title:String)
     func updateCurrentPage(page:Int)
 }

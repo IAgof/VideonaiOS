@@ -12,7 +12,7 @@ import UIKit
 class SharePresenter:NSObject,SharePresenterInterface{
     
     var wireframe: ShareWireframe?
-    var controller: ShareInterface?
+    var controller: ShareViewController?
     var interactor: ShareInteractor?
     var recordWireframe: RecordWireframe?
     var playerPresenter: PlayerPresenter?
@@ -28,9 +28,7 @@ class SharePresenter:NSObject,SharePresenterInterface{
     
     func pushBack() {
         print("Navigator presenter pushEdit")
-        let recordViewController = recordWireframe?.RecordViewControllerFromStoryboard()
-        
-        controller?.navigateToNewViewController(recordViewController!)
+        recordWireframe?.presentRecordInterfaceFromViewController(controller!)
     }
     
     func getListData (){

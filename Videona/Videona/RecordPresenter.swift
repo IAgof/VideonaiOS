@@ -11,7 +11,7 @@ import Foundation
 class RecordPresenter: NSObject, RecordPresenterInterface{
     
     //MARK: - Variables VIPER
-    var output: RecordViewInterface?
+    var controller: RecordController?
     var recordWireframe: RecordWireframe?
     var settingsWireframe: SettingsWireframe?
     var shareWireframe: ShareWireframe?
@@ -24,16 +24,12 @@ class RecordPresenter: NSObject, RecordPresenterInterface{
     
     func pushSettings() {
         print("Record presenter pushSettings")
-        let navigatorViewController = settingsWireframe?.settingsViewControllerFromStoryboard()
-        
-        output?.navigateToNewViewController(navigatorViewController!)
+        settingsWireframe?.presentSettingsInterfaceFromViewController(controller!)
     }
     
     func pushShare() {
         print("Record presenter pushShare")
-        let navigatorViewController = shareWireframe?.shareViewControllerFromStoryboard()
-        
-        output?.navigateToNewViewController(navigatorViewController!)
+        shareWireframe?.presentRecordInterfaceFromViewController(controller!)
     }
     
     func pushShowHideColorFilters() {
@@ -82,9 +78,9 @@ class RecordPresenter: NSObject, RecordPresenterInterface{
         }
     }
     func showWarningOrientationImage(){
-        output?.lockScreenRotation()
+        controller?.lockScreenRotation()
     }
     func hideWarningOrientationImage(){
-        output?.unlockScreenRotation()
+        controller?.unlockScreenRotation()
     }
 }

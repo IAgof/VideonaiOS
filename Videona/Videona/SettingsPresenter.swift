@@ -11,15 +11,13 @@ import Foundation
 class SettingsPresenter:NSObject,SettingsPresenterInterface{
     
     var wireframe: SettingsWireframe?
-    var controller: SettingsInterface?
+    var controller: SettingsViewController?
     var recordWireframe: RecordWireframe?
     var interactor: SettingsInteractor?
    
     func pushBack() {
         print("Navigator presenter pushEdit")
-        let recordViewController = recordWireframe?.RecordViewControllerFromStoryboard()
-        
-        controller?.navigateToNewViewController(recordViewController!)
+        recordWireframe?.presentRecordInterfaceFromViewController(controller!)
     }
     func viewDidLoad() {
         controller?.registerClass()

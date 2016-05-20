@@ -26,7 +26,15 @@ class ShareWireframe : NSObject {
         
         rootWireframe?.showRootViewController(viewController, inWindow: window)
     }
-    
+    func presentRecordInterfaceFromViewController(prevController:UIViewController) {
+        let viewController = shareViewControllerFromStoryboard()
+        
+        viewController.eventHandler = sharePresenter
+        shareViewController = viewController
+        sharePresenter?.controller = viewController
+        
+        prevController.presentViewController(viewController, animated: true, completion: nil)
+    }
     func shareViewControllerFromStoryboard() -> ShareViewController {
         let storyboard = mainStoryboard()
         let viewController = storyboard.instantiateViewControllerWithIdentifier(shareViewControllerIdentifier) as! ShareViewController

@@ -22,9 +22,19 @@ class RecordWireframe : NSObject {
         
         viewController.eventHandler = recordPresenter
         recordViewController = viewController
-        recordPresenter?.output = viewController
+        recordPresenter?.controller = viewController
         
         rootWireframe?.showRootViewController(viewController, inWindow: window)
+    }
+    
+    func presentRecordInterfaceFromViewController(prevController:UIViewController) {
+        let viewController = RecordViewControllerFromStoryboard()
+        
+        viewController.eventHandler = recordPresenter
+        recordViewController = viewController
+        recordPresenter?.controller = viewController
+        
+        prevController.presentViewController(viewController, animated: true, completion: nil)
     }
     
     func RecordViewControllerFromStoryboard() -> RecordController {
@@ -33,7 +43,7 @@ class RecordWireframe : NSObject {
         
         viewController.eventHandler = recordPresenter
         recordViewController = viewController
-        recordPresenter?.output = viewController
+        recordPresenter?.controller = viewController
         
         return viewController
     }

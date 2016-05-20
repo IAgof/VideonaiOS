@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 
 protocol RecordViewInterface {
-    func navigateToNewViewController(controller: UIViewController)
-
     func showRecordButton()
     
     func showStopButton()

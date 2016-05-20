@@ -26,6 +26,16 @@ class SettingsWireframe : NSObject {
         rootWireframe?.showRootViewController(viewController, inWindow: window)
     }
     
+    func presentSettingsInterfaceFromViewController(prevController:UIViewController){
+        let viewController = settingsViewControllerFromStoryboard()
+        viewController.eventHandler = settingsPresenter
+        
+        settingsViewController = viewController
+        settingsPresenter?.controller = viewController
+        
+        prevController.presentViewController(viewController, animated: true, completion: nil)
+    }
+    
     func settingsViewControllerFromStoryboard() -> SettingsViewController {
         let storyboard = mainStoryboard()
         let viewController = storyboard.instantiateViewControllerWithIdentifier(settingsViewControllerIdentifier) as! SettingsViewController

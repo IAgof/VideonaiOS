@@ -13,7 +13,6 @@ class AppDependencies {
     
     var recordWireframe = RecordWireframe()
     var introWireframe = IntroWireframe()
-    var navigatorWireframe = NavigationWireframe()
     var settingsWireframe = SettingsWireframe()
     var shareWireframe = ShareWireframe()
     var filterListWireframe = FilterListWireframe()
@@ -26,7 +25,6 @@ class AppDependencies {
         let rootWireframe = RootWireframe()
         let introPresenter = IntroPresenter()
         let recordPresenter = RecordPresenter()
-        let navigatorPresenter = NavigationPresenter()
     
         let settingsPresenter = SettingsPresenter()
         let settingsInteractor = SettingsInteractor()
@@ -51,17 +49,10 @@ class AppDependencies {
         recordPresenter.recordWireframe = recordWireframe
         recordPresenter.settingsWireframe = settingsWireframe
         recordPresenter.shareWireframe = shareWireframe
-        
+
         recordWireframe.recordPresenter = recordPresenter
         recordWireframe.rootWireframe = rootWireframe
         recordWireframe.filterListWireframe = filterListWireframe
-        
-        //NAVIGATOR MODULE
-        navigatorPresenter.wireframe = navigatorWireframe
-        navigatorPresenter.recordWireframe = recordWireframe
-        
-        navigatorWireframe.navigationPresenter = navigatorPresenter
-        navigatorWireframe.rootWireframe = rootWireframe
         
         //SETTINGS MODULE
         settingsPresenter.wireframe = settingsWireframe

@@ -192,10 +192,6 @@ class RecordController: UIViewController,RecordViewInterface,UINavigationControl
         }
 //        NSLog("You have moved: \(text)")
     }
-    //MARK: - Navigation
-    func navigateToNewViewController(controller: UIViewController) {
-        self.presentViewController(controller, animated: true, completion: nil)
-    }
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
             return UIInterfaceOrientationMask.Landscape
