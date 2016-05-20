@@ -12,7 +12,6 @@ import UIKit
 protocol ShareInterface {
     
     func navigateToNewViewController(controller: UIViewController)
-    func createNavigationBar()
     func registerNib()
     func setTitleList(titleList: Array<String>)
     func setImageList(imageList: Array<UIImage>)

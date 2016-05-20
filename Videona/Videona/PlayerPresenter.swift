@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class PlayerPresenter:NSObject,PlayerPresenterInterface{
     
@@ -25,4 +26,11 @@ class PlayerPresenter:NSObject,PlayerPresenterInterface{
         controller?.createVideoPlayer()
     }
     
+    func layoutSubViews(){
+        if let view = self.controller?.getView(){
+            self.controller?.updateLayers(CGRectMake(0, 0, view.frame.width, view.frame.height))
+        }else{
+            self.controller?.updateLayers(CGRectMake(0, 0, 320,180))
+        }
+    }
 }

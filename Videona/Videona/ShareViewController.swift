@@ -28,7 +28,7 @@ UITableViewDelegate, UITableViewDataSource{
     
     //MARK: - Outlets
     @IBOutlet weak var shareTableView: UITableView!
-    @IBOutlet weak var playerView: UIView!
+    @IBOutlet weak var playerView: PlayerView!
     
     
     override func viewDidLoad() {
@@ -54,35 +54,10 @@ UITableViewDelegate, UITableViewDataSource{
     func setImagePressedList(imageList: Array<UIImage>) {
         self.listImagesPressed = imageList
     }
-    func createNavigationBar(){
-        // Create the navigation bar
-        let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 44)) // Offset by 20 pixels vertically to take the status bar into account
         
-        navigationBar.backgroundColor = UIColor.whiteColor()
-        navigationBar.delegate = self;
-        
-        // Create a navigation item with a title
-        let navigationItem = UINavigationItem()
-        navigationItem.title = titleBar
-        
-        // Create left and right button for navigation item
-        let leftButton =  UIBarButtonItem(title: titleBackButtonBar, style:   UIBarButtonItemStyle.Plain, target: self, action: #selector(SettingsViewController.pushBackBarButton(_:)))
-        
-        // Create two buttons for the navigation item
-        navigationItem.leftBarButtonItem = leftButton
-        
-        // Assign the navigation item to the navigation bar
-        navigationBar.items = [navigationItem]
-        
-        // Make the navigation bar a subview of the current view controller
-        self.view.addSubview(navigationBar)
-    }
-    
-    func pushBackBarButton(sender: UIBarButtonItem) {
-        // Do something
+    @IBAction func pushBackBarButton(sender: AnyObject) {
         eventHandler?.pushBack()
     }
-    
     func navigateToNewViewController(controller: UIViewController) {
         self.presentViewController(controller, animated: true, completion: nil)
     }

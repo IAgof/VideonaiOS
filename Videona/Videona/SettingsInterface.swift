@@ -15,6 +15,5 @@ protocol SettingsInterface {
     func setTitleList(titleList: Array<Array<String>>)
     func setSectionList(section: Array<String>)
     func navigateToNewViewController(controller: UIViewController)
-    func createNavigationBar()
     func registerClass()
 }

@@ -14,13 +14,10 @@ class PlayerView: UIView,PlayerInterface {
     
     var eventHandler: PlayerPresenterInterface?
     
-    @IBOutlet weak var videoPlayerView: UIView!
-    
     var transitioningBackgroundView : UIView = UIView()
     var movieURL:NSURL!
     var player:AVPlayer?
-    var playerLayerFrame:CGRect?
-
+    
     class func instanceFromNib() -> UIView {
         let view = UINib(nibName: "PlayerView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! UIView
         return view
@@ -29,15 +26,24 @@ class PlayerView: UIView,PlayerInterface {
     func setPlayerMovieURL(movieURL: NSURL) {
         self.movieURL = movieURL
     }
+    
     override func layoutSubviews() {
-        print("layoutSubviews\(self.frame)")
-        for sublayer in videoPlayerView.layer.sublayers!{
-            sublayer.frame = self.frame
+        self.eventHandler?.layoutSubViews()
+    }
+    
+    func updateLayers(frame:CGRect){
+        if let sublayers = self.layer.sublayers{
+            for sublayer in sublayers{
+                sublayer.frame = frame
+            }
         }
     }
+    
+    func getView() -> UIView {
+        return self
+    }
+    
     func createVideoPlayer(){
-        videoPlayerView.layoutIfNeeded()
-
         let avAsset: AVURLAsset = AVURLAsset(URL: movieURL!, options: nil)
         let playerItem: AVPlayerItem = AVPlayerItem(asset: avAsset)
         
@@ -49,14 +55,13 @@ class PlayerView: UIView,PlayerInterface {
         //Get video duration to player progressView
 //        videoDuration = avAsset.duration.seconds
         
-        let layer = AVPlayerLayer.init()
+        let layer = AVPlayerLayer()
         layer.videoGravity = AVLayerVideoGravityResizeAspectFill
         layer.player = player
         
         layer.backgroundColor = UIColor.blackColor().CGColor
         
-        self.videoPlayerView.layer.addSublayer(layer)
-        
+        self.layer.addSublayer(layer)
         player?.play()
     }
 }
