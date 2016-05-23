@@ -392,7 +392,7 @@
                             </navigationBar>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HDf-Fy-I5e" customClass="PlayerView" customModule="Videona" customModuleProvider="target">
                                 <rect key="frame" x="193" y="145" width="240" height="128"/>
-                                <color key="backgroundColor" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HDf-Fy-I5e" secondAttribute="height" multiplier="16:9" id="8Is-SN-lyb"/>
                                 </constraints>
