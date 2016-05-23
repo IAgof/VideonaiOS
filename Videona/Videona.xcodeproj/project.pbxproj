@@ -15,6 +15,22 @@
 		A93846F31CE4809F007FB6BC /* FilterListDismissalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846F21CE4809F007FB6BC /* FilterListDismissalTransition.swift */; };
 		A93846F51CE480AA007FB6BC /* FilterListPresentationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846F41CE480AA007FB6BC /* FilterListPresentationTransition.swift */; };
 		A93846F71CE49340007FB6BC /* FilterListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93846F61CE49340007FB6BC /* FilterListView.xib */; };
+		A93F5E701CF2FE680019C2E2 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F5E6F1CF2FE680019C2E2 /* Project.swift */; };
+		A93F5E721CF2FE6F0019C2E2 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F5E711CF2FE6F0019C2E2 /* Audio.swift */; };
+		A93F5E741CF2FE740019C2E2 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F5E731CF2FE740019C2E2 /* Image.swift */; };
+		A93F5E761CF2FE790019C2E2 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F5E751CF2FE790019C2E2 /* Music.swift */; };
+		A93F5E781CF2FE7D0019C2E2 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F5E771CF2FE7D0019C2E2 /* Video.swift */; };
+		A93F5E7B1CF343C10019C2E2 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F5E7A1CF343C10019C2E2 /* Profile.swift */; };
+		A93F5E7D1CF343C90019C2E2 /* EditorElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F5E7C1CF343C90019C2E2 /* EditorElement.swift */; };
+		A93F5E801CF3477A0019C2E2 /* VideoQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F5E7F1CF3477A0019C2E2 /* VideoQuality.swift */; };
+		A93F5E821CF348770019C2E2 /* VideoResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F5E811CF348770019C2E2 /* VideoResolution.swift */; };
+		A93F5E851CF349460019C2E2 /* AudioTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F5E841CF349460019C2E2 /* AudioTrack.swift */; };
+		A93F5E871CF3494E0019C2E2 /* MediaTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F5E861CF3494E0019C2E2 /* MediaTrack.swift */; };
+		A93F5E891CF349520019C2E2 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F5E881CF349520019C2E2 /* Track.swift */; };
+		A93F5E8E1CF355CE0019C2E2 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F5E8D1CF355CE0019C2E2 /* Transition.swift */; };
+		A93F5E911CF3599C0019C2E2 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F5E901CF3599C0019C2E2 /* Media.swift */; };
+		A93F5E941CF35FC20019C2E2 /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F5E931CF35FC20019C2E2 /* License.swift */; };
+		A93F5E961CF3606F0019C2E2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93F5E951CF3606F0019C2E2 /* User.swift */; };
 		A943015F1CE5CF2000DC0DF8 /* PlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A943015E1CE5CF2000DC0DF8 /* PlayerPresenter.swift */; };
 		A94301611CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301601CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift */; };
 		A94301631CE5CF3900DC0DF8 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301621CE5CF3900DC0DF8 /* PlayerView.swift */; };
@@ -103,6 +119,22 @@
 		A93846F21CE4809F007FB6BC /* FilterListDismissalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListDismissalTransition.swift; sourceTree = "<group>"; };
 		A93846F41CE480AA007FB6BC /* FilterListPresentationTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListPresentationTransition.swift; sourceTree = "<group>"; };
 		A93846F61CE49340007FB6BC /* FilterListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterListView.xib; sourceTree = "<group>"; };
+		A93F5E6F1CF2FE680019C2E2 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		A93F5E711CF2FE6F0019C2E2 /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
+		A93F5E731CF2FE740019C2E2 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		A93F5E751CF2FE790019C2E2 /* Music.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		A93F5E771CF2FE7D0019C2E2 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		A93F5E7A1CF343C10019C2E2 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		A93F5E7C1CF343C90019C2E2 /* EditorElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorElement.swift; sourceTree = "<group>"; };
+		A93F5E7F1CF3477A0019C2E2 /* VideoQuality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoQuality.swift; sourceTree = "<group>"; };
+		A93F5E811CF348770019C2E2 /* VideoResolution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoResolution.swift; sourceTree = "<group>"; };
+		A93F5E841CF349460019C2E2 /* AudioTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioTrack.swift; sourceTree = "<group>"; };
+		A93F5E861CF3494E0019C2E2 /* MediaTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTrack.swift; sourceTree = "<group>"; };
+		A93F5E881CF349520019C2E2 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		A93F5E8D1CF355CE0019C2E2 /* Transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		A93F5E901CF3599C0019C2E2 /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		A93F5E931CF35FC20019C2E2 /* License.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = License.swift; sourceTree = "<group>"; };
+		A93F5E951CF3606F0019C2E2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A943015E1CE5CF2000DC0DF8 /* PlayerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerPresenter.swift; sourceTree = "<group>"; };
 		A94301601CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerPresenterInterface.swift; sourceTree = "<group>"; };
 		A94301621CE5CF3900DC0DF8 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
@@ -252,6 +284,80 @@
 				A93846F41CE480AA007FB6BC /* FilterListPresentationTransition.swift */,
 			);
 			name = Transition;
+			sourceTree = "<group>";
+		};
+		A93F5E6E1CF2FE4D0019C2E2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A93F5E921CF35FB90019C2E2 /* Licensing */,
+				A93F5E8B1CF3556C0019C2E2 /* Effects */,
+				A93F5E791CF2FE830019C2E2 /* Media */,
+				A93F5E831CF349350019C2E2 /* Track */,
+				A93F5E8C1CF355B20019C2E2 /* Transition */,
+				A93F5E7E1CF347700019C2E2 /* Utils */,
+				A93F5E6F1CF2FE680019C2E2 /* Project.swift */,
+				A93F5E951CF3606F0019C2E2 /* User.swift */,
+				A93F5E7A1CF343C10019C2E2 /* Profile.swift */,
+				A93F5E7C1CF343C90019C2E2 /* EditorElement.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A93F5E791CF2FE830019C2E2 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				A93F5E711CF2FE6F0019C2E2 /* Audio.swift */,
+				A93F5E731CF2FE740019C2E2 /* Image.swift */,
+				A93F5E901CF3599C0019C2E2 /* Media.swift */,
+				A93F5E751CF2FE790019C2E2 /* Music.swift */,
+				A93F5E771CF2FE7D0019C2E2 /* Video.swift */,
+			);
+			name = Media;
+			sourceTree = "<group>";
+		};
+		A93F5E7E1CF347700019C2E2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A93F5E7F1CF3477A0019C2E2 /* VideoQuality.swift */,
+				A93F5E811CF348770019C2E2 /* VideoResolution.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		A93F5E831CF349350019C2E2 /* Track */ = {
+			isa = PBXGroup;
+			children = (
+				A93F5E841CF349460019C2E2 /* AudioTrack.swift */,
+				A93F5E861CF3494E0019C2E2 /* MediaTrack.swift */,
+				A93F5E881CF349520019C2E2 /* Track.swift */,
+			);
+			name = Track;
+			sourceTree = "<group>";
+		};
+		A93F5E8B1CF3556C0019C2E2 /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				A9E066D81CE4B4E000D4E11D /* Effect.swift */,
+				A9E066DA1CE4B4EE00D4E11D /* OverlayEffect.swift */,
+				A9E066DC1CE4B4F500D4E11D /* ShaderEffect.swift */,
+			);
+			name = Effects;
+			sourceTree = "<group>";
+		};
+		A93F5E8C1CF355B20019C2E2 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				A93F5E8D1CF355CE0019C2E2 /* Transition.swift */,
+			);
+			name = Transition;
+			sourceTree = "<group>";
+		};
+		A93F5E921CF35FB90019C2E2 /* Licensing */ = {
+			isa = PBXGroup;
+			children = (
+				A93F5E931CF35FC20019C2E2 /* License.swift */,
+			);
+			name = Licensing;
 			sourceTree = "<group>";
 		};
 		A94301591CE5CEE400DC0DF8 /* Player */ = {
@@ -466,6 +572,7 @@
 			isa = PBXGroup;
 			children = (
 				A95D3BE21CEB6B77001F2272 /* Utils.swift */,
+				A93F5E6E1CF2FE4D0019C2E2 /* Model */,
 				A9E066E11CE4BB6B00D4E11D /* Constants */,
 				A95B24781CD8B96200F78AAF /* View */,
 			);
@@ -699,10 +806,7 @@
 		A9E066D61CE4B48B00D4E11D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A9E066D81CE4B4E000D4E11D /* Effect.swift */,
 				A9E066DE1CE4BA0700D4E11D /* EffectProvider.swift */,
-				A9E066DA1CE4B4EE00D4E11D /* OverlayEffect.swift */,
-				A9E066DC1CE4B4F500D4E11D /* ShaderEffect.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -853,29 +957,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A93F5E7D1CF343C90019C2E2 /* EditorElement.swift in Sources */,
+				A93F5E801CF3477A0019C2E2 /* VideoQuality.swift in Sources */,
+				A93F5E871CF3494E0019C2E2 /* MediaTrack.swift in Sources */,
 				A94301741CE5DFA100DC0DF8 /* ShareInteractorInterface.swift in Sources */,
 				A9E066E71CE4C5C700D4E11D /* FilterViewCell.swift in Sources */,
 				A95B248B1CD8ED2200F78AAF /* IntroViewController.swift in Sources */,
 				A9B118171CE378B9001A1177 /* SharePresenter.swift in Sources */,
 				A99278551CE3650C009DC364 /* SettingsViewController.swift in Sources */,
 				A943015F1CE5CF2000DC0DF8 /* PlayerPresenter.swift in Sources */,
+				A93F5E8E1CF355CE0019C2E2 /* Transition.swift in Sources */,
 				A95D3BEE1CEB72CC001F2272 /* PlayerInteractor.swift in Sources */,
 				A94301651CE5CF4600DC0DF8 /* PlayerInterface.swift in Sources */,
 				A9B1181F1CE378E8001A1177 /* ShareWireframe.swift in Sources */,
 				A9B1181B1CE378D3001A1177 /* ShareViewController.swift in Sources */,
+				A93F5E911CF3599C0019C2E2 /* Media.swift in Sources */,
 				A93846F31CE4809F007FB6BC /* FilterListDismissalTransition.swift in Sources */,
 				A96733001CE630AD007BE340 /* SettingsInteractorInterface.swift in Sources */,
 				A94301701CE5DAA100DC0DF8 /* SocialNetworkProvider.swift in Sources */,
 				A965BDC31CDA1171002579CA /* IntroPresenterInterface.swift in Sources */,
 				A93846EE1CE47EF0007FB6BC /* FilterListInterface.swift in Sources */,
+				A93F5E761CF2FE790019C2E2 /* Music.swift in Sources */,
 				A95B24761CD8B90700F78AAF /* AppDependencies.swift in Sources */,
 				A9E066ED1CE4E4E200D4E11D /* ShareCell.swift in Sources */,
 				A95B24371CD8890900F78AAF /* RecordController.swift in Sources */,
 				A965BDC11CDA0F1D002579CA /* IntroViewInterface.swift in Sources */,
 				A9E066D91CE4B4E000D4E11D /* Effect.swift in Sources */,
+				A93F5E701CF2FE680019C2E2 /* Project.swift in Sources */,
 				A93846EC1CE47EE2007FB6BC /* FilterListView.swift in Sources */,
 				A95D3BEA1CEB7158001F2272 /* PlayerProvider.swift in Sources */,
 				A94301611CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift in Sources */,
+				A93F5E721CF2FE6F0019C2E2 /* Audio.swift in Sources */,
+				A93F5E741CF2FE740019C2E2 /* Image.swift in Sources */,
 				A99278531CE364E6009DC364 /* SettingsPresenterInterface.swift in Sources */,
 				A95D3BF01CEB7356001F2272 /* PlayerInteractorInterface.swift in Sources */,
 				A94301631CE5CF3900DC0DF8 /* PlayerView.swift in Sources */,
@@ -887,8 +1000,11 @@
 				A95D3BE31CEB6B77001F2272 /* Utils.swift in Sources */,
 				A943016E1CE5D99E00DC0DF8 /* SocialNetwork.swift in Sources */,
 				A9B1181D1CE378DC001A1177 /* ShareInterface.swift in Sources */,
+				A93F5E891CF349520019C2E2 /* Track.swift in Sources */,
 				A99278501CE3647B009DC364 /* SettingsPresenter.swift in Sources */,
 				A9E066DF1CE4BA0700D4E11D /* EffectProvider.swift in Sources */,
+				A93F5E781CF2FE7D0019C2E2 /* Video.swift in Sources */,
+				A93F5E941CF35FC20019C2E2 /* License.swift in Sources */,
 				A9E066E51CE4BB8300D4E11D /* AnalitycsConstants.swift in Sources */,
 				A94301781CE5EEED00DC0DF8 /* FilterListInteractorInterface.swift in Sources */,
 				A95D3BDE1CEB0320001F2272 /* SettingsContent.swift in Sources */,
@@ -901,10 +1017,14 @@
 				A95B24711CD88C4B00F78AAF /* RecordPresenter.swift in Sources */,
 				A94301761CE5EEE200DC0DF8 /* FilterListInteractor.swift in Sources */,
 				A95D3BE81CEB7141001F2272 /* PlayerItem.swift in Sources */,
+				A93F5E961CF3606F0019C2E2 /* User.swift in Sources */,
+				A93F5E821CF348770019C2E2 /* VideoResolution.swift in Sources */,
 				A93846F51CE480AA007FB6BC /* FilterListPresentationTransition.swift in Sources */,
 				A93846E81CE47E82007FB6BC /* FilterListPresenter.swift in Sources */,
+				A93F5E851CF349460019C2E2 /* AudioTrack.swift in Sources */,
 				A95B247C1CD8B9F200F78AAF /* RecordPresenterInterfaceIO.swift in Sources */,
 				A9E066DD1CE4B4F500D4E11D /* ShaderEffect.swift in Sources */,
+				A93F5E7B1CF343C10019C2E2 /* Profile.swift in Sources */,
 				A93846F01CE47F67007FB6BC /* FilterListWireframe.swift in Sources */,
 				A95B246E1CD88C2D00F78AAF /* RecordViewInterface.swift in Sources */,
 				A99278571CE36517009DC364 /* SettingsInterface.swift in Sources */,
