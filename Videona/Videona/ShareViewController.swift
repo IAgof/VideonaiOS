@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class ShareViewController: UIViewController,ShareInterface ,
+class ShareViewController: VideonaController,ShareInterface ,
 UINavigationBarDelegate ,
 UITableViewDelegate, UITableViewDataSource{
     

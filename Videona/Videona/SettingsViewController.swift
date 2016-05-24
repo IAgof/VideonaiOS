@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class SettingsViewController: UIViewController,SettingsInterface ,
+class SettingsViewController: VideonaController,SettingsInterface ,
     UINavigationBarDelegate,UITableViewDelegate,UITableViewDataSource{
     
     var eventHandler: SettingsPresenterInterface?
