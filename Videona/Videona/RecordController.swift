@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecordController: UIViewController,RecordViewInterface,UINavigationControllerDelegate {
+class RecordController: VideonaController,RecordViewInterface,UINavigationControllerDelegate {
     
     //MARK: - Variables VIPER
     var eventHandler: RecordPresenter?

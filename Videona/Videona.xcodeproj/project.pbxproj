@@ -75,6 +75,7 @@
 		A9E066E91CE4C85900D4E11D /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9E066E81CE4C85900D4E11D /* FilterCell.xib */; };
 		A9E066EB1CE4E13800D4E11D /* ShareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9E066EA1CE4E13800D4E11D /* ShareCell.xib */; };
 		A9E066ED1CE4E4E200D4E11D /* ShareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E066EC1CE4E4E200D4E11D /* ShareCell.swift */; };
+		A9F9C20E1CF4665000AB310C /* VideonaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9C20D1CF4665000AB310C /* VideonaController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +170,7 @@
 		A9E066E81CE4C85900D4E11D /* FilterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
 		A9E066EA1CE4E13800D4E11D /* ShareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareCell.xib; sourceTree = "<group>"; };
 		A9E066EC1CE4E4E200D4E11D /* ShareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareCell.swift; sourceTree = "<group>"; };
+		A9F9C20D1CF4665000AB310C /* VideonaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideonaController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -466,6 +468,7 @@
 			isa = PBXGroup;
 			children = (
 				A95D3BE21CEB6B77001F2272 /* Utils.swift */,
+				A9F9C2081CF465D300AB310C /* Wireframe */,
 				A9E066E11CE4BB6B00D4E11D /* Constants */,
 				A95B24781CD8B96200F78AAF /* View */,
 			);
@@ -475,7 +478,7 @@
 		A95B24781CD8B96200F78AAF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A95B24791CD8B96E00F78AAF /* RootWireframe.swift */,
+				A9F9C20D1CF4665000AB310C /* VideonaController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -716,6 +719,14 @@
 			name = Constants;
 			sourceTree = "<group>";
 		};
+		A9F9C2081CF465D300AB310C /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				A95B24791CD8B96E00F78AAF /* RootWireframe.swift */,
+			);
+			name = Wireframe;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -910,6 +921,7 @@
 				A99278571CE36517009DC364 /* SettingsInterface.swift in Sources */,
 				A965BDBC1CDA0758002579CA /* IntroPresenter.swift in Sources */,
 				A94301671CE5CF4F00DC0DF8 /* PlayerWireframe.swift in Sources */,
+				A9F9C20E1CF4665000AB310C /* VideonaController.swift in Sources */,
 				A95D3BE01CEB045F001F2272 /* SettingsProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
