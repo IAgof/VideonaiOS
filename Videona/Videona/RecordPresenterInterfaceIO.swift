@@ -23,4 +23,8 @@ protocol RecordPresenterInterface{
     func pushShowHideShaderFilters()
     func showWarningOrientationImage()
     func hideWarningOrientationImage()
+    func pushRecord()
+    func pushFlash()
+    func pushRotateCamera()
+
 }

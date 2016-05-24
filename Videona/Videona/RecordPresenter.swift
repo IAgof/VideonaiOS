@@ -22,6 +22,7 @@ class RecordPresenter: NSObject, RecordPresenterInterface{
     var colorFilterViewIsShowin = false
     var shaderFilterViewIsShowin = false
     
+    //MARK: - Event handler
     func pushSettings() {
         print("Record presenter pushSettings")
         settingsWireframe?.presentSettingsInterfaceFromViewController(controller!)
@@ -77,6 +78,20 @@ class RecordPresenter: NSObject, RecordPresenterInterface{
             return
         }
     }
+    
+    func pushFlash() {
+        let flashState = SwitchFlashInteractor().switchFlashState()
+        controller?.showFlashOn(flashState)
+    }
+    
+    func pushRecord() {
+        
+    }
+    
+    func pushRotateCamera() {
+        
+    }
+
     func showWarningOrientationImage(){
         controller?.lockScreenRotation()
     }

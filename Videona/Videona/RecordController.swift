@@ -14,6 +14,11 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     var eventHandler: RecordPresenter?
     
     @IBOutlet weak var warningOrientationImage: UIImageView!
+    @IBOutlet weak var cameraRotationButton: UIButton!
+    @IBOutlet weak var flashButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var shaderFilterButton: UIButton!
+    @IBOutlet weak var overlayFilterButton: UIButton!
     
     //MARK: - View Config
     override func viewDidLoad() {
@@ -55,6 +60,17 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     @IBAction func pushShaderFilter(sender: AnyObject) {
         eventHandler?.pushShowHideShaderFilters()
     }
+    
+    @IBAction func pushRecord(sender: AnyObject) {
+        eventHandler?.pushRecord()
+    }
+    @IBAction func pushFlash(sender: AnyObject) {
+        eventHandler?.pushFlash()
+    }
+    @IBAction func pushRotateCamera(sender: AnyObject) {
+        eventHandler?.pushRotateCamera()
+    }
+    
     //MARK: - Protocol Interface
     func showRecordButton(){
         
@@ -121,7 +137,7 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     }
     
     func showFlashOn(on:Bool){
-        
+        flashButton.selected = on
     }
     
     func showFlashSupported(state:Bool){
