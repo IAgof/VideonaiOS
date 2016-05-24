@@ -76,6 +76,8 @@
 		A9E066EB1CE4E13800D4E11D /* ShareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9E066EA1CE4E13800D4E11D /* ShareCell.xib */; };
 		A9E066ED1CE4E4E200D4E11D /* ShareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E066EC1CE4E4E200D4E11D /* ShareCell.swift */; };
 		A9F9C20E1CF4665000AB310C /* VideonaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9C20D1CF4665000AB310C /* VideonaController.swift */; };
+		A9F9C2101CF4857700AB310C /* Logo_Splash_Horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F9C20F1CF4857700AB310C /* Logo_Splash_Horizontal.png */; };
+		A9F9C2121CF485C600AB310C /* Logo_Splash_Vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F9C2111CF485C600AB310C /* Logo_Splash_Vertical.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +173,8 @@
 		A9E066EA1CE4E13800D4E11D /* ShareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareCell.xib; sourceTree = "<group>"; };
 		A9E066EC1CE4E4E200D4E11D /* ShareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareCell.swift; sourceTree = "<group>"; };
 		A9F9C20D1CF4665000AB310C /* VideonaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideonaController.swift; sourceTree = "<group>"; };
+		A9F9C20F1CF4857700AB310C /* Logo_Splash_Horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_Splash_Horizontal.png; sourceTree = "<group>"; };
+		A9F9C2111CF485C600AB310C /* Logo_Splash_Vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_Splash_Vertical.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -352,6 +356,7 @@
 		A95B24331CD8890900F78AAF /* Videona */ = {
 			isa = PBXGroup;
 			children = (
+				A9F9C2141CF4872900AB310C /* Res */,
 				A95B24751CD8B90700F78AAF /* AppDependencies.swift */,
 				A95B24341CD8890900F78AAF /* AppDelegate.swift */,
 				A95D3BF11CEB7673001F2272 /* VideoTest */,
@@ -727,6 +732,23 @@
 			name = Wireframe;
 			sourceTree = "<group>";
 		};
+		A9F9C2131CF4871F00AB310C /* LogoSplash */ = {
+			isa = PBXGroup;
+			children = (
+				A9F9C20F1CF4857700AB310C /* Logo_Splash_Horizontal.png */,
+				A9F9C2111CF485C600AB310C /* Logo_Splash_Vertical.png */,
+			);
+			name = LogoSplash;
+			sourceTree = "<group>";
+		};
+		A9F9C2141CF4872900AB310C /* Res */ = {
+			isa = PBXGroup;
+			children = (
+				A9F9C2131CF4871F00AB310C /* LogoSplash */,
+			);
+			name = Res;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -832,6 +854,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9F9C2121CF485C600AB310C /* Logo_Splash_Vertical.png in Resources */,
+				A9F9C2101CF4857700AB310C /* Logo_Splash_Horizontal.png in Resources */,
 				A95D3BF31CEB76D7001F2272 /* video.mp4 in Resources */,
 				A94301691CE5CF5800DC0DF8 /* PlayerView.xib in Resources */,
 				A95B243F1CD8890900F78AAF /* LaunchScreen.storyboard in Resources */,

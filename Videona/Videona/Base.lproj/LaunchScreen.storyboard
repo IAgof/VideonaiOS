@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -19,20 +20,94 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash_solo_texto" translatesAutoresizingMaskIntoConstraints="NO" id="dOx-mQ-rim">
-                                <rect key="frame" x="24" y="231" width="552" height="138"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo_Splash_Horizontal.png" translatesAutoresizingMaskIntoConstraints="NO" id="aDW-VT-vDh">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="dOx-mQ-rim" secondAttribute="height" multiplier="4:1" id="AZH-Ol-6DL"/>
+                                    <constraint firstAttribute="width" secondItem="aDW-VT-vDh" secondAttribute="height" multiplier="4:1" id="I6I-43-wcj"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="I6I-43-wcj"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="I6I-43-wcj"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo_Splash_Vertical.png" translatesAutoresizingMaskIntoConstraints="NO" id="pL9-o8-LhQ">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pL9-o8-LhQ" secondAttribute="height" multiplier="1:4" id="jxR-pp-22t"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="jxR-pp-22t"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="jxR-pp-22t"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.74117647060000003" green="0.85490196080000003" blue="0.074509803920000006" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="dOx-mQ-rim" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="0NP-H1-8Od"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dOx-mQ-rim" secondAttribute="trailing" constant="4" id="EoA-23-rVf"/>
-                            <constraint firstItem="dOx-mQ-rim" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="4" id="GnJ-r6-ZZL"/>
-                            <constraint firstItem="dOx-mQ-rim" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="cJn-N8-Csl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aDW-VT-vDh" secondAttribute="trailing" constant="8" id="0t3-JR-QuI"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="pL9-o8-LhQ" secondAttribute="bottom" constant="50" id="2Nf-kz-KPc"/>
+                            <constraint firstItem="pL9-o8-LhQ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="2hh-5j-XCW"/>
+                            <constraint firstItem="pL9-o8-LhQ" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" constant="50" id="GfA-xr-Nhz"/>
+                            <constraint firstItem="aDW-VT-vDh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="JpP-Ur-7sf"/>
+                            <constraint firstItem="pL9-o8-LhQ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="QHI-24-Q5b"/>
+                            <constraint firstItem="aDW-VT-vDh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="X9z-9M-T7q"/>
+                            <constraint firstItem="pL9-o8-LhQ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="8" id="avI-Zf-3UM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pL9-o8-LhQ" secondAttribute="trailing" constant="8" id="bE2-re-n7g"/>
+                            <constraint firstItem="aDW-VT-vDh" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="8" id="bQu-kW-smr"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="aDW-VT-vDh"/>
+                                <exclude reference="pL9-o8-LhQ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="0t3-JR-QuI"/>
+                                <exclude reference="JpP-Ur-7sf"/>
+                                <exclude reference="X9z-9M-T7q"/>
+                                <exclude reference="bQu-kW-smr"/>
+                                <exclude reference="2Nf-kz-KPc"/>
+                                <exclude reference="2hh-5j-XCW"/>
+                                <exclude reference="GfA-xr-Nhz"/>
+                                <exclude reference="QHI-24-Q5b"/>
+                                <exclude reference="avI-Zf-3UM"/>
+                                <exclude reference="bE2-re-n7g"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <include reference="aDW-VT-vDh"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0t3-JR-QuI"/>
+                                <include reference="JpP-Ur-7sf"/>
+                                <include reference="X9z-9M-T7q"/>
+                                <include reference="bQu-kW-smr"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="pL9-o8-LhQ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="2Nf-kz-KPc"/>
+                                <include reference="2hh-5j-XCW"/>
+                                <include reference="GfA-xr-Nhz"/>
+                                <include reference="QHI-24-Q5b"/>
+                                <exclude reference="avI-Zf-3UM"/>
+                                <exclude reference="bE2-re-n7g"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -41,6 +116,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Splash_solo_texto" width="9449" height="2480"/>
+        <image name="Logo_Splash_Horizontal.png" width="9449" height="2480"/>
+        <image name="Logo_Splash_Vertical.png" width="2480" height="9449"/>
     </resources>
 </document>
