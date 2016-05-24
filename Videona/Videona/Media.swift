@@ -29,17 +29,17 @@ class Media: EditorElement {
      */
     var mediaPath:String
     
-    var source:FILE
+    var source:NSData
     
     /**
      * The start time of the media resource within the file it represents.
      */
-    var fileStartTime:Int
+    var fileStartTime:Double
     
     /**
      * The start time of the media resource within the file it represents.
      */
-    var fileStopTime:Int
+    var fileStopTime:Double
     
     /**
      * @deprecated
@@ -48,22 +48,22 @@ class Media: EditorElement {
      *
      * The long of the media resource to be added to the project
      */
-    var duration:Int
+    var duration:Double
     
     /**
      * Transition before the media item.
      */
-    var opening:Transition
+    var opening:Transition?
     
     /**
      * Transition after the media item.
      */
-    var ending:Transition
+    var ending:Transition?
     
     /**
      * Metadata of the resource
      */
-    var metadata:NSMetadataItem
+    var metadata:NSMetadataItem?
     
     /**
      * List with de authors id
@@ -91,15 +91,21 @@ class Media: EditorElement {
      * @param license       - Legal stuff.
      * @param authors       - List of authors of the media item.
      */
-    init(identifier:String,iconPath:String, mediaPath:String,fileStartTime:Int,duration:Int,authors:Array<User>,license:License){
-                        super.init(identifier, iconPath)
-                        self.mediaPath = mediaPath
-                        self.source = new File(self.mediaPath)
-                        self.fileStartTime = fileStartTime
-                        self.duration = duration
-                        self.fileStopTime = duration
-                        self.authors = authors
-                        self.license = license
+    init(identifier:String,iconPath:String, mediaPath:String,fileStartTime:Double,duration:Double,authors:Array<User>,license:License){
+        self.title = ""
+        self.mediaPath = mediaPath
+        self.source = NSData.init(contentsOfFile: self.mediaPath)!
+        self.fileStartTime = fileStartTime
+        self.fileStopTime = duration
+        self.duration = duration
+        self.opening = nil
+        self.ending = nil
+        self.metadata = nil
+        self.authors = authors
+        self.license = license
+        self.authorsNames = Array<String>()
+        
+        super.init(identifier: identifier, iconPath: iconPath)
     }
     
     /**
@@ -119,23 +125,27 @@ class Media: EditorElement {
      * @param license          - Legal stuff.
      * @param authors          - List of authors of the media item.
      */
-    init(identifier:String,iconPath:String, selectedIconPath:String, title:String, mediaPath:String,fileStartTime:Int,duration:Int,opening:Transition,ending:Transition,metadata:NSMetadataItem,authors:Array<User>,license:License){
-                        super(identifier, iconPath, selectedIconPath)
-                        self.title = title
-                        self.mediaPath = mediaPath
-                        self.source = new File(self.mediaPath)
-                        self.fileStartTime = fileStartTime
-                        self.fileStopTime = duration
-                        self.duration = duration
-                        self.opening = opening
-                        self.ending = ending
-                        self.metadata = metadata
-                        self.authors = authors
-                        self.license = license
+    init(identifier:String,iconPath:String, selectedIconPath:String, title:String, mediaPath:String,fileStartTime:Double,duration:Double,opening:Transition,ending:Transition,metadata:NSMetadataItem,authors:Array<User>,license:License){
+        
+        self.title = title
+        self.mediaPath = mediaPath
+        self.source = NSData.init(contentsOfFile: self.mediaPath)!
+        self.fileStartTime = fileStartTime
+        self.fileStopTime = duration
+        self.duration = duration
+        self.opening = opening
+        self.ending = ending
+        self.metadata = metadata
+        self.authors = authors
+        self.license = license
+        self.authorsNames = Array<String>()
+        
+        super.init(identifier: identifier, iconPath: iconPath, selectedIconPath: selectedIconPath)
     }
     
     func hashTransitions() ->Bool{
-        return (self.opening != nil || self.ending != nil)
+        //        return (self.opening != nil || self.ending != nil)
+        return true
     }
     
     
@@ -156,15 +166,15 @@ class Media: EditorElement {
         self.mediaPath = mediaPath
     }
     
-    func getFileStartTime() ->String {
+    func getFileStartTime() ->Double {
         return self.fileStartTime
     }
     
-    func setFileStartTime(fileStartTime:Int) {
+    func setFileStartTime(fileStartTime:Double) {
         self.fileStartTime = fileStartTime
     }
     
-    func getDuration() ->Int {
+    func getDuration() ->Double {
         return fileStopTime - fileStartTime
     }
     
@@ -172,20 +182,24 @@ class Media: EditorElement {
      * @deprecated
      * @param duration
      */
-    func setDuration(duration:Int) {
+    func setDuration(duration:Double) {
         self.duration = duration
     }
     
-    func getFileStopTime()  ->Int{
+    func getFileStopTime()  ->Double{
         return fileStopTime
     }
     
-    func setFileStopTime(fileStopTime:Int) {
+    func setFileStopTime(fileStopTime:Double) {
         self.fileStopTime = fileStopTime
     }
     
     func getMetadata() ->NSMetadataItem {
-        return metadata
+        if let metadata = self.metadata{
+         return metadata
+        }else{
+            return NSMetadataItem.init()
+        }
     }
     
     func setMetadata(metadata:NSMetadataItem) {
@@ -217,44 +231,47 @@ class Media: EditorElement {
     }
     
     func  getOpening() ->Transition {
-        return opening
+        if let opening = self.opening{
+            return opening
+        }else{
+            return opening!
+        }
     }
     
     func setOpening( opening:Transition) {
         
         //if nil then we are erasing relations between media and transition
-        if (opening == nil && self.opening != nil) {
-            if (self.opening.getAfterMediaItem() != nil) {
-                self.opening.setAfterMediaItem(nil)
-            }
-        }
         
-        self.opening = opening
-        
-        //check that afterMediaItem of transition is self.
-        if (self.opening != nil && self.opening.getAfterMediaItem() != self) {
-            self.opening.setAfterMediaItem(self)
-        }
+        //        self.opening.setAfterMediaItem(nil)
+        //
+        //        self.opening = opening
+        //
+        //        //check that afterMediaItem of transition is self.
+        //        if (self.opening.getAfterMediaItem() != self) {
+        //            self.opening.setAfterMediaItem(self)
+        //        }
     }
     
     func  getEnding() ->Transition {
-        return ending
+        if let ending = self.ending{
+            return ending
+        }else{
+            return ending!
+        }
     }
     
-    func setEnding(Transition ending) {
+    func setEnding(ending:Transition) {
         
-        //if nil then we are erasing relations between media and transition
-        if (ending == nil && self.ending != nil) {
-            if (self.ending.getBeforeMediaItem() != nil) {
-                self.ending.setBeforeMediaItem(nil)
-            }
-        }
-        
-        self.ending = ending
-        
-        //check that beforerMediaItem of transition is self.
-        if (self.ending != nil && self.ending.getBeforeMediaItem() != self) {
-            self.opening.setBeforeMediaItem(self)
-        }
+        //        //if nil then we are erasing relations between media and transition
+        //            if (self.ending.getBeforeMediaItem() != nil) {
+        //                self.ending.setBeforeMediaItem(nil)
+        //            }
+        //
+        //        self.ending = ending
+        //
+        //        //check that beforerMediaItem of transition is self.
+        //        if (self.ending != nil && self.ending.getBeforeMediaItem() != self) {
+        //            self.opening.setBeforeMediaItem(self)
+        //        }
     }
 }

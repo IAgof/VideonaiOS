@@ -12,7 +12,7 @@ class Project{
     /**
      * There could be just one project open at a time. So this converts Project in a Singleton.
      */
-    var INSTANCE:Project
+//    var INSTANCE:Project
     
     /**
      * Project name. Also it will be the name of the exported video
@@ -25,23 +25,23 @@ class Project{
     /**
      * Track of Video an Image objects
      */
-    //    var mediaTrack:MediaTrack
+    var mediaTrack:MediaTrack
     /**
      * Audio tracks to form the final audio track. One by default, could be maximum defined on
      * project profile.
      */
-//    var audioTracks:ArrayList<AudioTrack>
+    var audioTracks:Array<AudioTrack>
     
     /**
      * Project profile. Defines some limitations and characteristic of the project based on user
      * subscription.
      */
-//    var profile:Profile
+    var profile:Profile
     
     /**
      * Project duration. The duration of the project in milliseconds.
      */
-    var duration:Int?
+    var duration:Double?
     
     var VIDEONA_PATH = ""
     
@@ -55,38 +55,38 @@ class Project{
     init(title:String,rootPath:String,profile:Profile) {
         self.title = title
         self.projectPath = rootPath + "/projects/" + title //todo probablemente necesitemos un slugify de ese title.
-        self.checkPathSetup(rootPath)
         self.mediaTrack = MediaTrack()
-        self.audioTracks = ArrayList<>()
-        audioTracks.add(AudioTrack())
+        self.audioTracks = Array<AudioTrack>()
+        audioTracks.append(AudioTrack())
         self.profile = profile
-        self.duration = 0
-        
+        self.duration = 0.0
+//        self.INSTANCE = Project()
+        self.checkPathSetup(rootPath)
     }
     
     
     /**
      * @param rootPath
      */
-//    func checkPathSetup(rootPath:String) {
-//    
-//    Project.VIDEONA_PATH = rootPath
-//    File projectPath = new File(this.projectPath)
-//    projectPath.mkdirs()
-//    
-//    Audio.AUDIO_PATH = rootPath + "/audios"
-//    File audioPath = new File(Audio.AUDIO_PATH + "/thumbs")
-//    audioPath.mkdirs()
-//    
-//    Image.IMAGE_PATH = rootPath + "/images"
-//    File imagePath = new File(Image.IMAGE_PATH + "thumbs")
-//    imagePath.mkdirs()
-//    
-//    Video.VIDEO_PATH = rootPath + "/videos"
-//    File videoPath = new File(Audio.AUDIO_PATH + "/thumbs")
-//    videoPath.mkdirs()
-//    
-//    }
+    func checkPathSetup(rootPath:String) {
+        
+        //    Project.VIDEONA_PATH = rootPath
+        //    File projectPath = new File(this.projectPath)
+        //    projectPath.mkdirs()
+        //
+        //    Audio.AUDIO_PATH = rootPath + "/audios"
+        //    File audioPath = new File(Audio.AUDIO_PATH + "/thumbs")
+        //    audioPath.mkdirs()
+        //
+        //    Image.IMAGE_PATH = rootPath + "/images"
+        //    File imagePath = new File(Image.IMAGE_PATH + "thumbs")
+        //    imagePath.mkdirs()
+        //
+        //    Video.VIDEO_PATH = rootPath + "/videos"
+        //    File videoPath = new File(Audio.AUDIO_PATH + "/thumbs")
+        //    videoPath.mkdirs()
+        
+    }
     
     /**
      * Project factory.
@@ -104,47 +104,47 @@ class Project{
     }
     
     func getProjectPath()->String {
-    return projectPath!
+        return projectPath!
     }
     
     func setProjectPath(projectPath:String) {
-        self.projectPath = projectPath;
+        self.projectPath = projectPath
     }
     
     func getMediaTrack() ->MediaTrack{
-    return mediaTrack!
+        return mediaTrack
     }
     
     func setMediaTrack(mediaTrack:MediaTrack) {
-        self.mediaTrack = mediaTrack;
+        self.mediaTrack = mediaTrack
     }
     
-    func getAudioTracks()->ArrayList<AudioTrack> {
-        return audioTracks!
+    func getAudioTracks()->Array<AudioTrack> {
+        return audioTracks
     }
     
-    func setAudioTracks(audioTracks:ArrayList<AudioTrack>) {
-        self.audioTracks = audioTracks;
+    func setAudioTracks(audioTracks:Array<AudioTrack>) {
+        self.audioTracks = audioTracks
     }
     
     func getProfile() ->Profile{
-        return profile!
+        return profile
     }
     
     func setProfile(profile:Profile) {
-        self.profile = profile!
+        self.profile = profile
     }
     
-    func setDuration(duration:Int) {
-        self.duration = duration!
+    func setDuration(duration:Double) {
+        self.duration = duration
     }
     
-    func getDuration() ->Int{
-    duration = 0
-    for (Media video in mediaTrack.getItems()) {
-        duration = duration + video.getDuration()
-    }
-    return duration!
+    func getDuration() ->Double{
+        duration = 0
+        for video in mediaTrack.getItems() {
+            duration = duration! + video.getDuration()
+        }
+        return duration!
     }
 }
 

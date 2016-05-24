@@ -18,45 +18,45 @@ class Music: Audio {
     var colorResourceId:Int
     //TODO refactorizar nombre
     var nameResourceId:String
-    var iconResourceId:Int
+    var IconResourceId:Int
    
     init(iconResourceId:Int, nameResourceId:String,musicResourceId:Int,colorResourceId:Int) {
-        super.init("", "", "", 0, 0, nil, nil);
-        self.musicResourceId = musicResourceId;
-        self.colorResourceId = colorResourceId;
-        self.nameResourceId = nameResourceId;
-        self.iconResourceId = iconResourceId;
+        self.musicResourceId = musicResourceId
+        self.colorResourceId = colorResourceId
+        self.nameResourceId = nameResourceId
+        self.IconResourceId = iconResourceId
+        super.init(identifier: "", iconPath: "", mediaPath: "", fileStartTime: 0, duration: 0, authors: Array<User>(), license: License())
     }
     
     func getMusicResourceId() ->Int{
-        return musicResourceId;
+        return musicResourceId
     }
     
     func setMusicResourceId(musicResourceId:Int){
-        self.musicResourceId = musicResourceId;
+        self.musicResourceId = musicResourceId
     }
     
     func getColorResourceId()  ->Int{
-        return colorResourceId;
+        return colorResourceId
     }
     
     func setColorResourceId(colorResourceId:Int) {
-        self.colorResourceId = colorResourceId;
+        self.colorResourceId = colorResourceId
     }
     
     func setNameResourceId(name:String) {
-        self.nameResourceId = name;
+        self.nameResourceId = name
     }
     
     func getNameResourceId() ->String {
-        return nameResourceId;
+        return nameResourceId
     }
     
-    func getIconResourceId()  ->Int{
-        return iconResourceId;
+    override func getIconResourceId()  ->Int{
+        return IconResourceId
     }
     
     func setIconResourceId(iconResourceId:Int) {
-        self.iconResourceId = iconResourceId;
+        self.iconResourceId = iconResourceId
     }
 }

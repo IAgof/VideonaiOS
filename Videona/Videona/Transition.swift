@@ -77,13 +77,15 @@ class Transition: EditorElement {
      */
     init(identifier:String ,iconPath:String ,type:String ,afterMediaItem:Media,
          beforeMediaItem:Media,duration:Double, author:User,license:License) {
-        super(identifier, iconPath)
         self.type = type
         self.afterMediaItem = afterMediaItem
         self.beforeMediaItem = beforeMediaItem
         self.duration = duration
         self.author = author
         self.license = license
+        self.startTime = 0.0
+        self.authorName = ""
+        super.init(identifier: identifier, iconPath: iconPath)
     }
     
     /**
@@ -105,13 +107,16 @@ class Transition: EditorElement {
      */
     init(identifier:String ,iconPath:String ,selectedIconPath:String,type:String ,afterMediaItem:Media,
          beforeMediaItem:Media,duration:Double, author:User,license:License){
-        super(identifier, iconPath, selectedIconPath)
         self.type = type
         self.afterMediaItem = afterMediaItem
         self.beforeMediaItem = beforeMediaItem
         self.duration = duration
         self.author = author
         self.license = license
+        self.startTime = 0.0
+        self.authorName = ""
+        
+        super.init(identifier: identifier, iconPath: iconPath)
     }
     
     //applying methods
@@ -136,7 +141,7 @@ class Transition: EditorElement {
     
     
     //getters & setters
-     func getType() ->String{
+    func getType() ->String{
         return type
     }
     
@@ -144,7 +149,7 @@ class Transition: EditorElement {
         self.type = type
     }
     
-     func getDuration() ->Double{
+    func getDuration() ->Double{
         return duration
     }
     
@@ -152,7 +157,7 @@ class Transition: EditorElement {
         self.duration = duration
     }
     
-     func getStartTime() ->Double{
+    func getStartTime() ->Double{
         return startTime
     }
     
@@ -160,7 +165,7 @@ class Transition: EditorElement {
         self.startTime = startTime
     }
     
-     func getLicense()->License {
+    func getLicense()->License {
         return license
     }
     
@@ -168,7 +173,7 @@ class Transition: EditorElement {
         self.license = license
     }
     
-     func getAuthorName()->String {
+    func getAuthorName()->String {
         return authorName
     }
     
@@ -176,7 +181,7 @@ class Transition: EditorElement {
         self.authorName = authorName
     }
     
-     func getAuthor() ->User{
+    func getAuthor() ->User{
         return author
     }
     
@@ -184,45 +189,45 @@ class Transition: EditorElement {
         self.author = author
     }
     
-     func getAfterMediaItem() ->Media{
+    func getAfterMediaItem() ->Media{
         return afterMediaItem
     }
     
     func setAfterMediaItem(afterMediaItem:Media) {
         
         //if nil then we are erasing relations between media and transition
-        if (afterMediaItem == nil && self.afterMediaItem != nil) {
-            if (self.afterMediaItem.getOpening() != nil) {
-                self.afterMediaItem.setOpening(nil)
-            }
-        }
+        //        if (afterMediaItem == nil && self.afterMediaItem != nil) {
+        //            if (self.afterMediaItem.getOpening() != nil) {
+        //                self.afterMediaItem.setOpening(nil)
+        //            }
+        //        }
         
         self.afterMediaItem = afterMediaItem
         
         //after assigned the media, check if opening is self
-        if (self.afterMediaItem != nil && self.afterMediaItem.getOpening() != self) {
-            self.afterMediaItem.setOpening(self)
-        }
+        //        if (self.afterMediaItem != nil && self.afterMediaItem.getOpening() != self) {
+        self.afterMediaItem.setOpening(self)
+        //        }
     }
     
-     func getBeforeMediaItem()->Media {
+    func getBeforeMediaItem()->Media {
         return beforeMediaItem
     }
     
     func setBeforeMediaItem(beforeMediaItem:Media) {
         
         //if nil then we are erasing relations between media and transition
-        if (beforeMediaItem == nil && self.beforeMediaItem != nil) {
-            if (self.beforeMediaItem.getEnding() != nil) {
-                self.beforeMediaItem.setEnding(nil)
-            }
-        }
+        //        if (beforeMediaItem == nil && self.beforeMediaItem != nil) {
+        //            if (self.beforeMediaItem.getEnding() != nil) {
+        //                self.beforeMediaItem.setEnding(nil)
+        //            }
+        //        }
         
         self.beforeMediaItem = beforeMediaItem
         
         //after assigned the media, check if opening is self
-        if (self.beforeMediaItem != nil && self.beforeMediaItem.getEnding() != self) {
-            self.beforeMediaItem.setEnding(self)
-        }
+        //        if (self.beforeMediaItem != nil && self.beforeMediaItem.getEnding() != self) {
+        self.beforeMediaItem.setEnding(self)
+        //        }
     }
 }

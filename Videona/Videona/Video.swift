@@ -17,21 +17,21 @@ import Foundation
  */
 class Video : Media {
     
-    var VIDEO_PATH:String
+    var VIDEO_PATH:String = ""
     
     /**
      * The total duration of the file media resource
      */
-    var fileDuration:Int
+    var fileDuration:Double
     
     /**
      * Constructor of minimum number of parameters. Default constructor.
      *
      * @see com.videonasocialmedia.videona.model.entities.editor.media.Media
      */
-    init(identifier:String,iconPath:String, mediaPath:String,fileStartTime:Int,duration:Int,authors:Array<User>,license:License){
-        super.init(identifier, iconPath, mediaPath, fileStartTime, duration, authors, license)
-        fileDuration = duration
+    override init(identifier:String,iconPath:String, mediaPath:String,fileStartTime:Double,duration:Double,authors:Array<User>,license:License){
+        self.fileDuration = duration
+        super.init(identifier: identifier, iconPath: iconPath, mediaPath: mediaPath, fileStartTime: fileStartTime, duration: duration, authors: authors, license: license)
     }
     
     /**
@@ -39,10 +39,11 @@ class Video : Media {
      *
      * @see com.videonasocialmedia.videona.model.entities.editor.media.Media
      */
-    init(identifier:String,iconPath:String, selectedIconPath:String, title:String, mediaPath:String,fileStartTime:Int,duration:Int,opening:Transition,ending:Transition,metadata:NSMetadataItem,authors:Array<User>,license:License){
-        super.init(identifier, iconPath, selectedIconPath, title, mediaPath, fileStartTime, duration,
-        opening, ending, metadata, authors, license)
+    override init(identifier:String,iconPath:String, selectedIconPath:String, title:String, mediaPath:String,fileStartTime:Double,duration:Double,opening:Transition,ending:Transition,metadata:NSMetadataItem,authors:Array<User>,license:License){
         self.fileDuration = duration
+
+        super.init(identifier: identifier, iconPath: iconPath, selectedIconPath: selectedIconPath, title: title, mediaPath: mediaPath, fileStartTime: fileStartTime, duration: duration,
+                   opening: opening, ending: ending, metadata: metadata, authors: authors, license: license)
     }
     
     /**
@@ -50,7 +51,7 @@ class Video : Media {
      *
      * @see com.videonasocialmedia.videona.model.entities.editor.media.Media
      */
-    init(mediaPath:String) {
+//    init(mediaPath:String) {
 //        super.init(nil, nil, mediaPath, 0, 0, nil, nil)
 //        try {
 //            MediaMetadataRetriever retriever = new MediaMetadataRetriever()
@@ -65,25 +66,25 @@ class Video : Media {
 //            duration = 0
 //            fileStopTime = 0
 //        }
-    }
+//    }
     
-    init(mediaPath:String, fileStartTime:Int, duration:Int) {
-        super.init(nil, nil, mediaPath, fileStartTime, duration, nil, nil)
-        fileDuration = duration
-    }
+//    init(mediaPath:String, fileStartTime:Double, duration:Double) {
+//        super.init(identifier: nil, iconPath: nil, mediaPath: mediaPath, fileStartTime: fileStartTime, duration: duration, authors: nil, license: nil)
+//        fileDuration = duration
+//    }
     
-    init(video:Video) {
-        super.init(nil, nil, video.getMediaPath(), video.getFileStartTime(),
-        video.getDuration(), nil, nil)
-        fileDuration = video.getFileDuration()
-        fileStopTime = video.getFileStopTime()
-    }
+//    init(video:Video) {
+//        super.init(identifier: nil, iconPath: nil, mediaPath: video.getMediaPath(), fileStartTime: video.getFileStartTime(),
+//                   duration: video.getDuration(), authors: nil, license: nil)
+//        fileDuration = video.getFileDuration()
+//        fileStopTime = video.getFileStopTime()
+//    }
     
-    func getFileDuration() ->Int{
+    func getFileDuration() ->Double{
         return fileDuration
     }
     
-    func setFileDuration(fileDuration:Int) {
+    func setFileDuration(fileDuration:Double) {
         self.fileDuration = fileDuration
     }
     

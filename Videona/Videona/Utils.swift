@@ -18,7 +18,7 @@ class Utils{
         let hour = components.hour
         let minutes = components.minute
 
-        return Double(hour) + (Double(minutes))/60;
+        return Double(hour) + (Double(minutes))/60
     }
     
     func giveMeTimeNow()->String{

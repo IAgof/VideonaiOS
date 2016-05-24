@@ -45,6 +45,7 @@ class Track {
         self.items =  Array<Media>()
         self.effects =  Dictionary<Int, Array<Effect>>()
         self.transitions =  Dictionary<String, Transition>()
+        self.duration = 0.0
     }
     
     /**
@@ -59,6 +60,7 @@ class Track {
         self.items = items
         self.effects = effects
         self.transitions = transitions
+        self.duration = 0.0
     }
     
     //Media Items
@@ -72,59 +74,59 @@ class Track {
      * @return
      * @throws IllegalItemOnTrack
      */
-    func insertItemAt(position:Int, itemToAdd:Media) -> bool throws IllegalItemOnTrack {
-    
+    func insertItemAt(position:Int, itemToAdd:Media) throws -> Bool {
+    var position = position
     //Check if possible
-    if (self.items == nil) {
+//    if (self.items == nil) {
     //TODO ¿hemos perdido el track? ¿que hacemos? ¿lo recuperamos de la última versión buena? ¿petamos?
     //por el momento evitamos un nilpointer.
     self.setItems( Array<Media>())
-    }
+//    }
     
     //ensure valid index
-    var trackSize = items.size()
+    let trackSize = items.count
     if (position <= 0) {
-    position = 0
+        position = 0
     } else if (position >= trackSize) {
-    position = trackSize
+        position = trackSize
     }
     
-    if ((self.effects.isEmpty() && self.transitions.isEmpty()) || self.items.isEmpty()) {
+    if ((self.effects.isEmpty && self.transitions.isEmpty) || self.items.isEmpty) {
     //If there are no items on the track it cannot contain effects or transitions
     //if there is not effects and/or transitions then the item could be added without
     //further calculations.
-    self.items.add(position, itemToAdd)
+    self.items.insert(itemToAdd, atIndex: position)
     return true
     } else {
     //if there is
     
     //Get adjacent items. Util for both checkings: transitions and effects.
-    var afterMedia:Media
-    try {
-    afterMedia = items.get(position)
-    } catch (IndexOutOfBoundsException e) {
-    //adding to the end of the list
-    afterMedia = nil
-    }
-    Media beforeMedia
-    try {
-    beforeMedia = items.get(position - 1)
-    } catch (IndexOutOfBoundsException e) {
-    //adding to beggining of the list.
-    beforeMedia = nil
-    }
-    
-    if (afterMedia == beforeMedia) {
-    //is empty WTF!!!
-    return false
-    }
+//    var afterMedia:Media
+//    try {
+//    afterMedia = items.get(position)
+//    } catch (IndexOutOfBoundsException e) {
+//    //adding to the end of the list
+//    afterMedia = nil
+//    }
+//    Media beforeMedia
+//    try {
+//    beforeMedia = items.get(position - 1)
+//    } catch (IndexOutOfBoundsException e) {
+//    //adding to beggining of the list.
+//    beforeMedia = nil
+//    }
+//    
+//    if (afterMedia == beforeMedia) {
+//    //is empty WTF!!!
+//    return false
+//    }
     
     /**
      * TODO transitions no entra en el deadline del 7 de mayo. Pero abrá que hacerlo
      */
     
     //add the item.
-    self.items.add(position, itemToAdd)
+    self.items.insert(itemToAdd, atIndex: position)
     return true
     }
     }
@@ -134,15 +136,16 @@ class Track {
      * @return
      * @throws IllegalItemOnTrack
      */
-    public boolean insertItem(Media itemToAdd) throws  {
+    func insertItem(itemToAdd:Media) throws  ->Bool{
     //Check if possible
-    if (self.items == nil) {
+//    if (self.items == nil) {
     //TODO ¿hemos perdido el track? ¿que hacemos? ¿lo recuperamos de la última versión buena? ¿petamos?
     //por el momento evitamos un nilpointer.
     self.setItems( Array<Media>())
-    }
+//    }
+    let returned = try self.insertItemAt(self.items.count, itemToAdd: itemToAdd)
     
-    return self.insertItemAt(self.items.size(), itemToAdd)
+        return returned
     }
     
     
@@ -152,8 +155,13 @@ class Track {
      * @param itemToDelete - Media item to be deleted.
      * @return TRUE if the list contained the specified element.
      */
-    func deleteItem(Media itemToDelete) throws ->Media{
-    return self.deleteItemAt(items.indexOf(itemToDelete))
+    func deleteItem(itemToDelete:Media) throws ->Media{
+        let i = items.indexOf({
+            $0.authorsNames[0] == itemToDelete.authorsNames[0]
+        })
+//        return self.deleteItemAt(items.indexOf(itemToDelete))
+        
+        return try self.deleteItemAt(i!)
     }
     
     /**
@@ -161,50 +169,50 @@ class Track {
      *
      * @param position
      */
-    func deleteItemAt(int position) throws ->Media {
+    func deleteItemAt(position:Int) throws ->Media {
     
     //Make it possible
-    if (self.items == nil) {
+//    if (self.items == nil) {
     //TODO ¿hemos perdido el track? ¿que hacemos? ¿lo recuperamos de la última versión buena? ¿petamos?
     //por el momento evitamos un nilpointer.
     self.setItems( Array<Media>())
-    throw  NoSuchElementException()
-    }
+//    throw  NoSuchElementException()
+//    }
     
-    if (self.items.isEmpty()) {
+    if (self.items.isEmpty) {
     //nothing to delete.
-    throw  NoSuchElementException()
+//    throw  NoSuchElementException()
     }
     
     //Check transition is not violated.
-    if (self.items.get(position).hashTransitions()) {
-    throw  IllegalOrphanTransitionOnTrack("Media item to delete must be disengaged " +
-    "from transitions first")
-    }
+//    if (self.items.get(position).hashTransitions()) {
+//    throw  IllegalOrphanTransitionOnTrack("Media item to delete must be disengaged " +
+//    "from transitions first")
+//    }
     
     //Get adjacent items. Util for both checkings: transitions and effects.
-    Media afterMedia
-    try {
-    afterMedia = items.get(position)
-    } catch (IndexOutOfBoundsException e) {
-    //adding to the end of the list
-    afterMedia = nil
-    }
-    Media beforeMedia
-    try {
-    beforeMedia = items.get(position - 1)
-    } catch (IndexOutOfBoundsException e) {
-    //adding to beggining of the list.
-    beforeMedia = nil
-    }
-    
-    if (afterMedia == beforeMedia) {
-    //is empty WTF!!!
-    return nil
-    }
+//    Media afterMedia
+//    try {
+//    afterMedia = items.get(position)
+//    } catch (IndexOutOfBoundsException e) {
+//    //adding to the end of the list
+//    afterMedia = nil
+//    }
+//    Media beforeMedia
+//    try {
+//    beforeMedia = items.get(position - 1)
+//    } catch (IndexOutOfBoundsException e) {
+//    //adding to beggining of the list.
+//    beforeMedia = nil
+//    }
+//    
+//    if (afterMedia == beforeMedia) {
+//    //is empty WTF!!!
+//    return nil
+//    }
     
     //try to delete element from list.
-    return items.remove(position)
+    return items.removeAtIndex(position)
     }
     
     /**
@@ -213,32 +221,37 @@ class Track {
      * @param newPosition - The new position in the track for the media item.
      * @param itemToMove  - The media item to ve moved.
      */
-    func moveItemTo(int newPosition, Media itemToMove) throws ->Bool {
+    func moveItemTo(newPosition:Int,itemToMove:Media) throws ->Bool {
     
     //Make it possible
-    if (self.items == nil) {
+//    if (self.items == nil) {
     //TODO ¿hemos perdido el track? ¿que hacemos? ¿lo recuperamos de la última versión buena? ¿petamos?
     //por el momento evitamos un nilpointer.
     self.setItems( Array<Media>())
-    throw  NoSuchElementException() //nothing to move.
-    }
+//    throw  NoSuchElementException() //nothing to move.
+//    }
     
-    if (self.items.isEmpty()) {
+    if (self.items.isEmpty) {
     //Nothing to move.
-    throw  NoSuchElementException()
+//    throw  NoSuchElementException()
     }
     
     //Check transition is not violated.
     if (itemToMove.hashTransitions()) {
-    throw  IllegalOrphanTransitionOnTrack("Media item to move must be disengaged from " +
-    "transitions first")
+//    throw  IllegalOrphanTransitionOnTrack("Media item to move must be disengaged from " +
+//    "transitions first")
     }
     
     //delete the item.
-    self.items.remove(self.items.indexOf(itemToMove))
+        let i = items.indexOf({
+            $0.authorsNames[0] == itemToMove.authorsNames[0]
+        })
+        
+        self.items.removeAtIndex(i!)
     
+        
     //insert the item again in his new position.
-    self.insertItemAt(newPosition, itemToMove)
+    try self.insertItemAt(newPosition, itemToAdd: itemToMove)
     
     //add the previously deleted effects.
     //TODO cuando sepamos como se insertan los efectos y que esto no va a petar.
@@ -306,34 +319,37 @@ class Track {
      */
     func getTrackStartTimeFor(mItem:Media)  throws -> Double{
         
-        long result = 0
+        var result = 0.0
         
         //if the list is empty we choose to return start of track.
-        if (self.items == nil || self.items.isEmpty()) {
+        if (self.items.isEmpty) {
             return 0
         }
         
         
-        int position = self.items.indexOf(mItem)
-        if (mItem == nil) {
+        var position = self.items.indexOf({
+            $0.authorsNames[0] == mItem.authorsNames[0]
+        })
+//        if (mItem == nil) {
             //items cannot be empty so a mediaItem nil means the final of the list
-            position = self.items.size()
-        } else if (position <= 0) {
+            position = self.items.count
+//        } else
+        if (position <= 0) {
             //if we don't find the mediaItem then return the start of the track.
             //besides, probably a error has occurred.
             return 0
         }
         
         //finally if all goes well calculate the actual startTime for the media item given.
-        for (Media m : self.items.subList(0, position)) {
-            result += m.getDuration()
-        }
+//        for (m in self.items.subList(0, position)) {
+//            result += m.getDuration()
+//        }
         return result
     }
     
     func getDuration() ->Double{
-        var trackDuration = 0
-        for (Media item in self.items) {
+        var trackDuration = 0.0
+        for item in self.items {
             trackDuration += item.getDuration()
         }
         return trackDuration

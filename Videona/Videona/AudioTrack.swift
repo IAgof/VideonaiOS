@@ -22,8 +22,8 @@ class AudioTrack:Track {
      *
      * @see com.videonasocialmedia.videona.model.entities.editor.track.Track
      */
-    init() {
-        super()
+    override init() {
+        super.init()
     }
     
     /**
@@ -32,8 +32,8 @@ class AudioTrack:Track {
      * @see com.videonasocialmedia.videona.model.entities.editor.track.Track
      */
     init(items:Array<Media> ,  effects:Dictionary<Int, Array<Effect>>,
-     transitionsDictionary<String, Transition>) -> AudioTrack{
-        super(items, effects, transitions)
+     transitionsDictionary:Dictionary<String, Transition>) {
+        super.init(items: items, effects: effects, transitions: transitionsDictionary)
         self.checkItems()
     }
     
@@ -41,9 +41,12 @@ class AudioTrack:Track {
      * Ensure there are only Audio items on items list.
      */
      func checkItems() {
-        for (Object item in self.getItems()) {
+        for item in self.getItems() {
             if (!(item is Audio)) {
-                self.items.removeFirstOccurrence(item)
+                let i = items.indexOf({
+                    $0.authorsNames[0] == item.authorsNames[0]
+                })
+                self.items.removeAtIndex(i!)
             }
         }
     }
@@ -57,16 +60,16 @@ class AudioTrack:Track {
      
     override func insertItemAt(position:Int, itemToAdd:Media) throws->Bool {
         if (!(itemToAdd is Audio)) {
-            throw IllegalItemOnTrack("Audio track can only have audio media items.")
+//            throw IllegalItemOnTrack("Audio track can only have audio media items.")
         }
-        return super.insertItemAt(position, itemToAdd)
+        return try super.insertItemAt(position, itemToAdd: itemToAdd)
     }
     
-     func insertItem(itemToAdd:Media) throws ->Bool {
+     override func insertItem(itemToAdd:Media) throws ->Bool {
         if (!(itemToAdd is Audio)) {
-            throw IllegalItemOnTrack("Audio track can only have audio media items.")
+//            throw IllegalItemOnTrack("Audio track can only have audio media items.")
         }
-        return super.insertItem(itemToAdd)
+        return try super.insertItem(itemToAdd)
     }
     
     /**
@@ -75,8 +78,11 @@ class AudioTrack:Track {
      * @param itemToDelete - Media item to be deleted.
      * @return TRUE if the list contained the specified element.
      */
-     func deleteItem(itemToDelete:Media) throws ->Media{
-        return super.deleteItemAt(self.items.indexOf(itemToDelete))
+     override func deleteItem(itemToDelete:Media) throws ->Media{
+        let i = items.indexOf({
+            $0.authorsNames[0] == itemToDelete.authorsNames[0]
+        })
+        return try super.deleteItemAt(i!)
     }
     
     /**
@@ -84,11 +90,11 @@ class AudioTrack:Track {
      *
      * @param position
      */
-     func deleteItemAt(int position) throws ->Media {
-        if (!(self.items.get(position) is Audio)) {
-            throw IllegalItemOnTrack("Audio track can only have audio media items.")
+    override func deleteItemAt(position:Int) throws ->Media {
+        if (!(self.items[position] is Audio)) {
+//            throw IllegalItemOnTrack("Audio track can only have audio media items.")
         }
-        return super.deleteItemAt(position)
+        return try super.deleteItemAt(position)
     }
     
     /**
@@ -97,15 +103,15 @@ class AudioTrack:Track {
      * @param newPosition - The new position in the track for the media item.
      * @param itemToMove  - The media item to ve moved.
      */
-     func moveItemTo(newPosition:Int, itemToMove:Media) throws ->Bool
+     override func moveItemTo(newPosition:Int, itemToMove:Media) throws ->Bool
      {
         if (!(itemToMove is Audio)) {
-            throw IllegalItemOnTrack("Audio track can only have audio media items.")
+//            throw IllegalItemOnTrack("Audio track can only have audio media items.")
         }
-        return super.moveItemTo(newPosition, itemToMove)
+        return try super.moveItemTo(newPosition, itemToMove: itemToMove)
     }
     
-     func  setItems(items:Array<Media> ) {
+     override func  setItems(items:Array<Media> ) {
         super.setItems(items)
         self.checkItems()
     }

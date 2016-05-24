@@ -19,11 +19,16 @@ class User {
     
     init(name:String) {
         self.name = name
+        self.email = ""
+        self.id = 0
+        self.avatarPath = ""
     }
     
     init(name:String,email:String) {
         self.name = name
         self.email = email
+        self.id = 0
+        self.avatarPath = ""
     }
     
     init(name:String, email:String, avatarPath:String, id:Int) {

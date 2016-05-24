@@ -32,9 +32,9 @@ class MediaTrack : Track {
      *
      * @see com.videonasocialmedia.videona.model.entities.editor.track.Track
      */
-    init(items:LinkedList<Media>,effects:Dictionary<Integer, LinkedList<Effect>>,
-         transitions:Dictionary<String, Transition>) ->MediaTrack{
-        super(items, effects, transitions)
+    override init(items:Array<Media>,effects:Dictionary<Int, Array<Effect>>,
+         transitions:Dictionary<String, Transition>) {
+        super.init(items: items, effects: effects, transitions: transitions)
         self.checkItems()
     }
     
@@ -42,16 +42,18 @@ class MediaTrack : Track {
      * Ensure there are only Media items on items list.
      */
     func checkItems() {
-        for (Media item in items) {
+        var cont = 0
+        for item in items {
             if (item is Audio) {
                 //throw new IllegalItemOnMediaTrack("Cannot add media audio items to a media track")
-                self.items.removeFirstOccurrence(item)
+                self.items.removeAtIndex(cont)
             }
+            cont += 1
         }
     }
     
     func getNumVideosInProject() ->Int{
-        return self.getItems().size()
+        return self.getItems().count
     }
     
     /**
@@ -62,17 +64,20 @@ class MediaTrack : Track {
      */
     override func insertItemAt(position:Int, itemToAdd:Media) throws ->Bool{
         if (itemToAdd is Audio) {
-            throw IllegalItemOnTrack("Cannot add an Audio media item to a MediaTrack.")
+            //            throw IllegalItemOnTrack("Cannot add an Audio media item to a MediaTrack.")
         }
-        return super.insertItemAt(position, itemToAdd)
+        return try super.insertItemAt(position, itemToAdd: itemToAdd)
     }
     
     override func insertItem(itemToAdd:Media) throws ->Bool {
         if (itemToAdd is Audio) {
-            throw IllegalItemOnTrack("Cannot add an Audio media item to a MediaTrack.")
+//            throw IllegalItemOnTrack("Cannot add an Audio media item to a MediaTrack.")
         }
         // With super works, waiting merge model branch to dev return self.insertItem(itemToAdd)
-        return super.insertItem(itemToAdd)
+//        let i = items.indexOf({
+//            $0.authorsNames[0] == itemToAdd.authorsNames[0]
+//        })
+        return try super.insertItemAt(0, itemToAdd: itemToAdd)
     }
     
     /**
@@ -81,8 +86,11 @@ class MediaTrack : Track {
      * @param itemToDelete - Media item to be deleted.
      * @return TRUE if the list contained the specified element.
      */
-    func deleteItem(itemToDelete:Media) throws ->Media {
-        return self.deleteItemAt(self.items.indexOf(itemToDelete))
+    override func deleteItem(itemToDelete:Media) throws ->Media {
+//        let i = items.indexOf({
+//            $0.authorsNames[0] == itemToDelete.authors[0]
+//        })
+        return try self.deleteItemAt(0)
     }
     
     /**
@@ -90,11 +98,11 @@ class MediaTrack : Track {
      *
      * @param position
      */
-    func deleteItemAt(int position) throws ->Media {
-        if (self.items.get(position) is Audio) {
-            throw IllegalItemOnTrack("Cannot add an Audio media item to a MediaTrack.")
+    override func deleteItemAt(position:Int) throws ->Media {
+        if (self.items[position] is Audio) {
+//            throw IllegalItemOnTrack("Cannot add an Audio media item to a MediaTrack.")
         }
-        return super.deleteItemAt(position)
+        return try super.deleteItemAt(position)
     }
     
     /**
@@ -103,17 +111,17 @@ class MediaTrack : Track {
      * @param newPosition - The new position in the track for the media item.
      * @param itemToMove  - The media item to ve moved.
      */
-    func moveItemTo(newPosition:Int, itemToMove:Media) throws ->Media {
+    override func moveItemTo(newPosition:Int, itemToMove:Media) throws ->Bool {
         if (itemToMove is Audio) {
-            throw IllegalItemOnTrack("Cannot add an Audio media item to a MediaTrack.")
+//            throw IllegalItemOnTrack("Cannot add an Audio media item to a MediaTrack.")
         }
-        return super.moveItemTo(newPosition, itemToMove)
+        return try super.moveItemTo(newPosition, itemToMove: itemToMove)
     }
     
     /**
      * @param items
      */
-    func setItems(items:Array<Media>) {
+    override func setItems(items:Array<Media>) {
         super.setItems(items)
         self.checkItems()
     }

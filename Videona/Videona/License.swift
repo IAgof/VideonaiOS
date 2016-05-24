@@ -25,29 +25,32 @@ class License {
      */
     var name:String
 
-
+    init(){
+        self.text = ""
+        self.name = ""
+    }
     init(text:String, name:String) {
-    self.text = text;
-    self.name = name;
+    self.text = text
+    self.name = name
     }
     
     func getText() ->String{
-    return text;
+    return text
     }
     
     func setText(text:String) {
-    self.text = text;
+    self.text = text
     }
     
     func getName()->String {
-    return name;
+    return name
     }
     
     func setName(name:String) {
-        self.name = name;
+        self.name = name
     }
     
-    let CC40_NAME = "CC BY-NC-SA 4.0";
+    let CC40_NAME = "CC BY-NC-SA 4.0"
     let CC40_TEXT = "Summary\n" +
     "Creative Commons Attribution-NoDeratives license in International version 4, that " +
     "allows to do what they want except modifying.\n Attribution\n You must give credit to " +
@@ -61,5 +64,5 @@ class License {
     "work as-is and as-available.\n\nLiable\nLiable follows the same rules as Disclaimer of " +
     "warranties, providing, by default, protection from defamation for the creator.\n\n" +
     "Revoke\n The licensor cannot revoke these freedoms as long as you follow the license " +
-    "terms.";
+    "terms."
 }

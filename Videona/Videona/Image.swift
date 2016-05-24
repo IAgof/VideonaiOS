@@ -16,8 +16,8 @@ import Foundation
  */
 class Image:Media {
     
-    let DEFAULT_IMAGE_DURATION = 3;
-    var IMAGE_PATH = "";
+    let DEFAULT_IMAGE_DURATION = 3.0
+    var IMAGE_PATH = ""
     
     
     /**
@@ -30,7 +30,7 @@ class Image:Media {
      * @see com.videonasocialmedia.videona.model.entities.editor.media.Media
      */
     init(identifier:String,iconPath:String, mediaPath:String,authors:Array<User>,license:License){
-        super.init(identifier, iconPath, mediaPath, 0, Image.DEFAULT_IMAGE_DURATION, authors, license);
+        super.init(identifier: identifier, iconPath: iconPath, mediaPath: mediaPath, fileStartTime: 0.0, duration: self.DEFAULT_IMAGE_DURATION, authors: authors, license: license)
     }
     
     /**
@@ -38,43 +38,45 @@ class Image:Media {
      *
      * @param mediaPath
      */
-    init(mediaPath:String) {
-        super.init(null, null, mediaPath, 0, Image.DEFAULT_IMAGE_DURATION, null, null);
-        //check if the mediapath is an image.
-        
-        //get the iconpath
-        
-        //resolve lincese by default.
-        self.setLicense(new License(License.CC40_NAME, License.CC40_TEXT));
-        
-    }
+//    init(mediaPath:String) {
+//        super.init(identifier: "", iconPath: "", selectedIconPath: "", title: "", mediaPath: mediaPath, fileStartTime: 0, duration: self.DEFAULT_IMAGE_DURATION, opening: , ending:Transition, metadata: nil, authors: nil, license: nil)
+//        //check if the mediapath is an image.
+//        
+//        //get the iconpath
+//        
+//        //resolve lincese by default.
+//        self.license.setName(License.CC40_NAME)
+//        self.license.setText(License.CC40_TEXT)
+//        
+//    }
     
     /**
      * Parametrized constructor. It requires all possible attributes for an effect object.
      *
      * @see com.videonasocialmedia.videona.model.entities.editor.media.Media
      */
-    init(identifier:String,iconPath:String, selectedIconPath:String, title:String, mediaPath:String,duration:Int,opening:Transition,ending:Transition,metadata:NSMetadataItem,authors:Array<User>,license:License){
-        super.init(identifier, iconPath, selectedIconPath, title, mediaPath, 0, duration,
-        opening, ending, metadata, authors, license);
+    init(identifier:String,iconPath:String, selectedIconPath:String, title:String, mediaPath:String,duration:Double,opening:Transition,ending:Transition,metadata:NSMetadataItem,authors:Array<User>,license:License){
+        super.init(identifier: identifier, iconPath: iconPath, selectedIconPath: selectedIconPath, title: title, mediaPath: mediaPath, fileStartTime: 0.0, duration: duration,
+                   opening: opening, ending: ending, metadata: metadata, authors: authors, license: license)
     }
     
-    func getFileStartTime()->Int {
-        return 0;
+    override func getFileStartTime()->Double {
+        return 0
     }
     
-    func setFileStartTime(fileStartTime:Int) {
+    override func setFileStartTime(fileStartTime:Double) {
         //
     }
     
     //utils
-    func isImage(File file) ->Bool{
-        if (file == nil || !file.exists()) {
-            return false;
-        }
-        BitmapFactory.Options options = BitmapFactory.Options();
-        options.inJustDecodeBounds = true;
-        BitmapFactory.decodeFile(file.getPath(), options);
-        return options.outWidth != -1 && options.outHeight != -1;
+    func isImage(file:FILE) ->Bool{
+//        if ((file._read == nil)) {
+//            return false
+//        }
+//        let options = BitmapFactory.Options()
+//        options.inJustDecodeBounds = true
+//        BitmapFactory.decodeFile(file.getPath(), options)
+//        return options.outWidth != -1 && options.outHeight != -1
+        return true
     }
 }

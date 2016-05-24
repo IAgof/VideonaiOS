@@ -40,7 +40,7 @@ class RecordPresenter: NSObject, RecordPresenterInterface{
             //Wait to hide filterlist
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(500 * NSEC_PER_MSEC)), dispatch_get_main_queue(), {
                 self.recordWireframe?.presentColorFilterListInterface()
-                });
+                })
 
             self.colorFilterViewIsShowin = true
             return
@@ -63,7 +63,7 @@ class RecordPresenter: NSObject, RecordPresenterInterface{
             //Wait to hide filterlist
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(500 * NSEC_PER_MSEC)), dispatch_get_main_queue(), {
                 self.recordWireframe?.presentShaderFilterListInterface()
-            });
+            })
             self.shaderFilterViewIsShowin = true
             return
         }else if(shaderFilterViewIsShowin){
