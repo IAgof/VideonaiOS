@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Videona/RecordPresenter.swift"
-            timestampString = "485278454.018192"
+            filePath = "Videona/AddFilterInteractor.swift"
+            timestampString = "485943017.94642"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "pushShowHideShaderFilters()"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "addBlendFilter(_:blendFilter:blendImage:display:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Videona/RecordPresenter.swift"
-            timestampString = "485278213.309975"
+            filePath = "Videona/CameraInteractor.swift"
+            timestampString = "485946639.62207"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "pushShowHideColorFilters()"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "addBlendUIElementAtInit()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

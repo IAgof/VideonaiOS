@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GPUImage
 
 protocol RecordPresenterInput{
     
@@ -17,14 +18,14 @@ protocol RecordPresenterOutput{
 }
 
 protocol RecordPresenterInterface{
+    func viewDidLoad(displayView:GPUImageView)
     func pushSettings()
     func pushShare()
-    func pushShowHideColorFilters()
-    func pushShowHideShaderFilters()
     func showWarningOrientationImage()
     func hideWarningOrientationImage()
     func pushRecord()
     func pushFlash()
     func pushRotateCamera()
-
+    
+    func setFiltersOnView(filters: Array<String>)
 }

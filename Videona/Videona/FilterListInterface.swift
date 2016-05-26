@@ -11,5 +11,5 @@ import UIKit
 
 protocol FilterListInterface {
     
-    func setUpFiltersOnView(filters:Array<UIImage>) 
+    func setUpFiltersOnView(filtersImage:Array<UIImage>,filtersTitle:Array<String>) 
 }

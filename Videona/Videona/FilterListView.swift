@@ -17,8 +17,9 @@ class FilterListView: UIView,FilterListInterface, UICollectionViewDataSource, UI
     var transitioningBackgroundView : UIView = UIView()
     let reuseIdentifierCell = "filterCell"
     
-    var filterList: Array<UIImage> = []
-        
+    var filterListImage: Array<UIImage> = []
+    var filterListTitle: Array<String> = []
+
     //MARK: - Outlets
     @IBOutlet weak var filtersCollectionView: UICollectionView!
    
@@ -40,8 +41,9 @@ class FilterListView: UIView,FilterListInterface, UICollectionViewDataSource, UI
     func getShaderFiltersAsFilterList(){
         eventHandler?.getShaderFilterList()
     }
-    func setUpFiltersOnView(filters:Array<UIImage>) {
-        filterList = filters
+    func setUpFiltersOnView(filtersImage:Array<UIImage>,filtersTitle:Array<String>) {
+        filterListImage = filtersImage
+        filterListTitle = filtersTitle
         self.filtersCollectionView.performBatchUpdates({
             
             self.filtersCollectionView.reloadData()
@@ -59,15 +61,17 @@ class FilterListView: UIView,FilterListInterface, UICollectionViewDataSource, UI
     
     // MARK: - UICollectionViewDataSource protocol
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return filterList.count
+        return filterListImage.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifierCell, forIndexPath: indexPath) as! FilterViewCell
         
-        let image = filterList[indexPath.item]
+        let image = filterListImage[indexPath.item]
+        let title = filterListTitle[indexPath.item]
         
         cell.filterImage.image = image
+        cell.filterTitle.text = title
         
         return cell
     }
@@ -75,6 +79,14 @@ class FilterListView: UIView,FilterListInterface, UICollectionViewDataSource, UI
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         // handle tap events
-        print("You selected filter in position #\(indexPath.item) \n filter name: \(filterList[indexPath.item])!")
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! FilterViewCell
+        
+        var filters = Array<String>()
+        if let cellTitle = cell.filterTitle.text{
+            filters.append(cellTitle)
+        }
+        
+        print("You selected filter in position #\(indexPath.item) \n filter name: \(cell.filterTitle.text)!")
+        eventHandler?.FilterListSelectedFilters(filters)
     }
 }

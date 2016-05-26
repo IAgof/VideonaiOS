@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GPUImage
 
 class RecordController: VideonaController,RecordViewInterface,UINavigationControllerDelegate {
     
@@ -14,18 +15,19 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     var eventHandler: RecordPresenter?
     
     @IBOutlet weak var warningOrientationImage: UIImageView!
+    @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var cameraRotationButton: UIButton!
     @IBOutlet weak var flashButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var shaderFilterButton: UIButton!
     @IBOutlet weak var overlayFilterButton: UIButton!
+    @IBOutlet weak var cameraView: GPUImageView!
     
     //MARK: - View Config
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.configureView()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RecordController.checkOrientation), name: UIDeviceOrientationDidChangeNotification, object: nil)
+        eventHandler?.viewDidLoad(cameraView)
     }
     func forceLandsCapeOnInit(){
         //Force landscape mode
@@ -37,8 +39,8 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         // Dispose of any resources that can be recreated.
     }
     
-    
     func configureView() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RecordController.checkOrientation), name: UIDeviceOrientationDidChangeNotification, object: nil)
         self.navigationController?.navigationBarHidden = true
         self.forceLandsCapeOnInit()
     }
@@ -73,11 +75,11 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     
     //MARK: - Protocol Interface
     func showRecordButton(){
-        
+        self.recordButton.selected = true
     }
     
     func showStopButton(){
-        
+        self.recordButton.selected = false
     }
     
     func showSettings(){

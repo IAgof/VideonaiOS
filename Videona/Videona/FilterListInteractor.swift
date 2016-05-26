@@ -11,32 +11,36 @@ import UIKit
 
 class FilterListInteractor: NSObject {
     
-    func findColorFilters()-> Array<UIImage>{
-        let colorFilters = EffectProvider().getColorEffectList()
+    func findColorFilters()-> (Array<UIImage>,Array<String>){
+//        let colorFilters = EffectProvider().getColorEffectList()
+        let colorFilters = EffectProvider().getOverlayFilterList()
         
-        let socialNetworkImage = self.setArrayEffectUIImage(colorFilters)
-        
-        return socialNetworkImage
-    }
-    
-    func findShaderFilters()-> Array<UIImage>{
-        let colorFilters = EffectProvider().getShaderEffectList()
-        
-        let socialNetworkImage = self.setArrayEffectUIImage(colorFilters)
+        let socialNetworkImage = self.setArrayEffectUIImageAndTitle(colorFilters)
         
         return socialNetworkImage
     }
     
+    func findShaderFilters()-> (Array<UIImage>,Array<String>){
+        let shaderFilters = EffectProvider().getShaderEffectList()
+        
+        let socialNetworkImageAndImage = self.setArrayEffectUIImageAndTitle(shaderFilters)
+        
+        return socialNetworkImageAndImage
+    }
     
-    func setArrayEffectUIImage(sNArray:Array<Effect>)->Array<UIImage>{
+    
+    func setArrayEffectUIImageAndTitle(sNArray:Array<Effect>)->(Array<UIImage>,Array<String>){
         var imageArray = Array<UIImage>()
+        var titleArray = Array<String>()
         
         for filter in sNArray{
             let image = UIImage.init(named: filter.getIconId())
             imageArray.append(image!)
+            let title = filter.getName()
+            titleArray.append(title)
         }
         
-        return imageArray
+        return (imageArray,titleArray)
     }
     
 }

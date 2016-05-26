@@ -16,31 +16,27 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
     var interactor: FilterListInteractor?
     var filterListDelegate: FilterListDelegate?
     var recordWireframe: RecordWireframe?
-    var recordPresenter:RecordPresenterInterface?
     
-    var filters:Array<UIImage> = []
+    var filtersImage:Array<UIImage> = []
+    var filtersTitle:Array<String> = []
     var filterShowing = -1
     
     let FILTERS_SHOWING_IS_NONE = 0
     let FILTERS_SHOWING_IS_COLOR = 0
     let FILTERS_SHOWING_IS_SHADER = 1
     
-    func cancelFilterListAction() {
-        if(filterShowing == FILTERS_SHOWING_IS_SHADER){
-            recordPresenter!.pushShowHideShaderFilters()
-        }else if (filterShowing == FILTERS_SHOWING_IS_COLOR){
-            recordPresenter!.pushShowHideColorFilters()
-        }
-        self.setFilterShowin(FILTERS_SHOWING_IS_NONE)
-    }
     func getColorFilterList() {
-        filters = (interactor?.findColorFilters())!
+        filtersImage = (interactor?.findColorFilters().0)!
+        filtersTitle = (interactor?.findColorFilters().1)!
+
         self.setFilterShowin(FILTERS_SHOWING_IS_COLOR)
         self.setFiltersToView()
     }
     
     func getShaderFilterList() {
-        filters = (interactor?.findShaderFilters())!
+        filtersImage = (interactor?.findShaderFilters().0)!
+        filtersTitle = (interactor?.findShaderFilters().1)!
+        
         self.setFilterShowin(FILTERS_SHOWING_IS_SHADER)
         self.setFiltersToView()
    }
@@ -50,10 +46,22 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
     }
     
     func setFiltersToView(){
-        controller?.setUpFiltersOnView(filters)
+        controller?.setUpFiltersOnView(filtersImage,filtersTitle: filtersTitle)
     }
     
     func configureUserInterfaceForPresentation(addViewUserInterface: FilterListInterface) {
         
+    }
+    
+    func FilterListSelectedFilters(filter: Array<String>) {
+        filterListDelegate?.setFiltersOnView(filter)
+    }
+    func cancelFilterListAction() {
+        if(filterShowing == FILTERS_SHOWING_IS_SHADER){
+            filterListDelegate!.pushShowHideShaderFilters()
+        }else if (filterShowing == FILTERS_SHOWING_IS_COLOR){
+            filterListDelegate!.pushShowHideColorFilters()
+        }
+        self.setFilterShowin(FILTERS_SHOWING_IS_NONE)
     }
 }

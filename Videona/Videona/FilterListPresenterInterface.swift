@@ -13,9 +13,12 @@ protocol FilterListPresenterInterface {
     func cancelFilterListAction()
     func getColorFilterList()
     func getShaderFilterList()
+    func FilterListSelectedFilters(filter:Array<String>)
 }
 
 
 protocol FilterListDelegate {
-    func FilterListDidCancelAddAction()
+    func setFiltersOnView(filters:Array<String>)
+    func pushShowHideColorFilters()
+    func pushShowHideShaderFilters()
 }

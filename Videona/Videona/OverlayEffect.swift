@@ -11,17 +11,17 @@ import Foundation
 class OverlayEffect : Effect {
     
     var resourcePath:String?
-    var resourceId:Int?
+    var resourceId:String?
     
     init (identifier:String ,name:String ,iconPath:String ,resourcePath:String,
     type:String) {
         super.init(identifier: identifier, name: name, iconPath: iconPath, type: type)
         
         self.resourcePath = resourcePath
-        self.resourceId = -1
+        self.resourceId = ""
     }
     
-    init (identifier:String ,name:String ,iconPath:String ,resourceId:Int,
+    init (identifier:String ,name:String ,iconPath:String ,resourceId:String,
     type:String) {
         super.init(identifier: identifier, name: name, iconPath: iconPath, type: type)
 
@@ -29,7 +29,7 @@ class OverlayEffect : Effect {
         self.resourceId = resourceId
     }
     
-    init(identifier:String ,name:String ,iconId:String ,resourceId:Int,
+    init(identifier:String ,name:String ,iconId:String ,resourceId:String,
     type:String) {
         super.init(identifier: identifier, name: name, iconId: iconId, type: type)
 
@@ -45,11 +45,11 @@ class OverlayEffect : Effect {
         }
     }
     
-    func getResourceId() ->Int{
+    func getResourceId() ->String{
         if let resource = resourceId{
             return resource
         }else{
-            return 0
+            return ""
         }
     }
     

@@ -27,13 +27,14 @@
 		A94301741CE5DFA100DC0DF8 /* ShareInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301731CE5DFA100DC0DF8 /* ShareInteractorInterface.swift */; };
 		A94301761CE5EEE200DC0DF8 /* FilterListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301751CE5EEE200DC0DF8 /* FilterListInteractor.swift */; };
 		A94301781CE5EEED00DC0DF8 /* FilterListInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301771CE5EEED00DC0DF8 /* FilterListInteractorInterface.swift */; };
+		A95628C81CF6EA3C00EE4B85 /* silent_film_overlay_a.png in Resources */ = {isa = PBXBuildFile; fileRef = A95628C71CF6EA3C00EE4B85 /* silent_film_overlay_a.png */; };
+		A95628CD1CF6FE1400EE4B85 /* AddFilterInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95628CC1CF6FE1400EE4B85 /* AddFilterInteractorTest.swift */; };
 		A95B24351CD8890900F78AAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B24341CD8890900F78AAF /* AppDelegate.swift */; };
 		A95B24371CD8890900F78AAF /* RecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B24361CD8890900F78AAF /* RecordController.swift */; };
 		A95B243A1CD8890900F78AAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95B24381CD8890900F78AAF /* Main.storyboard */; };
 		A95B243C1CD8890900F78AAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A95B243B1CD8890900F78AAF /* Assets.xcassets */; };
 		A95B243F1CD8890900F78AAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95B243D1CD8890900F78AAF /* LaunchScreen.storyboard */; };
 		A95B244A1CD8890A00F78AAF /* VideonaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B24491CD8890A00F78AAF /* VideonaTests.swift */; };
-		A95B24551CD8890A00F78AAF /* VideonaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B24541CD8890A00F78AAF /* VideonaUITests.swift */; };
 		A95B246B1CD88AC100F78AAF /* RecordWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B246A1CD88AC100F78AAF /* RecordWireframe.swift */; };
 		A95B246E1CD88C2D00F78AAF /* RecordViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B246D1CD88C2D00F78AAF /* RecordViewInterface.swift */; };
 		A95B24711CD88C4B00F78AAF /* RecordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B24701CD88C4B00F78AAF /* RecordPresenter.swift */; };
@@ -53,8 +54,14 @@
 		A965BDBF1CDA076C002579CA /* IntroWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A965BDBE1CDA076C002579CA /* IntroWireframe.swift */; };
 		A965BDC11CDA0F1D002579CA /* IntroViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A965BDC01CDA0F1D002579CA /* IntroViewInterface.swift */; };
 		A965BDC31CDA1171002579CA /* IntroPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A965BDC21CDA1171002579CA /* IntroPresenterInterface.swift */; };
+		A965C7EC1CF58467001E2D39 /* CameraInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A965C7EB1CF58467001E2D39 /* CameraInteractor.swift */; };
 		A96732FE1CE6309C007BE340 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96732FD1CE6309C007BE340 /* SettingsInteractor.swift */; };
 		A96733001CE630AD007BE340 /* SettingsInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96732FF1CE630AD007BE340 /* SettingsInteractorInterface.swift */; };
+		A98A93B51CF58870004E1DB7 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98A93B21CF58866004E1DB7 /* GPUImage.framework */; };
+		A98A93B61CF58874004E1DB7 /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A98A93B21CF58866004E1DB7 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A98A93BB1CF5903C004E1DB7 /* AddFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */; };
+		A98A93BD1CF59155004E1DB7 /* ChangeFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A93BC1CF59155004E1DB7 /* ChangeFilterInteractor.swift */; };
+		A98A93C41CF5BAF6004E1DB7 /* EffectDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A93C31CF5BAF6004E1DB7 /* EffectDictionary.swift */; };
 		A99278501CE3647B009DC364 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A992784F1CE3647B009DC364 /* SettingsPresenter.swift */; };
 		A99278531CE364E6009DC364 /* SettingsPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99278521CE364E6009DC364 /* SettingsPresenterInterface.swift */; };
 		A99278551CE3650C009DC364 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99278541CE3650C009DC364 /* SettingsViewController.swift */; };
@@ -65,6 +72,27 @@
 		A9B1181B1CE378D3001A1177 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1181A1CE378D3001A1177 /* ShareViewController.swift */; };
 		A9B1181D1CE378DC001A1177 /* ShareInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1181C1CE378DC001A1177 /* ShareInterface.swift */; };
 		A9B1181F1CE378E8001A1177 /* ShareWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1181E1CE378E8001A1177 /* ShareWireframe.swift */; };
+		A9D76AE71CF5E9CB00F7FB47 /* RemoveFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D76AE61CF5E9CB00F7FB47 /* RemoveFilterInteractor.swift */; };
+		A9D76B041CF5FB8700F7FB47 /* autumn.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D76AF01CF5FB8700F7FB47 /* autumn.png */; };
+		A9D76B051CF5FB8700F7FB47 /* bokeh.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D76AF11CF5FB8700F7FB47 /* bokeh.png */; };
+		A9D76B061CF5FB8700F7FB47 /* burn.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D76AF21CF5FB8700F7FB47 /* burn.png */; };
+		A9D76B071CF5FB8700F7FB47 /* cctv.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D76AF31CF5FB8700F7FB47 /* cctv.png */; };
+		A9D76B081CF5FB8700F7FB47 /* color_stain.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D76AF41CF5FB8700F7FB47 /* color_stain.png */; };
+		A9D76B091CF5FB8700F7FB47 /* dark.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D76AF51CF5FB8700F7FB47 /* dark.png */; };
+		A9D76B0A1CF5FB8700F7FB47 /* game.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9D76AF61CF5FB8700F7FB47 /* game.jpg */; };
+		A9D76B0B1CF5FB8700F7FB47 /* mist.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D76AF71CF5FB8700F7FB47 /* mist.png */; };
+		A9D76B0C1CF5FB8700F7FB47 /* old.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D76AF81CF5FB8700F7FB47 /* old.png */; };
+		A9D76B0D1CF5FB8700F7FB47 /* passion.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D76AF91CF5FB8700F7FB47 /* passion.png */; };
+		A9D76B0E1CF5FB8700F7FB47 /* pastel.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D76AFA1CF5FB8700F7FB47 /* pastel.png */; };
+		A9D76B0F1CF5FB8700F7FB47 /* polaroid.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D76AFB1CF5FB8700F7FB47 /* polaroid.png */; };
+		A9D76B101CF5FB8700F7FB47 /* pride.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D76AFC1CF5FB8700F7FB47 /* pride.png */; };
+		A9D76B111CF5FB8700F7FB47 /* rain.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D76AFD1CF5FB8700F7FB47 /* rain.png */; };
+		A9D76B121CF5FB8700F7FB47 /* retrotv.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D76AFE1CF5FB8700F7FB47 /* retrotv.png */; };
+		A9D76B131CF5FB8700F7FB47 /* spring.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D76AFF1CF5FB8700F7FB47 /* spring.png */; };
+		A9D76B141CF5FB8700F7FB47 /* summer.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D76B001CF5FB8700F7FB47 /* summer.png */; };
+		A9D76B151CF5FB8700F7FB47 /* sunset.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D76B011CF5FB8700F7FB47 /* sunset.png */; };
+		A9D76B161CF5FB8700F7FB47 /* texture.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D76B021CF5FB8700F7FB47 /* texture.png */; };
+		A9D76B171CF5FB8700F7FB47 /* wasted.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D76B031CF5FB8700F7FB47 /* wasted.png */; };
 		A9E066D91CE4B4E000D4E11D /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E066D81CE4B4E000D4E11D /* Effect.swift */; };
 		A9E066DB1CE4B4EE00D4E11D /* OverlayEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E066DA1CE4B4EE00D4E11D /* OverlayEffect.swift */; };
 		A9E066DD1CE4B4F500D4E11D /* ShaderEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E066DC1CE4B4F500D4E11D /* ShaderEffect.swift */; };
@@ -96,9 +124,44 @@
 			remoteGlobalIDString = A95B24301CD8890900F78AAF;
 			remoteInfo = Videona;
 		};
+		A98A93AF1CF58866004E1DB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A918B89A1CF5878D0013D68F /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
+		A98A93B11CF58866004E1DB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A918B89A1CF5878D0013D68F /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCE209E51943F20C002FEED8;
+			remoteInfo = GPUImageFramework;
+		};
+		A98A93B31CF5886D004E1DB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A918B89A1CF5878D0013D68F /* GPUImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCE209E41943F20C002FEED8;
+			remoteInfo = GPUImageFramework;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A965C7F91CF586E4001E2D39 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A98A93B61CF58874004E1DB7 /* GPUImage.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		A918B89A1CF5878D0013D68F /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = ../../GPUImage/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		A93846E71CE47E82007FB6BC /* FilterListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListPresenter.swift; sourceTree = "<group>"; };
 		A93846E91CE47E9C007FB6BC /* FilterListPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListPresenterInterface.swift; sourceTree = "<group>"; };
 		A93846EB1CE47EE2007FB6BC /* FilterListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListView.swift; sourceTree = "<group>"; };
@@ -119,6 +182,8 @@
 		A94301731CE5DFA100DC0DF8 /* ShareInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareInteractorInterface.swift; sourceTree = "<group>"; };
 		A94301751CE5EEE200DC0DF8 /* FilterListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListInteractor.swift; sourceTree = "<group>"; };
 		A94301771CE5EEED00DC0DF8 /* FilterListInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListInteractorInterface.swift; sourceTree = "<group>"; };
+		A95628C71CF6EA3C00EE4B85 /* silent_film_overlay_a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = silent_film_overlay_a.png; sourceTree = "<group>"; };
+		A95628CC1CF6FE1400EE4B85 /* AddFilterInteractorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFilterInteractorTest.swift; sourceTree = "<group>"; };
 		A95B24311CD8890900F78AAF /* Videona.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Videona.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A95B24341CD8890900F78AAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A95B24361CD8890900F78AAF /* RecordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordController.swift; sourceTree = "<group>"; };
@@ -130,7 +195,6 @@
 		A95B24491CD8890A00F78AAF /* VideonaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideonaTests.swift; sourceTree = "<group>"; };
 		A95B244B1CD8890A00F78AAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A95B24501CD8890A00F78AAF /* VideonaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideonaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A95B24541CD8890A00F78AAF /* VideonaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideonaUITests.swift; sourceTree = "<group>"; };
 		A95B24561CD8890A00F78AAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A95B246A1CD88AC100F78AAF /* RecordWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordWireframe.swift; sourceTree = "<group>"; };
 		A95B246D1CD88C2D00F78AAF /* RecordViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewInterface.swift; sourceTree = "<group>"; };
@@ -151,8 +215,12 @@
 		A965BDBE1CDA076C002579CA /* IntroWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroWireframe.swift; sourceTree = "<group>"; };
 		A965BDC01CDA0F1D002579CA /* IntroViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewInterface.swift; sourceTree = "<group>"; };
 		A965BDC21CDA1171002579CA /* IntroPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroPresenterInterface.swift; sourceTree = "<group>"; };
+		A965C7EB1CF58467001E2D39 /* CameraInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraInteractor.swift; sourceTree = "<group>"; };
 		A96732FD1CE6309C007BE340 /* SettingsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
 		A96732FF1CE630AD007BE340 /* SettingsInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractorInterface.swift; sourceTree = "<group>"; };
+		A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFilterInteractor.swift; sourceTree = "<group>"; };
+		A98A93BC1CF59155004E1DB7 /* ChangeFilterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeFilterInteractor.swift; sourceTree = "<group>"; };
+		A98A93C31CF5BAF6004E1DB7 /* EffectDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectDictionary.swift; sourceTree = "<group>"; };
 		A992784F1CE3647B009DC364 /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		A99278521CE364E6009DC364 /* SettingsPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenterInterface.swift; sourceTree = "<group>"; };
 		A99278541CE3650C009DC364 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +231,27 @@
 		A9B1181A1CE378D3001A1177 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		A9B1181C1CE378DC001A1177 /* ShareInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareInterface.swift; sourceTree = "<group>"; };
 		A9B1181E1CE378E8001A1177 /* ShareWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareWireframe.swift; sourceTree = "<group>"; };
+		A9D76AE61CF5E9CB00F7FB47 /* RemoveFilterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveFilterInteractor.swift; sourceTree = "<group>"; };
+		A9D76AF01CF5FB8700F7FB47 /* autumn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = autumn.png; sourceTree = "<group>"; };
+		A9D76AF11CF5FB8700F7FB47 /* bokeh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bokeh.png; sourceTree = "<group>"; };
+		A9D76AF21CF5FB8700F7FB47 /* burn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = burn.png; sourceTree = "<group>"; };
+		A9D76AF31CF5FB8700F7FB47 /* cctv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cctv.png; sourceTree = "<group>"; };
+		A9D76AF41CF5FB8700F7FB47 /* color_stain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_stain.png; sourceTree = "<group>"; };
+		A9D76AF51CF5FB8700F7FB47 /* dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dark.png; sourceTree = "<group>"; };
+		A9D76AF61CF5FB8700F7FB47 /* game.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = game.jpg; sourceTree = "<group>"; };
+		A9D76AF71CF5FB8700F7FB47 /* mist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mist.png; sourceTree = "<group>"; };
+		A9D76AF81CF5FB8700F7FB47 /* old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = old.png; sourceTree = "<group>"; };
+		A9D76AF91CF5FB8700F7FB47 /* passion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = passion.png; sourceTree = "<group>"; };
+		A9D76AFA1CF5FB8700F7FB47 /* pastel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pastel.png; sourceTree = "<group>"; };
+		A9D76AFB1CF5FB8700F7FB47 /* polaroid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = polaroid.png; sourceTree = "<group>"; };
+		A9D76AFC1CF5FB8700F7FB47 /* pride.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pride.png; sourceTree = "<group>"; };
+		A9D76AFD1CF5FB8700F7FB47 /* rain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rain.png; sourceTree = "<group>"; };
+		A9D76AFE1CF5FB8700F7FB47 /* retrotv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retrotv.png; sourceTree = "<group>"; };
+		A9D76AFF1CF5FB8700F7FB47 /* spring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spring.png; sourceTree = "<group>"; };
+		A9D76B001CF5FB8700F7FB47 /* summer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = summer.png; sourceTree = "<group>"; };
+		A9D76B011CF5FB8700F7FB47 /* sunset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sunset.png; sourceTree = "<group>"; };
+		A9D76B021CF5FB8700F7FB47 /* texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture.png; sourceTree = "<group>"; };
+		A9D76B031CF5FB8700F7FB47 /* wasted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wasted.png; sourceTree = "<group>"; };
 		A9E066D81CE4B4E000D4E11D /* Effect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
 		A9E066DA1CE4B4EE00D4E11D /* OverlayEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayEffect.swift; sourceTree = "<group>"; };
 		A9E066DC1CE4B4F500D4E11D /* ShaderEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShaderEffect.swift; sourceTree = "<group>"; };
@@ -184,6 +273,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A98A93B51CF58870004E1DB7 /* GPUImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +428,7 @@
 		A95B24281CD8890900F78AAF = {
 			isa = PBXGroup;
 			children = (
+				A918B89A1CF5878D0013D68F /* GPUImage.xcodeproj */,
 				A95B24331CD8890900F78AAF /* Videona */,
 				A95B24481CD8890A00F78AAF /* VideonaTests */,
 				A95B24531CD8890A00F78AAF /* VideonaUITests */,
@@ -375,6 +466,7 @@
 			isa = PBXGroup;
 			children = (
 				A95B24491CD8890A00F78AAF /* VideonaTests.swift */,
+				A95628CC1CF6FE1400EE4B85 /* AddFilterInteractorTest.swift */,
 				A95B244B1CD8890A00F78AAF /* Info.plist */,
 			);
 			path = VideonaTests;
@@ -383,7 +475,6 @@
 		A95B24531CD8890A00F78AAF /* VideonaUITests */ = {
 			isa = PBXGroup;
 			children = (
-				A95B24541CD8890A00F78AAF /* VideonaUITests.swift */,
 				A95B24561CD8890A00F78AAF /* Info.plist */,
 			);
 			path = VideonaUITests;
@@ -424,6 +515,10 @@
 			isa = PBXGroup;
 			children = (
 				A9F9C2481CF49F5D00AB310C /* ShowFlashInteractor.swift */,
+				A965C7EB1CF58467001E2D39 /* CameraInteractor.swift */,
+				A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */,
+				A9D76AE61CF5E9CB00F7FB47 /* RemoveFilterInteractor.swift */,
+				A98A93BC1CF59155004E1DB7 /* ChangeFilterInteractor.swift */,
 			);
 			name = Interactor;
 			sourceTree = "<group>";
@@ -597,6 +692,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		A98A93AA1CF58866004E1DB7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A98A93B01CF58866004E1DB7 /* libGPUImage.a */,
+				A98A93B21CF58866004E1DB7 /* GPUImage.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		A99278491CE3642D009DC364 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -689,6 +793,34 @@
 			name = Presenter;
 			sourceTree = "<group>";
 		};
+		A9D76AEF1CF5FB4B00F7FB47 /* FiltersOverlay */ = {
+			isa = PBXGroup;
+			children = (
+				A95628C71CF6EA3C00EE4B85 /* silent_film_overlay_a.png */,
+				A9D76AF01CF5FB8700F7FB47 /* autumn.png */,
+				A9D76AF11CF5FB8700F7FB47 /* bokeh.png */,
+				A9D76AF21CF5FB8700F7FB47 /* burn.png */,
+				A9D76AF31CF5FB8700F7FB47 /* cctv.png */,
+				A9D76AF41CF5FB8700F7FB47 /* color_stain.png */,
+				A9D76AF51CF5FB8700F7FB47 /* dark.png */,
+				A9D76AF61CF5FB8700F7FB47 /* game.jpg */,
+				A9D76AF71CF5FB8700F7FB47 /* mist.png */,
+				A9D76AF81CF5FB8700F7FB47 /* old.png */,
+				A9D76AF91CF5FB8700F7FB47 /* passion.png */,
+				A9D76AFA1CF5FB8700F7FB47 /* pastel.png */,
+				A9D76AFB1CF5FB8700F7FB47 /* polaroid.png */,
+				A9D76AFC1CF5FB8700F7FB47 /* pride.png */,
+				A9D76AFD1CF5FB8700F7FB47 /* rain.png */,
+				A9D76AFE1CF5FB8700F7FB47 /* retrotv.png */,
+				A9D76AFF1CF5FB8700F7FB47 /* spring.png */,
+				A9D76B001CF5FB8700F7FB47 /* summer.png */,
+				A9D76B011CF5FB8700F7FB47 /* sunset.png */,
+				A9D76B021CF5FB8700F7FB47 /* texture.png */,
+				A9D76B031CF5FB8700F7FB47 /* wasted.png */,
+			);
+			name = FiltersOverlay;
+			sourceTree = "<group>";
+		};
 		A9E066D41CE4B46900D4E11D /* AppLogic */ = {
 			isa = PBXGroup;
 			children = (
@@ -711,6 +843,7 @@
 			isa = PBXGroup;
 			children = (
 				A9E066D81CE4B4E000D4E11D /* Effect.swift */,
+				A98A93C31CF5BAF6004E1DB7 /* EffectDictionary.swift */,
 				A9E066DE1CE4BA0700D4E11D /* EffectProvider.swift */,
 				A9E066DA1CE4B4EE00D4E11D /* OverlayEffect.swift */,
 				A9E066DC1CE4B4F500D4E11D /* ShaderEffect.swift */,
@@ -747,6 +880,7 @@
 		A9F9C2141CF4872900AB310C /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				A9D76AEF1CF5FB4B00F7FB47 /* FiltersOverlay */,
 				A9F9C2131CF4871F00AB310C /* LogoSplash */,
 			);
 			name = Res;
@@ -762,10 +896,12 @@
 				A95B242D1CD8890900F78AAF /* Sources */,
 				A95B242E1CD8890900F78AAF /* Frameworks */,
 				A95B242F1CD8890900F78AAF /* Resources */,
+				A965C7F91CF586E4001E2D39 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A98A93B41CF5886D004E1DB7 /* PBXTargetDependency */,
 			);
 			name = Videona;
 			productName = Videona;
@@ -843,6 +979,12 @@
 			mainGroup = A95B24281CD8890900F78AAF;
 			productRefGroup = A95B24321CD8890900F78AAF /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A98A93AA1CF58866004E1DB7 /* Products */;
+					ProjectRef = A918B89A1CF5878D0013D68F /* GPUImage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A95B24301CD8890900F78AAF /* Videona */,
@@ -852,6 +994,23 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		A98A93B01CF58866004E1DB7 /* libGPUImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGPUImage.a;
+			remoteRef = A98A93AF1CF58866004E1DB7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A98A93B21CF58866004E1DB7 /* GPUImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GPUImage.framework;
+			remoteRef = A98A93B11CF58866004E1DB7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		A95B242F1CD8890900F78AAF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -859,13 +1018,34 @@
 			files = (
 				A9F9C2121CF485C600AB310C /* Logo_Splash_Vertical.png in Resources */,
 				A9F9C2101CF4857700AB310C /* Logo_Splash_Horizontal.png in Resources */,
+				A9D76B111CF5FB8700F7FB47 /* rain.png in Resources */,
+				A9D76B091CF5FB8700F7FB47 /* dark.png in Resources */,
+				A9D76B161CF5FB8700F7FB47 /* texture.png in Resources */,
+				A9D76B071CF5FB8700F7FB47 /* cctv.png in Resources */,
 				A95D3BF31CEB76D7001F2272 /* video.mp4 in Resources */,
+				A9D76B081CF5FB8700F7FB47 /* color_stain.png in Resources */,
 				A94301691CE5CF5800DC0DF8 /* PlayerView.xib in Resources */,
+				A95628C81CF6EA3C00EE4B85 /* silent_film_overlay_a.png in Resources */,
+				A9D76B151CF5FB8700F7FB47 /* sunset.png in Resources */,
+				A9D76B0E1CF5FB8700F7FB47 /* pastel.png in Resources */,
+				A9D76B101CF5FB8700F7FB47 /* pride.png in Resources */,
 				A95B243F1CD8890900F78AAF /* LaunchScreen.storyboard in Resources */,
+				A9D76B131CF5FB8700F7FB47 /* spring.png in Resources */,
 				A93846F71CE49340007FB6BC /* FilterListView.xib in Resources */,
+				A9D76B0A1CF5FB8700F7FB47 /* game.jpg in Resources */,
+				A9D76B171CF5FB8700F7FB47 /* wasted.png in Resources */,
+				A9D76B041CF5FB8700F7FB47 /* autumn.png in Resources */,
 				A95B243C1CD8890900F78AAF /* Assets.xcassets in Resources */,
+				A9D76B0D1CF5FB8700F7FB47 /* passion.png in Resources */,
+				A9D76B0F1CF5FB8700F7FB47 /* polaroid.png in Resources */,
 				A9E066EB1CE4E13800D4E11D /* ShareCell.xib in Resources */,
 				A95B243A1CD8890900F78AAF /* Main.storyboard in Resources */,
+				A9D76B051CF5FB8700F7FB47 /* bokeh.png in Resources */,
+				A9D76B0B1CF5FB8700F7FB47 /* mist.png in Resources */,
+				A9D76B061CF5FB8700F7FB47 /* burn.png in Resources */,
+				A9D76B0C1CF5FB8700F7FB47 /* old.png in Resources */,
+				A9D76B141CF5FB8700F7FB47 /* summer.png in Resources */,
+				A9D76B121CF5FB8700F7FB47 /* retrotv.png in Resources */,
 				A9E066E91CE4C85900D4E11D /* FilterCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -911,20 +1091,24 @@
 				A95B24371CD8890900F78AAF /* RecordController.swift in Sources */,
 				A965BDC11CDA0F1D002579CA /* IntroViewInterface.swift in Sources */,
 				A9E066D91CE4B4E000D4E11D /* Effect.swift in Sources */,
+				A98A93C41CF5BAF6004E1DB7 /* EffectDictionary.swift in Sources */,
 				A93846EC1CE47EE2007FB6BC /* FilterListView.swift in Sources */,
 				A95D3BEA1CEB7158001F2272 /* PlayerProvider.swift in Sources */,
 				A94301611CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift in Sources */,
 				A99278531CE364E6009DC364 /* SettingsPresenterInterface.swift in Sources */,
+				A98A93BD1CF59155004E1DB7 /* ChangeFilterInteractor.swift in Sources */,
 				A95D3BF01CEB7356001F2272 /* PlayerInteractorInterface.swift in Sources */,
 				A94301631CE5CF3900DC0DF8 /* PlayerView.swift in Sources */,
 				A9E066DB1CE4B4EE00D4E11D /* OverlayEffect.swift in Sources */,
 				A95B247A1CD8B96E00F78AAF /* RootWireframe.swift in Sources */,
+				A98A93BB1CF5903C004E1DB7 /* AddFilterInteractor.swift in Sources */,
 				A99278591CE36524009DC364 /* SettingsWireframe.swift in Sources */,
 				A94301721CE5DD8B00DC0DF8 /* ShareInteractor.swift in Sources */,
 				A9E066E41CE4BB8300D4E11D /* ConfigPreferences.swift in Sources */,
 				A95D3BE31CEB6B77001F2272 /* Utils.swift in Sources */,
 				A943016E1CE5D99E00DC0DF8 /* SocialNetwork.swift in Sources */,
 				A9B1181D1CE378DC001A1177 /* ShareInterface.swift in Sources */,
+				A965C7EC1CF58467001E2D39 /* CameraInteractor.swift in Sources */,
 				A99278501CE3647B009DC364 /* SettingsPresenter.swift in Sources */,
 				A9E066DF1CE4BA0700D4E11D /* EffectProvider.swift in Sources */,
 				A9E066E51CE4BB8300D4E11D /* AnalitycsConstants.swift in Sources */,
@@ -944,6 +1128,7 @@
 				A93846E81CE47E82007FB6BC /* FilterListPresenter.swift in Sources */,
 				A95B247C1CD8B9F200F78AAF /* RecordPresenterInterfaceIO.swift in Sources */,
 				A9E066DD1CE4B4F500D4E11D /* ShaderEffect.swift in Sources */,
+				A9D76AE71CF5E9CB00F7FB47 /* RemoveFilterInteractor.swift in Sources */,
 				A93846F01CE47F67007FB6BC /* FilterListWireframe.swift in Sources */,
 				A95B246E1CD88C2D00F78AAF /* RecordViewInterface.swift in Sources */,
 				A99278571CE36517009DC364 /* SettingsInterface.swift in Sources */,
@@ -958,6 +1143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A95628CD1CF6FE1400EE4B85 /* AddFilterInteractorTest.swift in Sources */,
 				A95B244A1CD8890A00F78AAF /* VideonaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -966,7 +1152,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A95B24551CD8890A00F78AAF /* VideonaUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -982,6 +1167,11 @@
 			isa = PBXTargetDependency;
 			target = A95B24301CD8890900F78AAF /* Videona */;
 			targetProxy = A95B24511CD8890A00F78AAF /* PBXContainerItemProxy */;
+		};
+		A98A93B41CF5886D004E1DB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GPUImageFramework;
+			targetProxy = A98A93B31CF5886D004E1DB7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1122,10 +1312,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = VideonaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Videona.VideonaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e0f5a145-4063-4cf8-a2fe-042239f6cdb8";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Videona.app/Videona";
 			};
 			name = Debug;
@@ -1134,10 +1326,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = VideonaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Videona.VideonaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e0f5a145-4063-4cf8-a2fe-042239f6cdb8";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Videona.app/Videona";
 			};
 			name = Release;
@@ -1145,10 +1339,12 @@
 		A95B24601CD8890A00F78AAF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = VideonaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Videona.VideonaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e0f5a145-4063-4cf8-a2fe-042239f6cdb8";
 				TEST_TARGET_NAME = Videona;
 			};
 			name = Debug;
@@ -1156,10 +1352,12 @@
 		A95B24611CD8890A00F78AAF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = VideonaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Videona.VideonaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e0f5a145-4063-4cf8-a2fe-042239f6cdb8";
 				TEST_TARGET_NAME = Videona;
 			};
 			name = Release;

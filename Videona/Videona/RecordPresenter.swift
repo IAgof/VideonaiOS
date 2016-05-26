@@ -7,22 +7,30 @@
 //
 
 import Foundation
+import GPUImage
 
-class RecordPresenter: NSObject, RecordPresenterInterface{
+class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate{
     
     //MARK: - Variables VIPER
     var controller: RecordController?
     var recordWireframe: RecordWireframe?
     var settingsWireframe: SettingsWireframe?
     var shareWireframe: ShareWireframe?
+    var cameraInteractor: CameraInteractor?
     
     //    var navigatorWireframe: NavigationWireframe?
 
     //MARK: - Constants
     var colorFilterViewIsShowin = false
     var shaderFilterViewIsShowin = false
-    
+    var isRecording = false
+
     //MARK: - Event handler
+    func viewDidLoad(displayView:GPUImageView){
+        
+        controller?.configureView()
+        cameraInteractor = CameraInteractor(display: displayView)
+    }
     func pushSettings() {
         print("Record presenter pushSettings")
         settingsWireframe?.presentSettingsInterfaceFromViewController(controller!)
@@ -33,6 +41,57 @@ class RecordPresenter: NSObject, RecordPresenterInterface{
         shareWireframe?.presentRecordInterfaceFromViewController(controller!)
     }
     
+
+    
+    func pushFlash() {
+        let flashState = SwitchFlashInteractor().switchFlashState()
+        controller?.showFlashOn(flashState)
+    }
+    
+    func pushRecord() {
+        if isRecording {
+            controller?.showStopButton()
+            isRecording = false
+        }else{
+            controller?.showRecordButton()
+            isRecording = true
+        }
+    }
+    
+    func pushRotateCamera() {
+        
+    }
+
+    func showWarningOrientationImage(){
+        controller?.lockScreenRotation()
+    }
+    func hideWarningOrientationImage(){
+        controller?.unlockScreenRotation()
+    }
+    
+    //MARK: - FilterList delegate
+    func setFiltersOnView(filters: Array<String>) {
+        let filterDic = effectDictionary
+        
+        for filterName in filters{
+            if (filterDic[filterName]?.indexForKey(FilterType.Blend)) != nil{
+                print("setFiltersOnView   blendFilter")
+                cameraInteractor?.addBlendFilter(UIImage.init(named: filterName.lowercaseString)!)
+            }else if ((filterDic[filterName]?.indexForKey(FilterType.SingleInput)) != nil){
+                print("setFiltersOnView   SingleInputFilter")
+                let newFilter = filterDic[filterName]?[FilterType.SingleInput]!
+                cameraInteractor?.addFilter(newFilter! as! GPUImageFilter)
+            }else if (filterDic[filterName]?.indexForKey(FilterType.Shader)) != nil{
+                print("setFiltersOnView   Shader")
+
+            }else if (filterDic[filterName]?.indexForKey(FilterType.Other)) != nil{
+                print("setFiltersOnView   Other")
+                cameraInteractor?.removeFilters()
+
+            }
+        }
+    }
+    
     func pushShowHideColorFilters() {
         if(shaderFilterViewIsShowin){
             shaderFilterViewIsShowin = false
@@ -41,8 +100,8 @@ class RecordPresenter: NSObject, RecordPresenterInterface{
             //Wait to hide filterlist
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(500 * NSEC_PER_MSEC)), dispatch_get_main_queue(), {
                 self.recordWireframe?.presentColorFilterListInterface()
-                });
-
+            });
+            
             self.colorFilterViewIsShowin = true
             return
         }else if(colorFilterViewIsShowin){
@@ -56,7 +115,7 @@ class RecordPresenter: NSObject, RecordPresenterInterface{
             return
         }
     }
-
+    
     func pushShowHideShaderFilters() {
         if(colorFilterViewIsShowin){
             colorFilterViewIsShowin = false
@@ -77,25 +136,5 @@ class RecordPresenter: NSObject, RecordPresenterInterface{
             shaderFilterViewIsShowin = true
             return
         }
-    }
-    
-    func pushFlash() {
-        let flashState = SwitchFlashInteractor().switchFlashState()
-        controller?.showFlashOn(flashState)
-    }
-    
-    func pushRecord() {
-        
-    }
-    
-    func pushRotateCamera() {
-        
-    }
-
-    func showWarningOrientationImage(){
-        controller?.lockScreenRotation()
-    }
-    func hideWarningOrientationImage(){
-        controller?.unlockScreenRotation()
     }
 }
