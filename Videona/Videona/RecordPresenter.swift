@@ -80,7 +80,7 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate{
             }else if ((filterDic[filterName]?.indexForKey(FilterType.SingleInput)) != nil){
                 print("setFiltersOnView   SingleInputFilter")
                 let newFilter = filterDic[filterName]?[FilterType.SingleInput]!
-                cameraInteractor?.addFilter(newFilter! as! GPUImageFilter)
+                cameraInteractor?.changeFilter(newFilter! as! GPUImageFilter)
             }else if (filterDic[filterName]?.indexForKey(FilterType.Shader)) != nil{
                 print("setFiltersOnView   Shader")
 

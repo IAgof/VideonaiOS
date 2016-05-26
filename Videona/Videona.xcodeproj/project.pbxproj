@@ -27,8 +27,11 @@
 		A94301741CE5DFA100DC0DF8 /* ShareInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301731CE5DFA100DC0DF8 /* ShareInteractorInterface.swift */; };
 		A94301761CE5EEE200DC0DF8 /* FilterListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301751CE5EEE200DC0DF8 /* FilterListInteractor.swift */; };
 		A94301781CE5EEED00DC0DF8 /* FilterListInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301771CE5EEED00DC0DF8 /* FilterListInteractorInterface.swift */; };
-		A95628C81CF6EA3C00EE4B85 /* silent_film_overlay_a.png in Resources */ = {isa = PBXBuildFile; fileRef = A95628C71CF6EA3C00EE4B85 /* silent_film_overlay_a.png */; };
 		A95628CD1CF6FE1400EE4B85 /* AddFilterInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95628CC1CF6FE1400EE4B85 /* AddFilterInteractorTest.swift */; };
+		A95628CF1CF7049100EE4B85 /* VideonaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95628CE1CF7049100EE4B85 /* VideonaUITests.swift */; };
+		A95628D11CF70A1300EE4B85 /* ShowFlashUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95628D01CF70A1300EE4B85 /* ShowFlashUITest.swift */; };
+		A95628D31CF7157500EE4B85 /* EffectTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95628D21CF7157500EE4B85 /* EffectTest.swift */; };
+		A95628D51CF734F900EE4B85 /* filter_free.png in Resources */ = {isa = PBXBuildFile; fileRef = A95628D41CF734F900EE4B85 /* filter_free.png */; };
 		A95B24351CD8890900F78AAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B24341CD8890900F78AAF /* AppDelegate.swift */; };
 		A95B24371CD8890900F78AAF /* RecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B24361CD8890900F78AAF /* RecordController.swift */; };
 		A95B243A1CD8890900F78AAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95B24381CD8890900F78AAF /* Main.storyboard */; };
@@ -182,8 +185,11 @@
 		A94301731CE5DFA100DC0DF8 /* ShareInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareInteractorInterface.swift; sourceTree = "<group>"; };
 		A94301751CE5EEE200DC0DF8 /* FilterListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListInteractor.swift; sourceTree = "<group>"; };
 		A94301771CE5EEED00DC0DF8 /* FilterListInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListInteractorInterface.swift; sourceTree = "<group>"; };
-		A95628C71CF6EA3C00EE4B85 /* silent_film_overlay_a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = silent_film_overlay_a.png; sourceTree = "<group>"; };
 		A95628CC1CF6FE1400EE4B85 /* AddFilterInteractorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFilterInteractorTest.swift; sourceTree = "<group>"; };
+		A95628CE1CF7049100EE4B85 /* VideonaUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideonaUITests.swift; sourceTree = "<group>"; };
+		A95628D01CF70A1300EE4B85 /* ShowFlashUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowFlashUITest.swift; sourceTree = "<group>"; };
+		A95628D21CF7157500EE4B85 /* EffectTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectTest.swift; sourceTree = "<group>"; };
+		A95628D41CF734F900EE4B85 /* filter_free.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter_free.png; sourceTree = "<group>"; };
 		A95B24311CD8890900F78AAF /* Videona.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Videona.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A95B24341CD8890900F78AAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A95B24361CD8890900F78AAF /* RecordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordController.swift; sourceTree = "<group>"; };
@@ -466,6 +472,7 @@
 			isa = PBXGroup;
 			children = (
 				A95B24491CD8890A00F78AAF /* VideonaTests.swift */,
+				A95628D21CF7157500EE4B85 /* EffectTest.swift */,
 				A95628CC1CF6FE1400EE4B85 /* AddFilterInteractorTest.swift */,
 				A95B244B1CD8890A00F78AAF /* Info.plist */,
 			);
@@ -475,6 +482,8 @@
 		A95B24531CD8890A00F78AAF /* VideonaUITests */ = {
 			isa = PBXGroup;
 			children = (
+				A95628CE1CF7049100EE4B85 /* VideonaUITests.swift */,
+				A95628D01CF70A1300EE4B85 /* ShowFlashUITest.swift */,
 				A95B24561CD8890A00F78AAF /* Info.plist */,
 			);
 			path = VideonaUITests;
@@ -796,7 +805,7 @@
 		A9D76AEF1CF5FB4B00F7FB47 /* FiltersOverlay */ = {
 			isa = PBXGroup;
 			children = (
-				A95628C71CF6EA3C00EE4B85 /* silent_film_overlay_a.png */,
+				A95628D41CF734F900EE4B85 /* filter_free.png */,
 				A9D76AF01CF5FB8700F7FB47 /* autumn.png */,
 				A9D76AF11CF5FB8700F7FB47 /* bokeh.png */,
 				A9D76AF21CF5FB8700F7FB47 /* burn.png */,
@@ -1025,7 +1034,6 @@
 				A95D3BF31CEB76D7001F2272 /* video.mp4 in Resources */,
 				A9D76B081CF5FB8700F7FB47 /* color_stain.png in Resources */,
 				A94301691CE5CF5800DC0DF8 /* PlayerView.xib in Resources */,
-				A95628C81CF6EA3C00EE4B85 /* silent_film_overlay_a.png in Resources */,
 				A9D76B151CF5FB8700F7FB47 /* sunset.png in Resources */,
 				A9D76B0E1CF5FB8700F7FB47 /* pastel.png in Resources */,
 				A9D76B101CF5FB8700F7FB47 /* pride.png in Resources */,
@@ -1045,6 +1053,7 @@
 				A9D76B061CF5FB8700F7FB47 /* burn.png in Resources */,
 				A9D76B0C1CF5FB8700F7FB47 /* old.png in Resources */,
 				A9D76B141CF5FB8700F7FB47 /* summer.png in Resources */,
+				A95628D51CF734F900EE4B85 /* filter_free.png in Resources */,
 				A9D76B121CF5FB8700F7FB47 /* retrotv.png in Resources */,
 				A9E066E91CE4C85900D4E11D /* FilterCell.xib in Resources */,
 			);
@@ -1144,6 +1153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A95628CD1CF6FE1400EE4B85 /* AddFilterInteractorTest.swift in Sources */,
+				A95628D31CF7157500EE4B85 /* EffectTest.swift in Sources */,
 				A95B244A1CD8890A00F78AAF /* VideonaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1152,6 +1162,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A95628CF1CF7049100EE4B85 /* VideonaUITests.swift in Sources */,
+				A95628D11CF70A1300EE4B85 /* ShowFlashUITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1312,7 +1324,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Iago Fernández cedron (JVQF87BH8Q)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Iago Fernández cedron (JVQF87BH8Q)";
 				INFOPLIST_FILE = VideonaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Videona.VideonaTests;
@@ -1326,7 +1339,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Iago Fernández cedron (JVQF87BH8Q)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Iago Fernández cedron (JVQF87BH8Q)";
 				INFOPLIST_FILE = VideonaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Videona.VideonaTests;
@@ -1339,12 +1353,15 @@
 		A95B24601CD8890A00F78AAF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = VideonaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Videona.VideonaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e0f5a145-4063-4cf8-a2fe-042239f6cdb8";
+				PROVISIONING_PROFILE = "e765f048-618c-4d1c-84bd-3bf1bd940a42";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_TARGET_NAME = Videona;
 			};
 			name = Debug;
@@ -1352,12 +1369,14 @@
 		A95B24611CD8890A00F78AAF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = VideonaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Videona.VideonaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e0f5a145-4063-4cf8-a2fe-042239f6cdb8";
+				PROVISIONING_PROFILE = "e765f048-618c-4d1c-84bd-3bf1bd940a42";
 				TEST_TARGET_NAME = Videona;
 			};
 			name = Release;

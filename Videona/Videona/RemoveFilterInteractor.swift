@@ -10,10 +10,12 @@ import Foundation
 import GPUImage
 
 class RemoveFilterInteractor:NSObject{
-    func removeFilter(actualFilter:GPUImageFilter, videoCamera:GPUImageVideoCamera,display:GPUImageView){
-        videoCamera.removeAllTargets()
-
-        videoCamera.addTarget(actualFilter)
+    func removeFilter(actualFilter:GPUImageFilter,imageView:UIImageView,display:GPUImageView){
+        //, videoCamera:GPUImageVideoCamera,display:GPUImageView){
+        let image = UIImage.init(named: "filter_free")
+        imageView.image = image
+        
+        actualFilter.removeAllTargets()
         actualFilter.addTarget(display)
     }
 }

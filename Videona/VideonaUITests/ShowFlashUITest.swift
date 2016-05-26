@@ -1,16 +1,17 @@
 //
-//  VideonaUITests.swift
-//  VideonaUITests
+//  ShowFlashUITest.swift
+//  Videona
 //
-//  Created by Alejandro Arjonilla Garcia on 3/5/16.
+//  Created by Alejandro Arjonilla Garcia on 26/5/16.
 //  Copyright © 2016 Videona. All rights reserved.
 //
 
 import XCTest
+import AVFoundation
 
-class VideonaUITests: XCTestCase {
+class ShowFlashUITest: XCTestCase {
     let app = XCUIApplication()
-   
+    
     override func setUp() {
         super.setUp()
         
@@ -20,7 +21,7 @@ class VideonaUITests: XCTestCase {
         continueAfterFailure = false
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         app.launch()
-
+        
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
     
@@ -29,14 +30,15 @@ class VideonaUITests: XCTestCase {
         super.tearDown()
     }
     
-
-    func testExample() {
+    func testFlash() {
         // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.s
-        let recordButton = app.buttons["activity record icon rec norma"]
-        let prevImage = recordButton.images
-        recordButton.tap()
-        XCTAssert(recordButton.images != prevImage)
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let flashButton = app.buttons["activity record icon flash cam"]
+        flashButton.tap()
+        
+        let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        
+        flashButton.tap()
     }
     
 }

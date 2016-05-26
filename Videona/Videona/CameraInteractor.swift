@@ -13,10 +13,10 @@ import AVFoundation
 class CameraInteractor{
     var videoCamera:GPUImageVideoCamera
     var filter:GPUImageFilter
+    var maskFilterToView:GPUImageFilter
 //    var movieWriter: GPUImageMovieWriter sacar a otro Interactor?
     var displayView: GPUImageView
-    var imageView: UIImageView?
-    
+    var imageView:UIImageView
     let resolution = AVCaptureSessionPreset1280x720
     
     var sourceImageGPUUIElement: GPUImageUIElement?
@@ -24,16 +24,40 @@ class CameraInteractor{
         videoCamera = GPUImageVideoCamera(sessionPreset: resolution, cameraPosition: .Back)
         videoCamera.outputImageOrientation = .LandscapeLeft
         displayView = display
+        imageView = UIImageView.init(frame: displayView.frame)
         
         filter = GPUImageFilter()
+        maskFilterToView = GPUImageFilter()
         
         videoCamera.addTarget(filter)
-        
-        self.addBlendUIElementAtInit()
+
+//        filter.addTarget(displayView)
+        self.addBlendFilterAtInit()
         
         videoCamera.startCameraCapture()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CameraInteractor.checkOrientation), name: UIDeviceOrientationDidChangeNotification, object: nil)
+    }
+    
+    func addBlendFilterAtInit(){
+        let blendFilter = GPUImageAlphaBlendFilter()
+        blendFilter.mix = 0.5
+        filter.removeAllTargets()
+        
+        let image = UIImage.init(named: "filter_free")
+        imageView.image = image
+        
+        sourceImageGPUUIElement = GPUImageUIElement(view: imageView)
+        
+        filter.addTarget(blendFilter)
+        sourceImageGPUUIElement!.addTarget(blendFilter)
+        
+        blendFilter.addTarget(maskFilterToView)
+        maskFilterToView.addTarget(displayView)
+        
+        filter.frameProcessingCompletionBlock = { filter, time in
+            self.sourceImageGPUUIElement!.update()
+        }
     }
     
     @objc func checkOrientation(){
@@ -45,47 +69,19 @@ class CameraInteractor{
     }
     
     func addFilter(newFilter:GPUImageFilter){
-        AddFilterInteractor().addFilter(filter, newFilter: newFilter, display: displayView)
+        AddFilterInteractor().addFilter(maskFilterToView, newFilter: newFilter, display: displayView)
         
-        filter = newFilter
+        maskFilterToView = newFilter
     }
     func addBlendFilter(image:UIImage){
-//        let blendFilter = GPUImageAlphaBlendFilter()
-//        
-//        AddFilterInteractor().addBlendFilter(filter, blendFilter: blendFilter ,blendImage: image, display: displayView)
-//        
-//        filter = blendFilter
-        
-        
+        imageView.image = image
     }
-    
-    func addBlendUIElementAtInit(){
-        let blendFilter = GPUImageAlphaBlendFilter()
-        blendFilter.mix = 0.5
-        let imageView = UIImageView.init(frame: displayView.frame)
-        
-        sourceImageGPUUIElement = GPUImageUIElement(view: imageView)
-        
-        filter.addTarget(blendFilter)
-        sourceImageGPUUIElement!.addTarget(blendFilter)
-        
-        blendFilter.addTarget(displayView)
-        
-        filter = blendFilter
-        
-        filter.frameProcessingCompletionBlock = { filter, time in
-            self.sourceImageGPUUIElement!.update()
-        }
-    }
-    
-    func changeFilter(){
-        ChangeFilterInteractor().changeFilter(filter, newFilter: GPUImageSwirlFilter(), display: displayView)
+
+    func changeFilter(newFilter:GPUImageFilter){
+        ChangeFilterInteractor().changeFilter(maskFilterToView, newFilter: newFilter, display: displayView)
     }
     
     func removeFilters(){
-        let newBaseFilter = GPUImageFilter()
-        RemoveFilterInteractor().removeFilter(newBaseFilter, videoCamera: videoCamera, display: displayView)
-        filter = newBaseFilter
-        filter.useNextFrameForImageCapture()
+        RemoveFilterInteractor().removeFilter(maskFilterToView, imageView: imageView, display: displayView)
     }
 }

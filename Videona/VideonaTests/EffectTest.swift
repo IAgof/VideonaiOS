@@ -1,5 +1,5 @@
 //
-//  AddFilterInteractorTest.swift
+//  EffectTest.swift
 //  Videona
 //
 //  Created by Alejandro Arjonilla Garcia on 26/5/16.
@@ -8,13 +8,8 @@
 
 import XCTest
 @testable import Videona
-@testable import GPUImage
 
-class AddFilterInteractorTest: XCTestCase {
-    let filterInput = GPUImageFilter()
-    let blendFilter = GPUImageAlphaBlendFilter()
-    let image = UIImage.init(named: "autum")
-    let displayView = GPUImageView()
+class EffectTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -26,10 +21,10 @@ class AddFilterInteractorTest: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testEffect() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
+        let effect = Effect("id","name","iconPath","type")
     }
     
     func testPerformanceExample() {

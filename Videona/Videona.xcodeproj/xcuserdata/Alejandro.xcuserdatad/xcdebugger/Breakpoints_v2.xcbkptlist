@@ -25,13 +25,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Videona/CameraInteractor.swift"
-            timestampString = "485946639.62207"
+            filePath = "VideonaUITests/ShowFlashUITest.swift"
+            timestampString = "485963086.203073"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "addBlendUIElementAtInit()"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "testFlash()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Videona/CameraInteractor.swift"
+            timestampString = "485966980.216707"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "addFilter(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
