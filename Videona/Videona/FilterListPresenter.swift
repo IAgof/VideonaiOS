@@ -59,6 +59,7 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
     func removeFilter(filterName:String) {
         filterListDelegate?.removeFilter(filterName)
     }
+    
     func cancelFilterListAction() {
         if(filterShowing == FILTERS_SHOWING_IS_SHADER){
             filterListDelegate!.pushShowHideShaderFilters()
@@ -69,6 +70,7 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
         }
         self.setFilterShowin(FILTERS_SHOWING_IS_NONE)
     }
+    
     func toggleSelectedCell(cell: FilterViewCell) {
         if (cell.isSelectedCell){
             cell.isSelectedCell = false
@@ -86,12 +88,6 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
             if let cell = collectionView.cellForItemAtIndexPath(lastSelectedIndexPath) {
                 let lastCell = cell as! FilterViewCell
                 lastCell.isSelectedCell = false
-                lastCell.toggleSelected()
-            }
-        }else{
-            if let cell = collectionView.cellForItemAtIndexPath(lastSelectedIndexPath) {
-                let lastCell = cell as! FilterViewCell
-                lastCell.isSelectedCell = true
                 lastCell.toggleSelected()
             }
         }
