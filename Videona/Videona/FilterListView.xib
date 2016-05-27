@@ -18,7 +18,7 @@
                         <action selector="pushDismissView:" destination="iN0-l3-epB" eventType="touchUpInside" id="lne-Ys-QXM"/>
                     </connections>
                 </button>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="uwB-H5-a1f">
+                <collectionView clipsSubviews="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="uwB-H5-a1f">
                     <rect key="frame" x="8" y="8" width="345" height="98"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pSs-wC-Lsn">

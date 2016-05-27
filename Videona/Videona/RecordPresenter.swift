@@ -70,32 +70,49 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate{
     }
     
     //MARK: - FilterList delegate
-    func setFiltersOnView(filters: Array<String>) {
+    func setFiltersOnView(filterName: String) {
         let filterDic = effectDictionary
         
-        for filterName in filters{
-            if (filterDic[filterName]?.indexForKey(FilterType.Blend)) != nil{
-                print("setFiltersOnView   blendFilter")
-                cameraInteractor?.changeBlendImage(UIImage.init(named: filterName.lowercaseString)!)
-                
-            }else if ((filterDic[filterName]?.indexForKey(FilterType.SingleInput)) != nil){
-                print("setFiltersOnView   SingleInputFilter")
-                let newFilter = filterDic[filterName]?[FilterType.SingleInput]!
-                cameraInteractor?.changeFilter(newFilter! as! GPUImageFilter)
-                
-            }else if (filterDic[filterName]?.indexForKey(FilterType.Shader)) != nil{
-                print("setFiltersOnView   Shader")
-                let newFilter = GPUImageFilter(fragmentShaderFromFile: filterName)
-                cameraInteractor?.changeFilter(newFilter!)
-                
-            }else if (filterDic[filterName]?.indexForKey(FilterType.Other)) != nil{
-                print("setFiltersOnView   Other")
-                cameraInteractor?.removeFilters()
-
-            }
+        if (filterDic[filterName]?.indexForKey(FilterType.Blend)) != nil{
+            print("setFiltersOnView   blendFilter")
+            cameraInteractor?.changeBlendImage(UIImage.init(named: filterName.lowercaseString)!)
+            
+        }else if ((filterDic[filterName]?.indexForKey(FilterType.SingleInput)) != nil){
+            print("setFiltersOnView   SingleInputFilter")
+            let newFilter = filterDic[filterName]?[FilterType.SingleInput]!
+            cameraInteractor?.changeFilter(newFilter! as! GPUImageFilter)
+            
+        }else if (filterDic[filterName]?.indexForKey(FilterType.Shader)) != nil{
+            print("setFiltersOnView   Shader")
+            let newFilter = GPUImageFilter(fragmentShaderFromFile: filterName)
+            cameraInteractor?.changeFilter(newFilter!)
+            
+        }else if (filterDic[filterName]?.indexForKey(FilterType.Other)) != nil{
+            print("setFiltersOnView   Other")
+            cameraInteractor?.removeFilters()
+            
         }
     }
-    
+    func removeFilter(filterName: String) {
+        let filterDic = effectDictionary
+        
+        if (filterDic[filterName]?.indexForKey(FilterType.Blend)) != nil{
+            print("setFiltersOnView   blendFilter")
+            cameraInteractor?.removeOverlay()
+            
+        }else if ((filterDic[filterName]?.indexForKey(FilterType.SingleInput)) != nil){
+            print("setFiltersOnView   SingleInputFilter")
+            cameraInteractor?.removeShaders()
+            
+        }else if (filterDic[filterName]?.indexForKey(FilterType.Shader)) != nil{
+            print("setFiltersOnView   Shader")
+            cameraInteractor?.removeShaders()
+            
+        }else if (filterDic[filterName]?.indexForKey(FilterType.Other)) != nil{
+            print("setFiltersOnView   Other")
+            cameraInteractor?.removeFilters()
+        }
+    }
     func pushShowHideColorFilters() {
         if(shaderFilterViewIsShowin){
             shaderFilterViewIsShowin = false

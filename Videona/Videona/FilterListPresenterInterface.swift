@@ -7,18 +7,23 @@
 //
 
 import Foundation
+import UIKit
 
 protocol FilterListPresenterInterface {
     
     func cancelFilterListAction()
     func getColorFilterList()
     func getShaderFilterList()
-    func FilterListSelectedFilters(filter:Array<String>)
+    func filterListSelectedFilters(filter:String)
+    func removeShaderFilter(filterName:String)
+    func toggleSelectedCell(cell:FilterViewCell)
+    func checkOtherCellSelected(indexPath: NSIndexPath,lastSelectedIndexPath:NSIndexPath, collectionView: UICollectionView) 
 }
 
 
 protocol FilterListDelegate {
-    func setFiltersOnView(filters:Array<String>)
+    func setFiltersOnView(filterName:String)
+    func removeFilter(filterName: String) 
     func pushShowHideColorFilters()
     func pushShowHideShaderFilters()
 }

@@ -53,8 +53,11 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
         
     }
     
-    func FilterListSelectedFilters(filter: Array<String>) {
+    func filterListSelectedFilters(filter: String) {
         filterListDelegate?.setFiltersOnView(filter)
+    }
+    func removeShaderFilter(filterName:String) {
+        filterListDelegate?.removeFilter(filterName)
     }
     func cancelFilterListAction() {
         if(filterShowing == FILTERS_SHOWING_IS_SHADER){
@@ -63,5 +66,32 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
             filterListDelegate!.pushShowHideColorFilters()
         }
         self.setFilterShowin(FILTERS_SHOWING_IS_NONE)
+    }
+    func toggleSelectedCell(cell: FilterViewCell) {
+        if (cell.isSelectedCell){
+            cell.isSelectedCell = false
+            cell.toggleSelected()
+            self.removeShaderFilter(cell.filterTitle.text!)
+        }else{
+            cell.isSelectedCell = true
+            cell.toggleSelected()
+            let filter = cell.filterTitle.text
+            self.filterListSelectedFilters(filter!)
+        }
+    }
+    func checkOtherCellSelected(indexPath: NSIndexPath,lastSelectedIndexPath:NSIndexPath, collectionView: UICollectionView) {
+        if lastSelectedIndexPath != indexPath {
+            if let cell = collectionView.cellForItemAtIndexPath(lastSelectedIndexPath) {
+                let lastCell = cell as! FilterViewCell
+                lastCell.isSelectedCell = false
+                lastCell.toggleSelected()
+            }
+        }else{
+            if let cell = collectionView.cellForItemAtIndexPath(lastSelectedIndexPath) {
+                let lastCell = cell as! FilterViewCell
+                lastCell.isSelectedCell = true
+                lastCell.toggleSelected()
+            }
+        }
     }
 }

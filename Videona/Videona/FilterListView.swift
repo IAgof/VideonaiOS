@@ -16,21 +16,25 @@ class FilterListView: UIView,FilterListInterface, UICollectionViewDataSource, UI
     
     var transitioningBackgroundView : UIView = UIView()
     let reuseIdentifierCell = "filterCell"
-    
     var filterListImage: Array<UIImage> = []
     var filterListTitle: Array<String> = []
-
+    var lastSelectedIndexPath:NSIndexPath?
+    
+    
     //MARK: - Outlets
     @IBOutlet weak var filtersCollectionView: UICollectionView!
-   
+    
     //MARK: - Init
     class func instanceFromNib() -> UIView {
         return UINib(nibName: "FilterListView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! UIView
     }
-
+    
     func initDelegates(){
         filtersCollectionView.delegate = self
         filtersCollectionView.dataSource = self
+        
+        filtersCollectionView.allowsSelection = true
+        filtersCollectionView.allowsMultipleSelection = false
     }
     
     //MARK: - Filters setUp
@@ -47,9 +51,10 @@ class FilterListView: UIView,FilterListInterface, UICollectionViewDataSource, UI
         self.filtersCollectionView.performBatchUpdates({
             
             self.filtersCollectionView.reloadData()
-        
+            
             }, completion: nil)
     }
+    
     //MARK: - Navigation
     @IBAction func pushDismissView(sender: AnyObject) {
         eventHandler?.cancelFilterListAction()
@@ -73,6 +78,13 @@ class FilterListView: UIView,FilterListInterface, UICollectionViewDataSource, UI
         cell.filterImage.image = image
         cell.filterTitle.text = title
         
+        if lastSelectedIndexPath?.item==indexPath.item{
+            cell.backgroundColor = UIColor.redColor()
+        }else{
+            cell.backgroundColor = UIColor.clearColor()
+            cell.isSelectedCell = false
+        }
+        
         return cell
     }
     // MARK: - UICollectionViewDelegate protocol
@@ -80,13 +92,12 @@ class FilterListView: UIView,FilterListInterface, UICollectionViewDataSource, UI
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         // handle tap events
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! FilterViewCell
+        eventHandler?.toggleSelectedCell(cell)
         
-        var filters = Array<String>()
-        if let cellTitle = cell.filterTitle.text{
-            filters.append(cellTitle)
+        if let lastIndexPath = lastSelectedIndexPath{
+            eventHandler?.checkOtherCellSelected(indexPath, lastSelectedIndexPath: lastIndexPath, collectionView: filtersCollectionView)
         }
         
-        print("You selected filter in position #\(indexPath.item) \n filter name: \(cell.filterTitle.text)!")
-        eventHandler?.FilterListSelectedFilters(filters)
+        lastSelectedIndexPath = indexPath
     }
 }

@@ -84,4 +84,11 @@ class CameraInteractor{
     func removeFilters(){
         RemoveFilterInteractor().removeFilter(maskFilterToOutput, imageView: imageView, display: displayView)
     }
+    
+    func removeShaders(){
+        RemoveFilterInteractor().removeShader(maskFilterToOutput, display: displayView)
+    }
+    func removeOverlay(){
+        RemoveFilterInteractor().removeOverlay(imageView)
+    }
 }

@@ -27,5 +27,6 @@ protocol RecordPresenterInterface{
     func pushFlash()
     func pushRotateCamera()
     
-    func setFiltersOnView(filters: Array<String>)
+    func setFiltersOnView(filter: String)
+    func removeFilter(filterName: String)
 }
