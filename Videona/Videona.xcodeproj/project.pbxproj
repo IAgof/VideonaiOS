@@ -75,6 +75,17 @@
 		A9B1181B1CE378D3001A1177 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1181A1CE378D3001A1177 /* ShareViewController.swift */; };
 		A9B1181D1CE378DC001A1177 /* ShareInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1181C1CE378DC001A1177 /* ShareInterface.swift */; };
 		A9B1181F1CE378E8001A1177 /* ShareWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B1181E1CE378E8001A1177 /* ShareWireframe.swift */; };
+		A9D257C11CF82BE600A618B0 /* Squeeze.fsh in Resources */ = {isa = PBXBuildFile; fileRef = A9D257B81CF82BE600A618B0 /* Squeeze.fsh */; };
+		A9D257C21CF82BE600A618B0 /* Fisheye.fsh in Resources */ = {isa = PBXBuildFile; fileRef = A9D257B91CF82BE600A618B0 /* Fisheye.fsh */; };
+		A9D257C31CF82BE600A618B0 /* Mirror.fsh in Resources */ = {isa = PBXBuildFile; fileRef = A9D257BA1CF82BE600A618B0 /* Mirror.fsh */; };
+		A9D257C41CF82BE600A618B0 /* Emboss.fsh in Resources */ = {isa = PBXBuildFile; fileRef = A9D257BB1CF82BE600A618B0 /* Emboss.fsh */; };
+		A9D257C51CF82BE600A618B0 /* Dent.fsh in Resources */ = {isa = PBXBuildFile; fileRef = A9D257BC1CF82BE600A618B0 /* Dent.fsh */; };
+		A9D257C61CF82BE600A618B0 /* Stretch.fsh in Resources */ = {isa = PBXBuildFile; fileRef = A9D257BD1CF82BE600A618B0 /* Stretch.fsh */; };
+		A9D257C71CF82BE600A618B0 /* Tunnel.fsh in Resources */ = {isa = PBXBuildFile; fileRef = A9D257BE1CF82BE600A618B0 /* Tunnel.fsh */; };
+		A9D257C81CF82BE600A618B0 /* Bulge.fsh in Resources */ = {isa = PBXBuildFile; fileRef = A9D257BF1CF82BE600A618B0 /* Bulge.fsh */; };
+		A9D257C91CF82BE600A618B0 /* Twirl.fsh in Resources */ = {isa = PBXBuildFile; fileRef = A9D257C01CF82BE600A618B0 /* Twirl.fsh */; };
+		A9D257CB1CF835D200A618B0 /* Posterizebw.fsh in Resources */ = {isa = PBXBuildFile; fileRef = A9D257CA1CF835D200A618B0 /* Posterizebw.fsh */; };
+		A9D257CD1CF8455600A618B0 /* Posterize.fsh in Resources */ = {isa = PBXBuildFile; fileRef = A9D257CC1CF8455600A618B0 /* Posterize.fsh */; };
 		A9D76AE71CF5E9CB00F7FB47 /* RemoveFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D76AE61CF5E9CB00F7FB47 /* RemoveFilterInteractor.swift */; };
 		A9D76B041CF5FB8700F7FB47 /* autumn.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D76AF01CF5FB8700F7FB47 /* autumn.png */; };
 		A9D76B051CF5FB8700F7FB47 /* bokeh.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D76AF11CF5FB8700F7FB47 /* bokeh.png */; };
@@ -237,6 +248,17 @@
 		A9B1181A1CE378D3001A1177 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		A9B1181C1CE378DC001A1177 /* ShareInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareInterface.swift; sourceTree = "<group>"; };
 		A9B1181E1CE378E8001A1177 /* ShareWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareWireframe.swift; sourceTree = "<group>"; };
+		A9D257B81CF82BE600A618B0 /* Squeeze.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Squeeze.fsh; sourceTree = "<group>"; };
+		A9D257B91CF82BE600A618B0 /* Fisheye.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Fisheye.fsh; sourceTree = "<group>"; };
+		A9D257BA1CF82BE600A618B0 /* Mirror.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Mirror.fsh; sourceTree = "<group>"; };
+		A9D257BB1CF82BE600A618B0 /* Emboss.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Emboss.fsh; sourceTree = "<group>"; };
+		A9D257BC1CF82BE600A618B0 /* Dent.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Dent.fsh; sourceTree = "<group>"; };
+		A9D257BD1CF82BE600A618B0 /* Stretch.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Stretch.fsh; sourceTree = "<group>"; };
+		A9D257BE1CF82BE600A618B0 /* Tunnel.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Tunnel.fsh; sourceTree = "<group>"; };
+		A9D257BF1CF82BE600A618B0 /* Bulge.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Bulge.fsh; sourceTree = "<group>"; };
+		A9D257C01CF82BE600A618B0 /* Twirl.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Twirl.fsh; sourceTree = "<group>"; };
+		A9D257CA1CF835D200A618B0 /* Posterizebw.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Posterizebw.fsh; sourceTree = "<group>"; };
+		A9D257CC1CF8455600A618B0 /* Posterize.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Posterize.fsh; sourceTree = "<group>"; };
 		A9D76AE61CF5E9CB00F7FB47 /* RemoveFilterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveFilterInteractor.swift; sourceTree = "<group>"; };
 		A9D76AF01CF5FB8700F7FB47 /* autumn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = autumn.png; sourceTree = "<group>"; };
 		A9D76AF11CF5FB8700F7FB47 /* bokeh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bokeh.png; sourceTree = "<group>"; };
@@ -802,6 +824,24 @@
 			name = Presenter;
 			sourceTree = "<group>";
 		};
+		A9D2577A1CF753E100A618B0 /* FiltersShaders */ = {
+			isa = PBXGroup;
+			children = (
+				A9D257B81CF82BE600A618B0 /* Squeeze.fsh */,
+				A9D257B91CF82BE600A618B0 /* Fisheye.fsh */,
+				A9D257BA1CF82BE600A618B0 /* Mirror.fsh */,
+				A9D257BB1CF82BE600A618B0 /* Emboss.fsh */,
+				A9D257BC1CF82BE600A618B0 /* Dent.fsh */,
+				A9D257BD1CF82BE600A618B0 /* Stretch.fsh */,
+				A9D257BE1CF82BE600A618B0 /* Tunnel.fsh */,
+				A9D257BF1CF82BE600A618B0 /* Bulge.fsh */,
+				A9D257C01CF82BE600A618B0 /* Twirl.fsh */,
+				A9D257CC1CF8455600A618B0 /* Posterize.fsh */,
+				A9D257CA1CF835D200A618B0 /* Posterizebw.fsh */,
+			);
+			name = FiltersShaders;
+			sourceTree = "<group>";
+		};
 		A9D76AEF1CF5FB4B00F7FB47 /* FiltersOverlay */ = {
 			isa = PBXGroup;
 			children = (
@@ -889,6 +929,7 @@
 		A9F9C2141CF4872900AB310C /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				A9D2577A1CF753E100A618B0 /* FiltersShaders */,
 				A9D76AEF1CF5FB4B00F7FB47 /* FiltersOverlay */,
 				A9F9C2131CF4871F00AB310C /* LogoSplash */,
 			);
@@ -1025,34 +1066,45 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9D257C81CF82BE600A618B0 /* Bulge.fsh in Resources */,
 				A9F9C2121CF485C600AB310C /* Logo_Splash_Vertical.png in Resources */,
 				A9F9C2101CF4857700AB310C /* Logo_Splash_Horizontal.png in Resources */,
+				A9D257C61CF82BE600A618B0 /* Stretch.fsh in Resources */,
 				A9D76B111CF5FB8700F7FB47 /* rain.png in Resources */,
 				A9D76B091CF5FB8700F7FB47 /* dark.png in Resources */,
 				A9D76B161CF5FB8700F7FB47 /* texture.png in Resources */,
 				A9D76B071CF5FB8700F7FB47 /* cctv.png in Resources */,
+				A9D257C41CF82BE600A618B0 /* Emboss.fsh in Resources */,
+				A9D257C31CF82BE600A618B0 /* Mirror.fsh in Resources */,
+				A9D257C91CF82BE600A618B0 /* Twirl.fsh in Resources */,
 				A95D3BF31CEB76D7001F2272 /* video.mp4 in Resources */,
 				A9D76B081CF5FB8700F7FB47 /* color_stain.png in Resources */,
 				A94301691CE5CF5800DC0DF8 /* PlayerView.xib in Resources */,
 				A9D76B151CF5FB8700F7FB47 /* sunset.png in Resources */,
 				A9D76B0E1CF5FB8700F7FB47 /* pastel.png in Resources */,
 				A9D76B101CF5FB8700F7FB47 /* pride.png in Resources */,
+				A9D257C51CF82BE600A618B0 /* Dent.fsh in Resources */,
 				A95B243F1CD8890900F78AAF /* LaunchScreen.storyboard in Resources */,
+				A9D257CD1CF8455600A618B0 /* Posterize.fsh in Resources */,
 				A9D76B131CF5FB8700F7FB47 /* spring.png in Resources */,
 				A93846F71CE49340007FB6BC /* FilterListView.xib in Resources */,
+				A9D257C71CF82BE600A618B0 /* Tunnel.fsh in Resources */,
 				A9D76B0A1CF5FB8700F7FB47 /* game.jpg in Resources */,
 				A9D76B171CF5FB8700F7FB47 /* wasted.png in Resources */,
 				A9D76B041CF5FB8700F7FB47 /* autumn.png in Resources */,
 				A95B243C1CD8890900F78AAF /* Assets.xcassets in Resources */,
 				A9D76B0D1CF5FB8700F7FB47 /* passion.png in Resources */,
+				A9D257C21CF82BE600A618B0 /* Fisheye.fsh in Resources */,
 				A9D76B0F1CF5FB8700F7FB47 /* polaroid.png in Resources */,
 				A9E066EB1CE4E13800D4E11D /* ShareCell.xib in Resources */,
 				A95B243A1CD8890900F78AAF /* Main.storyboard in Resources */,
 				A9D76B051CF5FB8700F7FB47 /* bokeh.png in Resources */,
+				A9D257CB1CF835D200A618B0 /* Posterizebw.fsh in Resources */,
 				A9D76B0B1CF5FB8700F7FB47 /* mist.png in Resources */,
 				A9D76B061CF5FB8700F7FB47 /* burn.png in Resources */,
 				A9D76B0C1CF5FB8700F7FB47 /* old.png in Resources */,
 				A9D76B141CF5FB8700F7FB47 /* summer.png in Resources */,
+				A9D257C11CF82BE600A618B0 /* Squeeze.fsh in Resources */,
 				A95628D51CF734F900EE4B85 /* filter_free.png in Resources */,
 				A9D76B121CF5FB8700F7FB47 /* retrotv.png in Resources */,
 				A9E066E91CE4C85900D4E11D /* FilterCell.xib in Resources */,

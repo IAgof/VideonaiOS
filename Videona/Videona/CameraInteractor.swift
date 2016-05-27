@@ -13,7 +13,7 @@ import AVFoundation
 class CameraInteractor{
     var videoCamera:GPUImageVideoCamera
     var filter:GPUImageFilter
-    var maskFilterToView:GPUImageFilter
+    var maskFilterToOutput:GPUImageFilter
 //    var movieWriter: GPUImageMovieWriter sacar a otro Interactor?
     var displayView: GPUImageView
     var imageView:UIImageView
@@ -27,11 +27,10 @@ class CameraInteractor{
         imageView = UIImageView.init(frame: displayView.frame)
         
         filter = GPUImageFilter()
-        maskFilterToView = GPUImageFilter()
+        maskFilterToOutput = GPUImageFilter()
         
         videoCamera.addTarget(filter)
 
-//        filter.addTarget(displayView)
         self.addBlendFilterAtInit()
         
         videoCamera.startCameraCapture()
@@ -52,8 +51,8 @@ class CameraInteractor{
         filter.addTarget(blendFilter)
         sourceImageGPUUIElement!.addTarget(blendFilter)
         
-        blendFilter.addTarget(maskFilterToView)
-        maskFilterToView.addTarget(displayView)
+        blendFilter.addTarget(maskFilterToOutput)
+        maskFilterToOutput.addTarget(displayView)
         
         filter.frameProcessingCompletionBlock = { filter, time in
             self.sourceImageGPUUIElement!.update()
@@ -68,20 +67,21 @@ class CameraInteractor{
         }
     }
     
-    func addFilter(newFilter:GPUImageFilter){
-        AddFilterInteractor().addFilter(maskFilterToView, newFilter: newFilter, display: displayView)
-        
-        maskFilterToView = newFilter
-    }
-    func addBlendFilter(image:UIImage){
+    func changeBlendImage(image:UIImage){
         imageView.image = image
     }
 
     func changeFilter(newFilter:GPUImageFilter){
-        ChangeFilterInteractor().changeFilter(maskFilterToView, newFilter: newFilter, display: displayView)
+        ChangeFilterInteractor().changeFilter(maskFilterToOutput, newFilter: newFilter, display: displayView)
+    }
+    
+    func addFilter(newFilter:GPUImageFilter){
+        AddFilterInteractor().addFilter(maskFilterToOutput, newFilter: newFilter, display: displayView)
+        
+        maskFilterToOutput = newFilter
     }
     
     func removeFilters(){
-        RemoveFilterInteractor().removeFilter(maskFilterToView, imageView: imageView, display: displayView)
+        RemoveFilterInteractor().removeFilter(maskFilterToOutput, imageView: imageView, display: displayView)
     }
 }

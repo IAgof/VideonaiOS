@@ -20,8 +20,8 @@ var effectDictionary:[String:[FilterType:AnyObject]] =
     ["Sepia": [.SingleInput:GPUImageSepiaFilter.init()],
      "Night": [.SingleInput:NightFilter.init().nightFilter!],
      "Emboss": [.SingleInput:GPUImageEmbossFilter.init()],
-     "Posterizebw": [.SingleInput:PosterizebwFilter.init().posterizebwFilter!],
-     "Posterize": [.SingleInput:GPUImagePosterizeFilter.init()],
+//     "Posterizebw": [.SingleInput:PosterizebwFilter.init().posterizebwFilter!],
+//     "Posterize": [.SingleInput:GPUImagePosterizeFilter.init()],
      "Aqua": [.SingleInput:BlueFilter.init().blueFilter!],
      "Negative": [.SingleInput:GPUImageColorInvertFilter.init()],
      "Mono": [.SingleInput:GPUImageGrayscaleFilter.init()],
@@ -33,7 +33,16 @@ var effectDictionary:[String:[FilterType:AnyObject]] =
      "Burn": [.Blend:GPUImageGrayscaleFilter.init()],
      "CCTV": [.Blend:GPUImageGrayscaleFilter.init()],
      "Summer": [.Blend:GPUImageGrayscaleFilter.init()],
-     "Mirror": [.Other:GPUImageFilter.init()]]
+     "Mirror": [.Shader:GPUImageFilter()],
+     "Dent": [.Shader:GPUImageFilter()],
+     "Squeeze": [.Shader:GPUImageFilter()],
+     "Posterize": [.Shader:GPUImageFilter()],
+     "Posterizebw": [.Shader:GPUImageFilter()],
+     "Stretch": [.Shader:GPUImageFilter()],
+     "Fisheye": [.Shader:GPUImageFilter()],
+     "Tiwrl": [.Shader:GPUImageFilter()],
+     "Tunnel": [.Shader:GPUImageFilter()],
+     "Bulge": [.Shader:GPUImageFilter()]]
 
 
 class BlueFilter:NSObject{
