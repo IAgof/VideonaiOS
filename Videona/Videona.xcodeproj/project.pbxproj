@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A91D25121CF876250006CB93 /* CameraInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91D25111CF876250006CB93 /* CameraInteractorInterface.swift */; };
 		A93846E81CE47E82007FB6BC /* FilterListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846E71CE47E82007FB6BC /* FilterListPresenter.swift */; };
 		A93846EA1CE47E9C007FB6BC /* FilterListPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846E91CE47E9C007FB6BC /* FilterListPresenterInterface.swift */; };
 		A93846EC1CE47EE2007FB6BC /* FilterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846EB1CE47EE2007FB6BC /* FilterListView.swift */; };
@@ -176,6 +177,7 @@
 
 /* Begin PBXFileReference section */
 		A918B89A1CF5878D0013D68F /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = ../../GPUImage/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
+		A91D25111CF876250006CB93 /* CameraInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraInteractorInterface.swift; sourceTree = "<group>"; };
 		A93846E71CE47E82007FB6BC /* FilterListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListPresenter.swift; sourceTree = "<group>"; };
 		A93846E91CE47E9C007FB6BC /* FilterListPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListPresenterInterface.swift; sourceTree = "<group>"; };
 		A93846EB1CE47EE2007FB6BC /* FilterListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListView.swift; sourceTree = "<group>"; };
@@ -547,6 +549,7 @@
 			children = (
 				A9F9C2481CF49F5D00AB310C /* ShowFlashInteractor.swift */,
 				A965C7EB1CF58467001E2D39 /* CameraInteractor.swift */,
+				A91D25111CF876250006CB93 /* CameraInteractorInterface.swift */,
 				A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */,
 				A9D76AE61CF5E9CB00F7FB47 /* RemoveFilterInteractor.swift */,
 				A98A93BC1CF59155004E1DB7 /* ChangeFilterInteractor.swift */,
@@ -1195,6 +1198,7 @@
 				A99278571CE36517009DC364 /* SettingsInterface.swift in Sources */,
 				A965BDBC1CDA0758002579CA /* IntroPresenter.swift in Sources */,
 				A94301671CE5CF4F00DC0DF8 /* PlayerWireframe.swift in Sources */,
+				A91D25121CF876250006CB93 /* CameraInteractorInterface.swift in Sources */,
 				A9F9C20E1CF4665000AB310C /* VideonaController.swift in Sources */,
 				A95D3BE01CEB045F001F2272 /* SettingsProvider.swift in Sources */,
 			);

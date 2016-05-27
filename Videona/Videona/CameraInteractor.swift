@@ -11,16 +11,24 @@ import GPUImage
 import AVFoundation
 
 class CameraInteractor{
+    //MARK: - VIPER
+    var cameraDelegate:CameraInteractorDelegate
+    
+    //MARK: - Camera variables
     var videoCamera:GPUImageVideoCamera
     var filter:GPUImageFilter
     var maskFilterToOutput:GPUImageFilter
-//    var movieWriter: GPUImageMovieWriter sacar a otro Interactor?
     var displayView: GPUImageView
-    var imageView:UIImageView
-    let resolution = AVCaptureSessionPreset1280x720
-    
     var sourceImageGPUUIElement: GPUImageUIElement?
-    init(display:GPUImageView){
+    var imageView:UIImageView
+    //    var movieWriter: GPUImageMovieWriter sacar a otro Interactor?
+
+    let resolution = AVCaptureSessionPreset1280x720
+    var isRearCamera:Bool = false
+
+    
+    init(display:GPUImageView, cameraDelegate: CameraInteractorDelegate){
+        self.cameraDelegate = cameraDelegate
         videoCamera = GPUImageVideoCamera(sessionPreset: resolution, cameraPosition: .Back)
         videoCamera.outputImageOrientation = .LandscapeLeft
         displayView = display
@@ -36,6 +44,7 @@ class CameraInteractor{
         videoCamera.startCameraCapture()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CameraInteractor.checkOrientation), name: UIDeviceOrientationDidChangeNotification, object: nil)
+        
     }
     
     func addBlendFilterAtInit(){
@@ -90,5 +99,18 @@ class CameraInteractor{
     }
     func removeOverlay(){
         RemoveFilterInteractor().removeOverlay(imageView)
+    }
+    
+    
+    func rotateCamera(){
+        self.videoCamera.rotateCamera()
+        
+        if self.isRearCamera {
+            self.isRearCamera = false
+            cameraDelegate.cameraRear()
+        }else{
+            self.isRearCamera = true
+            cameraDelegate.cameraFront()
+        }
     }
 }

@@ -21,7 +21,7 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
     var filtersTitle:Array<String> = []
     var filterShowing = -1
     
-    let FILTERS_SHOWING_IS_NONE = 0
+    let FILTERS_SHOWING_IS_NONE = -1
     let FILTERS_SHOWING_IS_COLOR = 0
     let FILTERS_SHOWING_IS_SHADER = 1
     
@@ -83,6 +83,7 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
             self.filterListSelectedFilters(filter!)
         }
     }
+    
     func checkOtherCellSelected(indexPath: NSIndexPath,lastSelectedIndexPath:NSIndexPath, collectionView: UICollectionView) {
         if lastSelectedIndexPath != indexPath {
             if let cell = collectionView.cellForItemAtIndexPath(lastSelectedIndexPath) {

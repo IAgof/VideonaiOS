@@ -25,7 +25,6 @@ class AppDependencies {
         let rootWireframe = RootWireframe()
         let introPresenter = IntroPresenter()
         let recordPresenter = RecordPresenter()
-    
         let settingsPresenter = SettingsPresenter()
         let settingsInteractor = SettingsInteractor()
         
@@ -49,7 +48,7 @@ class AppDependencies {
         recordPresenter.recordWireframe = recordWireframe
         recordPresenter.settingsWireframe = settingsWireframe
         recordPresenter.shareWireframe = shareWireframe
-
+        
         recordWireframe.recordPresenter = recordPresenter
         recordWireframe.rootWireframe = rootWireframe
         recordWireframe.filterListWireframe = filterListWireframe

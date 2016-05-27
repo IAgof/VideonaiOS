@@ -29,11 +29,13 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         // Do any additional setup after loading the view, typically from a nib.
         eventHandler?.viewDidLoad(cameraView)
     }
+    
     func forceLandsCapeOnInit(){
         //Force landscape mode
         let value = UIInterfaceOrientation.LandscapeLeft.rawValue
         UIDevice.currentDevice().setValue(value, forKey: "orientation")
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -44,9 +46,11 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         self.navigationController?.navigationBarHidden = true
         self.forceLandsCapeOnInit()
     }
+    
     override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
         return UIInterfaceOrientation.LandscapeLeft
     }
+    
     //MARK: - Button Actions
     @IBAction func pushGoToSettings(sender: AnyObject) {
         eventHandler?.pushSettings()
@@ -59,6 +63,7 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     @IBAction func pushColorFilter(sender: AnyObject) {
         eventHandler?.pushShowHideColorFilters()
     }
+    
     @IBAction func pushShaderFilter(sender: AnyObject) {
         eventHandler?.pushShowHideShaderFilters()
     }
@@ -66,9 +71,11 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     @IBAction func pushRecord(sender: AnyObject) {
         eventHandler?.pushRecord()
     }
+    
     @IBAction func pushFlash(sender: AnyObject) {
         eventHandler?.pushFlash()
     }
+    
     @IBAction func pushRotateCamera(sender: AnyObject) {
         eventHandler?.pushRotateCamera()
     }
@@ -147,11 +154,11 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     }
     
     func showFrontCameraSelected(){
-        
+        cameraRotationButton.selected = true
     }
     
     func showBackCameraSelected(){
-        
+        cameraRotationButton.selected = false
     }
     
     func showError(errorMessage:String) {//videonaView

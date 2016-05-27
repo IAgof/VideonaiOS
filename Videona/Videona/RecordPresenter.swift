@@ -9,7 +9,7 @@
 import Foundation
 import GPUImage
 
-class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate{
+class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,CameraInteractorDelegate{
     
     //MARK: - Variables VIPER
     var controller: RecordController?
@@ -29,7 +29,7 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate{
     func viewDidLoad(displayView:GPUImageView){
         
         controller?.configureView()
-        cameraInteractor = CameraInteractor(display: displayView)
+        cameraInteractor = CameraInteractor(display: displayView,cameraDelegate: self)
     }
     func pushSettings() {
         print("Record presenter pushSettings")
@@ -59,12 +59,13 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate{
     }
     
     func pushRotateCamera() {
-        
+        cameraInteractor!.rotateCamera()
     }
 
     func showWarningOrientationImage(){
         controller?.lockScreenRotation()
     }
+    
     func hideWarningOrientationImage(){
         controller?.unlockScreenRotation()
     }
@@ -93,6 +94,7 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate{
             
         }
     }
+    
     func removeFilter(filterName: String) {
         let filterDic = effectDictionary
         
@@ -113,6 +115,7 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate{
             cameraInteractor?.removeFilters()
         }
     }
+    
     func pushShowHideColorFilters() {
         if(shaderFilterViewIsShowin){
             shaderFilterViewIsShowin = false
@@ -157,5 +160,18 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate{
             shaderFilterViewIsShowin = true
             return
         }
+    }
+    //MARK: - Camera delegate
+    func flashOn() {
+        controller?.showFlashOn(true)
+    }
+    func flashOff() {
+        controller?.showFlashOn(false)
+    }
+    func cameraRear() {
+        controller?.showBackCameraSelected()
+    }
+    func cameraFront() {
+        controller?.showFrontCameraSelected()
     }
 }
