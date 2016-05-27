@@ -56,14 +56,16 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
     func filterListSelectedFilters(filter: String) {
         filterListDelegate?.setFiltersOnView(filter)
     }
-    func removeShaderFilter(filterName:String) {
+    func removeFilter(filterName:String) {
         filterListDelegate?.removeFilter(filterName)
     }
     func cancelFilterListAction() {
         if(filterShowing == FILTERS_SHOWING_IS_SHADER){
             filterListDelegate!.pushShowHideShaderFilters()
+            self.removeFilter("Shader")
         }else if (filterShowing == FILTERS_SHOWING_IS_COLOR){
             filterListDelegate!.pushShowHideColorFilters()
+            self.removeFilter("Overlay")
         }
         self.setFilterShowin(FILTERS_SHOWING_IS_NONE)
     }
@@ -71,7 +73,7 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
         if (cell.isSelectedCell){
             cell.isSelectedCell = false
             cell.toggleSelected()
-            self.removeShaderFilter(cell.filterTitle.text!)
+            self.removeFilter(cell.filterTitle.text!)
         }else{
             cell.isSelectedCell = true
             cell.toggleSelected()

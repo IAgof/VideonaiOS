@@ -33,6 +33,7 @@ var effectDictionary:[String:[FilterType:AnyObject]] =
      "Burn": [.Blend:GPUImageGrayscaleFilter.init()],
      "CCTV": [.Blend:GPUImageGrayscaleFilter.init()],
      "Summer": [.Blend:GPUImageGrayscaleFilter.init()],
+     "Overlay": [.Blend:GPUImageGrayscaleFilter.init()],
      "Mirror": [.Shader:GPUImageFilter()],
      "Dent": [.Shader:GPUImageFilter()],
      "Squeeze": [.Shader:GPUImageFilter()],
@@ -42,7 +43,9 @@ var effectDictionary:[String:[FilterType:AnyObject]] =
      "Fisheye": [.Shader:GPUImageFilter()],
      "Tiwrl": [.Shader:GPUImageFilter()],
      "Tunnel": [.Shader:GPUImageFilter()],
-     "Bulge": [.Shader:GPUImageFilter()]]
+     "Bulge": [.Shader:GPUImageFilter()],
+     "Shader": [.Shader:GPUImageFilter()],
+]
 
 
 class BlueFilter:NSObject{
