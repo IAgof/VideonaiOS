@@ -49,7 +49,7 @@ class CameraRecorderInteractor{
                 
                 Utils().debugLog("Stop recording video")
                 
-//                self.saveClipToCameraRoll()
+                ClipsAlbum.sharedInstance.saveVideo(NSURL.init(fileURLWithPath: self.clipsArray[(self.clipsArray.count - 1) ]))
                 self.movieWriter!.endProcessing()
                 self.movieWriter = nil
             }

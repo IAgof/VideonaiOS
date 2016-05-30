@@ -68,6 +68,7 @@
 		A971F5AD1CFC52D1004DC50D /* activity_record_rec_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = A971F5AC1CFC52D1004DC50D /* activity_record_rec_circle.png */; };
 		A971F5B11CFC5B98004DC50D /* ThumbnailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F5B01CFC5B98004DC50D /* ThumbnailInteractor.swift */; };
 		A971F5B41CFC7F6C004DC50D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A971F5B21CFC7F31004DC50D /* Roboto-Regular.ttf */; };
+		A971F5BB1CFC89AF004DC50D /* ClipsAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F5BA1CFC89AF004DC50D /* ClipsAlbum.swift */; };
 		A98A93B51CF58870004E1DB7 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98A93B21CF58866004E1DB7 /* GPUImage.framework */; };
 		A98A93B61CF58874004E1DB7 /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A98A93B21CF58866004E1DB7 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A98A93BB1CF5903C004E1DB7 /* AddFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */; };
@@ -251,6 +252,7 @@
 		A971F5AC1CFC52D1004DC50D /* activity_record_rec_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activity_record_rec_circle.png; sourceTree = "<group>"; };
 		A971F5B01CFC5B98004DC50D /* ThumbnailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailInteractor.swift; sourceTree = "<group>"; };
 		A971F5B21CFC7F31004DC50D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		A971F5BA1CFC89AF004DC50D /* ClipsAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClipsAlbum.swift; sourceTree = "<group>"; };
 		A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFilterInteractor.swift; sourceTree = "<group>"; };
 		A98A93BC1CF59155004E1DB7 /* ChangeFilterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeFilterInteractor.swift; sourceTree = "<group>"; };
 		A98A93C31CF5BAF6004E1DB7 /* EffectDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectDictionary.swift; sourceTree = "<group>"; };
@@ -563,6 +565,7 @@
 			children = (
 				A965C7EB1CF58467001E2D39 /* CameraInteractor.swift */,
 				A91D25111CF876250006CB93 /* CameraInteractorInterface.swift */,
+				A971F5B71CFC89A0004DC50D /* CustomAlbum */,
 				A971F5AF1CFC5B85004DC50D /* Thumbnail */,
 				A971F5A71CFC4742004DC50D /* Timer */,
 				A971F5A61CFC252B004DC50D /* Flash Interactor */,
@@ -791,6 +794,14 @@
 				A971F5B21CFC7F31004DC50D /* Roboto-Regular.ttf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		A971F5B71CFC89A0004DC50D /* CustomAlbum */ = {
+			isa = PBXGroup;
+			children = (
+				A971F5BA1CFC89AF004DC50D /* ClipsAlbum.swift */,
+			);
+			name = CustomAlbum;
 			sourceTree = "<group>";
 		};
 		A98A93AA1CF58866004E1DB7 /* Products */ = {
@@ -1221,6 +1232,7 @@
 				A94301701CE5DAA100DC0DF8 /* SocialNetworkProvider.swift in Sources */,
 				A965BDC31CDA1171002579CA /* IntroPresenterInterface.swift in Sources */,
 				A93846EE1CE47EF0007FB6BC /* FilterListInterface.swift in Sources */,
+				A971F5BB1CFC89AF004DC50D /* ClipsAlbum.swift in Sources */,
 				A95B24761CD8B90700F78AAF /* AppDependencies.swift in Sources */,
 				A971F5A31CFC21E4004DC50D /* CameraRecorderInterface.swift in Sources */,
 				A9E066ED1CE4E4E200D4E11D /* ShareCell.swift in Sources */,
