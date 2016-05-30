@@ -57,11 +57,23 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
             controller?.showStopButton()
             isRecording = false
             
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                // do some task
+                let videosArray = self.cameraInteractor?.getClipsArray()
+                let thumb = ThumbnailInteractor.init(videosArray: videosArray!).getThumbnailImageView()
+                dispatch_async(dispatch_get_main_queue(), {
+                    // update some UI
+                    self.controller?.showRecordedVideoThumb(thumb)
+                    self.controller?.showNumberVideos((videosArray?.count)!)
+                });
+            });
+
             self.stopTimer()
         }else{
             cameraInteractor?.setIsRecording(true)
-            cameraInteractor?.startRecordVideo()
-            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                self.cameraInteractor?.startRecordVideo()
+            });
             controller?.showRecordButton()
             isRecording = true
             
@@ -205,11 +217,13 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
 
         timerInteractor?.start()
     }
+    
     func stopTimer() {
         controller?.hideChronometer()
         
         timerInteractor?.stop()
     }
+    
     //MARK: - Timer delegate
     func updateTimer(time: String) {
         controller?.updateChronometer(time)

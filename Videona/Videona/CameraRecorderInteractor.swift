@@ -71,4 +71,8 @@ class CameraRecorderInteractor{
         path =  path + "/\(Utils().giveMeTimeNow())videonaClip.m4v"
         return path
     }
+    
+    func getClipsArray() -> [String] {
+        return clipsArray
+    }
 }

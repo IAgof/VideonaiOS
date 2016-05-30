@@ -51,6 +51,9 @@ class CameraInteractor:CameraRecorderDelegate{
         
     }
     
+    func getClipsArray() -> [String] {
+        return cameraRecorder.getClipsArray()
+    }
     //MARK: - Orientation
     @objc func checkOrientation(){
         if videoCamera.outputImageOrientation == .LandscapeLeft{

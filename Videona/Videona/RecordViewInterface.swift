@@ -24,8 +24,10 @@ protocol RecordViewInterface {
     
     func updateChronometer(time:String)
 
-    func showRecordedVideoThumb(path:String)
-    
+    func showRecordedVideoThumb(imageView:UIImageView)
+
+    func showNumberVideos(nClips:Int)
+
     func hideRecordedVideoThumb()
     
     func showVideosRecordedNumber(numberOfVideos:Int)

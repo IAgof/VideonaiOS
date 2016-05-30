@@ -66,6 +66,8 @@
 		A971F5A91CFC4756004DC50D /* TimerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F5A81CFC4756004DC50D /* TimerInteractor.swift */; };
 		A971F5AB1CFC48D2004DC50D /* TimerInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F5AA1CFC48D2004DC50D /* TimerInteractorInterface.swift */; };
 		A971F5AD1CFC52D1004DC50D /* activity_record_rec_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = A971F5AC1CFC52D1004DC50D /* activity_record_rec_circle.png */; };
+		A971F5B11CFC5B98004DC50D /* ThumbnailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F5B01CFC5B98004DC50D /* ThumbnailInteractor.swift */; };
+		A971F5B41CFC7F6C004DC50D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A971F5B21CFC7F31004DC50D /* Roboto-Regular.ttf */; };
 		A98A93B51CF58870004E1DB7 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98A93B21CF58866004E1DB7 /* GPUImage.framework */; };
 		A98A93B61CF58874004E1DB7 /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A98A93B21CF58866004E1DB7 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A98A93BB1CF5903C004E1DB7 /* AddFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */; };
@@ -247,6 +249,8 @@
 		A971F5A81CFC4756004DC50D /* TimerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerInteractor.swift; sourceTree = "<group>"; };
 		A971F5AA1CFC48D2004DC50D /* TimerInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerInteractorInterface.swift; sourceTree = "<group>"; };
 		A971F5AC1CFC52D1004DC50D /* activity_record_rec_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activity_record_rec_circle.png; sourceTree = "<group>"; };
+		A971F5B01CFC5B98004DC50D /* ThumbnailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailInteractor.swift; sourceTree = "<group>"; };
+		A971F5B21CFC7F31004DC50D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFilterInteractor.swift; sourceTree = "<group>"; };
 		A98A93BC1CF59155004E1DB7 /* ChangeFilterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeFilterInteractor.swift; sourceTree = "<group>"; };
 		A98A93C31CF5BAF6004E1DB7 /* EffectDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectDictionary.swift; sourceTree = "<group>"; };
@@ -559,6 +563,7 @@
 			children = (
 				A965C7EB1CF58467001E2D39 /* CameraInteractor.swift */,
 				A91D25111CF876250006CB93 /* CameraInteractorInterface.swift */,
+				A971F5AF1CFC5B85004DC50D /* Thumbnail */,
 				A971F5A71CFC4742004DC50D /* Timer */,
 				A971F5A61CFC252B004DC50D /* Flash Interactor */,
 				A971F5A41CFC2503004DC50D /* Filters Interactor */,
@@ -772,6 +777,22 @@
 			name = Timer;
 			sourceTree = "<group>";
 		};
+		A971F5AF1CFC5B85004DC50D /* Thumbnail */ = {
+			isa = PBXGroup;
+			children = (
+				A971F5B01CFC5B98004DC50D /* ThumbnailInteractor.swift */,
+			);
+			name = Thumbnail;
+			sourceTree = "<group>";
+		};
+		A971F5B31CFC7F3C004DC50D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A971F5B21CFC7F31004DC50D /* Roboto-Regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		A98A93AA1CF58866004E1DB7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -978,6 +999,7 @@
 		A9F9C2141CF4872900AB310C /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				A971F5B31CFC7F3C004DC50D /* Fonts */,
 				A971F5AC1CFC52D1004DC50D /* activity_record_rec_circle.png */,
 				A9D2577A1CF753E100A618B0 /* FiltersShaders */,
 				A9D76AEF1CF5FB4B00F7FB47 /* FiltersOverlay */,
@@ -1116,6 +1138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A971F5B41CFC7F6C004DC50D /* Roboto-Regular.ttf in Resources */,
 				A9D257C81CF82BE600A618B0 /* Bulge.fsh in Resources */,
 				A9F9C2121CF485C600AB310C /* Logo_Splash_Vertical.png in Resources */,
 				A9F9C2101CF4857700AB310C /* Logo_Splash_Horizontal.png in Resources */,
@@ -1247,6 +1270,7 @@
 				A9D76AE71CF5E9CB00F7FB47 /* RemoveFilterInteractor.swift in Sources */,
 				A93846F01CE47F67007FB6BC /* FilterListWireframe.swift in Sources */,
 				A95B246E1CD88C2D00F78AAF /* RecordViewInterface.swift in Sources */,
+				A971F5B11CFC5B98004DC50D /* ThumbnailInteractor.swift in Sources */,
 				A99278571CE36517009DC364 /* SettingsInterface.swift in Sources */,
 				A965BDBC1CDA0758002579CA /* IntroPresenter.swift in Sources */,
 				A94301671CE5CF4F00DC0DF8 /* PlayerWireframe.swift in Sources */,
