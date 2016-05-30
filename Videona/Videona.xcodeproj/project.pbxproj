@@ -61,6 +61,8 @@
 		A965C7EC1CF58467001E2D39 /* CameraInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A965C7EB1CF58467001E2D39 /* CameraInteractor.swift */; };
 		A96732FE1CE6309C007BE340 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96732FD1CE6309C007BE340 /* SettingsInteractor.swift */; };
 		A96733001CE630AD007BE340 /* SettingsInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96732FF1CE630AD007BE340 /* SettingsInteractorInterface.swift */; };
+		A971F5A01CFC1A16004DC50D /* CameraRecorderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F59F1CFC1A16004DC50D /* CameraRecorderInteractor.swift */; };
+		A971F5A31CFC21E4004DC50D /* CameraRecorderInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F5A21CFC21E4004DC50D /* CameraRecorderInterface.swift */; };
 		A98A93B51CF58870004E1DB7 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98A93B21CF58866004E1DB7 /* GPUImage.framework */; };
 		A98A93B61CF58874004E1DB7 /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A98A93B21CF58866004E1DB7 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A98A93BB1CF5903C004E1DB7 /* AddFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */; };
@@ -237,6 +239,8 @@
 		A965C7EB1CF58467001E2D39 /* CameraInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraInteractor.swift; sourceTree = "<group>"; };
 		A96732FD1CE6309C007BE340 /* SettingsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
 		A96732FF1CE630AD007BE340 /* SettingsInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractorInterface.swift; sourceTree = "<group>"; };
+		A971F59F1CFC1A16004DC50D /* CameraRecorderInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraRecorderInteractor.swift; sourceTree = "<group>"; };
+		A971F5A21CFC21E4004DC50D /* CameraRecorderInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraRecorderInterface.swift; sourceTree = "<group>"; };
 		A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFilterInteractor.swift; sourceTree = "<group>"; };
 		A98A93BC1CF59155004E1DB7 /* ChangeFilterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeFilterInteractor.swift; sourceTree = "<group>"; };
 		A98A93C31CF5BAF6004E1DB7 /* EffectDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectDictionary.swift; sourceTree = "<group>"; };
@@ -547,12 +551,11 @@
 		A95B24651CD8897000F78AAF /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				A9F9C2481CF49F5D00AB310C /* FlashInteractor.swift */,
 				A965C7EB1CF58467001E2D39 /* CameraInteractor.swift */,
 				A91D25111CF876250006CB93 /* CameraInteractorInterface.swift */,
-				A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */,
-				A9D76AE61CF5E9CB00F7FB47 /* RemoveFilterInteractor.swift */,
-				A98A93BC1CF59155004E1DB7 /* ChangeFilterInteractor.swift */,
+				A971F5A61CFC252B004DC50D /* Flash Interactor */,
+				A971F5A41CFC2503004DC50D /* Filters Interactor */,
+				A971F5A51CFC2520004DC50D /* Recorder Interactor */,
 			);
 			name = Interactor;
 			sourceTree = "<group>";
@@ -724,6 +727,33 @@
 				A95D3BDF1CEB045F001F2272 /* SettingsProvider.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		A971F5A41CFC2503004DC50D /* Filters Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */,
+				A9D76AE61CF5E9CB00F7FB47 /* RemoveFilterInteractor.swift */,
+				A98A93BC1CF59155004E1DB7 /* ChangeFilterInteractor.swift */,
+			);
+			name = "Filters Interactor";
+			sourceTree = "<group>";
+		};
+		A971F5A51CFC2520004DC50D /* Recorder Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A971F59F1CFC1A16004DC50D /* CameraRecorderInteractor.swift */,
+				A971F5A21CFC21E4004DC50D /* CameraRecorderInterface.swift */,
+			);
+			name = "Recorder Interactor";
+			sourceTree = "<group>";
+		};
+		A971F5A61CFC252B004DC50D /* Flash Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A9F9C2481CF49F5D00AB310C /* FlashInteractor.swift */,
+			);
+			name = "Flash Interactor";
 			sourceTree = "<group>";
 		};
 		A98A93AA1CF58866004E1DB7 /* Products */ = {
@@ -1151,6 +1181,7 @@
 				A965BDC31CDA1171002579CA /* IntroPresenterInterface.swift in Sources */,
 				A93846EE1CE47EF0007FB6BC /* FilterListInterface.swift in Sources */,
 				A95B24761CD8B90700F78AAF /* AppDependencies.swift in Sources */,
+				A971F5A31CFC21E4004DC50D /* CameraRecorderInterface.swift in Sources */,
 				A9E066ED1CE4E4E200D4E11D /* ShareCell.swift in Sources */,
 				A95B24371CD8890900F78AAF /* RecordController.swift in Sources */,
 				A965BDC11CDA0F1D002579CA /* IntroViewInterface.swift in Sources */,
@@ -1186,6 +1217,7 @@
 				A95B24351CD8890900F78AAF /* AppDelegate.swift in Sources */,
 				A95B24711CD88C4B00F78AAF /* RecordPresenter.swift in Sources */,
 				A9F9C2491CF49F5D00AB310C /* FlashInteractor.swift in Sources */,
+				A971F5A01CFC1A16004DC50D /* CameraRecorderInteractor.swift in Sources */,
 				A94301761CE5EEE200DC0DF8 /* FilterListInteractor.swift in Sources */,
 				A95D3BE81CEB7141001F2272 /* PlayerItem.swift in Sources */,
 				A93846F51CE480AA007FB6BC /* FilterListPresentationTransition.swift in Sources */,

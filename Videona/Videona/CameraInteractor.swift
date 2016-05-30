@@ -10,9 +10,10 @@ import Foundation
 import GPUImage
 import AVFoundation
 
-class CameraInteractor{
+class CameraInteractor:CameraRecorderDelegate{
     //MARK: - VIPER
     var cameraDelegate:CameraInteractorDelegate
+    var cameraRecorder = CameraRecorderInteractor()
     
     //MARK: - Camera variables
     var videoCamera:GPUImageVideoCamera
@@ -26,7 +27,7 @@ class CameraInteractor{
     let resolution = AVCaptureSessionPreset1280x720
     var isRearCamera:Bool = false
 
-    
+    //MARK: - Init
     init(display:GPUImageView, cameraDelegate: CameraInteractorDelegate){
         self.cameraDelegate = cameraDelegate
         videoCamera = GPUImageVideoCamera(sessionPreset: resolution, cameraPosition: .Back)
@@ -47,6 +48,31 @@ class CameraInteractor{
         
     }
     
+    //MARK: - Orientation
+    @objc func checkOrientation(){
+        if videoCamera.outputImageOrientation == .LandscapeLeft{
+            videoCamera.outputImageOrientation = .LandscapeRight
+        }else{
+            videoCamera.outputImageOrientation = .LandscapeLeft
+        }
+    }
+    
+    func rotateCamera(){
+        self.videoCamera.rotateCamera()
+        
+        if self.isRearCamera {
+            self.isRearCamera = false
+            cameraDelegate.cameraRear()
+        }else{
+            self.isRearCamera = true
+            cameraDelegate.cameraFront()
+            if(FlashInteractor().isFlashTurnOn()){
+                cameraDelegate.flashOff()
+            }
+        }
+    }
+    
+    //MARK: - Filters functions
     func addBlendFilterAtInit(){
         let blendFilter = GPUImageAlphaBlendFilter()
         blendFilter.mix = 0.5
@@ -67,15 +93,7 @@ class CameraInteractor{
             self.sourceImageGPUUIElement!.update()
         }
     }
-    
-    @objc func checkOrientation(){
-        if videoCamera.outputImageOrientation == .LandscapeLeft{
-            videoCamera.outputImageOrientation = .LandscapeRight
-        }else{
-            videoCamera.outputImageOrientation = .LandscapeLeft
-        }
-    }
-    
+
     func changeBlendImage(image:UIImage){
         imageView.image = image
     }
@@ -101,19 +119,16 @@ class CameraInteractor{
         RemoveFilterInteractor().removeOverlay(imageView)
     }
     
-    
-    func rotateCamera(){
-        self.videoCamera.rotateCamera()
+    //MARK: - Recorder delegate
+    func startRecordVideo(){
+       let maskFilterToRecord = GPUImageFilter()
+        maskFilterToOutput.addTarget(maskFilterToRecord)
         
-        if self.isRearCamera {
-            self.isRearCamera = false
-            cameraDelegate.cameraRear()
-        }else{
-            self.isRearCamera = true
-            cameraDelegate.cameraFront()
-            if(FlashInteractor().isFlashTurnOn()){
-                cameraDelegate.flashOff()
-            }
-        }
+        cameraRecorder.setInput(maskFilterToRecord, videoCamera: videoCamera)
+        cameraRecorder.recordVideo()
+    }
+    
+    func stopRecordVideo() {
+        cameraRecorder.stopRecordVideo()
     }
 }

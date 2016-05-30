@@ -50,9 +50,13 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
     
     func pushRecord() {
         if isRecording {
+            cameraInteractor?.stopRecordVideo()
+            
             controller?.showStopButton()
             isRecording = false
         }else{
+            cameraInteractor?.startRecordVideo()
+            
             controller?.showRecordButton()
             isRecording = true
         }
