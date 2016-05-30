@@ -149,6 +149,14 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         flashButton.selected = on
     }
     
+    func showOverlayOnTop(isOnTop: Bool) {
+        overlayFilterButton.selected = isOnTop
+    }
+    
+    func showShadersOnTop(isOnTop: Bool) {
+        shaderFilterButton.selected = isOnTop
+    }
+    
     func showFlashSupported(state:Bool){
         
     }
@@ -197,6 +205,7 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         
     }
     
+  //MARK: - Landscape Orientation
     func checkOrientation(){
         var text=""
         switch UIDevice.currentDevice().orientation{

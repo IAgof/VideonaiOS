@@ -46,6 +46,10 @@ protocol RecordViewInterface {
     
     func showFlashOn(on:Bool)
     
+    func showShadersOnTop(isOnTop:Bool)
+    
+    func showOverlayOnTop(isOnTop:Bool)
+    
     func showFlashSupported(state:Bool)
     
     func showFrontCameraSelected()

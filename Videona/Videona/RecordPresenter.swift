@@ -71,6 +71,62 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
     }
     
     //MARK: - FilterList delegate
+    func pushShowHideColorFilters() {
+        if(shaderFilterViewIsShowin){
+            shaderFilterViewIsShowin = false
+            
+            self.recordWireframe?.dismissFilterListInterface()
+            //Wait to hide filterlist
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(500 * NSEC_PER_MSEC)), dispatch_get_main_queue(), {
+                self.recordWireframe?.presentColorFilterListInterface()
+                
+            });
+            
+            self.colorFilterViewIsShowin = true
+            
+            controller?.showOverlayOnTop(true)
+            controller?.showShadersOnTop(false)
+            
+            return
+        }else if(colorFilterViewIsShowin){
+            recordWireframe?.dismissFilterListInterface()
+            controller?.showOverlayOnTop(false)
+            colorFilterViewIsShowin = false
+            return
+        }else{
+            recordWireframe?.presentColorFilterListInterface()
+            controller?.showOverlayOnTop(true)
+            colorFilterViewIsShowin = true
+            return
+        }
+    }
+    
+    func pushShowHideShaderFilters() {
+        if(colorFilterViewIsShowin){
+            colorFilterViewIsShowin = false
+            recordWireframe?.dismissFilterListInterface()
+            //Wait to hide filterlist
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(500 * NSEC_PER_MSEC)), dispatch_get_main_queue(), {
+                self.recordWireframe?.presentShaderFilterListInterface()
+            });
+            self.shaderFilterViewIsShowin = true
+            controller?.showOverlayOnTop(false)
+            controller?.showShadersOnTop(true)
+            return
+        }else if(shaderFilterViewIsShowin){
+            recordWireframe?.dismissFilterListInterface()
+            
+            controller?.showShadersOnTop(false)
+            shaderFilterViewIsShowin = false
+            return
+        }else{
+            recordWireframe?.presentShaderFilterListInterface()
+            controller?.showShadersOnTop(true)
+            shaderFilterViewIsShowin = true
+            return
+        }
+    }
+    
     func setFiltersOnView(filterName: String) {
         let filterDic = effectDictionary
         
@@ -116,51 +172,6 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
         }
     }
     
-    func pushShowHideColorFilters() {
-        if(shaderFilterViewIsShowin){
-            shaderFilterViewIsShowin = false
-            
-            self.recordWireframe?.dismissFilterListInterface()
-            //Wait to hide filterlist
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(500 * NSEC_PER_MSEC)), dispatch_get_main_queue(), {
-                self.recordWireframe?.presentColorFilterListInterface()
-            });
-            
-            self.colorFilterViewIsShowin = true
-            return
-        }else if(colorFilterViewIsShowin){
-            recordWireframe?.dismissFilterListInterface()
-            
-            colorFilterViewIsShowin = false
-            return
-        }else{
-            recordWireframe?.presentColorFilterListInterface()
-            colorFilterViewIsShowin = true
-            return
-        }
-    }
-    
-    func pushShowHideShaderFilters() {
-        if(colorFilterViewIsShowin){
-            colorFilterViewIsShowin = false
-            recordWireframe?.dismissFilterListInterface()
-            //Wait to hide filterlist
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(500 * NSEC_PER_MSEC)), dispatch_get_main_queue(), {
-                self.recordWireframe?.presentShaderFilterListInterface()
-            });
-            self.shaderFilterViewIsShowin = true
-            return
-        }else if(shaderFilterViewIsShowin){
-            recordWireframe?.dismissFilterListInterface()
-            
-            shaderFilterViewIsShowin = false
-            return
-        }else{
-            recordWireframe?.presentShaderFilterListInterface()
-            shaderFilterViewIsShowin = true
-            return
-        }
-    }
     //MARK: - Camera delegate
     func flashOn() {
         controller?.showFlashOn(true)
