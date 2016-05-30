@@ -63,6 +63,9 @@
 		A96733001CE630AD007BE340 /* SettingsInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96732FF1CE630AD007BE340 /* SettingsInteractorInterface.swift */; };
 		A971F5A01CFC1A16004DC50D /* CameraRecorderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F59F1CFC1A16004DC50D /* CameraRecorderInteractor.swift */; };
 		A971F5A31CFC21E4004DC50D /* CameraRecorderInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F5A21CFC21E4004DC50D /* CameraRecorderInterface.swift */; };
+		A971F5A91CFC4756004DC50D /* TimerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F5A81CFC4756004DC50D /* TimerInteractor.swift */; };
+		A971F5AB1CFC48D2004DC50D /* TimerInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F5AA1CFC48D2004DC50D /* TimerInteractorInterface.swift */; };
+		A971F5AD1CFC52D1004DC50D /* activity_record_rec_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = A971F5AC1CFC52D1004DC50D /* activity_record_rec_circle.png */; };
 		A98A93B51CF58870004E1DB7 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98A93B21CF58866004E1DB7 /* GPUImage.framework */; };
 		A98A93B61CF58874004E1DB7 /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A98A93B21CF58866004E1DB7 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A98A93BB1CF5903C004E1DB7 /* AddFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */; };
@@ -241,6 +244,9 @@
 		A96732FF1CE630AD007BE340 /* SettingsInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractorInterface.swift; sourceTree = "<group>"; };
 		A971F59F1CFC1A16004DC50D /* CameraRecorderInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraRecorderInteractor.swift; sourceTree = "<group>"; };
 		A971F5A21CFC21E4004DC50D /* CameraRecorderInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraRecorderInterface.swift; sourceTree = "<group>"; };
+		A971F5A81CFC4756004DC50D /* TimerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerInteractor.swift; sourceTree = "<group>"; };
+		A971F5AA1CFC48D2004DC50D /* TimerInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerInteractorInterface.swift; sourceTree = "<group>"; };
+		A971F5AC1CFC52D1004DC50D /* activity_record_rec_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = activity_record_rec_circle.png; sourceTree = "<group>"; };
 		A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFilterInteractor.swift; sourceTree = "<group>"; };
 		A98A93BC1CF59155004E1DB7 /* ChangeFilterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeFilterInteractor.swift; sourceTree = "<group>"; };
 		A98A93C31CF5BAF6004E1DB7 /* EffectDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectDictionary.swift; sourceTree = "<group>"; };
@@ -553,6 +559,7 @@
 			children = (
 				A965C7EB1CF58467001E2D39 /* CameraInteractor.swift */,
 				A91D25111CF876250006CB93 /* CameraInteractorInterface.swift */,
+				A971F5A71CFC4742004DC50D /* Timer */,
 				A971F5A61CFC252B004DC50D /* Flash Interactor */,
 				A971F5A41CFC2503004DC50D /* Filters Interactor */,
 				A971F5A51CFC2520004DC50D /* Recorder Interactor */,
@@ -754,6 +761,15 @@
 				A9F9C2481CF49F5D00AB310C /* FlashInteractor.swift */,
 			);
 			name = "Flash Interactor";
+			sourceTree = "<group>";
+		};
+		A971F5A71CFC4742004DC50D /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				A971F5A81CFC4756004DC50D /* TimerInteractor.swift */,
+				A971F5AA1CFC48D2004DC50D /* TimerInteractorInterface.swift */,
+			);
+			name = Timer;
 			sourceTree = "<group>";
 		};
 		A98A93AA1CF58866004E1DB7 /* Products */ = {
@@ -962,6 +978,7 @@
 		A9F9C2141CF4872900AB310C /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				A971F5AC1CFC52D1004DC50D /* activity_record_rec_circle.png */,
 				A9D2577A1CF753E100A618B0 /* FiltersShaders */,
 				A9D76AEF1CF5FB4B00F7FB47 /* FiltersOverlay */,
 				A9F9C2131CF4871F00AB310C /* LogoSplash */,
@@ -1129,6 +1146,7 @@
 				A9D76B0D1CF5FB8700F7FB47 /* passion.png in Resources */,
 				A9D257C21CF82BE600A618B0 /* Fisheye.fsh in Resources */,
 				A9D76B0F1CF5FB8700F7FB47 /* polaroid.png in Resources */,
+				A971F5AD1CFC52D1004DC50D /* activity_record_rec_circle.png in Resources */,
 				A9E066EB1CE4E13800D4E11D /* ShareCell.xib in Resources */,
 				A95B243A1CD8890900F78AAF /* Main.storyboard in Resources */,
 				A9D76B051CF5FB8700F7FB47 /* bokeh.png in Resources */,
@@ -1219,7 +1237,9 @@
 				A9F9C2491CF49F5D00AB310C /* FlashInteractor.swift in Sources */,
 				A971F5A01CFC1A16004DC50D /* CameraRecorderInteractor.swift in Sources */,
 				A94301761CE5EEE200DC0DF8 /* FilterListInteractor.swift in Sources */,
+				A971F5A91CFC4756004DC50D /* TimerInteractor.swift in Sources */,
 				A95D3BE81CEB7141001F2272 /* PlayerItem.swift in Sources */,
+				A971F5AB1CFC48D2004DC50D /* TimerInteractorInterface.swift in Sources */,
 				A93846F51CE480AA007FB6BC /* FilterListPresentationTransition.swift in Sources */,
 				A93846E81CE47E82007FB6BC /* FilterListPresenter.swift in Sources */,
 				A95B247C1CD8B9F200F78AAF /* RecordPresenterInterfaceIO.swift in Sources */,

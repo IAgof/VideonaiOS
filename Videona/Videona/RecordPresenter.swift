@@ -9,7 +9,7 @@
 import Foundation
 import GPUImage
 
-class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,CameraInteractorDelegate{
+class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,CameraInteractorDelegate,TimerInteractorDelegate{
     
     //MARK: - Variables VIPER
     var controller: RecordController?
@@ -17,7 +17,8 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
     var settingsWireframe: SettingsWireframe?
     var shareWireframe: ShareWireframe?
     var cameraInteractor: CameraInteractor?
-    
+    var timerInteractor: TimerInteractor?
+
     //    var navigatorWireframe: NavigationWireframe?
 
     //MARK: - Constants
@@ -55,12 +56,16 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
             
             controller?.showStopButton()
             isRecording = false
+            
+            self.stopTimer()
         }else{
             cameraInteractor?.setIsRecording(true)
             cameraInteractor?.startRecordVideo()
             
             controller?.showRecordButton()
             isRecording = true
+            
+            self.startTimer()
         }
     }
     
@@ -191,4 +196,23 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
     func cameraFront() {
         controller?.showFrontCameraSelected()
     }
+    
+    func startTimer() {
+        controller?.showChronometer()
+        
+        timerInteractor = TimerInteractor()
+        timerInteractor!.setDelegate(self)
+
+        timerInteractor?.start()
+    }
+    func stopTimer() {
+        controller?.hideChronometer()
+        
+        timerInteractor?.stop()
+    }
+    //MARK: - Timer delegate
+    func updateTimer(time: String) {
+        controller?.updateChronometer(time)
+    }
+
 }

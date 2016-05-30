@@ -22,6 +22,8 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     @IBOutlet weak var shaderFilterButton: UIButton!
     @IBOutlet weak var overlayFilterButton: UIButton!
     @IBOutlet weak var cameraView: GPUImageView!
+    @IBOutlet weak var chronometrer: UILabel!
+    @IBOutlet weak var chronometrerContainer: UIView!
     
     //MARK: - View Config
     override func viewDidLoad() {
@@ -98,13 +100,16 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     }
     
     func showChronometer(){
-        
+        self.chronometrerContainer.hidden = false
     }
     
     func hideChronometer(){
-        
+        self.chronometrerContainer.hidden = true
     }
     
+    func updateChronometer(time: String) {
+        self.chronometrer.text = time
+    }
     func showRecordedVideoThumb(path:String){
         
     }
