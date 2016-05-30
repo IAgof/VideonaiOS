@@ -1,5 +1,5 @@
 //
-//  ShowFlashInteractor.swift
+//  FlashInteractor.swift
 //  Videona
 //
 //  Created by Alejandro Arjonilla Garcia on 24/5/16.
@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 
-class SwitchFlashInteractor{
+class FlashInteractor{
     
     let FLASH_ON = true
     let FLASH_OFF = false
@@ -29,7 +29,6 @@ class SwitchFlashInteractor{
                     try device.setTorchModeOnWithLevel(1.0)
                     return FLASH_ON
                 }
-                device.unlockForConfiguration()
             } catch {
                 print(error)
                 return FLASH_OFF
@@ -37,5 +36,9 @@ class SwitchFlashInteractor{
         }else{
             return FLASH_OFF
         }
+    }
+    
+    func isFlashTurnOn()->Bool{
+        return device.torchMode == .On
     }
 }

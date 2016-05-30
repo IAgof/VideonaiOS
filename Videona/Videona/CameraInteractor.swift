@@ -111,6 +111,9 @@ class CameraInteractor{
         }else{
             self.isRearCamera = true
             cameraDelegate.cameraFront()
+            if(FlashInteractor().isFlashTurnOn()){
+                cameraDelegate.flashOff()
+            }
         }
     }
 }

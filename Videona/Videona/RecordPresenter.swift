@@ -44,7 +44,7 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
 
     
     func pushFlash() {
-        let flashState = SwitchFlashInteractor().switchFlashState()
+        let flashState = FlashInteractor().switchFlashState()
         controller?.showFlashOn(flashState)
     }
     
