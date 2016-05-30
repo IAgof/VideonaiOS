@@ -18,7 +18,8 @@ class CameraInteractor:CameraRecorderDelegate{
     //MARK: - Camera variables
     var videoCamera:GPUImageVideoCamera
     var filter:GPUImageFilter
-    var maskFilterToOutput:GPUImageFilter
+    var maskFilterInput:GPUImageFilter
+    var maskFilterOutput:GPUImageFilter
     var displayView: GPUImageView
     var sourceImageGPUUIElement: GPUImageUIElement?
     var imageView:UIImageView
@@ -26,6 +27,7 @@ class CameraInteractor:CameraRecorderDelegate{
 
     let resolution = AVCaptureSessionPreset1280x720
     var isRearCamera:Bool = false
+    var isRecording:Bool = false
 
     //MARK: - Init
     init(display:GPUImageView, cameraDelegate: CameraInteractorDelegate){
@@ -36,7 +38,8 @@ class CameraInteractor:CameraRecorderDelegate{
         imageView = UIImageView.init(frame: displayView.frame)
         
         filter = GPUImageFilter()
-        maskFilterToOutput = GPUImageFilter()
+        maskFilterInput = GPUImageFilter()
+        maskFilterOutput = GPUImageFilter()
         
         videoCamera.addTarget(filter)
 
@@ -86,8 +89,11 @@ class CameraInteractor:CameraRecorderDelegate{
         filter.addTarget(blendFilter)
         sourceImageGPUUIElement!.addTarget(blendFilter)
         
-        blendFilter.addTarget(maskFilterToOutput)
-        maskFilterToOutput.addTarget(displayView)
+        blendFilter.addTarget(maskFilterInput)
+        
+        maskFilterInput.addTarget(maskFilterOutput)
+        
+        maskFilterOutput.addTarget(displayView)
         
         filter.frameProcessingCompletionBlock = { filter, time in
             self.sourceImageGPUUIElement!.update()
@@ -99,35 +105,49 @@ class CameraInteractor:CameraRecorderDelegate{
     }
 
     func changeFilter(newFilter:GPUImageFilter){
-        ChangeFilterInteractor().changeFilter(maskFilterToOutput, newFilter: newFilter, display: displayView)
+        ChangeFilterInteractor().changeFilter(maskFilterInput, newFilter: newFilter, display: displayView)
+   
+        maskFilterOutput = newFilter
+        self.setInputToWriter()
     }
     
     func addFilter(newFilter:GPUImageFilter){
-        AddFilterInteractor().addFilter(maskFilterToOutput, newFilter: newFilter, display: displayView)
+        AddFilterInteractor().addFilter(maskFilterInput, newFilter: newFilter, display: displayView)
         
-        maskFilterToOutput = newFilter
+        maskFilterOutput = newFilter
     }
     
     func removeFilters(){
-        RemoveFilterInteractor().removeFilter(maskFilterToOutput, imageView: imageView, display: displayView)
+        RemoveFilterInteractor().removeFilter(maskFilterInput, imageView: imageView, display: displayView)
     }
     
     func removeShaders(){
-        RemoveFilterInteractor().removeShader(maskFilterToOutput, display: displayView)
+        RemoveFilterInteractor().removeShader(maskFilterInput, display: displayView)
     }
     func removeOverlay(){
         RemoveFilterInteractor().removeOverlay(imageView)
     }
-    
+    func setInputToWriter(){
+        if(isRecording){
+            let maskFilterToRecord = GPUImageFilter()
+            maskFilterOutput.addTarget(maskFilterToRecord)
+            
+            cameraRecorder.setInput(maskFilterToRecord)
+        }
+    }
+
     //MARK: - Recorder delegate
     func startRecordVideo(){
-       let maskFilterToRecord = GPUImageFilter()
-        maskFilterToOutput.addTarget(maskFilterToRecord)
+        cameraRecorder.setVideoCamera(videoCamera)
+        self.setInputToWriter()
         
-        cameraRecorder.setInput(maskFilterToRecord, videoCamera: videoCamera)
         cameraRecorder.recordVideo()
     }
     
+    func setIsRecording(isRecording:Bool){
+        self.isRecording = isRecording
+    }
+
     func stopRecordVideo() {
         cameraRecorder.stopRecordVideo()
     }

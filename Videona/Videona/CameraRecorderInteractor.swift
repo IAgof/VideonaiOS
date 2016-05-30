@@ -56,10 +56,16 @@ class CameraRecorderInteractor{
         }
     }
     
-    func setInput(input: GPUImageInput,videoCamera: GPUImageVideoCamera){
+    func setInput(input: GPUImageInput){
         self.filterToWriter = input as? GPUImageFilter
+        if movieWriter != nil{
+            filterToWriter?.addTarget(movieWriter)
+        }
+    }
+    func setVideoCamera(videoCamera: GPUImageVideoCamera){
         self.videoCamera = videoCamera
     }
+
     func getNewClipPath()->String{
         var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
         path =  path + "/\(Utils().giveMeTimeNow())videonaClip.m4v"
