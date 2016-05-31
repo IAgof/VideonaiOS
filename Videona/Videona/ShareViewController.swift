@@ -26,6 +26,11 @@ UITableViewDelegate, UITableViewDataSource{
     var listImagesPressed = Array<UIImage>()
     var listTitles = Array<String>()
     
+    var exportPath: String? {
+        didSet {
+            eventHandler?.setVideoExportedPath(exportPath!)
+        }
+    }
     //MARK: - Outlets
     @IBOutlet weak var shareTableView: UITableView!
     @IBOutlet weak var playerView: PlayerView!

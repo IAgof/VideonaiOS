@@ -10,7 +10,7 @@ import Foundation
 
 protocol PlayerPresenterInterface {
     
-    func createVideoPlayer()
+    func createVideoPlayer(videoPath:String)
     func layoutSubViews()
 }
 

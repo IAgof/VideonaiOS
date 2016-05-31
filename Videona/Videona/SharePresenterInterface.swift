@@ -15,5 +15,6 @@ protocol SharePresenterInterface {
     func pushBack()
     func getListData()
     func setListTitleData(titleArray:Array<String>)
-    func setListImageData(imageArray:Array<UIImage>)    
+    func setListImageData(imageArray:Array<UIImage>)
+    func setVideoExportedPath(path:String)
 }

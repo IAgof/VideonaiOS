@@ -17,15 +17,19 @@ class SharePresenter:NSObject,SharePresenterInterface{
     var recordWireframe: RecordWireframe?
     var playerPresenter: PlayerPresenter?
     
+    var videoPath = ""
+    
     //LifeCicle
     func viewDidLoad() {
         controller!.registerNib()
         wireframe?.presentPlayerInterface()
         
-        playerPresenter?.createVideoPlayer()
+        playerPresenter?.createVideoPlayer(videoPath)
         self.getListData()
     }
-    
+    func setVideoExportedPath(path: String) {
+        self.videoPath = path
+    }
     func pushBack() {
         print("Navigator presenter pushEdit")
         recordWireframe?.presentRecordInterfaceFromViewController(controller!)
@@ -47,5 +51,9 @@ class SharePresenter:NSObject,SharePresenterInterface{
     }
     func setListImagePressedData(imageArray:Array<UIImage>){
         controller?.setImagePressedList(imageArray)
+    }
+    
+    func setVideoPathToPlayer(path:String){
+        
     }
 }

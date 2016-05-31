@@ -14,6 +14,7 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     //MARK: - Variables VIPER
     var eventHandler: RecordPresenter?
     
+    //MARK: - Outlets
     @IBOutlet weak var warningOrientationImage: UIImageView!
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
@@ -27,6 +28,8 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     @IBOutlet weak var chronometrerContainer: UIView!
     @IBOutlet weak var thumbnailView: UIView!
     @IBOutlet weak var thumbnailNumberClips: UILabel!
+    
+    var alertController:UIAlertController?
     
     //MARK: - View Config
     override func viewDidLoad() {
@@ -218,6 +221,25 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         
     }
     
+    func createAlertWaitToExport(){
+        alertController = UIAlertController(title: "Espere por favor", message: "Haciendo magia en su video", preferredStyle: .Alert)
+        
+        let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
+        
+
+        activityIndicator.center = CGPointMake(130.5, 75.5);
+        activityIndicator.startAnimating()
+
+        alertController?.view.addSubview(activityIndicator)
+        self.presentViewController(alertController!, animated: false, completion:{})
+    }
+    
+    func dissmissAlertWaitToExport(completion:()->Void){
+        alertController?.dismissViewControllerAnimated(true, completion: {
+            print("can go to next screen")
+            completion()
+        })
+    }
   //MARK: - Landscape Orientation
     func checkOrientation(){
         var text=""
@@ -262,3 +284,11 @@ extension UINavigationController {
     }
 }
 
+extension UIAlertController {
+    override public func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.All
+    }
+    public override func shouldAutorotate() -> Bool {
+        return false
+    }
+}

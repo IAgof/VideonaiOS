@@ -38,16 +38,26 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
     }
     
     func pushShare() {
+        controller?.createAlertWaitToExport()
+        
         print("Record presenter pushShare")
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-            ExporterInteractor.init(videosArray: (self.cameraInteractor?.getClipsArray())!).exportVideos()
+            
+            let exporter = ExporterInteractor.init(videosArray: (self.cameraInteractor?.getClipsArray())!)
+            exporter.exportVideos({ exportPath in
+                print("Export path response = \(exportPath)")
+                
+                self.controller?.dissmissAlertWaitToExport({
+                    //wait to remove alert to present new Screeen
+                    self.shareWireframe?.presentShareInterfaceFromViewController(self.controller!,videoPath: exportPath)
+                })
+            })
         });
-
-        shareWireframe?.presentRecordInterfaceFromViewController(controller!)
     }
     
-
-    
+    func navigateToShareController(){
+        
+    }
     func pushFlash() {
         let flashState = FlashInteractor().switchFlashState()
         controller?.showFlashOn(flashState)

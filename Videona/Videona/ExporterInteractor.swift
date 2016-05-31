@@ -11,7 +11,6 @@ import AVFoundation
 
 class ExporterInteractor:NSObject{
     var videosArray: [String] = []
-    var pathToMergeMovie:String = ""
     var clipDuration = 0.0
 
     init(videosArray:[String]) {
@@ -19,7 +18,15 @@ class ExporterInteractor:NSObject{
     }
     
     //Merge videos in VideosArray and export to Documents folder and PhotoLibrary
-    func exportVideos() {
+    func getNewPathToExport()->String{
+        let documentDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        let exportPath = (documentDirectory as NSString).stringByAppendingPathComponent("mergeVideona-\(Utils().giveMeTimeNow()).m4v")
+        
+        return exportPath
+    }
+    
+    func exportVideos(completionHandler:(String)->Void) {
+        let exportPath = self.getNewPathToExport()
         
         var videoTotalTime:CMTime = kCMTimeZero
         
@@ -42,14 +49,14 @@ class ExporterInteractor:NSObject{
                 Utils().debugLog("el tiempo total del video es: \(videoTotalTime.seconds)")
                 videoTotalTime = CMTimeAdd(videoTotalTime, videoAsset.duration)
             } catch _ {
-                Utils().debugLog("Error trying to create videoTrack")
+//                Utils().debugLog("Error trying to create videoTrack")
+                completionHandler("Error trying to create videoTrack")
             }
         }
         
         // 4 - Get path
-        let documentDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
-        self.pathToMergeMovie = (documentDirectory as NSString).stringByAppendingPathComponent("mergeVideona-\(Utils().giveMeTimeNow()).m4v")
-        let url = NSURL(fileURLWithPath: self.pathToMergeMovie)
+
+        let url = NSURL(fileURLWithPath: exportPath)
         
         // 5 - Create Exporter
         let exporter = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality)
@@ -62,8 +69,9 @@ class ExporterInteractor:NSObject{
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.clipDuration = videoTotalTime.seconds
                 Utils().debugLog("la duracion del clip es \(self.clipDuration)")
-                
-                ExportedAlbum.sharedInstance.saveVideo(NSURL.init(fileURLWithPath: self.pathToMergeMovie))
+                completionHandler(exportPath)
+
+                ExportedAlbum.sharedInstance.saveVideo(NSURL.init(fileURLWithPath: exportPath))
             })
         }
     }

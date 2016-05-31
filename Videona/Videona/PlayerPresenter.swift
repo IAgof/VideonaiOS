@@ -21,8 +21,8 @@ class PlayerPresenter:NSObject,PlayerPresenterInterface{
         
     }
     
-    func createVideoPlayer() {
-        controller?.setPlayerMovieURL((playerInteractor?.findVideosToPlay())!)
+    func createVideoPlayer(videoPath:String) {
+        controller?.setPlayerMovieURL(NSURL.init(fileURLWithPath: videoPath))
         controller?.createVideoPlayer()
     }
     

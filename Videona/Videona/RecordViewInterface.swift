@@ -77,4 +77,8 @@ protocol RecordViewInterface {
     func disableShareButton()
     
     func finishActivityForResult(path:String)
+    
+    func createAlertWaitToExport()
+    
+    func dissmissAlertWaitToExport(completion:()->Void)
 }
