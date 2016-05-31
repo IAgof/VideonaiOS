@@ -19,8 +19,6 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
     var cameraInteractor: CameraInteractor?
     var timerInteractor: TimerInteractor?
 
-    //    var navigatorWireframe: NavigationWireframe?
-
     //MARK: - Constants
     var colorFilterViewIsShowin = false
     var shaderFilterViewIsShowin = false
@@ -32,6 +30,7 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
         controller?.configureView()
         cameraInteractor = CameraInteractor(display: displayView,cameraDelegate: self)
     }
+    
     func viewWillDisappear() {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             if self.isRecording{
@@ -81,8 +80,9 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
     func startRecord(){
         controller?.recordButtonEnable(false)
         
-        cameraInteractor?.setIsRecording(true)
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            self.cameraInteractor?.setIsRecording(true)
+            
             self.cameraInteractor?.startRecordVideo({answer in
                 print("Record Presenter \(answer)")
                 self.controller?.recordButtonEnable(true)
@@ -105,7 +105,6 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             // do some task
             self.cameraInteractor?.setIsRecording(false)
-            self.cameraInteractor?.stopRecordVideo()
             
             let videosArray = self.cameraInteractor?.getClipsArray()
             let thumb = ThumbnailInteractor.init(videosArray: videosArray!).getThumbnailImageView()
@@ -239,6 +238,7 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
         controller?.disableShareButton()
         
         cameraInteractor?.resetClipsArray()
+        cameraInteractor?.removeFilters()
     }
     
     //MARK: - Camera delegate

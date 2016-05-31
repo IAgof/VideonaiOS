@@ -27,8 +27,15 @@ class CameraInteractor:CameraRecorderDelegate{
 
     let resolution = AVCaptureSessionPreset1280x720
     var isRearCamera:Bool = false
-    var isRecording:Bool = false
-
+    var isRecording: Bool = false{
+        didSet {
+            if isRecording {
+                self.setInputToWriter()
+            }else{
+                self.stopRecordVideo()
+            }
+        }
+    }
     //MARK: - Init
     init(display:GPUImageView, cameraDelegate: CameraInteractorDelegate){
         self.cameraDelegate = cameraDelegate
@@ -135,21 +142,21 @@ class CameraInteractor:CameraRecorderDelegate{
         RemoveFilterInteractor().removeOverlay(imageView)
     }
     func setInputToWriter(){
-        if(isRecording){
+        print("set Input To Writer")
             let maskFilterToRecord = GPUImageFilter()
             maskFilterOutput.addTarget(maskFilterToRecord)
             
             cameraRecorder.setInput(maskFilterToRecord)
-        }
     }
 
     //MARK: - Recorder delegate
     func startRecordVideo(completion:(String)->Void){
+        print("Start record video")
+
         cameraRecorder.setVideoCamera(videoCamera)
-        self.setInputToWriter()
         
         cameraRecorder.recordVideo({answer in
-            print("Camera Interactor\(answer)")
+            print("Camera Interactor \(answer)")
             completion(answer)
         })
     }

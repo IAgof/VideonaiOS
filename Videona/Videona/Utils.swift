@@ -38,9 +38,9 @@ class Utils{
     }
     
     func debugLog(logMessage:String){
-        #if DEBUG
+//        #if DEBUG
             print(logMessage)
-        #endif
+//        #endif
     }
     
 //    func getUDID() -> String{
