@@ -144,11 +144,14 @@ class CameraInteractor:CameraRecorderDelegate{
     }
 
     //MARK: - Recorder delegate
-    func startRecordVideo(){
+    func startRecordVideo(completion:(String)->Void){
         cameraRecorder.setVideoCamera(videoCamera)
         self.setInputToWriter()
         
-        cameraRecorder.recordVideo()
+        cameraRecorder.recordVideo({answer in
+            print("Camera Interactor\(answer)")
+            completion(answer)
+        })
     }
     
     func setIsRecording(isRecording:Bool){

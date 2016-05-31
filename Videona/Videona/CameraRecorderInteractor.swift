@@ -16,7 +16,7 @@ class CameraRecorderInteractor{
     var clipsArray:[String] = []
     var videoCamera: GPUImageVideoCamera?
     
-    func recordVideo(){
+    func recordVideo(completion:(String)->Void){
 
         let clipPath = getNewClipPath()
         self.clipsArray.append(clipPath)
@@ -32,6 +32,8 @@ class CameraRecorderInteractor{
         
         Utils().debugLog("Recording movie starts")
         filterToWriter?.addTarget(movieWriter)
+        
+        completion("Record Starts")
     }
     
     func stopRecordVideo(){ //Stop Recording

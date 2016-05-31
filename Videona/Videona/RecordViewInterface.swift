@@ -14,6 +14,8 @@ protocol RecordViewInterface {
     
     func showStopButton()
     
+    func recordButtonEnable(state:Bool)
+    
     func showSettings()
     
     func hideSettings()

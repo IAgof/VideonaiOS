@@ -13,6 +13,6 @@ protocol CameraRecorderInterface {
     
 }
 protocol CameraRecorderDelegate {
-    func startRecordVideo()
+    func startRecordVideo(completion:(String)->Void)
     func stopRecordVideo()
 }

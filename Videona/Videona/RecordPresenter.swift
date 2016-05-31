@@ -79,9 +79,14 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
         }
     }
     func startRecord(){
+        controller?.recordButtonEnable(false)
+        
         cameraInteractor?.setIsRecording(true)
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-            self.cameraInteractor?.startRecordVideo()
+            self.cameraInteractor?.startRecordVideo({answer in
+                print("Record Presenter \(answer)")
+                self.controller?.recordButtonEnable(true)
+            })
             
             dispatch_async(dispatch_get_main_queue(), {
                 // update some UI

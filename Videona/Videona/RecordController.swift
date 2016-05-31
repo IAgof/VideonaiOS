@@ -100,6 +100,10 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         self.recordButton.selected = false
     }
     
+    func recordButtonEnable(state: Bool) {
+        self.recordButton.enabled = state
+    }
+    
     func showSettings(){
         settingsButton.hidden = false
     }
