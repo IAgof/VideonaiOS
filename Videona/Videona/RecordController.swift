@@ -31,22 +31,25 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     
     var alertController:UIAlertController?
     
-    //MARK: - View Config
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         eventHandler?.viewDidLoad(cameraView)
     }
-    
+
+    override func viewWillDisappear(animated: Bool) {
+        eventHandler?.viewWillDisappear()
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    //MARK: - View Config
     func forceLandsCapeOnInit(){
         //Force landscape mode
         let value = UIInterfaceOrientation.LandscapeLeft.rawValue
         UIDevice.currentDevice().setValue(value, forKey: "orientation")
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func configureView() {
@@ -239,6 +242,10 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
             print("can go to next screen")
             completion()
         })
+    }
+    
+    func resetView() {
+        eventHandler?.resetRecorder()
     }
   //MARK: - Landscape Orientation
     func checkOrientation(){

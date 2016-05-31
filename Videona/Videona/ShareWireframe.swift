@@ -19,23 +19,18 @@ class ShareWireframe : NSObject {
     
     func presentShareInterfaceFromWindow(window: UIWindow) {
         let viewController = shareViewControllerFromStoryboard()
-        viewController.eventHandler = sharePresenter
-        
-        shareViewController = viewController
-        sharePresenter?.controller = viewController
         
         rootWireframe?.showRootViewController(viewController, inWindow: window)
     }
+    
     func presentShareInterfaceFromViewController(prevController:UIViewController,videoPath:String) {
         let viewController = shareViewControllerFromStoryboard()
         
         viewController.exportPath = videoPath
-        viewController.eventHandler = sharePresenter
-        shareViewController = viewController
-        sharePresenter?.controller = viewController
-        
-        prevController.presentViewController(viewController, animated: true, completion: nil)
+
+        prevController.showViewController(viewController, sender: nil)
     }
+    
     func shareViewControllerFromStoryboard() -> ShareViewController {
         let storyboard = mainStoryboard()
         let viewController = storyboard.instantiateViewControllerWithIdentifier(shareViewControllerIdentifier) as! ShareViewController
@@ -53,5 +48,10 @@ class ShareWireframe : NSObject {
     }
     func presentPlayerInterface() {
         playerWireframe?.presentPlayerInterfaceFromViewController(shareViewController!)
+    }
+    
+    func goPrevController(){
+        
+        shareViewController?.navigationController?.popToRootViewControllerAnimated(true)
     }
 }

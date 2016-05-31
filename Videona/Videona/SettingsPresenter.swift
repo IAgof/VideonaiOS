@@ -17,7 +17,7 @@ class SettingsPresenter:NSObject,SettingsPresenterInterface{
    
     func pushBack() {
         print("Navigator presenter pushEdit")
-        recordWireframe?.presentRecordInterfaceFromViewController(controller!)
+        recordWireframe?.goBackToRecordView(controller!)
     }
     func viewDidLoad() {
         controller?.registerClass()

@@ -31,8 +31,8 @@ class SharePresenter:NSObject,SharePresenterInterface{
         self.videoPath = path
     }
     func pushBack() {
-        print("Navigator presenter pushEdit")
-        recordWireframe?.presentRecordInterfaceFromViewController(controller!)
+        print("Navigator presenter pushEdit")        
+        recordWireframe?.goBackToRecordView(controller!)
     }
     
     func getListData (){

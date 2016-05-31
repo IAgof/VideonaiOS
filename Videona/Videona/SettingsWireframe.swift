@@ -18,22 +18,14 @@ class SettingsWireframe : NSObject {
     
     func presentSettingsInterfaceFromWindow(window: UIWindow) {
         let viewController = settingsViewControllerFromStoryboard()
-        viewController.eventHandler = settingsPresenter
-        
-        settingsViewController = viewController
-        settingsPresenter?.controller = viewController
         
         rootWireframe?.showRootViewController(viewController, inWindow: window)
     }
     
     func presentSettingsInterfaceFromViewController(prevController:UIViewController){
         let viewController = settingsViewControllerFromStoryboard()
-        viewController.eventHandler = settingsPresenter
         
-        settingsViewController = viewController
-        settingsPresenter?.controller = viewController
-        
-        prevController.presentViewController(viewController, animated: true, completion: nil)
+        prevController.showViewController(viewController, sender: nil)
     }
     
     func settingsViewControllerFromStoryboard() -> SettingsViewController {
@@ -51,5 +43,7 @@ class SettingsWireframe : NSObject {
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         return storyboard
     }
-    
+    func goPrevController(){
+        settingsViewController?.navigationController?.popToRootViewControllerAnimated(true)
+    }
 }

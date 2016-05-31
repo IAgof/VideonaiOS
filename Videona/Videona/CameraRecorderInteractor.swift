@@ -75,4 +75,7 @@ class CameraRecorderInteractor{
     func getClipsArray() -> [String] {
         return clipsArray
     }
+    func resetClipsArray(){
+        clipsArray = []
+    }
 }

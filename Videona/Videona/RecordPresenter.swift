@@ -32,6 +32,14 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
         controller?.configureView()
         cameraInteractor = CameraInteractor(display: displayView,cameraDelegate: self)
     }
+    func viewWillDisappear() {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            if self.isRecording{
+                self.stopRecord() 
+            }
+        })
+    }
+    
     func pushSettings() {
         print("Record presenter pushSettings")
         settingsWireframe?.presentSettingsInterfaceFromViewController(controller!)
@@ -65,41 +73,48 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
     
     func pushRecord() {
         if isRecording {
-            cameraInteractor?.setIsRecording(false)
-            cameraInteractor?.stopRecordVideo()
-            
-            controller?.showStopButton()
-            controller?.enableShareButton()
-            
-            isRecording = false
-            
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-                // do some task
-                let videosArray = self.cameraInteractor?.getClipsArray()
-                let thumb = ThumbnailInteractor.init(videosArray: videosArray!).getThumbnailImageView()
-                dispatch_async(dispatch_get_main_queue(), {
-                    // update some UI
-                    self.controller?.showRecordedVideoThumb(thumb)
-                    self.controller?.showNumberVideos((videosArray?.count)!)
-                });
-            });
-
-            self.stopTimer()
+            self.stopRecord()
         }else{
-            cameraInteractor?.setIsRecording(true)
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-                self.cameraInteractor?.startRecordVideo()
-            });
-            
-            controller?.showRecordButton()
-            controller?.disableShareButton()
-            
-            isRecording = true
-            
-            self.startTimer()
+            self.startRecord()
         }
     }
+    func startRecord(){
+        cameraInteractor?.setIsRecording(true)
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            self.cameraInteractor?.startRecordVideo()
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                // update some UI
+                self.controller?.showRecordButton()
+                self.controller?.disableShareButton()
+            });
+        });
+        isRecording = true
+        
+        self.startTimer()
+    }
     
+    func stopRecord(){
+        isRecording = false
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            // do some task
+            self.cameraInteractor?.setIsRecording(false)
+            self.cameraInteractor?.stopRecordVideo()
+            
+            let videosArray = self.cameraInteractor?.getClipsArray()
+            let thumb = ThumbnailInteractor.init(videosArray: videosArray!).getThumbnailImageView()
+            dispatch_async(dispatch_get_main_queue(), {
+                // update some UI
+                self.controller?.showRecordedVideoThumb(thumb)
+                self.controller?.showNumberVideos((videosArray?.count)!)
+                self.controller?.showStopButton()
+                self.controller?.enableShareButton()
+            });
+        });
+        
+        self.stopTimer()
+    }
     func pushRotateCamera() {
         cameraInteractor!.rotateCamera()
     }
@@ -212,6 +227,13 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
             print("setFiltersOnView   Other")
             cameraInteractor?.removeFilters()
         }
+    }
+    
+    func resetRecorder() {
+        controller?.hideRecordedVideoThumb()
+        controller?.disableShareButton()
+        
+        cameraInteractor?.resetClipsArray()
     }
     
     //MARK: - Camera delegate

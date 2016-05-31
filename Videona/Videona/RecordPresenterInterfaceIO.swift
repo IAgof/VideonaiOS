@@ -19,6 +19,7 @@ protocol RecordPresenterOutput{
 
 protocol RecordPresenterInterface{
     func viewDidLoad(displayView:GPUImageView)
+    func viewWillDisappear()
     func pushSettings()
     func pushShare()
     func showWarningOrientationImage()
@@ -28,4 +29,5 @@ protocol RecordPresenterInterface{
     func pushRotateCamera()
     func setFiltersOnView(filter: String)
     func removeFilter(filterName: String)
+    func resetRecorder()
 }

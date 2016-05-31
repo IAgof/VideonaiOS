@@ -30,10 +30,6 @@ class RecordWireframe : NSObject {
     func presentRecordInterfaceFromViewController(prevController:UIViewController) {
         let viewController = RecordViewControllerFromStoryboard()
         
-        viewController.eventHandler = recordPresenter
-        recordViewController = viewController
-        recordPresenter?.controller = viewController
-        
         prevController.presentViewController(viewController, animated: true, completion: nil)
     }
     
@@ -64,5 +60,12 @@ class RecordWireframe : NSObject {
         filterListWireframe?.dismissFilterListInterface({ finished in
             print("Record Wireframe dismissFilterListInterface")
         })
+    }
+    
+    func goBackToRecordView(prevController:UIViewController){
+        if prevController.isKindOfClass(ShareViewController) {
+            recordViewController?.resetView()
+        }
+        prevController.navigationController?.popToRootViewControllerAnimated(true)
     }
 }

@@ -81,4 +81,6 @@ protocol RecordViewInterface {
     func createAlertWaitToExport()
     
     func dissmissAlertWaitToExport(completion:()->Void)
+    
+    func resetView()
 }
