@@ -133,16 +133,36 @@ class CameraInteractor:CameraRecorderDelegate{
     
     func removeFilters(){
         RemoveFilterInteractor().removeFilter(maskFilterInput, imageView: imageView, display: displayView)
+        
+        self.reSetOutputIfIsRecording()
     }
     
     func removeShaders(){
         RemoveFilterInteractor().removeShader(maskFilterInput, display: displayView)
+        
+        self.reSetOutputIfIsRecording()
     }
+    
+    func reSetOutputIfIsRecording() {
+        maskFilterOutput = GPUImageFilter()
+        
+        maskFilterInput.addTarget(maskFilterOutput)
+        
+        maskFilterOutput.addTarget(displayView)
+        
+        if isRecording {
+            setInputToWriter()
+        }
+    }
+    
     func removeOverlay(){
         RemoveFilterInteractor().removeOverlay(imageView)
     }
     func setInputToWriter(){
         print("set Input To Writer")
+        
+        print("\n maskFilterOutput targets \n \(maskFilterOutput.targets())\n\n\n")
+
             let maskFilterToRecord = GPUImageFilter()
             maskFilterOutput.addTarget(maskFilterToRecord)
             
@@ -166,6 +186,11 @@ class CameraInteractor:CameraRecorderDelegate{
     }
 
     func stopRecordVideo() {
+        for maskFilter in maskFilterOutput.targets(){
+            if maskFilter.isKindOfClass(GPUImageFilter){
+                maskFilterOutput.removeTarget(maskFilter as! GPUImageInput)
+            }
+        }
         cameraRecorder.stopRecordVideo()
     }
 }
