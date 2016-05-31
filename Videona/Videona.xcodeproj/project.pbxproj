@@ -69,6 +69,8 @@
 		A971F5B11CFC5B98004DC50D /* ThumbnailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F5B01CFC5B98004DC50D /* ThumbnailInteractor.swift */; };
 		A971F5B41CFC7F6C004DC50D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A971F5B21CFC7F31004DC50D /* Roboto-Regular.ttf */; };
 		A971F5BB1CFC89AF004DC50D /* ClipsAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F5BA1CFC89AF004DC50D /* ClipsAlbum.swift */; };
+		A971F5BE1CFC8D10004DC50D /* ExporterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F5BD1CFC8D10004DC50D /* ExporterInteractor.swift */; };
+		A971F5C01CFC8E1B004DC50D /* ExportedAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F5BF1CFC8E1B004DC50D /* ExportedAlbum.swift */; };
 		A98A93B51CF58870004E1DB7 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98A93B21CF58866004E1DB7 /* GPUImage.framework */; };
 		A98A93B61CF58874004E1DB7 /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A98A93B21CF58866004E1DB7 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A98A93BB1CF5903C004E1DB7 /* AddFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */; };
@@ -253,6 +255,8 @@
 		A971F5B01CFC5B98004DC50D /* ThumbnailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailInteractor.swift; sourceTree = "<group>"; };
 		A971F5B21CFC7F31004DC50D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		A971F5BA1CFC89AF004DC50D /* ClipsAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClipsAlbum.swift; sourceTree = "<group>"; };
+		A971F5BD1CFC8D10004DC50D /* ExporterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExporterInteractor.swift; sourceTree = "<group>"; };
+		A971F5BF1CFC8E1B004DC50D /* ExportedAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportedAlbum.swift; sourceTree = "<group>"; };
 		A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFilterInteractor.swift; sourceTree = "<group>"; };
 		A98A93BC1CF59155004E1DB7 /* ChangeFilterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeFilterInteractor.swift; sourceTree = "<group>"; };
 		A98A93C31CF5BAF6004E1DB7 /* EffectDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectDictionary.swift; sourceTree = "<group>"; };
@@ -570,6 +574,7 @@
 				A971F5A71CFC4742004DC50D /* Timer */,
 				A971F5A61CFC252B004DC50D /* Flash Interactor */,
 				A971F5A41CFC2503004DC50D /* Filters Interactor */,
+				A971F5BC1CFC8CFE004DC50D /* ExporterInteractor */,
 				A971F5A51CFC2520004DC50D /* Recorder Interactor */,
 			);
 			name = Interactor;
@@ -800,8 +805,17 @@
 			isa = PBXGroup;
 			children = (
 				A971F5BA1CFC89AF004DC50D /* ClipsAlbum.swift */,
+				A971F5BF1CFC8E1B004DC50D /* ExportedAlbum.swift */,
 			);
 			name = CustomAlbum;
+			sourceTree = "<group>";
+		};
+		A971F5BC1CFC8CFE004DC50D /* ExporterInteractor */ = {
+			isa = PBXGroup;
+			children = (
+				A971F5BD1CFC8D10004DC50D /* ExporterInteractor.swift */,
+			);
+			name = ExporterInteractor;
 			sourceTree = "<group>";
 		};
 		A98A93AA1CF58866004E1DB7 /* Products */ = {
@@ -1251,6 +1265,7 @@
 				A95B247A1CD8B96E00F78AAF /* RootWireframe.swift in Sources */,
 				A98A93BB1CF5903C004E1DB7 /* AddFilterInteractor.swift in Sources */,
 				A99278591CE36524009DC364 /* SettingsWireframe.swift in Sources */,
+				A971F5BE1CFC8D10004DC50D /* ExporterInteractor.swift in Sources */,
 				A94301721CE5DD8B00DC0DF8 /* ShareInteractor.swift in Sources */,
 				A9E066E41CE4BB8300D4E11D /* ConfigPreferences.swift in Sources */,
 				A95D3BE31CEB6B77001F2272 /* Utils.swift in Sources */,
@@ -1264,6 +1279,7 @@
 				A95D3BDE1CEB0320001F2272 /* SettingsContent.swift in Sources */,
 				A93846EA1CE47E9C007FB6BC /* FilterListPresenterInterface.swift in Sources */,
 				A95B246B1CD88AC100F78AAF /* RecordWireframe.swift in Sources */,
+				A971F5C01CFC8E1B004DC50D /* ExportedAlbum.swift in Sources */,
 				A9B118191CE378C2001A1177 /* SharePresenterInterface.swift in Sources */,
 				A96732FE1CE6309C007BE340 /* SettingsInteractor.swift in Sources */,
 				A965BDBF1CDA076C002579CA /* IntroWireframe.swift in Sources */,

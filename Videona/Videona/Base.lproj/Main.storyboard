@@ -738,7 +738,7 @@
                                     <action selector="pushFlash:" destination="ShV-dE-YrB" eventType="touchUpInside" id="f0P-xD-EB3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kmd-Pt-Vuu">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kmd-Pt-Vuu">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                 <state key="normal" image="activity_record_share_normal"/>
@@ -904,6 +904,7 @@
                         <outlet property="flashButton" destination="AjE-cu-Yc0" id="2eQ-Sj-Rk3"/>
                         <outlet property="overlayFilterButton" destination="RPx-WN-iT2" id="CL1-nD-UrQ"/>
                         <outlet property="recordButton" destination="pEm-SA-vNt" id="VmT-Sm-qpk"/>
+                        <outlet property="settingsButton" destination="Z23-qB-2qp" id="y3z-dq-dDx"/>
                         <outlet property="shaderFilterButton" destination="8TW-ry-5f6" id="5du-IS-fh2"/>
                         <outlet property="shareButton" destination="Kmd-Pt-Vuu" id="gtx-yK-ZAP"/>
                         <outlet property="thumbnailNumberClips" destination="Gou-lG-Kt2" id="dNR-pq-1FR"/>

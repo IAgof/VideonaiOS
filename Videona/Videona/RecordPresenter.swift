@@ -39,6 +39,10 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
     
     func pushShare() {
         print("Record presenter pushShare")
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            ExporterInteractor.init(videosArray: (self.cameraInteractor?.getClipsArray())!).exportVideos()
+        });
+
         shareWireframe?.presentRecordInterfaceFromViewController(controller!)
     }
     
@@ -55,6 +59,8 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
             cameraInteractor?.stopRecordVideo()
             
             controller?.showStopButton()
+            controller?.enableShareButton()
+            
             isRecording = false
             
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
@@ -74,7 +80,10 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
                 self.cameraInteractor?.startRecordVideo()
             });
+            
             controller?.showRecordButton()
+            controller?.disableShareButton()
+            
             isRecording = true
             
             self.startTimer()
@@ -204,9 +213,11 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
     }
     func cameraRear() {
         controller?.showBackCameraSelected()
+        controller?.showFlashSupported(true)
     }
     func cameraFront() {
         controller?.showFrontCameraSelected()
+        controller?.showFlashSupported(false)
     }
     
     func startTimer() {

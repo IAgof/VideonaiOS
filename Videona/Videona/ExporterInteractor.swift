@@ -1,0 +1,70 @@
+//
+//  ExporterInteractor.swift
+//  Videona
+//
+//  Created by Alejandro Arjonilla Garcia on 30/5/16.
+//  Copyright © 2016 Videona. All rights reserved.
+//
+
+import Foundation
+import AVFoundation
+
+class ExporterInteractor:NSObject{
+    var videosArray: [String] = []
+    var pathToMergeMovie:String = ""
+    var clipDuration = 0.0
+
+    init(videosArray:[String]) {
+        self.videosArray = videosArray
+    }
+    
+    //Merge videos in VideosArray and export to Documents folder and PhotoLibrary
+    func exportVideos() {
+        
+        var videoTotalTime:CMTime = kCMTimeZero
+        
+        // - Create AVMutableComposition object. This object will hold your AVMutableCompositionTrack instances.
+        let mixComposition = AVMutableComposition()
+        
+        let videoTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeVideo,
+                                                                     preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
+        // - Add assets to the composition
+        for path in videosArray{
+            // 2 - Get Video asset
+            let videoURL: NSURL = NSURL.init(fileURLWithPath: path)
+            let videoAsset = AVAsset.init(URL: videoURL)
+            
+            
+            do {
+                try videoTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoAsset.duration),
+                                               ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
+                                               atTime: videoTotalTime)
+                Utils().debugLog("el tiempo total del video es: \(videoTotalTime.seconds)")
+                videoTotalTime = CMTimeAdd(videoTotalTime, videoAsset.duration)
+            } catch _ {
+                Utils().debugLog("Error trying to create videoTrack")
+            }
+        }
+        
+        // 4 - Get path
+        let documentDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        self.pathToMergeMovie = (documentDirectory as NSString).stringByAppendingPathComponent("mergeVideona-\(Utils().giveMeTimeNow()).m4v")
+        let url = NSURL(fileURLWithPath: self.pathToMergeMovie)
+        
+        // 5 - Create Exporter
+        let exporter = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality)
+        exporter!.outputURL = url
+        exporter!.outputFileType = AVFileTypeQuickTimeMovie
+        exporter!.shouldOptimizeForNetworkUse = true
+        
+        // 6 - Perform the Export
+        exporter!.exportAsynchronouslyWithCompletionHandler() {
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.clipDuration = videoTotalTime.seconds
+                Utils().debugLog("la duracion del clip es \(self.clipDuration)")
+                
+                ExportedAlbum.sharedInstance.saveVideo(NSURL.init(fileURLWithPath: self.pathToMergeMovie))
+            })
+        }
+    }
+}

@@ -15,6 +15,7 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     var eventHandler: RecordPresenter?
     
     @IBOutlet weak var warningOrientationImage: UIImageView!
+    @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var cameraRotationButton: UIButton!
     @IBOutlet weak var flashButton: UIButton!
@@ -94,11 +95,11 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     }
     
     func showSettings(){
-        
+        settingsButton.hidden = false
     }
     
     func hideSettings(){
-        
+        settingsButton.hidden = true 
     }
     
     func showChronometer(){
@@ -113,6 +114,7 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         self.chronometrer.text = time
     }
     func showRecordedVideoThumb(imageView: UIImageView) {
+        thumbnailView.hidden = false
         thumbnailView.addSubview(imageView)
         thumbnailView.bringSubviewToFront(thumbnailNumberClips)
     }
@@ -121,7 +123,7 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         thumbnailNumberClips.adjustsFontSizeToFitWidth = true
     }
     func hideRecordedVideoThumb(){
-        
+        thumbnailView.hidden = true
     }
     
     func showVideosRecordedNumber(numberOfVideos:Int){
@@ -169,7 +171,7 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     }
     
     func showFlashSupported(state:Bool){
-        
+        flashButton.enabled = state
     }
     
     func showFrontCameraSelected(){
@@ -205,11 +207,11 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     }
     
     func enableShareButton(){
-        
+        shareButton.enabled = true
     }
     
     func disableShareButton(){
-        
+        shareButton.enabled = false
     }
     
     func finishActivityForResult(path:String){
@@ -250,10 +252,8 @@ extension UINavigationController {
     
     override public func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         if let controller = visibleViewController{
-            print("controller = visibleViewController")
             return controller.supportedInterfaceOrientations()
         }else{
-            print("ELSE -- controller = visibleViewController")
             return UIInterfaceOrientationMask.Portrait
         }
     }
