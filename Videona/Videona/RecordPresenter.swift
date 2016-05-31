@@ -46,6 +46,7 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
     
     func pushShare() {
         controller?.createAlertWaitToExport()
+        self.hideAnyFilterList()
         
         print("Record presenter pushShare")
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
@@ -132,6 +133,16 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
     }
     
     //MARK: - FilterList delegate
+    func hideAnyFilterList() {
+        self.recordWireframe?.dismissFilterListInterface()
+        
+        shaderFilterViewIsShowin = false
+        colorFilterViewIsShowin = false
+        
+        controller?.showOverlayOnTop(shaderFilterViewIsShowin)
+        controller?.showShadersOnTop(colorFilterViewIsShowin)
+    }
+    
     func pushShowHideColorFilters() {
         if(shaderFilterViewIsShowin){
             shaderFilterViewIsShowin = false

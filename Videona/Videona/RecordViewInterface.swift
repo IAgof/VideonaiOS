@@ -52,6 +52,8 @@ protocol RecordViewInterface {
     
     func showFlashOn(on:Bool)
     
+    func hideFilterList()
+    
     func showShadersOnTop(isOnTop:Bool)
     
     func showOverlayOnTop(isOnTop:Bool)

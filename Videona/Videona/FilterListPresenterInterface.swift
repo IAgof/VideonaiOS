@@ -26,4 +26,5 @@ protocol FilterListDelegate {
     func removeFilter(filterName: String) 
     func pushShowHideColorFilters()
     func pushShowHideShaderFilters()
+    func hideAnyFilterList()
 }

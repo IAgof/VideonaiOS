@@ -112,6 +112,10 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         settingsButton.hidden = true 
     }
     
+    func hideFilterList() {
+        eventHandler?.hideAnyFilterList()
+    }
+    
     func showChronometer(){
         self.chronometrerContainer.hidden = false
     }

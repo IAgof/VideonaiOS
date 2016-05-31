@@ -66,6 +66,8 @@ class RecordWireframe : NSObject {
         if prevController.isKindOfClass(ShareViewController) {
             recordViewController?.resetView()
         }
+//        recordViewController?.hideFilterList()
+        
         prevController.navigationController?.popToRootViewControllerAnimated(true)
     }
 }
