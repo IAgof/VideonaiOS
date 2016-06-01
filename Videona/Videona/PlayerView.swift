@@ -22,6 +22,9 @@ class PlayerView: UIView,PlayerInterface {
    
     @IBOutlet weak var playerContainer: UIView!
     
+    @IBOutlet weak var seekSlider: UISlider!
+    var playerRateBeforeSeek: Float = 0
+
     class func instanceFromNib() -> UIView {
         let view = UINib(nibName: "PlayerView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! UIView
         return view
@@ -50,6 +53,7 @@ class PlayerView: UIView,PlayerInterface {
     
     func createVideoPlayer(){
         self.setViewPlayerTappable()
+        self.initSeekEvents()
         
         let avAsset: AVURLAsset = AVURLAsset(URL: movieURL!, options: nil)
         let playerItem: AVPlayerItem = AVPlayerItem(asset: avAsset)
@@ -75,11 +79,39 @@ class PlayerView: UIView,PlayerInterface {
         playerContainer.addGestureRecognizer(singleFingerTap)
     }
     
+    func initSeekEvents(){
+        seekSlider.addTarget(self, action: #selector(PlayerView.sliderBeganTracking),
+                             forControlEvents: UIControlEvents.TouchDown)
+        seekSlider.addTarget(self, action: #selector(PlayerView.sliderEndedTracking),
+                             forControlEvents: UIControlEvents.TouchUpInside)
+        seekSlider.addTarget(self, action: #selector(PlayerView.sliderEndedTracking),forControlEvents: UIControlEvents.TouchUpInside )
+        seekSlider.addTarget(self, action: #selector(PlayerView.sliderValueChanged),
+                             forControlEvents: UIControlEvents.ValueChanged)
+    }
+    
     func videoPlayerViewTapped(){
         eventHandler?.videoPlayerViewTapped()
     }
     @IBAction func pushPlayButton(sender: AnyObject) {
         eventHandler?.pushPlayButton()
+    }
+    
+    func sliderBeganTracking(){
+        playerRateBeforeSeek = player!.rate
+        player!.pause()
+    }
+    func sliderEndedTracking(){
+        let videoDuration = CMTimeGetSeconds(player!.currentItem!.duration)
+        let elapsedTime: Float64 = videoDuration * Float64(seekSlider.value)
+        
+        player!.seekToTime(CMTimeMakeWithSeconds(elapsedTime, 10)) { (completed: Bool) -> Void in
+            if (self.playerRateBeforeSeek > 0) {
+                self.player!.play()
+            }
+        }
+    }
+    func sliderValueChanged(){
+        let videoDuration = CMTimeGetSeconds(player!.currentItem!.duration)        
     }
     
     func setUpVideoFinished(){
