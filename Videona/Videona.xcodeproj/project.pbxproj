@@ -629,6 +629,7 @@
 		A95B24771CD8B95800F78AAF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A9686F941CFF129C00983540 /* AVResolutionParse.swift */,
 				A95D3BE21CEB6B77001F2272 /* Utils.swift */,
 				A9F9C2081CF465D300AB310C /* Wireframe */,
 				A9E066E11CE4BB6B00D4E11D /* Constants */,
@@ -764,7 +765,6 @@
 		A971F5A51CFC2520004DC50D /* Recorder Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				A9686F941CFF129C00983540 /* AVResolutionParse.swift */,
 				A971F59F1CFC1A16004DC50D /* CameraRecorderInteractor.swift */,
 				A971F5A21CFC21E4004DC50D /* CameraRecorderInterface.swift */,
 			);

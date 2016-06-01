@@ -22,13 +22,13 @@ class PlayerWireframe : NSObject{//, UIViewAnimationTransition {
         if  viewController is ShareViewController
         {
             let shareViewController = viewController as! ShareViewController
-            let playerView = shareViewController.playerView
+            let playerView = self.playerView()
+            shareViewController.playerView.addSubview(playerView)
             
             playerView.eventHandler = playerPresenter
             playerPresenter?.controller = playerView
             
-            playerPresenter?.configureUserInterfaceForPresentation(playerView)
-            presentedView = shareViewController.playerView
+            presentedView = playerView
         }
 
     }

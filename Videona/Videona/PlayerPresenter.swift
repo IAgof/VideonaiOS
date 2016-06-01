@@ -11,26 +11,49 @@ import UIKit
 
 class PlayerPresenter:NSObject,PlayerPresenterInterface{
     
+    //MARK: - VIPER
     var wireframe: PlayerWireframe?
     var controller: PlayerInterface?
     var playerDelegate: PlayerDelegate?
     var recordWireframe: RecordWireframe?
     var playerInteractor: PlayerInteractorInterface?
-        
-    func configureUserInterfaceForPresentation(addViewUserInterface: PlayerInterface) {
-        
-    }
+
+    //MARK: - Variables
+    var isPlaying = false
     
+    //MARK: - Init
     func createVideoPlayer(videoPath:String) {
         controller?.setPlayerMovieURL(NSURL.init(fileURLWithPath: videoPath))
-        controller?.createVideoPlayer()
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.controller?.createVideoPlayer()
+            })
+        }
     }
     
     func layoutSubViews(){
         if let view = self.controller?.getView(){
-            self.controller?.updateLayers(CGRectMake(0, 0, view.frame.width, view.frame.height))
-        }else{
-            self.controller?.updateLayers(CGRectMake(0, 0, 320,180))
+            self.controller?.updateLayers()
+        }
+    }
+    //MARK: - Handler
+    func onVideoStops() {
+        isPlaying = false
+        
+        controller?.setUpVideoFinished()
+    }
+    
+    func pushPlayButton() {
+        if isPlaying == false {
+            controller?.playVideoPlayer()
+            isPlaying = true
+        }
+    }
+    
+    func videoPlayerViewTapped() {
+        if(isPlaying){
+            controller?.pauseVideoPlayer()
+            isPlaying = false
         }
     }
 }
