@@ -26,6 +26,7 @@ class CameraInteractor:CameraRecorderDelegate{
     //    var movieWriter: GPUImageMovieWriter sacar a otro Interactor?
 
     let resolution = AVCaptureSessionPreset1280x720
+    
     var isRearCamera:Bool = false
     
     var isRecording: Bool = false{
@@ -37,6 +38,7 @@ class CameraInteractor:CameraRecorderDelegate{
             }
         }
     }
+    
     //MARK: - Init
     init(display:GPUImageView, cameraDelegate: CameraInteractorDelegate){
         self.cameraDelegate = cameraDelegate
@@ -175,6 +177,7 @@ class CameraInteractor:CameraRecorderDelegate{
         print("Start record video")
 
         cameraRecorder.setVideoCamera(videoCamera)
+        cameraRecorder.setResolution(resolution)
         
         cameraRecorder.recordVideo({answer in
             print("Camera Interactor \(answer)")
