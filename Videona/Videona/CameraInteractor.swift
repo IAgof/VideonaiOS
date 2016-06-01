@@ -27,6 +27,7 @@ class CameraInteractor:CameraRecorderDelegate{
 
     let resolution = AVCaptureSessionPreset1280x720
     var isRearCamera:Bool = false
+    
     var isRecording: Bool = false{
         didSet {
             if isRecording {
@@ -67,7 +68,7 @@ class CameraInteractor:CameraRecorderDelegate{
     }
     //MARK: - Orientation
     @objc func checkOrientation(){
-        if videoCamera.outputImageOrientation == .LandscapeLeft{
+        if UIDevice.currentDevice().orientation == .LandscapeLeft{
             videoCamera.outputImageOrientation = .LandscapeRight
         }else{
             videoCamera.outputImageOrientation = .LandscapeLeft
