@@ -11,15 +11,8 @@
             <rect key="frame" x="0.0" y="0.0" width="388" height="114"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbO-zX-lSq">
-                    <rect key="frame" x="352" y="37" width="27" height="27"/>
-                    <state key="normal" image="activity_record_icon_remove_filters_normal"/>
-                    <connections>
-                        <action selector="pushDismissView:" destination="iN0-l3-epB" eventType="touchUpInside" id="lne-Ys-QXM"/>
-                    </connections>
-                </button>
-                <collectionView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" indicatorStyle="white" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="uwB-H5-a1f">
-                    <rect key="frame" x="8" y="8" width="345" height="98"/>
+                <collectionView clipsSubviews="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="uwB-H5-a1f">
+                    <rect key="frame" x="35" y="8" width="345" height="98"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pSs-wC-Lsn">
                         <size key="itemSize" width="77" height="90"/>
@@ -28,15 +21,22 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbO-zX-lSq">
+                    <rect key="frame" x="0.0" y="43" width="27" height="27"/>
+                    <state key="normal" image="activity_record_icon_remove_filters_normal"/>
+                    <connections>
+                        <action selector="pushDismissView:" destination="iN0-l3-epB" eventType="touchUpInside" id="lne-Ys-QXM"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="uwB-H5-a1f" secondAttribute="bottom" constant="8" id="550-Df-L7Z"/>
-                <constraint firstItem="qbO-zX-lSq" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="FcZ-60-vcA"/>
-                <constraint firstItem="uwB-H5-a1f" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Ra6-g1-uDI"/>
-                <constraint firstItem="qbO-zX-lSq" firstAttribute="leading" secondItem="uwB-H5-a1f" secondAttribute="trailing" constant="8" id="WKW-SU-B4C"/>
-                <constraint firstItem="uwB-H5-a1f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="pkT-kU-omj"/>
-                <constraint firstAttribute="trailing" secondItem="qbO-zX-lSq" secondAttribute="trailing" id="r4Y-vT-iNq"/>
+                <constraint firstItem="uwB-H5-a1f" firstAttribute="leading" secondItem="qbO-zX-lSq" secondAttribute="trailing" constant="8" id="Jye-eW-iOY"/>
+                <constraint firstItem="qbO-zX-lSq" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="V4W-46-LoX"/>
+                <constraint firstItem="qbO-zX-lSq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XTO-XW-ogk"/>
+                <constraint firstAttribute="bottom" secondItem="uwB-H5-a1f" secondAttribute="bottom" constant="8" id="eRF-P4-bL5"/>
+                <constraint firstAttribute="trailing" secondItem="uwB-H5-a1f" secondAttribute="trailing" constant="8" id="rCM-1o-V3K"/>
+                <constraint firstItem="uwB-H5-a1f" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="z0h-04-Wf4"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

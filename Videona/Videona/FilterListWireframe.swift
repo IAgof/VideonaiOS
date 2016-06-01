@@ -18,10 +18,10 @@ class FilterListWireframe : NSObject{//, UIViewAnimationTransition {
     var rootWireframe : RootWireframe?
 
     func presentfilterListInterfaceFromViewController(newView: UIView, viewController:UIViewController) {
-        
+        let offsetX = CGFloat.init(-20)
         filterListPresenter?.configureUserInterfaceForPresentation(newView as! FilterListView)
         
-        newView.center = CGPoint(x: viewController.view.bounds.size.width / 2, y: viewController.view.bounds.size.height )
+        newView.center = CGPoint(x: ((viewController.view.bounds.size.width / 2) + offsetX), y: viewController.view.bounds.size.height )
         
         viewController.view.addSubview(newView)
         

@@ -78,13 +78,6 @@ class FilterListView: UIView,FilterListInterface, UICollectionViewDataSource, UI
         cell.filterImage.image = image
         cell.filterTitle.text = title
         
-        if lastSelectedIndexPath?.item==indexPath.item{
-            cell.backgroundColor = UIColor.redColor()
-        }else{
-            cell.backgroundColor = UIColor.clearColor()
-            cell.isSelectedCell = false
-        }
-        
         return cell
     }
     // MARK: - UICollectionViewDelegate protocol

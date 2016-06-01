@@ -19,7 +19,7 @@ class FilterViewCell: UICollectionViewCell {
     func toggleSelected ()
     {
         if (isSelectedCell){
-            backgroundColor = UIColor.redColor()
+            backgroundColor = UIColor.init(red: 0.7411, green: 0.854, blue: 0.074, alpha: 0.8)
         }else {
             backgroundColor = UIColor.clearColor()
         }
