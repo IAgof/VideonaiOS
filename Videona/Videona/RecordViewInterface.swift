@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 protocol RecordViewInterface {
+    
     func showRecordButton()
     
     func showStopButton()

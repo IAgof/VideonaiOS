@@ -132,6 +132,10 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
         controller?.unlockScreenRotation()
     }
     
+    func displayHasTapped(tapGesture:UIGestureRecognizer){
+        cameraInteractor?.cameraViewTapAction(tapGesture)
+    }
+    
     //MARK: - FilterList delegate
     func hideAnyFilterList() {
         self.recordWireframe?.dismissFilterListInterface()

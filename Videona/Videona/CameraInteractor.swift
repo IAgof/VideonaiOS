@@ -9,6 +9,7 @@
 import Foundation
 import GPUImage
 import AVFoundation
+import AVKit
 
 class CameraInteractor:CameraRecorderDelegate{
     //MARK: - VIPER
@@ -23,6 +24,7 @@ class CameraInteractor:CameraRecorderDelegate{
     var displayView: GPUImageView
     var sourceImageGPUUIElement: GPUImageUIElement?
     var imageView:UIImageView
+    
     //    var movieWriter: GPUImageMovieWriter sacar a otro Interactor?
 
     let resolution = AVCaptureSessionPreset1280x720
@@ -37,6 +39,7 @@ class CameraInteractor:CameraRecorderDelegate{
             }
         }
     }
+    
     //MARK: - Init
     init(display:GPUImageView, cameraDelegate: CameraInteractorDelegate){
         self.cameraDelegate = cameraDelegate
@@ -57,6 +60,7 @@ class CameraInteractor:CameraRecorderDelegate{
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CameraInteractor.checkOrientation), name: UIDeviceOrientationDidChangeNotification, object: nil)
         
+
     }
     
     func getClipsArray() -> [String] {
@@ -193,5 +197,45 @@ class CameraInteractor:CameraRecorderDelegate{
             }
         }
         cameraRecorder.stopRecordVideo()
+    }
+    
+    func cameraViewTapAction(tapDisplay:UIGestureRecognizer){
+        print("Tap recognized")
+        
+        if (tapDisplay.state == UIGestureRecognizerState.Recognized) {
+            var location = tapDisplay.locationInView(self.displayView)
+            
+            let device = videoCamera.inputCamera
+            do {
+                try device.lockForConfiguration()
+                
+            }catch{
+                return
+            }
+            var pointOfInterest = CGPointMake(0.5, 0.5)
+            print("taplocation x = \(location.x) y = \(location.y)")
+            let frameSize = self.displayView.frame.size
+            
+            if (videoCamera.cameraPosition() == AVCaptureDevicePosition.Front) {
+                location.x = frameSize.width - location.x;
+            }
+            
+            pointOfInterest = CGPointMake(location.y / frameSize.height, 1.0 - (location.x / frameSize.width));
+            
+            
+            if (device.focusPointOfInterestSupported && device.isFocusModeSupported(AVCaptureFocusMode.AutoFocus)) {
+                let error:NSError?
+                device.focusPointOfInterest = pointOfInterest
+                device.focusMode = AVCaptureFocusMode.AutoFocus
+                
+                if device.exposurePointOfInterestSupported && device.isExposureModeSupported(AVCaptureExposureMode.ContinuousAutoExposure) {
+                    device.exposurePointOfInterest = pointOfInterest
+                    device.exposureMode = AVCaptureExposureMode.ContinuousAutoExposure
+                }
+                device.unlockForConfiguration()
+                print("FOCUS OK")
+                
+            }
+        }
     }
 }

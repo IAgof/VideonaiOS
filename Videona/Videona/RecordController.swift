@@ -30,6 +30,7 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     @IBOutlet weak var thumbnailNumberClips: UILabel!
     
     var alertController:UIAlertController?
+    var tapDisplay:UIGestureRecognizer?
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -56,6 +57,13 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(RecordController.checkOrientation), name: UIDeviceOrientationDidChangeNotification, object: nil)
         self.navigationController?.navigationBarHidden = true
         self.forceLandsCapeOnInit()
+        
+        tapDisplay = UITapGestureRecognizer(target: self, action: #selector(RecordController.displayTapped))
+        self.cameraView.addGestureRecognizer(tapDisplay!)
+    }
+    
+    func displayTapped(){
+        eventHandler!.displayHasTapped(tapDisplay!)
     }
     
     override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
