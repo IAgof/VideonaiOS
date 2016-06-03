@@ -238,4 +238,29 @@ class CameraInteractor:CameraRecorderDelegate{
             }
         }
     }
+    
+    func zoom(pinch: UIPinchGestureRecognizer) {
+        var device: AVCaptureDevice = self.videoCamera.inputCamera
+        var vZoomFactor = (pinch.scale)
+        let pinchVelocityDividerFactor:Float = 50//To change velocity of zoom
+
+        var error:NSError!
+        do{
+            try device.lockForConfiguration()
+            defer {device.unlockForConfiguration()}
+            
+            if (vZoomFactor < device.activeFormat.videoMaxZoomFactor){
+                let desiredZoomFactor = device.videoZoomFactor + CGFloat.init( atan2f(Float(pinch.velocity), pinchVelocityDividerFactor))
+                // Check if desiredZoomFactor fits required range from 1.0 to activeFormat.videoMaxZoomFactor
+                device.videoZoomFactor = max(1.0, min(desiredZoomFactor, device.activeFormat.videoMaxZoomFactor));
+                
+            }else{
+                NSLog("Unable to set videoZoom: (max %f, asked %f)", device.activeFormat.videoMaxZoomFactor, vZoomFactor);
+            }
+        }catch error as NSError{
+            NSLog("Unable to set videoZoom: %@", error.localizedDescription);
+        }catch _{
+            
+        }
+    }
 }

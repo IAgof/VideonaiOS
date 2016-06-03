@@ -31,6 +31,7 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     
     var alertController:UIAlertController?
     var tapDisplay:UIGestureRecognizer?
+    var pinchDisplay:UIPinchGestureRecognizer?
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -60,12 +61,17 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         
         tapDisplay = UITapGestureRecognizer(target: self, action: #selector(RecordController.displayTapped))
         self.cameraView.addGestureRecognizer(tapDisplay!)
+        
+        pinchDisplay = UIPinchGestureRecognizer(target: self, action: #selector(RecordController.displayPinched))
+        self.cameraView.addGestureRecognizer(pinchDisplay!)
     }
     
     func displayTapped(){
         eventHandler!.displayHasTapped(tapDisplay!)
     }
-    
+    func displayPinched(){
+        eventHandler!.displayHasPinched(pinchDisplay!)
+    }
     override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
         return UIInterfaceOrientation.LandscapeLeft
     }

@@ -31,4 +31,5 @@ protocol RecordPresenterInterface{
     func removeFilter(filterName: String)
     func resetRecorder()
     func displayHasTapped(tapGesture:UIGestureRecognizer)
+    func displayHasPinched(pinchGesture:UIPinchGestureRecognizer)
 }

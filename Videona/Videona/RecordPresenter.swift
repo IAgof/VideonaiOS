@@ -136,6 +136,9 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
         cameraInteractor?.cameraViewTapAction(tapGesture)
     }
     
+    func displayHasPinched(pinchGesture: UIPinchGestureRecognizer) {
+        cameraInteractor?.zoom(pinchGesture)
+    }
     //MARK: - FilterList delegate
     func hideAnyFilterList() {
         self.recordWireframe?.dismissFilterListInterface()
