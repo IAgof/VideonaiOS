@@ -13,6 +13,9 @@ protocol PlayerInterface {
  
     func createVideoPlayer()
     func setPlayerMovieURL(movieURL:NSURL)
-    func updateLayers(frame:CGRect)
+    func updateLayers()
     func getView()->UIView
+    func setUpVideoFinished()
+    func pauseVideoPlayer()
+    func playVideoPlayer()
 }

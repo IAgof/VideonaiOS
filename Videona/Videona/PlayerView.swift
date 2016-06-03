@@ -18,9 +18,20 @@ class PlayerView: UIView,PlayerInterface {
     var movieURL:NSURL!
     var player:AVPlayer?
     
+    @IBOutlet weak var playOrPauseButton: UIButton!
+   
+    @IBOutlet weak var playerContainer: UIView!
+    
+    @IBOutlet weak var seekSlider: UISlider!
+    var playerRateBeforeSeek: Float = 0
+
     class func instanceFromNib() -> UIView {
         let view = UINib(nibName: "PlayerView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! UIView
         return view
+    }
+    
+    override func awakeFromNib() {
+        
     }
     
     func setPlayerMovieURL(movieURL: NSURL) {
@@ -31,12 +42,9 @@ class PlayerView: UIView,PlayerInterface {
         self.eventHandler?.layoutSubViews()
     }
     
-    func updateLayers(frame:CGRect){
-        if let sublayers = self.layer.sublayers{
-            for sublayer in sublayers{
-                sublayer.frame = frame
-            }
-        }
+    func updateLayers(){
+        let superViewFrame = (self.superview?.frame)!
+        self.frame = CGRectMake(0, 0, superViewFrame.width, superViewFrame.height)
     }
     
     func getView() -> UIView {
@@ -44,24 +52,92 @@ class PlayerView: UIView,PlayerInterface {
     }
     
     func createVideoPlayer(){
+        self.setViewPlayerTappable()
+        self.initSeekEvents()
+        
         let avAsset: AVURLAsset = AVURLAsset(URL: movieURL!, options: nil)
         let playerItem: AVPlayerItem = AVPlayerItem(asset: avAsset)
         
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SharedViewController.onVideoStops),
-//                                                         name: AVPlayerItemDidPlayToEndTimeNotification,
-//                                                         object: playerItem)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PlayerView.onVideoStops),
+                                                         name: AVPlayerItemDidPlayToEndTimeNotification,
+                                                         object: playerItem)
         player = AVPlayer.init(playerItem: playerItem)
         
         //Get video duration to player progressView
 //        videoDuration = avAsset.duration.seconds
         
-        let layer = AVPlayerLayer()
-        layer.videoGravity = AVLayerVideoGravityResizeAspectFill
-        layer.player = player
+        let layer = AVPlayerLayer(player: player)
+        layer.frame = self.frame
+        player?.currentItem?.seekToTime(CMTime.init(value: 1, timescale: 10))
+
+        self.playerContainer.layoutIfNeeded()
+        self.playerContainer.layer.addSublayer(layer)
+    }
+    
+    func setViewPlayerTappable(){
+        let singleFingerTap:UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action:#selector(PlayerView.videoPlayerViewTapped))
+        playerContainer.addGestureRecognizer(singleFingerTap)
+    }
+    
+    func initSeekEvents(){
+        seekSlider.addTarget(self, action: #selector(PlayerView.sliderBeganTracking),
+                             forControlEvents: UIControlEvents.TouchDown)
+        seekSlider.addTarget(self, action: #selector(PlayerView.sliderEndedTracking),
+                             forControlEvents: UIControlEvents.TouchUpInside)
+        seekSlider.addTarget(self, action: #selector(PlayerView.sliderEndedTracking),forControlEvents: UIControlEvents.TouchUpInside )
+        seekSlider.addTarget(self, action: #selector(PlayerView.sliderValueChanged),
+                             forControlEvents: UIControlEvents.ValueChanged)
+    }
+    
+    func videoPlayerViewTapped(){
+        eventHandler?.videoPlayerViewTapped()
+    }
+    @IBAction func pushPlayButton(sender: AnyObject) {
+        eventHandler?.pushPlayButton()
+    }
+    
+    func sliderBeganTracking(){
+        playerRateBeforeSeek = player!.rate
+        player!.pause()
+    }
+    func sliderEndedTracking(){
+        let videoDuration = CMTimeGetSeconds(player!.currentItem!.duration)
+        let elapsedTime: Float64 = videoDuration * Float64(seekSlider.value)
         
-        layer.backgroundColor = UIColor.blackColor().CGColor
+        player!.seekToTime(CMTimeMakeWithSeconds(elapsedTime, 10)) { (completed: Bool) -> Void in
+            if (self.playerRateBeforeSeek > 0) {
+                self.player!.play()
+            }
+        }
+    }
+    func sliderValueChanged(){
+        let videoDuration = CMTimeGetSeconds(player!.currentItem!.duration)        
+    }
+    
+    func setUpVideoFinished(){
+        player?.currentItem?.seekToTime(CMTime.init(value: 1, timescale: 10))
+        playOrPauseButton.hidden = false
+    }
+    
+    func onVideoStops(){
+        eventHandler?.onVideoStops()
+    }
+    
+    func pauseVideoPlayer(){
+        player!.pause()
         
-        self.layer.addSublayer(layer)
-        player?.play()
+        playOrPauseButton.hidden = false
+        
+        Utils().debugLog("Video has stopped")
+    }
+    
+    func playVideoPlayer(){
+        player!.play()
+        
+        playOrPauseButton.hidden = true
+        
+        //Start timer
+
+        Utils().debugLog("Playing video")
     }
 }

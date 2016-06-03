@@ -35,6 +35,8 @@ class ExporterInteractor:NSObject{
         
         let videoTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeVideo,
                                                                      preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
+        let audioTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeAudio,preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
+        
         // - Add assets to the composition
         for path in videosArray{
             // 2 - Get Video asset
@@ -46,6 +48,11 @@ class ExporterInteractor:NSObject{
                 try videoTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoAsset.duration),
                                                ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
                                                atTime: videoTotalTime)
+                
+                try audioTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoAsset.duration),
+                                               ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeAudio)[0] ,
+                                               atTime: videoTotalTime)
+                
                 Utils().debugLog("el tiempo total del video es: \(videoTotalTime.seconds)")
                 videoTotalTime = CMTimeAdd(videoTotalTime, videoAsset.duration)
             } catch _ {

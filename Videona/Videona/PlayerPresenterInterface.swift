@@ -12,6 +12,9 @@ protocol PlayerPresenterInterface {
     
     func createVideoPlayer(videoPath:String)
     func layoutSubViews()
+    func onVideoStops()
+    func videoPlayerViewTapped()
+    func pushPlayButton()
 }
 
 

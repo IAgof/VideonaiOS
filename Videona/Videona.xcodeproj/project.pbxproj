@@ -61,6 +61,7 @@
 		A965C7EC1CF58467001E2D39 /* CameraInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A965C7EB1CF58467001E2D39 /* CameraInteractor.swift */; };
 		A96732FE1CE6309C007BE340 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96732FD1CE6309C007BE340 /* SettingsInteractor.swift */; };
 		A96733001CE630AD007BE340 /* SettingsInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96732FF1CE630AD007BE340 /* SettingsInteractorInterface.swift */; };
+		A9686F951CFF129C00983540 /* AVResolutionParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9686F941CFF129C00983540 /* AVResolutionParse.swift */; };
 		A971F5A01CFC1A16004DC50D /* CameraRecorderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F59F1CFC1A16004DC50D /* CameraRecorderInteractor.swift */; };
 		A971F5A31CFC21E4004DC50D /* CameraRecorderInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F5A21CFC21E4004DC50D /* CameraRecorderInterface.swift */; };
 		A971F5A91CFC4756004DC50D /* TimerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F5A81CFC4756004DC50D /* TimerInteractor.swift */; };
@@ -247,6 +248,7 @@
 		A965C7EB1CF58467001E2D39 /* CameraInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraInteractor.swift; sourceTree = "<group>"; };
 		A96732FD1CE6309C007BE340 /* SettingsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
 		A96732FF1CE630AD007BE340 /* SettingsInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractorInterface.swift; sourceTree = "<group>"; };
+		A9686F941CFF129C00983540 /* AVResolutionParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVResolutionParse.swift; sourceTree = "<group>"; };
 		A971F59F1CFC1A16004DC50D /* CameraRecorderInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraRecorderInteractor.swift; sourceTree = "<group>"; };
 		A971F5A21CFC21E4004DC50D /* CameraRecorderInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraRecorderInterface.swift; sourceTree = "<group>"; };
 		A971F5A81CFC4756004DC50D /* TimerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerInteractor.swift; sourceTree = "<group>"; };
@@ -627,6 +629,7 @@
 		A95B24771CD8B95800F78AAF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A9686F941CFF129C00983540 /* AVResolutionParse.swift */,
 				A95D3BE21CEB6B77001F2272 /* Utils.swift */,
 				A9F9C2081CF465D300AB310C /* Wireframe */,
 				A9E066E11CE4BB6B00D4E11D /* Constants */,
@@ -1280,6 +1283,7 @@
 				A93846EA1CE47E9C007FB6BC /* FilterListPresenterInterface.swift in Sources */,
 				A95B246B1CD88AC100F78AAF /* RecordWireframe.swift in Sources */,
 				A971F5C01CFC8E1B004DC50D /* ExportedAlbum.swift in Sources */,
+				A9686F951CFF129C00983540 /* AVResolutionParse.swift in Sources */,
 				A9B118191CE378C2001A1177 /* SharePresenterInterface.swift in Sources */,
 				A96732FE1CE6309C007BE340 /* SettingsInteractor.swift in Sources */,
 				A965BDBF1CDA076C002579CA /* IntroWireframe.swift in Sources */,

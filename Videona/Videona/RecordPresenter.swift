@@ -141,13 +141,15 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
     }
     //MARK: - FilterList delegate
     func hideAnyFilterList() {
-        self.recordWireframe?.dismissFilterListInterface()
-        
-        shaderFilterViewIsShowin = false
-        colorFilterViewIsShowin = false
-        
-        controller?.showOverlayOnTop(shaderFilterViewIsShowin)
-        controller?.showShadersOnTop(colorFilterViewIsShowin)
+        if(shaderFilterViewIsShowin || colorFilterViewIsShowin){
+            self.recordWireframe?.dismissFilterListInterface()
+            
+            shaderFilterViewIsShowin = false
+            colorFilterViewIsShowin = false
+            
+            controller?.showOverlayOnTop(shaderFilterViewIsShowin)
+            controller?.showShadersOnTop(colorFilterViewIsShowin)
+        }
     }
     
     func pushShowHideColorFilters() {

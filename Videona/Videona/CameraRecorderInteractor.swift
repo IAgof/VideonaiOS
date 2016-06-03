@@ -8,6 +8,7 @@
 
 import Foundation
 import GPUImage
+import AVFoundation
 
 class CameraRecorderInteractor{
 
@@ -15,16 +16,22 @@ class CameraRecorderInteractor{
     var movieWriter: GPUImageMovieWriter?
     var clipsArray:[String] = []
     var videoCamera: GPUImageVideoCamera?
+    var resolutionSize:Resolution?
+    var resolution: String = AVCaptureSessionPreset640x480 {
+        didSet {
+            resolutionSize = Resolution.init(AVResolution: resolution)
+        }
+    }
     
     func recordVideo(completion:(String)->Void){
-
+        
         let clipPath = getNewClipPath()
         self.clipsArray.append(clipPath)
 
         let clipURL = NSURL.init(fileURLWithPath: clipPath)
         
         Utils().debugLog("PathToMovie: \(clipPath)")
-        self.movieWriter = GPUImageMovieWriter.init(movieURL: clipURL, size: CGSizeMake(640,480))
+        self.movieWriter = GPUImageMovieWriter.init(movieURL: clipURL, size: CGSizeMake((resolutionSize?.width)!,(resolutionSize?.height)!))
         self.movieWriter!.encodingLiveVideo = true
         self.videoCamera?.audioEncodingTarget = movieWriter
         
@@ -64,10 +71,15 @@ class CameraRecorderInteractor{
             filterToWriter?.addTarget(movieWriter)
         }
     }
+    
     func setVideoCamera(videoCamera: GPUImageVideoCamera){
         self.videoCamera = videoCamera
     }
-
+    
+    func setResolution(resolution:String){
+        self.resolution = resolution
+    }
+    
     func getNewClipPath()->String{
         var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
         path =  path + "/\(Utils().giveMeTimeNow())videonaClip.m4v"
