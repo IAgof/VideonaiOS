@@ -723,8 +723,11 @@
                                     <action selector="pushRecord:" destination="ShV-dE-YrB" eventType="touchUpInside" id="KCk-r2-EKr"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navigator_common_icon_drawer_back_pressed" translatesAutoresizingMaskIntoConstraints="NO" id="ZbW-HU-PsB">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_icon_spin" translatesAutoresizingMaskIntoConstraints="NO" id="ZbW-HU-PsB">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="204" y="104" width="192" height="192"/>
+                                </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AjE-cu-Yc0">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -1391,6 +1394,7 @@
         <image name="common_character_eddyt_speech_balloon" width="300" height="300"/>
         <image name="common_character_kachivache_landscape_speech_balloon" width="600" height="435"/>
         <image name="common_character_sonora_speech_balloon" width="300" height="300"/>
+        <image name="common_icon_spin" width="68" height="68"/>
         <image name="intro_app_slide_edit_image" width="300" height="198"/>
         <image name="intro_app_slide_record_image" width="300" height="229"/>
         <image name="intro_app_slide_share_image" width="264" height="300"/>
