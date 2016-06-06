@@ -41,7 +41,7 @@ var effectDictionary:[String:[FilterType:AnyObject]] =
      "Posterizebw": [.Shader:GPUImageFilter()],
      "Stretch": [.Shader:GPUImageFilter()],
      "Fisheye": [.Shader:GPUImageFilter()],
-     "Tiwrl": [.Shader:GPUImageFilter()],
+     "Twirl": [.Shader:GPUImageFilter()],
      "Tunnel": [.Shader:GPUImageFilter()],
      "Bulge": [.Shader:GPUImageFilter()],
      "Shader": [.Shader:GPUImageFilter()],
