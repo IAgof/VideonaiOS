@@ -219,7 +219,6 @@ class CameraInteractor:CameraRecorderDelegate{
     }
     
     func cameraViewTapAction(tapDisplay:UIGestureRecognizer){
-        print("Tap recognized")
         
         if (tapDisplay.state == UIGestureRecognizerState.Recognized) {
             var location = tapDisplay.locationInView(self.displayView)
@@ -232,7 +231,6 @@ class CameraInteractor:CameraRecorderDelegate{
                 return
             }
             var pointOfInterest = CGPointMake(0.5, 0.5)
-            print("taplocation x = \(location.x) y = \(location.y)")
             let frameSize = self.displayView.frame.size
             
             if (videoCamera.cameraPosition() == AVCaptureDevicePosition.Front) {
@@ -252,7 +250,6 @@ class CameraInteractor:CameraRecorderDelegate{
                     device.exposureMode = AVCaptureExposureMode.ContinuousAutoExposure
                 }
                 device.unlockForConfiguration()
-                print("FOCUS OK")
                 
             }
         }

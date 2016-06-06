@@ -34,8 +34,12 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
     func viewWillDisappear() {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             if self.isRecording{
-                self.stopRecord() 
+                self.stopRecord()
             }
+            FlashInteractor().turnOffWhenViewWillDissappear()
+            dispatch_async(dispatch_get_main_queue(), {
+                self.controller?.showFlashOn(false)
+            })
         })
     }
     
@@ -78,6 +82,7 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
             self.startRecord()
         }
     }
+    
     func startRecord(){
         controller?.recordButtonEnable(false)
         
@@ -93,8 +98,8 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
                 // update some UI
                 self.controller?.showRecordButton()
                 self.controller?.disableShareButton()
-            });
-        });
+            })
+        })
         isRecording = true
         
         self.startTimer()
