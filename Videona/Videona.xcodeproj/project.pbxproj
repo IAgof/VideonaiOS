@@ -130,6 +130,11 @@
 		A9E066E91CE4C85900D4E11D /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9E066E81CE4C85900D4E11D /* FilterCell.xib */; };
 		A9E066EB1CE4E13800D4E11D /* ShareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9E066EA1CE4E13800D4E11D /* ShareCell.xib */; };
 		A9E066ED1CE4E4E200D4E11D /* ShareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E066EC1CE4E4E200D4E11D /* ShareCell.swift */; };
+		A9F251731D05CD8E00D8DC30 /* ShareWhatsappInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F251721D05CD8E00D8DC30 /* ShareWhatsappInteractor.swift */; };
+		A9F251771D05CDA900D8DC30 /* ShareInstagramInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F251761D05CDA900D8DC30 /* ShareInstagramInteractor.swift */; };
+		A9F251791D05CDB600D8DC30 /* ShareFacebookInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F251781D05CDB600D8DC30 /* ShareFacebookInteractor.swift */; };
+		A9F2517B1D05CDC800D8DC30 /* ShareTwitterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2517A1D05CDC800D8DC30 /* ShareTwitterInteractor.swift */; };
+		A9F2517D1D05CDD900D8DC30 /* ShareYoutubeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2517C1D05CDD900D8DC30 /* ShareYoutubeInteractor.swift */; };
 		A9F9C20E1CF4665000AB310C /* VideonaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9C20D1CF4665000AB310C /* VideonaController.swift */; };
 		A9F9C2101CF4857700AB310C /* Logo_Splash_Horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F9C20F1CF4857700AB310C /* Logo_Splash_Horizontal.png */; };
 		A9F9C2121CF485C600AB310C /* Logo_Splash_Vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F9C2111CF485C600AB310C /* Logo_Splash_Vertical.png */; };
@@ -316,6 +321,11 @@
 		A9E066E81CE4C85900D4E11D /* FilterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
 		A9E066EA1CE4E13800D4E11D /* ShareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareCell.xib; sourceTree = "<group>"; };
 		A9E066EC1CE4E4E200D4E11D /* ShareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareCell.swift; sourceTree = "<group>"; };
+		A9F251721D05CD8E00D8DC30 /* ShareWhatsappInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareWhatsappInteractor.swift; sourceTree = "<group>"; };
+		A9F251761D05CDA900D8DC30 /* ShareInstagramInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareInstagramInteractor.swift; sourceTree = "<group>"; };
+		A9F251781D05CDB600D8DC30 /* ShareFacebookInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareFacebookInteractor.swift; sourceTree = "<group>"; };
+		A9F2517A1D05CDC800D8DC30 /* ShareTwitterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareTwitterInteractor.swift; sourceTree = "<group>"; };
+		A9F2517C1D05CDD900D8DC30 /* ShareYoutubeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareYoutubeInteractor.swift; sourceTree = "<group>"; };
 		A9F9C20D1CF4665000AB310C /* VideonaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideonaController.swift; sourceTree = "<group>"; };
 		A9F9C20F1CF4857700AB310C /* Logo_Splash_Horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_Splash_Horizontal.png; sourceTree = "<group>"; };
 		A9F9C2111CF485C600AB310C /* Logo_Splash_Vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_Splash_Vertical.png; sourceTree = "<group>"; };
@@ -473,6 +483,7 @@
 		A943016C1CE5D96900DC0DF8 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				A9F2517E1D05CF7200D8DC30 /* ShareSocialNetworksInteractor */,
 				A94301711CE5DD8B00DC0DF8 /* ShareInteractor.swift */,
 				A94301731CE5DFA100DC0DF8 /* ShareInteractorInterface.swift */,
 			);
@@ -1009,6 +1020,18 @@
 			name = Constants;
 			sourceTree = "<group>";
 		};
+		A9F2517E1D05CF7200D8DC30 /* ShareSocialNetworksInteractor */ = {
+			isa = PBXGroup;
+			children = (
+				A9F251721D05CD8E00D8DC30 /* ShareWhatsappInteractor.swift */,
+				A9F2517C1D05CDD900D8DC30 /* ShareYoutubeInteractor.swift */,
+				A9F251761D05CDA900D8DC30 /* ShareInstagramInteractor.swift */,
+				A9F251781D05CDB600D8DC30 /* ShareFacebookInteractor.swift */,
+				A9F2517A1D05CDC800D8DC30 /* ShareTwitterInteractor.swift */,
+			);
+			name = ShareSocialNetworksInteractor;
+			sourceTree = "<group>";
+		};
 		A9F9C2081CF465D300AB310C /* Wireframe */ = {
 			isa = PBXGroup;
 			children = (
@@ -1256,10 +1279,12 @@
 				A971F5BB1CFC89AF004DC50D /* ClipsAlbum.swift in Sources */,
 				A95B24761CD8B90700F78AAF /* AppDependencies.swift in Sources */,
 				A971F5A31CFC21E4004DC50D /* CameraRecorderInterface.swift in Sources */,
+				A9F2517D1D05CDD900D8DC30 /* ShareYoutubeInteractor.swift in Sources */,
 				A9E066ED1CE4E4E200D4E11D /* ShareCell.swift in Sources */,
 				A95B24371CD8890900F78AAF /* RecordController.swift in Sources */,
 				A965BDC11CDA0F1D002579CA /* IntroViewInterface.swift in Sources */,
 				A9E066D91CE4B4E000D4E11D /* Effect.swift in Sources */,
+				A9F251771D05CDA900D8DC30 /* ShareInstagramInteractor.swift in Sources */,
 				A98A93C41CF5BAF6004E1DB7 /* EffectDictionary.swift in Sources */,
 				A93846EC1CE47EE2007FB6BC /* FilterListView.swift in Sources */,
 				A95D3BEA1CEB7158001F2272 /* PlayerProvider.swift in Sources */,
@@ -1299,6 +1324,7 @@
 				A971F5A91CFC4756004DC50D /* TimerInteractor.swift in Sources */,
 				A95D3BE81CEB7141001F2272 /* PlayerItem.swift in Sources */,
 				A971F5AB1CFC48D2004DC50D /* TimerInteractorInterface.swift in Sources */,
+				A9F2517B1D05CDC800D8DC30 /* ShareTwitterInteractor.swift in Sources */,
 				A93846F51CE480AA007FB6BC /* FilterListPresentationTransition.swift in Sources */,
 				A93846E81CE47E82007FB6BC /* FilterListPresenter.swift in Sources */,
 				A95B247C1CD8B9F200F78AAF /* RecordPresenterInterfaceIO.swift in Sources */,
@@ -1308,6 +1334,8 @@
 				A95B246E1CD88C2D00F78AAF /* RecordViewInterface.swift in Sources */,
 				A971F5B11CFC5B98004DC50D /* ThumbnailInteractor.swift in Sources */,
 				A99278571CE36517009DC364 /* SettingsInterface.swift in Sources */,
+				A9F251731D05CD8E00D8DC30 /* ShareWhatsappInteractor.swift in Sources */,
+				A9F251791D05CDB600D8DC30 /* ShareFacebookInteractor.swift in Sources */,
 				A965BDBC1CDA0758002579CA /* IntroPresenter.swift in Sources */,
 				A94301671CE5CF4F00DC0DF8 /* PlayerWireframe.swift in Sources */,
 				A91D25121CF876250006CB93 /* CameraInteractorInterface.swift in Sources */,

@@ -50,4 +50,23 @@ class ShareInteractor: NSObject,ShareInteractorInterface {
         
         return imageArray
     }
+    
+    func shareVideo(socialNetworkTitle: String, videoPath: String) {
+        switch socialNetworkTitle {
+        case "Facebook":
+            print("Share video on facebook")
+        case "Instagram":
+            print("Share video on Instagram")
+            ShareInstagramInteractor().share()
+        case "Twitter":
+            print("Share video on Twitter")
+        case "Whatsapp":
+            print("Share video on Whatsapp")
+        case "Youtube":
+            print("Share video on Youtube")
+        default:
+            print("No Social network")
+            
+        }
+    }
 }
