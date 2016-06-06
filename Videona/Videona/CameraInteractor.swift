@@ -24,9 +24,9 @@ class CameraInteractor:CameraRecorderDelegate{
     var displayView: GPUImageView
     var sourceImageGPUUIElement: GPUImageUIElement?
     var imageView:UIImageView
-    
-    //    var movieWriter: GPUImageMovieWriter sacar a otro Interactor?
-
+    var waterMark:GPUImagePicture = GPUImagePicture()
+    var maskFilterToRecord = GPUImageFilter()
+        
     let resolution = AVCaptureSessionPreset1280x720
     
     var isRearCamera:Bool = false
@@ -54,14 +54,14 @@ class CameraInteractor:CameraRecorderDelegate{
         maskFilterOutput = GPUImageFilter()
         
         videoCamera.addTarget(filter)
-
+        
         self.addBlendFilterAtInit()
         
         videoCamera.startCameraCapture()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CameraInteractor.checkOrientation), name: UIDeviceOrientationDidChangeNotification, object: nil)
         
-
+        
     }
     
     func getClipsArray() -> [String] {
@@ -119,16 +119,18 @@ class CameraInteractor:CameraRecorderDelegate{
             self.sourceImageGPUUIElement!.update()
         }
     }
-
+    
     func changeBlendImage(image:UIImage){
         imageView.image = image
     }
-
+    
     func changeFilter(newFilter:GPUImageFilter){
         ChangeFilterInteractor().changeFilter(maskFilterInput, newFilter: newFilter, display: displayView)
-   
+        
         maskFilterOutput = newFilter
-        self.setInputToWriter()
+        if isRecording {
+            setInputToWriter()
+        }
     }
     
     func addFilter(newFilter:GPUImageFilter){
@@ -164,21 +166,36 @@ class CameraInteractor:CameraRecorderDelegate{
     func removeOverlay(){
         RemoveFilterInteractor().removeOverlay(imageView)
     }
+
     func setInputToWriter(){
+        
         print("set Input To Writer")
         
         print("\n maskFilterOutput targets \n \(maskFilterOutput.targets())\n\n\n")
+        let blendFilter = GPUImageAlphaBlendFilter()
+        blendFilter.mix = 0.5
 
-            let maskFilterToRecord = GPUImageFilter()
-            maskFilterOutput.addTarget(maskFilterToRecord)
-            
-            cameraRecorder.setInput(maskFilterToRecord)
+        let image = UIImage.init(named: "water_mark")
+        
+        waterMark = GPUImagePicture.init(image: image)
+        
+        maskFilterOutput.addTarget(blendFilter)
+        waterMark.addTarget(blendFilter)
+        
+        waterMark.processImage()
+        
+        maskFilterToRecord = GPUImageFilter()
+        
+        blendFilter.addTarget(maskFilterToRecord)
+        blendFilter.useNextFrameForImageCapture()
+        
+        cameraRecorder.setInput(maskFilterToRecord)
     }
-
+    
     //MARK: - Recorder delegate
     func startRecordVideo(completion:(String)->Void){
         print("Start record video")
-
+        
         cameraRecorder.setVideoCamera(videoCamera)
         cameraRecorder.setResolution(resolution)
         
@@ -191,7 +208,7 @@ class CameraInteractor:CameraRecorderDelegate{
     func setIsRecording(isRecording:Bool){
         self.isRecording = isRecording
     }
-
+    
     func stopRecordVideo() {
         for maskFilter in maskFilterOutput.targets(){
             if maskFilter.isKindOfClass(GPUImageFilter){
@@ -245,7 +262,7 @@ class CameraInteractor:CameraRecorderDelegate{
         var device: AVCaptureDevice = self.videoCamera.inputCamera
         var vZoomFactor = (pinch.scale)
         let pinchVelocityDividerFactor:Float = 50//To change velocity of zoom
-
+        
         var error:NSError!
         do{
             try device.lockForConfiguration()

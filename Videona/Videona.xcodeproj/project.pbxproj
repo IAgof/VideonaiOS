@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A91D25121CF876250006CB93 /* CameraInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91D25111CF876250006CB93 /* CameraInteractorInterface.swift */; };
+		A925E8FB1D01C8AA000BB684 /* water_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = A925E8FA1D01C8AA000BB684 /* water_mark.png */; };
 		A93846E81CE47E82007FB6BC /* FilterListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846E71CE47E82007FB6BC /* FilterListPresenter.swift */; };
 		A93846EA1CE47E9C007FB6BC /* FilterListPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846E91CE47E9C007FB6BC /* FilterListPresenterInterface.swift */; };
 		A93846EC1CE47EE2007FB6BC /* FilterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846EB1CE47EE2007FB6BC /* FilterListView.swift */; };
@@ -189,6 +190,7 @@
 /* Begin PBXFileReference section */
 		A918B89A1CF5878D0013D68F /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = ../../GPUImage/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		A91D25111CF876250006CB93 /* CameraInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraInteractorInterface.swift; sourceTree = "<group>"; };
+		A925E8FA1D01C8AA000BB684 /* water_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water_mark.png; sourceTree = "<group>"; };
 		A93846E71CE47E82007FB6BC /* FilterListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListPresenter.swift; sourceTree = "<group>"; };
 		A93846E91CE47E9C007FB6BC /* FilterListPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListPresenterInterface.swift; sourceTree = "<group>"; };
 		A93846EB1CE47EE2007FB6BC /* FilterListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListView.swift; sourceTree = "<group>"; };
@@ -1029,6 +1031,7 @@
 			children = (
 				A971F5B31CFC7F3C004DC50D /* Fonts */,
 				A971F5AC1CFC52D1004DC50D /* activity_record_rec_circle.png */,
+				A925E8FA1D01C8AA000BB684 /* water_mark.png */,
 				A9D2577A1CF753E100A618B0 /* FiltersShaders */,
 				A9D76AEF1CF5FB4B00F7FB47 /* FiltersOverlay */,
 				A9F9C2131CF4871F00AB310C /* LogoSplash */,
@@ -1176,6 +1179,7 @@
 				A9D76B161CF5FB8700F7FB47 /* texture.png in Resources */,
 				A9D76B071CF5FB8700F7FB47 /* cctv.png in Resources */,
 				A9D257C41CF82BE600A618B0 /* Emboss.fsh in Resources */,
+				A925E8FB1D01C8AA000BB684 /* water_mark.png in Resources */,
 				A9D257C31CF82BE600A618B0 /* Mirror.fsh in Resources */,
 				A9D257C91CF82BE600A618B0 /* Twirl.fsh in Resources */,
 				A95D3BF31CEB76D7001F2272 /* video.mp4 in Resources */,
