@@ -25,21 +25,31 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
     let FILTERS_SHOWING_IS_COLOR = 0
     let FILTERS_SHOWING_IS_SHADER = 1
     
+    var lastShaderItemSelected:Int = -1
+    var lastOverlayItemSelected:Int = -1
+
     func getColorFilterList() {
+        controller?.setSelectedCellIndexPath(lastOverlayItemSelected)
+        
         filtersImage = (interactor?.findColorFilters().0)!
         filtersTitle = (interactor?.findColorFilters().1)!
 
         self.setFilterShowin(FILTERS_SHOWING_IS_COLOR)
         self.setFiltersToView()
+        
     }
     
     func getShaderFilterList() {
+        controller?.setSelectedCellIndexPath(lastShaderItemSelected)
+        
         filtersImage = (interactor?.findShaderFilters().0)!
         filtersTitle = (interactor?.findShaderFilters().1)!
         
         self.setFilterShowin(FILTERS_SHOWING_IS_SHADER)
         self.setFiltersToView()
-   }
+        
+ 
+    }
     
     func setFilterShowin(filterToShow:Int){
         self.filterShowing = filterToShow
@@ -71,25 +81,34 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
         self.setFilterShowin(FILTERS_SHOWING_IS_NONE)
     }
     
-    func toggleSelectedCell(cell: FilterViewCell) {
+    func toggleSelectedCell(cell: FilterViewCell,item: Int) {
         if (cell.isSelectedCell){
             cell.isSelectedCell = false
-            cell.toggleSelected()
             self.removeFilter(cell.filterTitle.text!)
+            self.handleIndexPathFiltersView(-1)
         }else{
             cell.isSelectedCell = true
-            cell.toggleSelected()
             let filter = cell.filterTitle.text
             self.filterListSelectedFilters(filter!)
+            self.handleIndexPathFiltersView(item)
         }
     }
     
+    func handleIndexPathFiltersView(item:Int){
+        if(filterShowing == FILTERS_SHOWING_IS_SHADER){
+            lastShaderItemSelected = item
+        }else if (filterShowing == FILTERS_SHOWING_IS_COLOR){
+            lastOverlayItemSelected = item
+        }
+
+    }
+    
     func checkOtherCellSelected(indexPath: NSIndexPath,lastSelectedIndexPath:NSIndexPath, collectionView: UICollectionView) {
+        
         if lastSelectedIndexPath != indexPath {
             if let cell = collectionView.cellForItemAtIndexPath(lastSelectedIndexPath) {
                 let lastCell = cell as! FilterViewCell
                 lastCell.isSelectedCell = false
-                lastCell.toggleSelected()
             }
         }
     }

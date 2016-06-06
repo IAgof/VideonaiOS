@@ -14,14 +14,13 @@ class FilterViewCell: UICollectionViewCell {
     @IBOutlet weak var filterImage: UIImageView!
     @IBOutlet weak var filterTitle: UILabel!
     
-    var isSelectedCell = false
-    
-    func toggleSelected ()
-    {
-        if (isSelectedCell){
-            backgroundColor = UIColor.init(red: 0.7411, green: 0.854, blue: 0.074, alpha: 0.8)
-        }else {
-            backgroundColor = UIColor.clearColor()
+    var isSelectedCell: Bool = false{
+        didSet {
+            if isSelectedCell {
+                backgroundColor = UIColor.init(red: 0.7411, green: 0.854, blue: 0.074, alpha: 0.8)
+            }else{
+                backgroundColor = UIColor.clearColor()
+            }
         }
     }
 }

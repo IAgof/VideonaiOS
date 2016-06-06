@@ -18,7 +18,7 @@ class FilterListView: UIView,FilterListInterface, UICollectionViewDataSource, UI
     let reuseIdentifierCell = "filterCell"
     var filterListImage: Array<UIImage> = []
     var filterListTitle: Array<String> = []
-    var lastSelectedIndexPath:NSIndexPath?
+    var lastSelectedIndexPath:NSIndexPath = NSIndexPath.init(index: -1)
     
     
     //MARK: - Outlets
@@ -56,6 +56,10 @@ class FilterListView: UIView,FilterListInterface, UICollectionViewDataSource, UI
             }, completion: nil)
     }
     
+    func setSelectedCellIndexPath(itemSelected:Int){
+        self.lastSelectedIndexPath = NSIndexPath.init(forItem: itemSelected, inSection: 0)
+    }
+
     //MARK: - Navigation
     @IBAction func pushDismissView(sender: AnyObject) {
         eventHandler?.cancelFilterListAction()
@@ -78,10 +82,9 @@ class FilterListView: UIView,FilterListInterface, UICollectionViewDataSource, UI
         
         cell.filterImage.image = image
         cell.filterTitle.text = title
-        if lastSelectedIndexPath?.item==indexPath.item{
-            cell.backgroundColor = UIColor.redColor()
+        if lastSelectedIndexPath.item==indexPath.item{
+            cell.isSelectedCell = true
         }else{
-            cell.backgroundColor = UIColor.clearColor()
             cell.isSelectedCell = false
         }
 
@@ -92,11 +95,9 @@ class FilterListView: UIView,FilterListInterface, UICollectionViewDataSource, UI
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         // handle tap events
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! FilterViewCell
-        eventHandler?.toggleSelectedCell(cell)
+        eventHandler?.toggleSelectedCell(cell,item: indexPath.item)
         
-        if let lastIndexPath = lastSelectedIndexPath{
-            eventHandler?.checkOtherCellSelected(indexPath, lastSelectedIndexPath: lastIndexPath, collectionView: filtersCollectionView)
-        }
+        eventHandler?.checkOtherCellSelected(indexPath, lastSelectedIndexPath: lastSelectedIndexPath, collectionView: filtersCollectionView)
         
         lastSelectedIndexPath = indexPath
     }

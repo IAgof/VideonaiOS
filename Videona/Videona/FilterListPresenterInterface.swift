@@ -16,7 +16,7 @@ protocol FilterListPresenterInterface {
     func getShaderFilterList()
     func filterListSelectedFilters(filter:String)
     func removeFilter(filterName:String)
-    func toggleSelectedCell(cell:FilterViewCell)
+    func toggleSelectedCell(cell:FilterViewCell,item: Int)
     func checkOtherCellSelected(indexPath: NSIndexPath,lastSelectedIndexPath:NSIndexPath, collectionView: UICollectionView) 
 }
 
