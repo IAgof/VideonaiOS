@@ -18,4 +18,5 @@ protocol PlayerInterface {
     func setUpVideoFinished()
     func pauseVideoPlayer()
     func playVideoPlayer()
+    func updateSeekBarOnUI()
 }

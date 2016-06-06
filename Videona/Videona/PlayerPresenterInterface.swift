@@ -15,6 +15,7 @@ protocol PlayerPresenterInterface {
     func onVideoStops()
     func videoPlayerViewTapped()
     func pushPlayButton()
+    func updateSeekBar()
 }
 
 

@@ -56,4 +56,8 @@ class PlayerPresenter:NSObject,PlayerPresenterInterface{
             isPlaying = false
         }
     }
+    
+    func updateSeekBar() {
+        controller!.updateSeekBarOnUI()
+    }
 }

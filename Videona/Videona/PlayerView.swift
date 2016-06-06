@@ -50,7 +50,7 @@ class PlayerView: UIView,PlayerInterface {
     func getView() -> UIView {
         return self
     }
-    
+        
     func createVideoPlayer(){
         self.setViewPlayerTappable()
         self.initSeekEvents()
@@ -62,9 +62,12 @@ class PlayerView: UIView,PlayerInterface {
                                                          name: AVPlayerItemDidPlayToEndTimeNotification,
                                                          object: playerItem)
         player = AVPlayer.init(playerItem: playerItem)
-        
-        //Get video duration to player progressView
-//        videoDuration = avAsset.duration.seconds
+
+        player!.addPeriodicTimeObserverForInterval(CMTimeMake(1, 1000), queue: dispatch_get_main_queue()) { _ in
+            if self.player!.currentItem?.status == .ReadyToPlay {
+                self.eventHandler?.updateSeekBar()
+            }
+        }
         
         let layer = AVPlayerLayer(player: player)
         layer.frame = self.frame
@@ -72,6 +75,13 @@ class PlayerView: UIView,PlayerInterface {
 
         self.playerContainer.layoutIfNeeded()
         self.playerContainer.layer.addSublayer(layer)
+    }
+    
+    func updateSeekBarOnUI(){
+        let duration = player?.currentItem?.duration.seconds
+        let currentTime = player?.currentTime().seconds
+        
+        seekSlider.setValue(Float((currentTime!/duration!)), animated: true)
     }
     
     func setViewPlayerTappable(){
@@ -83,8 +93,7 @@ class PlayerView: UIView,PlayerInterface {
         seekSlider.addTarget(self, action: #selector(PlayerView.sliderBeganTracking),
                              forControlEvents: UIControlEvents.TouchDown)
         seekSlider.addTarget(self, action: #selector(PlayerView.sliderEndedTracking),
-                             forControlEvents: UIControlEvents.TouchUpInside)
-        seekSlider.addTarget(self, action: #selector(PlayerView.sliderEndedTracking),forControlEvents: UIControlEvents.TouchUpInside )
+                             forControlEvents: UIControlEvents.TouchUpInside)        
         seekSlider.addTarget(self, action: #selector(PlayerView.sliderValueChanged),
                              forControlEvents: UIControlEvents.ValueChanged)
     }
@@ -100,6 +109,7 @@ class PlayerView: UIView,PlayerInterface {
         playerRateBeforeSeek = player!.rate
         player!.pause()
     }
+    
     func sliderEndedTracking(){
         let videoDuration = CMTimeGetSeconds(player!.currentItem!.duration)
         let elapsedTime: Float64 = videoDuration * Float64(seekSlider.value)
@@ -111,7 +121,7 @@ class PlayerView: UIView,PlayerInterface {
         }
     }
     func sliderValueChanged(){
-        let videoDuration = CMTimeGetSeconds(player!.currentItem!.duration)        
+
     }
     
     func setUpVideoFinished(){
