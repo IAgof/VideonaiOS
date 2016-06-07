@@ -13,4 +13,5 @@ protocol ShareInteractorInterface {
     func findSocialNetworks()->(socialNetworkTitleArray:Array<String>, socialNetworkImageArray:Array<UIImage>,socialNetworkImagePressedArray:Array<UIImage>)
     func shareVideo(socialNetworkTitle:String, videoPath:String)
     func setShareMoviePath(moviePath:String)
+    func postToYoutube(token:String)
 }

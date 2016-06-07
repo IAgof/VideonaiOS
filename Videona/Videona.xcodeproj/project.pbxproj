@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05385CD47D1323E5615A5A06 /* Pods_Videona.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E695B9819A8E5071F983C35 /* Pods_Videona.framework */; };
 		A91D25121CF876250006CB93 /* CameraInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91D25111CF876250006CB93 /* CameraInteractorInterface.swift */; };
 		A925E8FB1D01C8AA000BB684 /* water_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = A925E8FA1D01C8AA000BB684 /* water_mark.png */; };
 		A93846E81CE47E82007FB6BC /* FilterListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846E71CE47E82007FB6BC /* FilterListPresenter.swift */; };
@@ -17,6 +18,7 @@
 		A93846F31CE4809F007FB6BC /* FilterListDismissalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846F21CE4809F007FB6BC /* FilterListDismissalTransition.swift */; };
 		A93846F51CE480AA007FB6BC /* FilterListPresentationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846F41CE480AA007FB6BC /* FilterListPresentationTransition.swift */; };
 		A93846F71CE49340007FB6BC /* FilterListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93846F61CE49340007FB6BC /* FilterListView.xib */; };
+		A93C52381D06CA11001C2755 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A93C52371D06CA11001C2755 /* GoogleService-Info.plist */; };
 		A943015F1CE5CF2000DC0DF8 /* PlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A943015E1CE5CF2000DC0DF8 /* PlayerPresenter.swift */; };
 		A94301611CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301601CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift */; };
 		A94301631CE5CF3900DC0DF8 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301621CE5CF3900DC0DF8 /* PlayerView.swift */; };
@@ -195,6 +197,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7E695B9819A8E5071F983C35 /* Pods_Videona.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Videona.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D1DE05AFBAE78D866AF921E /* Pods-Videona.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Videona.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Videona/Pods-Videona.debug.xcconfig"; sourceTree = "<group>"; };
 		A918B89A1CF5878D0013D68F /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = ../../GPUImage/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		A91D25111CF876250006CB93 /* CameraInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraInteractorInterface.swift; sourceTree = "<group>"; };
 		A925E8FA1D01C8AA000BB684 /* water_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water_mark.png; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 		A93846F21CE4809F007FB6BC /* FilterListDismissalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListDismissalTransition.swift; sourceTree = "<group>"; };
 		A93846F41CE480AA007FB6BC /* FilterListPresentationTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListPresentationTransition.swift; sourceTree = "<group>"; };
 		A93846F61CE49340007FB6BC /* FilterListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterListView.xib; sourceTree = "<group>"; };
+		A93C52371D06CA11001C2755 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A943015E1CE5CF2000DC0DF8 /* PlayerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerPresenter.swift; sourceTree = "<group>"; };
 		A94301601CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerPresenterInterface.swift; sourceTree = "<group>"; };
 		A94301621CE5CF3900DC0DF8 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
@@ -336,6 +341,7 @@
 		A9F9C20F1CF4857700AB310C /* Logo_Splash_Horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_Splash_Horizontal.png; sourceTree = "<group>"; };
 		A9F9C2111CF485C600AB310C /* Logo_Splash_Vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_Splash_Vertical.png; sourceTree = "<group>"; };
 		A9F9C2481CF49F5D00AB310C /* FlashInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashInteractor.swift; sourceTree = "<group>"; };
+		AC37DF744460D4CE24EC5226 /* Pods-Videona.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Videona.release.xcconfig"; path = "Pods/Target Support Files/Pods-Videona/Pods-Videona.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A98A93B51CF58870004E1DB7 /* GPUImage.framework in Frameworks */,
+				05385CD47D1323E5615A5A06 /* Pods_Videona.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +511,8 @@
 				A95B24481CD8890A00F78AAF /* VideonaTests */,
 				A95B24531CD8890A00F78AAF /* VideonaUITests */,
 				A95B24321CD8890900F78AAF /* Products */,
+				DEE4E2D7D6CEFAB3F3C1BE7A /* Pods */,
+				DE2AB47A74ABD8452EB5657C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -529,6 +538,7 @@
 				A95B24621CD8892B00F78AAF /* StoryBoard */,
 				A95B243B1CD8890900F78AAF /* Assets.xcassets */,
 				A95B24401CD8890900F78AAF /* Info.plist */,
+				A93C52371D06CA11001C2755 /* GoogleService-Info.plist */,
 				A9F251821D05D7AB00D8DC30 /* SocialVideoHelper.h */,
 				A9F251831D05D7AB00D8DC30 /* SocialVideoHelper.m */,
 				A9F251811D05D7AA00D8DC30 /* Videona-Bridging-Header.h */,
@@ -1072,6 +1082,23 @@
 			name = Res;
 			sourceTree = "<group>";
 		};
+		DE2AB47A74ABD8452EB5657C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E695B9819A8E5071F983C35 /* Pods_Videona.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEE4E2D7D6CEFAB3F3C1BE7A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9D1DE05AFBAE78D866AF921E /* Pods-Videona.debug.xcconfig */,
+				AC37DF744460D4CE24EC5226 /* Pods-Videona.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1079,10 +1106,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A95B24591CD8890A00F78AAF /* Build configuration list for PBXNativeTarget "Videona" */;
 			buildPhases = (
+				F55939F519E557CAA5D559F0 /* Check Pods Manifest.lock */,
 				A95B242D1CD8890900F78AAF /* Sources */,
 				A95B242E1CD8890900F78AAF /* Frameworks */,
 				A95B242F1CD8890900F78AAF /* Resources */,
 				A965C7F91CF586E4001E2D39 /* CopyFiles */,
+				75AC14413F902EB7D10DEA13 /* Embed Pods Frameworks */,
+				AEEBF3C285A831D90BF429BE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1238,6 +1268,7 @@
 				A9E066EB1CE4E13800D4E11D /* ShareCell.xib in Resources */,
 				A95B243A1CD8890900F78AAF /* Main.storyboard in Resources */,
 				A9D76B051CF5FB8700F7FB47 /* bokeh.png in Resources */,
+				A93C52381D06CA11001C2755 /* GoogleService-Info.plist in Resources */,
 				A9D257CB1CF835D200A618B0 /* Posterizebw.fsh in Resources */,
 				A9D76B0B1CF5FB8700F7FB47 /* mist.png in Resources */,
 				A9D76B061CF5FB8700F7FB47 /* burn.png in Resources */,
@@ -1265,6 +1296,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		75AC14413F902EB7D10DEA13 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Videona/Pods-Videona-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AEEBF3C285A831D90BF429BE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Videona/Pods-Videona-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F55939F519E557CAA5D559F0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A95B242D1CD8890900F78AAF /* Sources */ = {
@@ -1502,6 +1581,7 @@
 		};
 		A95B245A1CD8890A00F78AAF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D1DE05AFBAE78D866AF921E /* Pods-Videona.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1519,6 +1599,7 @@
 		};
 		A95B245B1CD8890A00F78AAF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC37DF744460D4CE24EC5226 /* Pods-Videona.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

@@ -21,7 +21,7 @@ class SharePresenter:NSObject,SharePresenterInterface{
     
     //LifeCicle
     func viewDidLoad() {
-        controller!.registerNib()
+        controller!.createShareInterface()
         wireframe?.presentPlayerInterface()
         
         playerPresenter?.createVideoPlayer(videoPath)
@@ -58,5 +58,9 @@ class SharePresenter:NSObject,SharePresenterInterface{
     }
     func pushShare(socialNetwork: String) {
         interactor?.shareVideo(socialNetwork, videoPath: videoPath)
+    }
+    
+    func postToYoutube(token:String){
+        interactor!.postToYoutube(token)
     }
 }

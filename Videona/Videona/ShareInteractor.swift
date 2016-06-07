@@ -12,6 +12,7 @@ import UIKit
 class ShareInteractor: NSObject,ShareInteractorInterface {
     
     var moviePath:String = ""
+    var shareYoutubeInteractor:ShareYoutubeInteractor?
     
     func setShareMoviePath(moviePath: String) {
         self.moviePath = moviePath
@@ -73,9 +74,20 @@ class ShareInteractor: NSObject,ShareInteractorInterface {
             ShareWhatsappInteractor(moviePath: videoPath,socialName: socialNetworkTitle).share()
         case "Youtube":
             print("Share video on Youtube")
+            dispatch_async(dispatch_get_main_queue(), {
+                // update some UI
+                self.shareYoutubeInteractor =  ShareYoutubeInteractor(moviePath: videoPath,socialName: socialNetworkTitle)
+                self.shareYoutubeInteractor!.share()
+            });
         default:
             print("No Social network")
             
         }
+    }
+    
+    func postToYoutube(token:String){
+        shareYoutubeInteractor?.postVideoToYouTube(token,callback: { (result) -> () in
+            Utils().debugLog("result \(result)")
+        })
     }
 }

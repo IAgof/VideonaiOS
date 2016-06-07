@@ -18,4 +18,5 @@ protocol SharePresenterInterface {
     func setListImageData(imageArray:Array<UIImage>)
     func setVideoExportedPath(path:String)
     func pushShare(socialNetwork:String)
+    func postToYoutube(token:String)
 }

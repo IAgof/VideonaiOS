@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ShareSocialNetworkInteractor{
+class ShareSocialNetworkInteractor:NSObject{
     var moviePath:String = ""
     var socialName:String = ""
     var alertController:UIAlertController?

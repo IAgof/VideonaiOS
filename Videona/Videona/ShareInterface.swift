@@ -11,7 +11,7 @@ import UIKit
 
 protocol ShareInterface {
     
-    func registerNib()
+    func createShareInterface()
     func setTitleList(titleList: Array<String>)
     func setImageList(imageList: Array<UIImage>)
     func setImagePressedList(imageList: Array<UIImage>)

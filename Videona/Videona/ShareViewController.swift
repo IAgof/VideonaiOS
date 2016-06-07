@@ -11,7 +11,8 @@ import Foundation
 
 class ShareViewController: VideonaController,ShareInterface ,
 UINavigationBarDelegate ,
-UITableViewDelegate, UITableViewDataSource{
+UITableViewDelegate, UITableViewDataSource,
+GIDSignInUIDelegate,GIDSignInDelegate{
     
     //MARK: - VIPER
     var eventHandler: SharePresenterInterface?
@@ -25,7 +26,8 @@ UITableViewDelegate, UITableViewDataSource{
     var listImages = Array<UIImage>()
     var listImagesPressed = Array<UIImage>()
     var listTitles = Array<String>()
-    
+    var token:String!
+
     var exportPath: String? {
         didSet {
             eventHandler?.setVideoExportedPath(exportPath!)
@@ -44,9 +46,13 @@ UITableViewDelegate, UITableViewDataSource{
     }
     
     //MARK: - View Init
-    func registerNib(){
+    func createShareInterface(){
         let nib = UINib.init(nibName: shareNibName, bundle: nil)
         shareTableView.registerNib(nib, forCellReuseIdentifier: reuseIdentifierCell)
+        
+        //Google Sign in
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
     }
     
     func setTitleList(titleList: Array<String>) {
@@ -85,5 +91,46 @@ UITableViewDelegate, UITableViewDataSource{
         print("You selected in position #\(indexPath.item)\n filter name: \(listTitles[indexPath.item])")
         tableView.cellForRowAtIndexPath(indexPath)?.selected = false
         eventHandler?.pushShare(listTitles[indexPath.item])
+    }
+    
+    //MARK: - Google methods
+    
+    // Stop the UIActivityIndicatorView animation that was started when the user
+    // pressed the Sign In button
+    func signInWillDispatch(signIn: GIDSignIn!, error: NSError!) {
+        //        myActivityIndicator.stopAnimating()
+    }
+    
+    // Present a view that prompts the user to sign in with Google
+    func signIn(signIn: GIDSignIn!,
+                presentViewController viewController: UIViewController!) {
+        
+        self.presentViewController(viewController, animated: false, completion: nil)
+        
+        Utils().debugLog("SignIn")
+    }
+    
+    // Dismiss the "Sign in with Google" view
+    func signIn(signIn: GIDSignIn!,
+                dismissViewController viewController: UIViewController!) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        Utils().debugLog("SignIn Dissmiss")
+        
+    }
+    
+    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!, withError error: NSError!) {
+        Utils().debugLog("Google Sign In get user token")
+        
+        //Error control
+        if (error == nil) {
+            token = user.authentication.accessToken
+            
+            Utils().debugLog("Google Sign In get user token: \(token))")
+            
+            eventHandler!.postToYoutube(token)
+        } else {
+            Utils().debugLog("\(error.localizedDescription)")
+        }
     }
 }
