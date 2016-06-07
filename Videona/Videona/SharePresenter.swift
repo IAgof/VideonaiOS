@@ -30,6 +30,7 @@ class SharePresenter:NSObject,SharePresenterInterface{
     
     func setVideoExportedPath(path: String) {
         self.videoPath = path
+        
     }
     
     func pushBack() {
@@ -56,6 +57,6 @@ class SharePresenter:NSObject,SharePresenterInterface{
         controller?.setImagePressedList(imageArray)
     }
     func pushShare(socialNetwork: String) {
-        interactor?.shareVideo(socialNetwork, videoPath: "")
+        interactor?.shareVideo(socialNetwork, videoPath: videoPath)
     }
 }

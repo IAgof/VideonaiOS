@@ -135,6 +135,8 @@
 		A9F251791D05CDB600D8DC30 /* ShareFacebookInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F251781D05CDB600D8DC30 /* ShareFacebookInteractor.swift */; };
 		A9F2517B1D05CDC800D8DC30 /* ShareTwitterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2517A1D05CDC800D8DC30 /* ShareTwitterInteractor.swift */; };
 		A9F2517D1D05CDD900D8DC30 /* ShareYoutubeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2517C1D05CDD900D8DC30 /* ShareYoutubeInteractor.swift */; };
+		A9F251801D05D57800D8DC30 /* ShareSocialNetworkInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2517F1D05D57800D8DC30 /* ShareSocialNetworkInteractor.swift */; };
+		A9F251841D05D7AB00D8DC30 /* SocialVideoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F251831D05D7AB00D8DC30 /* SocialVideoHelper.m */; };
 		A9F9C20E1CF4665000AB310C /* VideonaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9C20D1CF4665000AB310C /* VideonaController.swift */; };
 		A9F9C2101CF4857700AB310C /* Logo_Splash_Horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F9C20F1CF4857700AB310C /* Logo_Splash_Horizontal.png */; };
 		A9F9C2121CF485C600AB310C /* Logo_Splash_Vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F9C2111CF485C600AB310C /* Logo_Splash_Vertical.png */; };
@@ -326,6 +328,10 @@
 		A9F251781D05CDB600D8DC30 /* ShareFacebookInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareFacebookInteractor.swift; sourceTree = "<group>"; };
 		A9F2517A1D05CDC800D8DC30 /* ShareTwitterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareTwitterInteractor.swift; sourceTree = "<group>"; };
 		A9F2517C1D05CDD900D8DC30 /* ShareYoutubeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareYoutubeInteractor.swift; sourceTree = "<group>"; };
+		A9F2517F1D05D57800D8DC30 /* ShareSocialNetworkInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareSocialNetworkInteractor.swift; sourceTree = "<group>"; };
+		A9F251811D05D7AA00D8DC30 /* Videona-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Videona-Bridging-Header.h"; sourceTree = "<group>"; };
+		A9F251821D05D7AB00D8DC30 /* SocialVideoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialVideoHelper.h; sourceTree = "<group>"; };
+		A9F251831D05D7AB00D8DC30 /* SocialVideoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialVideoHelper.m; sourceTree = "<group>"; };
 		A9F9C20D1CF4665000AB310C /* VideonaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideonaController.swift; sourceTree = "<group>"; };
 		A9F9C20F1CF4857700AB310C /* Logo_Splash_Horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_Splash_Horizontal.png; sourceTree = "<group>"; };
 		A9F9C2111CF485C600AB310C /* Logo_Splash_Vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_Splash_Vertical.png; sourceTree = "<group>"; };
@@ -523,6 +529,9 @@
 				A95B24621CD8892B00F78AAF /* StoryBoard */,
 				A95B243B1CD8890900F78AAF /* Assets.xcassets */,
 				A95B24401CD8890900F78AAF /* Info.plist */,
+				A9F251821D05D7AB00D8DC30 /* SocialVideoHelper.h */,
+				A9F251831D05D7AB00D8DC30 /* SocialVideoHelper.m */,
+				A9F251811D05D7AA00D8DC30 /* Videona-Bridging-Header.h */,
 			);
 			path = Videona;
 			sourceTree = "<group>";
@@ -1023,6 +1032,7 @@
 		A9F2517E1D05CF7200D8DC30 /* ShareSocialNetworksInteractor */ = {
 			isa = PBXGroup;
 			children = (
+				A9F2517F1D05D57800D8DC30 /* ShareSocialNetworkInteractor.swift */,
 				A9F251721D05CD8E00D8DC30 /* ShareWhatsappInteractor.swift */,
 				A9F2517C1D05CDD900D8DC30 /* ShareYoutubeInteractor.swift */,
 				A9F251761D05CDA900D8DC30 /* ShareInstagramInteractor.swift */,
@@ -1293,6 +1303,7 @@
 				A98A93BD1CF59155004E1DB7 /* ChangeFilterInteractor.swift in Sources */,
 				A95D3BF01CEB7356001F2272 /* PlayerInteractorInterface.swift in Sources */,
 				A94301631CE5CF3900DC0DF8 /* PlayerView.swift in Sources */,
+				A9F251841D05D7AB00D8DC30 /* SocialVideoHelper.m in Sources */,
 				A9E066DB1CE4B4EE00D4E11D /* OverlayEffect.swift in Sources */,
 				A95B247A1CD8B96E00F78AAF /* RootWireframe.swift in Sources */,
 				A98A93BB1CF5903C004E1DB7 /* AddFilterInteractor.swift in Sources */,
@@ -1314,6 +1325,7 @@
 				A971F5C01CFC8E1B004DC50D /* ExportedAlbum.swift in Sources */,
 				A9686F951CFF129C00983540 /* AVResolutionParse.swift in Sources */,
 				A9B118191CE378C2001A1177 /* SharePresenterInterface.swift in Sources */,
+				A9F251801D05D57800D8DC30 /* ShareSocialNetworkInteractor.swift in Sources */,
 				A96732FE1CE6309C007BE340 /* SettingsInteractor.swift in Sources */,
 				A965BDBF1CDA076C002579CA /* IntroWireframe.swift in Sources */,
 				A95B24351CD8890900F78AAF /* AppDelegate.swift in Sources */,
@@ -1492,6 +1504,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = Videona/Info.plist;
@@ -1499,6 +1512,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.videona.videona;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e0f5a145-4063-4cf8-a2fe-042239f6cdb8";
+				SWIFT_OBJC_BRIDGING_HEADER = "Videona/Videona-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1506,6 +1521,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = Videona/Info.plist;
@@ -1513,6 +1529,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.videona.videona;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e0f5a145-4063-4cf8-a2fe-042239f6cdb8";
+				SWIFT_OBJC_BRIDGING_HEADER = "Videona/Videona-Bridging-Header.h";
 			};
 			name = Release;
 		};

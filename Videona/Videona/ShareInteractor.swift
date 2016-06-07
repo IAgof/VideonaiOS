@@ -11,6 +11,12 @@ import UIKit
 
 class ShareInteractor: NSObject,ShareInteractorInterface {
     
+    var moviePath:String = ""
+    
+    func setShareMoviePath(moviePath: String) {
+        self.moviePath = moviePath
+    }
+    
     func findSocialNetworks()->(socialNetworkTitleArray:Array<String>, socialNetworkImageArray:Array<UIImage>,socialNetworkImagePressedArray:Array<UIImage>){
         let socialNetworks = SocialNetworkProvider().getSocialNetworks()
         
@@ -52,16 +58,19 @@ class ShareInteractor: NSObject,ShareInteractorInterface {
     }
     
     func shareVideo(socialNetworkTitle: String, videoPath: String) {
+        
         switch socialNetworkTitle {
         case "Facebook":
             print("Share video on facebook")
         case "Instagram":
             print("Share video on Instagram")
-            ShareInstagramInteractor().share()
+            ShareInstagramInteractor(moviePath: videoPath,socialName: socialNetworkTitle).share()
         case "Twitter":
             print("Share video on Twitter")
+            ShareTwitterInteractor(moviePath: videoPath,socialName: socialNetworkTitle).share()
         case "Whatsapp":
             print("Share video on Whatsapp")
+            ShareWhatsappInteractor(moviePath: videoPath,socialName: socialNetworkTitle).share()
         case "Youtube":
             print("Share video on Youtube")
         default:

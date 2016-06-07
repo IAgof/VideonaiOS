@@ -9,7 +9,7 @@
 import Foundation
 import Photos
 
-class ShareInstagramInteractor:NSObject{
+class ShareInstagramInteractor:ShareSocialNetworkInteractor{
    
     func share(){
         //Get last videoAsset on PhotoLibrary

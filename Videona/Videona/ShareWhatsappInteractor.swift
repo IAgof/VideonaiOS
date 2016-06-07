@@ -7,3 +7,26 @@
 //
 
 import Foundation
+import Social
+
+class ShareWhatsappInteractor: ShareSocialNetworkInteractor {
+
+    var documentationInteractionController:UIDocumentInteractionController!
+
+    func share(){
+        
+        //NSURL(string: urlString!) {
+        if UIApplication.sharedApplication().canOpenURL(NSURL(string: "whatsapp://app")!) {
+            
+            let movie:NSURL = NSURL.fileURLWithPath(moviePath)
+            
+            documentationInteractionController = UIDocumentInteractionController.init(URL: movie)
+            
+            documentationInteractionController.UTI = "net.whatsapp.movie"
+            
+            documentationInteractionController.presentOpenInMenuFromRect(CGRectZero, inView: self.getViewOnTop(), animated: true)
+        }else{
+            self.setAlertCompletionMessageOnTopView("No Whatsapp installed")
+        }
+    }
+}
