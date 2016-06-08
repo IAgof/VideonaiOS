@@ -21,6 +21,7 @@ class SettingsViewController: VideonaController,SettingsInterface ,
     //MARK: - List variables
     var section = Array<String>()
     var items = Array<Array<String>>()
+    var subItems = Array<Array<String>>()
     
     //MARK: - Outlets
     @IBOutlet weak var settingsTableView: UITableView!
@@ -45,11 +46,6 @@ class SettingsViewController: VideonaController,SettingsInterface ,
     
     func setSectionList(section: Array<String>) {
         self.section = section
-    }
-    
-    //MARK: - UITableview delegate
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //cell push
     }
     
     //MARK: - UITableview datasource
@@ -83,5 +79,36 @@ class SettingsViewController: VideonaController,SettingsInterface ,
         cell.detailTextLabel?.text = "detailText"
         
         return cell
+    }
+    
+    //MARK: - UITableview delegate
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //cell push
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        
+        let settingsOption = items[indexPath.section][indexPath.item]
+        print("Settings option #\(indexPath.item)\n filter name: \(settingsOption)!")
+        eventHandler?.itemListSelected(settingsOption)
+    }
+    
+    
+    //MARK: - AlertViewController
+    func createAlertViewWithInputText(title:String){
+        let saveString = "Save"
+        let alertController = UIAlertController(title: title, message: "Insert your \(title.lowercaseString) here", preferredStyle: .Alert)
+        
+        alertController.addTextFieldWithConfigurationHandler { (textField : UITextField!) -> Void in
+            textField.placeholder = title
+        }
+        
+        let saveAction = UIAlertAction(title: saveString, style: .Default, handler: {alert -> Void in
+            let firstTextFieldText = (alertController.textFields![0] as UITextField).text
+            print("El \(title) introducido para mandar al presenter es: \(firstTextFieldText!)")
+            self.eventHandler?.getInputFromAlert(title, input: firstTextFieldText!)
+        })
+        
+        alertController.addAction(saveAction)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
 }

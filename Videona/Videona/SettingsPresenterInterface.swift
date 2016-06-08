@@ -12,4 +12,6 @@ protocol SettingsPresenterInterface {
     
     func pushBack()
     func viewDidLoad()
+    func itemListSelected(itemTitle:String)
+    func getInputFromAlert(settingsTitle:String,input:String)
 }

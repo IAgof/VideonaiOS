@@ -9,9 +9,9 @@
 import Foundation
 
 class SettingsContent:NSObject{
-    var section:String?
-    var title:String?
-    var subTitle:String?
+    var section:String!
+    var title:String!
+    var subTitle:String!
     var priority:Int!
     
     init(title:String, subTitle:String,section:String,priority:Int) {

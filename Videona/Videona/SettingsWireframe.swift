@@ -43,7 +43,25 @@ class SettingsWireframe : NSObject {
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         return storyboard
     }
+    
     func goPrevController(){
         settingsViewController?.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    func goToAppleStoreURL(url:NSURL){
+        if UIApplication.sharedApplication().canOpenURL(url){
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
+    
+    func goToTwitterUserPage(user:String){
+        let twitterURL = NSURL(string: "twitter://user?screen_name=\(user)")
+        
+        if UIApplication.sharedApplication().canOpenURL(twitterURL!){
+            UIApplication.sharedApplication().openURL(twitterURL!)
+        }else{
+            let twitterBrowserURL = NSURL(string: "http://www.twitter.com/\(user)")
+            UIApplication.sharedApplication().openURL(twitterBrowserURL!)
+        }
     }
 }

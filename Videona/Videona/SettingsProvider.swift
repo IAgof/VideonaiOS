@@ -7,44 +7,147 @@
 //
 
 import Foundation
+import AVFoundation
 
 class SettingsProvider:NSObject{
+
+    struct userInfo {
+        var name:String
+        var userName:String
+        var email:String
+        init(){
+            let defaults = NSUserDefaults.standardUserDefaults()
+
+            let nameSaved = defaults.stringForKey("settingsName")
+            if (nameSaved != nil){
+                name = nameSaved!
+            }else{
+                name = ""
+            }
+            
+            let userNameSaved = defaults.stringForKey("settingsUserName")
+            if (userNameSaved != nil){
+                userName = userNameSaved!
+            }else{
+                userName = ""
+            }
+            
+            let emailSaved = defaults.stringForKey("settingsEmail")
+            if (emailSaved != nil){
+                email = emailSaved!
+            }else{
+                email = ""
+            }
+        }
+    }
     
+    struct cameraSettings {
+        var resolution:String
+        var quality:String
+        
+        init(){
+            let defaults = NSUserDefaults.standardUserDefaults()
+
+            let resolutionSaved = defaults.stringForKey("settingsResolution")
+            if (resolutionSaved != nil){
+                resolution = resolutionSaved!
+            }else{
+                resolution = AVCaptureSessionPresetMedium
+            }
+            
+            let qualitySaved = defaults.stringForKey("settingsQuality")
+            if (qualitySaved != nil){
+                quality = qualitySaved!
+            }else{
+                quality = ""
+            }
+        }
+    }
     func getSettings() ->Array<SettingsContent>{
         var settings = Array<SettingsContent>()
+        let user = userInfo()
+        let camera = cameraSettings()
         
-        settings.append( SettingsContent(title: "Descarga Kamarada",section: "Avanzado",priority: 0))
-        settings.append( SettingsContent(title: "Comparte Videona",section: "Avanzado",priority: 0))
-        settings.append( SettingsContent(title: "Siguenos en Twitter",section: "Avanzado",priority: 0))
-        settings.append( SettingsContent(title: "Prueba Videona beta", section: "Avanzado",priority: 0))
+        settings.append( SettingsContent(title: getStringForType(.DownloadKamarada),section: "Avanzado",priority: 0))
+        settings.append( SettingsContent(title: getStringForType(.ShareVideona),section: "Avanzado",priority: 0))
+        settings.append( SettingsContent(title: getStringForType(.FollowUsOnTwitter),section: "Avanzado",priority: 0))
 
-        settings.append( SettingsContent(title: "Nombre", section: "Mi cuenta",priority: 1))
-        settings.append( SettingsContent(title: "Nombre de usuario", section: "Mi cuenta",priority: 1))
-        settings.append( SettingsContent(title: "email", section: "Mi cuenta",priority: 1))
+        settings.append( SettingsContent(title: getStringForType(.NameAccount),subTitle: user.name, section: "Mi cuenta",priority: 1))
+        settings.append( SettingsContent(title: getStringForType(.UserNameAccount),subTitle: user.userName, section: "Mi cuenta",priority: 1))
+        settings.append( SettingsContent(title: getStringForType(.emailAccount),subTitle: user.email, section: "Mi cuenta",priority: 1))
         
-        settings.append( SettingsContent(title: "Resolucion", section: "Camara",priority: 2))
-        settings.append( SettingsContent(title: "Calidad", section: "Camara",priority: 2))
+        settings.append( SettingsContent(title: getStringForType(.Resolution),subTitle: camera.resolution, section: "Camara",priority: 2))
+        settings.append( SettingsContent(title: getStringForType(.Quality),subTitle: camera.quality, section: "Camara",priority: 2))
         
-        settings.append( SettingsContent(title: "Sobre nosotros", section: "Más información",priority: 3))
-        settings.append( SettingsContent(title: "Politica de privacidad", section: "Más información",priority: 3))
-        settings.append( SettingsContent(title: "Condiciones de servicio", section: "Más información",priority: 3))
-        settings.append( SettingsContent(title: "Licencias", section: "Más información",priority: 3))
-        settings.append( SettingsContent(title: "Aviso legal", section: "Más información",priority: 3))
+        settings.append( SettingsContent(title: getStringForType(.AboutUs), section: "Más información",priority: 3))
+        settings.append( SettingsContent(title: getStringForType(.PrivacyPolicy), section: "Más información",priority: 3))
+        settings.append( SettingsContent(title: getStringForType(.ServiceConditions), section: "Más información",priority: 3))
+        settings.append( SettingsContent(title: getStringForType(.Licenses), section: "Más información",priority: 3))
+        settings.append( SettingsContent(title: getStringForType(.LegalAdvice), section: "Más información",priority: 3))
         
-        settings.append( SettingsContent(title: "Salir", section: "Acciones de cuenta",priority: 4))
+        settings.append( SettingsContent(title: getStringForType(.Exit), section: "Acciones de cuenta",priority: 4))
 
         return settings
     }
     
-//    func getSections()->Array<String>{
-//        var sections  = Array<String>()
-//        
-//        sections.append("Avanzado")
-//        sections.append("Cuenta")
-//        sections.append("Camara")
-//        sections.append("Mas informacion")
-//        sections.append("Condiciones de cuenta")
-//        
-//        return sections
-//    }
+    func getStringForType(type:SettingsType)->String{
+        switch type {
+        case .DownloadKamarada:
+            return "Descarga Kamarada"
+        case .ShareVideona:
+            return "Comparte Videona"
+        case .FollowUsOnTwitter:
+            return "Siguenos en Twitter"
+       
+        case .NameAccount:
+            return "Nombre"
+        case .UserNameAccount:
+            return "Nombre de usuario"
+        case .emailAccount:
+            return "email"
+        
+        case .Resolution:
+            return "Resolucion"
+        case .Quality:
+            return "Calidad"
+        
+        case .AboutUs:
+            return "Sobre nosotros"
+        case .PrivacyPolicy:
+            return "Politica de privacidad"
+        case .ServiceConditions:
+            return "Condiciones de servicio"
+        case .Licenses:
+            return "Licencias"
+        case .LegalAdvice:
+            return "Aviso legal"
+
+        case .Exit:
+            return ""
+
+        default:
+            return ""
+        }
+    }
+}
+
+enum SettingsType {
+    case DownloadKamarada
+    case ShareVideona
+    case FollowUsOnTwitter
+
+    case NameAccount
+    case UserNameAccount
+    case emailAccount
+    
+    case Resolution
+    case Quality
+    
+    case AboutUs
+    case PrivacyPolicy
+    case ServiceConditions
+    case Licenses
+    case LegalAdvice
+    
+    case Exit
 }

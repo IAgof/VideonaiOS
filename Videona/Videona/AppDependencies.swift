@@ -61,6 +61,8 @@ class AppDependencies {
         settingsWireframe.settingsPresenter = settingsPresenter
         settingsWireframe.rootWireframe = rootWireframe
         
+        settingsInteractor.presenter = settingsPresenter
+        
         //SHARE MODULE
         sharePresenter.wireframe = shareWireframe
         sharePresenter.recordWireframe = recordWireframe
