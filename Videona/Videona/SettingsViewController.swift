@@ -20,8 +20,7 @@ class SettingsViewController: VideonaController,SettingsInterface ,
     
     //MARK: - List variables
     var section = Array<String>()
-    var items = Array<Array<String>>()
-    var subItems = Array<Array<String>>()
+    var items = Array<Array<Array<String>>>()
     
     //MARK: - Outlets
     @IBOutlet weak var settingsTableView: UITableView!
@@ -40,8 +39,8 @@ class SettingsViewController: VideonaController,SettingsInterface ,
         eventHandler?.pushBack()
     }
     
-    func setTitleList(titleList: Array<Array<String>>) {
-        self.items = titleList
+    func setListTitleAndSubtitleData(titleAndSubtitleList: Array<Array<Array<String>>>) {
+        self.items = titleAndSubtitleList
     }
     
     func setSectionList(section: Array<String>) {
@@ -64,21 +63,33 @@ class SettingsViewController: VideonaController,SettingsInterface ,
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         
-        return self.items[section].count
+        return self.items[section][0].count
         
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifierCell, forIndexPath: indexPath)
-        
+        var cell:UITableViewCell? =
+            tableView.dequeueReusableCellWithIdentifier(reuseIdentifierCell)
+        if (cell != nil)
+        {
+            cell = UITableViewCell(style: .Value1,
+                                   reuseIdentifier: reuseIdentifierCell)
+        }
         // Configure the cell...
         
-        cell.textLabel?.text = self.items[indexPath.section][indexPath.row]
-
-//        cell.textLabel?.text = items[indexPath.item] as! String
-        cell.detailTextLabel?.text = "detailText"
+        let title = self.items[indexPath.section][0][indexPath.row]
+        let subTitle = self.items[indexPath.section][1][indexPath.row]
         
-        return cell
+        cell!.textLabel?.text = title
+        
+        if subTitle != ""{
+            cell!.detailTextLabel?.text = self.items[indexPath.section][1][indexPath.row]
+            print("\n Title equals = \(title) \n Subtitle equals = \(subTitle)")
+        }
+        cell!.detailTextLabel?.adjustsFontSizeToFitWidth
+        cell!.textLabel?.adjustsFontSizeToFitWidth
+        
+        return cell!
     }
     
     //MARK: - UITableview delegate
@@ -86,7 +97,7 @@ class SettingsViewController: VideonaController,SettingsInterface ,
         //cell push
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         
-        let settingsOption = items[indexPath.section][indexPath.item]
+        let settingsOption = items[indexPath.section][0][indexPath.item]
         print("Settings option #\(indexPath.item)\n filter name: \(settingsOption)!")
         eventHandler?.itemListSelected(settingsOption)
     }

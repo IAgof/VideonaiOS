@@ -241,7 +241,6 @@ class CameraInteractor:CameraRecorderDelegate{
             
             
             if (device.focusPointOfInterestSupported && device.isFocusModeSupported(AVCaptureFocusMode.AutoFocus)) {
-                let error:NSError?
                 device.focusPointOfInterest = pointOfInterest
                 device.focusMode = AVCaptureFocusMode.AutoFocus
                 

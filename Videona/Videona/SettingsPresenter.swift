@@ -30,12 +30,12 @@ class SettingsPresenter:NSObject,SettingsPresenterInterface{
     func getListData (){
         let settings = interactor?.findSettings()
         
-        self.setListTitleData((settings?.1)!)
+        self.setListTitleAndSubtitleData((settings?.1)!)
         self.setSectionListData((settings?.0)!)
     }
     
-    func setListTitleData(titleArray:Array<Array<String>>){
-        controller?.setTitleList(titleArray)
+    func setListTitleAndSubtitleData(titleArray:Array<Array<Array<String>>>){
+        controller?.setListTitleAndSubtitleData(titleArray)
     }
     
     func setSectionListData(section:Array<String>){

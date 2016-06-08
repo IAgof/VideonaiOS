@@ -11,8 +11,9 @@ import UIKit
 
 class SettingsInteractor: NSObject,SettingsInteractorInterface {
     var orderArray = Dictionary<Int,String>()
+    var presenter: SettingsPresenterInterface?
     
-    func findSettings()->(Array<String>,Array<Array<String>>){
+    func findSettings()->(Array<String>,Array<Array<Array<String>>>){
     
         let settings = SettingsProvider().getSettings()
         
@@ -21,29 +22,45 @@ class SettingsInteractor: NSObject,SettingsInteractorInterface {
         return settingsContent
     }
     
-    func setSettingsContent(settingsContentArray:Array<SettingsContent>)->(Array<String>,Array<Array<String>>){
+    func setSettingsContent(settingsContentObjectArray:Array<SettingsContent>)->(Array<String>,Array<Array<Array<String>>>){
         
-        var settingsDictionary = Dictionary<String,Array<String>>()
+        var settingsDictionary = Dictionary<String,Array<Array<String>>>()
         
-        orderArray = self.getOrderArrays(settingsContentArray)
+        //Get the order of the arrays by one Dictionary to set up later.
+        orderArray = self.getOrderDictionaryByPriority(settingsContentObjectArray)
         
-        var items = Array<String>()
+        var title = Array<String>()
+        var subTitles = Array<String>()
+        
+        var compArrayTitleAndSubtitle = Array<Array<String>>()
 
-        for settingsItem in settingsContentArray{
+        for settingsItem in settingsContentObjectArray{
             let section = settingsItem.getSection()
             
             if settingsDictionary.indexForKey(section) == nil{//First insertion
-                items = Array<String>()
-                items.append(settingsItem.getSettingsTitle())
-                settingsDictionary[section] = items
+                title = Array<String>()
+                title.append(settingsItem.getSettingsTitle())
+                
+                subTitles = Array<String>()
+                subTitles.append(settingsItem.getSettingsSubtitle())
+                
+                compArrayTitleAndSubtitle = Array<Array<String>>()
+                compArrayTitleAndSubtitle.append(title)
+                compArrayTitleAndSubtitle.append(subTitles)
+                
+                settingsDictionary[section] = compArrayTitleAndSubtitle
+                
             }else{//add objects to different sections
                 var auxArray = settingsDictionary[section]
-                auxArray?.append(settingsItem.getSettingsTitle())
+                
+                auxArray?[0].append(settingsItem.getSettingsTitle())
+                auxArray?[1].append(settingsItem.getSettingsSubtitle())
+                
                 settingsDictionary[section] = auxArray
             }
         }
         
-        print("setSettingsContent: -\n \(settingsDictionary)")
+//        print("setSettingsContent: -\n \(settingsDictionary)")
         
         let returnSectionsAndTitles = self.setSectionsAndTitles(settingsDictionary)
         
@@ -51,9 +68,9 @@ class SettingsInteractor: NSObject,SettingsInteractorInterface {
         return returnSectionsAndTitles
     }
     
-    func setSectionsAndTitles(dictionary: Dictionary<String,Array<String>>)->(Array<String>,Array<Array<String>>){
+    func setSectionsAndTitles(dictionary: Dictionary<String,Array<Array<String>>>)->(Array<String>,Array<Array<Array<String>>>){
         var sections = Array<String>()
-        var titles = Array<Array<String>>()
+        var titles = Array<Array<Array<String>>>()
 
 
         for var i = 0; i <= orderArray.count; i += 1 {
@@ -64,11 +81,11 @@ class SettingsInteractor: NSObject,SettingsInteractorInterface {
                 }
             }
         }
-        print("setSections: -\n \(sections)")
+//        print("setSections: -\n \(sections)")
         return (sections,titles)
     }
     
-    func getOrderArrays(settingsContent:Array<SettingsContent>)->Dictionary<Int,String>{
+    func getOrderDictionaryByPriority(settingsContent:Array<SettingsContent>)->Dictionary<Int,String>{
         var orderByKey = Dictionary<Int,String>()
         
         var prevSection = ""
@@ -80,7 +97,7 @@ class SettingsInteractor: NSObject,SettingsInteractorInterface {
             }
         }
         
-//        print("getOrderArrays\n \(orderByKey)")
+//        print("getOrderDictionaryByPriority\n \(orderByKey)")
         return orderByKey
     }
     

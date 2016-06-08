@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SettingsInteractorInterface {
-    func findSettings()->(Array<String>,Array<Array<String>>)
+    func findSettings()->(Array<String>,Array<Array<Array<String>>>)
 }

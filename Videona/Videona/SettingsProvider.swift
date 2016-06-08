@@ -104,7 +104,7 @@ class SettingsProvider:NSObject{
         case .UserNameAccount:
             return "Nombre de usuario"
         case .emailAccount:
-            return "email"
+            return "Email"
         
         case .Resolution:
             return "Resolucion"
@@ -123,10 +123,7 @@ class SettingsProvider:NSObject{
             return "Aviso legal"
 
         case .Exit:
-            return ""
-
-        default:
-            return ""
+            return "Exit"
         }
     }
 }

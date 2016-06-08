@@ -12,7 +12,7 @@ import UIKit
 protocol SettingsInterface {
     
     
-    func setTitleList(titleList: Array<Array<String>>)
+    func setListTitleAndSubtitleData(titleList: Array<Array<Array<String>>>)
     func setSectionList(section: Array<String>)
     func registerClass()
 }
