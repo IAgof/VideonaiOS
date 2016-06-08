@@ -27,7 +27,9 @@ class CameraInteractor:CameraRecorderDelegate{
     var waterMark:GPUImagePicture = GPUImagePicture()
     var maskFilterToRecord = GPUImageFilter()
         
-    let resolution = AVCaptureSessionPreset1280x720
+    var resolution = AVCaptureSessionPresetHigh
+    
+    var resolutionStruct:Resolution = Resolution.init(AVResolution: AVCaptureSessionPresetHigh)
     
     var isRearCamera:Bool = false
     
@@ -44,6 +46,7 @@ class CameraInteractor:CameraRecorderDelegate{
     //MARK: - Init
     init(display:GPUImageView, cameraDelegate: CameraInteractorDelegate){
         self.cameraDelegate = cameraDelegate
+
         videoCamera = GPUImageVideoCamera(sessionPreset: resolution, cameraPosition: .Back)
         videoCamera.outputImageOrientation = .LandscapeLeft
         displayView = display
@@ -81,10 +84,12 @@ class CameraInteractor:CameraRecorderDelegate{
     }
     
     func rotateCamera(){
-        self.videoCamera.rotateCamera()
         
         if self.isRearCamera {
+            self.videoCamera.rotateCamera()
+
             self.isRearCamera = false
+            setResolution()
             cameraDelegate.cameraRear()
         }else{
             self.isRearCamera = true
@@ -92,6 +97,8 @@ class CameraInteractor:CameraRecorderDelegate{
             if(FlashInteractor().isFlashTurnOn()){
                 cameraDelegate.flashOff()
             }
+            setFrontResolutionForced()
+            self.videoCamera.rotateCamera()
         }
     }
     
@@ -277,5 +284,20 @@ class CameraInteractor:CameraRecorderDelegate{
         }catch _{
             
         }
+    }
+    
+    func setResolution(){
+        if isRearCamera{
+            
+        }
+        
+        if let getFromDefaultResolution = NSUserDefaults.standardUserDefaults().stringForKey("settingsResolution"){
+            resolution = getFromDefaultResolution
+        }
+        videoCamera.captureSessionPreset = resolution
+    }
+    
+    func setFrontResolutionForced(){
+        videoCamera.captureSessionPreset = AVCaptureSessionPreset1280x720
     }
 }

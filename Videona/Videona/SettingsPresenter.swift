@@ -67,7 +67,8 @@ class SettingsPresenter:NSObject,SettingsPresenterInterface{
             break
         
         case SettingsProvider().getStringForType(SettingsType.Resolution):
-            
+            let resolutions = interactor?.getAVResolutions()
+            controller?.createActionSheetWithOptions(SettingsProvider().getStringForType(SettingsType.Resolution), options: resolutions!)
             break
         case SettingsProvider().getStringForType(SettingsType.Quality):
             
@@ -120,6 +121,14 @@ class SettingsPresenter:NSObject,SettingsPresenterInterface{
             interactor?.saveEmailOnDefaults(input)
             break
         
+        case SettingsProvider().getStringForType(SettingsType.Resolution):
+            interactor?.saveResolutionOnDefaults(input)
+
+            break
+        case SettingsProvider().getStringForType(SettingsType.Quality):
+            
+            break
+
         default:
             
             break

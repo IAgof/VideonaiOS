@@ -137,6 +137,27 @@ class SettingsViewController: VideonaController,SettingsInterface ,
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
+    func createActionSheetWithOptions(title:String,options:Array<String>){
+        let cancelString = "Cancel"
+        let title = title
+        
+        let alertController = UIAlertController(title: title, message: nil, preferredStyle: .ActionSheet)
+        
+        for option in options {
+            let optionAction = UIAlertAction(title: option, style: .Default, handler: {alert -> Void in
+                
+                self.eventHandler?.getInputFromAlert(title, input: option)
+                print("El \(title) introducido para mandar al presenter es: \(option)")
+            })
+            alertController.addAction(optionAction)
+        }
+        
+        let optionAction = UIAlertAction(title: cancelString, style: .Cancel, handler: nil)
+        alertController.addAction(optionAction)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
     func reloadTableData() {
         self.settingsTableView.reloadData()
     }

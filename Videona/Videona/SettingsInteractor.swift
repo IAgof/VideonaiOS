@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 class SettingsInteractor: NSObject,SettingsInteractorInterface {
     var orderArray = Dictionary<Int,String>()
@@ -128,5 +129,22 @@ class SettingsInteractor: NSObject,SettingsInteractorInterface {
         
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluateWithObject(email)
+    }
+    
+    //MARK: - AVResolution posible inputs
+    func getAVResolutions()->Array<String>{
+        let resolutions = [AVCaptureSessionPreset352x288,
+                           AVCaptureSessionPreset640x480,
+                           AVCaptureSessionPreset1280x720,
+                           AVCaptureSessionPreset1920x1080,
+                           AVCaptureSessionPreset3840x2160,
+                           AVCaptureSessionPresetMedium,
+                           AVCaptureSessionPresetHigh]
+        
+        
+        let dictionaryCompatible = AVResolutionCompatible.cameraResolutions(UIDevice.currentDevice().model)
+        print(dictionaryCompatible)
+        
+        return resolutions
     }
 }

@@ -43,6 +43,10 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
         })
     }
     
+    func viewWillAppear() {
+        cameraInteractor!.setResolution()
+    }
+    
     func pushSettings() {
         print("Record presenter pushSettings")
         settingsWireframe?.presentSettingsInterfaceFromViewController(controller!)

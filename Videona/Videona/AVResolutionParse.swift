@@ -13,7 +13,12 @@ struct Resolution {
     var width:CGFloat
     var height:CGFloat
     
+    var front:String = AVCaptureSessionPreset1280x720
+    var back:String
+    
     init(AVResolution:String){
+        back = AVResolution
+        
         switch AVResolution {
         case AVCaptureSessionPreset352x288:
             width = 352

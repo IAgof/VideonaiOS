@@ -17,6 +17,7 @@
 		A93846F31CE4809F007FB6BC /* FilterListDismissalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846F21CE4809F007FB6BC /* FilterListDismissalTransition.swift */; };
 		A93846F51CE480AA007FB6BC /* FilterListPresentationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846F41CE480AA007FB6BC /* FilterListPresentationTransition.swift */; };
 		A93846F71CE49340007FB6BC /* FilterListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93846F61CE49340007FB6BC /* FilterListView.xib */; };
+		A942B5761D0835A4001C9518 /* AVResolutionCompatible.m in Sources */ = {isa = PBXBuildFile; fileRef = A942B5751D0835A4001C9518 /* AVResolutionCompatible.m */; };
 		A943015F1CE5CF2000DC0DF8 /* PlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A943015E1CE5CF2000DC0DF8 /* PlayerPresenter.swift */; };
 		A94301611CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301601CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift */; };
 		A94301631CE5CF3900DC0DF8 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301621CE5CF3900DC0DF8 /* PlayerView.swift */; };
@@ -199,6 +200,9 @@
 		A93846F21CE4809F007FB6BC /* FilterListDismissalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListDismissalTransition.swift; sourceTree = "<group>"; };
 		A93846F41CE480AA007FB6BC /* FilterListPresentationTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListPresentationTransition.swift; sourceTree = "<group>"; };
 		A93846F61CE49340007FB6BC /* FilterListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterListView.xib; sourceTree = "<group>"; };
+		A942B5731D0835A4001C9518 /* Videona-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Videona-Bridging-Header.h"; sourceTree = "<group>"; };
+		A942B5741D0835A4001C9518 /* AVResolutionCompatible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVResolutionCompatible.h; sourceTree = "<group>"; };
+		A942B5751D0835A4001C9518 /* AVResolutionCompatible.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVResolutionCompatible.m; sourceTree = "<group>"; };
 		A943015E1CE5CF2000DC0DF8 /* PlayerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerPresenter.swift; sourceTree = "<group>"; };
 		A94301601CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerPresenterInterface.swift; sourceTree = "<group>"; };
 		A94301621CE5CF3900DC0DF8 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
@@ -406,6 +410,15 @@
 			name = Transition;
 			sourceTree = "<group>";
 		};
+		A942B5791D08366A001C9518 /* AVResolutionCompatible */ = {
+			isa = PBXGroup;
+			children = (
+				A942B5741D0835A4001C9518 /* AVResolutionCompatible.h */,
+				A942B5751D0835A4001C9518 /* AVResolutionCompatible.m */,
+			);
+			name = AVResolutionCompatible;
+			sourceTree = "<group>";
+		};
 		A94301591CE5CEE400DC0DF8 /* Player */ = {
 			isa = PBXGroup;
 			children = (
@@ -512,6 +525,7 @@
 				A95B24621CD8892B00F78AAF /* StoryBoard */,
 				A95B243B1CD8890900F78AAF /* Assets.xcassets */,
 				A95B24401CD8890900F78AAF /* Info.plist */,
+				A942B5731D0835A4001C9518 /* Videona-Bridging-Header.h */,
 			);
 			path = Videona;
 			sourceTree = "<group>";
@@ -631,6 +645,7 @@
 		A95B24771CD8B95800F78AAF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A942B5791D08366A001C9518 /* AVResolutionCompatible */,
 				A9686F941CFF129C00983540 /* AVResolutionParse.swift */,
 				A95D3BE21CEB6B77001F2272 /* Utils.swift */,
 				A9F9C2081CF465D300AB310C /* Wireframe */,
@@ -1300,6 +1315,7 @@
 				A95D3BE81CEB7141001F2272 /* PlayerItem.swift in Sources */,
 				A971F5AB1CFC48D2004DC50D /* TimerInteractorInterface.swift in Sources */,
 				A93846F51CE480AA007FB6BC /* FilterListPresentationTransition.swift in Sources */,
+				A942B5761D0835A4001C9518 /* AVResolutionCompatible.m in Sources */,
 				A93846E81CE47E82007FB6BC /* FilterListPresenter.swift in Sources */,
 				A95B247C1CD8B9F200F78AAF /* RecordPresenterInterfaceIO.swift in Sources */,
 				A9E066DD1CE4B4F500D4E11D /* ShaderEffect.swift in Sources */,
@@ -1464,6 +1480,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = Videona/Info.plist;
@@ -1471,6 +1488,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.videona.videona;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e0f5a145-4063-4cf8-a2fe-042239f6cdb8";
+				SWIFT_OBJC_BRIDGING_HEADER = "Videona/Videona-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1478,6 +1497,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = Videona/Info.plist;
@@ -1485,6 +1505,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.videona.videona;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e0f5a145-4063-4cf8-a2fe-042239f6cdb8";
+				SWIFT_OBJC_BRIDGING_HEADER = "Videona/Videona-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -20,6 +20,7 @@ protocol RecordPresenterOutput{
 protocol RecordPresenterInterface{
     func viewDidLoad(displayView:GPUImageView)
     func viewWillDisappear()
+    func viewWillAppear()
     func pushSettings()
     func pushShare()
     func showWarningOrientationImage()

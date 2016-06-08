@@ -77,7 +77,7 @@ class SettingsProvider:NSObject{
         settings.append( SettingsContent(title: getStringForType(.emailAccount),subTitle: user.email, section: "Mi cuenta",priority: 1))
         
         settings.append( SettingsContent(title: getStringForType(.Resolution),subTitle: camera.resolution, section: "Camara",priority: 2))
-        settings.append( SettingsContent(title: getStringForType(.Quality),subTitle: camera.quality, section: "Camara",priority: 2))
+//        settings.append( SettingsContent(title: getStringForType(.Quality),subTitle: camera.quality, section: "Camara",priority: 2))
         
         settings.append( SettingsContent(title: getStringForType(.AboutUs), section: "Más información",priority: 3))
         settings.append( SettingsContent(title: getStringForType(.PrivacyPolicy), section: "Más información",priority: 3))

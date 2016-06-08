@@ -40,6 +40,10 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         eventHandler?.viewDidLoad(cameraView)
     }
 
+    override func viewWillAppear(animated: Bool) {
+        print("Recorder view will appear")
+        eventHandler?.viewWillAppear()
+    }
     override func viewWillDisappear(animated: Bool) {
         eventHandler?.viewWillDisappear()
     }
