@@ -102,19 +102,31 @@ class SettingsPresenter:NSObject,SettingsPresenterInterface{
     func getInputFromAlert(settingsTitle:String,input:String){
         switch settingsTitle {
         case SettingsProvider().getStringForType(SettingsType.NameAccount):
+            interactor?.saveNameOnDefaults(input)
             
             break
+        
         case SettingsProvider().getStringForType(SettingsType.UserNameAccount):
-            
-            
+            interactor?.saveUserNameOnDefaults(input)
             break
+            
         case SettingsProvider().getStringForType(SettingsType.emailAccount):
-            
-            
+            if interactor?.isValidEmail(input) == true {
+                interactor?.saveEmailOnDefaults(input)
+            }else{
+                controller?.createEmailAlertViewError()
+                return
+            }
+            interactor?.saveEmailOnDefaults(input)
             break
+        
         default:
             
             break
         }
+        //Reload data
+        self.getListData()
+        
+        controller?.reloadTableData()
     }
 }

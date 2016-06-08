@@ -12,7 +12,8 @@ import UIKit
 class SettingsInteractor: NSObject,SettingsInteractorInterface {
     var orderArray = Dictionary<Int,String>()
     var presenter: SettingsPresenterInterface?
-    
+    let defaults = NSUserDefaults.standardUserDefaults()
+
     func findSettings()->(Array<String>,Array<Array<Array<String>>>){
     
         let settings = SettingsProvider().getSettings()
@@ -101,18 +102,31 @@ class SettingsInteractor: NSObject,SettingsInteractorInterface {
         return orderByKey
     }
     
+    func saveNameOnDefaults(name:String){ // Save name on internal memory
+        defaults.setObject(name, forKey: "settingsName")
+    }
     
+    func saveUserNameOnDefaults(userName:String){ // Save name on internal memory
+        defaults.setObject(userName, forKey: "settingsUserName")
+    }
     
-//    func setSections(sNArray:Array<SettingsContent>)->Array<String>{
-//        var sections = Array<String>()
-//        
-//        for settingItem in sNArray{
-//            if   !sections.contains(settingItem.getSection()){
-//                sections.append(settingItem.getSection())
-//            }
-//        }
-//        
-//        print("setSections: -\n \(sections)")
-//        return sections
-//    }
+    func saveEmailOnDefaults(email:String){ // Save name on internal memory
+        defaults.setObject(email, forKey: "settingsEmail")
+    }
+    
+    func saveResolutionOnDefaults(name:String){ // Save name on internal memory
+        defaults.setObject(name, forKey: "settingsResolution")
+    }
+    
+    func saveQualityOnDefaults(name:String){ // Save name on internal memory
+        defaults.setObject(name, forKey: "settingsQuality")
+    }
+    
+    func isValidEmail(email:String) -> Bool {
+        // println("validate calendar: \(testStr)")
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluateWithObject(email)
+    }
 }

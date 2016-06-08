@@ -15,4 +15,5 @@ protocol SettingsInterface {
     func setListTitleAndSubtitleData(titleList: Array<Array<Array<String>>>)
     func setSectionList(section: Array<String>)
     func registerClass()
+    func reloadTableData()
 }

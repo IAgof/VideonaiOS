@@ -122,4 +122,22 @@ class SettingsViewController: VideonaController,SettingsInterface ,
         
         self.presentViewController(alertController, animated: true, completion: nil)
     }
+    
+    func createEmailAlertViewError(){
+        let saveString = "OK"
+        let message = "Is not a valid email, insert again"
+        let title = "Email"
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        
+        let saveAction = UIAlertAction(title: saveString, style: .Destructive, handler: nil)
+        
+        alertController.addAction(saveAction)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func reloadTableData() {
+        self.settingsTableView.reloadData()
+    }
 }
