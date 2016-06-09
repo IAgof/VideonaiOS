@@ -49,10 +49,12 @@ class SettingsProvider:NSObject{
             let defaults = NSUserDefaults.standardUserDefaults()
 
             let resolutionSaved = defaults.stringForKey("settingsResolution")
+            
             if (resolutionSaved != nil){
-                resolution = resolutionSaved!
+                resolution = AVResolutionParse().parseResolutionToView(resolutionSaved!)
+
             }else{
-                resolution = AVCaptureSessionPresetMedium
+                resolution = AVResolutionParse().parseResolutionToView(AVCaptureSessionPreset1280x720)
             }
             
             let qualitySaved = defaults.stringForKey("settingsQuality")

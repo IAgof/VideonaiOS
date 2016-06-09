@@ -27,11 +27,11 @@ class CameraInteractor:CameraRecorderDelegate{
     var waterMark:GPUImagePicture = GPUImagePicture()
     var maskFilterToRecord = GPUImageFilter()
         
-    var resolution = AVCaptureSessionPresetHigh
+    var cameraResolution = CameraResolution.init(AVResolution: "")
     
     var resolutionStruct:Resolution = Resolution.init(AVResolution: AVCaptureSessionPresetHigh)
     
-    var isRearCamera:Bool = false
+    var isFrontCamera:Bool = false
     
     var isRecording: Bool = false{
         didSet {
@@ -47,7 +47,7 @@ class CameraInteractor:CameraRecorderDelegate{
     init(display:GPUImageView, cameraDelegate: CameraInteractorDelegate){
         self.cameraDelegate = cameraDelegate
 
-        videoCamera = GPUImageVideoCamera(sessionPreset: resolution, cameraPosition: .Back)
+        videoCamera = GPUImageVideoCamera(sessionPreset: cameraResolution.rearCameraResolution, cameraPosition: .Back)
         videoCamera.outputImageOrientation = .LandscapeLeft
         displayView = display
         imageView = UIImageView.init(frame: displayView.frame)
@@ -85,19 +85,19 @@ class CameraInteractor:CameraRecorderDelegate{
     
     func rotateCamera(){
         
-        if self.isRearCamera {
+        if self.isFrontCamera {
             self.videoCamera.rotateCamera()
 
-            self.isRearCamera = false
+            self.isFrontCamera = false
             setResolution()
             cameraDelegate.cameraRear()
         }else{
-            self.isRearCamera = true
+            self.isFrontCamera = true
             cameraDelegate.cameraFront()
             if(FlashInteractor().isFlashTurnOn()){
                 cameraDelegate.flashOff()
             }
-            setFrontResolutionForced()
+            setResolution()
             self.videoCamera.rotateCamera()
         }
     }
@@ -204,7 +204,7 @@ class CameraInteractor:CameraRecorderDelegate{
         print("Start record video")
         
         cameraRecorder.setVideoCamera(videoCamera)
-        cameraRecorder.setResolution(resolution)
+        cameraRecorder.setResolution(cameraResolution.rearCameraResolution)
         
         cameraRecorder.recordVideo({answer in
             print("Camera Interactor \(answer)")
@@ -287,17 +287,22 @@ class CameraInteractor:CameraRecorderDelegate{
     }
     
     func setResolution(){
-        if isRearCamera{
-            
+        //Get resolution
+        if let getFromDefaultResolution = NSUserDefaults.standardUserDefaults().stringForKey("settingsResolution"){
+            cameraResolution = CameraResolution.init(AVResolution: getFromDefaultResolution)
+        }else{
+            cameraResolution = CameraResolution.init(AVResolution: "")
         }
         
-        if let getFromDefaultResolution = NSUserDefaults.standardUserDefaults().stringForKey("settingsResolution"){
-            resolution = getFromDefaultResolution
+        //Set resolution
+        if isFrontCamera {
+            if UIDevice.currentDevice().model == "iPhone4,1" {
+                
+            }else{
+                videoCamera.captureSessionPreset = cameraResolution.frontCameraResolution
+            }
+        }else{
+            videoCamera.captureSessionPreset = cameraResolution.rearCameraResolution
         }
-        videoCamera.captureSessionPreset = resolution
-    }
-    
-    func setFrontResolutionForced(){
-        videoCamera.captureSessionPreset = AVCaptureSessionPreset1280x720
     }
 }

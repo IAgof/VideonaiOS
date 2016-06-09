@@ -115,12 +115,14 @@ class SettingsInteractor: NSObject,SettingsInteractorInterface {
         defaults.setObject(email, forKey: "settingsEmail")
     }
     
-    func saveResolutionOnDefaults(name:String){ // Save name on internal memory
-        defaults.setObject(name, forKey: "settingsResolution")
+    func saveResolutionOnDefaults(resolution:String){ // Save name on internal memory
+        let resolutionToSave = AVResolutionParse().parseResolutionsToInteractor(resolution)
+        
+        defaults.setObject(resolutionToSave, forKey: "settingsResolution")
     }
     
-    func saveQualityOnDefaults(name:String){ // Save name on internal memory
-        defaults.setObject(name, forKey: "settingsQuality")
+    func saveQualityOnDefaults(quality:String){ // Save name on internal memory
+        defaults.setObject(quality, forKey: "settingsQuality")
     }
     
     func isValidEmail(email:String) -> Bool {
@@ -133,17 +135,7 @@ class SettingsInteractor: NSObject,SettingsInteractorInterface {
     
     //MARK: - AVResolution posible inputs
     func getAVResolutions()->Array<String>{
-        let resolutions = [AVCaptureSessionPreset352x288,
-                           AVCaptureSessionPreset640x480,
-                           AVCaptureSessionPreset1280x720,
-                           AVCaptureSessionPreset1920x1080,
-                           AVCaptureSessionPreset3840x2160,
-                           AVCaptureSessionPresetMedium,
-                           AVCaptureSessionPresetHigh]
-        
-        
-        let dictionaryCompatible = AVResolutionCompatible.cameraResolutions(UIDevice.currentDevice().model)
-        print(dictionaryCompatible)
+        let resolutions = AVResolutionParse().resolutionsToView()
         
         return resolutions
     }

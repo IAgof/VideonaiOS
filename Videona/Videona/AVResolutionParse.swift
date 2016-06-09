@@ -42,3 +42,79 @@ struct Resolution {
         }
     }
 }
+
+struct CameraResolution {
+    var frontCameraResolution:String
+    var rearCameraResolution:String
+    
+    init(AVResolution:String){
+        
+        switch AVResolution {
+        case AVCaptureSessionPreset640x480:
+            frontCameraResolution = AVCaptureSessionPreset640x480
+            rearCameraResolution = AVCaptureSessionPreset640x480
+            break
+        case AVCaptureSessionPreset1280x720:
+            frontCameraResolution = AVCaptureSessionPreset1280x720
+            rearCameraResolution = AVCaptureSessionPreset1280x720
+            break
+        case AVCaptureSessionPreset1920x1080:
+                frontCameraResolution = AVCaptureSessionPreset1280x720
+                rearCameraResolution = AVCaptureSessionPreset1920x1080
+            break
+        default:
+            frontCameraResolution = AVCaptureSessionPreset1280x720
+            rearCameraResolution = AVCaptureSessionPreset1280x720
+            break
+        }
+    }    
+}
+
+protocol AVResolutionParseInterface {
+    func resolutionsToView() -> Array<String>
+    func parseResolutionsToInteractor(textResolution:String) -> String
+}
+
+class AVResolutionParse: NSObject {
+    var goodResolution = "Buena (1080)"
+    var mediumResolution = "Media (720)"
+    var regularResolution = "Regular (480)"
+    
+    func resolutionsToView() -> Array<String>  {
+        var resolutionsToTheTableView = Array<String>()
+        
+        let resolutionsCompatibles = CompatibleResolutionsInteractor().getCompatibleResolutions()
+        
+        for resolution in resolutionsCompatibles{
+            resolutionsToTheTableView.append(self.parseResolutionToView(resolution))
+        }
+        
+        return resolutionsToTheTableView
+    }
+    
+    func parseResolutionToView(resolution:String) -> String {
+        switch resolution {
+        case AVCaptureSessionPreset1920x1080:
+            return goodResolution
+        case AVCaptureSessionPreset1280x720:
+            return mediumResolution
+        case AVCaptureSessionPreset640x480:
+            return regularResolution
+        default:
+            return "Media (720)"
+        }
+    }
+    
+    func parseResolutionsToInteractor(textResolution:String) -> String {
+        switch textResolution {
+        case goodResolution:
+            return AVCaptureSessionPreset1920x1080
+        case mediumResolution :
+            return AVCaptureSessionPreset1280x720
+        case regularResolution :
+            return AVCaptureSessionPreset640x480
+        default:
+            return AVCaptureSessionPreset1280x720
+        }
+    }
+}
