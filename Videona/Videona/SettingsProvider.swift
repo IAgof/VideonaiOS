@@ -70,62 +70,107 @@ class SettingsProvider:NSObject{
         let user = userInfo()
         let camera = cameraSettings()
         
-        settings.append( SettingsContent(title: getStringForType(.DownloadKamarada),section: "Avanzado",priority: 0))
-        settings.append( SettingsContent(title: getStringForType(.ShareVideona),section: "Avanzado",priority: 0))
-        settings.append( SettingsContent(title: getStringForType(.FollowUsOnTwitter),section: "Avanzado",priority: 0))
+        //MARK: - ADVANCED_SECTION
+        settings.append( SettingsContent(title: Utils().getStringByKeyFromSettings(SettingsConstants().DONWLOAD_KAMARADA)
+            ,section: Utils().getStringByKeyFromSettings(SettingsConstants().ADVANCED_SECTION)
+            ,priority: 0))
+        settings.append( SettingsContent(title: Utils().getStringByKeyFromSettings(SettingsConstants().SHARE_VIDEONA_TITLE)
+            ,section: Utils().getStringByKeyFromSettings(SettingsConstants().ADVANCED_SECTION)
+            ,priority: 0))
+        settings.append( SettingsContent(title: Utils().getStringByKeyFromSettings(SettingsConstants().FOLLOW_US_ON_TWITTER_TITLE)
+            ,section: Utils().getStringByKeyFromSettings(SettingsConstants().ADVANCED_SECTION)
+            ,priority: 0))
 
-        settings.append( SettingsContent(title: getStringForType(.NameAccount),subTitle: user.name, section: "Mi cuenta",priority: 1))
-        settings.append( SettingsContent(title: getStringForType(.UserNameAccount),subTitle: user.userName, section: "Mi cuenta",priority: 1))
-        settings.append( SettingsContent(title: getStringForType(.emailAccount),subTitle: user.email, section: "Mi cuenta",priority: 1))
+        //MARK: - MY_ACCOUNT_SECTION
+        settings.append( SettingsContent(title: Utils().getStringByKeyFromSettings(SettingsConstants().NAME)
+            ,subTitle: user.name
+            ,section: Utils().getStringByKeyFromSettings(SettingsConstants().ACCOUNT_ACTIONS_SECTION)
+            ,priority: 1))
+        settings.append( SettingsContent(title: Utils().getStringByKeyFromSettings(SettingsConstants().USER_NAME)
+            ,subTitle: user.userName
+            ,section: Utils().getStringByKeyFromSettings(SettingsConstants().ACCOUNT_ACTIONS_SECTION)
+            ,priority: 1))
+        settings.append( SettingsContent(title: Utils().getStringByKeyFromSettings(SettingsConstants().EMAIL_PREFERENCE)
+            ,subTitle: user.email
+            ,section: Utils().getStringByKeyFromSettings(SettingsConstants().ACCOUNT_ACTIONS_SECTION)
+            ,priority: 1))
         
-        settings.append( SettingsContent(title: getStringForType(.Resolution),subTitle: camera.resolution, section: "Camara",priority: 2))
-//        settings.append( SettingsContent(title: getStringForType(.Quality),subTitle: camera.quality, section: "Camara",priority: 2))
+        //MARK: - CAMERA_SECTION
+        settings.append( SettingsContent(title: Utils().getStringByKeyFromSettings(SettingsConstants().RESOLUTION)
+            ,subTitle: camera.resolution
+            ,section: Utils().getStringByKeyFromSettings(SettingsConstants().CAMERA_SECTION)
+            ,priority: 2))
         
-        settings.append( SettingsContent(title: getStringForType(.AboutUs), section: "Más información",priority: 3))
-        settings.append( SettingsContent(title: getStringForType(.PrivacyPolicy), section: "Más información",priority: 3))
-        settings.append( SettingsContent(title: getStringForType(.ServiceConditions), section: "Más información",priority: 3))
-        settings.append( SettingsContent(title: getStringForType(.Licenses), section: "Más información",priority: 3))
-        settings.append( SettingsContent(title: getStringForType(.LegalAdvice), section: "Más información",priority: 3))
+//        settings.append( SettingsContent(title: Utils().getStringByKeyFromSettings(SettingsConstants().QUALITY)
+//            ,subTitle: camera.quality
+//            ,section: Utils().getStringByKeyFromSettings(SettingsConstants().CAMERA_SECTION)
+//            ,priority: 2))
         
-        settings.append( SettingsContent(title: getStringForType(.Exit), section: "Acciones de cuenta",priority: 4))
+        //MARK: - MORE_INFO_SECTION
+        settings.append( SettingsContent(title: Utils().getStringByKeyFromSettings(SettingsConstants().ABOUT_US_TITLE)
+            ,content: Utils().getStringByKeyFromSettings(SettingsConstants().ABOUT_US_CONTENT)
+            ,section: Utils().getStringByKeyFromSettings(SettingsConstants().MORE_INFO_SECTION)
+            ,priority: 3))
+        
+        settings.append( SettingsContent(title: Utils().getStringByKeyFromSettings(SettingsConstants().PRIVACY_POLICY_TITLE)
+            ,content: Utils().getStringByKeyFromSettings(SettingsConstants().PRIVACY_POLICY_CONTENT)
+            ,section: Utils().getStringByKeyFromSettings(SettingsConstants().MORE_INFO_SECTION)
+            ,priority: 3))
+        
+        settings.append( SettingsContent(title: Utils().getStringByKeyFromSettings(SettingsConstants().TERMS_OF_SERVICE_TITLE)
+            ,content: Utils().getStringByKeyFromSettings(SettingsConstants().TERMS_OF_SERVICE_CONTENT)
+            ,section: Utils().getStringByKeyFromSettings(SettingsConstants().MORE_INFO_SECTION)
+            ,priority: 3))
+        
+        settings.append( SettingsContent(title: Utils().getStringByKeyFromSettings(SettingsConstants().LICENSES_TITLE)
+            ,content: Utils().getStringByKeyFromSettings(SettingsConstants().LICENSES_CONTENT)
+            ,section: Utils().getStringByKeyFromSettings(SettingsConstants().MORE_INFO_SECTION)
+            ,priority: 3))
+        
+        settings.append( SettingsContent(title: Utils().getStringByKeyFromSettings(SettingsConstants().LEGAL_ADVICE_TITLE)
+            ,content: Utils().getStringByKeyFromSettings(SettingsConstants().LEGAL_ADVICE_CONTENT)
+            ,section: Utils().getStringByKeyFromSettings(SettingsConstants().MORE_INFO_SECTION)
+            ,priority: 3))
+        
+        //MARK: - ACCOUNT_ACTIONS_SECTION
+        settings.append( SettingsContent(title: Utils().getStringByKeyFromSettings(SettingsConstants().EXIT)
+            ,section: Utils().getStringByKeyFromSettings(SettingsConstants().ACCOUNT_ACTIONS_SECTION)
+            ,priority: 4))
 
         return settings
     }
     
+    
     func getStringForType(type:SettingsType)->String{
         switch type {
         case .DownloadKamarada:
-            return "Descarga Kamarada"
+            return Utils().getStringByKeyFromSettings(SettingsConstants().DONWLOAD_KAMARADA)
         case .ShareVideona:
-            return "Comparte Videona"
+            return Utils().getStringByKeyFromSettings(SettingsConstants().SHARE_VIDEONA_TITLE)
         case .FollowUsOnTwitter:
-            return "Siguenos en Twitter"
-       
+            return Utils().getStringByKeyFromSettings(SettingsConstants().FOLLOW_US_ON_TWITTER_TITLE)
         case .NameAccount:
-            return "Nombre"
+            return Utils().getStringByKeyFromSettings(SettingsConstants().NAME)
         case .UserNameAccount:
-            return "Nombre de usuario"
+            return Utils().getStringByKeyFromSettings(SettingsConstants().USER_NAME)
         case .emailAccount:
-            return "Email"
-        
+            return Utils().getStringByKeyFromSettings(SettingsConstants().EMAIL_PREFERENCE)        
         case .Resolution:
-            return "Resolucion"
+            return Utils().getStringByKeyFromSettings(SettingsConstants().RESOLUTION)
         case .Quality:
-            return "Calidad"
-        
+            return Utils().getStringByKeyFromSettings(SettingsConstants().QUALITY)
         case .AboutUs:
-            return "Sobre nosotros"
+            return Utils().getStringByKeyFromSettings(SettingsConstants().ABOUT_US_TITLE)
         case .PrivacyPolicy:
-            return "Politica de privacidad"
-        case .ServiceConditions:
-            return "Condiciones de servicio"
+            return Utils().getStringByKeyFromSettings(SettingsConstants().PRIVACY_POLICY_TITLE)
+        case .TermsOfService:
+            return Utils().getStringByKeyFromSettings(SettingsConstants().TERMS_OF_SERVICE_TITLE)
         case .Licenses:
-            return "Licencias"
+            return Utils().getStringByKeyFromSettings(SettingsConstants().LICENSES_TITLE)
         case .LegalAdvice:
-            return "Aviso legal"
-
+            return Utils().getStringByKeyFromSettings(SettingsConstants().LEGAL_ADVICE_TITLE)
         case .Exit:
-            return "Exit"
+            return Utils().getStringByKeyFromSettings(SettingsConstants().EXIT)
         }
     }
 }
@@ -144,7 +189,7 @@ enum SettingsType {
     
     case AboutUs
     case PrivacyPolicy
-    case ServiceConditions
+    case TermsOfService
     case Licenses
     case LegalAdvice
     

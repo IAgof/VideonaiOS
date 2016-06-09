@@ -46,5 +46,7 @@ class Utils{
 //    func getUDID() -> String{
 //        return udid
 //    }
-    
+    func getStringByKeyFromSettings(key:String) -> String {
+        return NSBundle.mainBundle().localizedStringForKey(key,value: "",table: "Settings")
+    }
 }

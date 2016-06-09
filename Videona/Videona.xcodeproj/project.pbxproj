@@ -75,6 +75,15 @@
 		A971F5BE1CFC8D10004DC50D /* ExporterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F5BD1CFC8D10004DC50D /* ExporterInteractor.swift */; };
 		A971F5C01CFC8E1B004DC50D /* ExportedAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F5BF1CFC8E1B004DC50D /* ExportedAlbum.swift */; };
 		A97FBDBE1D09781C00942F8D /* CompatibleResolutionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97FBDBD1D09781C00942F8D /* CompatibleResolutionsInteractor.swift */; };
+		A97FBDCB1D09823800942F8D /* DetailTextPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97FBDCA1D09823800942F8D /* DetailTextPresenter.swift */; };
+		A97FBDCD1D09824500942F8D /* DetailTextPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97FBDCC1D09824500942F8D /* DetailTextPresenterInterface.swift */; };
+		A97FBDCF1D09826A00942F8D /* DetailTextController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97FBDCE1D09826A00942F8D /* DetailTextController.swift */; };
+		A97FBDD11D09827900942F8D /* DetailTextInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97FBDD01D09827900942F8D /* DetailTextInterface.swift */; };
+		A97FBDD31D09828600942F8D /* DetailTextWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97FBDD21D09828600942F8D /* DetailTextWireframe.swift */; };
+		A97FBDD71D09846A00942F8D /* DetailTextInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97FBDD61D09846A00942F8D /* DetailTextInteractor.swift */; };
+		A97FBDD91D0984B600942F8D /* DetailTextInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97FBDD81D0984B600942F8D /* DetailTextInteractorInterface.swift */; };
+		A97FBDDD1D09A87F00942F8D /* SettingsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97FBDDC1D09A87F00942F8D /* SettingsConstants.swift */; };
+		A97FBDE21D09B6B500942F8D /* Settings.strings in Resources */ = {isa = PBXBuildFile; fileRef = A97FBDE41D09B6B500942F8D /* Settings.strings */; };
 		A98A93B51CF58870004E1DB7 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98A93B21CF58866004E1DB7 /* GPUImage.framework */; };
 		A98A93B61CF58874004E1DB7 /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A98A93B21CF58866004E1DB7 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A98A93BB1CF5903C004E1DB7 /* AddFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */; };
@@ -267,6 +276,18 @@
 		A971F5BD1CFC8D10004DC50D /* ExporterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExporterInteractor.swift; sourceTree = "<group>"; };
 		A971F5BF1CFC8E1B004DC50D /* ExportedAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportedAlbum.swift; sourceTree = "<group>"; };
 		A97FBDBD1D09781C00942F8D /* CompatibleResolutionsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompatibleResolutionsInteractor.swift; sourceTree = "<group>"; };
+		A97FBDCA1D09823800942F8D /* DetailTextPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTextPresenter.swift; sourceTree = "<group>"; };
+		A97FBDCC1D09824500942F8D /* DetailTextPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTextPresenterInterface.swift; sourceTree = "<group>"; };
+		A97FBDCE1D09826A00942F8D /* DetailTextController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTextController.swift; sourceTree = "<group>"; };
+		A97FBDD01D09827900942F8D /* DetailTextInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTextInterface.swift; sourceTree = "<group>"; };
+		A97FBDD21D09828600942F8D /* DetailTextWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTextWireframe.swift; sourceTree = "<group>"; };
+		A97FBDD61D09846A00942F8D /* DetailTextInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTextInteractor.swift; sourceTree = "<group>"; };
+		A97FBDD81D0984B600942F8D /* DetailTextInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTextInteractorInterface.swift; sourceTree = "<group>"; };
+		A97FBDDC1D09A87F00942F8D /* SettingsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsConstants.swift; sourceTree = "<group>"; };
+		A97FBDDE1D09B67200942F8D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		A97FBDDF1D09B67200942F8D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		A97FBDE31D09B6B500942F8D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
+		A97FBDE51D09B71300942F8D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Settings.strings; sourceTree = "<group>"; };
 		A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFilterInteractor.swift; sourceTree = "<group>"; };
 		A98A93BC1CF59155004E1DB7 /* ChangeFilterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeFilterInteractor.swift; sourceTree = "<group>"; };
 		A98A93C31CF5BAF6004E1DB7 /* EffectDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectDictionary.swift; sourceTree = "<group>"; };
@@ -565,6 +586,7 @@
 		A95B24631CD8895E00F78AAF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A97FBDC31D0981F700942F8D /* DetailText */,
 				A95B24851CD8EA7500F78AAF /* Intro */,
 				A95B24641CD8896600F78AAF /* Recorder */,
 				A93846E21CE47E57007FB6BC /* Filter List */,
@@ -766,6 +788,7 @@
 		A96733011CE630B3007BE340 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A97FBDDC1D09A87F00942F8D /* SettingsConstants.swift */,
 				A95D3BDD1CEB0320001F2272 /* SettingsContent.swift */,
 				A95D3BDF1CEB045F001F2272 /* SettingsProvider.swift */,
 			);
@@ -839,6 +862,68 @@
 				A971F5BD1CFC8D10004DC50D /* ExporterInteractor.swift */,
 			);
 			name = ExporterInteractor;
+			sourceTree = "<group>";
+		};
+		A97FBDC31D0981F700942F8D /* DetailText */ = {
+			isa = PBXGroup;
+			children = (
+				A97FBDD41D09845200942F8D /* AppLogic */,
+				A97FBDC61D09820C00942F8D /* User Interface */,
+			);
+			name = DetailText;
+			sourceTree = "<group>";
+		};
+		A97FBDC61D09820C00942F8D /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				A97FBDC91D09822E00942F8D /* Presenter */,
+				A97FBDC81D09822800942F8D /* View */,
+				A97FBDC71D09821D00942F8D /* Wireframe */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		A97FBDC71D09821D00942F8D /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				A97FBDD21D09828600942F8D /* DetailTextWireframe.swift */,
+			);
+			name = Wireframe;
+			sourceTree = "<group>";
+		};
+		A97FBDC81D09822800942F8D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A97FBDCE1D09826A00942F8D /* DetailTextController.swift */,
+				A97FBDD01D09827900942F8D /* DetailTextInterface.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A97FBDC91D09822E00942F8D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A97FBDCA1D09823800942F8D /* DetailTextPresenter.swift */,
+				A97FBDCC1D09824500942F8D /* DetailTextPresenterInterface.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		A97FBDD41D09845200942F8D /* AppLogic */ = {
+			isa = PBXGroup;
+			children = (
+				A97FBDD51D09846200942F8D /* Interactor */,
+			);
+			name = AppLogic;
+			sourceTree = "<group>";
+		};
+		A97FBDD51D09846200942F8D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A97FBDD61D09846A00942F8D /* DetailTextInteractor.swift */,
+				A97FBDD81D0984B600942F8D /* DetailTextInteractorInterface.swift */,
+			);
+			name = Interactor;
 			sourceTree = "<group>";
 		};
 		A98A93AA1CF58866004E1DB7 /* Products */ = {
@@ -1047,6 +1132,7 @@
 		A9F9C2141CF4872900AB310C /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				A97FBDE41D09B6B500942F8D /* Settings.strings */,
 				A971F5B31CFC7F3C004DC50D /* Fonts */,
 				A971F5AC1CFC52D1004DC50D /* activity_record_rec_circle.png */,
 				A925E8FA1D01C8AA000BB684 /* water_mark.png */,
@@ -1146,6 +1232,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = A95B24281CD8890900F78AAF;
 			productRefGroup = A95B24321CD8890900F78AAF /* Products */;
@@ -1212,6 +1299,7 @@
 				A9D76B131CF5FB8700F7FB47 /* spring.png in Resources */,
 				A93846F71CE49340007FB6BC /* FilterListView.xib in Resources */,
 				A9D257C71CF82BE600A618B0 /* Tunnel.fsh in Resources */,
+				A97FBDE21D09B6B500942F8D /* Settings.strings in Resources */,
 				A9D76B0A1CF5FB8700F7FB47 /* game.jpg in Resources */,
 				A9D76B171CF5FB8700F7FB47 /* wasted.png in Resources */,
 				A9D76B041CF5FB8700F7FB47 /* autumn.png in Resources */,
@@ -1270,6 +1358,7 @@
 				A93846F31CE4809F007FB6BC /* FilterListDismissalTransition.swift in Sources */,
 				A96733001CE630AD007BE340 /* SettingsInteractorInterface.swift in Sources */,
 				A94301701CE5DAA100DC0DF8 /* SocialNetworkProvider.swift in Sources */,
+				A97FBDD91D0984B600942F8D /* DetailTextInteractorInterface.swift in Sources */,
 				A965BDC31CDA1171002579CA /* IntroPresenterInterface.swift in Sources */,
 				A93846EE1CE47EF0007FB6BC /* FilterListInterface.swift in Sources */,
 				A971F5BB1CFC89AF004DC50D /* ClipsAlbum.swift in Sources */,
@@ -1279,12 +1368,14 @@
 				A95B24371CD8890900F78AAF /* RecordController.swift in Sources */,
 				A965BDC11CDA0F1D002579CA /* IntroViewInterface.swift in Sources */,
 				A9E066D91CE4B4E000D4E11D /* Effect.swift in Sources */,
+				A97FBDDD1D09A87F00942F8D /* SettingsConstants.swift in Sources */,
 				A98A93C41CF5BAF6004E1DB7 /* EffectDictionary.swift in Sources */,
 				A93846EC1CE47EE2007FB6BC /* FilterListView.swift in Sources */,
 				A95D3BEA1CEB7158001F2272 /* PlayerProvider.swift in Sources */,
 				A94301611CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift in Sources */,
 				A99278531CE364E6009DC364 /* SettingsPresenterInterface.swift in Sources */,
 				A98A93BD1CF59155004E1DB7 /* ChangeFilterInteractor.swift in Sources */,
+				A97FBDCD1D09824500942F8D /* DetailTextPresenterInterface.swift in Sources */,
 				A95D3BF01CEB7356001F2272 /* PlayerInteractorInterface.swift in Sources */,
 				A94301631CE5CF3900DC0DF8 /* PlayerView.swift in Sources */,
 				A9E066DB1CE4B4EE00D4E11D /* OverlayEffect.swift in Sources */,
@@ -1292,6 +1383,7 @@
 				A98A93BB1CF5903C004E1DB7 /* AddFilterInteractor.swift in Sources */,
 				A99278591CE36524009DC364 /* SettingsWireframe.swift in Sources */,
 				A971F5BE1CFC8D10004DC50D /* ExporterInteractor.swift in Sources */,
+				A97FBDD11D09827900942F8D /* DetailTextInterface.swift in Sources */,
 				A94301721CE5DD8B00DC0DF8 /* ShareInteractor.swift in Sources */,
 				A9E066E41CE4BB8300D4E11D /* ConfigPreferences.swift in Sources */,
 				A95D3BE31CEB6B77001F2272 /* Utils.swift in Sources */,
@@ -1299,11 +1391,13 @@
 				A9B1181D1CE378DC001A1177 /* ShareInterface.swift in Sources */,
 				A965C7EC1CF58467001E2D39 /* CameraInteractor.swift in Sources */,
 				A99278501CE3647B009DC364 /* SettingsPresenter.swift in Sources */,
+				A97FBDD71D09846A00942F8D /* DetailTextInteractor.swift in Sources */,
 				A9E066DF1CE4BA0700D4E11D /* EffectProvider.swift in Sources */,
 				A9E066E51CE4BB8300D4E11D /* AnalitycsConstants.swift in Sources */,
 				A94301781CE5EEED00DC0DF8 /* FilterListInteractorInterface.swift in Sources */,
 				A95D3BDE1CEB0320001F2272 /* SettingsContent.swift in Sources */,
 				A93846EA1CE47E9C007FB6BC /* FilterListPresenterInterface.swift in Sources */,
+				A97FBDCF1D09826A00942F8D /* DetailTextController.swift in Sources */,
 				A95B246B1CD88AC100F78AAF /* RecordWireframe.swift in Sources */,
 				A971F5C01CFC8E1B004DC50D /* ExportedAlbum.swift in Sources */,
 				A9686F951CFF129C00983540 /* AVResolutionParse.swift in Sources */,
@@ -1324,12 +1418,14 @@
 				A95B247C1CD8B9F200F78AAF /* RecordPresenterInterfaceIO.swift in Sources */,
 				A9E066DD1CE4B4F500D4E11D /* ShaderEffect.swift in Sources */,
 				A9D76AE71CF5E9CB00F7FB47 /* RemoveFilterInteractor.swift in Sources */,
+				A97FBDCB1D09823800942F8D /* DetailTextPresenter.swift in Sources */,
 				A93846F01CE47F67007FB6BC /* FilterListWireframe.swift in Sources */,
 				A95B246E1CD88C2D00F78AAF /* RecordViewInterface.swift in Sources */,
 				A971F5B11CFC5B98004DC50D /* ThumbnailInteractor.swift in Sources */,
 				A99278571CE36517009DC364 /* SettingsInterface.swift in Sources */,
 				A965BDBC1CDA0758002579CA /* IntroPresenter.swift in Sources */,
 				A94301671CE5CF4F00DC0DF8 /* PlayerWireframe.swift in Sources */,
+				A97FBDD31D09828600942F8D /* DetailTextWireframe.swift in Sources */,
 				A91D25121CF876250006CB93 /* CameraInteractorInterface.swift in Sources */,
 				A9F9C20E1CF4665000AB310C /* VideonaController.swift in Sources */,
 				A95D3BE01CEB045F001F2272 /* SettingsProvider.swift in Sources */,
@@ -1380,6 +1476,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A95B24391CD8890900F78AAF /* Base */,
+				A97FBDDE1D09B67200942F8D /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1388,8 +1485,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				A95B243E1CD8890900F78AAF /* Base */,
+				A97FBDDF1D09B67200942F8D /* es */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A97FBDE41D09B6B500942F8D /* Settings.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A97FBDE31D09B6B500942F8D /* en */,
+				A97FBDE51D09B71300942F8D /* es */,
+			);
+			name = Settings.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

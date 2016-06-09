@@ -325,7 +325,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5d-6Y-9Tg">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
-                                    <navigationItem title="Settings" id="RLq-yT-3zu">
+                                    <navigationItem id="RLq-yT-3zu">
                                         <barButtonItem key="leftBarButtonItem" image="activity_edit_back_normal" id="lMd-Eu-bsL">
                                             <connections>
                                                 <action selector="pushBackBarButton:" destination="emM-0d-dkm" id="Nm8-Bh-2vU"/>
@@ -346,6 +346,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ylD-dR-oSR">
+                                                    <rect key="frame" x="15" y="11" width="34" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -355,6 +356,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j8r-VL-6S0">
+                                                    <rect key="frame" x="541" y="11" width="44" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
@@ -385,6 +387,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="settingsNavBar" destination="RLq-yT-3zu" id="W7v-yg-jwQ"/>
                         <outlet property="settingsTableView" destination="FKW-HS-Fdr" id="m2g-im-6jO"/>
                     </connections>
                 </viewController>
@@ -521,6 +524,87 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HqN-nR-Bg8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="616.5" y="-627"/>
+        </scene>
+        <!--Detail Text Controller-->
+        <scene sceneID="6OO-No-YDR">
+            <objects>
+                <viewController storyboardIdentifier="DetailTextController" id="Riy-ZL-PsT" customClass="DetailTextController" customModule="Videona" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gqT-S5-hzi"/>
+                        <viewControllerLayoutGuide type="bottom" id="bJb-3K-IAz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i0L-BO-RHS">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k6l-21-TFH">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem id="VM4-Nj-Fye">
+                                        <barButtonItem key="leftBarButtonItem" image="activity_edit_back_normal" id="7dF-Ew-Dhe">
+                                            <connections>
+                                                <action selector="pushBack:" destination="Riy-ZL-PsT" id="1qN-3j-6SD"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5V-hi-ibx">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="k6l-21-TFH" firstAttribute="top" secondItem="gqT-S5-hzi" secondAttribute="bottom" constant="8" id="ACh-J4-d6d"/>
+                            <constraint firstItem="T5V-hi-ibx" firstAttribute="trailing" secondItem="i0L-BO-RHS" secondAttribute="trailingMargin" id="EOl-cZ-yn2"/>
+                            <constraint firstItem="k6l-21-TFH" firstAttribute="leading" secondItem="i0L-BO-RHS" secondAttribute="leadingMargin" constant="-20" id="FF5-BY-TdG"/>
+                            <constraint firstItem="T5V-hi-ibx" firstAttribute="top" secondItem="k6l-21-TFH" secondAttribute="bottom" constant="8" id="GHd-mV-VU9"/>
+                            <constraint firstItem="T5V-hi-ibx" firstAttribute="leading" secondItem="i0L-BO-RHS" secondAttribute="leadingMargin" id="Gn6-9w-V9u"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="k6l-21-TFH" secondAttribute="trailing" constant="-20" id="PKB-Tg-wem"/>
+                            <constraint firstItem="bJb-3K-IAz" firstAttribute="top" secondItem="T5V-hi-ibx" secondAttribute="bottom" constant="20" id="XoL-io-GJh"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="k6l-21-TFH"/>
+                                <exclude reference="T5V-hi-ibx"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="ACh-J4-d6d"/>
+                                <exclude reference="FF5-BY-TdG"/>
+                                <exclude reference="PKB-Tg-wem"/>
+                                <exclude reference="EOl-cZ-yn2"/>
+                                <exclude reference="GHd-mV-VU9"/>
+                                <exclude reference="Gn6-9w-V9u"/>
+                                <exclude reference="XoL-io-GJh"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <include reference="k6l-21-TFH"/>
+                                <include reference="T5V-hi-ibx"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="ACh-J4-d6d"/>
+                                <include reference="FF5-BY-TdG"/>
+                                <include reference="PKB-Tg-wem"/>
+                                <include reference="EOl-cZ-yn2"/>
+                                <include reference="GHd-mV-VU9"/>
+                                <include reference="Gn6-9w-V9u"/>
+                                <include reference="XoL-io-GJh"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="detailTextFiled" destination="T5V-hi-ibx" id="Zny-0k-gq6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vit-Jr-LAB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1363" y="-625.5"/>
         </scene>
         <!--Record Controller-->
         <scene sceneID="1fg-Hl-DKX">

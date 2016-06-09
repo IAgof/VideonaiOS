@@ -15,7 +15,9 @@ class SettingsWireframe : NSObject {
     var rootWireframe : RootWireframe?
     var settingsViewController : SettingsViewController?
     var settingsPresenter : SettingsPresenter?
-    
+
+    var prevController:UIViewController?
+
     func presentSettingsInterfaceFromWindow(window: UIWindow) {
         let viewController = settingsViewControllerFromStoryboard()
         
@@ -25,6 +27,8 @@ class SettingsWireframe : NSObject {
     func presentSettingsInterfaceFromViewController(prevController:UIViewController){
         let viewController = settingsViewControllerFromStoryboard()
         
+        self.prevController = prevController
+
         prevController.showViewController(viewController, sender: nil)
     }
     
@@ -45,7 +49,7 @@ class SettingsWireframe : NSObject {
     }
     
     func goPrevController(){
-        settingsViewController?.navigationController?.popToRootViewControllerAnimated(true)
+        settingsViewController?.navigationController?.popToViewController(prevController!, animated: true)
     }
     
     func goToAppleStoreURL(url:NSURL){

@@ -31,6 +31,7 @@ UITableViewDelegate, UITableViewDataSource{
             eventHandler?.setVideoExportedPath(exportPath!)
         }
     }
+    
     //MARK: - Outlets
     @IBOutlet weak var shareTableView: UITableView!
     @IBOutlet weak var playerView: UIView!

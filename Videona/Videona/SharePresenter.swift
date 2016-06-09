@@ -16,7 +16,7 @@ class SharePresenter:NSObject,SharePresenterInterface{
     var interactor: ShareInteractor?
     var recordWireframe: RecordWireframe?
     var playerPresenter: PlayerPresenter?
-    
+
     var videoPath = ""
     
     //LifeCicle

@@ -17,6 +17,8 @@ class ShareWireframe : NSObject {
     var sharePresenter : SharePresenter?
     var playerWireframe: PlayerWireframe?
     
+    var prevController:UIViewController?
+
     func presentShareInterfaceFromWindow(window: UIWindow) {
         let viewController = shareViewControllerFromStoryboard()
         
@@ -27,6 +29,7 @@ class ShareWireframe : NSObject {
         let viewController = shareViewControllerFromStoryboard()
         
         viewController.exportPath = videoPath
+        self.prevController = prevController
 
         prevController.showViewController(viewController, sender: nil)
     }
@@ -52,6 +55,6 @@ class ShareWireframe : NSObject {
     
     func goPrevController(){
         
-        shareViewController?.navigationController?.popToRootViewControllerAnimated(true)
+        shareViewController?.navigationController?.popToViewController(prevController!, animated: true)
     }
 }

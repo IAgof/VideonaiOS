@@ -15,6 +15,8 @@ class SettingsInteractor: NSObject,SettingsInteractorInterface {
     var presenter: SettingsPresenterInterface?
     let defaults = NSUserDefaults.standardUserDefaults()
 
+    var settingSelected:SettingsContent?
+    
     func findSettings()->(Array<String>,Array<Array<Array<String>>>){
     
         let settings = SettingsProvider().getSettings()
@@ -138,5 +140,9 @@ class SettingsInteractor: NSObject,SettingsInteractorInterface {
         let resolutions = AVResolutionParse().resolutionsToView()
         
         return resolutions
+    }
+    
+    func setSettingSelected() {
+        self.settingSelected = nil
     }
 }

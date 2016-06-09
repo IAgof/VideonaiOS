@@ -9,10 +9,11 @@
 import Foundation
 
 class SettingsContent:NSObject{
-    var section:String!
-    var title:String!
-    var subTitle:String!
-    var priority:Int!
+    var section:String = ""
+    var title:String = ""
+    var subTitle:String = ""
+    var detailText:String = ""
+    var priority:Int = 0
     
     init(title:String, subTitle:String,section:String,priority:Int) {
         self.title = title
@@ -28,9 +29,15 @@ class SettingsContent:NSObject{
         self.priority = priority
     }
     
+    init(title:String, content:String,section:String,priority:Int) {
+        self.title = title
+        self.detailText = content
+        self.section = section
+        self.priority = priority
+    }
     
     func getSettingsTitle()->String{
-        return self.title!
+        return self.title
     }
     
     func setSettingsTitle(title:String){
@@ -38,7 +45,7 @@ class SettingsContent:NSObject{
     }
     
     func getSettingsSubtitle()->String{
-        return self.subTitle!
+        return self.subTitle
     }
     
     func setSettingsSubtitle(subTitle:String){
@@ -46,9 +53,9 @@ class SettingsContent:NSObject{
     }
     
     func getSection()->String{
-        return section!
+        return section
     }
     func getPriority()->Int{
-        return priority!
+        return priority
     }
 }

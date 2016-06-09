@@ -16,4 +16,5 @@ protocol SettingsInterface {
     func setSectionList(section: Array<String>)
     func registerClass()
     func reloadTableData()
+    func createAlertExit()
 }

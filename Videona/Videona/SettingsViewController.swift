@@ -24,6 +24,7 @@ class SettingsViewController: VideonaController,SettingsInterface ,
     
     //MARK: - Outlets
     @IBOutlet weak var settingsTableView: UITableView!
+    @IBOutlet weak var settingsNavBar: UINavigationItem!
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -45,6 +46,10 @@ class SettingsViewController: VideonaController,SettingsInterface ,
     
     func setSectionList(section: Array<String>) {
         self.section = section
+    }
+    
+    func setTitleNavBar(){
+        settingsNavBar.title = Utils().getStringByKeyFromSettings(SettingsConstants().SETTINGS_TITLE)
     }
     
     //MARK: - UITableview datasource
@@ -158,6 +163,23 @@ class SettingsViewController: VideonaController,SettingsInterface ,
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
+    func createAlertExit(){
+        
+        // create the alert
+        let alert = UIAlertController(title: "Exit", message: "Do you want to exit application?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "YES", style: UIAlertActionStyle.Destructive, handler: { action in
+            
+            // do something like...
+            exit(1)
+            
+        }))
+        alert.addAction(UIAlertAction(title: "NO", style: UIAlertActionStyle.Cancel, handler: nil))
+        
+        // show the alert
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
     func reloadTableData() {
         self.settingsTableView.reloadData()
     }

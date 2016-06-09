@@ -14,7 +14,8 @@ class SettingsPresenter:NSObject,SettingsPresenterInterface{
     var controller: SettingsViewController?
     var recordWireframe: RecordWireframe?
     var interactor: SettingsInteractor?
-   
+    var detailTextWireframe: DetailTextWireframe?
+
     let kamaradaAppleStoreURL = NSURL.init(string:"https://itunes.apple.com/us/app/silent-movie-camera-kamarada/id1109300504?l=es&ls=1&mt=8")
     let videonaTwitterUser = "Videona_es"
     
@@ -23,6 +24,7 @@ class SettingsPresenter:NSObject,SettingsPresenterInterface{
         recordWireframe?.goBackToRecordView(controller!)
     }
     func viewDidLoad() {
+        controller?.setTitleNavBar()
         controller?.registerClass()
         self.getListData()
     }
@@ -74,24 +76,34 @@ class SettingsPresenter:NSObject,SettingsPresenterInterface{
             
             break
         
-        case SettingsProvider().getStringForType(SettingsType.AboutUs):
-            
-            break
-        case SettingsProvider().getStringForType(SettingsType.PrivacyPolicy):
-            
-            break
-        case SettingsProvider().getStringForType(SettingsType.ServiceConditions):
-            
+        case SettingsProvider().getStringForType(SettingsType.LegalAdvice):
+            detailTextWireframe?.presentShareInterfaceFromViewController(controller!,
+                                                                         textRef: Utils().getStringByKeyFromSettings(SettingsConstants().LEGAL_ADVICE_CONTENT))
+
             break
         case SettingsProvider().getStringForType(SettingsType.Licenses):
-            
+            detailTextWireframe?.presentShareInterfaceFromViewController(controller!,
+                                                                         textRef: Utils().getStringByKeyFromSettings(SettingsConstants().LICENSES_CONTENT))
+
             break
-        case SettingsProvider().getStringForType(SettingsType.LegalAdvice):
-            
+        case SettingsProvider().getStringForType(SettingsType.TermsOfService):
+            detailTextWireframe?.presentShareInterfaceFromViewController(controller!,
+                                                                         textRef: Utils().getStringByKeyFromSettings(SettingsConstants().TERMS_OF_SERVICE_CONTENT))
+
             break
-        
+        case SettingsProvider().getStringForType(SettingsType.PrivacyPolicy):
+            detailTextWireframe?.presentShareInterfaceFromViewController(controller!,
+                                                                         textRef: Utils().getStringByKeyFromSettings(SettingsConstants().PRIVACY_POLICY_CONTENT))
+
+            break
+        case SettingsProvider().getStringForType(SettingsType.AboutUs):
+            detailTextWireframe?.presentShareInterfaceFromViewController(controller!,
+                                                                         textRef: Utils().getStringByKeyFromSettings(SettingsConstants().ABOUT_US_CONTENT))
+
+            break
+            
         case SettingsProvider().getStringForType(SettingsType.Exit):
-            
+            controller?.createAlertExit()
             break
             
         default:
