@@ -1,0 +1,6 @@
+framework module Pods_Videona {
+  umbrella header "Pods-Videona-umbrella.h"
+
+  export *
+  module * { export * }
+}

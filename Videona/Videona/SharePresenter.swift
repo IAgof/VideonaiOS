@@ -21,17 +21,19 @@ class SharePresenter:NSObject,SharePresenterInterface{
     
     //LifeCicle
     func viewDidLoad() {
-        controller!.registerNib()
+        controller!.createShareInterface()
         wireframe?.presentPlayerInterface()
         
         playerPresenter?.createVideoPlayer(videoPath)
         self.getListData()
     }
+    
     func setVideoExportedPath(path: String) {
         self.videoPath = path
+        
     }
+    
     func pushBack() {
-        print("Navigator presenter pushEdit")        
         recordWireframe?.goBackToRecordView(controller!)
     }
     
@@ -46,14 +48,19 @@ class SharePresenter:NSObject,SharePresenterInterface{
     func setListTitleData(titleArray:Array<String>){
         controller?.setTitleList(titleArray)
     }
+    
     func setListImageData(imageArray:Array<UIImage>){
         controller?.setImageList(imageArray)
     }
+    
     func setListImagePressedData(imageArray:Array<UIImage>){
         controller?.setImagePressedList(imageArray)
     }
+    func pushShare(socialNetwork: String) {
+        interactor?.shareVideo(socialNetwork, videoPath: videoPath)
+    }
     
-    func setVideoPathToPlayer(path:String){
-        
+    func postToYoutube(token:String){
+        interactor!.postToYoutube(token)
     }
 }

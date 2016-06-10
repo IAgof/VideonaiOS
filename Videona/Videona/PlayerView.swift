@@ -50,7 +50,7 @@ class PlayerView: UIView,PlayerInterface {
     func getView() -> UIView {
         return self
     }
-        
+    
     func createVideoPlayer(){
         self.setViewPlayerTappable()
         self.initSeekEvents()

@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05385CD47D1323E5615A5A06 /* Pods_Videona.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E695B9819A8E5071F983C35 /* Pods_Videona.framework */; };
 		A91D25121CF876250006CB93 /* CameraInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91D25111CF876250006CB93 /* CameraInteractorInterface.swift */; };
 		A925E8FB1D01C8AA000BB684 /* water_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = A925E8FA1D01C8AA000BB684 /* water_mark.png */; };
+		A92793161D0AB1FB008E30BF /* SettingsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92793151D0AB1FB008E30BF /* SettingsConstants.swift */; };
 		A93846E81CE47E82007FB6BC /* FilterListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846E71CE47E82007FB6BC /* FilterListPresenter.swift */; };
 		A93846EA1CE47E9C007FB6BC /* FilterListPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846E91CE47E9C007FB6BC /* FilterListPresenterInterface.swift */; };
 		A93846EC1CE47EE2007FB6BC /* FilterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846EB1CE47EE2007FB6BC /* FilterListView.swift */; };
@@ -17,7 +19,7 @@
 		A93846F31CE4809F007FB6BC /* FilterListDismissalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846F21CE4809F007FB6BC /* FilterListDismissalTransition.swift */; };
 		A93846F51CE480AA007FB6BC /* FilterListPresentationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846F41CE480AA007FB6BC /* FilterListPresentationTransition.swift */; };
 		A93846F71CE49340007FB6BC /* FilterListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93846F61CE49340007FB6BC /* FilterListView.xib */; };
-		A942B5761D0835A4001C9518 /* AVResolutionCompatible.m in Sources */ = {isa = PBXBuildFile; fileRef = A942B5751D0835A4001C9518 /* AVResolutionCompatible.m */; };
+		A93C52381D06CA11001C2755 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A93C52371D06CA11001C2755 /* GoogleService-Info.plist */; };
 		A943015F1CE5CF2000DC0DF8 /* PlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A943015E1CE5CF2000DC0DF8 /* PlayerPresenter.swift */; };
 		A94301611CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301601CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift */; };
 		A94301631CE5CF3900DC0DF8 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301621CE5CF3900DC0DF8 /* PlayerView.swift */; };
@@ -82,7 +84,6 @@
 		A97FBDD31D09828600942F8D /* DetailTextWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97FBDD21D09828600942F8D /* DetailTextWireframe.swift */; };
 		A97FBDD71D09846A00942F8D /* DetailTextInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97FBDD61D09846A00942F8D /* DetailTextInteractor.swift */; };
 		A97FBDD91D0984B600942F8D /* DetailTextInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97FBDD81D0984B600942F8D /* DetailTextInteractorInterface.swift */; };
-		A97FBDDD1D09A87F00942F8D /* SettingsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97FBDDC1D09A87F00942F8D /* SettingsConstants.swift */; };
 		A97FBDE21D09B6B500942F8D /* Settings.strings in Resources */ = {isa = PBXBuildFile; fileRef = A97FBDE41D09B6B500942F8D /* Settings.strings */; };
 		A98A93B51CF58870004E1DB7 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A98A93B21CF58866004E1DB7 /* GPUImage.framework */; };
 		A98A93B61CF58874004E1DB7 /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A98A93B21CF58866004E1DB7 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -141,6 +142,13 @@
 		A9E066E91CE4C85900D4E11D /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9E066E81CE4C85900D4E11D /* FilterCell.xib */; };
 		A9E066EB1CE4E13800D4E11D /* ShareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9E066EA1CE4E13800D4E11D /* ShareCell.xib */; };
 		A9E066ED1CE4E4E200D4E11D /* ShareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E066EC1CE4E4E200D4E11D /* ShareCell.swift */; };
+		A9F251731D05CD8E00D8DC30 /* ShareWhatsappInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F251721D05CD8E00D8DC30 /* ShareWhatsappInteractor.swift */; };
+		A9F251771D05CDA900D8DC30 /* ShareInstagramInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F251761D05CDA900D8DC30 /* ShareInstagramInteractor.swift */; };
+		A9F251791D05CDB600D8DC30 /* ShareFacebookInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F251781D05CDB600D8DC30 /* ShareFacebookInteractor.swift */; };
+		A9F2517B1D05CDC800D8DC30 /* ShareTwitterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2517A1D05CDC800D8DC30 /* ShareTwitterInteractor.swift */; };
+		A9F2517D1D05CDD900D8DC30 /* ShareYoutubeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2517C1D05CDD900D8DC30 /* ShareYoutubeInteractor.swift */; };
+		A9F251801D05D57800D8DC30 /* ShareSocialNetworkInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2517F1D05D57800D8DC30 /* ShareSocialNetworkInteractor.swift */; };
+		A9F251841D05D7AB00D8DC30 /* SocialVideoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F251831D05D7AB00D8DC30 /* SocialVideoHelper.m */; };
 		A9F9C20E1CF4665000AB310C /* VideonaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9C20D1CF4665000AB310C /* VideonaController.swift */; };
 		A9F9C2101CF4857700AB310C /* Logo_Splash_Horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F9C20F1CF4857700AB310C /* Logo_Splash_Horizontal.png */; };
 		A9F9C2121CF485C600AB310C /* Logo_Splash_Vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F9C2111CF485C600AB310C /* Logo_Splash_Vertical.png */; };
@@ -199,9 +207,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7E695B9819A8E5071F983C35 /* Pods_Videona.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Videona.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D1DE05AFBAE78D866AF921E /* Pods-Videona.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Videona.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Videona/Pods-Videona.debug.xcconfig"; sourceTree = "<group>"; };
 		A918B89A1CF5878D0013D68F /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = ../../GPUImage/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		A91D25111CF876250006CB93 /* CameraInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraInteractorInterface.swift; sourceTree = "<group>"; };
 		A925E8FA1D01C8AA000BB684 /* water_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water_mark.png; sourceTree = "<group>"; };
+		A92793151D0AB1FB008E30BF /* SettingsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsConstants.swift; sourceTree = "<group>"; };
 		A93846E71CE47E82007FB6BC /* FilterListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListPresenter.swift; sourceTree = "<group>"; };
 		A93846E91CE47E9C007FB6BC /* FilterListPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListPresenterInterface.swift; sourceTree = "<group>"; };
 		A93846EB1CE47EE2007FB6BC /* FilterListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListView.swift; sourceTree = "<group>"; };
@@ -210,9 +221,7 @@
 		A93846F21CE4809F007FB6BC /* FilterListDismissalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListDismissalTransition.swift; sourceTree = "<group>"; };
 		A93846F41CE480AA007FB6BC /* FilterListPresentationTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListPresentationTransition.swift; sourceTree = "<group>"; };
 		A93846F61CE49340007FB6BC /* FilterListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterListView.xib; sourceTree = "<group>"; };
-		A942B5731D0835A4001C9518 /* Videona-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Videona-Bridging-Header.h"; sourceTree = "<group>"; };
-		A942B5741D0835A4001C9518 /* AVResolutionCompatible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVResolutionCompatible.h; sourceTree = "<group>"; };
-		A942B5751D0835A4001C9518 /* AVResolutionCompatible.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVResolutionCompatible.m; sourceTree = "<group>"; };
+		A93C52371D06CA11001C2755 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A943015E1CE5CF2000DC0DF8 /* PlayerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerPresenter.swift; sourceTree = "<group>"; };
 		A94301601CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerPresenterInterface.swift; sourceTree = "<group>"; };
 		A94301621CE5CF3900DC0DF8 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
@@ -283,7 +292,6 @@
 		A97FBDD21D09828600942F8D /* DetailTextWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTextWireframe.swift; sourceTree = "<group>"; };
 		A97FBDD61D09846A00942F8D /* DetailTextInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTextInteractor.swift; sourceTree = "<group>"; };
 		A97FBDD81D0984B600942F8D /* DetailTextInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTextInteractorInterface.swift; sourceTree = "<group>"; };
-		A97FBDDC1D09A87F00942F8D /* SettingsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsConstants.swift; sourceTree = "<group>"; };
 		A97FBDDE1D09B67200942F8D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		A97FBDDF1D09B67200942F8D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A97FBDE31D09B6B500942F8D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
@@ -343,10 +351,20 @@
 		A9E066E81CE4C85900D4E11D /* FilterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
 		A9E066EA1CE4E13800D4E11D /* ShareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareCell.xib; sourceTree = "<group>"; };
 		A9E066EC1CE4E4E200D4E11D /* ShareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareCell.swift; sourceTree = "<group>"; };
+		A9F251721D05CD8E00D8DC30 /* ShareWhatsappInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareWhatsappInteractor.swift; sourceTree = "<group>"; };
+		A9F251761D05CDA900D8DC30 /* ShareInstagramInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareInstagramInteractor.swift; sourceTree = "<group>"; };
+		A9F251781D05CDB600D8DC30 /* ShareFacebookInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareFacebookInteractor.swift; sourceTree = "<group>"; };
+		A9F2517A1D05CDC800D8DC30 /* ShareTwitterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareTwitterInteractor.swift; sourceTree = "<group>"; };
+		A9F2517C1D05CDD900D8DC30 /* ShareYoutubeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareYoutubeInteractor.swift; sourceTree = "<group>"; };
+		A9F2517F1D05D57800D8DC30 /* ShareSocialNetworkInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareSocialNetworkInteractor.swift; sourceTree = "<group>"; };
+		A9F251811D05D7AA00D8DC30 /* Videona-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Videona-Bridging-Header.h"; sourceTree = "<group>"; };
+		A9F251821D05D7AB00D8DC30 /* SocialVideoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialVideoHelper.h; sourceTree = "<group>"; };
+		A9F251831D05D7AB00D8DC30 /* SocialVideoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialVideoHelper.m; sourceTree = "<group>"; };
 		A9F9C20D1CF4665000AB310C /* VideonaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideonaController.swift; sourceTree = "<group>"; };
 		A9F9C20F1CF4857700AB310C /* Logo_Splash_Horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_Splash_Horizontal.png; sourceTree = "<group>"; };
 		A9F9C2111CF485C600AB310C /* Logo_Splash_Vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_Splash_Vertical.png; sourceTree = "<group>"; };
 		A9F9C2481CF49F5D00AB310C /* FlashInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashInteractor.swift; sourceTree = "<group>"; };
+		AC37DF744460D4CE24EC5226 /* Pods-Videona.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Videona.release.xcconfig"; path = "Pods/Target Support Files/Pods-Videona/Pods-Videona.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A98A93B51CF58870004E1DB7 /* GPUImage.framework in Frameworks */,
+				05385CD47D1323E5615A5A06 /* Pods_Videona.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,15 +452,6 @@
 			name = Transition;
 			sourceTree = "<group>";
 		};
-		A942B5791D08366A001C9518 /* AVResolutionCompatible */ = {
-			isa = PBXGroup;
-			children = (
-				A942B5741D0835A4001C9518 /* AVResolutionCompatible.h */,
-				A942B5751D0835A4001C9518 /* AVResolutionCompatible.m */,
-			);
-			name = AVResolutionCompatible;
-			sourceTree = "<group>";
-		};
 		A94301591CE5CEE400DC0DF8 /* Player */ = {
 			isa = PBXGroup;
 			children = (
@@ -509,6 +519,7 @@
 		A943016C1CE5D96900DC0DF8 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				A9F2517E1D05CF7200D8DC30 /* ShareSocialNetworksInteractor */,
 				A94301711CE5DD8B00DC0DF8 /* ShareInteractor.swift */,
 				A94301731CE5DFA100DC0DF8 /* ShareInteractorInterface.swift */,
 			);
@@ -523,6 +534,8 @@
 				A95B24481CD8890A00F78AAF /* VideonaTests */,
 				A95B24531CD8890A00F78AAF /* VideonaUITests */,
 				A95B24321CD8890900F78AAF /* Products */,
+				DEE4E2D7D6CEFAB3F3C1BE7A /* Pods */,
+				DE2AB47A74ABD8452EB5657C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -548,7 +561,10 @@
 				A95B24621CD8892B00F78AAF /* StoryBoard */,
 				A95B243B1CD8890900F78AAF /* Assets.xcassets */,
 				A95B24401CD8890900F78AAF /* Info.plist */,
-				A942B5731D0835A4001C9518 /* Videona-Bridging-Header.h */,
+				A93C52371D06CA11001C2755 /* GoogleService-Info.plist */,
+				A9F251821D05D7AB00D8DC30 /* SocialVideoHelper.h */,
+				A9F251831D05D7AB00D8DC30 /* SocialVideoHelper.m */,
+				A9F251811D05D7AA00D8DC30 /* Videona-Bridging-Header.h */,
 			);
 			path = Videona;
 			sourceTree = "<group>";
@@ -669,7 +685,6 @@
 		A95B24771CD8B95800F78AAF /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				A942B5791D08366A001C9518 /* AVResolutionCompatible */,
 				A9686F941CFF129C00983540 /* AVResolutionParse.swift */,
 				A95D3BE21CEB6B77001F2272 /* Utils.swift */,
 				A9F9C2081CF465D300AB310C /* Wireframe */,
@@ -788,7 +803,7 @@
 		A96733011CE630B3007BE340 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A97FBDDC1D09A87F00942F8D /* SettingsConstants.swift */,
+				A92793151D0AB1FB008E30BF /* SettingsConstants.swift */,
 				A95D3BDD1CEB0320001F2272 /* SettingsContent.swift */,
 				A95D3BDF1CEB045F001F2272 /* SettingsProvider.swift */,
 			);
@@ -1112,6 +1127,19 @@
 			name = Constants;
 			sourceTree = "<group>";
 		};
+		A9F2517E1D05CF7200D8DC30 /* ShareSocialNetworksInteractor */ = {
+			isa = PBXGroup;
+			children = (
+				A9F2517F1D05D57800D8DC30 /* ShareSocialNetworkInteractor.swift */,
+				A9F251721D05CD8E00D8DC30 /* ShareWhatsappInteractor.swift */,
+				A9F2517C1D05CDD900D8DC30 /* ShareYoutubeInteractor.swift */,
+				A9F251761D05CDA900D8DC30 /* ShareInstagramInteractor.swift */,
+				A9F251781D05CDB600D8DC30 /* ShareFacebookInteractor.swift */,
+				A9F2517A1D05CDC800D8DC30 /* ShareTwitterInteractor.swift */,
+			);
+			name = ShareSocialNetworksInteractor;
+			sourceTree = "<group>";
+		};
 		A9F9C2081CF465D300AB310C /* Wireframe */ = {
 			isa = PBXGroup;
 			children = (
@@ -1143,6 +1171,23 @@
 			name = Res;
 			sourceTree = "<group>";
 		};
+		DE2AB47A74ABD8452EB5657C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E695B9819A8E5071F983C35 /* Pods_Videona.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEE4E2D7D6CEFAB3F3C1BE7A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9D1DE05AFBAE78D866AF921E /* Pods-Videona.debug.xcconfig */,
+				AC37DF744460D4CE24EC5226 /* Pods-Videona.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1150,10 +1195,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A95B24591CD8890A00F78AAF /* Build configuration list for PBXNativeTarget "Videona" */;
 			buildPhases = (
+				F55939F519E557CAA5D559F0 /* Check Pods Manifest.lock */,
 				A95B242D1CD8890900F78AAF /* Sources */,
 				A95B242E1CD8890900F78AAF /* Frameworks */,
 				A95B242F1CD8890900F78AAF /* Resources */,
 				A965C7F91CF586E4001E2D39 /* CopyFiles */,
+				75AC14413F902EB7D10DEA13 /* Embed Pods Frameworks */,
+				AEEBF3C285A831D90BF429BE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1311,6 +1359,7 @@
 				A9E066EB1CE4E13800D4E11D /* ShareCell.xib in Resources */,
 				A95B243A1CD8890900F78AAF /* Main.storyboard in Resources */,
 				A9D76B051CF5FB8700F7FB47 /* bokeh.png in Resources */,
+				A93C52381D06CA11001C2755 /* GoogleService-Info.plist in Resources */,
 				A9D257CB1CF835D200A618B0 /* Posterizebw.fsh in Resources */,
 				A9D76B0B1CF5FB8700F7FB47 /* mist.png in Resources */,
 				A9D76B061CF5FB8700F7FB47 /* burn.png in Resources */,
@@ -1339,6 +1388,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		75AC14413F902EB7D10DEA13 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Videona/Pods-Videona-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AEEBF3C285A831D90BF429BE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Videona/Pods-Videona-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F55939F519E557CAA5D559F0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A95B242D1CD8890900F78AAF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1364,11 +1461,12 @@
 				A971F5BB1CFC89AF004DC50D /* ClipsAlbum.swift in Sources */,
 				A95B24761CD8B90700F78AAF /* AppDependencies.swift in Sources */,
 				A971F5A31CFC21E4004DC50D /* CameraRecorderInterface.swift in Sources */,
+				A9F2517D1D05CDD900D8DC30 /* ShareYoutubeInteractor.swift in Sources */,
 				A9E066ED1CE4E4E200D4E11D /* ShareCell.swift in Sources */,
 				A95B24371CD8890900F78AAF /* RecordController.swift in Sources */,
 				A965BDC11CDA0F1D002579CA /* IntroViewInterface.swift in Sources */,
 				A9E066D91CE4B4E000D4E11D /* Effect.swift in Sources */,
-				A97FBDDD1D09A87F00942F8D /* SettingsConstants.swift in Sources */,
+				A9F251771D05CDA900D8DC30 /* ShareInstagramInteractor.swift in Sources */,
 				A98A93C41CF5BAF6004E1DB7 /* EffectDictionary.swift in Sources */,
 				A93846EC1CE47EE2007FB6BC /* FilterListView.swift in Sources */,
 				A95D3BEA1CEB7158001F2272 /* PlayerProvider.swift in Sources */,
@@ -1378,6 +1476,7 @@
 				A97FBDCD1D09824500942F8D /* DetailTextPresenterInterface.swift in Sources */,
 				A95D3BF01CEB7356001F2272 /* PlayerInteractorInterface.swift in Sources */,
 				A94301631CE5CF3900DC0DF8 /* PlayerView.swift in Sources */,
+				A9F251841D05D7AB00D8DC30 /* SocialVideoHelper.m in Sources */,
 				A9E066DB1CE4B4EE00D4E11D /* OverlayEffect.swift in Sources */,
 				A95B247A1CD8B96E00F78AAF /* RootWireframe.swift in Sources */,
 				A98A93BB1CF5903C004E1DB7 /* AddFilterInteractor.swift in Sources */,
@@ -1390,6 +1489,7 @@
 				A943016E1CE5D99E00DC0DF8 /* SocialNetwork.swift in Sources */,
 				A9B1181D1CE378DC001A1177 /* ShareInterface.swift in Sources */,
 				A965C7EC1CF58467001E2D39 /* CameraInteractor.swift in Sources */,
+				A92793161D0AB1FB008E30BF /* SettingsConstants.swift in Sources */,
 				A99278501CE3647B009DC364 /* SettingsPresenter.swift in Sources */,
 				A97FBDD71D09846A00942F8D /* DetailTextInteractor.swift in Sources */,
 				A9E066DF1CE4BA0700D4E11D /* EffectProvider.swift in Sources */,
@@ -1402,6 +1502,7 @@
 				A971F5C01CFC8E1B004DC50D /* ExportedAlbum.swift in Sources */,
 				A9686F951CFF129C00983540 /* AVResolutionParse.swift in Sources */,
 				A9B118191CE378C2001A1177 /* SharePresenterInterface.swift in Sources */,
+				A9F251801D05D57800D8DC30 /* ShareSocialNetworkInteractor.swift in Sources */,
 				A96732FE1CE6309C007BE340 /* SettingsInteractor.swift in Sources */,
 				A965BDBF1CDA076C002579CA /* IntroWireframe.swift in Sources */,
 				A95B24351CD8890900F78AAF /* AppDelegate.swift in Sources */,
@@ -1412,8 +1513,8 @@
 				A971F5A91CFC4756004DC50D /* TimerInteractor.swift in Sources */,
 				A95D3BE81CEB7141001F2272 /* PlayerItem.swift in Sources */,
 				A971F5AB1CFC48D2004DC50D /* TimerInteractorInterface.swift in Sources */,
+				A9F2517B1D05CDC800D8DC30 /* ShareTwitterInteractor.swift in Sources */,
 				A93846F51CE480AA007FB6BC /* FilterListPresentationTransition.swift in Sources */,
-				A942B5761D0835A4001C9518 /* AVResolutionCompatible.m in Sources */,
 				A93846E81CE47E82007FB6BC /* FilterListPresenter.swift in Sources */,
 				A95B247C1CD8B9F200F78AAF /* RecordPresenterInterfaceIO.swift in Sources */,
 				A9E066DD1CE4B4F500D4E11D /* ShaderEffect.swift in Sources */,
@@ -1423,6 +1524,8 @@
 				A95B246E1CD88C2D00F78AAF /* RecordViewInterface.swift in Sources */,
 				A971F5B11CFC5B98004DC50D /* ThumbnailInteractor.swift in Sources */,
 				A99278571CE36517009DC364 /* SettingsInterface.swift in Sources */,
+				A9F251731D05CD8E00D8DC30 /* ShareWhatsappInteractor.swift in Sources */,
+				A9F251791D05CDB600D8DC30 /* ShareFacebookInteractor.swift in Sources */,
 				A965BDBC1CDA0758002579CA /* IntroPresenter.swift in Sources */,
 				A94301671CE5CF4F00DC0DF8 /* PlayerWireframe.swift in Sources */,
 				A97FBDD31D09828600942F8D /* DetailTextWireframe.swift in Sources */,
@@ -1589,6 +1692,7 @@
 		};
 		A95B245A1CD8890A00F78AAF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D1DE05AFBAE78D866AF921E /* Pods-Videona.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1606,6 +1710,7 @@
 		};
 		A95B245B1CD8890A00F78AAF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC37DF744460D4CE24EC5226 /* Pods-Videona.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
