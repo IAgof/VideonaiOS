@@ -63,6 +63,7 @@ class ShareInteractor: NSObject,ShareInteractorInterface {
         switch socialNetworkTitle {
         case "Facebook":
             print("Share video on facebook")
+            ShareFacebookInteractor(moviePath: videoPath,socialName: socialNetworkTitle).share()
         case "Instagram":
             print("Share video on Instagram")
             ShareInstagramInteractor(moviePath: videoPath,socialName: socialNetworkTitle).share()

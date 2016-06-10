@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Photos
 
 class ShareSocialNetworkInteractor:NSObject{
     var moviePath:String = ""
@@ -67,4 +68,38 @@ class ShareSocialNetworkInteractor:NSObject{
         })
     }
     
+    func getLastAsset() -> PHAsset
+    {
+        var asset:PHAsset = PHAsset()
+        
+        //Get last videoAsset on PhotoLibrary
+        let fetchOptions = PHFetchOptions()
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key:"creationDate", ascending:false)]
+        let fetchResult = PHAsset.fetchAssetsWithMediaType(.Video, options: fetchOptions)
+       
+        if let lastAsset = fetchResult.firstObject as? PHAsset {
+            asset = lastAsset
+        }
+        return asset
+    }
+    
+    func getLastAssetURL() ->NSURL{
+        let asset = self.getLastAsset()
+        let localID = asset.localIdentifier
+        let assetID =
+            localID.stringByReplacingOccurrencesOfString(
+                "/.*", withString: "",
+                options: NSStringCompareOptions.RegularExpressionSearch, range: nil)
+        let ext = "mp4"
+        let assetURLStr =
+            "assets-library://asset/asset.\(ext)?id=\(assetID)&ext=\(ext)"
+        
+        return NSURL(string: assetURLStr)!
+    }
+    
+    func getLastAssetString() -> String{
+        let asset = self.getLastAsset()
+        
+        return asset.localIdentifier
+    }
 }

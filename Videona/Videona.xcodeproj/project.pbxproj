@@ -13,6 +13,9 @@
 		A92793161D0AB1FB008E30BF /* SettingsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92793151D0AB1FB008E30BF /* SettingsConstants.swift */; };
 		A927931D1D0AB71D008E30BF /* RecorderConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A927931C1D0AB71D008E30BF /* RecorderConstants.swift */; };
 		A927931F1D0AB906008E30BF /* ShareConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A927931E1D0AB906008E30BF /* ShareConstants.swift */; };
+		A92793211D0AC6C8008E30BF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92793201D0AC6C8008E30BF /* FBSDKCoreKit.framework */; };
+		A92793231D0AC6D2008E30BF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92793221D0AC6D2008E30BF /* FBSDKLoginKit.framework */; };
+		A92793251D0AC6D8008E30BF /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92793241D0AC6D8008E30BF /* FBSDKShareKit.framework */; };
 		A93846E81CE47E82007FB6BC /* FilterListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846E71CE47E82007FB6BC /* FilterListPresenter.swift */; };
 		A93846EA1CE47E9C007FB6BC /* FilterListPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846E91CE47E9C007FB6BC /* FilterListPresenterInterface.swift */; };
 		A93846EC1CE47EE2007FB6BC /* FilterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846EB1CE47EE2007FB6BC /* FilterListView.swift */; };
@@ -217,6 +220,9 @@
 		A92793151D0AB1FB008E30BF /* SettingsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsConstants.swift; sourceTree = "<group>"; };
 		A927931C1D0AB71D008E30BF /* RecorderConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecorderConstants.swift; sourceTree = "<group>"; };
 		A927931E1D0AB906008E30BF /* ShareConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareConstants.swift; sourceTree = "<group>"; };
+		A92793201D0AC6C8008E30BF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		A92793221D0AC6D2008E30BF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		A92793241D0AC6D8008E30BF /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		A93846E71CE47E82007FB6BC /* FilterListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListPresenter.swift; sourceTree = "<group>"; };
 		A93846E91CE47E9C007FB6BC /* FilterListPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListPresenterInterface.swift; sourceTree = "<group>"; };
 		A93846EB1CE47EE2007FB6BC /* FilterListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListView.swift; sourceTree = "<group>"; };
@@ -377,6 +383,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A98A93B51CF58870004E1DB7 /* GPUImage.framework in Frameworks */,
+				A92793211D0AC6C8008E30BF /* FBSDKCoreKit.framework in Frameworks */,
+				A92793251D0AC6D8008E30BF /* FBSDKShareKit.framework in Frameworks */,
+				A92793231D0AC6D2008E30BF /* FBSDKLoginKit.framework in Frameworks */,
 				05385CD47D1323E5615A5A06 /* Pods_Videona.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1188,6 +1197,9 @@
 		DE2AB47A74ABD8452EB5657C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A92793241D0AC6D8008E30BF /* FBSDKShareKit.framework */,
+				A92793221D0AC6D2008E30BF /* FBSDKLoginKit.framework */,
+				A92793201D0AC6C8008E30BF /* FBSDKCoreKit.framework */,
 				7E695B9819A8E5071F983C35 /* Pods_Videona.framework */,
 			);
 			name = Frameworks;
@@ -1714,6 +1726,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Videona/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.videona.videona;
@@ -1732,6 +1748,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Videona/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.videona.videona;

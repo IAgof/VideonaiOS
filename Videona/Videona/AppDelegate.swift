@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         self.configureGoogleSignIn()
         
-        return true
+        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
     func setupStartApp() {//Check version and initial state of the app to show new features or initial message
@@ -76,16 +76,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     //MARK: - Google Sign In
     func application(application: UIApplication,
-                     openURL url: NSURL, options: [String: AnyObject]) -> Bool {
+                     openURL url: NSURL,
+                             options: [String: AnyObject]) -> Bool {
         return GIDSignIn.sharedInstance().handleURL(url,
                                                     sourceApplication: options[UIApplicationOpenURLOptionsSourceApplicationKey] as? String,
                                                     annotation: options[UIApplicationOpenURLOptionsAnnotationKey])
     }
     
     func application(application: UIApplication,
-                     openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
-        var options: [String: AnyObject] = [UIApplicationOpenURLOptionsSourceApplicationKey: sourceApplication!,
-                                            UIApplicationOpenURLOptionsAnnotationKey: annotation!]
+                            openURL url: NSURL,
+                             sourceApplication: String?,
+                             annotation: AnyObject) -> Bool {
+        
+        print("sourceApp\(sourceApplication)")
+        
+        return FBSDKApplicationDelegate.sharedInstance().application(
+            application,
+            openURL: url,
+            sourceApplication: sourceApplication,
+            annotation: annotation)
+        
         return GIDSignIn.sharedInstance().handleURL(url,
                                                     sourceApplication: sourceApplication,
                                                     annotation: annotation)
@@ -111,6 +121,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 withError error: NSError!) {
         // Perform any operations when the user disconnects from app here.
         // ...
+    }
+    
+    func applicationDidBecomeActive(application: UIApplication) {
+        FBSDKAppEvents.activateApp()
     }
 }
 
