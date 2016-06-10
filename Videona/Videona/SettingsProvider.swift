@@ -84,15 +84,15 @@ class SettingsProvider:NSObject{
         //MARK: - MY_ACCOUNT_SECTION
         settings.append( SettingsContent(title: Utils().getStringByKeyFromSettings(SettingsConstants().NAME)
             ,subTitle: user.name
-            ,section: Utils().getStringByKeyFromSettings(SettingsConstants().ACCOUNT_ACTIONS_SECTION)
+            ,section: Utils().getStringByKeyFromSettings(SettingsConstants().MY_ACCOUNT_SECTION)
             ,priority: 1))
         settings.append( SettingsContent(title: Utils().getStringByKeyFromSettings(SettingsConstants().USER_NAME)
             ,subTitle: user.userName
-            ,section: Utils().getStringByKeyFromSettings(SettingsConstants().ACCOUNT_ACTIONS_SECTION)
+            ,section: Utils().getStringByKeyFromSettings(SettingsConstants().MY_ACCOUNT_SECTION)
             ,priority: 1))
         settings.append( SettingsContent(title: Utils().getStringByKeyFromSettings(SettingsConstants().EMAIL_PREFERENCE)
             ,subTitle: user.email
-            ,section: Utils().getStringByKeyFromSettings(SettingsConstants().ACCOUNT_ACTIONS_SECTION)
+            ,section: Utils().getStringByKeyFromSettings(SettingsConstants().MY_ACCOUNT_SECTION)
             ,priority: 1))
         
         //MARK: - CAMERA_SECTION

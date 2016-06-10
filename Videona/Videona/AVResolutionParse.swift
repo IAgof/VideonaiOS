@@ -76,9 +76,9 @@ protocol AVResolutionParseInterface {
 }
 
 class AVResolutionParse: NSObject {
-    var goodResolution = "Buena (1080)"
-    var mediumResolution = "Media (720)"
-    var regularResolution = "Regular (480)"
+    var regularResolution = Utils().getStringByKeyFromSettings("regular_resolution_name")
+    var mediumResolution =  Utils().getStringByKeyFromSettings("medium_resolution_name")
+    var goodResolution =  Utils().getStringByKeyFromSettings("good_resolution_name")
     
     func resolutionsToView() -> Array<String>  {
         var resolutionsToTheTableView = Array<String>()

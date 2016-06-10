@@ -109,10 +109,12 @@
 //<!-- Camera Settings -- = "
 "title_camera_section" = "Cámara";
 "resolution" = "Resolución";
-"low_resolution_name" = "Buena (720p)";
-"low_value" = "Buena";
+"regular_resolution_name" = "Baja (480)";
+"regular_value" = "Good";
+"medium_resolution_name" = "Buena (720p)";
+"medium_value" = "Good";
 "good_resolution_name" = "Muy buena (1080p)";
-"good_value" = "Muy buena";
+"good_value" = "Very good";
 "high_resolution_name" = "Excelente (4K)";
 "high_value" = "Excelente";
 "quality" = "Calidad";
