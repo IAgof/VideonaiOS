@@ -29,7 +29,7 @@ class ShareFacebookInteractor: ShareSocialNetworkInteractor,FBSDKLoginButtonDele
         if UIApplication.sharedApplication().canOpenURL(NSURL.init(string:"fbauth2:/")!){
             dialog.mode = .Native
         }else{
-            dialog.mode = .Browser
+            self.setAlertCompletionMessageOnTopView(Utils().getStringByKeyFromSettings(ShareConstants().NO_FACEBOOK_INSTALLED))
         }
         dialog.shareContent = content
         dialog.delegate = self
