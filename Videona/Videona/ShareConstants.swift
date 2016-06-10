@@ -10,5 +10,6 @@ import Foundation
 
 class ShareConstants: NSObject {
     let NO_WHATSAPP_INSTALLED = "no_whatsapp_installed"
+    let NO_ISTAGRAM_INSTALLED = "no_instagram_installed"
     let NO_FACEBOOK_INSTALLED = "no_facebook_installed"
 }

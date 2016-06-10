@@ -16,6 +16,8 @@ class ShareInstagramInteractor:ShareSocialNetworkInteractor{
         let instagramURL = NSURL.init(string: "instagram://library?LocalIdentifier=\(self.getLastAssetString())")!
         if UIApplication.sharedApplication().canOpenURL(instagramURL) {
             UIApplication.sharedApplication().openURL(instagramURL)
+        }else{
+            self.setAlertCompletionMessageOnTopView(Utils().getStringByKeyFromSettings(ShareConstants().NO_ISTAGRAM_INSTALLED))
         }
     }
 }
