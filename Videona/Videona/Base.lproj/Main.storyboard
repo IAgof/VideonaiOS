@@ -349,7 +349,7 @@
                                                     <rect key="frame" x="15" y="11" width="34" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=compact">
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -410,7 +410,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wuH-v3-UEb">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
-                                    <navigationItem title="Share video" id="DME-9U-oFj">
+                                    <navigationItem id="DME-9U-oFj">
                                         <barButtonItem key="leftBarButtonItem" image="activity_edit_back_normal" id="1LM-Sq-yPf">
                                             <connections>
                                                 <action selector="pushBackBarButton:" destination="0Ip-P7-Gfh" id="8np-Yc-5iV"/>
@@ -518,6 +518,7 @@
                     </view>
                     <connections>
                         <outlet property="playerView" destination="HDf-Fy-I5e" id="uwo-BX-4hO"/>
+                        <outlet property="settingsNavBar" destination="DME-9U-oFj" id="XGU-cI-fgu"/>
                         <outlet property="shareTableView" destination="h18-mE-dqd" id="8ex-hy-Ecf"/>
                     </connections>
                 </viewController>
@@ -534,6 +535,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bJb-3K-IAz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="i0L-BO-RHS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k6l-21-TFH">
@@ -573,13 +575,13 @@
                                 <exclude reference="T5V-hi-ibx"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="XoL-io-GJh"/>
                                 <exclude reference="ACh-J4-d6d"/>
                                 <exclude reference="FF5-BY-TdG"/>
                                 <exclude reference="PKB-Tg-wem"/>
                                 <exclude reference="EOl-cZ-yn2"/>
                                 <exclude reference="GHd-mV-VU9"/>
                                 <exclude reference="Gn6-9w-V9u"/>
-                                <exclude reference="XoL-io-GJh"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -588,13 +590,13 @@
                                 <include reference="T5V-hi-ibx"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="XoL-io-GJh"/>
                                 <include reference="ACh-J4-d6d"/>
                                 <include reference="FF5-BY-TdG"/>
                                 <include reference="PKB-Tg-wem"/>
                                 <include reference="EOl-cZ-yn2"/>
                                 <include reference="GHd-mV-VU9"/>
                                 <include reference="Gn6-9w-V9u"/>
-                                <include reference="XoL-io-GJh"/>
                             </mask>
                         </variation>
                     </view>

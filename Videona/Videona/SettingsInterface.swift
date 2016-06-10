@@ -17,4 +17,5 @@ protocol SettingsInterface {
     func registerClass()
     func reloadTableData()
     func createAlertExit()
+    func setNavBarTitle(title:String)
 }

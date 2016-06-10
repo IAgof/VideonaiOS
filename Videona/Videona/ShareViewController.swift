@@ -37,6 +37,7 @@ GIDSignInUIDelegate,GIDSignInDelegate{
     //MARK: - Outlets
     @IBOutlet weak var shareTableView: UITableView!
     @IBOutlet weak var playerView: UIView!
+    @IBOutlet weak var settingsNavBar: UINavigationItem!
     
     
     override func viewDidLoad() {
@@ -54,6 +55,9 @@ GIDSignInUIDelegate,GIDSignInDelegate{
         //Google Sign in
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
+    }
+    func setNavBarTitle(title:String){
+        settingsNavBar.title = title
     }
     
     func setTitleList(titleList: Array<String>) {

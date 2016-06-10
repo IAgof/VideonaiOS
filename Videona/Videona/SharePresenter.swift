@@ -22,6 +22,8 @@ class SharePresenter:NSObject,SharePresenterInterface{
     //LifeCicle
     func viewDidLoad() {
         controller!.createShareInterface()
+        controller?.setNavBarTitle(Utils().getStringByKeyFromSettings(SettingsConstants().SHARE_VIDEONA_TITLE))
+        
         wireframe?.presentPlayerInterface()
         
         playerPresenter?.createVideoPlayer(videoPath)

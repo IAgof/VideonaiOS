@@ -28,7 +28,7 @@ class SettingsConstants: NSObject {
     //MARK: - MY_ACCOUNT_SECTION
     let MY_ACCOUNT_SECTION = "titleUserSection"
 
-    let SETTINGS_TITLE = "Ajustes"
+    let SETTINGS_TITLE = "action_settings"
     let NAME = "name"
     let ENTER_NAME = "enterName"
     let REMOVE_NAME = "removeName"

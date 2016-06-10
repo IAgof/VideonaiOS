@@ -24,7 +24,8 @@ class SettingsPresenter:NSObject,SettingsPresenterInterface{
         recordWireframe?.goBackToRecordView(controller!)
     }
     func viewDidLoad() {
-        controller?.setTitleNavBar()
+        controller?.setNavBarTitle(Utils().getStringByKeyFromSettings(SettingsConstants().SETTINGS_TITLE)
+)
         controller?.registerClass()
         self.getListData()
     }

@@ -11,6 +11,8 @@
 		A91D25121CF876250006CB93 /* CameraInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91D25111CF876250006CB93 /* CameraInteractorInterface.swift */; };
 		A925E8FB1D01C8AA000BB684 /* water_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = A925E8FA1D01C8AA000BB684 /* water_mark.png */; };
 		A92793161D0AB1FB008E30BF /* SettingsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92793151D0AB1FB008E30BF /* SettingsConstants.swift */; };
+		A927931D1D0AB71D008E30BF /* RecorderConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A927931C1D0AB71D008E30BF /* RecorderConstants.swift */; };
+		A927931F1D0AB906008E30BF /* ShareConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A927931E1D0AB906008E30BF /* ShareConstants.swift */; };
 		A93846E81CE47E82007FB6BC /* FilterListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846E71CE47E82007FB6BC /* FilterListPresenter.swift */; };
 		A93846EA1CE47E9C007FB6BC /* FilterListPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846E91CE47E9C007FB6BC /* FilterListPresenterInterface.swift */; };
 		A93846EC1CE47EE2007FB6BC /* FilterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846EB1CE47EE2007FB6BC /* FilterListView.swift */; };
@@ -213,6 +215,8 @@
 		A91D25111CF876250006CB93 /* CameraInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraInteractorInterface.swift; sourceTree = "<group>"; };
 		A925E8FA1D01C8AA000BB684 /* water_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water_mark.png; sourceTree = "<group>"; };
 		A92793151D0AB1FB008E30BF /* SettingsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsConstants.swift; sourceTree = "<group>"; };
+		A927931C1D0AB71D008E30BF /* RecorderConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecorderConstants.swift; sourceTree = "<group>"; };
+		A927931E1D0AB906008E30BF /* ShareConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareConstants.swift; sourceTree = "<group>"; };
 		A93846E71CE47E82007FB6BC /* FilterListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListPresenter.swift; sourceTree = "<group>"; };
 		A93846E91CE47E9C007FB6BC /* FilterListPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListPresenterInterface.swift; sourceTree = "<group>"; };
 		A93846EB1CE47EE2007FB6BC /* FilterListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListView.swift; sourceTree = "<group>"; };
@@ -394,6 +398,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A92793191D0AB708008E30BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A927931C1D0AB71D008E30BF /* RecorderConstants.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		A93846E21CE47E57007FB6BC /* Filter List */ = {
 			isa = PBXGroup;
 			children = (
@@ -511,6 +523,7 @@
 			isa = PBXGroup;
 			children = (
 				A943016D1CE5D99E00DC0DF8 /* SocialNetwork.swift */,
+				A927931E1D0AB906008E30BF /* ShareConstants.swift */,
 				A943016F1CE5DAA100DC0DF8 /* SocialNetworkProvider.swift */,
 			);
 			name = Model;
@@ -658,6 +671,7 @@
 		A95B24681CD8898D00F78AAF /* AppLogic */ = {
 			isa = PBXGroup;
 			children = (
+				A92793191D0AB708008E30BF /* Model */,
 				A95B24651CD8897000F78AAF /* Interactor */,
 			);
 			name = AppLogic;
@@ -1482,6 +1496,7 @@
 				A98A93BB1CF5903C004E1DB7 /* AddFilterInteractor.swift in Sources */,
 				A99278591CE36524009DC364 /* SettingsWireframe.swift in Sources */,
 				A971F5BE1CFC8D10004DC50D /* ExporterInteractor.swift in Sources */,
+				A927931D1D0AB71D008E30BF /* RecorderConstants.swift in Sources */,
 				A97FBDD11D09827900942F8D /* DetailTextInterface.swift in Sources */,
 				A94301721CE5DD8B00DC0DF8 /* ShareInteractor.swift in Sources */,
 				A9E066E41CE4BB8300D4E11D /* ConfigPreferences.swift in Sources */,
@@ -1516,6 +1531,7 @@
 				A9F2517B1D05CDC800D8DC30 /* ShareTwitterInteractor.swift in Sources */,
 				A93846F51CE480AA007FB6BC /* FilterListPresentationTransition.swift in Sources */,
 				A93846E81CE47E82007FB6BC /* FilterListPresenter.swift in Sources */,
+				A927931F1D0AB906008E30BF /* ShareConstants.swift in Sources */,
 				A95B247C1CD8B9F200F78AAF /* RecordPresenterInterfaceIO.swift in Sources */,
 				A9E066DD1CE4B4F500D4E11D /* ShaderEffect.swift in Sources */,
 				A9D76AE71CF5E9CB00F7FB47 /* RemoveFilterInteractor.swift in Sources */,

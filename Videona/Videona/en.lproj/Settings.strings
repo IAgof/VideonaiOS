@@ -16,6 +16,7 @@
 "share_using" =  "Share video using  ";
 "sharedWithVideona" =  "Shared with @videona_eng ";
 "videonaTags" =  "#VideonaTime ";
+"no_whatsapp_installed" = "No whatsapp installed";
 
 //<!-- Editor Activity -- = "
 "edit_title_name" = "Edit Room";

@@ -26,7 +26,7 @@ class ShareWhatsappInteractor: ShareSocialNetworkInteractor {
             
             documentationInteractionController.presentOpenInMenuFromRect(CGRectZero, inView: self.getViewOnTop(), animated: true)
         }else{
-            self.setAlertCompletionMessageOnTopView("No Whatsapp installed")
+            self.setAlertCompletionMessageOnTopView(Utils().getStringByKeyFromSettings(ShareConstants().NO_WHATSAPP_INSTALLED))
         }
     }
 }

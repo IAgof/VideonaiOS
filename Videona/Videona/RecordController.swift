@@ -251,7 +251,10 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     }
     
     func createAlertWaitToExport(){
-        alertController = UIAlertController(title: "Espere por favor", message: "Haciendo magia en su video", preferredStyle: .Alert)
+        let title = Utils().getStringByKeyFromSettings(RecordConstants().WAIT_TITLE)
+        let message = Utils().getStringByKeyFromSettings(RecordConstants().WAIT_DESCRIPTION)
+        
+        alertController = UIAlertController(title:title,message:message,preferredStyle: .Alert)
         
         let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
         

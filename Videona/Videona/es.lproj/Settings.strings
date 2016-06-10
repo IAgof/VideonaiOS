@@ -16,6 +16,7 @@
 "share_using" = "Compartir vídeo con";
 "sharedWithVideona" = "Compartido con @videona_es";
 "videonaTags" = "#VideonaTime";
+"no_whatsapp_installed" = "No esta instalado whatsapp";
 
 //<!-- Editor Activity -- = "
 "edit_title_name" = "Sala de edición";

@@ -36,6 +36,10 @@ class SettingsViewController: VideonaController,SettingsInterface ,
         settingsTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifierCell)
     }
     
+    func setNavBarTitle(title:String){
+                settingsNavBar.title = title
+    }
+    
     @IBAction func pushBackBarButton(sender: AnyObject) {
         eventHandler?.pushBack()
     }
@@ -46,10 +50,6 @@ class SettingsViewController: VideonaController,SettingsInterface ,
     
     func setSectionList(section: Array<String>) {
         self.section = section
-    }
-    
-    func setTitleNavBar(){
-        settingsNavBar.title = Utils().getStringByKeyFromSettings(SettingsConstants().SETTINGS_TITLE)
     }
     
     //MARK: - UITableview datasource
