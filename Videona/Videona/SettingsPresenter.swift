@@ -51,7 +51,7 @@ class SettingsPresenter:NSObject,SettingsPresenterInterface{
             wireframe?.goToAppleStoreURL(kamaradaAppleStoreURL!)
             break
         case SettingsProvider().getStringForType(SettingsType.ShareVideona):
-            
+            controller?.createActiviyVCShareVideona(Utils().getStringByKeyFromSettings(SettingsConstants().WHATSAPP_SHARE_TEXT))
             break
         case SettingsProvider().getStringForType(SettingsType.FollowUsOnTwitter):
             wireframe?.goToTwitterUserPage(videonaTwitterUser)
@@ -128,7 +128,9 @@ class SettingsPresenter:NSObject,SettingsPresenterInterface{
             if interactor?.isValidEmail(input) == true {
                 interactor?.saveEmailOnDefaults(input)
             }else{
-                controller?.createEmailAlertViewError()
+                controller?.createAlertViewError("OK",
+                                                      message: Utils().getStringByKeyFromSettings(SettingsConstants().INVALID_MAIL),
+                                                      title: Utils().getStringByKeyFromSettings(SettingsConstants().EMAIL_PREFERENCE))
                 return
             }
             interactor?.saveEmailOnDefaults(input)

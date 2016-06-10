@@ -128,14 +128,10 @@ class SettingsViewController: VideonaController,SettingsInterface ,
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    func createEmailAlertViewError(){
-        let saveString = "OK"
-        let message = "Is not a valid email, insert again"
-        let title = "Email"
-        
+    func createAlertViewError(buttonText:String,message:String,title:String){
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         
-        let saveAction = UIAlertAction(title: saveString, style: .Destructive, handler: nil)
+        let saveAction = UIAlertAction(title: buttonText, style: .Destructive, handler: nil)
         
         alertController.addAction(saveAction)
         
@@ -182,5 +178,22 @@ class SettingsViewController: VideonaController,SettingsInterface ,
     }
     func reloadTableData() {
         self.settingsTableView.reloadData()
+    }
+    
+    func createActiviyVCShareVideona(text:String){
+        var whatsAppText:String = "whatsapp://send?text="
+        whatsAppText.appendContentsOf(text)
+        
+        let whatsAppTextCoded = whatsAppText.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
+
+        let whatsappURL = NSURL.init(string: whatsAppTextCoded!)
+            
+        if UIApplication.sharedApplication().canOpenURL(whatsappURL!){
+            UIApplication.sharedApplication().openURL(whatsappURL!)
+        }else{
+            self.createAlertViewError("OK",
+                                      message: Utils().getStringByKeyFromSettings(SettingsConstants().WHATSAPP_NOT_INSTALLED),
+                                      title: Utils().getStringByKeyFromSettings(SettingsConstants().SHARE_VIDEONA_TITLE))
+        }
     }
 }
