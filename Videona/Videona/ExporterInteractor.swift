@@ -12,11 +12,23 @@ import AVFoundation
 class ExporterInteractor:NSObject{
     var videosArray: [String] = []
     var clipDuration = 0.0
+    var exportedPresetQuality:String!
 
     init(videosArray:[String]) {
+        super.init()
         self.videosArray = videosArray
+        exportedPresetQuality = initQuality()
     }
-    
+
+    func initQuality()->String{
+        var quality = AVAssetExportPresetMediumQuality
+        //Get resolution
+        if let getFromDefaultQuality = NSUserDefaults.standardUserDefaults().stringForKey("settingsQuality"){
+            quality = AVQualityParse().parseResolutionsToInteractor(getFromDefaultQuality)
+        }
+        return quality
+    }
+
     //Merge videos in VideosArray and export to Documents folder and PhotoLibrary
     func getNewPathToExport()->String{
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
@@ -66,7 +78,7 @@ class ExporterInteractor:NSObject{
         let url = NSURL(fileURLWithPath: exportPath)
         
         // 5 - Create Exporter
-        let exporter = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality)
+        let exporter = AVAssetExportSession(asset: mixComposition, presetName: exportedPresetQuality)
         exporter!.outputURL = url
         exporter!.outputFileType = AVFileTypeQuickTimeMovie
         exporter!.shouldOptimizeForNetworkUse = true

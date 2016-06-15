@@ -11,9 +11,9 @@ class CompatibleQualityInteractor: NSObject {
     func getCompatibleQuality() -> Array<String> {
         var compatibleQuality = Array<String>()
 
-        compatibleQuality.append(AVCaptureSessionPresetHigh)
-        compatibleQuality.append(AVCaptureSessionPresetMedium)
-        compatibleQuality.append(AVCaptureSessionPresetLow)
+        compatibleQuality.append(AVAssetExportPresetHighestQuality)
+        compatibleQuality.append(AVAssetExportPresetMediumQuality)
+        compatibleQuality.append(AVAssetExportPresetLowQuality)
 
         return compatibleQuality
     }

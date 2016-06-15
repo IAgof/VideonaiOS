@@ -28,9 +28,7 @@ class CameraInteractor:CameraRecorderDelegate{
     var maskFilterToRecord = GPUImageFilter()
         
     var cameraResolution = CameraResolution.init(AVResolution: "")
-    
-    var resolutionStruct:Resolution = Resolution.init(AVResolution: AVCaptureSessionPresetHigh)
-    
+
     var isFrontCamera:Bool = false
     
     var isRecording: Bool = false{

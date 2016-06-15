@@ -30,11 +30,11 @@ class AVQualityParse: NSObject {
 
     func parseQualityToView(resolution:String) -> String {
         switch resolution {
-        case AVCaptureSessionPresetHigh:
+        case AVAssetExportPresetHighestQuality:
             return goodQuality
-        case AVCaptureSessionPresetMedium:
+        case AVAssetExportPresetMediumQuality:
             return mediumQuality
-        case AVCaptureSessionPresetLow:
+        case AVAssetExportPresetLowQuality:
             return regularQuality
         default:
             return "Media (720)"
@@ -44,13 +44,13 @@ class AVQualityParse: NSObject {
     func parseResolutionsToInteractor(textResolution:String) -> String {
         switch textResolution {
         case goodQuality:
-            return AVCaptureSessionPresetHigh
+            return AVAssetExportPresetHighestQuality
         case mediumQuality:
-            return AVCaptureSessionPresetMedium
+            return AVAssetExportPresetMediumQuality
         case regularQuality:
-            return AVCaptureSessionPresetLow
+            return AVAssetExportPresetLowQuality
         default:
-            return AVCaptureSessionPresetMedium
+            return AVAssetExportPresetMediumQuality
         }
     }
 }
