@@ -72,11 +72,13 @@ class SettingsPresenter:NSObject,SettingsPresenterInterface{
         case SettingsProvider().getStringForType(SettingsType.Resolution):
             let resolutions = interactor?.getAVResolutions()
             controller?.createActionSheetWithOptions(SettingsProvider().getStringForType(SettingsType.Resolution), options: resolutions!)
+
             break
         case SettingsProvider().getStringForType(SettingsType.Quality):
-            
+            let qualitys = interactor?.getAVQualitys()
+            controller?.createActionSheetWithOptions(SettingsProvider().getStringForType(SettingsType.Quality), options: qualitys!)
+
             break
-        
         case SettingsProvider().getStringForType(SettingsType.LegalAdvice):
             detailTextWireframe?.presentShareInterfaceFromViewController(controller!,
                                                                          textRef: Utils().getStringByKeyFromSettings(SettingsConstants().LEGAL_ADVICE_CONTENT))
@@ -141,7 +143,8 @@ class SettingsPresenter:NSObject,SettingsPresenterInterface{
 
             break
         case SettingsProvider().getStringForType(SettingsType.Quality):
-            
+            interactor?.saveQualityOnDefaults(input)
+
             break
 
         default:

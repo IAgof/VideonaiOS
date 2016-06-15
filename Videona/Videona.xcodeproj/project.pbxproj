@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		05385CD47D1323E5615A5A06 /* Pods_Videona.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E695B9819A8E5071F983C35 /* Pods_Videona.framework */; };
+		11A0996C2D273F8F236BDE86 /* CompatibleQualityInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A093E73995F623DCAD393F /* CompatibleQualityInteractor.swift */; };
+		11A09F45EE9D9D3904394BE7 /* AVQualityParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A097EE3ADB91072CDFAC41 /* AVQualityParse.swift */; };
 		A91D25121CF876250006CB93 /* CameraInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91D25111CF876250006CB93 /* CameraInteractorInterface.swift */; };
 		A925E8FB1D01C8AA000BB684 /* water_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = A925E8FA1D01C8AA000BB684 /* water_mark.png */; };
 		A92793161D0AB1FB008E30BF /* SettingsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92793151D0AB1FB008E30BF /* SettingsConstants.swift */; };
@@ -212,6 +214,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		11A093E73995F623DCAD393F /* CompatibleQualityInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompatibleQualityInteractor.swift; sourceTree = "<group>"; };
+		11A097EE3ADB91072CDFAC41 /* AVQualityParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVQualityParse.swift; sourceTree = "<group>"; };
 		7E695B9819A8E5071F983C35 /* Pods_Videona.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Videona.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D1DE05AFBAE78D866AF921E /* Pods-Videona.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Videona.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Videona/Pods-Videona.debug.xcconfig"; sourceTree = "<group>"; };
 		A918B89A1CF5878D0013D68F /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = ../../GPUImage/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
@@ -713,6 +717,7 @@
 				A9F9C2081CF465D300AB310C /* Wireframe */,
 				A9E066E11CE4BB6B00D4E11D /* Constants */,
 				A95B24781CD8B96200F78AAF /* View */,
+				11A097EE3ADB91072CDFAC41 /* AVQualityParse.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -819,6 +824,7 @@
 				A96732FD1CE6309C007BE340 /* SettingsInteractor.swift */,
 				A97FBDBD1D09781C00942F8D /* CompatibleResolutionsInteractor.swift */,
 				A96732FF1CE630AD007BE340 /* SettingsInteractorInterface.swift */,
+				11A093E73995F623DCAD393F /* CompatibleQualityInteractor.swift */,
 			);
 			name = Interactor;
 			sourceTree = "<group>";
@@ -1560,6 +1566,8 @@
 				A91D25121CF876250006CB93 /* CameraInteractorInterface.swift in Sources */,
 				A9F9C20E1CF4665000AB310C /* VideonaController.swift in Sources */,
 				A95D3BE01CEB045F001F2272 /* SettingsProvider.swift in Sources */,
+				11A09F45EE9D9D3904394BE7 /* AVQualityParse.swift in Sources */,
+				11A0996C2D273F8F236BDE86 /* CompatibleQualityInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

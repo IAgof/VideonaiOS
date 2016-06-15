@@ -101,10 +101,10 @@ class SettingsProvider:NSObject{
             ,section: Utils().getStringByKeyFromSettings(SettingsConstants().CAMERA_SECTION)
             ,priority: 2))
         
-//        settings.append( SettingsContent(title: Utils().getStringByKeyFromSettings(SettingsConstants().QUALITY)
-//            ,subTitle: camera.quality
-//            ,section: Utils().getStringByKeyFromSettings(SettingsConstants().CAMERA_SECTION)
-//            ,priority: 2))
+        settings.append( SettingsContent(title: Utils().getStringByKeyFromSettings(SettingsConstants().QUALITY)
+            ,subTitle: camera.quality
+            ,section: Utils().getStringByKeyFromSettings(SettingsConstants().CAMERA_SECTION)
+            ,priority: 2))
         
         //MARK: - MORE_INFO_SECTION
         settings.append( SettingsContent(title: Utils().getStringByKeyFromSettings(SettingsConstants().ABOUT_US_TITLE)

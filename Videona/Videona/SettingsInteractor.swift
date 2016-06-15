@@ -141,7 +141,14 @@ class SettingsInteractor: NSObject,SettingsInteractorInterface {
         
         return resolutions
     }
-    
+
+    //MARK: - AVQuality posible inputs
+    func getAVQualitys()->Array<String>{
+        let qualitys = AVQualityParse().qualityToView()
+
+        return qualitys
+    }
+
     func setSettingSelected() {
         self.settingSelected = nil
     }

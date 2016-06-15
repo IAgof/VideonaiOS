@@ -103,7 +103,7 @@ class SettingsViewController: VideonaController,SettingsInterface ,
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         
         let settingsOption = items[indexPath.section][0][indexPath.item]
-        print("Settings option #\(indexPath.item)\n filter name: \(settingsOption)!")
+        print("Settings option #\(indexPath.item)\n option selected: \(settingsOption)!")
         eventHandler?.itemListSelected(settingsOption)
     }
     

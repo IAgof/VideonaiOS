@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '3EA7C77A699B9C73E01C8229'
-               BlueprintName = 'Pods-Videona'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods_Videona.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2B9B52BF341683226D9E60C8E44ABD0E"
+               BlueprintName = "Pods-Videona"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "Pods_Videona.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
