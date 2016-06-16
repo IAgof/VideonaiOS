@@ -14,9 +14,12 @@ class FullScreenPlayerViewController: UIViewController ,FullScreenPlayerInterfac
     //MARK: - VIPER
     var eventHandler: FullScreenPlayerPresenterInterface?
 
+    @IBOutlet weak var shrinkButton: UIButton!
+    
     var playerView:PlayerView?{
         didSet {
             self.view.addSubview(playerView!)
+            self.view.bringSubviewToFront(shrinkButton)
         }
     }
 

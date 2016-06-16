@@ -16,4 +16,5 @@ protocol ShareInterface {
     func setImageList(imageList: Array<UIImage>)
     func setImagePressedList(imageList: Array<UIImage>)
     func cameFromFullScreenPlayer(playerView:PlayerView)
+    func bringToFrontExpandPlayerButton()
     }

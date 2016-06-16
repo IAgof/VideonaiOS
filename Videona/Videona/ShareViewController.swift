@@ -52,12 +52,15 @@ GIDSignInUIDelegate,GIDSignInDelegate{
     func createShareInterface(){
         let nib = UINib.init(nibName: shareNibName, bundle: nil)
         shareTableView.registerNib(nib, forCellReuseIdentifier: reuseIdentifierCell)
-        
+                
         //Google Sign in
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
     }
 
+    func bringToFrontExpandPlayerButton(){
+        self.playerView.bringSubviewToFront(expandPlayerButton)
+    }
     func setNavBarTitle(title:String){
         settingsNavBar.title = title
     }
@@ -97,7 +100,10 @@ GIDSignInUIDelegate,GIDSignInDelegate{
     }
 
     //MARK: - UITableView Delegate
-   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        print(self.playerView.subviews)
+        
         print("You selected in position #\(indexPath.item)\n filter name: \(listTitles[indexPath.item])")
         tableView.cellForRowAtIndexPath(indexPath)?.selected = false
         eventHandler?.pushShare(listTitles[indexPath.item])

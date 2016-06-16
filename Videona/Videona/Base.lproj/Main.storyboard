@@ -422,37 +422,19 @@
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HDf-Fy-I5e" customClass="PlayerView" customModule="Videona" customModuleProvider="target">
                                 <rect key="frame" x="193" y="145" width="240" height="128"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVg-D0-MxM">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7je-57-MMC">
+                                        <rect key="frame" x="208" y="8" width="24" height="24"/>
                                         <state key="normal" image="common_icon_expand"/>
                                         <connections>
-                                            <action selector="pushExpandButton:" destination="0Ip-P7-Gfh" eventType="touchUpInside" id="2n1-Jq-D3F"/>
+                                            <action selector="pushExpandButton:" destination="0Ip-P7-Gfh" eventType="touchUpInside" id="8Sj-7A-K7C"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="fVg-D0-MxM" firstAttribute="top" secondItem="HDf-Fy-I5e" secondAttribute="top" constant="8" id="296-U0-hhd"/>
                                     <constraint firstAttribute="width" secondItem="HDf-Fy-I5e" secondAttribute="height" multiplier="16:9" id="8Is-SN-lyb"/>
-                                    <constraint firstAttribute="trailing" secondItem="fVg-D0-MxM" secondAttribute="trailing" constant="8" id="WaF-YZ-39g"/>
+                                    <constraint firstAttribute="trailing" secondItem="7je-57-MMC" secondAttribute="trailing" constant="8" id="d6A-UB-2p8"/>
+                                    <constraint firstItem="7je-57-MMC" firstAttribute="top" secondItem="HDf-Fy-I5e" secondAttribute="top" constant="8" id="fQg-Cn-2zk"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="fVg-D0-MxM"/>
-                                    </mask>
-                                    <mask key="constraints">
-                                        <exclude reference="296-U0-hhd"/>
-                                        <exclude reference="WaF-YZ-39g"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="subviews">
-                                        <include reference="fVg-D0-MxM"/>
-                                    </mask>
-                                    <mask key="constraints">
-                                        <include reference="296-U0-hhd"/>
-                                        <include reference="WaF-YZ-39g"/>
-                                    </mask>
-                                </variation>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h18-mE-dqd">
                                 <rect key="frame" x="193" y="359" width="240" height="128"/>
@@ -545,7 +527,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="expandPlayerButton" destination="fVg-D0-MxM" id="fBz-JT-zwN"/>
+                        <outlet property="expandPlayerButton" destination="7je-57-MMC" id="84n-Ku-iL4"/>
                         <outlet property="playerView" destination="HDf-Fy-I5e" id="uwo-BX-4hO"/>
                         <outlet property="settingsNavBar" destination="DME-9U-oFj" id="XGU-cI-fgu"/>
                         <outlet property="shareTableView" destination="h18-mE-dqd" id="8ex-hy-Ecf"/>
@@ -567,42 +549,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyG-rJ-CWh">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVt-ho-5TV">
+                                <rect key="frame" x="556" y="20" width="24" height="24"/>
                                 <state key="normal" image="common_icon_shrink"/>
                                 <connections>
-                                    <action selector="pushShrinkButton:" destination="kkJ-D1-P4D" eventType="touchUpInside" id="wLr-e0-hZK"/>
+                                    <action selector="pushShrinkButton:" destination="kkJ-D1-P4D" eventType="touchUpInside" id="gWs-Na-7qN"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="EyG-rJ-CWh" firstAttribute="trailing" secondItem="EAc-iO-AeN" secondAttribute="trailingMargin" id="0Nf-u6-zIT"/>
-                            <constraint firstItem="EyG-rJ-CWh" firstAttribute="top" secondItem="UV3-11-YaM" secondAttribute="bottom" constant="8" id="TMP-q0-wVU"/>
+                            <constraint firstItem="CVt-ho-5TV" firstAttribute="trailing" secondItem="EAc-iO-AeN" secondAttribute="trailingMargin" id="aun-Ra-iOk"/>
+                            <constraint firstItem="CVt-ho-5TV" firstAttribute="top" secondItem="UV3-11-YaM" secondAttribute="bottom" constant="20" id="cEZ-z1-DaB"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="EyG-rJ-CWh"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="0Nf-u6-zIT"/>
-                                <exclude reference="TMP-q0-wVU"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=compact">
-                            <mask key="subviews">
-                                <include reference="EyG-rJ-CWh"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="0Nf-u6-zIT"/>
-                                <include reference="TMP-q0-wVU"/>
-                            </mask>
-                        </variation>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="shrinkButton" destination="CVt-ho-5TV" id="yrB-Jd-gA2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MA3-h6-Wg7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1170,6 +1137,9 @@
                                         <variation key="widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="280" y="0.0" width="268" height="312"/>
                                         </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="384" height="380"/>
+                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_app_slide_edit_image" translatesAutoresizingMaskIntoConstraints="NO" id="Idu-rY-YGv">
                                         <rect key="frame" x="0.0" y="274" width="328" height="274"/>
@@ -1282,9 +1252,6 @@
                                         <variation key="widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="291" y="0.0" width="257" height="292"/>
                                         </variation>
-                                        <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="365" height="380"/>
-                                        </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_character_sonora_speech_balloon" translatesAutoresizingMaskIntoConstraints="NO" id="hvy-MF-sFH">
                                         <rect key="frame" x="0.0" y="274" width="328" height="274"/>
@@ -1299,9 +1266,6 @@
                                     <mask key="subviews">
                                         <include reference="hvy-MF-sFH"/>
                                     </mask>
-                                </variation>
-                                <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="10" y="20" width="780" height="380"/>
                                 </variation>
                             </stackView>
                         </subviews>

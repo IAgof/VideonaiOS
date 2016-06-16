@@ -31,6 +31,8 @@ class SharePresenter:NSObject,SharePresenterInterface{
         
         playerPresenter?.createVideoPlayer(videoPath)
         self.getListData()
+        
+        controller?.bringToFrontExpandPlayerButton()
     }
     
     func setVideoExportedPath(path: String) {
