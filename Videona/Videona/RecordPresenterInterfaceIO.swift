@@ -33,4 +33,5 @@ protocol RecordPresenterInterface{
     func resetRecorder()
     func displayHasTapped(tapGesture:UIGestureRecognizer)
     func displayHasPinched(pinchGesture:UIPinchGestureRecognizer)
+    func changeOrientationEvent()
 }
