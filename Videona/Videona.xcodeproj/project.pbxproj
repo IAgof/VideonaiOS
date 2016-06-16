@@ -70,6 +70,7 @@
 		A95D3BEE1CEB72CC001F2272 /* PlayerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95D3BED1CEB72CC001F2272 /* PlayerInteractor.swift */; };
 		A95D3BF01CEB7356001F2272 /* PlayerInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95D3BEF1CEB7356001F2272 /* PlayerInteractorInterface.swift */; };
 		A95D3BF31CEB76D7001F2272 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A95D3BF21CEB7686001F2272 /* video.mp4 */; };
+		A95F670E1D12E7D400A25EDD /* Share.strings in Resources */ = {isa = PBXBuildFile; fileRef = A95F67101D12E7D400A25EDD /* Share.strings */; };
 		A965BDBC1CDA0758002579CA /* IntroPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A965BDBB1CDA0758002579CA /* IntroPresenter.swift */; };
 		A965BDBF1CDA076C002579CA /* IntroWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A965BDBE1CDA076C002579CA /* IntroWireframe.swift */; };
 		A965BDC11CDA0F1D002579CA /* IntroViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A965BDC01CDA0F1D002579CA /* IntroViewInterface.swift */; };
@@ -290,6 +291,8 @@
 		A95D3BED1CEB72CC001F2272 /* PlayerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInteractor.swift; sourceTree = "<group>"; };
 		A95D3BEF1CEB7356001F2272 /* PlayerInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerInteractorInterface.swift; sourceTree = "<group>"; };
 		A95D3BF21CEB7686001F2272 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
+		A95F67121D12E7DB00A25EDD /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Share.strings; sourceTree = "<group>"; };
+		A95F67131D12E7EB00A25EDD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Share.strings; sourceTree = "<group>"; };
 		A965BDBB1CDA0758002579CA /* IntroPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroPresenter.swift; sourceTree = "<group>"; };
 		A965BDBE1CDA076C002579CA /* IntroWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroWireframe.swift; sourceTree = "<group>"; };
 		A965BDC01CDA0F1D002579CA /* IntroViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewInterface.swift; sourceTree = "<group>"; };
@@ -1244,6 +1247,7 @@
 		A9F9C2141CF4872900AB310C /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				A95F67101D12E7D400A25EDD /* Share.strings */,
 				A97FBDE41D09B6B500942F8D /* Settings.strings */,
 				A971F5B31CFC7F3C004DC50D /* Fonts */,
 				A971F5AC1CFC52D1004DC50D /* activity_record_rec_circle.png */,
@@ -1449,6 +1453,7 @@
 				A93C52381D06CA11001C2755 /* GoogleService-Info.plist in Resources */,
 				A9D257CB1CF835D200A618B0 /* Posterizebw.fsh in Resources */,
 				A9D76B0B1CF5FB8700F7FB47 /* mist.png in Resources */,
+				A95F670E1D12E7D400A25EDD /* Share.strings in Resources */,
 				A9D76B061CF5FB8700F7FB47 /* burn.png in Resources */,
 				A9D76B0C1CF5FB8700F7FB47 /* old.png in Resources */,
 				A9D76B141CF5FB8700F7FB47 /* summer.png in Resources */,
@@ -1687,6 +1692,15 @@
 				A97FBDDF1D09B67200942F8D /* es */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A95F67101D12E7D400A25EDD /* Share.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A95F67121D12E7DB00A25EDD /* es */,
+				A95F67131D12E7EB00A25EDD /* en */,
+			);
+			name = Share.strings;
 			sourceTree = "<group>";
 		};
 		A97FBDE41D09B6B500942F8D /* Settings.strings */ = {

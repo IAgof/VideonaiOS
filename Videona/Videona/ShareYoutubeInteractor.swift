@@ -11,7 +11,7 @@ import Alamofire
 
 class ShareYoutubeInteractor: ShareSocialNetworkInteractor{
     var viewControllerOnTop:UIViewController?
-
+    
     override init(moviePath: String, socialName: String) {
         super.init(moviePath: moviePath, socialName: socialName)
         
@@ -20,6 +20,8 @@ class ShareYoutubeInteractor: ShareSocialNetworkInteractor{
     
     
     func share(){
+        self.createAlertWaitToExport()
+        
         let youtubeScope = "https://www.googleapis.com/auth/youtube.upload"
         let youtubeScope2 = "https://www.googleapis.com/auth/youtube"
         let youtubeScope3 = "https://www.googleapis.com/auth/youtubepartner"
@@ -31,7 +33,7 @@ class ShareYoutubeInteractor: ShareSocialNetworkInteractor{
         GIDSignIn.sharedInstance().signIn()
     }
     
-
+    
     
     //MARK: - Youtube upload
     func postVideoToYouTube( token:String, callback: Bool -> Void){
@@ -39,7 +41,7 @@ class ShareYoutubeInteractor: ShareSocialNetworkInteractor{
         let headers = ["Authorization": "Bearer \(token)"]
         
         let title = "Videona-\(Utils().giveMeTimeNow())"
-        let description = "Video grabado con Kamarada"
+        let description = Utils().getStringByKeyFromShare(ShareConstants().YOUTUBE_DESCRIPTION)
         
         let videoData = NSData.init(contentsOfFile: moviePath)
         Alamofire.upload(
@@ -59,11 +61,17 @@ class ShareYoutubeInteractor: ShareSocialNetworkInteractor{
                         print(response)
                         callback(true)
                         
-                        self.setAlertCompletionMessageOnTopView("Video upload successfull")
+                        let message = Utils().getStringByKeyFromShare(ShareConstants().UPLOAD_SUCCESFULL)
+                        self.dissmissAlertWaitToExport({_ in
+                            self.setAlertCompletionMessageOnTopView(message)
+                        })
                     }
                 case .Failure(_):
                     callback(false)
-                    self.setAlertCompletionMessageOnTopView("Video upload fails")
+                    let message = Utils().getStringByKeyFromShare(ShareConstants().UPLOAD_FAIL)
+                    self.dissmissAlertWaitToExport({_ in
+                        self.setAlertCompletionMessageOnTopView(message)
+                    })
                 }
         })
     }

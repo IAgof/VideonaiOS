@@ -49,4 +49,7 @@ class Utils{
     func getStringByKeyFromSettings(key:String) -> String {
         return NSBundle.mainBundle().localizedStringForKey(key,value: "",table: "Settings")
     }
+    func getStringByKeyFromShare(key:String) -> String {
+        return NSBundle.mainBundle().localizedStringForKey(key,value: "",table: "Share")
+    }
 }

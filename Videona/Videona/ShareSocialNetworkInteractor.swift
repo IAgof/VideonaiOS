@@ -35,7 +35,8 @@ class ShareSocialNetworkInteractor:NSObject{
         let alert = UIAlertController(title: socialName, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         
         // add the actions (buttons)
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        alert.addAction(UIAlertAction(title: Utils().getStringByKeyFromShare(ShareConstants().OK),
+            style: .Default, handler: nil))
         
         // show the alert
         self.getViewControllerOnTop().presentViewController(alert, animated: true, completion: nil)
@@ -50,7 +51,9 @@ class ShareSocialNetworkInteractor:NSObject{
     }
     
     func createAlertWaitToExport(){
-        alertController = UIAlertController(title: "Uploading Video", message: "Please Wait", preferredStyle: .Alert)
+        alertController = UIAlertController(title: Utils().getStringByKeyFromShare(ShareConstants().UPLOADING_VIDEO),
+                                            message: Utils().getStringByKeyFromShare(ShareConstants().PLEASE_WAIT),
+                                            preferredStyle: .Alert)
         
         let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
         

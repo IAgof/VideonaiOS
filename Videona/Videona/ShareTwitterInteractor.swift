@@ -27,17 +27,26 @@ class ShareTwitterInteractor: ShareSocialNetworkInteractor {
                     let videoData = NSData(contentsOfURL: videoURL)
                     SocialVideoHelper.uploadTwitterVideo(videoData, comment: "#Videona", account: twitterAccount as! ACAccount, withCompletion: {succes,error in
                         print("Video upload completion \(succes) \n \(error)")
-                        let message = "Video upload successfully"
+                        let message = Utils().getStringByKeyFromShare(ShareConstants().UPLOAD_SUCCESFULL)
                         self.dissmissAlertWaitToExport({_ in
                             self.setAlertCompletionMessageOnTopView(message)
                         })
                     })
                 }else{
-                    let message = "No access to Twitter"
+                    let message = Utils().getStringByKeyFromShare(ShareConstants().NO_TWITTER_ACCESS)
                     Utils().debugLog(message)
+                    self.dissmissAlertWaitToExport({_ in
+                        self.setAlertCompletionMessageOnTopView(message)
+                    })                }
+            }else{
+                let message = Utils().getStringByKeyFromShare(ShareConstants().NO_TWITTER_ACCESS)
+                Utils().debugLog(message)
+                self.dissmissAlertWaitToExport({_ in
                     self.setAlertCompletionMessageOnTopView(message)
-                }
+                })
             }
         }
     }
+    
+    
 }

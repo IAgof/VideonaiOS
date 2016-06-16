@@ -1,0 +1,19 @@
+/* 
+  Share.strings
+  Videona
+
+  Created by Alejandro Arjonilla Garcia on 16/6/16.
+  Copyright © 2016 Videona. All rights reserved.
+*/
+
+"OK" = "OK";
+"uploadingVideo" = "Uploading video";
+"pleaseWait" = "Please wait";
+"descriptionYoutube" = "Video recorded with Videona app";
+"titleYoutube" = "Videona %s";
+"uploadSuccesfull" = "Video upload successfully";
+"uploadFail" = "Video upload failed";
+"videonaHastagh" = "#VideonaTime";
+"twitterNoAcces" = "No access to Twitter account";
+"" = "";
+"" = "";
