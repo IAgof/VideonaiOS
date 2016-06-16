@@ -276,8 +276,13 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     func resetView() {
         eventHandler?.resetRecorder()
     }
-  //MARK: - Landscape Orientation
+    
+    //MARK: - Landscape Orientation
     func checkOrientation(){
+        eventHandler?.changeOrientationEvent()
+    }
+    
+    func setOrientation(){
         var text=""
         switch UIDevice.currentDevice().orientation{
         case .Portrait:
@@ -295,7 +300,15 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         default:
             text="Another"
         }
-//        NSLog("You have moved: \(text)")
+        NSLog("You have moved: \(text)")
+    }
+   
+    func forceOrientation(){
+        if UIDevice.currentDevice().orientation == .Portrait
+            ||  UIDevice.currentDevice().orientation == .PortraitUpsideDown {
+            let value = UIInterfaceOrientation.LandscapeRight.rawValue
+            UIDevice.currentDevice().setValue(value, forKey: "orientation")
+        }
     }
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {

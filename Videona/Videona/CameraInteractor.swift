@@ -72,12 +72,22 @@ class CameraInteractor:CameraRecorderDelegate{
     func resetClipsArray(){
         cameraRecorder.resetClipsArray()
     }
+    
     //MARK: - Orientation
     @objc func checkOrientation(){
-        if UIDevice.currentDevice().orientation == .LandscapeLeft{
-            videoCamera.outputImageOrientation = .LandscapeRight
-        }else{
-            videoCamera.outputImageOrientation = .LandscapeLeft
+        if !isRecording {
+            switch UIDevice.currentDevice().orientation{
+            case .Portrait,.PortraitUpsideDown:
+                print("Check Orientation: \(UIDevice.currentDevice().orientation)")
+            case .LandscapeLeft:
+                videoCamera.outputImageOrientation = .LandscapeRight
+                break
+            case .LandscapeRight:
+                videoCamera.outputImageOrientation = .LandscapeLeft
+                break
+            default:
+                break
+            }
         }
     }
     

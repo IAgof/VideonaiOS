@@ -9,7 +9,11 @@
 import Foundation
 import GPUImage
 
-class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,CameraInteractorDelegate,TimerInteractorDelegate{
+class RecordPresenter: NSObject
+    , RecordPresenterInterface
+    ,FilterListDelegate
+    ,CameraInteractorDelegate
+,TimerInteractorDelegate{
     
     //MARK: - Variables VIPER
     var controller: RecordController?
@@ -45,6 +49,7 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
     
     func viewWillAppear() {
         cameraInteractor!.setResolution()
+        controller?.forceOrientation()
     }
     
     func pushSettings() {
@@ -268,6 +273,12 @@ class RecordPresenter: NSObject, RecordPresenterInterface,FilterListDelegate,Cam
         
         cameraInteractor?.resetClipsArray()
         cameraInteractor?.removeFilters()
+    }
+    
+    func changeOrientationEvent(){
+        if(!isRecording){
+            controller?.setOrientation()
+        }
     }
     
     //MARK: - Camera delegate
