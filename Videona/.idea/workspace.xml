@@ -2,33 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="030a785f-f00b-49bc-a144-0b40698dd69c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/SimpleSwiftVideoFilterExample/SimpleSwiftVideoFilterExample/SqueezeFilter" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/SimpleSwiftVideoFilterExample/SimpleSwiftVideoFilterExample/BulgeFilter.fsh" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/SimpleSwiftVideoFilterExample/SimpleSwiftVideoFilterExample/DentFilter.fsh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/SimpleSwiftVideoFilterExample/SimpleSwiftVideoFilterExample/EmbossFilter.fsh" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/SimpleSwiftVideoFilterExample/SimpleSwiftVideoFilterExample/FishEyeFilter.fsh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/SimpleSwiftVideoFilterExample/SimpleSwiftVideoFilterExample/MirrorFilter.fsh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/SimpleSwiftVideoFilterExample/SimpleSwiftVideoFilterExample/StretchFilter.fsh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/SimpleSwiftVideoFilterExample/SimpleSwiftVideoFilterExample/TunnelFilter.fsh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/SimpleSwiftVideoFilterExample/SimpleSwiftVideoFilterExample/BulgeFilter.fsh" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/SimpleSwiftVideoFilterExample/SimpleSwiftVideoFilterExample/TwirlFilter.fsh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/SimpleSwiftVideoFilterExample/SimpleSwiftVideoFilterExample/StretchFilter.fsh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/SimpleSwiftVideoFilterExample/SimpleSwiftVideoFilterExample/MirrorFilter.fsh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/SimpleSwiftVideoFilterExample/SimpleSwiftVideoFilterExample/EmbossFilter.fsh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/SimpleSwiftVideoFilterExample/SimpleSwiftVideoFilterExample/SqueezeFilter" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/SimpleSwiftVideoFilterExample/SqueezeFilter.fsh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/SimpleSwiftVideoFilterExample/SimpleSwiftVideoFilterExample/TunnelFilter.fsh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../GPUImage/framework/Source/iOS/GPUImageMovieWriter.m" afterPath="$PROJECT_DIR$/../../GPUImage/framework/Source/iOS/GPUImageMovieWriter.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Videona/ExporterInteractor.swift" afterPath="$PROJECT_DIR$/Videona/ExporterInteractor.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Videona/CameraInteractor.swift" afterPath="$PROJECT_DIR$/Videona/CameraInteractor.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Videona.xcworkspace/xcuserdata/Alejandro.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/Videona.xcworkspace/xcuserdata/Alejandro.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../GPUImage/examples/Mac/PlaygroundExample/PlaygroundExample/GPUImagePlayground.playground/section-1.swift" afterPath="$PROJECT_DIR$/../../GPUImage/examples/Mac/PlaygroundExample/PlaygroundExample/GPUImagePlayground.playground/section-1.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../GPUImage/examples/Mac/PlaygroundExample/PlaygroundExample/GPUImagePlayground.playground/timeline.xctimeline" afterPath="$PROJECT_DIR$/../../GPUImage/examples/Mac/PlaygroundExample/PlaygroundExample/GPUImagePlayground.playground/timeline.xctimeline" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../GPUImage/examples/iOS/FilterShowcase/FilterShowcase.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/FilterShowcase/FilterShowcase.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../GPUImage/examples/iOS/FilterShowcase/FilterShowcase/FilterShowcase-Info.plist" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/FilterShowcase/FilterShowcase/FilterShowcase-Info.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../GPUImage/examples/iOS/FilterShowcase/FilterShowcase/ShowcaseFilterViewController.m" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/FilterShowcase/FilterShowcase/ShowcaseFilterViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../GPUImage/examples/iOS/FilterShowcaseSwift/FilterShowcaseSwift/FilterOperationTypes.swift" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/FilterShowcaseSwift/FilterShowcaseSwift/FilterOperationTypes.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../GPUImage/examples/iOS/FilterShowcaseSwift/FilterShowcaseSwift/Images.xcassets/AppIcon.appiconset/Contents.json" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/FilterShowcaseSwift/FilterShowcaseSwift/Images.xcassets/AppIcon.appiconset/Contents.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../GPUImage/framework/GPUImage.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/../../GPUImage/framework/GPUImage.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../GPUImage/examples/iOS/SimpleSwiftVideoFilterExample/SimpleSwiftVideoFilterExample.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/SimpleSwiftVideoFilterExample/SimpleSwiftVideoFilterExample.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../GPUImage/examples/iOS/SimpleSwiftVideoFilterExample/SimpleSwiftVideoFilterExample/ViewController.swift" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/SimpleSwiftVideoFilterExample/SimpleSwiftVideoFilterExample/ViewController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../GPUImage/framework/GPUImage.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/../../GPUImage/framework/GPUImage.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../GPUImage/framework/Source/iOS/GPUImageMovieWriter.m" afterPath="$PROJECT_DIR$/../../GPUImage/framework/Source/iOS/GPUImageMovieWriter.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Videona/AVQualityParse.swift" afterPath="$PROJECT_DIR$/Videona/AVQualityParse.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Videona/CameraInteractor.swift" afterPath="$PROJECT_DIR$/Videona/CameraInteractor.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../GPUImage/examples/iOS/FilterShowcase/FilterShowcase/ShowcaseFilterViewController.m" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/FilterShowcase/FilterShowcase/ShowcaseFilterViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../GPUImage/examples/Mac/PlaygroundExample/PlaygroundExample/GPUImagePlayground.playground/timeline.xctimeline" afterPath="$PROJECT_DIR$/../../GPUImage/examples/Mac/PlaygroundExample/PlaygroundExample/GPUImagePlayground.playground/timeline.xctimeline" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Videona/CompatibleQualityInteractor.swift" afterPath="$PROJECT_DIR$/Videona/CompatibleQualityInteractor.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Videona/ExporterInteractor.swift" afterPath="$PROJECT_DIR$/Videona/ExporterInteractor.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Videona/AVQualityParse.swift" afterPath="$PROJECT_DIR$/Videona/AVQualityParse.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../GPUImage/examples/iOS/FilterShowcaseSwift/FilterShowcaseSwift/FilterOperationTypes.swift" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/FilterShowcaseSwift/FilterShowcaseSwift/FilterOperationTypes.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../GPUImage/examples/iOS/FilterShowcase/FilterShowcase.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/FilterShowcase/FilterShowcase.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../GPUImage/examples/iOS/FilterShowcase/FilterShowcase/FilterShowcase-Info.plist" afterPath="$PROJECT_DIR$/../../GPUImage/examples/iOS/FilterShowcase/FilterShowcase/FilterShowcase-Info.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../GPUImage/examples/Mac/PlaygroundExample/PlaygroundExample/GPUImagePlayground.playground/section-1.swift" afterPath="$PROJECT_DIR$/../../GPUImage/examples/Mac/PlaygroundExample/PlaygroundExample/GPUImagePlayground.playground/section-1.swift" />
     </list>
     <ignored path="Videona.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,38 +49,102 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ExporterInteractor.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Videona/ExporterInteractor.swift">
+      <file leaf-file-name="PlayerView.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Videona/PlayerView.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-              <folding>
-                <element signature="e#156#173#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-1220">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AVQualityParse.swift" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Videona/AVQualityParse.swift">
+      <file leaf-file-name="FullScreenPlayerWireframe.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Videona/FullScreenPlayerWireframe.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding>
-                <element signature="e#112#129#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="415">
+              <caret line="52" column="43" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CompatibleQualityInteractor.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Videona/CompatibleQualityInteractor.swift">
+      <file leaf-file-name="FullScreenPlayerPresenter.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Videona/FullScreenPlayerPresenter.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="62" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
-              <folding>
-                <element signature="e#112#129#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="285">
+              <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FullScreenPlayerViewController.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Videona/FullScreenPlayerViewController.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FullScreenPlayerInterface.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Videona/FullScreenPlayerInterface.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerWireframe.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Videona/PlayerWireframe.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppDelegate.swift" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Videona/AppDelegate.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShareWireframe.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Videona/ShareWireframe.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="53" column="47" selection-start-line="53" selection-start-column="47" selection-end-line="53" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShareViewController.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Videona/ShareViewController.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShareInterface.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Videona/ShareInterface.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -94,7 +158,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Videona/AppDependencies.swift" />
         <option value="$PROJECT_DIR$/Videona/RecordWireframe.swift" />
         <option value="$PROJECT_DIR$/Videona/CameraRecorderInteractor.swift" />
         <option value="$PROJECT_DIR$/Videona/AVResolutionParse.swift" />
@@ -107,6 +170,18 @@
         <option value="$PROJECT_DIR$/Videona/ExporterInteractor.swift" />
         <option value="$PROJECT_DIR$/Videona/AVQualityParse.swift" />
         <option value="$PROJECT_DIR$/Videona/CompatibleQualityInteractor.swift" />
+        <option value="$PROJECT_DIR$/Videona/FullScreenPlayerPresenterInterface.swift" />
+        <option value="$PROJECT_DIR$/Videona/AppDependencies.swift" />
+        <option value="$PROJECT_DIR$/Videona/SharePresenterInterface.swift" />
+        <option value="$PROJECT_DIR$/Videona/SharePresenter.swift" />
+        <option value="$PROJECT_DIR$/Videona/PlayerView.swift" />
+        <option value="$PROJECT_DIR$/Videona/ShareWireframe.swift" />
+        <option value="$PROJECT_DIR$/Videona/FullScreenPlayerInterface.swift" />
+        <option value="$PROJECT_DIR$/Videona/FullScreenPlayerWireframe.swift" />
+        <option value="$PROJECT_DIR$/Videona/ShareViewController.swift" />
+        <option value="$PROJECT_DIR$/Videona/ShareInterface.swift" />
+        <option value="$PROJECT_DIR$/Videona/FullScreenPlayerViewController.swift" />
+        <option value="$PROJECT_DIR$/Videona/FullScreenPlayerPresenter.swift" />
       </list>
     </option>
   </component>
@@ -147,7 +222,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -191,26 +265,12 @@
               <option name="myItemId" value="Modules" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Videona" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Videona" />
+              <option name="myItemId" value="Share" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Modules" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Settings" />
+              <option name="myItemId" value="User Interface" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -232,11 +292,15 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Settings" />
+              <option name="myItemId" value="Share" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="App Logic" />
+              <option name="myItemId" value="User Interface" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -258,15 +322,7 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Settings" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App Logic" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Interactor" />
+              <option name="myItemId" value="Share" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -274,14 +330,225 @@
             <PATH_ELEMENT>
               <option name="myItemId" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Videona" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Videona" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Videona" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Videona" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Player" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="User Interface" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Wireframe" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Videona" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Videona" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Player" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="User Interface" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Videona" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Videona" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Player" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="User Interface" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Presenter" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Videona" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Videona" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Player" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Videona" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Videona" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FullScreenPlayer" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="User Interface" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Videona" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Videona" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FullScreenPlayer" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="User Interface" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pods" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pods" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Frameworks" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="iOS" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Cidr.FilesView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="OBJC.PRESERVED_TARGET_SELECTION" value="Videona" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected="Application.Videona">
     <configuration default="true" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Videona" TARGET_NAME="Videona" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Videona" RUN_TARGET_NAME="Videona" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
@@ -303,6 +570,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -335,11 +608,11 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Application.Videona" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Documentation" />
-      <item index="2" class="java.lang.String" itemvalue="Application.GPUImage" />
-      <item index="3" class="java.lang.String" itemvalue="Application.GPUImageFramework" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Alamofire" />
-      <item index="5" class="java.lang.String" itemvalue="Application.Pods-Videona" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Alamofire" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Pods-Videona" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Documentation" />
+      <item index="4" class="java.lang.String" itemvalue="Application.GPUImage" />
+      <item index="5" class="java.lang.String" itemvalue="Application.GPUImageFramework" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -357,26 +630,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1916" height="1057" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299595" sideWeight="0.43528184" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2520243" sideWeight="0.53549063" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2520243" sideWeight="0.4645094" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299595" sideWeight="0.49791232" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299595" sideWeight="0.3783925" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39979756" sideWeight="0.31106472" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2520243" sideWeight="0.4519833" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39979756" sideWeight="0.7098121" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39979756" sideWeight="0.6889353" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299595" sideWeight="0.49582464" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -419,16 +692,38 @@
           <line>148</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="NONE" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Videona/PlayerView.swift</url>
+          <line>47</line>
+          <log-expression expression="print(&quot;SuperViewFrame on PlayerView = \n\(superViewFrame)&quot;)" language="Swift" />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="11" />
+      <option name="time" value="25" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Videona/AppDependencies.swift">
+    <entry file="file://$PROJECT_DIR$/Videona/PlayerView.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="46" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/FullScreenPlayerWireframe.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/ShareWireframe.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -436,11 +731,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/ExporterInteractor.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding>
+            <element signature="e#156#173#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/AVQualityParse.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#112#129#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/CompatibleQualityInteractor.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="62" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Videona/AppDependencies.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -448,7 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="26" column="45" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -456,7 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -464,7 +783,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -472,47 +790,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Videona/AppDelegate.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="93" column="24" selection-start-line="93" selection-start-column="24" selection-end-line="93" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Videona/RecordPresenter.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Videona/AVQualityParse.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Videona/AVQualityParse.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/AVQualityParse.m" />
+    <entry file="file://$PROJECT_DIR$/Videona/AVQualityParse.h" />
     <entry file="file://$PROJECT_DIR$/Videona/CompatibleResolutionsInteractor.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -520,7 +806,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
           <caret line="239" column="11" selection-start-line="239" selection-start-column="11" selection-end-line="239" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -528,7 +813,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="122" column="7" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -536,7 +820,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="122" column="8" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -544,7 +827,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
           <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -552,7 +834,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
           <caret line="105" column="67" selection-start-line="105" selection-start-column="67" selection-end-line="105" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -576,7 +857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
           <caret line="105" column="77" selection-start-line="105" selection-start-column="77" selection-end-line="105" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -584,27 +864,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4275">
           <caret line="288" column="64" selection-start-line="288" selection-start-column="64" selection-end-line="288" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Videona/ExporterInteractor.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-          <folding>
-            <element signature="e#156#173#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Videona/CompatibleQualityInteractor.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="62" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
-          <folding>
-            <element signature="e#112#129#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -613,8 +872,173 @@
         <state relative-caret-position="330">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
-            <element signature="e#112#129#0" expanded="true" />
+            <element signature="e#112#129#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/CompatibleQualityInteractor.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="62" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/ExporterInteractor.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding>
+            <element signature="e#156#173#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/PlayerPresenter.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="18" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/FullScreenPlayerPresenterInterface.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/FilterListPresenter.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="66" column="33" selection-start-line="66" selection-start-column="33" selection-end-line="66" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/FilterListPresenterInterface.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/RecordPresenter.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="65" selection-start-line="11" selection-start-column="65" selection-end-line="11" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/AppDependencies.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="77" column="56" selection-start-line="77" selection-start-column="56" selection-end-line="77" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/SharePresenterInterface.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/PlayerPresenterInterface.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/SharePresenter.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="919">
+          <caret line="77" column="24" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/ShareWireframe.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="53" column="47" selection-start-line="53" selection-start-column="47" selection-end-line="53" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/PlayerView.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1220">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/FullScreenPlayerInterface.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/FullScreenPlayerWireframe.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="52" column="43" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/ShareViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/ShareInterface.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/FullScreenPlayerViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/FullScreenPlayerPresenter.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/PlayerWireframe.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Videona/AppDelegate.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

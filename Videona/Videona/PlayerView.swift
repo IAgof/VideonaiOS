@@ -14,10 +14,10 @@ class PlayerView: UIView,PlayerInterface {
     
     var eventHandler: PlayerPresenterInterface?
     
-    var transitioningBackgroundView : UIView = UIView()
     var movieURL:NSURL!
     var player:AVPlayer?
-    
+    var playerLayer: AVPlayerLayer?
+
     @IBOutlet weak var playOrPauseButton: UIButton!
    
     @IBOutlet weak var playerContainer: UIView!
@@ -43,8 +43,14 @@ class PlayerView: UIView,PlayerInterface {
     }
     
     func updateLayers(){
+        self.superview?.layoutIfNeeded()
         let superViewFrame = (self.superview?.frame)!
         self.frame = CGRectMake(0, 0, superViewFrame.width, superViewFrame.height)
+
+        if (playerLayer != nil){
+            playerLayer!.frame = self.frame
+            self.playerContainer.frame = self.frame
+        }
     }
     
     func getView() -> UIView {
@@ -69,12 +75,12 @@ class PlayerView: UIView,PlayerInterface {
             }
         }
         
-        let layer = AVPlayerLayer(player: player)
-        layer.frame = self.frame
+        playerLayer = AVPlayerLayer(player: player)
+        playerLayer!.frame = self.frame
         player?.currentItem?.seekToTime(CMTime.init(value: 1, timescale: 10))
 
         self.playerContainer.layoutIfNeeded()
-        self.playerContainer.layer.addSublayer(layer)
+        self.playerContainer.layer.addSublayer(playerLayer!)
     }
     
     func updateSeekBarOnUI(){

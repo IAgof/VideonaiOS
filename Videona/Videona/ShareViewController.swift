@@ -38,6 +38,7 @@ GIDSignInUIDelegate,GIDSignInDelegate{
     @IBOutlet weak var shareTableView: UITableView!
     @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var settingsNavBar: UINavigationItem!
+    @IBOutlet weak var expandPlayerButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -56,6 +57,7 @@ GIDSignInUIDelegate,GIDSignInDelegate{
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
     }
+
     func setNavBarTitle(title:String){
         settingsNavBar.title = title
     }
@@ -73,6 +75,9 @@ GIDSignInUIDelegate,GIDSignInDelegate{
         
     @IBAction func pushBackBarButton(sender: AnyObject) {
         eventHandler?.pushBack()
+    }
+    @IBAction func pushExpandButton(sender: AnyObject) {
+        eventHandler?.expandPlayer()
     }
 
     //MARK: - UITableView Datasource
@@ -137,5 +142,11 @@ GIDSignInUIDelegate,GIDSignInDelegate{
         } else {
             Utils().debugLog("\(error.localizedDescription)")
         }
+    }
+
+    func cameFromFullScreenPlayer(playerView:PlayerView){
+        self.playerView.addSubview(playerView)
+        self.playerView.bringSubviewToFront(expandPlayerButton)
+        eventHandler?.updatePlayerLayer()
     }
 }

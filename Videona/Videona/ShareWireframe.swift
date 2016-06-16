@@ -16,7 +16,8 @@ class ShareWireframe : NSObject {
     var shareViewController : ShareViewController?
     var sharePresenter : SharePresenter?
     var playerWireframe: PlayerWireframe?
-    
+    var fullScreenPlayerWireframe: FullScreenPlayerWireframe?
+
     var prevController:UIViewController?
 
     func presentShareInterfaceFromWindow(window: UIWindow) {
@@ -54,7 +55,6 @@ class ShareWireframe : NSObject {
     }
     
     func goPrevController(){
-        
         shareViewController?.navigationController?.popToViewController(prevController!, animated: true)
     }
 }

@@ -16,7 +16,10 @@ class SharePresenter:NSObject,SharePresenterInterface{
     var interactor: ShareInteractor?
     var recordWireframe: RecordWireframe?
     var playerPresenter: PlayerPresenter?
+    var playerWireframe: PlayerWireframe?
 
+    var fullScreenPlayerWireframe: FullScreenPlayerWireframe?
+    
     var videoPath = ""
     
     //LifeCicle
@@ -37,6 +40,11 @@ class SharePresenter:NSObject,SharePresenterInterface{
     
     func pushBack() {
         recordWireframe?.goBackToRecordView(controller!)
+    }
+    
+    func expandPlayer(){
+        fullScreenPlayerWireframe?.presentFullScreenPlayerFromViewController(controller!,playerView: (playerWireframe?.presentedView)!)
+//        (playerWireframe?.presentedView)!.layoutSubviews()
     }
     
     func getListData (){
@@ -64,5 +72,9 @@ class SharePresenter:NSObject,SharePresenterInterface{
     
     func postToYoutube(token:String){
         interactor!.postToYoutube(token)
+    }
+
+    func updatePlayerLayer() {
+        playerPresenter!.layoutSubViews()
     }
 }

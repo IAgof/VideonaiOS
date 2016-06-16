@@ -8,8 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		05385CD47D1323E5615A5A06 /* Pods_Videona.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E695B9819A8E5071F983C35 /* Pods_Videona.framework */; };
+		11A092443FAC586CFAFA4D4B /* FullScreenPlayerWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A09BD867C7A1F0495970DF /* FullScreenPlayerWireframe.swift */; };
+		11A0932DDCF310739E0521A0 /* FullScreenPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A09E0D505042674C91083B /* FullScreenPlayerViewController.swift */; };
+		11A096B391B3E78ACD1F710D /* FullScreenPlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A09B01536A78FD44EFF59B /* FullScreenPlayerPresenter.swift */; };
 		11A0996C2D273F8F236BDE86 /* CompatibleQualityInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A093E73995F623DCAD393F /* CompatibleQualityInteractor.swift */; };
+		11A09EF76603C1D78D7F2930 /* FullScreenPlayerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A09FCDB7BB65E6250CB188 /* FullScreenPlayerInterface.swift */; };
 		11A09F45EE9D9D3904394BE7 /* AVQualityParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A097EE3ADB91072CDFAC41 /* AVQualityParse.swift */; };
+		11A09F4C51675AFF12840FA2 /* FullScreenPlayerPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A09B9EE9C6A55A53201AD8 /* FullScreenPlayerPresenterInterface.swift */; };
 		A91D25121CF876250006CB93 /* CameraInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91D25111CF876250006CB93 /* CameraInteractorInterface.swift */; };
 		A925E8FB1D01C8AA000BB684 /* water_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = A925E8FA1D01C8AA000BB684 /* water_mark.png */; };
 		A92793161D0AB1FB008E30BF /* SettingsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92793151D0AB1FB008E30BF /* SettingsConstants.swift */; };
@@ -216,6 +221,11 @@
 /* Begin PBXFileReference section */
 		11A093E73995F623DCAD393F /* CompatibleQualityInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompatibleQualityInteractor.swift; sourceTree = "<group>"; };
 		11A097EE3ADB91072CDFAC41 /* AVQualityParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVQualityParse.swift; sourceTree = "<group>"; };
+		11A09B01536A78FD44EFF59B /* FullScreenPlayerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenPlayerPresenter.swift; sourceTree = "<group>"; };
+		11A09B9EE9C6A55A53201AD8 /* FullScreenPlayerPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenPlayerPresenterInterface.swift; sourceTree = "<group>"; };
+		11A09BD867C7A1F0495970DF /* FullScreenPlayerWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenPlayerWireframe.swift; sourceTree = "<group>"; };
+		11A09E0D505042674C91083B /* FullScreenPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenPlayerViewController.swift; sourceTree = "<group>"; };
+		11A09FCDB7BB65E6250CB188 /* FullScreenPlayerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenPlayerInterface.swift; sourceTree = "<group>"; };
 		7E695B9819A8E5071F983C35 /* Pods_Videona.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Videona.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D1DE05AFBAE78D866AF921E /* Pods-Videona.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Videona.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Videona/Pods-Videona.debug.xcconfig"; sourceTree = "<group>"; };
 		A918B89A1CF5878D0013D68F /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = ../../GPUImage/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
@@ -411,6 +421,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11A0905878D1D7E4CF070162 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				11A09B9EE9C6A55A53201AD8 /* FullScreenPlayerPresenterInterface.swift */,
+				11A09B01536A78FD44EFF59B /* FullScreenPlayerPresenter.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		11A0967B82F0FDD4E612C678 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				11A09BD867C7A1F0495970DF /* FullScreenPlayerWireframe.swift */,
+			);
+			name = Wireframe;
+			sourceTree = "<group>";
+		};
+		11A0985470DEB3CF4312B389 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				11A09E0CC79E6CC3B8DAA6C5 /* View */,
+				11A0905878D1D7E4CF070162 /* Presenter */,
+				11A0967B82F0FDD4E612C678 /* Wireframe */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		11A09BF1C3E6844BFAC6DD12 /* FullScreenPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				11A0985470DEB3CF4312B389 /* User Interface */,
+			);
+			name = FullScreenPlayer;
+			sourceTree = "<group>";
+		};
+		11A09E0CC79E6CC3B8DAA6C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				11A09E0D505042674C91083B /* FullScreenPlayerViewController.swift */,
+				11A09FCDB7BB65E6250CB188 /* FullScreenPlayerInterface.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		A92793191D0AB708008E30BF /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -635,6 +689,7 @@
 				A94301591CE5CEE400DC0DF8 /* Player */,
 				A9B118111CE37887001A1177 /* Share */,
 				A99278491CE3642D009DC364 /* Settings */,
+				11A09BF1C3E6844BFAC6DD12 /* FullScreenPlayer */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -1568,6 +1623,11 @@
 				A95D3BE01CEB045F001F2272 /* SettingsProvider.swift in Sources */,
 				11A09F45EE9D9D3904394BE7 /* AVQualityParse.swift in Sources */,
 				11A0996C2D273F8F236BDE86 /* CompatibleQualityInteractor.swift in Sources */,
+				11A09F4C51675AFF12840FA2 /* FullScreenPlayerPresenterInterface.swift in Sources */,
+				11A096B391B3E78ACD1F710D /* FullScreenPlayerPresenter.swift in Sources */,
+				11A0932DDCF310739E0521A0 /* FullScreenPlayerViewController.swift in Sources */,
+				11A092443FAC586CFAFA4D4B /* FullScreenPlayerWireframe.swift in Sources */,
+				11A09EF76603C1D78D7F2930 /* FullScreenPlayerInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,7 +18,8 @@ class AppDependencies {
     var filterListWireframe = FilterListWireframe()
     var playerWireframe = PlayerWireframe()
     var detailTextWireframe = DetailTextWireframe()
-    
+    var fullScreenPlayerWireframe = FullScreenPlayerWireframe()
+
     init(){
         configureDependencies()
     }
@@ -40,7 +41,9 @@ class AppDependencies {
         
         let detailTextPresenter = DetailTextPresenter()
         let detailTextInteractor = DetailTextInteractor()
-        
+
+        let fullScreenPlayerPresenter = FullScreenPlayerPresenter()
+
         //INTRO MODULE
         introPresenter.introWireframe = introWireframe
         introPresenter.recordWireframe = recordWireframe
@@ -71,6 +74,8 @@ class AppDependencies {
         //SHARE MODULE
         sharePresenter.wireframe = shareWireframe
         sharePresenter.recordWireframe = recordWireframe
+        sharePresenter.fullScreenPlayerWireframe = fullScreenPlayerWireframe
+        sharePresenter.playerWireframe = playerWireframe
         sharePresenter.interactor = shareInteractor
         sharePresenter.playerPresenter = playerPresenter
         
@@ -101,6 +106,12 @@ class AppDependencies {
         
         detailTextWireframe.detailTextPresenter = detailTextPresenter
         detailTextWireframe.rootWireframe = rootWireframe
+
+        //DETAIL TEXT MODULE
+        fullScreenPlayerPresenter.wireframe = fullScreenPlayerWireframe
+
+        fullScreenPlayerWireframe.fullScreenPlayerPresenter = fullScreenPlayerPresenter
+        fullScreenPlayerWireframe.rootWireframe = rootWireframe
     }
     
     func installIntroToRootViewControllerIntoWindow(window: UIWindow){
