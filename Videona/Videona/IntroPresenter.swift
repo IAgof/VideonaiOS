@@ -32,7 +32,7 @@ class IntroPresenter:NSObject, IntroPresenterInterface {
     }
     
     func checkOrientation(){
-        controller?.pageViewController.view.setNeedsLayout()
+        controller?.pageViewController.view.setNeedsUpdateConstraints()
     }
     
     func pushNext(buttonTitle:String) {
@@ -58,7 +58,7 @@ class IntroPresenter:NSObject, IntroPresenterInterface {
     
     func pushSkip(){
         print("Intro presenter onSkipPush")
-       recordWireframe?.presentRecordInterfaceFromViewController(controller!)
+       recordWireframe?.setRecordViewControllerAsRootController()
     }
     
 }

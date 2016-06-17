@@ -20,8 +20,7 @@ class SettingsPresenter:NSObject,SettingsPresenterInterface{
     let videonaTwitterUser = "Videona_es"
     
     func pushBack() {
-        print("Navigator presenter pushEdit")
-        recordWireframe?.goBackToRecordView(controller!)
+        wireframe?.goPrevController()
     }
     func viewDidLoad() {
         controller?.setNavBarTitle(Utils().getStringByKeyFromSettings(SettingsConstants().SETTINGS_TITLE)

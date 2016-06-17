@@ -41,12 +41,11 @@ class SharePresenter:NSObject,SharePresenterInterface{
     }
     
     func pushBack() {
-        recordWireframe?.goBackToRecordView(controller!)
+        wireframe?.goPrevController()
     }
     
     func expandPlayer(){
         fullScreenPlayerWireframe?.presentFullScreenPlayerFromViewController(controller!,playerView: (playerWireframe?.presentedView)!)
-//        (playerWireframe?.presentedView)!.layoutSubviews()
     }
     
     func getListData (){

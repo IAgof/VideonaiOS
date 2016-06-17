@@ -55,6 +55,7 @@ class ShareWireframe : NSObject {
     }
     
     func goPrevController(){
+//        shareViewController?.navigationController?.popToViewController(prevController!, animated: true)
         shareViewController?.navigationController?.popToViewController(prevController!, animated: true)
     }
 }

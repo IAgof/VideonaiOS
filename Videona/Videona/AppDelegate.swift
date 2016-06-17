@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             // same version
 
             //Change to test the IntroView
-//            appDependencies.installRecordToRootViewControllerIntoWindow(window!)
+//            appDependencies.installRec ordToRootViewControllerIntoWindow(window!)
                 appDependencies.installIntroToRootViewControllerIntoWindow(window!)
         } else {
             // other version

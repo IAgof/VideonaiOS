@@ -15,7 +15,6 @@ class DetailTextPresenter: NSObject,DetailTextPresenterInterface {
     
     
     func pushBack() {
-        print("Navigator presenter pushEdit")
         wireframe?.goPrevController()
     }
     
