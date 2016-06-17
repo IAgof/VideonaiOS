@@ -14,16 +14,18 @@ class IntroViewController: VideonaController,
 IntroViewInterface {
     
     //MARK: - VIPER
-    var introPresenter: IntroPresenterInterface?
+    var eventHandler: IntroPresenterInterface?
     
     //MARK: - Outlets
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet var nextFinishButton: UIButton!
     @IBOutlet var skipButton: UIButton!
-    
+
+    //MARK: - Variables
+    var pageViewController: UIPageViewController!
+
     var pageArray = ["PageOne", "PageTwo", "PageThree", "PageFour"]
     var index = 0
-    var pageViewController: UIPageViewController!
     
     //MARK: - Constants
     let NEXT_PAGE = "NEXT"
@@ -47,7 +49,7 @@ IntroViewInterface {
             currentIndex = pageArray.indexOf(id)!
         }
         
-        introPresenter?.onPageChange(currentIndex!, size: pageArray.count)
+        eventHandler?.onPageChange(currentIndex!, size: pageArray.count)
         
         if currentIndex! > 0 {
             let currentPage = currentIndex! - 1
@@ -61,7 +63,7 @@ IntroViewInterface {
         if let id = viewController.restorationIdentifier {
             currentIndex = pageArray.indexOf(id)!
         }
-        introPresenter?.onPageChange(currentIndex!, size: pageArray.count)
+        eventHandler?.onPageChange(currentIndex!, size: pageArray.count)
         
         if currentIndex! < pageArray.count - 1 {
             let currentPage = currentIndex! + 1
@@ -75,6 +77,10 @@ IntroViewInterface {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        eventHandler?.viewDidLoad()
+    }
+    
+    func setUpView(){
         // Do any additional setup after loading the view, typically from a nib.
         
         self.pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
@@ -98,8 +104,8 @@ IntroViewInterface {
         self.pageControl.numberOfPages = pageArray.count
         
         self.navigationController?.navigationBarHidden = true
-        
     }
+    
     
     func setSubViewsOnTop(){
         self.view.bringSubviewToFront(self.pageControl)
@@ -117,14 +123,14 @@ IntroViewInterface {
     
     @IBAction func pushNextButton(sender: AnyObject) {
         if let titleLabel = (nextFinishButton.titleLabel?.text){
-            introPresenter?.pushNext(titleLabel)
+            eventHandler?.pushNext(titleLabel)
         }
     }
     
     @IBAction func pushSkipButton(sender: AnyObject) {
         print("IntroViewController pushSkipButton")
         
-        introPresenter?.pushSkip()
+        eventHandler?.pushSkip()
     }
     
     func getCurrentIndexViewFromArray(viewController: UIViewController) -> Int{
@@ -141,7 +147,7 @@ IntroViewInterface {
     func goToNextView() {
         
         let index = getCurrentIndexViewFromArray(self.pageViewController.viewControllers![0]) + 1
-        introPresenter?.onPageChange(index, size: pageArray.count)
+        eventHandler?.onPageChange(index, size: pageArray.count)
         
         let viewControllers = [getViewControllerAtIndex(index)!]
         self.pageViewController.setViewControllers(viewControllers,
@@ -152,6 +158,10 @@ IntroViewInterface {
     
     func changeNextFinishButtonTitle(title:String){
         self.nextFinishButton.setTitle(title, forState: .Normal)
+    }
+    
+    func changeSkipButtonTittle(title:String){
+        self.skipButton.setTitle(title, forState: .Normal)
     }
     
     func updateCurrentPage(page:Int){

@@ -18,10 +18,22 @@ class IntroPresenter:NSObject, IntroPresenterInterface {
     
     //MARK: - Constants
     //Change to string file
-    let nextTitle = "Next"
-    let doneTitle = "Done"
+    let nextTitle = Utils().getStringByKeyFromIntro(IntroTextConstants().NEXT)
+    let doneTitle = Utils().getStringByKeyFromIntro(IntroTextConstants().FINISH)
+    let skipTitle = Utils().getStringByKeyFromIntro(IntroTextConstants().SKIP)
     
     //MARK: - Interface
+    func viewDidLoad() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(IntroPresenter.checkOrientation), name: UIDeviceOrientationDidChangeNotification, object: nil)
+
+        controller?.setUpView()
+        controller?.changeNextFinishButtonTitle(nextTitle)
+        controller?.changeSkipButtonTittle(skipTitle)
+    }
+    
+    func checkOrientation(){
+        controller?.pageViewController.view.setNeedsLayout()
+    }
     
     func pushNext(buttonTitle:String) {
         print("Intro presenter onNextPush")

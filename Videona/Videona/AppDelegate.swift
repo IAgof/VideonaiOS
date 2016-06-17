@@ -39,8 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             // same version
 
             //Change to test the IntroView
-            appDependencies.installRecordToRootViewControllerIntoWindow(window!)
-//                        appDependencies.installIntroToRootViewControllerIntoWindow(window!)
+//            appDependencies.installRecordToRootViewControllerIntoWindow(window!)
+                appDependencies.installIntroToRootViewControllerIntoWindow(window!)
         } else {
             // other version
             defaults.setObject(currentAppVersion, forKey: "appVersion")

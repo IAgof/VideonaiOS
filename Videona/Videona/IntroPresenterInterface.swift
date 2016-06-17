@@ -12,4 +12,5 @@ protocol IntroPresenterInterface {
     func pushNext(buttonTitle:String)
     func pushSkip()
     func onPageChange(numPage: Int, size: Int)
+    func viewDidLoad()
 }

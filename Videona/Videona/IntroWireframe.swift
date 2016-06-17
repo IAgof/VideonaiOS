@@ -18,7 +18,7 @@ class IntroWireframe:NSObject {
     
     func presentIntroInterfaceFromWindow(window: UIWindow){
         let viewController = IntroViewControllerFromStoryboard()
-        viewController.introPresenter = introPresenter
+        viewController.eventHandler = introPresenter
         
         introViewController = viewController
         introPresenter?.controller = viewController

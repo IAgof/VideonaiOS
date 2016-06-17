@@ -1,0 +1,30 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "9rL-1E-65k"; */
+"9rL-1E-65k.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "0:00"; ObjectID = "DuL-YK-lI5"; */
+"DuL-YK-lI5.text" = "0:00";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "Iqy-2a-OtQ"; */
+"Iqy-2a-OtQ.normalTitle" = "Next";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "T5V-hi-ibx"; */
+"T5V-hi-ibx.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UIButton"; normalTitle = "navigator_common_icon_drawer_back_pressed"; ObjectID = "U1A-91-Hgd"; */
+"U1A-91-Hgd.normalTitle" = "navigator_common_icon_drawer_back_pressed";
+
+/* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "VAE-Jt-vzw"; */
+"VAE-Jt-vzw.normalTitle" = "Skip";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "YmL-nK-vl6"; */
+"YmL-nK-vl6.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "j8r-VL-6S0"; */
+"j8r-VL-6S0.text" = "Detail";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "ylD-dR-oSR"; */
+"ylD-dR-oSR.text" = "Title";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "zLu-Mq-6gm"; */
+"zLu-Mq-6gm.normalTitle" = "Button";
