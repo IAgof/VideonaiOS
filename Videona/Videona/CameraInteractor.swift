@@ -102,6 +102,7 @@ class CameraInteractor:CameraRecorderDelegate{
         }else{
             self.isFrontCamera = true
             cameraDelegate.cameraFront()
+            self.videoCamera.horizontallyMirrorFrontFacingCamera = true
             if(FlashInteractor().isFlashTurnOn()){
                 cameraDelegate.flashOff()
             }
