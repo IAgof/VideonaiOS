@@ -51,9 +51,8 @@ class IntroPresenter:NSObject, IntroPresenterInterface {
         }else if numPage == (size - 1) {//done
             controller?.changeNextFinishButtonTitle(doneTitle)
         }
-        
+        print("IntroPresenter on page change currentPage \(numPage)")
         controller?.updateCurrentPage(numPage)
-        print("IntroPresenter currentPage \(numPage)")
     }
     
     func pushSkip(){

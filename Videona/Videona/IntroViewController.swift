@@ -17,9 +17,9 @@ IntroViewInterface {
     var eventHandler: IntroPresenterInterface?
     
     //MARK: - Outlets
-    @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet var nextFinishButton: UIButton!
     @IBOutlet var skipButton: UIButton!
+    @IBOutlet weak var pageControl: UIPageControl!
 
     //MARK: - Variables
     var pageViewController: UIPageViewController!
@@ -38,39 +38,23 @@ IntroViewInterface {
         return vc
     }
     
-    
-    
-    // MARK: - PageViewController delegate methods
-    
-    // Returns the View Controller before the current view controller
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        var currentIndex: Int? = nil
-        if let id = viewController.restorationIdentifier {
-            currentIndex = pageArray.indexOf(id)!
-        }
+    func initPageViewController() {
+        self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
+        self.pageViewController.dataSource = self
         
-        eventHandler?.onPageChange(currentIndex!, size: pageArray.count)
+        let viewControllers = [getViewControllerAtIndex(0)!]
         
-        if currentIndex! > 0 {
-            let currentPage = currentIndex! - 1
-            return getViewControllerAtIndex(currentPage)
-        }
-        return nil
-    }
-    
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        var currentIndex: Int? = nil
-        if let id = viewController.restorationIdentifier {
-            currentIndex = pageArray.indexOf(id)!
-        }
-        eventHandler?.onPageChange(currentIndex!, size: pageArray.count)
         
-        if currentIndex! < pageArray.count - 1 {
-            let currentPage = currentIndex! + 1
-            return getViewControllerAtIndex(currentPage)
-        }
+        self.pageViewController.setViewControllers(viewControllers,
+                                                   direction: UIPageViewControllerNavigationDirection.Forward,
+                                                   animated: false,
+                                                   completion: nil)
         
-        return nil
+        self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.size.height)
+        
+        self.addChildViewController(self.pageViewController)
+        self.view.addSubview(self.pageViewController.view)
+        self.pageViewController.didMoveToParentViewController(self)
     }
     
     // MARK: - View Lifecycle
@@ -81,29 +65,13 @@ IntroViewInterface {
     }
     
     func setUpView(){
-        // Do any additional setup after loading the view, typically from a nib.
+        self.initPageViewController()
         
-        self.pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
-        self.pageViewController.dataSource = self
-        self.pageViewController.delegate = self
-        
-        self.addChildViewController(self.pageViewController)
-        self.view.addSubview(self.pageViewController.view)
-        
-        let viewControllers = [getViewControllerAtIndex(0)!]
-        self.pageViewController.setViewControllers(viewControllers,
-                                                   direction: UIPageViewControllerNavigationDirection.Forward,
-                                                   animated: false,
-                                                   completion: nil)
-        
-        self.pageViewController.didMoveToParentViewController(self)
+        self.navigationController?.navigationBarHidden = true
         
         self.setSubViewsOnTop()
         
-        self.pageControl.currentPage = 0
         self.pageControl.numberOfPages = pageArray.count
-        
-        self.navigationController?.navigationBarHidden = true
     }
     
     
@@ -111,7 +79,6 @@ IntroViewInterface {
         self.view.bringSubviewToFront(self.pageControl)
         self.view.bringSubviewToFront(self.nextFinishButton)
         self.view.bringSubviewToFront(self.skipButton)
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -146,7 +113,7 @@ IntroViewInterface {
     //MARK: - Interface
     func goToNextView() {
         
-        let index = getCurrentIndexViewFromArray(self.pageViewController.viewControllers![0]) + 1
+        index += 1
         eventHandler?.onPageChange(index, size: pageArray.count)
         
         let viewControllers = [getViewControllerAtIndex(index)!]
@@ -163,8 +130,48 @@ IntroViewInterface {
     func changeSkipButtonTittle(title:String){
         self.skipButton.setTitle(title, forState: .Normal)
     }
-    
     func updateCurrentPage(page:Int){
         self.pageControl.currentPage = page
+    }
+    
+    // MARK: - Page View Controller Data Source
+    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
+    {
+        
+        if (index == 0)
+        {
+            return nil
+            
+        }
+        
+        index -= 1
+        eventHandler?.onPageChange(index, size: pageArray.count)
+        return getViewControllerAtIndex(index)
+        
+    }
+    
+    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+        
+        index += 1
+        eventHandler?.onPageChange(index, size: pageArray.count)
+
+        if (index >= self.pageArray.count)
+        {
+            index -= 1
+            return nil
+        }
+        
+        return getViewControllerAtIndex(index)
+        
+    }
+    
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
+    {
+        return self.pageArray.count
+    }
+    
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int
+    {
+        return 0
     }
 }
