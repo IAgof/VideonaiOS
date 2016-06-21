@@ -130,9 +130,9 @@
 "high_resolution_name" = "Excellent (4K)";
 "high_value" = "Excellent";
 "quality" = "Quality";
-"low_quality_name" = "Good (2 Mbps)";
-"good_quality_name" = "Very good (5 Mbps)";
-"high_quality_name" = "Excellent (10 Mbps)";
+"low_quality_name" = "Good";
+"good_quality_name" = "Very good";
+"high_quality_name" = "Excellent";
 "cancelSettingsCamera" = "Cancel";
 
 
