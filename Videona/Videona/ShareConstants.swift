@@ -21,5 +21,6 @@ class ShareConstants: NSObject {
     let UPLOAD_FAIL = "uploadFail"
     let VIDEONATIME_HASTAGH = "videonaHastagh"
     let NO_TWITTER_ACCESS = "twitterNoAcces"
-    
+    let TWITTER_MAX_LENGHT = "twitterMaxLenght"
+    let INSTAGRAM_MAX_LENGHT = "instagramMaxLenght"
 }

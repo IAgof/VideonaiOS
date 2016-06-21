@@ -598,6 +598,7 @@
 		A943016B1CE5D96500DC0DF8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A95F67101D12E7D400A25EDD /* Share.strings */,
 				A943016D1CE5D99E00DC0DF8 /* SocialNetwork.swift */,
 				A927931E1D0AB906008E30BF /* ShareConstants.swift */,
 				A943016F1CE5DAA100DC0DF8 /* SocialNetworkProvider.swift */,
@@ -906,6 +907,7 @@
 		A96733011CE630B3007BE340 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A97FBDE41D09B6B500942F8D /* Settings.strings */,
 				A92793151D0AB1FB008E30BF /* SettingsConstants.swift */,
 				A95D3BDD1CEB0320001F2272 /* SettingsContent.swift */,
 				A95D3BDF1CEB045F001F2272 /* SettingsProvider.swift */,
@@ -1263,8 +1265,6 @@
 		A9F9C2141CF4872900AB310C /* Res */ = {
 			isa = PBXGroup;
 			children = (
-				A95F67101D12E7D400A25EDD /* Share.strings */,
-				A97FBDE41D09B6B500942F8D /* Settings.strings */,
 				A971F5B31CFC7F3C004DC50D /* Fonts */,
 				A971F5AC1CFC52D1004DC50D /* activity_record_rec_circle.png */,
 				A925E8FA1D01C8AA000BB684 /* water_mark.png */,

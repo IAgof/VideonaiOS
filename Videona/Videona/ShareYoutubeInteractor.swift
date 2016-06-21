@@ -19,9 +19,7 @@ class ShareYoutubeInteractor: ShareSocialNetworkInteractor{
     }
     
     
-    func share(){
-        self.createAlertWaitToExport()
-        
+    func share(){        
         let youtubeScope = "https://www.googleapis.com/auth/youtube.upload"
         let youtubeScope2 = "https://www.googleapis.com/auth/youtube"
         let youtubeScope3 = "https://www.googleapis.com/auth/youtubepartner"
@@ -62,16 +60,12 @@ class ShareYoutubeInteractor: ShareSocialNetworkInteractor{
                         callback(true)
                         
                         let message = Utils().getStringByKeyFromShare(ShareConstants().UPLOAD_SUCCESFULL)
-                        self.dissmissAlertWaitToExport({_ in
-                            self.setAlertCompletionMessageOnTopView(message)
-                        })
+                        self.setAlertCompletionMessageOnTopView(message)
                     }
                 case .Failure(_):
                     callback(false)
                     let message = Utils().getStringByKeyFromShare(ShareConstants().UPLOAD_FAIL)
-                    self.dissmissAlertWaitToExport({_ in
-                        self.setAlertCompletionMessageOnTopView(message)
-                    })
+                    self.setAlertCompletionMessageOnTopView(message)
                 }
         })
     }

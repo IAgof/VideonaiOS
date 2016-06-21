@@ -264,6 +264,10 @@
             if ([urlResponse statusCode] == 200){
                 NSLog(@"Twitter upload success !");
                 [SocialVideoHelper uploadSuccessWithCompletion:completion];
+            }else if ([urlResponse statusCode] == 400){
+                NSString *errorFourHundred = @"Twitter upload error 400!";
+                NSLog(errorFourHundred);
+                [SocialVideoHelper uploadError:errorFourHundred withCompletion:completion];
             }
         }
     }];
