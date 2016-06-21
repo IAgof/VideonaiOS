@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class FullScreenPlayerViewController: UIViewController ,FullScreenPlayerInterface{
+class FullScreenPlayerViewController: VideonaController ,FullScreenPlayerInterface{
 
     //MARK: - VIPER
     var eventHandler: FullScreenPlayerPresenterInterface?

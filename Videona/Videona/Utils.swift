@@ -9,7 +9,7 @@
 import Foundation
 
 class Utils{
-//    let udid = UIDevice.currentDevice().identifierForVendor!.UUIDString
+    let udid = UIDevice.currentDevice().identifierForVendor!.UUIDString
 
     func getDoubleHourAndMinutes() -> Double{
         let date = NSDate()
@@ -38,20 +38,23 @@ class Utils{
     }
     
     func debugLog(logMessage:String){
-//        #if DEBUG
-            print(logMessage)
-//        #endif
+        #if DEBUG
+            print("\n \(logMessage)")
+        #endif
     }
     
-//    func getUDID() -> String{
-//        return udid
-//    }
+    func getUDID() -> String{
+        return udid
+    }
+    
     func getStringByKeyFromSettings(key:String) -> String {
         return NSBundle.mainBundle().localizedStringForKey(key,value: "",table: "Settings")
     }
+    
     func getStringByKeyFromShare(key:String) -> String {
         return NSBundle.mainBundle().localizedStringForKey(key,value: "",table: "Share")
     }
+    
     func getStringByKeyFromIntro(key:String) -> String {
         return NSBundle.mainBundle().localizedStringForKey(key,value: "",table: "Intro")
     }

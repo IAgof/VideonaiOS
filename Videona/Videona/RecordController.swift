@@ -41,10 +41,12 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     }
 
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         print("Recorder view will appear")
         eventHandler?.viewWillAppear()
     }
     override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
         eventHandler?.viewWillDisappear()
     }
     override func didReceiveMemoryWarning() {
@@ -276,6 +278,33 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     func resetView() {
         eventHandler?.resetRecorder()
     }
+    
+    
+    
+    //MARK: - MIXPANEL
+//    func sendUserInteractedTracking(interaction:String, result:String ) {
+//        //JSON properties
+//        let userInteractionsProperties =
+//            [
+//                AnalyticsConstants().ACTIVITY : String(object_getClass(self)),
+//                AnalyticsConstants().RECORDING: ,
+//                AnalyticsConstants().INTERACTION: interaction,
+//                AnalyticsConstants().RESULT: result,
+//                ]
+//        mixpanel.track(AnalyticsConstants().USER_INTERACTED, properties: userInteractionsProperties as [NSObject : AnyObject])
+//    }
+//    
+//    func sendFilterSelectedTracking(name:String,code:String) {
+//        //JSON properties
+//        let userInteractionsProperties =
+//            [
+//                AnalyticsConstants().TYPE: AnalyticsConstants().TYPE_COLOR,
+//                AnalyticsConstants().NAME: name,
+//                AnalyticsConstants().CODE: code,
+//                AnalyticsConstants().RECORDING: isRecording,
+//                ]
+//        mixpanel.track(AnalyticsConstants().FILTER_SELECTED, properties: userInteractionsProperties as [NSObject : AnyObject])
+//    }
     
     //MARK: - Landscape Orientation
     func checkOrientation(){

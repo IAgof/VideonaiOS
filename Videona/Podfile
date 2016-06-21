@@ -5,7 +5,9 @@ use_frameworks!
 
 target 'Videona' do
 pod 'Google/SignIn'
+pod 'Google/Analytics'
 pod 'Alamofire', '~> 3.3'
+pod 'Mixpanel'
 
 end
 

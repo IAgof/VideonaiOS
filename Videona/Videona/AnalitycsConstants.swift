@@ -17,9 +17,14 @@ class AnalyticsConstants {
     #if DEBUG
     let MIXPANEL_TOKEN = "c6617213110cd2513dfc0ad97dbaee66"
     #else
-    let MIXPANEL_TOKEN = "bb9e99661ccafc2a391dc292aa007e75"
+    let MIXPANEL_TOKEN = "985b2aeb535dbc92b81fb5cce7ad1212"
     #endif
     
+    /**
+     * App Name
+     */
+    let APP_NAME = "Videona"
+
     /**
      * Event Names
      */

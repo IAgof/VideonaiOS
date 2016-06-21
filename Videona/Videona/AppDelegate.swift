@@ -7,24 +7,39 @@
 //
 
 import UIKit
+import Mixpanel
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
     let appDependencies = AppDependencies()
+    var mixpanel:Mixpanel?
+    var initState = "firstTime"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+       
+        //MIXPANEL
+        mixpanel = Mixpanel.sharedInstanceWithToken(AnalyticsConstants().MIXPANEL_TOKEN)
         
         self.setupStartApp()
         
+        //MIXPANEL
+        self.trackUserProfileGeneralTraits()
+        self.sendStartupAppTracking()
+        
         self.configureGoogleSignIn()
+        
+        // Optional: configure GAI options.
+        let gai = GAI.sharedInstance()
+        gai.trackUncaughtExceptions = true  // report uncaught exceptions
+        gai.logger.logLevel = GAILogLevel.Verbose  // remove before app release
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
-    func setupStartApp() {//Check version and initial state of the app to show new features or initial message
+    func setupStartApp() {
         let defaults = NSUserDefaults.standardUserDefaults()
         
         let currentAppVersion = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString") as! String
@@ -34,21 +49,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             defaults.setObject(currentAppVersion, forKey: "appVersion")
             defaults.synchronize()
             
+            Utils().debugLog("setupStartApp First time")
+            initState = "firstTime"
+            
+            trackUserProfile();
+            trackCreatedSuperProperty();
+            trackAppStartupProperties(true);
+            
             appDependencies.installIntroToRootViewControllerIntoWindow(window!)
         } else if previousVersion == currentAppVersion {
             // same version
-
-            //Change to test the IntroView
+            Utils().debugLog("setupStartApp Same version")
+            initState = "returning"
+            
+            trackAppStartupProperties(false);
+            
+//            Change to test the IntroView
             appDependencies.installRecordToRootViewControllerIntoWindow(window!)
-//                appDependencies.installIntroToRootViewControllerIntoWindow(window!)
+//            appDependencies.installIntroToRootViewControllerIntoWindow(window!)
         } else {
             // other version
             defaults.setObject(currentAppVersion, forKey: "appVersion")
             defaults.synchronize()
             
+            Utils().debugLog("setupStartApp Update to \(currentAppVersion)")
+            initState = "upgrade"
+            
+            trackUserProfile();
+            trackAppStartupProperties(false);
             appDependencies.installRecordToRootViewControllerIntoWindow(window!)
         }
     }
+    
     
     func configureGoogleSignIn() {
         // Initialize sign-in
@@ -125,6 +157,94 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     func applicationDidBecomeActive(application: UIApplication) {
         FBSDKAppEvents.activateApp()
+    }
+    
+    
+    //MARK: - Mixpanel
+    
+    func sendStartupAppTracking() {
+        let initAppProperties = [AnalyticsConstants().TYPE:AnalyticsConstants().TYPE_ORGANIC,
+                                 AnalyticsConstants().INIT_STATE:initState,
+//                                 AnalyticsConstants().DOUBLE_HOUR_AND_MINUTES: Utils().getDoubleHourAndMinutes()]
+                                ]
+        mixpanel?.track(AnalyticsConstants().APP_STARTED, properties: initAppProperties as [NSObject : AnyObject])
+    }
+    
+    func trackAppStartupProperties(state:Bool) {
+        Utils().debugLog("trackAppStartupProperties")
+        mixpanel!.identify(Utils().udid)
+        
+        var appUseCount:Int
+        let properties = mixpanel!.currentSuperProperties()
+        if let count = properties[AnalyticsConstants().APP_USE_COUNT]{
+            appUseCount = count as! Int
+        }else{
+            appUseCount = 0
+        }
+        appUseCount += 1
+        
+        Utils().debugLog("App USE COUNT \(appUseCount)")
+        
+        let appStartupSuperProperties = [AnalyticsConstants().APP_USE_COUNT:NSNumber.init(int: Int32(appUseCount)),
+                                         AnalyticsConstants().FIRST_TIME:state,
+                                         AnalyticsConstants().APP: AnalyticsConstants().APP_NAME]
+        mixpanel?.registerSuperProperties(appStartupSuperProperties as [NSObject : AnyObject])
+    }
+    
+    func trackUserProfile() {
+        Utils().debugLog("The user id is = \(Utils().udid)")
+        
+        mixpanel!.identify(Utils().udid)
+        let userProfileProperties = [AnalyticsConstants().CREATED:Utils().giveMeTimeNow()]
+        mixpanel?.people.setOnce(userProfileProperties)
+    }
+    
+    func trackUserProfileGeneralTraits() {
+        mixpanel!.identify(Utils().udid)
+        
+        Utils().debugLog("trackUserProfileGeneralTraits")
+        
+        let increment:NSNumber = NSNumber.init(integer: 1)
+        Utils().debugLog("App USE COUNT Increment by: \(increment)")
+        
+        mixpanel?.people.increment(AnalyticsConstants().APP_USE_COUNT,by: increment)
+        
+        let locale = NSLocale.preferredLanguages()[0]
+        
+        //        let lang = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode)
+        let langISO = NSLocale.currentLocale().ISO639_2LanguageCode()
+        let userProfileProperties = [AnalyticsConstants().TYPE:AnalyticsConstants().USER_TYPE_FREE,
+                                     AnalyticsConstants().LOCALE:locale,
+                                     AnalyticsConstants().LANG: langISO!] as [NSObject : AnyObject]
+        
+        mixpanel?.people.set(userProfileProperties)
+    }
+    
+    func trackCreatedSuperProperty() {
+        let createdSuperProperty = [AnalyticsConstants().CREATED: Utils().giveMeTimeNow()]
+        mixpanel?.registerSuperPropertiesOnce(createdSuperProperty)
+    }
+    
+    //MARK: - Application Terminate
+    func applicationWillTerminate(application: UIApplication) {
+        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        self.removeAllTempFiles()
+    }
+    
+    func removeAllTempFiles(){
+        print("Remove all temporally files")
+        
+        let fm = NSFileManager.defaultManager()
+        do {
+            let folderPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+            let paths = try fm.contentsOfDirectoryAtPath(folderPath)
+            for path in paths
+            {
+                try fm.removeItemAtPath("\(folderPath)/\(path)")
+            }
+        } catch{
+            print("error removeAllTempFiles ")
+        }
     }
 }
 

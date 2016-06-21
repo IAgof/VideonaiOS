@@ -105,6 +105,8 @@
 		A98A93BB1CF5903C004E1DB7 /* AddFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */; };
 		A98A93BD1CF59155004E1DB7 /* ChangeFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A93BC1CF59155004E1DB7 /* ChangeFilterInteractor.swift */; };
 		A98A93C41CF5BAF6004E1DB7 /* EffectDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A93C31CF5BAF6004E1DB7 /* EffectDictionary.swift */; };
+		A98AA1811D19450C00E196D0 /* iso639_2.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A98AA17E1D19450C00E196D0 /* iso639_2.bundle */; };
+		A98AA1821D19450C00E196D0 /* NSLocale+ISO639_2.m in Sources */ = {isa = PBXBuildFile; fileRef = A98AA1801D19450C00E196D0 /* NSLocale+ISO639_2.m */; };
 		A99278501CE3647B009DC364 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A992784F1CE3647B009DC364 /* SettingsPresenter.swift */; };
 		A99278531CE364E6009DC364 /* SettingsPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99278521CE364E6009DC364 /* SettingsPresenterInterface.swift */; };
 		A99278551CE3650C009DC364 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99278541CE3650C009DC364 /* SettingsViewController.swift */; };
@@ -332,6 +334,9 @@
 		A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFilterInteractor.swift; sourceTree = "<group>"; };
 		A98A93BC1CF59155004E1DB7 /* ChangeFilterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeFilterInteractor.swift; sourceTree = "<group>"; };
 		A98A93C31CF5BAF6004E1DB7 /* EffectDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectDictionary.swift; sourceTree = "<group>"; };
+		A98AA17E1D19450C00E196D0 /* iso639_2.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = iso639_2.bundle; path = ISO639_2/iso639_2.bundle; sourceTree = "<group>"; };
+		A98AA17F1D19450C00E196D0 /* NSLocale+ISO639_2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSLocale+ISO639_2.h"; path = "ISO639_2/NSLocale+ISO639_2.h"; sourceTree = "<group>"; };
+		A98AA1801D19450C00E196D0 /* NSLocale+ISO639_2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSLocale+ISO639_2.m"; path = "ISO639_2/NSLocale+ISO639_2.m"; sourceTree = "<group>"; };
 		A992784F1CE3647B009DC364 /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		A99278521CE364E6009DC364 /* SettingsPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenterInterface.swift; sourceTree = "<group>"; };
 		A99278541CE3650C009DC364 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -777,6 +782,7 @@
 		A95B24771CD8B95800F78AAF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A98AA17B1D1944DF00E196D0 /* ISO639-2 */,
 				A9686F941CFF129C00983540 /* AVResolutionParse.swift */,
 				A95D3BE21CEB6B77001F2272 /* Utils.swift */,
 				A9F9C2081CF465D300AB310C /* Wireframe */,
@@ -1053,6 +1059,16 @@
 				A98A93B21CF58866004E1DB7 /* GPUImage.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A98AA17B1D1944DF00E196D0 /* ISO639-2 */ = {
+			isa = PBXGroup;
+			children = (
+				A98AA17E1D19450C00E196D0 /* iso639_2.bundle */,
+				A98AA17F1D19450C00E196D0 /* NSLocale+ISO639_2.h */,
+				A98AA1801D19450C00E196D0 /* NSLocale+ISO639_2.m */,
+			);
+			name = "ISO639-2";
 			sourceTree = "<group>";
 		};
 		A99278491CE3642D009DC364 /* Settings */ = {
@@ -1476,6 +1492,7 @@
 				A9D76B141CF5FB8700F7FB47 /* summer.png in Resources */,
 				A9D257C11CF82BE600A618B0 /* Squeeze.fsh in Resources */,
 				A95628D51CF734F900EE4B85 /* filter_free.png in Resources */,
+				A98AA1811D19450C00E196D0 /* iso639_2.bundle in Resources */,
 				A9D76B121CF5FB8700F7FB47 /* retrotv.png in Resources */,
 				A9E066E91CE4C85900D4E11D /* FilterCell.xib in Resources */,
 			);
@@ -1578,6 +1595,7 @@
 				A9F251771D05CDA900D8DC30 /* ShareInstagramInteractor.swift in Sources */,
 				A98A93C41CF5BAF6004E1DB7 /* EffectDictionary.swift in Sources */,
 				A93846EC1CE47EE2007FB6BC /* FilterListView.swift in Sources */,
+				A98AA1821D19450C00E196D0 /* NSLocale+ISO639_2.m in Sources */,
 				A95D3BEA1CEB7158001F2272 /* PlayerProvider.swift in Sources */,
 				A94301611CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift in Sources */,
 				A963F0681D14002D00F05C30 /* IntroTextConstants.swift in Sources */,
@@ -1842,6 +1860,7 @@
 				);
 				INFOPLIST_FILE = Videona/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.videona.videona;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e0f5a145-4063-4cf8-a2fe-042239f6cdb8";
@@ -1864,6 +1883,7 @@
 				);
 				INFOPLIST_FILE = Videona/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-DRELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.videona.videona;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e0f5a145-4063-4cf8-a2fe-042239f6cdb8";

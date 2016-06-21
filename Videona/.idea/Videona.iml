@@ -7,57 +7,54 @@
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/GPUImage.xcodeproj" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageMissEtikateFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageFilterPipeline.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColorConversion.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageMissEtikateFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageExclusionBlendFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageiOSBlurFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageFilterPipeline.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageGlassSphereFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImagePerlinNoiseFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageGrayscaleFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageiOSBlurFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHazeFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageDilationFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImagePerlinNoiseFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageNonMaximumSuppressionFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageDilationFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageNonMaximumSuppressionFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSketchFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageZoomBlurFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageAmatorkaFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageZoomBlurFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageDirectionalNonMaximumSuppressionFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageXYDerivativeFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageRGBFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageXYDerivativeFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSoftEleganceFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageGammaFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GLProgram.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageRGBFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColorDodgeBlendFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSharpenFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageGlassSphereFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GLProgram.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageFASTCornerDetectionFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSharpenFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColorDodgeBlendFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageCrosshatchFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageWhiteBalanceFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageFASTCornerDetectionFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHistogramGenerator.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageGaussianSelectiveBlurFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageLuminosity.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColorDodgeBlendFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageGaussianSelectiveBlurFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageLightenBlendFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImage3x3ConvolutionFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImagePolkaDotFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageAmatorkaFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageFASTCornerDetectionFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHarrisCornerDetectionFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageAmatorkaFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageiOSBlurFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageLineGenerator.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHarrisCornerDetectionFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSolidColorGenerator.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageLineGenerator.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSolidColorGenerator.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageWeakPixelInclusionFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageErosionFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHardLightBlendFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageKuwaharaRadius3Filter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageKuwaharaRadius3Filter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageMovieComposition.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageGrayscaleFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSaturationBlendFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageMotionBlurFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageExclusionBlendFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageMovieComposition.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColorBurnBlendFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageVideoCamera.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageLuminanceThresholdFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImagePolarPixellateFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageFourInputFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageOpacityFilter.m" isTestSource="false" />
@@ -65,33 +62,31 @@
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImagePolarPixellateFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageFourInputFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColorMatrixFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSaturationBlendFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageTwoPassTextureSamplingFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageTwoPassTextureSamplingFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSourceOverBlendFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSwirlFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHistogramFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageOverlayBlendFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSoftEleganceFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSaturationBlendFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageRGBErosionFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageOverlayBlendFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSaturationFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageLuminanceThresholdFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageRGBOpeningFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHSBFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSaturationBlendFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageRGBErosionFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSaturationFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageRGBClosingFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHSBFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageGaussianBlurFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHazeFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageMonochromeFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImagePrewittEdgeDetectionFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageiOSBlurFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageMonochromeFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageLuminanceRangeFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageChromaKeyBlendFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageCrosshairGenerator.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageLuminanceRangeFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageChromaKeyBlendFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageLuminanceRangeFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSoftLightBlendFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageAverageLuminanceThresholdFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageWhiteBalanceFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageDarkenBlendFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageWhiteBalanceFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSaturationFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageAverageLuminanceThresholdFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageFalseColorFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageOpeningFilter.h" isTestSource="false" />
@@ -100,23 +95,24 @@
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageVideoCamera.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageLinearBurnBlendFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageChromaKeyFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageRGBFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSubtractBlendFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageLuminosity.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHardLightBlendFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageMovieComposition.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSubtractBlendFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHardLightBlendFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSoftLightBlendFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageUIElement.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageKuwaharaFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageFramebuffer.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageGlassSphereFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageGammaFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageMotionBlurFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageThresholdSketchFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageThresholdSketchFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageBoxBlurFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageGlassSphereFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageGammaFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageBoxBlurFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageDirectionalNonMaximumSuppressionFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageAddBlendFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSaturationFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSepiaFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageLevelsFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageAddBlendFilter.h" isTestSource="false" />
@@ -125,35 +121,38 @@
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageTextureInput.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHighPassFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColorPackingFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageRGBClosingFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageTextureInput.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImagePoissonBlendFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColorPackingFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageGaussianBlurPositionFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageTwoInputFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageLuminosityBlendFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImagePoissonBlendFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageThreeInputFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageGaussianBlurPositionFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageTextureOutput.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageOutput.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageOutput.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImage3x3ConvolutionFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHueFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageLowPassFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageVideoCamera.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSolarizeFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHueFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageLowPassFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHazeFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageUIElement.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageBilateralFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageAverageColor.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColorInvertFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageBilateralFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageAverageColor.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageWeakPixelInclusionFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColorInvertFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageDirectionalSobelEdgeDetectionFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColourFASTFeatureDetector.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageOpeningFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSwirlFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageContrastFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageDirectionalSobelEdgeDetectionFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageTwoInputFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColourFASTFeatureDetector.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageAdaptiveThresholdFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageParallelCoordinateLineTransformFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageContrastFilter.h" isTestSource="false" />
@@ -166,7 +165,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageVignetteFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageKuwaharaFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHueBlendFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHistogramFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImagePrewittEdgeDetectionFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageBulgeDistortionFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageMotionDetector.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImagePrewittEdgeDetectionFilter.h" isTestSource="false" />
@@ -175,20 +174,21 @@
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImagePinchDistortionFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageMosaicFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImagePinchDistortionFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageGaussianBlurFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageCGAColorspaceFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageGaussianBlurFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageBrightnessFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageLaplacianFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageThresholdedNonMaximumSuppressionFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageCGAColorspaceFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageRGBFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageErosionFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageBrightnessFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageToonFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageThresholdedNonMaximumSuppressionFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageToonFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageDivideBlendFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageCrosshatchFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageDivideBlendFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageEmbossFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSoftEleganceFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageExposureFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageEmbossFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageWhiteBalanceFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageCannyEdgeDetectionFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSmoothToonFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageWeakPixelInclusionFilter.m" isTestSource="false" />
@@ -198,7 +198,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageNormalBlendFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageChromaKeyFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageNormalBlendFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageRGBOpeningFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageChromaKeyFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageErosionFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageLocalBinaryPatternFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageAdaptiveThresholdFilter.m" isTestSource="false" />
@@ -209,19 +209,20 @@
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageMultiplyBlendFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageFramebufferCache.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageClosingFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageMaskFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageNobleCornerDetectionFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageFilterGroup.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageMaskFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageCrosshairGenerator.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageNobleCornerDetectionFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageFilterGroup.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageDarkenBlendFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageTwoPassFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageDarkenBlendFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageTwoPassFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColorBurnBlendFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageBuffer.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageJFAVoronoiFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageBuffer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageThresholdedNonMaximumSuppressionFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageJFAVoronoiFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageMotionDetector.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColorBlendFilter.m" isTestSource="false" />
@@ -230,68 +231,68 @@
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColorBlendFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSphereRefractionFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHalftoneFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageUnsharpMaskFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSmoothToonFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHistogramFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHalftoneFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImagePixellateFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImagePolkaDotFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GLProgram.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageFramebuffer.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImagePixellateFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageFilterPipeline.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageBrightnessFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageBrightnessFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageStretchDistortionFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHSBFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColorBurnBlendFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageStretchDistortionFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHSBFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColorBurnBlendFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageRGBDilationFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageRGBDilationFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageExclusionBlendFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageTwoPassTextureSamplingFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageCGAColorspaceFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImage3x3TextureSamplingFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageTwoPassTextureSamplingFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageCGAColorspaceFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageExposureFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImage3x3TextureSamplingFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageMotionBlurFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageExposureFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSketchFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageTextureOutput.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSketchFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageRGBClosingFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageMedianFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColourFASTFeatureDetector.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageThreeInputFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageUnsharpMaskFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageMedianFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageThreeInputFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSmoothToonFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageLuminosityBlendFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageRawDataInput.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageOpacityFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImage.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageRawDataInput.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/iOS/GPUImagePicture+TextureSubimage.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/iOS/GPUImageView.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/iOS/GPUImagePicture.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/iOS/GPUImageMovieWriter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/iOS/GPUImageContext.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/iOS/Framework/GPUImageFramework.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/iOS/GPUImageView.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/iOS/GPUImagePicture.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/iOS/GPUImageContext.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/iOS/GPUImageMovieWriter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/iOS/Framework/GPUImageFramework.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/iOS/GPUImagePicture+TextureSubimage.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/iOS/GPUImagePicture+TextureSubimage.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/iOS/GPUImagePicture.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/iOS/GPUImageContext.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/iOS/GPUImageMovieWriter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/iOS/GPUImageView.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageThresholdEdgeDetectionFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageRawDataOutput.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHueBlendFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSwirlFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImagePosterizeFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageRawDataOutput.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageXYDerivativeFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImagePosterizeFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageLevelsFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageGaussianBlurFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSoftEleganceFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageCrosshatchFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageAlphaBlendFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageMaskFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageZoomBlurFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageMaskFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColorLocalBinaryPatternFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageRGBOpeningFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageAlphaBlendFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageShiTomasiFeatureDetectionFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageThresholdEdgeDetectionFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageZoomBlurFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageRGBOpeningFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageThresholdEdgeDetectionFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSolarizeFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageDifferenceBlendFilter.m" isTestSource="false" />
@@ -303,9 +304,10 @@
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImagePixellatePositionFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSobelEdgeDetectionFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColorMatrixFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHistogramGenerator.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageGrayscaleFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageVoronoiConsumerFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageMovie.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageStillCamera.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSingleComponentGaussianBlurFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageToneCurveFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHighlightShadowFilter.m" isTestSource="false" />
@@ -317,95 +319,98 @@
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageMovie.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageLookupFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageShiTomasiFeatureDetectionFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageGaussianBlurPositionFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageLookupFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImagePolkaDotFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageShiTomasiFeatureDetectionFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageTwoInputCrossTextureSamplingFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageTiltShiftFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageTwoInputCrossTextureSamplingFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageTiltShiftFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSubtractBlendFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageTransformFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColourFASTSamplingOperation.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageTransformFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageBoxBlurFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageCrosshairGenerator.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageCrosshairGenerator.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColourFASTSamplingOperation.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSourceOverBlendFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageOpeningFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageMultiplyBlendFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageStillCamera.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageFilterGroup.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageSourceOverBlendFilter.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageLuminosityBlendFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColorLocalBinaryPatternFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageStillCamera.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageTransformFilter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHoughTransformLineDetector.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageLightenBlendFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHistogramGenerator.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColorLocalBinaryPatternFilter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColorConversion.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageTwoInputFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageHoughTransformLineDetector.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageDissolveBlendFilter.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageThresholdSketchFilter.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageThresholdSketchFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageDissolveBlendFilter.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../GPUImage/framework/Source/GPUImageColorConversion.h" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/Videona/SettingsContent.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/ShareCell.xib" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/wasted.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/pride.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/FilterListInteractorInterface.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/RemoveFilterInteractor.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/rain.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/AppDelegate.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/ExporterInteractor.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/Effect.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/polaroid.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/texture.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/ShareSocialNetworkInteractor.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/IntroPresenterInterface.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/SettingsInteractor.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/ShareViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/AddFilterInteractor.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/DetailTextInteractor.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/DetailTextPresenterInterface.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/old.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/IntroPresenter.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/AVResolutionParse.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/ShareInteractor.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/Posterizebw.fsh" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/water_mark.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/ShareInstagramInteractor.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/FilterCell.xib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/spring.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/CompatibleQualityInteractor.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/SettingsPresenterInterface.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/Twirl.fsh" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/burn.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/SettingsPresenterInterface.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/FullScreenPlayerWireframe.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/filter_free.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/RootWireframe.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/FilterListView.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/summer.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/ThumbnailInteractor.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/ClipsAlbum.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/TimerInteractor.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/autumn.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/water_mark.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/TimerInteractorInterface.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/ThumbnailInteractor.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/ISO639_2/NSLocale+ISO639_2.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/ISO639_2/NSLocale+ISO639_2.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/ISO639_2/iso639_2.bundle" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/AVQualityParse.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/CompatibleResolutionsInteractor.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/Videona-Bridging-Header.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/activity_record_rec_circle.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/AddFilterInteractor.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/Posterize.fsh" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/RecordPresenter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/ShareYoutubeInteractor.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/PlayerItem.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/ShareFacebookInteractor.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/Assets.xcassets" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/SettingsViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/AnalitycsConstants.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/FilterListInteractor.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/IntroViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/CameraRecorderInterface.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/ConfigPreferences.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/TimerInteractor.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/ClipsAlbum.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/wasted.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/Logo_Splash_Horizontal.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/Mirror.fsh" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/FullScreenPlayerViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/CameraRecorderInteractor.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/VideonaController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/RecordPresenterInterfaceIO.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/Mirror.fsh" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/FilterViewCell.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/IntroWireframe.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/ChangeFilterInteractor.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/Posterizebw.fsh" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/FilterListPresentationTransition.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/dark.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/FilterListDismissalTransition.swift" isTestSource="false" />
@@ -415,7 +420,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Videona/SettingsInteractorInterface.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/Logo_Splash_Vertical.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/SocialNetwork.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/ShareInterface.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/AppDependencies.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/retrotv.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/RecorderConstants.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/RecordController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/SettingsProvider.swift" isTestSource="false" />
@@ -428,39 +434,42 @@
       <sourceFolder url="file://$MODULE_DIR$/Videona/PlayerInterface.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/Utils.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/color_stain.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/retrotv.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/ShareWhatsappInteractor.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/cctv.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/Effect.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/FlashInteractor.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/EffectProvider.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/ShareWhatsappInteractor.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/ShareInterface.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/FullScreenPlayerPresenterInterface.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/CameraInteractorInterface.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/es.lproj/Settings.strings" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/es.lproj/Share.strings" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/es.lproj/Main.strings" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/es.lproj/Settings.strings" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/es.lproj/Intro.strings" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/es.lproj/LaunchScreen.strings" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/en.lproj/Settings.strings" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/en.lproj/Share.strings" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/en.lproj/Intro.strings" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/en.lproj/Main.strings" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/passion.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/SettingsInterface.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/SocialVideoHelper.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/filter_free.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/FullScreenPlayerWireframe.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/DetailTextInteractorInterface.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/AppDependencies.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/IntroPresenter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/SocialVideoHelper.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/PlayerPresenterInterface.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/EffectDictionary.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/FlashInteractor.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/DetailTextController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/RecordViewInterface.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/PlayerWireframe.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/Fisheye.fsh" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/RemoveFilterInteractor.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/PlayerInteractor.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/game.jpg" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/Base.lproj/LaunchScreen.storyboard" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/Base.lproj/Main.storyboard" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/Tunnel.fsh" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/IntroTextConstants.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/PlayerInteractorInterface.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/SharePresenter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/ShaderEffect.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/FullScreenPlayerViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/ShareInteractorInterface.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/FilterListPresenterInterface.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/FilterListWireframe.swift" isTestSource="false" />
@@ -469,14 +478,13 @@
       <sourceFolder url="file://$MODULE_DIR$/Videona/Dent.fsh" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/Stretch.fsh" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/IntroViewInterface.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/Squeeze.fsh" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/rain.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/SettingsInteractor.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/Emboss.fsh" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/SharePresenterInterface.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/Posterize.fsh" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/CameraInteractor.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/EffectDictionary.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/DetailTextPresenter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/OverlayEffect.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/activity_record_rec_circle.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/ShareConstants.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/SocialNetworkProvider.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/Bulge.fsh" isTestSource="false" />
@@ -484,72 +492,230 @@
       <sourceFolder url="file://$MODULE_DIR$/Videona/FilterListView.xib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/PlayerView.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/ShareWireframe.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/FilterListView.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/FullScreenPlayerPresenter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/ExportedAlbum.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/bokeh.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/AVQualityParse.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/AVResolutionParse.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/SharePresenterInterface.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/Squeeze.fsh" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/PlayerPresenter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/ShareCell.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/video.mp4" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/mist.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/PlayerInteractor.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/TimerInteractorInterface.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/SettingsConstants.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/sunset.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/FilterListPresenter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/SettingsPresenter.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/pride.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/cctv.png" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Videona/RecordWireframe.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Videona/polaroid.png" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VideonaUITests/VideonaUITests.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VideonaUITests/Info.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VideonaUITests/ShowFlashUITest.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Podfile" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/ExporterInteractor.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/Fisheye.fsh" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Videona/AnalitycsConstants.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VideonaTests/EffectTest.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VideonaTests/VideonaTests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VideonaTests/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VideonaTests/AddFilterInteractorTest.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Podfile" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VideonaUITests/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VideonaUITests/VideonaUITests.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VideonaUITests/ShowFlashUITest.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Alamofire.modulemap" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Alamofire-umbrella.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Alamofire-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Alamofire.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Alamofire/Alamofire-dummy.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Videona/Pods-Videona.debug.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Videona/Pods-Videona-acknowledgements.markdown" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Videona/Pods-Videona-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Videona/Pods-Videona-frameworks.sh" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Videona/Pods-Videona-resources.sh" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Videona/Pods-Videona.release.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Videona/Pods-Videona-umbrella.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Videona/Pods-Videona-frameworks.sh" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Videona/Pods-Videona.modulemap" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Videona/Info.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Videona/Pods-Videona-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Videona/Pods-Videona.modulemap" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Videona/Pods-Videona.debug.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Videona/Pods-Videona-acknowledgements.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-Videona/Pods-Videona-resources.sh" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Mixpanel/Mixpanel.modulemap" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Mixpanel/Mixpanel-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Mixpanel/Mixpanel-umbrella.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Mixpanel/Info.plist" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Mixpanel/Mixpanel.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Mixpanel/Mixpanel-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/FirebaseInstanceID/Headers/Public/FIRInstanceID.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPUIControlBinding.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPObjectSelector.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPSequenceGenerator.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/UIApplication+AutomaticEvents.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/UIImage+MPImageEffects.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/UIApplication+AutomaticEvents.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/UIImage+MPImageEffects.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/AutomaticEventsConstants.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPPassThroughValueTransformer.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPAbstractABTestDesignerMessage.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPAbstractABTestDesignerMessage.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPCGRectToNSDictionaryValueTransformer.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPTweakInline.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/Mixpanel.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPNotificationViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPTweakInline.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/Mixpanel.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPNotificationViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPDesignerEventBindingRequestMesssage.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerTweakRequestMessage.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPSurveyNavigationController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerSnapshotRequestMessage.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerDeviceInfoRequestMessage.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPSurveyNavigationController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerSnapshotRequestMessage.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerDeviceInfoRequestMessage.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerClearRequestMessage.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPApplicationStateSerializer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPNotification~iphoneportrait.storyboard" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPCGColorRefToNSStringValueTransformer.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPSurvey.storyboard" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerSnapshotResponseMessage.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/UIViewController+AutomaticEvents.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPObjectSerializerContext.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/NSData+MPBase64.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/UIViewController+AutomaticEvents.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPWebSocket.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MixpanelExceptionHandler.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPDesignerSessionCollection.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerClearResponseMessage.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPWebSocket.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MixpanelExceptionHandler.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerClearResponseMessage.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPSurveyQuestion.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPTypeDescription.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPSurveyQuestion.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPTypeDescription.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPEnumDescription.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/Mixpanel+AutomaticEvents.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPNotification~iphonelandscape.storyboard" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPEnumDescription.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/Mixpanel+AutomaticEvents.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPSwizzle.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPSwizzler.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPUIEdgeInsetsToNSDictionaryValueTransformer.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPUITableViewBinding.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPUITableViewBinding.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPDesignerEventBindingMessage.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/NSInvocation+MPHelpers.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerTweakResponseMessage.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPNotification~ipad.storyboard" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerTweakResponseMessage.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerChangeResponseMessage.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPObjectIdentityProvider.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPObjectSelector.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerChangeResponseMessage.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPValueTransformers.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPObjectIdentityProvider.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPNotification.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPSurveyQuestionViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerChangeRequestMessage.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPNotification.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPSurveyQuestionViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/UIColor+MPColor.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerChangeRequestMessage.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/UIColor+MPColor.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPSwizzler.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/UIView+MPHelpers.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPCGSizeToNSDictionaryValueTransformer.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPResources.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/UIView+MPHelpers.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPResources.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPDesignerTrackMessage.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPObjectIdentifierProvider.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerTweakRequestMessage.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPObjectSerializer.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPBOOLToNSNumberValueTransformer.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPObjectSerializer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPSequenceGenerator.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/NSData+MPBase64.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPLogger.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPDesignerEventBindingResponseMesssage.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPPropertyDescription.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPUIControlBinding.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPPropertyDescription.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPNSAttributedStringToNSDictionaryValueTransformer.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerClearRequestMessage.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPObjectSerializerContext.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/_MPTweakBindObserver.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPTweak.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/_MPTweakBindObserver.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPTweak.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/NSNotificationCenter+AutomaticEvents.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPApplicationStateSerializer.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPFoundation.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/NSNotificationCenter+AutomaticEvents.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPClassDescription.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPClassDescription.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPUIFontToNSDictionaryValueTransformer.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerMessage.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/Images/MPCheckmark.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/Images/MPArrowLeft@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/Images/MPCloseButton.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/Images/MPLogo.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/Images/MPCloseButton@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/Images/MPLogo@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/Images/MPArrowRight.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/Images/MPCloseButton@3x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/Images/MPCheckmark@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/Images/MPDismissKeyboard@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/Images/MPDismissKeyboard.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/Images/MPArrowRight@2x.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/Images/MPArrowLeft.png" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPSurvey.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPNSNumberToCGFloatValueTransformer.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPSurvey.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPUIImageToNSDictionaryValueTransformer.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPCGPointToNSDictionaryValueTransformer.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPVariant.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPEventBinding.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/NSInvocation+MPHelpers.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPCGAffineTransformToNSDictionaryValueTransformer.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPVariant.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPEventBinding.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerSnapshotResponseMessage.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPSwizzle.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerDeviceInfoResponseMessage.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPUIColorToNSStringValueTransformer.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/UIImage+MPAverageColor.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerDeviceInfoResponseMessage.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPCATransform3DToNSDictionaryValueTransformer.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPObjectSerializerConfig.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/UIImage+MPAverageColor.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerDisconnectMessage.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPObjectSerializerConfig.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerDisconnectMessage.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerConnection.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPTweakStore.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPTweakInlineInternal.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPABTestDesignerConnection.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Mixpanel/Mixpanel/MPTweakStore.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/GoogleSignIn/Resources/GoogleSignIn.bundle" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Validation.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Timeline.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Alamofire.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Error.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Stream.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/MultipartFormData.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/ServerTrustPolicy.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/ParameterEncoding.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Result.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Upload.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Manager.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Download.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/NetworkReachabilityManager.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/ResponseSerialization.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Timeline.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Response.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Request.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Notifications.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Response.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Alamofire.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/ResponseSerialization.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Alamofire/Source/Upload.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/Analytics-Module.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/Core-Module.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Google/Headers/ModuleHeaders/SignIn-Module.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Google/Headers/SignIn.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Google/Headers/Core.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Google/Headers/SignIn.h" isTestSource="false" />
     </content>
     <content url="file://$USER_HOME$/Library/Caches/AppCode2016.1/DerivedData/Videona-gbbhyityczcdoigmlxhyfzvgjplo/Build/Intermediates/GPUImage.build/Debug-iphoneos/GPUImageFramework.build/DerivedSources" />
     <content url="file://$USER_HOME$/Library/Caches/AppCode2016.1/DerivedData/Videona-gbbhyityczcdoigmlxhyfzvgjplo/Build/Intermediates/Pods.build/Debug-iphoneos/Alamofire.build/DerivedSources" />

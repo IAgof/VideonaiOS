@@ -134,6 +134,7 @@ class RecordPresenter: NSObject
         
         self.stopTimer()
     }
+    
     func pushRotateCamera() {
         cameraInteractor!.rotateCamera()
     }

@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Mixpanel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Videona.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2B9B52BF341683226D9E60C8E44ABD0E</key>
+		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<key>B5F312ABB371123942048FA3C80AB971</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E52BC146ACF5F76C8AB247D0B91E4E47</key>
 		<dict>
 			<key>primary</key>
 			<true/>
