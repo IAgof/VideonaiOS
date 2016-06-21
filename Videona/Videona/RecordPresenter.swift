@@ -54,6 +54,7 @@ class RecordPresenter: NSObject
     
     func pushSettings() {
         print("Record presenter pushSettings")
+        self.trackSettingsPushed()
         settingsWireframe?.presentSettingsInterfaceFromViewController(controller!)
     }
     
@@ -79,9 +80,12 @@ class RecordPresenter: NSObject
     func navigateToShareController(){
         
     }
+    
     func pushFlash() {
         let flashState = FlashInteractor().switchFlashState()
         controller?.showFlashOn(flashState)
+        self.trackFlash(flashState)
+
     }
     
     func pushRecord() {
@@ -93,6 +97,8 @@ class RecordPresenter: NSObject
     }
     
     func startRecord(){
+        self.trackStartRecord()
+        
         controller?.recordButtonEnable(false)
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
@@ -115,6 +121,8 @@ class RecordPresenter: NSObject
     }
     
     func stopRecord(){
+        self.trackStopRecord()
+        
         isRecording = false
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
@@ -154,6 +162,58 @@ class RecordPresenter: NSObject
     func displayHasPinched(pinchGesture: UIPinchGestureRecognizer) {
         cameraInteractor?.zoom(pinchGesture)
     }
+    
+    //MARK: - Track Events
+    func trackFlash(flashState:Bool){
+        let tracker = controller?.getTrackerObject()
+        if flashState {
+            tracker?.sendUserInteractedTracking((controller?.getControllerName())!,
+                                                recording: isRecording,
+                                                interaction:AnalyticsConstants().CHANGE_FLASH,
+                                                result: "true")
+        }else{
+            tracker?.sendUserInteractedTracking((controller?.getControllerName())!,
+                                                recording: isRecording,
+                                                interaction:AnalyticsConstants().CHANGE_FLASH,
+                                                result: "false")
+        }
+    }
+    
+    func trackFrontCamera(){
+        controller?.getTrackerObject().sendUserInteractedTracking((controller?.getControllerName())!,
+                                                                  recording: isRecording,
+                                                                  interaction:  AnalyticsConstants().CHANGE_CAMERA,
+                                                                  result: AnalyticsConstants().CAMERA_FRONT)
+    }
+    
+    func trackRearCamera(){
+        controller?.getTrackerObject().sendUserInteractedTracking((controller?.getControllerName())!,
+                                                                  recording: isRecording,
+                                                                  interaction:  AnalyticsConstants().CHANGE_CAMERA,
+                                                                  result: AnalyticsConstants().CAMERA_BACK)
+    }
+    
+    func trackStartRecord(){
+        controller?.getTrackerObject().sendUserInteractedTracking((controller?.getControllerName())!,
+                                                                  recording: isRecording,
+                                                                  interaction:  AnalyticsConstants().RECORD,
+                                                                  result: AnalyticsConstants().START)
+    }
+    
+    func trackStopRecord(){
+        controller?.getTrackerObject().sendUserInteractedTracking((controller?.getControllerName())!,
+                                                                  recording: isRecording,
+                                                                  interaction:  AnalyticsConstants().RECORD,
+                                                                  result: AnalyticsConstants().STOP)
+    }
+    
+    func trackSettingsPushed() {
+        controller?.getTrackerObject().sendUserInteractedTracking((controller?.getControllerName())!,
+                                                                  recording: isRecording,
+                                                                  interaction:  AnalyticsConstants().INTERACTION_OPEN_SETTINGS,
+                                                                  result: "")
+    }
+    
     //MARK: - FilterList delegate
     func hideAnyFilterList() {
         if(shaderFilterViewIsShowin || colorFilterViewIsShowin){
@@ -289,12 +349,15 @@ class RecordPresenter: NSObject
     func flashOff() {
         controller?.showFlashOn(false)
     }
+    
     func cameraRear() {
         controller?.showBackCameraSelected()
+        self.trackRearCamera()
         controller?.showFlashSupported(true)
     }
     func cameraFront() {
         controller?.showFrontCameraSelected()
+        self.trackFrontCamera()
         controller?.showFlashSupported(false)
     }
     

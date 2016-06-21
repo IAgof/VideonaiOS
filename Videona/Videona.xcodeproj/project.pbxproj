@@ -11,6 +11,7 @@
 		11A092443FAC586CFAFA4D4B /* FullScreenPlayerWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A09BD867C7A1F0495970DF /* FullScreenPlayerWireframe.swift */; };
 		11A0932DDCF310739E0521A0 /* FullScreenPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A09E0D505042674C91083B /* FullScreenPlayerViewController.swift */; };
 		11A096B391B3E78ACD1F710D /* FullScreenPlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A09B01536A78FD44EFF59B /* FullScreenPlayerPresenter.swift */; };
+		11A097E4ED3C457078681CCF /* VideonaTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0972AA36C9490A8DACE54 /* VideonaTracker.swift */; };
 		11A0996C2D273F8F236BDE86 /* CompatibleQualityInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A093E73995F623DCAD393F /* CompatibleQualityInteractor.swift */; };
 		11A09EF76603C1D78D7F2930 /* FullScreenPlayerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A09FCDB7BB65E6250CB188 /* FullScreenPlayerInterface.swift */; };
 		11A09F45EE9D9D3904394BE7 /* AVQualityParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A097EE3ADB91072CDFAC41 /* AVQualityParse.swift */; };
@@ -225,6 +226,7 @@
 
 /* Begin PBXFileReference section */
 		11A093E73995F623DCAD393F /* CompatibleQualityInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompatibleQualityInteractor.swift; sourceTree = "<group>"; };
+		11A0972AA36C9490A8DACE54 /* VideonaTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideonaTracker.swift; sourceTree = "<group>"; };
 		11A097EE3ADB91072CDFAC41 /* AVQualityParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVQualityParse.swift; sourceTree = "<group>"; };
 		11A09B01536A78FD44EFF59B /* FullScreenPlayerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenPlayerPresenter.swift; sourceTree = "<group>"; };
 		11A09B9EE9C6A55A53201AD8 /* FullScreenPlayerPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenPlayerPresenterInterface.swift; sourceTree = "<group>"; };
@@ -442,6 +444,14 @@
 				11A09B01536A78FD44EFF59B /* FullScreenPlayerPresenter.swift */,
 			);
 			name = Presenter;
+			sourceTree = "<group>";
+		};
+		11A09274B743871B29B7764C /* Mixpanel */ = {
+			isa = PBXGroup;
+			children = (
+				11A0972AA36C9490A8DACE54 /* VideonaTracker.swift */,
+			);
+			name = Mixpanel;
 			sourceTree = "<group>";
 		};
 		11A0967B82F0FDD4E612C678 /* Wireframe */ = {
@@ -705,6 +715,7 @@
 				A9B118111CE37887001A1177 /* Share */,
 				A99278491CE3642D009DC364 /* Settings */,
 				11A09BF1C3E6844BFAC6DD12 /* FullScreenPlayer */,
+				11A09274B743871B29B7764C /* Mixpanel */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -1669,6 +1680,7 @@
 				11A0932DDCF310739E0521A0 /* FullScreenPlayerViewController.swift in Sources */,
 				11A092443FAC586CFAFA4D4B /* FullScreenPlayerWireframe.swift in Sources */,
 				11A09EF76603C1D78D7F2930 /* FullScreenPlayerInterface.swift in Sources */,
+				11A097E4ED3C457078681CCF /* VideonaTracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

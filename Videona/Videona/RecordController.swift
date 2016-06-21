@@ -195,7 +195,7 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     func showFlashOn(on:Bool){
         flashButton.selected = on
     }
-    
+
     func showOverlayOnTop(isOnTop: Bool) {
         overlayFilterButton.selected = isOnTop
     }
@@ -278,33 +278,6 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     func resetView() {
         eventHandler?.resetRecorder()
     }
-    
-    
-    
-    //MARK: - MIXPANEL
-//    func sendUserInteractedTracking(interaction:String, result:String ) {
-//        //JSON properties
-//        let userInteractionsProperties =
-//            [
-//                AnalyticsConstants().ACTIVITY : String(object_getClass(self)),
-//                AnalyticsConstants().RECORDING: ,
-//                AnalyticsConstants().INTERACTION: interaction,
-//                AnalyticsConstants().RESULT: result,
-//                ]
-//        mixpanel.track(AnalyticsConstants().USER_INTERACTED, properties: userInteractionsProperties as [NSObject : AnyObject])
-//    }
-//    
-//    func sendFilterSelectedTracking(name:String,code:String) {
-//        //JSON properties
-//        let userInteractionsProperties =
-//            [
-//                AnalyticsConstants().TYPE: AnalyticsConstants().TYPE_COLOR,
-//                AnalyticsConstants().NAME: name,
-//                AnalyticsConstants().CODE: code,
-//                AnalyticsConstants().RECORDING: isRecording,
-//                ]
-//        mixpanel.track(AnalyticsConstants().FILTER_SELECTED, properties: userInteractionsProperties as [NSObject : AnyObject])
-//    }
     
     //MARK: - Landscape Orientation
     func checkOrientation(){
