@@ -231,7 +231,10 @@ class CameraInteractor:CameraRecorderDelegate{
                 maskFilterOutput.removeTarget(maskFilter as! GPUImageInput)
             }
         }
-        cameraRecorder.stopRecordVideo()
+        cameraRecorder.stopRecordVideo({duration in
+            Utils().debugLog("Answer from record interactor:  duration-\(duration)")
+            self.cameraDelegate.trackVideoRecorded(duration)
+        })
     }
     
     func cameraViewTapAction(tapDisplay:UIGestureRecognizer){

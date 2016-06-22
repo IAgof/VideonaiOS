@@ -95,6 +95,7 @@ class FilterListView: UIView,FilterListInterface, UICollectionViewDataSource, UI
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         // handle tap events
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! FilterViewCell
+        
         eventHandler?.toggleSelectedCell(cell,item: indexPath.item)
         
         eventHandler?.checkOtherCellSelected(indexPath, lastSelectedIndexPath: lastSelectedIndexPath, collectionView: filtersCollectionView)

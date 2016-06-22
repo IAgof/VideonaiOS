@@ -50,6 +50,8 @@ class SettingsPresenter:NSObject,SettingsPresenterInterface{
             wireframe?.goToAppleStoreURL(kamaradaAppleStoreURL!)
             break
         case SettingsProvider().getStringForType(SettingsType.ShareVideona):
+            controller?.getTrackerObject().trackAppShared("Videona", socialNetwork: "Whatsapp")
+            
             controller?.createActiviyVCShareVideona(Utils().getStringByKeyFromSettings(SettingsConstants().WHATSAPP_SHARE_TEXT))
             break
         case SettingsProvider().getStringForType(SettingsType.FollowUsOnTwitter):

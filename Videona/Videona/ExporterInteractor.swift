@@ -37,7 +37,7 @@ class ExporterInteractor:NSObject{
         return exportPath
     }
     
-    func exportVideos(completionHandler:(String)->Void) {
+    func exportVideos(completionHandler:(String,Double)->Void) {
         let exportPath = self.getNewPathToExport()
         
         var videoTotalTime:CMTime = kCMTimeZero
@@ -69,7 +69,7 @@ class ExporterInteractor:NSObject{
                 videoTotalTime = CMTimeAdd(videoTotalTime, videoAsset.duration)
             } catch _ {
 //                Utils().debugLog("Error trying to create videoTrack")
-                completionHandler("Error trying to create videoTrack")
+                completionHandler("Error trying to create videoTrack",0.0)
             }
         }
         
@@ -88,7 +88,7 @@ class ExporterInteractor:NSObject{
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.clipDuration = videoTotalTime.seconds
                 Utils().debugLog("la duracion del clip es \(self.clipDuration)")
-                completionHandler(exportPath)
+                completionHandler(exportPath,videoTotalTime.seconds)
 
                 ExportedAlbum.sharedInstance.saveVideo(NSURL.init(fileURLWithPath: exportPath))
             })

@@ -12,6 +12,7 @@ import UIKit
 let shareViewControllerIdentifier = "ShareViewController"
 
 class ShareWireframe : NSObject {
+    
     var rootWireframe : RootWireframe?
     var shareViewController : ShareViewController?
     var sharePresenter : SharePresenter?
@@ -26,10 +27,14 @@ class ShareWireframe : NSObject {
         rootWireframe?.showRootViewController(viewController, inWindow: window)
     }
     
-    func presentShareInterfaceFromViewController(prevController:UIViewController,videoPath:String) {
+    func presentShareInterfaceFromViewController(prevController:UIViewController,
+                                                 videoPath:String,
+                                                 numberOfClips:Int) {
         let viewController = shareViewControllerFromStoryboard()
         
         viewController.exportPath = videoPath
+        viewController.numberOfClips = numberOfClips
+        
         self.prevController = prevController
 
         prevController.showViewController(viewController, sender: nil)

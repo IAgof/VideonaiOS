@@ -26,6 +26,14 @@ class Effect:NSObject {
     var iconId:String?
     var type:String?
     
+    override init() {
+        self.identifier = ""
+        self.name = ""
+        self.iconPath = ""
+        self.iconId = ""
+        self.type = ""
+    }
+    
     /**
      * Constructor.
      *

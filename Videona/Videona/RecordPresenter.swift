@@ -28,6 +28,14 @@ class RecordPresenter: NSObject
     var shaderFilterViewIsShowin = false
     var isRecording = false
 
+    struct EffectOnView {
+        var effectName:String
+        var effectActive:Bool
+    }
+    //MARK: - Variables
+    var overlayActive:EffectOnView = EffectOnView(effectName: "", effectActive: false)
+    var shaderActive:EffectOnView = EffectOnView(effectName: "", effectActive: false)
+    
     //MARK: - Event handler
     func viewDidLoad(displayView:GPUImageView){
         
@@ -60,32 +68,32 @@ class RecordPresenter: NSObject
     
     func pushShare() {
         controller?.createAlertWaitToExport()
+        controller?.getTrackerObject().mixpanel.timeEvent(AnalyticsConstants().VIDEO_EXPORTED);
+
         self.hideAnyFilterList()
         
         print("Record presenter pushShare")
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             
             let exporter = ExporterInteractor.init(videosArray: (self.cameraInteractor?.getClipsArray())!)
-            exporter.exportVideos({ exportPath in
+            exporter.exportVideos({ exportPath,videoTotalTime in
                 print("Export path response = \(exportPath)")
+                self.trackExported(videoTotalTime)
                 
                 self.controller?.dissmissAlertWaitToExport({
                     //wait to remove alert to present new Screeen
-                    self.shareWireframe?.presentShareInterfaceFromViewController(self.controller!,videoPath: exportPath)
+                    self.shareWireframe?.presentShareInterfaceFromViewController(self.controller!,
+                        videoPath: exportPath,
+                        numberOfClips: (self.cameraInteractor?.getClipsArray().count)!)
                 })
             })
         });
-    }
-    
-    func navigateToShareController(){
-        
     }
     
     func pushFlash() {
         let flashState = FlashInteractor().switchFlashState()
         controller?.showFlashOn(flashState)
         self.trackFlash(flashState)
-
     }
     
     func pushRecord() {
@@ -194,10 +202,17 @@ class RecordPresenter: NSObject
     }
     
     func trackStartRecord(){
+        controller?.getTrackerObject().mixpanel.timeEvent(AnalyticsConstants().VIDEO_RECORDED);
+
         controller?.getTrackerObject().sendUserInteractedTracking((controller?.getControllerName())!,
                                                                   recording: isRecording,
                                                                   interaction:  AnalyticsConstants().RECORD,
                                                                   result: AnalyticsConstants().START)
+    }
+    
+    func trackExported(videoTotalTime:Double) {
+        self.controller?.getTrackerObject().sendExportedVideoMetadataTracking(videoTotalTime,
+                                                                              numberOfClips: (self.cameraInteractor?.getClipsArray().count)!)
     }
     
     func trackStopRecord(){
@@ -212,6 +227,16 @@ class RecordPresenter: NSObject
                                                                   recording: isRecording,
                                                                   interaction:  AnalyticsConstants().INTERACTION_OPEN_SETTINGS,
                                                                   result: "")
+    }
+    
+    func trackFilterSelected(name:String) {
+        let filter = EffectProvider().getFilterByName(name)
+        controller?.getTrackerObject().sendFilterSelectedTracking(filter.getType(),
+                                                                  name: filter.getName().lowercaseString,
+                                                                  code: filter.getIdentifier().lowercaseString,
+                                                                  isRecording: isRecording,
+                                                                  combined: isFiltersCombined(),
+                                                                  filtersCombined: getFiltersActive())
     }
     
     //MARK: - FilterList delegate
@@ -290,41 +315,51 @@ class RecordPresenter: NSObject
             print("setFiltersOnView   blendFilter")
             cameraInteractor?.changeBlendImage(UIImage.init(named: filterName.lowercaseString)!)
             
+            self.setOverlayActive(filterName)
+            self.trackFilterSelected(filterName)
         }else if ((filterDic[filterName]?.indexForKey(FilterType.SingleInput)) != nil){
             print("setFiltersOnView   SingleInputFilter")
             let newFilter = filterDic[filterName]?[FilterType.SingleInput]!
             cameraInteractor?.changeFilter(newFilter! as! GPUImageFilter)
             
+            self.setShaderActive(filterName)
+            self.trackFilterSelected(filterName)
         }else if (filterDic[filterName]?.indexForKey(FilterType.Shader)) != nil{
             print("setFiltersOnView   Shader")
             let newFilter = GPUImageFilter(fragmentShaderFromFile: filterName)
             cameraInteractor?.changeFilter(newFilter!)
             
+            self.setShaderActive(filterName)
+            self.trackFilterSelected(filterName)
         }else if (filterDic[filterName]?.indexForKey(FilterType.Other)) != nil{
             print("setFiltersOnView   Other")
             cameraInteractor?.removeFilters()
-            
+            self.SetShaderAndOverlayToInactive()
         }
     }
     
     func removeFilter(filterName: String) {
         let filterDic = effectDictionary
-        
+
         if (filterDic[filterName]?.indexForKey(FilterType.Blend)) != nil{
             print("setFiltersOnView   blendFilter")
             cameraInteractor?.removeOverlay()
             
+            setOverlayToInactive()
         }else if ((filterDic[filterName]?.indexForKey(FilterType.SingleInput)) != nil){
             print("setFiltersOnView   SingleInputFilter")
             cameraInteractor?.removeShaders()
             
+            setShaderToInactive()
         }else if (filterDic[filterName]?.indexForKey(FilterType.Shader)) != nil{
             print("setFiltersOnView   Shader")
             cameraInteractor?.removeShaders()
             
+            setShaderToInactive()
         }else if (filterDic[filterName]?.indexForKey(FilterType.Other)) != nil{
             print("setFiltersOnView   Other")
             cameraInteractor?.removeFilters()
+            SetShaderAndOverlayToInactive()
         }
     }
     
@@ -343,9 +378,17 @@ class RecordPresenter: NSObject
     }
     
     //MARK: - Camera delegate
+    func trackVideoRecorded(videoLenght:Double) {
+        controller?.getTrackerObject().trackTotalVideosRecordedSuperProperty()
+        controller?.getTrackerObject().sendVideoRecordedTracking(videoLenght)
+        controller?.getTrackerObject().updateTotalVideosRecorded()
+    }
+    
     func flashOn() {
         controller?.showFlashOn(true)
     }
+    
+    
     func flashOff() {
         controller?.showFlashOn(false)
     }
@@ -355,6 +398,7 @@ class RecordPresenter: NSObject
         self.trackRearCamera()
         controller?.showFlashSupported(true)
     }
+    
     func cameraFront() {
         controller?.showFrontCameraSelected()
         self.trackFrontCamera()
@@ -381,4 +425,45 @@ class RecordPresenter: NSObject
         controller?.updateChronometer(time)
     }
 
+    //MARK: - Set Overlay/Shader effects
+    func setOverlayActive(filterName:String) {
+        overlayActive = EffectOnView(effectName: filterName, effectActive: true)
+    }
+    
+    func setShaderActive(filterName:String) {
+        shaderActive = EffectOnView(effectName: filterName, effectActive: true)
+    }
+    
+    func setOverlayToInactive() {
+        overlayActive.effectActive = false
+    }
+    
+    func setShaderToInactive() {
+        shaderActive.effectActive = false
+    }
+    
+    func SetShaderAndOverlayToInactive() {
+        self.setShaderToInactive()
+        self.setOverlayToInactive()
+    }
+    
+    func isFiltersCombined() -> Bool {
+        if overlayActive.effectActive && shaderActive.effectActive {
+            return true
+        }else{
+            return false
+        }
+    }
+    
+    func getFiltersActive() -> [String] {
+        var filters = [String]()
+        if overlayActive.effectActive {
+            filters.append(overlayActive.effectName)
+        }
+        if shaderActive.effectActive{
+            filters.append(shaderActive.effectName)
+        }
+        
+        return filters
+    }
 }

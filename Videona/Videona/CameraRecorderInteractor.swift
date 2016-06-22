@@ -44,7 +44,7 @@ class CameraRecorderInteractor{
         completion("Record Starts")
     }
     
-    func stopRecordVideo(){ //Stop Recording
+    func stopRecordVideo(completion:(Double)->Void){ //Stop Recording
         
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         dispatch_async(dispatch_get_global_queue(priority, 0)) {
@@ -56,16 +56,22 @@ class CameraRecorderInteractor{
 //            self.videoCamera.audioEncodingTarget = nil
             
             self.movieWriter!.finishRecordingWithCompletionHandler{ () -> Void in
-                
+                let clipURL = NSURL.init(fileURLWithPath: self.clipsArray[(self.clipsArray.count - 1) ])
+
                 Utils().debugLog("Stop recording video")
-                
-                ClipsAlbum.sharedInstance.saveVideo(NSURL.init(fileURLWithPath: self.clipsArray[(self.clipsArray.count - 1) ]))
+                ClipsAlbum.sharedInstance.saveVideo(clipURL)
                 self.movieWriter!.endProcessing()
                 self.movieWriter = nil
+                
+                completion(self.getVideoLenght(clipURL))
             }
         }
     }
     
+    func getVideoLenght(url:NSURL) -> Double {
+        let asset = AVAsset.init(URL: url)
+        return asset.duration.seconds
+    }
     func setInput(input: GPUImageInput){
         self.filterToWriter = input as? GPUImageFilter
         if movieWriter != nil{

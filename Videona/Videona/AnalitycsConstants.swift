@@ -63,7 +63,8 @@ class AnalyticsConstants {
     let LAST_GIFT_DOWNLOADED_DATE = "lastGiftDownloadedDate"
     let TOTAL_GIFTS_DOWNLOADED = "totalGiftsDownloaded"
     let TOTAL_FILTERS_USED = "totalFiltersUsed"
-    
+    let DOUBLE_HOUR_AND_MINUTES = "doubleHourAndMinutes"
+
     /**
      * Super properties
      */

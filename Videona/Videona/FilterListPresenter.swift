@@ -11,23 +11,29 @@ import UIKit
 
 class FilterListPresenter:NSObject,FilterListPresenterInterface{
     
+    //MARK: - VIPER
     var wireframe: FilterListWireframe?
     var controller: FilterListInterface?
     var interactor: FilterListInteractor?
     var filterListDelegate: FilterListDelegate?
     var recordWireframe: RecordWireframe?
     
+    //MARK: - Variables
     var filtersImage:Array<UIImage> = []
     var filtersTitle:Array<String> = []
     var filterShowing = -1
     
-    let FILTERS_SHOWING_IS_NONE = -1
-    let FILTERS_SHOWING_IS_COLOR = 0
-    let FILTERS_SHOWING_IS_SHADER = 1
     
     var lastShaderItemSelected:Int = -1
     var lastOverlayItemSelected:Int = -1
+    
+    //MARK: - Constants
+    let FILTERS_SHOWING_IS_NONE = -1
+    let FILTERS_SHOWING_IS_COLOR = 0
+    let FILTERS_SHOWING_IS_SHADER = 1
 
+
+    //MARK: - Get Filters list
     func getColorFilterList() {
         controller?.setSelectedCellIndexPath(lastOverlayItemSelected)
         
@@ -51,6 +57,7 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
  
     }
     
+    //MARK: - Filters Actions
     func setFilterShowin(filterToShow:Int){
         self.filterShowing = filterToShow
     }

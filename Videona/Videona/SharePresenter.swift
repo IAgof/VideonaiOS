@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 class SharePresenter:NSObject,SharePresenterInterface{
     
@@ -21,6 +22,7 @@ class SharePresenter:NSObject,SharePresenterInterface{
     var fullScreenPlayerWireframe: FullScreenPlayerWireframe?
     
     var videoPath = ""
+    var numberOfClips = 0
     
     //LifeCicle
     func viewDidLoad() {
@@ -38,6 +40,10 @@ class SharePresenter:NSObject,SharePresenterInterface{
     func setVideoExportedPath(path: String) {
         self.videoPath = path
         
+    }
+    
+    func setNumberOfClipsToExport(numberOfClips: Int) {
+        self.numberOfClips = numberOfClips
     }
     
     func pushBack() {
@@ -69,6 +75,8 @@ class SharePresenter:NSObject,SharePresenterInterface{
     }
     func pushShare(socialNetwork: String) {
         interactor?.shareVideo(socialNetwork, videoPath: videoPath)
+        
+        trackVideoShared(socialNetwork)
     }
     
     func postToYoutube(token:String){
@@ -77,5 +85,14 @@ class SharePresenter:NSObject,SharePresenterInterface{
 
     func updatePlayerLayer() {
         playerPresenter!.layoutSubViews()
+    }
+    
+    //MARK: - Mixpanel Tracking
+    func trackVideoShared(socialNetworkName: String) {
+        let duration = AVAsset(URL: NSURL(fileURLWithPath: videoPath)).duration.seconds
+        
+        controller?.getTrackerObject().trackVideoShared(socialNetworkName,
+                                                        videoDuration: duration,
+                                                        numberOfClips: numberOfClips)
     }
 }

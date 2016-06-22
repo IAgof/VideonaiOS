@@ -34,6 +34,12 @@ GIDSignInUIDelegate,GIDSignInDelegate{
         }
     }
     
+    var numberOfClips:Int? {
+        didSet {
+            eventHandler?.setNumberOfClipsToExport(numberOfClips!)
+        }
+    }
+    
     //MARK: - Outlets
     @IBOutlet weak var shareTableView: UITableView!
     @IBOutlet weak var playerView: UIView!

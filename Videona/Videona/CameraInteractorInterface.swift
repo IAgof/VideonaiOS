@@ -8,6 +8,7 @@
 
 import Foundation
 protocol CameraInteractorDelegate {
+    func trackVideoRecorded(videoLenght:Double)
     func flashOn()
     func flashOff()
     func cameraFront()
