@@ -300,7 +300,7 @@ class CameraInteractor:CameraRecorderDelegate{
     
     func setResolution(){
         //Get resolution
-        if let getFromDefaultResolution = NSUserDefaults.standardUserDefaults().stringForKey("settingsResolution"){
+        if let getFromDefaultResolution = NSUserDefaults.standardUserDefaults().stringForKey(SettingsConstants().SETTINGS_RESOLUTION){
             cameraResolution = CameraResolution.init(AVResolution: getFromDefaultResolution)
         }else{
             cameraResolution = CameraResolution.init(AVResolution: "")

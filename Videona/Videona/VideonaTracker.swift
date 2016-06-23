@@ -64,6 +64,32 @@ class VideonaTracker {
         mixpanel.track(AnalyticsConstants().FILTER_SELECTED, properties: userInteractionsProperties as [NSObject : AnyObject])
     }
 
+    //MARK: - User
+    func trackMailTraits() {
+        Utils().debugLog("trackMailTraits")
+        
+        
+        let userProfileProperties = [AnalyticsConstants().ACCOUNT_MAIL:getPreferenceStringSaved(SettingsConstants().SETTINGS_MAIL)] as [NSObject : AnyObject]
+        
+        mixpanel.people.set(userProfileProperties)
+    }
+    
+    func trackNameTraits() {
+        Utils().debugLog("trackNameTraits")
+        
+        let userProfileProperties = [AnalyticsConstants().NAME: getPreferenceStringSaved(SettingsConstants().SETTINGS_NAME)] as [NSObject : AnyObject]
+        
+        mixpanel.people.set(userProfileProperties)
+    }
+    
+    func trackUserNameTraits() {
+        Utils().debugLog("trackUserNameTraits")
+        
+        let userProfileProperties = [AnalyticsConstants().USERNAME:getPreferenceStringSaved(SettingsConstants().SETTINGS_USERNAME)] as [NSObject : AnyObject]
+        
+        mixpanel.people.set(userProfileProperties)
+    }
+    
     //MARK: - Filter selected
     func sendFilterSelectedTracking(type:String,
                                     name:String,
@@ -82,6 +108,7 @@ class VideonaTracker {
                 AnalyticsConstants().FILTERS_COMBINED: filtersCombined,
                 ]
         mixpanel.track(AnalyticsConstants().FILTER_SELECTED, properties: userInteractionsProperties as [NSObject : AnyObject])
+        mixpanel.people.increment(AnalyticsConstants().TOTAL_FILTERS_USED,by: NSNumber.init(int: Int32(1)))
     }
     
     //MARK: - App Shared
@@ -94,6 +121,17 @@ class VideonaTracker {
         mixpanel.track(AnalyticsConstants().APP_SHARED, properties: appSharedProperties as [NSObject : AnyObject])
     }
 
+    //MARK: - Link Clicked
+    func trackLinkClicked( uri:String,  destination:String) {
+        let linkClickProperties =
+            [
+                AnalyticsConstants().LINK: uri,
+                AnalyticsConstants().SOURCE_APP: AnalyticsConstants().SOURCE_APP_VIDEONA,
+                AnalyticsConstants().DESTINATION: destination
+        ]
+        mixpanel.track(AnalyticsConstants().LINK_CLICK, properties: linkClickProperties as [NSObject : AnyObject])
+    }
+    
     //MARK: - Video Shared
     func trackVideoShared(socialNetwork:String,
                           videoDuration:Double,
@@ -110,9 +148,9 @@ class VideonaTracker {
             [
                 AnalyticsConstants().SOCIAL_NETWORK : socialNetwork,
                 AnalyticsConstants().VIDEO_LENGTH: videoDuration,
-                AnalyticsConstants().RESOLUTION: getResolutionSaved(),
+                AnalyticsConstants().RESOLUTION: getPreferenceStringSaved(SettingsConstants().SETTINGS_RESOLUTION),
                 AnalyticsConstants().NUMBER_OF_CLIPS: numberOfClips,
-                AnalyticsConstants().TOTAL_VIDEOS_SHARED: getNumTotalVideosShared(),
+                AnalyticsConstants().TOTAL_VIDEOS_SHARED: getPreferenceIntSaved(ConfigPreferences().TOTAL_VIDEOS_SHARED),
                 AnalyticsConstants().DOUBLE_HOUR_AND_MINUTES: Utils().getDoubleHourAndMinutes(),
                 ]
         mixpanel.track(AnalyticsConstants().VIDEO_SHARED, properties: socialNetworkProperties as [NSObject : AnyObject])
@@ -120,6 +158,7 @@ class VideonaTracker {
         mixpanel.people.increment(AnalyticsConstants().TOTAL_VIDEOS_SHARED,by: NSNumber.init(int: Int32(1)))
         mixpanel.people.set(AnalyticsConstants().LAST_VIDEO_SHARED,to: Utils().giveMeTimeNow())
     }
+    
     
     func trackVideoSharedSuperProperties() {
         var numPreviousVideosShared:Int
@@ -162,8 +201,8 @@ class VideonaTracker {
     
     func sendVideoRecordedTracking(videoLenght:Double) {
         
-        let totalVideosRecorded = getTotalVideosRecordedSaved()
-        let resolution = getResolutionSaved()
+        let totalVideosRecorded = getPreferenceIntSaved(ConfigPreferences().TOTAL_VIDEOS_RECORDED)
+        let resolution = getPreferenceStringSaved(SettingsConstants().SETTINGS_RESOLUTION)
         
         //JSON properties
         let videoRecordedProperties =
@@ -181,7 +220,7 @@ class VideonaTracker {
     func sendExportedVideoMetadataTracking(videoLenght:Double,
                                            numberOfClips:Int) {
         
-        let resolution = getResolutionSaved()
+        let resolution = getPreferenceStringSaved(SettingsConstants().SETTINGS_RESOLUTION)
 
         let videoRecordedProperties =
             [
@@ -197,8 +236,8 @@ class VideonaTracker {
         Utils().debugLog("updateUserProfileProperties")
         mixpanel.identify(Utils().udid)
         
-        let quality = getQualitySaved()
-        let resolution = getResolutionSaved()
+        let quality = getPreferenceStringSaved(SettingsConstants().SETTINGS_QUALITY)
+        let resolution = getPreferenceStringSaved(SettingsConstants().SETTINGS_RESOLUTION)
         
         //JSON properties
         let userProfileProperties =
@@ -225,34 +264,22 @@ class VideonaTracker {
     }
     
     //MARK: - Get saved params
-    private func getQualitySaved() -> String {
-        var quality = ""
-        if preferences.objectForKey(ConfigPreferences().QUALITY_SAVED) != nil {
-            quality = preferences.stringForKey(ConfigPreferences().QUALITY_SAVED)!
+    private func getPreferenceStringSaved(preference:String) -> String {
+        var preferenceSaved = ""
+        if preferences.stringForKey(preference) != nil {
+            preferenceSaved = preferences.stringForKey(preference)!
+            
         }
-        return quality
+        return preferenceSaved
     }
     
-    private func getResolutionSaved() -> String {
-        var resolution = ""
-        if preferences.stringForKey(ConfigPreferences().RESOLUTION_SAVED) != nil {
-            resolution = preferences.stringForKey(ConfigPreferences().RESOLUTION_SAVED)!
-            resolution = resolution.stringByReplacingOccurrencesOfString(ConfigPreferences().RESOLUTION_PREFIX,
-                                                                         withString:"")
+    private func getPreferenceIntSaved(preference:String) -> Int {
+        var preferenceSaved = 0
+        if preferences.objectForKey(preference) != nil {
+            preferenceSaved = preferences.integerForKey(preference)
+            
         }
-        return resolution
-    }
-    
-    private func getTotalVideosRecordedSaved() -> Int {
-        var totalVideos = 0
-        if preferences.objectForKey(ConfigPreferences().TOTAL_VIDEOS_RECORDED) != nil {
-            totalVideos = preferences.integerForKey(ConfigPreferences().TOTAL_VIDEOS_RECORDED)
-        }
-        return totalVideos
-    }
-    
-    func getNumTotalVideosShared() -> Int {
-        return preferences.integerForKey(ConfigPreferences().TOTAL_VIDEOS_SHARED)
+        return preferenceSaved
     }
     
     //MARK: - Update params

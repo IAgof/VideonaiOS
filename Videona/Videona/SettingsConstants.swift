@@ -13,13 +13,15 @@ class SettingsConstants: NSObject {
     let ADVANCED_SECTION = "title_advanced_section"
     
     let DONWLOAD_KAMARADA = "downloadKamarada"
+    let KAMARADA_ITUNES_LINK = "kamaradaItunesLink"
     let SHARE_VIDEONA_TITLE = "shareVideona"
     let WHATSAPP_NOT_INSTALLED = "whatsAppNotInstalled"
     let SHARE_WITH_TITLE = "shareWith"
     let WHATSAPP_SHARE_TEXT = "Divirtiéndome con Videona, la mejor app para editar vídeos!!! Pruébala!!!\nhttps://goo.gl/YudZYP"
     let FOLLOW_US_ON_TWITTER_TITLE = "followUsInTwitter"
     let VIDEONA_TWITTER = "videonaTwitter"
-
+    let VIDEONA_TWITTER_USER = "videonaUser"
+    
     //MARK: - EMAIL
     let ENTER_MAIL = "enterEmail"
     let REMOVE_MAIL = "removeEmail"
@@ -38,6 +40,10 @@ class SettingsConstants: NSObject {
     let EMAIL_PREFERENCE = "emailPreference"
     let SAVE = "save"
 
+    let SETTINGS_NAME = "settingsName"
+    let SETTINGS_USERNAME = "settingsUserName"
+    let SETTINGS_MAIL = "settingsEmail"
+
     //MARK: - CAMERA_SECTION
     let CAMERA_SECTION = "title_camera_section"
     
@@ -53,6 +59,9 @@ class SettingsConstants: NSObject {
     let GOOD_QUALITY_NAME = "good_quality_name"
     let HIGH_QUALITY_NAME = "high_quality_name"
     let CANCEL_SETTINGS_CAMERA = "cancelSettingsCamera"
+    
+    let SETTINGS_RESOLUTION = "settingsResolution"
+    let SETTINGS_QUALITY = "settingsQuality"
     
     //MARK: - MORE_INFO_SECTION
     let MORE_INFO_SECTION = "moreInformation"

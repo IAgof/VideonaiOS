@@ -106,25 +106,25 @@ class SettingsInteractor: NSObject,SettingsInteractorInterface {
     }
     
     func saveNameOnDefaults(name:String){ // Save name on internal memory
-        defaults.setObject(name, forKey: "settingsName")
+        defaults.setObject(name, forKey: SettingsConstants().SETTINGS_NAME)
     }
     
     func saveUserNameOnDefaults(userName:String){ // Save name on internal memory
-        defaults.setObject(userName, forKey: "settingsUserName")
+        defaults.setObject(userName, forKey: SettingsConstants().SETTINGS_USERNAME)
     }
     
     func saveEmailOnDefaults(email:String){ // Save name on internal memory
-        defaults.setObject(email, forKey: "settingsEmail")
+        defaults.setObject(email, forKey: SettingsConstants().SETTINGS_MAIL)
     }
     
     func saveResolutionOnDefaults(resolution:String){ // Save name on internal memory
         let resolutionToSave = AVResolutionParse().parseResolutionsToInteractor(resolution)
         
-        defaults.setObject(resolutionToSave, forKey: "settingsResolution")
+        defaults.setObject(resolutionToSave, forKey: SettingsConstants().SETTINGS_RESOLUTION)
     }
     
     func saveQualityOnDefaults(quality:String){ // Save name on internal memory
-        defaults.setObject(quality, forKey: "settingsQuality")
+        defaults.setObject(quality, forKey: SettingsConstants().SETTINGS_QUALITY)
     }
     
     func isValidEmail(email:String) -> Bool {

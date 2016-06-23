@@ -16,8 +16,8 @@ class SettingsPresenter:NSObject,SettingsPresenterInterface{
     var interactor: SettingsInteractor?
     var detailTextWireframe: DetailTextWireframe?
 
-    let kamaradaAppleStoreURL = NSURL.init(string:"https://itunes.apple.com/us/app/silent-movie-camera-kamarada/id1109300504?l=es&ls=1&mt=8")
-    let videonaTwitterUser = "Videona_es"
+    let kamaradaAppleStoreURL = Utils().getStringByKeyFromSettings(SettingsConstants().KAMARADA_ITUNES_LINK)
+    let videonaTwitterUser = Utils().getStringByKeyFromSettings(SettingsConstants().VIDEONA_TWITTER_USER)
     
     func pushBack() {
         wireframe?.goPrevController()
@@ -47,7 +47,10 @@ class SettingsPresenter:NSObject,SettingsPresenterInterface{
     func itemListSelected(itemTitle:String){
         switch itemTitle {
         case SettingsProvider().getStringForType(SettingsType.DownloadKamarada):
-            wireframe?.goToAppleStoreURL(kamaradaAppleStoreURL!)
+            wireframe?.goToAppleStoreURL(NSURL(string:kamaradaAppleStoreURL)!)
+            
+            controller?.getTrackerObject().trackLinkClicked(kamaradaAppleStoreURL,
+                                                            destination: AnalyticsConstants().DESTINATION_KAMARADA_ITUNES)
             break
         case SettingsProvider().getStringForType(SettingsType.ShareVideona):
             controller?.getTrackerObject().trackAppShared("Videona", socialNetwork: "Whatsapp")
@@ -120,11 +123,13 @@ class SettingsPresenter:NSObject,SettingsPresenterInterface{
         switch settingsTitle {
         case SettingsProvider().getStringForType(SettingsType.NameAccount):
             interactor?.saveNameOnDefaults(input)
-            
+            controller?.getTrackerObject().trackNameTraits()
+
             break
         
         case SettingsProvider().getStringForType(SettingsType.UserNameAccount):
             interactor?.saveUserNameOnDefaults(input)
+            controller?.getTrackerObject().trackUserNameTraits()
             break
             
         case SettingsProvider().getStringForType(SettingsType.emailAccount):
@@ -137,6 +142,7 @@ class SettingsPresenter:NSObject,SettingsPresenterInterface{
                 return
             }
             interactor?.saveEmailOnDefaults(input)
+            controller?.getTrackerObject().trackMailTraits()
             break
         
         case SettingsProvider().getStringForType(SettingsType.Resolution):

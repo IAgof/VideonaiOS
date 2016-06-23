@@ -65,6 +65,10 @@ class AnalyticsConstants {
     let TOTAL_FILTERS_USED = "totalFiltersUsed"
     let DOUBLE_HOUR_AND_MINUTES = "doubleHourAndMinutes"
 
+    let ACCOUNT_MAIL = "account_email"
+    let USERNAME = "username"
+    let NAME = "name"
+
     /**
      * Super properties
      */
@@ -90,7 +94,6 @@ class AnalyticsConstants {
     let RESULT = "result"
     let VIDEO_LENGTH = "videoLength"
     let NUMBER_OF_CLIPS = "numberOfClips"
-    let NAME = "name"
     let CODE = "code"
     let CHANGE_FLASH = "change flash"
     let RECORD = "record"
@@ -116,5 +119,6 @@ class AnalyticsConstants {
     let DESTINATION = "destination"
     let SOURCE_APP_VIDEONA = "Videona"
     let DESTINATION_KAMARADA_PLAY = "Kamarada Google Play"
+    let DESTINATION_KAMARADA_ITUNES = "Kamarada Itunes"
 }
 

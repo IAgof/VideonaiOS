@@ -93,6 +93,9 @@
 //<!-- Advanced section -- = "
 "title_advanced_section" = "Advanced";
 "kamaradaGooglePlayLink" = "https://play.google.com/store/apps/details?id=com.videonasocialmedia.kamarada&amp;referrer=utm_source%3DVideona%26utm_medium%3DLink_Directo%26utm_campaign%3DDownload_Kamarada_from_videona_settings";
+
+"kamaradaItunesLink" = "https://itunes.apple.com/app/silent-movie-camera-kamarada/id1109300504?mt=8";
+
 "downloadKamarada" = "Download Kamarada";
 "shareVideona" = "Share Videona";
 "whatsAppNotInstalled" = "Sorry, WhatsApp is not installed";
@@ -100,6 +103,7 @@
 "whatsAppSharedText" = "Having fun with Videona, the best app to edit videos!!! Try it!!!\nhttps://goo.gl/YudZYP";
 "followUsInTwitter" = "Follow us in Twitter";
 "videonaTwitter" = "https://twitter.com/videona_eng";
+"videonaUser" = "videona_eng";
 
 //<!-- Email -- = "
 "enterEmail" = "Enter a valid email";

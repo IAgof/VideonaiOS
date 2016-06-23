@@ -18,21 +18,21 @@ class SettingsProvider:NSObject{
         init(){
             let defaults = NSUserDefaults.standardUserDefaults()
 
-            let nameSaved = defaults.stringForKey("settingsName")
+            let nameSaved = defaults.stringForKey(SettingsConstants().SETTINGS_NAME)
             if (nameSaved != nil){
                 name = nameSaved!
             }else{
                 name = ""
             }
             
-            let userNameSaved = defaults.stringForKey("settingsUserName")
+            let userNameSaved = defaults.stringForKey(SettingsConstants().SETTINGS_USERNAME)
             if (userNameSaved != nil){
                 userName = userNameSaved!
             }else{
                 userName = ""
             }
             
-            let emailSaved = defaults.stringForKey("settingsEmail")
+            let emailSaved = defaults.stringForKey(SettingsConstants().SETTINGS_MAIL)
             if (emailSaved != nil){
                 email = emailSaved!
             }else{
@@ -48,7 +48,7 @@ class SettingsProvider:NSObject{
         init(){
             let defaults = NSUserDefaults.standardUserDefaults()
 
-            let resolutionSaved = defaults.stringForKey("settingsResolution")
+            let resolutionSaved = defaults.stringForKey(SettingsConstants().SETTINGS_RESOLUTION)
             
             if (resolutionSaved != nil){
                 resolution = AVResolutionParse().parseResolutionToView(resolutionSaved!)
@@ -57,7 +57,7 @@ class SettingsProvider:NSObject{
                 resolution = AVResolutionParse().parseResolutionToView(AVCaptureSessionPreset1280x720)
             }
             
-            let qualitySaved = defaults.stringForKey("settingsQuality")
+            let qualitySaved = defaults.stringForKey(SettingsConstants().SETTINGS_QUALITY)
             if (qualitySaved != nil){
                 quality = qualitySaved!
             }else{

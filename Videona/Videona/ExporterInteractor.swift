@@ -23,7 +23,7 @@ class ExporterInteractor:NSObject{
     func initQuality()->String{
         var quality = AVAssetExportPresetMediumQuality
         //Get resolution
-        if let getFromDefaultQuality = NSUserDefaults.standardUserDefaults().stringForKey("settingsQuality"){
+        if let getFromDefaultQuality = NSUserDefaults.standardUserDefaults().stringForKey(SettingsConstants().SETTINGS_QUALITY){
             quality = AVQualityParse().parseResolutionsToInteractor(getFromDefaultQuality)
         }
         return quality
