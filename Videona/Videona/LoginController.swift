@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LoginController: VideonaController,LoginInterface {
+class LoginController: VideonaController,LoginInterface,UITextFieldDelegate {
     
     //MARK: - VIPER
     var eventHandler: LoginPresenterInterface?
@@ -24,6 +24,10 @@ class LoginController: VideonaController,LoginInterface {
     
     //MARK: - Actions
     @IBAction func pushLoginButton(sender: AnyObject) {
+        self.login()
+    }
+    
+    func login(){
         let user = mailTextField.text
         let password = passwordTextField.text
         
@@ -45,6 +49,9 @@ class LoginController: VideonaController,LoginInterface {
         mailError.adjustsFontSizeToFitWidth = true
         passwordError.adjustsFontSizeToFitWidth = true
         
+        mailTextField.delegate = self
+        passwordTextField.delegate = self
+        
         mailTextField.addTarget(self,
                                 action: #selector(self.checkEmail),
                                 forControlEvents: UIControlEvents.EditingDidEnd)
@@ -59,6 +66,21 @@ class LoginController: VideonaController,LoginInterface {
                                     action: #selector(self.resetErrorPassword),
                                     forControlEvents: UIControlEvents.EditingDidBegin)
     }
+    //MARK: - TextField delegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        Utils().debugLog("Return or next keyboard key pussed")
+        if textField.restorationIdentifier == "mailInput" {
+            passwordTextField.becomeFirstResponder()
+        }
+        
+        if textField.restorationIdentifier == "passwordInput" {
+            passwordTextField.resignFirstResponder()
+            login()
+        }
+        
+        return true
+    }
+    
 
     //MARK: - Login view change
     func loginIndicatorStops() {
@@ -81,7 +103,7 @@ class LoginController: VideonaController,LoginInterface {
         loginButton.enabled = state
     }
     
-    //MARK: - User interaction
+    //MARK: - User interaction delegate
     func createInvalidMailOrPasswordAlert(title:String,
                                           message:String,
                                           buttonText:String){
