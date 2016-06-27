@@ -18,9 +18,9 @@ class CameraRecorderInteractor{
     var videoCamera: GPUImageVideoCamera?
     var resolutionSize:Resolution?
     
-    var resolution: String = AVCaptureSessionPreset640x480 {
+    var resolution: String?{
         didSet {
-            resolutionSize = Resolution.init(AVResolution: resolution)
+            resolutionSize = Resolution.init(AVResolution: resolution!)
         }
     }
     
