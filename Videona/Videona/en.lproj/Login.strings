@@ -1,0 +1,27 @@
+/* 
+  Login.strings
+  Videona
+
+  Created by Alejandro Arjonilla Garcia on 24/6/16.
+  Copyright © 2016 Videona. All rights reserved.
+*/
+
+
+"invalidCredentialsTitle" = "Try again";
+"invalidCredentialsMessage" = "Please enter a valid email or password";
+"invalidCredentialsButtonText" = "OK";
+
+"errorLoginTitle" = "Error";
+"errorLoginMessage" = "Error ocurred, try again later";
+"errorLoginButtonText" = "OK";
+
+
+//<!-- Strings related to login -- = "
+"prompt_email" = "Email";
+"prompt_password" = "Password";
+"action_sign_in" = "Sign in or register";
+"action_sign_in_short" = "Sign in";
+"error_invalid_email" = "This email address is invalid";
+"error_invalid_password" = "This password is too short";
+"error_incorrect_password" = "This password is incorrect";
+"error_field_required" = "This field is required";

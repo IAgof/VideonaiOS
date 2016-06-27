@@ -308,7 +308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wjY-9R-60G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-915" y="-625.5"/>
+            <point key="canvasLocation" x="-915" y="1666.5"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="BZx-nO-0Tn">
@@ -393,7 +393,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyg-Y8-Mcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-211" y="-625.5"/>
+            <point key="canvasLocation" x="-1650" y="127.5"/>
         </scene>
         <!--Share View Controller-->
         <scene sceneID="FqL-8w-aWG">
@@ -535,7 +535,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HqN-nR-Bg8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="616.5" y="-627"/>
+            <point key="canvasLocation" x="-223" y="127.5"/>
         </scene>
         <!--Full Screen Player View Controller-->
         <scene sceneID="hWT-rr-9HR">
@@ -573,7 +573,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MA3-h6-Wg7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1323" y="-627"/>
+            <point key="canvasLocation" x="481" y="127.5"/>
         </scene>
         <!--Detail Text Controller-->
         <scene sceneID="6OO-No-YDR">
@@ -655,7 +655,107 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vit-Jr-LAB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2007" y="-625.5"/>
+            <point key="canvasLocation" x="-2310" y="127.5"/>
+        </scene>
+        <!--Login Controller-->
+        <scene sceneID="ifE-QD-eiI">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="o8I-wz-0WK" customClass="LoginController" customModule="Videona" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bf4-vr-OLe"/>
+                        <viewControllerLayoutGuide type="bottom" id="PRx-1E-ZvN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IyV-hv-zsX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="mXh-4u-1PT">
+                                <rect key="frame" x="290" y="262" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9QO-zI-sGJ">
+                                <rect key="frame" x="281" y="323" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="pushLoginButton:" destination="o8I-wz-0WK" eventType="touchUpInside" id="TqJ-ON-27W"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b5g-Dk-SU9">
+                                <rect key="frame" x="225" y="285" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="tQF-nr-VBc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WaS-cF-XKd">
+                                <rect key="frame" x="225" y="230" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="C4L-c6-CSj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="225" y="129" width="150" height="30"/>
+                                </variation>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaC-Ui-Fs6">
+                                <rect key="frame" x="225" y="261" width="150" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="225" y="156" width="150" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lyn-T7-NKf">
+                                <rect key="frame" x="225" y="316" width="150" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="225" y="215" width="150" height="15"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kaC-Ui-Fs6" firstAttribute="width" secondItem="WaS-cF-XKd" secondAttribute="width" id="4Gi-lr-5Xi"/>
+                            <constraint firstItem="b5g-Dk-SU9" firstAttribute="centerY" secondItem="IyV-hv-zsX" secondAttribute="centerY" id="BLk-hK-JBw"/>
+                            <constraint firstItem="mXh-4u-1PT" firstAttribute="centerX" secondItem="b5g-Dk-SU9" secondAttribute="centerX" id="HiM-yG-Gc1"/>
+                            <constraint firstItem="Lyn-T7-NKf" firstAttribute="width" secondItem="b5g-Dk-SU9" secondAttribute="width" id="IQ7-fO-jg8"/>
+                            <constraint firstItem="b5g-Dk-SU9" firstAttribute="centerX" secondItem="IyV-hv-zsX" secondAttribute="centerX" id="NzJ-t4-mgV"/>
+                            <constraint firstItem="Lyn-T7-NKf" firstAttribute="top" secondItem="b5g-Dk-SU9" secondAttribute="bottom" constant="1" id="Txq-c1-RyU"/>
+                            <constraint firstItem="Lyn-T7-NKf" firstAttribute="centerX" secondItem="b5g-Dk-SU9" secondAttribute="centerX" id="Xyx-FM-Kkb"/>
+                            <constraint firstItem="b5g-Dk-SU9" firstAttribute="top" secondItem="mXh-4u-1PT" secondAttribute="bottom" constant="3" id="YeL-xe-9nd"/>
+                            <constraint firstItem="b5g-Dk-SU9" firstAttribute="centerX" secondItem="9QO-zI-sGJ" secondAttribute="centerX" id="atE-Kx-3nl"/>
+                            <constraint firstItem="kaC-Ui-Fs6" firstAttribute="centerX" secondItem="WaS-cF-XKd" secondAttribute="centerX" id="cDs-oa-ZLT"/>
+                            <constraint firstItem="9QO-zI-sGJ" firstAttribute="top" secondItem="b5g-Dk-SU9" secondAttribute="bottom" constant="8" id="gMp-FH-zM1"/>
+                            <constraint firstItem="WaS-cF-XKd" firstAttribute="centerX" secondItem="b5g-Dk-SU9" secondAttribute="centerX" id="m2E-wT-Keg"/>
+                            <constraint firstItem="kaC-Ui-Fs6" firstAttribute="top" secondItem="WaS-cF-XKd" secondAttribute="bottom" constant="1" id="mHl-hF-Rlb"/>
+                            <constraint firstItem="b5g-Dk-SU9" firstAttribute="top" secondItem="WaS-cF-XKd" secondAttribute="bottom" constant="25" id="xk1-dq-NFh"/>
+                        </constraints>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <include reference="9QO-zI-sGJ"/>
+                                <include reference="b5g-Dk-SU9"/>
+                                <include reference="WaS-cF-XKd"/>
+                                <include reference="kaC-Ui-Fs6"/>
+                                <include reference="Lyn-T7-NKf"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="9QO-zI-sGJ" id="oDv-uC-zIw"/>
+                        <outlet property="mailError" destination="kaC-Ui-Fs6" id="BNP-Wx-Bf2"/>
+                        <outlet property="mailTextField" destination="WaS-cF-XKd" id="CyG-TD-qqd"/>
+                        <outlet property="passwordError" destination="Lyn-T7-NKf" id="Arc-xT-aSf"/>
+                        <outlet property="passwordTextField" destination="b5g-Dk-SU9" id="8Xn-oM-hBT"/>
+                        <outlet property="waitIndicatorView" destination="mXh-4u-1PT" id="gcX-jA-Hw0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VM1-20-OXs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-915" y="-768"/>
         </scene>
         <!--Record Controller-->
         <scene sceneID="1fg-Hl-DKX">
@@ -1077,7 +1177,7 @@
                 <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="6YB-T8-aaG" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKt-Eb-AgH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-250" y="127"/>
+            <point key="canvasLocation" x="-235" y="954"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="FKz-UM-fGt">
@@ -1472,7 +1572,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n61-95-qme" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-180" y="954"/>
+            <point key="canvasLocation" x="-915" y="954"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iSM-jl-Alt">
@@ -1488,7 +1588,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hR5-2X-Y6N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-915" y="954"/>
+            <point key="canvasLocation" x="-1650" y="954"/>
         </scene>
     </scenes>
     <resources>

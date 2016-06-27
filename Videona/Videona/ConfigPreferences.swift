@@ -27,4 +27,9 @@ class ConfigPreferences {
     let TOTAL_VIDEOS_RECORDED = "total_videos_recorded"
     let TOTAL_VIDEOS_SHARED = "total_videos_shared"
     let ACTIVITY_BACKGROUND = "ACTIVITY_BACKGROUND"
+    let TOKEN = "userToken"
+    
+    let LOGIN_HEADER = ["Content-Type":"application/json"]
+    let VIDEONA_URI_API = "http://staging.videona.com/api/v1/"
+    let LOGIN_AUTH = "auth"
 }

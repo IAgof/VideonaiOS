@@ -23,6 +23,7 @@ class RecordPresenter: NSObject
     var cameraInteractor: CameraInteractor?
     var timerInteractor: TimerInteractor?
 
+    var removeLoginWireframe: LoginWireframe?
     //MARK: - Constants
     var colorFilterViewIsShowin = false
     var shaderFilterViewIsShowin = false
@@ -54,7 +55,11 @@ class RecordPresenter: NSObject
     
     func pushSettings() {
         print("Record presenter pushSettings")
-        settingsWireframe?.presentSettingsInterfaceFromViewController(controller!)
+//        settingsWireframe?.presentSettingsInterfaceFromViewController(controller!)
+        
+        //REMOVE
+        self.removeLoginWireframe?.presentLoginInterfaceFromViewController(self.controller!)
+        
     }
     
     func pushShare() {
@@ -71,6 +76,7 @@ class RecordPresenter: NSObject
                 self.controller?.dissmissAlertWaitToExport({
                     //wait to remove alert to present new Screeen
                     self.shareWireframe?.presentShareInterfaceFromViewController(self.controller!,videoPath: exportPath)
+                    
                 })
             })
         });

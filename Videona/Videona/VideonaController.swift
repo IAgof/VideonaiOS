@@ -18,4 +18,16 @@ class VideonaController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         print("View will dissappear in \n \(self)")
     }
+    
+    func createAlertInformation(title:String,message:String,buttonText:String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        
+        let action = UIAlertAction(title: buttonText, style: .Default, handler: { action in
+            alert.dismissViewControllerAnimated(true, completion:nil)
+        })
+        
+        alert.addAction(action)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
 }

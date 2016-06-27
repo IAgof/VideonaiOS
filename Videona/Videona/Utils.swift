@@ -39,7 +39,7 @@ class Utils{
     
     func debugLog(logMessage:String){
 //        #if DEBUG
-            print(logMessage)
+            print("\n\(logMessage)")
 //        #endif
     }
     
@@ -54,5 +54,22 @@ class Utils{
     }
     func getStringByKeyFromIntro(key:String) -> String {
         return NSBundle.mainBundle().localizedStringForKey(key,value: "",table: "Intro")
+    }
+    func getStringByKeyFromLogin(key:String) -> String {
+        let text = NSBundle.mainBundle().localizedStringForKey(key,value: "",table: "Login")
+
+        if text == key {
+            return ""
+        }else {
+            return text
+        }
+    }
+    
+    func isValidEmail(email:String) -> Bool {
+        // println("validate calendar: \(testStr)")
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluateWithObject(email)
     }
 }

@@ -39,8 +39,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             // same version
 
             //Change to test the IntroView
-            appDependencies.installRecordToRootViewControllerIntoWindow(window!)
+            
+            //Record controller on start
+//            appDependencies.installRecordToRootViewControllerIntoWindow(window!)
+            //Intro controller on start
 //                appDependencies.installIntroToRootViewControllerIntoWindow(window!)
+            //Login controller on start
+            appDependencies.installLoginToRootViewControllerIntoWindow(window!)
         } else {
             // other version
             defaults.setObject(currentAppVersion, forKey: "appVersion")

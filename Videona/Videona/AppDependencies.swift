@@ -19,7 +19,8 @@ class AppDependencies {
     var playerWireframe = PlayerWireframe()
     var detailTextWireframe = DetailTextWireframe()
     var fullScreenPlayerWireframe = FullScreenPlayerWireframe()
-
+    var loginWireframe = LoginWireframe()
+    
     init(){
         configureDependencies()
     }
@@ -43,6 +44,9 @@ class AppDependencies {
         let detailTextInteractor = DetailTextInteractor()
 
         let fullScreenPlayerPresenter = FullScreenPlayerPresenter()
+
+        let loginPresenter = LoginPresenter()
+        let loginInteractor = LoginInteractor()
 
         //INTRO MODULE
         introPresenter.introWireframe = introWireframe
@@ -112,6 +116,16 @@ class AppDependencies {
 
         fullScreenPlayerWireframe.fullScreenPlayerPresenter = fullScreenPlayerPresenter
         fullScreenPlayerWireframe.rootWireframe = rootWireframe
+        
+        //LOGIN MODULE
+        loginPresenter.wireframe = loginWireframe
+        loginPresenter.interactor = loginInteractor
+        
+        loginWireframe.loginPresenter = loginPresenter
+        loginWireframe.rootWireframe = rootWireframe
+        
+        loginInteractor.outputToPresenter = loginPresenter
+        recordPresenter.removeLoginWireframe = loginWireframe
     }
     
     func installIntroToRootViewControllerIntoWindow(window: UIWindow){
@@ -120,5 +134,8 @@ class AppDependencies {
     
     func installRecordToRootViewControllerIntoWindow(window: UIWindow){
         recordWireframe.presentRecordInterfaceFromWindow(window)
+    }
+    func installLoginToRootViewControllerIntoWindow(window: UIWindow){
+        loginWireframe.presentLoginInterfaceFromWindow(window)
     }
 }

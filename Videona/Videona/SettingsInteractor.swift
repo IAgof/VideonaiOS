@@ -127,14 +127,6 @@ class SettingsInteractor: NSObject,SettingsInteractorInterface {
         defaults.setObject(quality, forKey: "settingsQuality")
     }
     
-    func isValidEmail(email:String) -> Bool {
-        // println("validate calendar: \(testStr)")
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-        
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluateWithObject(email)
-    }
-    
     //MARK: - AVResolution posible inputs
     func getAVResolutions()->Array<String>{
         let resolutions = AVResolutionParse().resolutionsToView()

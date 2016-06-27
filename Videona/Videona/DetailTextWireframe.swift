@@ -19,13 +19,13 @@ class DetailTextWireframe : NSObject {
     
     var prevController:UIViewController?
     
-    func presentShareInterfaceFromWindow(window: UIWindow) {
+    func presentDetailTextInterfaceFromWindow(window: UIWindow) {
         let viewController = detailTextViewControllerFromStoryboard()
         
         rootWireframe?.showRootViewController(viewController, inWindow: window)
     }
     
-    func presentShareInterfaceFromViewController(prevController:UIViewController,textRef:String) {
+    func presentDetailTextInterfaceFromViewController(prevController:UIViewController,textRef:String) {
         let viewController = detailTextViewControllerFromStoryboard()
         
         viewController.textRef = textRef
