@@ -13,50 +13,40 @@ import AVFoundation
 
 class ShareTwitterInteractor: ShareSocialNetworkInteractor {
     
-    func share(){
+    func share() {
         let videoURL = self.getShareMovieURL()
         
         if canUploadVideoToTwitter(videoURL) {
-            let accountStore:ACAccountStore = ACAccountStore.init()
-            let accountType:ACAccountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
+            let videoData = self.getVideoData(videoURL)
+            var status = TwitterVideoUpload.instance().setVideoData(videoData)
+            TwitterVideoUpload.instance().statusContent = Utils().getStringByKeyFromShare(ShareConstants().VIDEONATIME_HASTAGH)
             
-            accountStore.requestAccessToAccountsWithType(accountType, options: nil) { (let granted, let error) in
-                let accounts = accountStore.accountsWithAccountType(accountType)
-                
-                if accounts.count > 0 {
-                    let twitterAccount = accounts[0]
-                    if(SocialVideoHelper.userHasAccessToTwitter()){
-                        let videoData = NSData(contentsOfURL: videoURL)
-                        SocialVideoHelper.uploadTwitterVideo(videoData,
-                                                             comment: Utils().getStringByKeyFromShare(ShareConstants().VIDEONATIME_HASTAGH),
-                                                             account: twitterAccount as! ACAccount, withCompletion: {succes,error in
-                                                                print("Video upload completion \(succes) \n \(error)")
-                                                                var message:String = ""
-                                                                
-                                                                if (succes) {
-                                                                    message = Utils().getStringByKeyFromShare(ShareConstants().UPLOAD_SUCCESFULL)
-                                                                }else{
-                                                                    message = error
-                                                                }
-                                                                self.setAlertCompletionMessageOnTopView(message)
-                        })
-                    }else{
-                        let message = Utils().getStringByKeyFromShare(ShareConstants().NO_TWITTER_ACCESS)
-                        Utils().debugLog(message)
-                        self.setAlertCompletionMessageOnTopView(message)
-                    }
-                }else{
-                    let message = Utils().getStringByKeyFromShare(ShareConstants().NO_TWITTER_ACCESS)
-                    Utils().debugLog(message)
-                    self.setAlertCompletionMessageOnTopView(message)
-                }
+            if status == false {
+                self.createAlert(Utils().getStringByKeyFromShare(ShareConstants().TWITTER_MAX_SIZE))
+                return
             }
+            
+            status = TwitterVideoUpload.instance().upload({
+                errorString in
+                var messageToPrintOnView = ""
+                
+                if (errorString != nil){
+                    let codeAndMessage = self.convertStringToCodeAndMessage(errorString)
+                    messageToPrintOnView = "Error with code: \(codeAndMessage.0) \n description: \(codeAndMessage.1) "
+                }else{
+                    messageToPrintOnView = Utils().getStringByKeyFromShare(ShareConstants().UPLOAD_SUCCESFULL)
+                }
+                
+                self.createAlert(messageToPrintOnView)
+            })
         }else{
-            let message = Utils().getStringByKeyFromShare(ShareConstants().TWITTER_MAX_LENGHT)
-            Utils().debugLog(message)
-            self.setAlertCompletionMessageOnTopView(message)
+           self.createAlert(Utils().getStringByKeyFromShare(ShareConstants().TWITTER_MAX_LENGHT))
         }
-        
+    }
+
+    func createAlert(message:String){
+        Utils().debugLog(message)
+        self.setAlertCompletionMessageOnTopView(message)
     }
     
     func canUploadVideoToTwitter(movieURL:NSURL)->Bool{
@@ -70,4 +60,41 @@ class ShareTwitterInteractor: ShareSocialNetworkInteractor {
         }
     }
     
+    func getVideoData(url:NSURL) -> NSData {
+        if let path:String = url.path{
+            if let data = NSFileManager.defaultManager().contentsAtPath(path){
+                return data
+            }else{
+                return NSData()
+            }
+        }else{
+            return NSData()
+        }
+    }
+    
+    func convertStringToCodeAndMessage(jsonStr:String) -> (String,String){
+        let data = jsonStr.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: false)
+        var code:Int = 0
+        var message:String = ""
+        
+        do {
+            let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
+            
+            if let dict = json as? [String: AnyObject] {
+                if let errors = dict["errors"] as? [AnyObject] {
+                    for dict2 in errors {
+                        code = (dict2["code"] as? Int)!
+                        message = (dict2["message"] as? String)!
+                        print(code)
+                        print(message)
+                    }
+                }
+            }
+            return ("\(code)" ,message)
+        }
+        catch {
+            print(error)
+            return ("","")
+        }
+    }
 }

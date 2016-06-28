@@ -103,6 +103,7 @@
 		A98A93BB1CF5903C004E1DB7 /* AddFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */; };
 		A98A93BD1CF59155004E1DB7 /* ChangeFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A93BC1CF59155004E1DB7 /* ChangeFilterInteractor.swift */; };
 		A98A93C41CF5BAF6004E1DB7 /* EffectDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A93C31CF5BAF6004E1DB7 /* EffectDictionary.swift */; };
+		A98AA14C1D22743A004E0869 /* TwitterVideoUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = A98AA14B1D22743A004E0869 /* TwitterVideoUpload.m */; };
 		A98AA1811D19450C00E196D0 /* iso639_2.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A98AA17E1D19450C00E196D0 /* iso639_2.bundle */; };
 		A98AA1821D19450C00E196D0 /* NSLocale+ISO639_2.m in Sources */ = {isa = PBXBuildFile; fileRef = A98AA1801D19450C00E196D0 /* NSLocale+ISO639_2.m */; };
 		A99278501CE3647B009DC364 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A992784F1CE3647B009DC364 /* SettingsPresenter.swift */; };
@@ -166,7 +167,6 @@
 		A9F2517B1D05CDC800D8DC30 /* ShareTwitterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2517A1D05CDC800D8DC30 /* ShareTwitterInteractor.swift */; };
 		A9F2517D1D05CDD900D8DC30 /* ShareYoutubeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2517C1D05CDD900D8DC30 /* ShareYoutubeInteractor.swift */; };
 		A9F251801D05D57800D8DC30 /* ShareSocialNetworkInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2517F1D05D57800D8DC30 /* ShareSocialNetworkInteractor.swift */; };
-		A9F251841D05D7AB00D8DC30 /* SocialVideoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F251831D05D7AB00D8DC30 /* SocialVideoHelper.m */; };
 		A9F9C20E1CF4665000AB310C /* VideonaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9C20D1CF4665000AB310C /* VideonaController.swift */; };
 		A9F9C2101CF4857700AB310C /* Logo_Splash_Horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F9C20F1CF4857700AB310C /* Logo_Splash_Horizontal.png */; };
 		A9F9C2121CF485C600AB310C /* Logo_Splash_Vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F9C2111CF485C600AB310C /* Logo_Splash_Vertical.png */; };
@@ -333,6 +333,8 @@
 		A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFilterInteractor.swift; sourceTree = "<group>"; };
 		A98A93BC1CF59155004E1DB7 /* ChangeFilterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeFilterInteractor.swift; sourceTree = "<group>"; };
 		A98A93C31CF5BAF6004E1DB7 /* EffectDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectDictionary.swift; sourceTree = "<group>"; };
+		A98AA14A1D22743A004E0869 /* TwitterVideoUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwitterVideoUpload.h; path = TwitterUploadClass/TwitterVideoUpload.h; sourceTree = "<group>"; };
+		A98AA14B1D22743A004E0869 /* TwitterVideoUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TwitterVideoUpload.m; path = TwitterUploadClass/TwitterVideoUpload.m; sourceTree = "<group>"; };
 		A98AA17E1D19450C00E196D0 /* iso639_2.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = iso639_2.bundle; path = ISO639_2/iso639_2.bundle; sourceTree = "<group>"; };
 		A98AA17F1D19450C00E196D0 /* NSLocale+ISO639_2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSLocale+ISO639_2.h"; path = "ISO639_2/NSLocale+ISO639_2.h"; sourceTree = "<group>"; };
 		A98AA1801D19450C00E196D0 /* NSLocale+ISO639_2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSLocale+ISO639_2.m"; path = "ISO639_2/NSLocale+ISO639_2.m"; sourceTree = "<group>"; };
@@ -398,8 +400,6 @@
 		A9F2517C1D05CDD900D8DC30 /* ShareYoutubeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareYoutubeInteractor.swift; sourceTree = "<group>"; };
 		A9F2517F1D05D57800D8DC30 /* ShareSocialNetworkInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareSocialNetworkInteractor.swift; sourceTree = "<group>"; };
 		A9F251811D05D7AA00D8DC30 /* Videona-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Videona-Bridging-Header.h"; sourceTree = "<group>"; };
-		A9F251821D05D7AB00D8DC30 /* SocialVideoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialVideoHelper.h; sourceTree = "<group>"; };
-		A9F251831D05D7AB00D8DC30 /* SocialVideoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialVideoHelper.m; sourceTree = "<group>"; };
 		A9F9C20D1CF4665000AB310C /* VideonaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideonaController.swift; sourceTree = "<group>"; };
 		A9F9C20F1CF4857700AB310C /* Logo_Splash_Horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_Splash_Horizontal.png; sourceTree = "<group>"; };
 		A9F9C2111CF485C600AB310C /* Logo_Splash_Vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_Splash_Vertical.png; sourceTree = "<group>"; };
@@ -667,8 +667,6 @@
 				A95B243B1CD8890900F78AAF /* Assets.xcassets */,
 				A95B24401CD8890900F78AAF /* Info.plist */,
 				A93C52371D06CA11001C2755 /* GoogleService-Info.plist */,
-				A9F251821D05D7AB00D8DC30 /* SocialVideoHelper.h */,
-				A9F251831D05D7AB00D8DC30 /* SocialVideoHelper.m */,
 				A9F251811D05D7AA00D8DC30 /* Videona-Bridging-Header.h */,
 			);
 			path = Videona;
@@ -1072,6 +1070,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		A98AA14D1D22743E004E0869 /* TwitterVideoUpload */ = {
+			isa = PBXGroup;
+			children = (
+				A98AA14A1D22743A004E0869 /* TwitterVideoUpload.h */,
+				A98AA14B1D22743A004E0869 /* TwitterVideoUpload.m */,
+			);
+			name = TwitterVideoUpload;
+			sourceTree = "<group>";
+		};
 		A98AA17B1D1944DF00E196D0 /* ISO639-2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1262,6 +1269,7 @@
 		A9F2517E1D05CF7200D8DC30 /* ShareSocialNetworksInteractor */ = {
 			isa = PBXGroup;
 			children = (
+				A98AA14D1D22743E004E0869 /* TwitterVideoUpload */,
 				A9F2517F1D05D57800D8DC30 /* ShareSocialNetworkInteractor.swift */,
 				A9F251721D05CD8E00D8DC30 /* ShareWhatsappInteractor.swift */,
 				A9F2517C1D05CDD900D8DC30 /* ShareYoutubeInteractor.swift */,
@@ -1336,7 +1344,6 @@
 				A965C7F91CF586E4001E2D39 /* CopyFiles */,
 				75AC14413F902EB7D10DEA13 /* Embed Pods Frameworks */,
 				AEEBF3C285A831D90BF429BE /* Copy Pods Resources */,
-				A98AA1421D22595F004E0869 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1542,19 +1549,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Videona/Pods-Videona-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A98AA1421D22595F004E0869 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 245a1998989c434deb37967cfa33882e5f169410 a4aace077e673d7b8bbb959e93125b49664db2b0da0cfb30de69381be101c379";
-		};
 		AEEBF3C285A831D90BF429BE /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1629,7 +1623,6 @@
 				A97FBDCD1D09824500942F8D /* DetailTextPresenterInterface.swift in Sources */,
 				A95D3BF01CEB7356001F2272 /* PlayerInteractorInterface.swift in Sources */,
 				A94301631CE5CF3900DC0DF8 /* PlayerView.swift in Sources */,
-				A9F251841D05D7AB00D8DC30 /* SocialVideoHelper.m in Sources */,
 				A9E066DB1CE4B4EE00D4E11D /* OverlayEffect.swift in Sources */,
 				A95B247A1CD8B96E00F78AAF /* RootWireframe.swift in Sources */,
 				A98A93BB1CF5903C004E1DB7 /* AddFilterInteractor.swift in Sources */,
@@ -1643,6 +1636,7 @@
 				A943016E1CE5D99E00DC0DF8 /* SocialNetwork.swift in Sources */,
 				A9B1181D1CE378DC001A1177 /* ShareInterface.swift in Sources */,
 				A965C7EC1CF58467001E2D39 /* CameraInteractor.swift in Sources */,
+				A98AA14C1D22743A004E0869 /* TwitterVideoUpload.m in Sources */,
 				A92793161D0AB1FB008E30BF /* SettingsConstants.swift in Sources */,
 				A99278501CE3647B009DC364 /* SettingsPresenter.swift in Sources */,
 				A97FBDD71D09846A00942F8D /* DetailTextInteractor.swift in Sources */,
