@@ -1344,6 +1344,7 @@
 				A965C7F91CF586E4001E2D39 /* CopyFiles */,
 				75AC14413F902EB7D10DEA13 /* Embed Pods Frameworks */,
 				AEEBF3C285A831D90BF429BE /* Copy Pods Resources */,
+				A91AB0E21D229072001DA3BB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1548,6 +1549,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Videona/Pods-Videona-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		A91AB0E21D229072001DA3BB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
 		};
 		AEEBF3C285A831D90BF429BE /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
