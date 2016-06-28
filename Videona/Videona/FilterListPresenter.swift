@@ -12,17 +12,17 @@ import UIKit
 class FilterListPresenter:NSObject,FilterListPresenterInterface{
     
     //MARK: - VIPER
+    var interactor: FilterListInteractorInterface?
+    var filterListDelegate: FilterListDelegate?
+    
     var wireframe: FilterListWireframe?
     var controller: FilterListInterface?
-    var interactor: FilterListInteractor?
-    var filterListDelegate: FilterListDelegate?
     var recordWireframe: RecordWireframe?
-    
+
     //MARK: - Variables
     var filtersImage:Array<UIImage> = []
     var filtersTitle:Array<String> = []
     var filterShowing = -1
-    
     
     var lastShaderItemSelected:Int = -1
     var lastOverlayItemSelected:Int = -1

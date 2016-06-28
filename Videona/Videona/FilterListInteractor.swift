@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class FilterListInteractor: NSObject {
+class FilterListInteractor: NSObject,FilterListInteractorInterface {
     
     func findColorFilters()-> (Array<UIImage>,Array<String>){
 //        let colorFilters = EffectProvider().getColorEffectList()
