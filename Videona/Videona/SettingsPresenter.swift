@@ -10,11 +10,12 @@ import Foundation
 
 class SettingsPresenter:NSObject,SettingsPresenterInterface{
     
+    var controller: SettingsInterface?
+    var interactor: SettingsInteractorInterface?
+
     var wireframe: SettingsWireframe?
-    var controller: SettingsViewController?
-    var recordWireframe: RecordWireframe?
-    var interactor: SettingsInteractor?
     var detailTextWireframe: DetailTextWireframe?
+    var recordWireframe: RecordWireframe?
 
     let kamaradaAppleStoreURL = Utils().getStringByKeyFromSettings(SettingsConstants().KAMARADA_ITUNES_LINK)
     let videonaTwitterUser = Utils().getStringByKeyFromSettings(SettingsConstants().VIDEONA_TWITTER_USER)
@@ -84,27 +85,27 @@ class SettingsPresenter:NSObject,SettingsPresenterInterface{
 
             break
         case SettingsProvider().getStringForType(SettingsType.LegalAdvice):
-            detailTextWireframe?.presentShareInterfaceFromViewController(controller!,
+            detailTextWireframe?.presentShareInterfaceFromViewController((controller?.getController())!,
                                                                          textRef: Utils().getStringByKeyFromSettings(SettingsConstants().LEGAL_ADVICE_CONTENT))
 
             break
         case SettingsProvider().getStringForType(SettingsType.Licenses):
-            detailTextWireframe?.presentShareInterfaceFromViewController(controller!,
+            detailTextWireframe?.presentShareInterfaceFromViewController((controller?.getController())!,
                                                                          textRef: Utils().getStringByKeyFromSettings(SettingsConstants().LICENSES_CONTENT))
 
             break
         case SettingsProvider().getStringForType(SettingsType.TermsOfService):
-            detailTextWireframe?.presentShareInterfaceFromViewController(controller!,
+            detailTextWireframe?.presentShareInterfaceFromViewController((controller?.getController())!,
                                                                          textRef: Utils().getStringByKeyFromSettings(SettingsConstants().TERMS_OF_SERVICE_CONTENT))
 
             break
         case SettingsProvider().getStringForType(SettingsType.PrivacyPolicy):
-            detailTextWireframe?.presentShareInterfaceFromViewController(controller!,
+            detailTextWireframe?.presentShareInterfaceFromViewController((controller?.getController())!,
                                                                          textRef: Utils().getStringByKeyFromSettings(SettingsConstants().PRIVACY_POLICY_CONTENT))
 
             break
         case SettingsProvider().getStringForType(SettingsType.AboutUs):
-            detailTextWireframe?.presentShareInterfaceFromViewController(controller!,
+            detailTextWireframe?.presentShareInterfaceFromViewController((controller?.getController())!,
                                                                          textRef: Utils().getStringByKeyFromSettings(SettingsConstants().ABOUT_US_CONTENT))
 
             break

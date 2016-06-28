@@ -11,6 +11,7 @@ import UIKit
 import AVFoundation
 
 class SettingsInteractor: NSObject,SettingsInteractorInterface {
+    
     var orderArray = Dictionary<Int,String>()
     var presenter: SettingsPresenterInterface?
     let defaults = NSUserDefaults.standardUserDefaults()

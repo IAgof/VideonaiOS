@@ -13,8 +13,6 @@ class SettingsViewController: VideonaController,SettingsInterface ,
     UINavigationBarDelegate,UITableViewDelegate,UITableViewDataSource{
     
     var eventHandler: SettingsPresenterInterface?
-    var titleBar = "Share video"
-    var titleBackButtonBar = "Back"
     
     let reuseIdentifierCell = "settingsCell"
     
@@ -60,7 +58,6 @@ class SettingsViewController: VideonaController,SettingsInterface ,
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         
-//        return self.section.count
         return section.count
         
     }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol SettingsInterface {
+protocol SettingsInterface :VideonaControllerInterface{
     
     
     func setListTitleAndSubtitleData(titleList: Array<Array<Array<String>>>)
@@ -19,4 +19,7 @@ protocol SettingsInterface {
     func createAlertExit()
     func setNavBarTitle(title:String)
     func createActiviyVCShareVideona(text:String)
+    func createAlertViewWithInputText(title:String)
+    func createActionSheetWithOptions(title:String,options:Array<String>)
+    func createAlertViewError(buttonText:String,message:String,title:String)
 }
