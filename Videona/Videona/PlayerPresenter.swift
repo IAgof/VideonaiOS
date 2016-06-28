@@ -12,11 +12,13 @@ import UIKit
 class PlayerPresenter:NSObject,PlayerPresenterInterface{
     
     //MARK: - VIPER
-    var wireframe: PlayerWireframe?
+    var playerInteractor: PlayerInteractorInterface?
     var controller: PlayerInterface?
     var playerDelegate: PlayerDelegate?
+    
+    var wireframe: PlayerWireframe?
     var recordWireframe: RecordWireframe?
-    var playerInteractor: PlayerInteractorInterface?
+
 
     //MARK: - Variables
     var isPlaying = false

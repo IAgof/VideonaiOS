@@ -12,12 +12,13 @@ import AVFoundation
 
 class SharePresenter:NSObject,SharePresenterInterface{
     
+    var controller: ShareInterface?
+    var interactor: ShareInteractorInterface?
+    var playerPresenter: PlayerPresenterInterface?
+    
     var wireframe: ShareWireframe?
-    var controller: ShareViewController?
-    var interactor: ShareInteractor?
-    var recordWireframe: RecordWireframe?
-    var playerPresenter: PlayerPresenter?
     var playerWireframe: PlayerWireframe?
+    var recordWireframe: RecordWireframe?
 
     var fullScreenPlayerWireframe: FullScreenPlayerWireframe?
     
@@ -51,7 +52,7 @@ class SharePresenter:NSObject,SharePresenterInterface{
     }
     
     func expandPlayer(){
-        fullScreenPlayerWireframe?.presentFullScreenPlayerFromViewController(controller!,playerView: (playerWireframe?.presentedView)!)
+        fullScreenPlayerWireframe?.presentFullScreenPlayerFromViewController((controller?.getController())!,playerView: (playerWireframe?.presentedView)!)
     }
     
     func getListData (){

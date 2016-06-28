@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol ShareInterface {
+protocol ShareInterface:VideonaControllerInterface {
     
     func createShareInterface()
     func setTitleList(titleList: Array<String>)
@@ -17,4 +17,6 @@ protocol ShareInterface {
     func setImagePressedList(imageList: Array<UIImage>)
     func cameFromFullScreenPlayer(playerView:PlayerView)
     func bringToFrontExpandPlayerButton()
-    }
+    func setNavBarTitle(title:String)
+
+}

@@ -19,10 +19,9 @@ class PlayerView: UIView,PlayerInterface {
     var playerLayer: AVPlayerLayer?
 
     @IBOutlet weak var playOrPauseButton: UIButton!
-   
     @IBOutlet weak var playerContainer: UIView!
-    
     @IBOutlet weak var seekSlider: UISlider!
+    
     var playerRateBeforeSeek: Float = 0
 
     class func instanceFromNib() -> UIView {
