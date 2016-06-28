@@ -10,8 +10,8 @@ import Foundation
 
 class DetailTextPresenter: NSObject,DetailTextPresenterInterface {
     var wireframe: DetailTextWireframe?
-    var controller: DetailTextController?
-    var interactor: DetailTextInteractor?
+    var controller: DetailTextInterface?
+    var interactor: DetailTextInteractorInterface?
     
     
     func pushBack() {
