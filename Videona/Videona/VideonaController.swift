@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 import Mixpanel
 
-class VideonaController: UIViewController {
+class VideonaController: UIViewController,
+VideonaControllerInterface {
+
     let tracker = VideonaTracker()
 
     override func viewDidLoad() {
@@ -39,5 +41,9 @@ class VideonaController: UIViewController {
     
     func getTrackerObject() -> VideonaTracker {
         return self.tracker
+    }
+    
+    func getController() -> UIViewController {
+        return self
     }
 }

@@ -9,7 +9,13 @@
 import Foundation
 import UIKit
 
-protocol RecordViewInterface {
+protocol RecordViewInterface:VideonaControllerInterface{
+    
+    func setOrientation()
+    
+    func configureView()
+    
+    func forceOrientation()
     
     func showRecordButton()
     

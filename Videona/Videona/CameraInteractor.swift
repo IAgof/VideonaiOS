@@ -11,7 +11,8 @@ import GPUImage
 import AVFoundation
 import AVKit
 
-class CameraInteractor:CameraRecorderDelegate{
+class CameraInteractor:CameraRecorderDelegate,
+                    CameraInteractorInterface{
     //MARK: - VIPER
     var cameraDelegate:CameraInteractorDelegate
     var cameraRecorder = CameraRecorderInteractor()
@@ -42,7 +43,7 @@ class CameraInteractor:CameraRecorderDelegate{
     }
     
     //MARK: - Init
-    init(display:GPUImageView, cameraDelegate: CameraInteractorDelegate){
+    required init(display:GPUImageView, cameraDelegate: CameraInteractorDelegate){
         self.cameraDelegate = cameraDelegate
 
         videoCamera = GPUImageVideoCamera(sessionPreset: cameraResolution.rearCameraResolution, cameraPosition: .Back)
@@ -221,10 +222,6 @@ class CameraInteractor:CameraRecorderDelegate{
         })
     }
     
-    func setIsRecording(isRecording:Bool){
-        self.isRecording = isRecording
-    }
-    
     func stopRecordVideo() {
         for maskFilter in maskFilterOutput.targets(){
             if maskFilter.isKindOfClass(GPUImageFilter){
@@ -235,6 +232,11 @@ class CameraInteractor:CameraRecorderDelegate{
             Utils().debugLog("Answer from record interactor:  duration-\(duration)")
             self.cameraDelegate.trackVideoRecorded(duration)
         })
+    }
+    
+    //MARK: - Event handler
+    func setIsRecording(isRecording:Bool){
+        self.isRecording = isRecording
     }
     
     func cameraViewTapAction(tapDisplay:UIGestureRecognizer){

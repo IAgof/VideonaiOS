@@ -34,4 +34,7 @@ protocol RecordPresenterInterface{
     func displayHasTapped(tapGesture:UIGestureRecognizer)
     func displayHasPinched(pinchGesture:UIPinchGestureRecognizer)
     func changeOrientationEvent()
+    func pushShowHideColorFilters()
+    func pushShowHideShaderFilters()
+    func hideAnyFilterList()
 }

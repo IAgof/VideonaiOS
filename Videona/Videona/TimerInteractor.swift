@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TimerInteractor: NSObject {
+class TimerInteractor: NSObject,TimerInteractorInterface {
 
     var time = "00:00"
     var startTime = NSTimeInterval()

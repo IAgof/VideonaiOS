@@ -12,7 +12,7 @@ import GPUImage
 class RecordController: VideonaController,RecordViewInterface,UINavigationControllerDelegate {
     
     //MARK: - Variables VIPER
-    var eventHandler: RecordPresenter?
+    var eventHandler: RecordPresenterInterface?
     
     //MARK: - Outlets
     @IBOutlet weak var warningOrientationImage: UIImageView!

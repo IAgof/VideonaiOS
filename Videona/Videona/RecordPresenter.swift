@@ -16,18 +16,18 @@ class RecordPresenter: NSObject
 ,TimerInteractorDelegate{
     
     //MARK: - Variables VIPER
-    var controller: RecordController?
+    var controller: RecordViewInterface?
+    var cameraInteractor: CameraInteractorInterface?
+    var timerInteractor: TimerInteractorInterface?
+    
     var recordWireframe: RecordWireframe?
     var settingsWireframe: SettingsWireframe?
     var shareWireframe: ShareWireframe?
-    var cameraInteractor: CameraInteractor?
-    var timerInteractor: TimerInteractor?
-
     //MARK: - Constants
     var colorFilterViewIsShowin = false
     var shaderFilterViewIsShowin = false
     var isRecording = false
-
+    
     struct EffectOnView {
         var effectName:String
         var effectActive:Bool
@@ -63,13 +63,13 @@ class RecordPresenter: NSObject
     func pushSettings() {
         print("Record presenter pushSettings")
         self.trackSettingsPushed()
-        settingsWireframe?.presentSettingsInterfaceFromViewController(controller!)
+        settingsWireframe?.presentSettingsInterfaceFromViewController((controller?.getController())!)
     }
     
     func pushShare() {
         controller?.createAlertWaitToExport()
         controller?.getTrackerObject().mixpanel.timeEvent(AnalyticsConstants().VIDEO_EXPORTED);
-
+        
         self.hideAnyFilterList()
         
         print("Record presenter pushShare")
@@ -82,7 +82,7 @@ class RecordPresenter: NSObject
                 
                 self.controller?.dissmissAlertWaitToExport({
                     //wait to remove alert to present new Screeen
-                    self.shareWireframe?.presentShareInterfaceFromViewController(self.controller!,
+                    self.shareWireframe?.presentShareInterfaceFromViewController((self.controller?.getController())!,
                         videoPath: exportPath,
                         numberOfClips: (self.cameraInteractor?.getClipsArray().count)!)
                 })
@@ -154,7 +154,7 @@ class RecordPresenter: NSObject
     func pushRotateCamera() {
         cameraInteractor!.rotateCamera()
     }
-
+    
     func showWarningOrientationImage(){
         controller?.lockScreenRotation()
     }
@@ -203,7 +203,7 @@ class RecordPresenter: NSObject
     
     func trackStartRecord(){
         controller?.getTrackerObject().mixpanel.timeEvent(AnalyticsConstants().VIDEO_RECORDED);
-
+        
         controller?.getTrackerObject().sendUserInteractedTracking((controller?.getControllerName())!,
                                                                   recording: isRecording,
                                                                   interaction:  AnalyticsConstants().RECORD,
@@ -340,7 +340,7 @@ class RecordPresenter: NSObject
     
     func removeFilter(filterName: String) {
         let filterDic = effectDictionary
-
+        
         if (filterDic[filterName]?.indexForKey(FilterType.Blend)) != nil{
             print("setFiltersOnView   blendFilter")
             cameraInteractor?.removeOverlay()
@@ -410,7 +410,7 @@ class RecordPresenter: NSObject
         
         timerInteractor = TimerInteractor()
         timerInteractor!.setDelegate(self)
-
+        
         timerInteractor?.start()
     }
     
@@ -424,7 +424,7 @@ class RecordPresenter: NSObject
     func updateTimer(time: String) {
         controller?.updateChronometer(time)
     }
-
+    
     //MARK: - Set Overlay/Shader effects
     func setOverlayActive(filterName:String) {
         overlayActive = EffectOnView(effectName: filterName, effectActive: true)

@@ -12,3 +12,10 @@ import Foundation
 protocol TimerInteractorDelegate {
     func updateTimer(time:String)
 }
+
+protocol TimerInteractorInterface {
+    func setDelegate(delegate:TimerInteractorDelegate)
+    func updateTime()
+    func stop()
+    func start()
+}
