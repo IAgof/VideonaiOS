@@ -13,14 +13,14 @@ class IntroPresenter:NSObject, IntroPresenterInterface {
     
     //MARK: - VIPER
     var introWireframe: IntroWireframe?
-    var controller: IntroViewController?
+    var controller: IntroViewInterface?
     var recordWireframe: RecordWireframe?
     
     //MARK: - Constants
     //Change to string file
-    let nextTitle = Utils().getStringByKeyFromIntro(IntroTextConstants().NEXT)
-    let doneTitle = Utils().getStringByKeyFromIntro(IntroTextConstants().FINISH)
-    let skipTitle = Utils().getStringByKeyFromIntro(IntroTextConstants().SKIP)
+    let nextTitle = Utils().getStringByKeyFromIntro(IntroTextConstants.NEXT)
+    let doneTitle = Utils().getStringByKeyFromIntro(IntroTextConstants.FINISH)
+    let skipTitle = Utils().getStringByKeyFromIntro(IntroTextConstants.SKIP)
     
     //MARK: - Interface
     func viewDidLoad() {
@@ -32,7 +32,7 @@ class IntroPresenter:NSObject, IntroPresenterInterface {
     }
     
     func checkOrientation(){
-        controller?.pageViewController.view.setNeedsUpdateConstraints()
+        controller?.updateConstaintsOnView()
     }
     
     func pushNext(buttonTitle:String) {

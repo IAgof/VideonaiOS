@@ -134,6 +134,9 @@ IntroViewInterface {
         self.pageControl.currentPage = page
     }
     
+    func updateConstaintsOnView() {
+         pageViewController.view.setNeedsUpdateConstraints()
+    }
     // MARK: - Page View Controller Data Source
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
     {

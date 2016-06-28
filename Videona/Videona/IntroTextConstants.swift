@@ -8,8 +8,8 @@
 
 import Foundation
 
-class IntroTextConstants: NSObject {
-    let NEXT = "next"
-    let SKIP = "skip"
-    let FINISH = "finish"
+struct IntroTextConstants {
+    static let NEXT = "next"
+    static let SKIP = "skip"
+    static let FINISH = "finish"
 }

@@ -14,4 +14,6 @@ protocol IntroViewInterface {
     func changeNextFinishButtonTitle(title:String)
     func setUpView()
     func updateCurrentPage(page:Int)
+    func changeSkipButtonTittle(title:String)
+    func updateConstaintsOnView()
 }
