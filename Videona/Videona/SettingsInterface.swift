@@ -20,6 +20,6 @@ protocol SettingsInterface :VideonaControllerInterface{
     func setNavBarTitle(title:String)
     func createActiviyVCShareVideona(text:String)
     func createAlertViewWithInputText(title:String)
-    func createActionSheetWithOptions(title:String,options:Array<String>)
+    func createActionSheetWithOptions(title:String,options:Array<String>,index:NSIndexPath)
     func createAlertViewError(buttonText:String,message:String,title:String)
 }

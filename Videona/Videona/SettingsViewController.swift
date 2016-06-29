@@ -101,7 +101,7 @@ class SettingsViewController: VideonaController,SettingsInterface ,
         
         let settingsOption = items[indexPath.section][0][indexPath.item]
         print("Settings option #\(indexPath.item)\n option selected: \(settingsOption)!")
-        eventHandler?.itemListSelected(settingsOption)
+        eventHandler?.itemListSelected(settingsOption,index: indexPath)
     }
     
     
@@ -135,11 +135,16 @@ class SettingsViewController: VideonaController,SettingsInterface ,
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    func createActionSheetWithOptions(title:String,options:Array<String>){
+    func createActionSheetWithOptions(title: String, options: Array<String>, index: NSIndexPath) {
+        
         let cancelString = "Cancel"
         let title = title
         
         let alertController = UIAlertController(title: title, message: nil, preferredStyle: .ActionSheet)
+        
+        if let popoverController = alertController.popoverPresentationController {
+            popoverController.sourceView = settingsTableView.cellForRowAtIndexPath(index)
+        }
         
         for option in options {
             let optionAction = UIAlertAction(title: option, style: .Default, handler: {alert -> Void in
