@@ -15,14 +15,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="50" height="62"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="common_filter_color_ad8_sepia" translatesAutoresizingMaskIntoConstraints="NO" id="4sW-Ki-2L9">
-                        <rect key="frame" x="2" y="0.0" width="46" height="46"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_filter_color_ad8_sepia" translatesAutoresizingMaskIntoConstraints="NO" id="4sW-Ki-2L9">
+                        <rect key="frame" x="2" y="2" width="46" height="46"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="4sW-Ki-2L9" secondAttribute="height" multiplier="1:1" id="Q3v-3S-4C4"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ImageTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZ1-aU-QCk">
-                        <rect key="frame" x="0.0" y="48" width="50" height="12"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ImageTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZ1-aU-QCk">
+                        <rect key="frame" x="-2" y="50" width="54" height="12"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

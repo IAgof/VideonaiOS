@@ -100,6 +100,7 @@
 		A97FBDD71D09846A00942F8D /* DetailTextInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97FBDD61D09846A00942F8D /* DetailTextInteractor.swift */; };
 		A97FBDD91D0984B600942F8D /* DetailTextInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97FBDD81D0984B600942F8D /* DetailTextInteractorInterface.swift */; };
 		A97FBDE21D09B6B500942F8D /* Settings.strings in Resources */ = {isa = PBXBuildFile; fileRef = A97FBDE41D09B6B500942F8D /* Settings.strings */; };
+		A9831CDA1D241B8E00362F5C /* FilterListView~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9831CD91D241B8E00362F5C /* FilterListView~ipad.xib */; };
 		A98A93BB1CF5903C004E1DB7 /* AddFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */; };
 		A98A93BD1CF59155004E1DB7 /* ChangeFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A93BC1CF59155004E1DB7 /* ChangeFilterInteractor.swift */; };
 		A98A93C41CF5BAF6004E1DB7 /* EffectDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98A93C31CF5BAF6004E1DB7 /* EffectDictionary.swift */; };
@@ -330,6 +331,7 @@
 		A97FBDDF1D09B67200942F8D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A97FBDE31D09B6B500942F8D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
 		A97FBDE51D09B71300942F8D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Settings.strings; sourceTree = "<group>"; };
+		A9831CD91D241B8E00362F5C /* FilterListView~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "FilterListView~ipad.xib"; sourceTree = "<group>"; };
 		A98A93BA1CF5903C004E1DB7 /* AddFilterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFilterInteractor.swift; sourceTree = "<group>"; };
 		A98A93BC1CF59155004E1DB7 /* ChangeFilterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeFilterInteractor.swift; sourceTree = "<group>"; };
 		A98A93C31CF5BAF6004E1DB7 /* EffectDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectDictionary.swift; sourceTree = "<group>"; };
@@ -529,6 +531,7 @@
 		A93846E41CE47E6B007FB6BC /* Wireframe */ = {
 			isa = PBXGroup;
 			children = (
+				A9E066E81CE4C85900D4E11D /* FilterCell.xib */,
 				A93846EF1CE47F67007FB6BC /* FilterListWireframe.swift */,
 			);
 			name = Wireframe;
@@ -538,9 +541,9 @@
 			isa = PBXGroup;
 			children = (
 				A93846F61CE49340007FB6BC /* FilterListView.xib */,
+				A9831CD91D241B8E00362F5C /* FilterListView~ipad.xib */,
 				A93846EB1CE47EE2007FB6BC /* FilterListView.swift */,
 				A93846ED1CE47EF0007FB6BC /* FilterListInterface.swift */,
-				A9E066E81CE4C85900D4E11D /* FilterCell.xib */,
 				A9E066E61CE4C5C700D4E11D /* FilterViewCell.swift */,
 			);
 			name = View;
@@ -1498,6 +1501,7 @@
 				A9D257CB1CF835D200A618B0 /* Posterizebw.fsh in Resources */,
 				A9D76B0B1CF5FB8700F7FB47 /* mist.png in Resources */,
 				A95F670E1D12E7D400A25EDD /* Share.strings in Resources */,
+				A9831CDA1D241B8E00362F5C /* FilterListView~ipad.xib in Resources */,
 				A9D76B061CF5FB8700F7FB47 /* burn.png in Resources */,
 				A9D76B0C1CF5FB8700F7FB47 /* old.png in Resources */,
 				A9D76B141CF5FB8700F7FB47 /* summer.png in Resources */,

@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 
-class FilterListView: UIView,FilterListInterface, UICollectionViewDataSource, UICollectionViewDelegate {
+class FilterListView: UIView,FilterListInterface,
+UICollectionViewDataSource,
+UICollectionViewDelegate {
     
     //MARK: - VIPER
     var eventHandler: FilterListPresenterInterface?
@@ -90,6 +92,7 @@ class FilterListView: UIView,FilterListInterface, UICollectionViewDataSource, UI
 
         return cell
     }
+    
     // MARK: - UICollectionViewDelegate protocol
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {

@@ -235,7 +235,7 @@ static TwitterVideoUpload *sInstance = nil;
 
     [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
         
-        NSString* statusStr = [NSString stringWithFormat:@"HTTP status %d %@", [urlResponse statusCode], [NSHTTPURLResponse localizedStringForStatusCode:[urlResponse statusCode]]];
+        NSString* statusStr = [NSString stringWithFormat:@"HTTP status %ld %@", (long)[urlResponse statusCode], [NSHTTPURLResponse localizedStringForStatusCode:[urlResponse statusCode]]];
         NSLog(@"%d << %@: %@", i, cmdStr, statusStr);
         //NSLog(@"%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
         
