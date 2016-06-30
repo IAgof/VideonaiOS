@@ -70,6 +70,8 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         
         pinchDisplay = UIPinchGestureRecognizer(target: self, action: #selector(RecordController.displayPinched))
         self.cameraView.addGestureRecognizer(pinchDisplay!)
+        
+        self.thumbnailNumberClips.adjustsFontSizeToFitWidth = true
     }
     
     func displayTapped(){
@@ -277,6 +279,10 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     
     func resetView() {
         eventHandler?.resetRecorder()
+    }
+    
+    func getRecordButtonSize()->CGFloat{
+        return self.recordButton.frame.size.height
     }
     
     //MARK: - Landscape Orientation
