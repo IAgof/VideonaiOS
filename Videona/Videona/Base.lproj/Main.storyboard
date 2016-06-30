@@ -326,6 +326,7 @@
                                 <items>
                                     <navigationItem id="RLq-yT-3zu">
                                         <barButtonItem key="leftBarButtonItem" image="activity_edit_back_normal" id="lMd-Eu-bsL">
+                                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="pushBackBarButton:" destination="emM-0d-dkm" id="Nm8-Bh-2vU"/>
                                             </connections>
@@ -413,6 +414,7 @@
                                 <items>
                                     <navigationItem id="DME-9U-oFj">
                                         <barButtonItem key="leftBarButtonItem" image="activity_edit_back_normal" id="1LM-Sq-yPf">
+                                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="pushBackBarButton:" destination="0Ip-P7-Gfh" id="8np-Yc-5iV"/>
                                             </connections>
@@ -595,6 +597,7 @@
                                 <items>
                                     <navigationItem id="VM4-Nj-Fye">
                                         <barButtonItem key="leftBarButtonItem" image="activity_edit_back_normal" id="7dF-Ew-Dhe">
+                                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="pushBack:" destination="Riy-ZL-PsT" id="1qN-3j-6SD"/>
                                             </connections>
