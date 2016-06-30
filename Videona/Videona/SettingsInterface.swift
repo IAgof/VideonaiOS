@@ -17,6 +17,7 @@ protocol SettingsInterface :VideonaControllerInterface{
     func registerClass()
     func reloadTableData()
     func createAlertExit()
+    func removeSeparatorTable() 
     func setNavBarTitle(title:String)
     func createActiviyVCShareVideona(text:String)
     func createAlertViewWithInputText(title:String)

@@ -81,7 +81,11 @@ GIDSignInUIDelegate,GIDSignInDelegate{
     func setImagePressedList(imageList: Array<UIImage>) {
         self.listImagesPressed = imageList
     }
-        
+    
+    func removeSeparatorTable() {
+        shareTableView.separatorStyle = .None
+    }
+    
     @IBAction func pushBackBarButton(sender: AnyObject) {
         eventHandler?.pushBack()
     }

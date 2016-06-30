@@ -337,7 +337,7 @@
                                 <rect key="frame" x="0.0" y="47" width="600" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingsCell" textLabel="ylD-dR-oSR" detailTextLabel="j8r-VL-6S0" style="IBUITableViewCellStyleValue1" id="91e-dS-he8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="settingsCell" textLabel="ylD-dR-oSR" detailTextLabel="j8r-VL-6S0" style="IBUITableViewCellStyleValue1" id="91e-dS-he8">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="91e-dS-he8" id="i8q-NB-glI">
@@ -382,7 +382,7 @@
                             <constraint firstItem="h5d-6Y-9Tg" firstAttribute="top" secondItem="El6-KS-fen" secondAttribute="bottom" constant="3" id="MMz-qq-hef"/>
                             <constraint firstAttribute="trailingMargin" secondItem="h5d-6Y-9Tg" secondAttribute="trailing" constant="-20" id="YqN-R7-bhK"/>
                             <constraint firstItem="h5d-6Y-9Tg" firstAttribute="leading" secondItem="ENy-FY-AaG" secondAttribute="leadingMargin" constant="-20" id="n0t-DE-DOQ"/>
-                            <constraint firstItem="FKW-HS-Fdr" firstAttribute="top" secondItem="h5d-6Y-9Tg" secondAttribute="bottom" id="w35-kj-R7g"/>
+                            <constraint firstItem="FKW-HS-Fdr" firstAttribute="top" secondItem="h5d-6Y-9Tg" secondAttribute="bottom" constant="2" id="w35-kj-R7g"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>

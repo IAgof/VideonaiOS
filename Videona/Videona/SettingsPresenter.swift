@@ -27,6 +27,8 @@ class SettingsPresenter:NSObject,SettingsPresenterInterface{
         controller?.setNavBarTitle(Utils().getStringByKeyFromSettings(SettingsConstants().SETTINGS_TITLE)
 )
         controller?.registerClass()
+        controller?.removeSeparatorTable()
+        
         self.getListData()
     }
     

@@ -34,6 +34,10 @@ class SettingsViewController: VideonaController,SettingsInterface ,
         settingsTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifierCell)
     }
     
+    func removeSeparatorTable() {
+        settingsTableView.separatorStyle = .None
+    }
+    
     func setNavBarTitle(title:String){
                 settingsNavBar.title = title
     }

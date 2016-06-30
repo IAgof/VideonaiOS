@@ -18,5 +18,5 @@ protocol ShareInterface:VideonaControllerInterface {
     func cameFromFullScreenPlayer(playerView:PlayerView)
     func bringToFrontExpandPlayerButton()
     func setNavBarTitle(title:String)
-
+    func removeSeparatorTable() 
 }
