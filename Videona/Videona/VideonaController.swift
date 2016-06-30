@@ -17,6 +17,11 @@ VideonaControllerInterface {
 
     override func viewDidLoad() {
         print("View did load in \n \(self)")
+        self.prefersStatusBarHidden()
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(VideonaController.hideStatusBarAlways),
+                                                         name: UIDeviceOrientationDidChangeNotification,
+                                                         object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -33,6 +38,14 @@ VideonaControllerInterface {
         print("View will dissappear in \n \(self)")
 
         tracker.sendTimeInActivity(getControllerName())
+    }
+
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
+    func hideStatusBarAlways(){
+        self.prefersStatusBarHidden()
     }
 
     func getControllerName()->String{

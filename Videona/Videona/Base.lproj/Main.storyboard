@@ -379,12 +379,14 @@
                             <constraint firstItem="FKW-HS-Fdr" firstAttribute="leading" secondItem="ENy-FY-AaG" secondAttribute="leadingMargin" constant="-20" id="6d7-bD-ghZ"/>
                             <constraint firstItem="ToU-wA-fiQ" firstAttribute="top" secondItem="FKW-HS-Fdr" secondAttribute="bottom" id="7Fl-iy-3ef"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FKW-HS-Fdr" secondAttribute="trailing" constant="-20" id="Aim-Tj-0sb"/>
-                            <constraint firstItem="h5d-6Y-9Tg" firstAttribute="top" secondItem="El6-KS-fen" secondAttribute="bottom" id="MMz-qq-hef"/>
+                            <constraint firstItem="h5d-6Y-9Tg" firstAttribute="top" secondItem="El6-KS-fen" secondAttribute="bottom" constant="3" id="MMz-qq-hef"/>
                             <constraint firstAttribute="trailingMargin" secondItem="h5d-6Y-9Tg" secondAttribute="trailing" constant="-20" id="YqN-R7-bhK"/>
                             <constraint firstItem="h5d-6Y-9Tg" firstAttribute="leading" secondItem="ENy-FY-AaG" secondAttribute="leadingMargin" constant="-20" id="n0t-DE-DOQ"/>
                             <constraint firstItem="FKW-HS-Fdr" firstAttribute="top" secondItem="h5d-6Y-9Tg" secondAttribute="bottom" id="w35-kj-R7g"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="settingsNavBar" destination="RLq-yT-3zu" id="W7v-yg-jwQ"/>
                         <outlet property="settingsTableView" destination="FKW-HS-Fdr" id="m2g-im-6jO"/>
@@ -525,6 +527,8 @@
                             </mask>
                         </variation>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="expandPlayerButton" destination="7je-57-MMC" id="84n-Ku-iL4"/>
                         <outlet property="playerView" destination="HDf-Fy-I5e" id="uwo-BX-4hO"/>
@@ -705,11 +709,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tFm-u1-e4S">
                                         <rect key="frame" x="532" y="148" width="68" height="68"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gou-lG-Kt2">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gou-lG-Kt2">
                                                 <rect key="frame" x="0.0" y="0.0" width="68" height="68"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="37"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="heightClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="26" y="25" width="0.0" height="0.0"/>
+                                                </variation>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1208,25 +1215,18 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="common_character_camarada_speech_balloon" translatesAutoresizingMaskIntoConstraints="NO" id="j37-9J-w6X">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <variation key="heightClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
-                                        </variation>
                                         <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_app_slide_record_image" translatesAutoresizingMaskIntoConstraints="NO" id="xxx-NP-2T7">
                                         <rect key="frame" x="0.0" y="0.0" width="328" height="274"/>
-                                        <variation key="heightClass=compact" misplaced="YES">
-                                            <rect key="frame" x="300" y="0.0" width="300" height="400"/>
-                                        </variation>
                                         <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="400" y="0.0" width="400" height="400"/>
                                         </variation>
                                     </imageView>
                                 </subviews>
-                                <variation key="heightClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                                <variation key="heightClass=compact">
                                     <mask key="subviews">
                                         <include reference="xxx-NP-2T7"/>
                                     </mask>
