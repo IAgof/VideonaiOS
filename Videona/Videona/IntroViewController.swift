@@ -24,7 +24,7 @@ IntroViewInterface {
     //MARK: - Variables
     var pageViewController: UIPageViewController!
 
-    var pageArray = ["PageOne", "PageTwo", "PageThree", "PageFour"]
+    var pageArray = ["PageOne", "PageTwo", "PageThree"]
     var index = 0
     
     //MARK: - Constants
