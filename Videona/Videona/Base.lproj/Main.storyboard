@@ -651,7 +651,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5f-W9-LcA" customClass="GPUImageView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="635-Ax-Ugk">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="635-Ax-Ugk">
                                         <rect key="frame" x="492" y="21" width="100" height="21"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="activity_record_rec_circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Um-38-PeR">
@@ -694,7 +694,7 @@
                                                 </variation>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.5" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="3Um-38-PeR" firstAttribute="leading" secondItem="635-Ax-Ugk" secondAttribute="leading" constant="4" id="4tE-5W-hMF"/>
                                             <constraint firstItem="DuL-YK-lI5" firstAttribute="centerY" secondItem="635-Ax-Ugk" secondAttribute="centerY" id="8Kc-GX-LEF"/>
@@ -1124,10 +1124,10 @@
                             <mask key="constraints">
                                 <exclude reference="RPz-B5-e01"/>
                                 <exclude reference="kiL-Vv-Zcl"/>
-                                <exclude reference="818-UP-q6F"/>
-                                <exclude reference="I6k-Sg-nTo"/>
                                 <exclude reference="TKq-vf-8CK"/>
                                 <exclude reference="gke-dp-JrZ"/>
+                                <exclude reference="818-UP-q6F"/>
+                                <exclude reference="I6k-Sg-nTo"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -1210,12 +1210,12 @@
                                 <exclude reference="0R0-LA-M3m"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="XA5-Pd-OLh"/>
-                                <exclude reference="5Cm-hV-L7z"/>
                                 <exclude reference="14U-u8-pu0"/>
                                 <exclude reference="KKL-Id-HlD"/>
                                 <exclude reference="0Oj-0w-dTD"/>
                                 <exclude reference="lZl-51-mwX"/>
+                                <exclude reference="5Cm-hV-L7z"/>
+                                <exclude reference="XA5-Pd-OLh"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -1223,8 +1223,8 @@
                                 <include reference="kwj-eH-Icb"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="XA5-Pd-OLh"/>
                                 <include reference="5Cm-hV-L7z"/>
+                                <include reference="XA5-Pd-OLh"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
