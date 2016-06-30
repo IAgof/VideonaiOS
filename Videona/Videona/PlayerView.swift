@@ -75,11 +75,13 @@ class PlayerView: UIView,PlayerInterface {
         }
         
         playerLayer = AVPlayerLayer(player: player)
-        playerLayer!.frame = self.frame
-        player?.currentItem?.seekToTime(CMTime.init(value: 1, timescale: 10))
+//        playerLayer!.frame = self.frame
+        player?.currentItem?.seekToTime(CMTime.init(value: 3, timescale: 10))
 
         self.playerContainer.layoutIfNeeded()
         self.playerContainer.layer.addSublayer(playerLayer!)
+        
+        self.playerContainer.bringSubviewToFront(seekSlider)
     }
     
     func updateSeekBarOnUI(){

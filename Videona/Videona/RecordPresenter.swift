@@ -41,6 +41,8 @@ class RecordPresenter: NSObject
         
         controller?.configureView()
         cameraInteractor = CameraInteractor(display: displayView,cameraDelegate: self)
+        
+        self.checkFlashAvaliable()
     }
     
     func viewWillDisappear() {
@@ -170,6 +172,14 @@ class RecordPresenter: NSObject
     
     func displayHasPinched(pinchGesture: UIPinchGestureRecognizer) {
         cameraInteractor?.zoom(pinchGesture)
+    }
+    
+    func checkFlashAvaliable(){
+        let device = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        if device.hasTorch == false{
+            controller?.showFlashSupported(false)
+        }
+
     }
     
     //MARK: - Track Events

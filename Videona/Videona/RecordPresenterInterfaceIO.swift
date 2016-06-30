@@ -37,4 +37,5 @@ protocol RecordPresenterInterface{
     func pushShowHideColorFilters()
     func pushShowHideShaderFilters()
     func hideAnyFilterList()
+    func checkFlashAvaliable()
 }
