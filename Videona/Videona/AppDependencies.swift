@@ -124,4 +124,7 @@ class AppDependencies {
     func installSettingsToRootViewControllerIntoWindow(window: UIWindow){
         settingsWireframe.presentSettingsInterfaceFromWindow(window)
     }
+    func installShareToRootViewControllerIntoWindow(window: UIWindow){
+        shareWireframe.presentShareInterfaceFromWindow(window)
+    }
 }

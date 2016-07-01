@@ -11,13 +11,15 @@ import UIKit
 import AVFoundation
 
 class PlayerView: UIView,PlayerInterface {
-    
+    //MARK: - VIPER
     var eventHandler: PlayerPresenterInterface?
     
+    //MARK: - Variables
     var movieURL:NSURL!
     var player:AVPlayer?
     var playerLayer: AVPlayerLayer?
 
+    //MARK: - Outlets
     @IBOutlet weak var playOrPauseButton: UIButton!
     @IBOutlet weak var playerContainer: UIView!
     @IBOutlet weak var seekSlider: UISlider!
@@ -56,9 +58,13 @@ class PlayerView: UIView,PlayerInterface {
         return self
     }
     
+    //MARK: - Player Interface
     func createVideoPlayer(){
         self.setViewPlayerTappable()
         self.initSeekEvents()
+        
+        //Test share interface
+//        movieURL =  NSURL.init(fileURLWithPath: NSBundle.mainBundle().pathForResource("test", ofType:"m4v")!)
         
         let avAsset: AVURLAsset = AVURLAsset(URL: movieURL!, options: nil)
         let playerItem: AVPlayerItem = AVPlayerItem(asset: avAsset)
@@ -75,7 +81,7 @@ class PlayerView: UIView,PlayerInterface {
         }
         
         playerLayer = AVPlayerLayer(player: player)
-//        playerLayer!.frame = self.frame
+        playerLayer!.frame = self.frame
         player?.currentItem?.seekToTime(CMTime.init(value: 3, timescale: 10))
 
         self.playerContainer.layoutIfNeeded()

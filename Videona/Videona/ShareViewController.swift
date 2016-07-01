@@ -48,6 +48,7 @@ GIDSignInUIDelegate,GIDSignInDelegate{
     
     
     override func viewDidLoad() {
+
         super.viewDidLoad()
         print("ViewDid Load")
 
@@ -58,10 +59,10 @@ GIDSignInUIDelegate,GIDSignInDelegate{
     func createShareInterface(){
         let nib = UINib.init(nibName: shareNibName, bundle: nil)
         shareTableView.registerNib(nib, forCellReuseIdentifier: reuseIdentifierCell)
-                
+        
         //Google Sign in
         GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().delegate = self        
     }
 
     func bringToFrontExpandPlayerButton(){

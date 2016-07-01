@@ -64,9 +64,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             
             trackAppStartupProperties(false);
             
-//            Change to test the IntroView
             appDependencies.installRecordToRootViewControllerIntoWindow(window!)
+
+            //            Test other views on root
 //            appDependencies.installIntroToRootViewControllerIntoWindow(window!)
+//            appDependencies.installSettingsToRootViewControllerIntoWindow(window!)
+//            appDependencies.installShareToRootViewControllerIntoWindow(window!)
         } else {
             // other version
             defaults.setObject(currentAppVersion, forKey: "appVersion")

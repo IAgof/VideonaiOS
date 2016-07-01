@@ -38,7 +38,7 @@ class SettingsViewController: VideonaController,SettingsInterface ,
         
         let footer = UINib(nibName: "VideonaFooterView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! UIView
         
-        let footerTest = UIView.init(frame: CGRectMake(0, 0, 600, 30))
+        let footerTest = UIView.init(frame: footer.frame)
         footerTest.addSubview(footer)
         
         settingsTableView.tableFooterView = footerTest
