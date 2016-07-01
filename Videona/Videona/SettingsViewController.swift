@@ -27,11 +27,22 @@ class SettingsViewController: VideonaController,SettingsInterface ,
     //MARK: - LifeCycle
     override func viewDidLoad() {
         eventHandler?.viewDidLoad()
-    }
+  }
     
     //MARK: - init view
     func registerClass(){
         settingsTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifierCell)
+    }
+    
+    func addFooter() {
+        
+        let footer = UINib(nibName: "VideonaFooterView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! UIView
+        
+        let footerTest = UIView.init(frame: CGRectMake(0, 0, 600, 30))
+        footerTest.addSubview(footer)
+        
+        settingsTableView.tableFooterView = footerTest
+        
     }
     
     func removeSeparatorTable() {

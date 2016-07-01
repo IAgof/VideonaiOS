@@ -23,6 +23,12 @@ class SettingsWireframe : NSObject {
         
         rootWireframe?.showRootViewController(viewController, inWindow: window)
     }
+    func setSettingsViewControllerAsRootController() {
+        let appdelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let homeViewController =  settingsViewControllerFromStoryboard()
+        let nav = UINavigationController(rootViewController: homeViewController)
+        appdelegate.window!.rootViewController = nav
+    }
     
     func presentSettingsInterfaceFromViewController(prevController:UIViewController){
         let viewController = settingsViewControllerFromStoryboard()

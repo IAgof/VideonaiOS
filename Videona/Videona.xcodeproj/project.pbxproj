@@ -58,6 +58,7 @@
 		A95338FE1D2520BE006890E7 /* intro_vertical_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A95338F91D2520BE006890E7 /* intro_vertical_1.jpg */; };
 		A95338FF1D2520BE006890E7 /* intro_vertical_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A95338FA1D2520BE006890E7 /* intro_vertical_2.jpg */; };
 		A95339021D2520BE006890E7 /* intro_vertical_5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A95338FD1D2520BE006890E7 /* intro_vertical_5.jpg */; };
+		A953392F1D2570BB006890E7 /* VideonaFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95339311D2570BB006890E7 /* VideonaFooterView.xib */; };
 		A95628CF1CF7049100EE4B85 /* VideonaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95628CE1CF7049100EE4B85 /* VideonaUITests.swift */; };
 		A95628D51CF734F900EE4B85 /* filter_free.png in Resources */ = {isa = PBXBuildFile; fileRef = A95628D41CF734F900EE4B85 /* filter_free.png */; };
 		A95B24351CD8890900F78AAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B24341CD8890900F78AAF /* AppDelegate.swift */; };
@@ -287,6 +288,7 @@
 		A95338F91D2520BE006890E7 /* intro_vertical_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intro_vertical_1.jpg; sourceTree = "<group>"; };
 		A95338FA1D2520BE006890E7 /* intro_vertical_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intro_vertical_2.jpg; sourceTree = "<group>"; };
 		A95338FD1D2520BE006890E7 /* intro_vertical_5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intro_vertical_5.jpg; sourceTree = "<group>"; };
+		A95339301D2570BB006890E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/VideonaFooterView.xib; sourceTree = "<group>"; };
 		A95628CE1CF7049100EE4B85 /* VideonaUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideonaUITests.swift; sourceTree = "<group>"; };
 		A95628D41CF734F900EE4B85 /* filter_free.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter_free.png; sourceTree = "<group>"; };
 		A95B24311CD8890900F78AAF /* Videona.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Videona.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -412,6 +414,8 @@
 		A9E066E81CE4C85900D4E11D /* FilterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
 		A9E066EA1CE4E13800D4E11D /* ShareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareCell.xib; sourceTree = "<group>"; };
 		A9E066EC1CE4E4E200D4E11D /* ShareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareCell.swift; sourceTree = "<group>"; };
+		A9E39FBC1D264EB500CCB8C8 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/VideonaFooterView.xib; sourceTree = "<group>"; };
+		A9E39FBD1D264EC700CCB8C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/VideonaFooterView.xib; sourceTree = "<group>"; };
 		A9E5ED0E1D21631D002258D9 /* DetailTextInteractorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTextInteractorTest.swift; sourceTree = "<group>"; };
 		A9E5ED121D216ABB002258D9 /* ThumbnailInteractorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailInteractorTest.swift; sourceTree = "<group>"; };
 		A9E5ED141D216C30002258D9 /* FilterListInteractorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListInteractorTest.swift; sourceTree = "<group>"; };
@@ -876,6 +880,7 @@
 		A95B24781CD8B96200F78AAF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A95339311D2570BB006890E7 /* VideonaFooterView.xib */,
 				A9F9C20D1CF4665000AB310C /* VideonaController.swift */,
 				A91AB0E41D22BCAF001DA3BB /* VideonaControllerInterface.swift */,
 			);
@@ -1565,6 +1570,7 @@
 				A9D76B0F1CF5FB8700F7FB47 /* polaroid.png in Resources */,
 				A971F5AD1CFC52D1004DC50D /* activity_record_rec_circle.png in Resources */,
 				A9E066EB1CE4E13800D4E11D /* ShareCell.xib in Resources */,
+				A953392F1D2570BB006890E7 /* VideonaFooterView.xib in Resources */,
 				A95B243A1CD8890900F78AAF /* Main.storyboard in Resources */,
 				A9D76B051CF5FB8700F7FB47 /* bokeh.png in Resources */,
 				A93C52381D06CA11001C2755 /* GoogleService-Info.plist in Resources */,
@@ -1814,6 +1820,16 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		A95339311D2570BB006890E7 /* VideonaFooterView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A95339301D2570BB006890E7 /* Base */,
+				A9E39FBC1D264EB500CCB8C8 /* es */,
+				A9E39FBD1D264EC700CCB8C8 /* en */,
+			);
+			name = VideonaFooterView.xib;
+			sourceTree = "<group>";
+		};
 		A95B24381CD8890900F78AAF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

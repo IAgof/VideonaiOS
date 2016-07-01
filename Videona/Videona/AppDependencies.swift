@@ -121,4 +121,7 @@ class AppDependencies {
     func installRecordToRootViewControllerIntoWindow(window: UIWindow){
         recordWireframe.presentRecordInterfaceFromWindow(window)
     }
+    func installSettingsToRootViewControllerIntoWindow(window: UIWindow){
+        settingsWireframe.presentSettingsInterfaceFromWindow(window)
+    }
 }

@@ -50,6 +50,9 @@
                                 <exclude reference="c2p-jL-HFu"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="KIl-DI-Dg0"/>
+                                <exclude reference="Prb-5N-LjI"/>
+                                <exclude reference="car-Rd-GVY"/>
                                 <exclude reference="8v8-9J-3zn"/>
                                 <exclude reference="gpF-KS-7u2"/>
                                 <exclude reference="xbe-8w-qEY"/>
@@ -59,9 +62,6 @@
                                 <exclude reference="Os4-0r-ycp"/>
                                 <exclude reference="Sa1-pw-SJW"/>
                                 <exclude reference="qk2-y4-7tw"/>
-                                <exclude reference="KIl-DI-Dg0"/>
-                                <exclude reference="Prb-5N-LjI"/>
-                                <exclude reference="car-Rd-GVY"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -69,10 +69,10 @@
                                 <include reference="a7u-iW-9nI"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="KIl-DI-Dg0"/>
                                 <include reference="ODP-i1-lmd"/>
                                 <include reference="kg7-T2-xDE"/>
                                 <include reference="y92-ru-rjh"/>
-                                <include reference="KIl-DI-Dg0"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -80,10 +80,10 @@
                                 <include reference="WBQ-Yz-iZu"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Prb-5N-LjI"/>
                                 <include reference="8v8-9J-3zn"/>
                                 <include reference="gpF-KS-7u2"/>
                                 <include reference="xbe-8w-qEY"/>
-                                <include reference="Prb-5N-LjI"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -91,10 +91,10 @@
                                 <include reference="c2p-jL-HFu"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="car-Rd-GVY"/>
                                 <include reference="Os4-0r-ycp"/>
                                 <include reference="Sa1-pw-SJW"/>
                                 <include reference="qk2-y4-7tw"/>
-                                <include reference="car-Rd-GVY"/>
                             </mask>
                         </variation>
                     </view>

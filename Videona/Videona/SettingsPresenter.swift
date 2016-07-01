@@ -30,6 +30,7 @@ class SettingsPresenter:NSObject,SettingsPresenterInterface{
         controller?.removeSeparatorTable()
         
         self.getListData()
+        controller?.addFooter()
     }
     
     func getListData (){

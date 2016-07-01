@@ -23,4 +23,5 @@ protocol SettingsInterface :VideonaControllerInterface{
     func createAlertViewWithInputText(title:String)
     func createActionSheetWithOptions(title:String,options:Array<String>,index:NSIndexPath)
     func createAlertViewError(buttonText:String,message:String,title:String)
+    func addFooter()
 }
