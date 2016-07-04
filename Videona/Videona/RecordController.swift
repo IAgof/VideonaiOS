@@ -38,6 +38,7 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         eventHandler?.viewDidLoad(cameraView)
+        
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -347,5 +348,15 @@ extension UIAlertController {
     }
     public override func shouldAutorotate() -> Bool {
         return false
+    }
+}
+
+extension UIButton {
+    public override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
+        let buttonSize = self.frame.size
+        let widthToAdd = (44-buttonSize.width > 0) ? 44-buttonSize.width : 0
+        let heightToAdd = (44-buttonSize.height > 0) ? 44-buttonSize.height : 0
+        let largerFrame = CGRect(x: 0-(widthToAdd/2), y: 0-(heightToAdd/2), width: buttonSize.width+widthToAdd, height: buttonSize.height+heightToAdd)
+        return (CGRectContainsPoint(largerFrame, point)) ? self : nil
     }
 }
