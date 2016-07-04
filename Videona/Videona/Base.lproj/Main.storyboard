@@ -489,8 +489,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="HDf-Fy-I5e" secondAttribute="trailing" constant="-20" id="Y0O-Gf-Tte">
                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                             </constraint>
-                            <constraint firstItem="HDf-Fy-I5e" firstAttribute="top" secondItem="wuH-v3-UEb" secondAttribute="bottom" id="avP-hm-Ie4"/>
-                            <constraint firstItem="HDf-Fy-I5e" firstAttribute="top" secondItem="wuH-v3-UEb" secondAttribute="bottom" id="e67-pq-9LM"/>
+                            <constraint firstItem="HDf-Fy-I5e" firstAttribute="top" secondItem="wuH-v3-UEb" secondAttribute="bottom" constant="8" id="avP-hm-Ie4"/>
+                            <constraint firstItem="HDf-Fy-I5e" firstAttribute="top" secondItem="wuH-v3-UEb" secondAttribute="bottom" constant="8" id="e67-pq-9LM"/>
                             <constraint firstItem="HDf-Fy-I5e" firstAttribute="leading" secondItem="X5r-Pd-Bmm" secondAttribute="leadingMargin" constant="-20" id="eG2-zx-nnf">
                                 <variation key="heightClass=regular-widthClass=regular" constant="100"/>
                             </constraint>
@@ -500,7 +500,7 @@
                             </constraint>
                             <constraint firstItem="HDf-Fy-I5e" firstAttribute="leading" secondItem="X5r-Pd-Bmm" secondAttribute="leadingMargin" constant="-20" id="i2A-jU-xYE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="h18-mE-dqd" secondAttribute="trailing" constant="-20" id="kbe-Dj-YxA"/>
-                            <constraint firstItem="h18-mE-dqd" firstAttribute="top" secondItem="wuH-v3-UEb" secondAttribute="bottom" id="mn2-Y3-PRc"/>
+                            <constraint firstItem="h18-mE-dqd" firstAttribute="top" secondItem="wuH-v3-UEb" secondAttribute="bottom" constant="4" id="mn2-Y3-PRc"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -836,6 +836,9 @@
                                 <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="317" y="210" width="34" height="35"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="519" y="464" width="34" height="35"/>
+                                </variation>
                                 <connections>
                                     <action selector="pushShaderFilter:" destination="ShV-dE-YrB" eventType="touchUpInside" id="rRF-mb-NQd"/>
                                 </connections>
@@ -845,8 +848,14 @@
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                 <state key="normal" image="activity_record_change_camera_normal"/>
                                 <state key="selected" image="activity_record_change_camera_pressed"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="357" y="272" width="32" height="34"/>
+                                </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="356" y="138" width="32" height="34"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="357" y="272" width="32" height="34"/>
                                 </variation>
                                 <connections>
                                     <action selector="pushRotateCamera:" destination="ShV-dE-YrB" eventType="touchUpInside" id="o3F-VT-7ge"/>
@@ -857,8 +866,14 @@
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                 <state key="normal" image="activity_record_filter_normal-1"/>
                                 <state key="selected" image="activity_record_filter_pressed"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="358" y="379" width="29" height="26"/>
+                                </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="357" y="249" width="29" height="26"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="358" y="379" width="29" height="26"/>
                                 </variation>
                                 <connections>
                                     <action selector="pushColorFilter:" destination="ShV-dE-YrB" eventType="touchUpInside" id="GsC-LE-iit"/>
@@ -871,6 +886,9 @@
                                 <state key="selected" image="activity_record_share_pressed"/>
                                 <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="301" y="176" width="27" height="29"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="501" y="428" width="27" height="29"/>
                                 </variation>
                                 <connections>
                                     <action selector="pushGoToShareView:" destination="ShV-dE-YrB" eventType="touchUpInside" id="Umy-EW-pc6"/>
