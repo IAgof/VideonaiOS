@@ -55,7 +55,10 @@ UICollectionViewDelegate {
             
             self.filtersCollectionView.reloadData()
             
-            }, completion: nil)
+            }, completion: { finished in
+                //When the filtersList load finished, then scroll to last selected item
+                self.scrollToSelectedItem(self.lastSelectedIndexPath)
+        })
     }
     
     func setSelectedCellIndexPath(indexForItem:NSIndexPath){
@@ -90,8 +93,6 @@ UICollectionViewDelegate {
         
         cell.filterImage.image = image
         cell.filterTitle.text = title
-        
-        self.scrollToSelectedItem(lastSelectedIndexPath)
         
         if lastSelectedIndexPath.item==indexPath.item{
             cell.isSelectedCell = true
