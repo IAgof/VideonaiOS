@@ -58,8 +58,14 @@ UICollectionViewDelegate {
             }, completion: nil)
     }
     
-    func setSelectedCellIndexPath(itemSelected:Int){
-        self.lastSelectedIndexPath = NSIndexPath.init(forItem: itemSelected, inSection: 0)
+    func setSelectedCellIndexPath(indexForItem:NSIndexPath){
+        self.lastSelectedIndexPath = indexForItem
+    }
+
+    func scrollToSelectedItem(indexForItem:NSIndexPath) {
+        if indexForItem.item != -1 {
+            self.filtersCollectionView.scrollToItemAtIndexPath(indexForItem, atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: false)
+        }
     }
 
     //MARK: - Navigation
@@ -84,6 +90,9 @@ UICollectionViewDelegate {
         
         cell.filterImage.image = image
         cell.filterTitle.text = title
+        
+        self.scrollToSelectedItem(lastSelectedIndexPath)
+        
         if lastSelectedIndexPath.item==indexPath.item{
             cell.isSelectedCell = true
         }else{

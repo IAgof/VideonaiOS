@@ -12,5 +12,5 @@ import UIKit
 protocol FilterListInterface {
     
     func setUpFiltersOnView(filtersImage:Array<UIImage>,filtersTitle:Array<String>) 
-    func setSelectedCellIndexPath(itemSelected:Int)
+    func setSelectedCellIndexPath(indexForItem:NSIndexPath)
 }

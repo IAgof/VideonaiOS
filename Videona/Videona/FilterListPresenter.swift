@@ -35,7 +35,8 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
 
     //MARK: - Get Filters list
     func getColorFilterList() {
-        controller?.setSelectedCellIndexPath(lastOverlayItemSelected)
+        let index = NSIndexPath.init(forItem: lastOverlayItemSelected, inSection: 0)
+        controller?.setSelectedCellIndexPath(index)
         
         filtersImage = (interactor?.findColorFilters().0)!
         filtersTitle = (interactor?.findColorFilters().1)!
@@ -46,7 +47,8 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
     }
     
     func getShaderFilterList() {
-        controller?.setSelectedCellIndexPath(lastShaderItemSelected)
+        let index = NSIndexPath.init(forItem: lastShaderItemSelected, inSection: 0)
+        controller?.setSelectedCellIndexPath(index)
         
         filtersImage = (interactor?.findShaderFilters().0)!
         filtersTitle = (interactor?.findShaderFilters().1)!
