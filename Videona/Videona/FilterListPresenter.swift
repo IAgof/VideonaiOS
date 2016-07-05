@@ -82,11 +82,16 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
     func cancelFilterListAction() {
         if(filterShowing == FILTERS_SHOWING_IS_SHADER){
             filterListDelegate!.pushShowHideShaderFilters()
-            self.removeFilter("Shader")
         }else if (filterShowing == FILTERS_SHOWING_IS_COLOR){
             filterListDelegate!.pushShowHideColorFilters()
-            self.removeFilter("Overlay")
         }
+       
+        self.removeFilter("Overlay")
+        self.removeFilter("Shader")
+
+        lastShaderItemSelected = -1
+        lastOverlayItemSelected = -1
+        
         self.setFilterShowin(FILTERS_SHOWING_IS_NONE)
     }
     

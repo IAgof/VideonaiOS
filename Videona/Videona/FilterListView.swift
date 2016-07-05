@@ -48,6 +48,7 @@ UICollectionViewDelegate {
     func getShaderFiltersAsFilterList(){
         eventHandler?.getShaderFilterList()
     }
+    
     func setUpFiltersOnView(filtersImage:Array<UIImage>,filtersTitle:Array<String>) {
         filterListImage = filtersImage
         filterListTitle = filtersTitle
