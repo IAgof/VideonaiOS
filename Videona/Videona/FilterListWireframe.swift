@@ -61,7 +61,7 @@ class FilterListWireframe : NSObject{//, UIViewAnimationTransition {
         self.presentfilterListInterfaceFromViewController(newView, viewController: viewController)
     }
     
-    func dismissFilterListInterface(completion: ((Bool) -> Void)?) {
+    func dismissFilterListInterface(completion: ((Bool) -> Void)) {
         FilterListDismissalTransition().animateTransition(presentedView!, completion: { finished in
             print("Filter list wireframe dismissFilterListInterface")
             if var filterView = self.presentedView{
@@ -69,6 +69,7 @@ class FilterListWireframe : NSObject{//, UIViewAnimationTransition {
                 
             }
             self.presentedView?.removeFromSuperview()
+            completion(finished)
         })
     }
     

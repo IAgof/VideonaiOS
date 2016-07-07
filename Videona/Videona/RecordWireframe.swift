@@ -63,9 +63,10 @@ class RecordWireframe : NSObject {
         filterListWireframe?.presentShaderFilterListInterfaceFromViewController(recordViewController!)
     }
     
-    func dismissFilterListInterface() {
+    func dismissFilterListInterface(completion:(Bool)->Void) {
         filterListWireframe?.dismissFilterListInterface({ finished in
             print("Record Wireframe dismissFilterListInterface")
+            completion(finished)
         })
     }
     
