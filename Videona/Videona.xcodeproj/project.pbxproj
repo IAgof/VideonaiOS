@@ -559,7 +559,6 @@
 		A93846E41CE47E6B007FB6BC /* Wireframe */ = {
 			isa = PBXGroup;
 			children = (
-				A9E066E81CE4C85900D4E11D /* FilterCell.xib */,
 				A93846EF1CE47F67007FB6BC /* FilterListWireframe.swift */,
 			);
 			name = Wireframe;
@@ -570,6 +569,7 @@
 			children = (
 				A93846F61CE49340007FB6BC /* FilterListView.xib */,
 				A9831CD91D241B8E00362F5C /* FilterListView~ipad.xib */,
+				A9E066E81CE4C85900D4E11D /* FilterCell.xib */,
 				A93846EB1CE47EE2007FB6BC /* FilterListView.swift */,
 				A93846ED1CE47EF0007FB6BC /* FilterListInterface.swift */,
 				A9E066E61CE4C5C700D4E11D /* FilterViewCell.swift */,
@@ -2061,7 +2061,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Videona.VideonaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e765f048-618c-4d1c-84bd-3bf1bd940a42";
+				PROVISIONING_PROFILE = "d0c492cd-e4ba-421a-afd0-eff2400d4811";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_TARGET_NAME = Videona;
 			};
@@ -2077,7 +2077,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Videona.VideonaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e765f048-618c-4d1c-84bd-3bf1bd940a42";
+				PROVISIONING_PROFILE = "d0c492cd-e4ba-421a-afd0-eff2400d4811";
 				TEST_TARGET_NAME = Videona;
 			};
 			name = Release;

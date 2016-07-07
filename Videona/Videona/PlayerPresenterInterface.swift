@@ -13,6 +13,7 @@ protocol PlayerPresenterInterface {
     func createVideoPlayer(videoPath:String)
     func layoutSubViews()
     func onVideoStops()
+    func pauseVideo() 
     func videoPlayerViewTapped()
     func pushPlayButton()
     func updateSeekBar()

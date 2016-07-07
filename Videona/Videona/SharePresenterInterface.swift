@@ -12,6 +12,7 @@ import UIKit
 protocol SharePresenterInterface {
     
     func viewDidLoad()
+    func viewWillDisappear()
     func pushBack()
     func getListData()
     func setListTitleData(titleArray:Array<String>)

@@ -39,6 +39,10 @@ class SharePresenter:NSObject,SharePresenterInterface{
         controller?.removeSeparatorTable()
     }
     
+    func viewWillDisappear() {
+
+    }
+    
     func setVideoExportedPath(path: String) {
         self.videoPath = path
         
@@ -49,6 +53,11 @@ class SharePresenter:NSObject,SharePresenterInterface{
     }
     
     func pushBack() {
+        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+        dispatch_async(dispatch_get_global_queue(priority, 0)) {
+            self.playerPresenter?.pauseVideo()
+        }
+        
         wireframe?.goPrevController()
     }
     

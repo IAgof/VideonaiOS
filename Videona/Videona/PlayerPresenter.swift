@@ -45,6 +45,13 @@ class PlayerPresenter:NSObject,PlayerPresenterInterface{
         controller?.setUpVideoFinished()
     }
     
+    func pauseVideo() {
+        if isPlaying {
+            isPlaying = false
+            controller?.pauseVideoPlayer()
+        }
+    }
+    
     func pushPlayButton() {
         if isPlaying == false {
             self.playPlayer()
@@ -64,6 +71,7 @@ class PlayerPresenter:NSObject,PlayerPresenterInterface{
         controller?.playVideoPlayer()
         isPlaying = true
     }
+    
     func updateSeekBar() {
         controller!.updateSeekBarOnUI()
     }

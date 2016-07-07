@@ -55,6 +55,12 @@ GIDSignInUIDelegate,GIDSignInDelegate{
         eventHandler?.viewDidLoad()
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        eventHandler?.viewWillDisappear()
+    }
+    
     //MARK: - View Init
     func createShareInterface(){
         let nib = UINib.init(nibName: shareNibName, bundle: nil)
