@@ -19,7 +19,8 @@ class AppDependencies {
     var playerWireframe = PlayerWireframe()
     var detailTextWireframe = DetailTextWireframe()
     var fullScreenPlayerWireframe = FullScreenPlayerWireframe()
-
+    var editorRoomWireframe = EditingRoomWireframe()
+    
     init(){
         configureDependencies()
     }
@@ -44,6 +45,8 @@ class AppDependencies {
 
         let fullScreenPlayerPresenter = FullScreenPlayerPresenter()
 
+        let editorRoomPresenter = EditingRoomPresenter()
+        
         //INTRO MODULE
         introPresenter.introWireframe = introWireframe
         introPresenter.recordWireframe = recordWireframe
@@ -112,6 +115,12 @@ class AppDependencies {
 
         fullScreenPlayerWireframe.fullScreenPlayerPresenter = fullScreenPlayerPresenter
         fullScreenPlayerWireframe.rootWireframe = rootWireframe
+        
+        //EDITOR ROOM MODULE
+        editorRoomPresenter.wireframe = editorRoomWireframe
+        
+        editorRoomWireframe.editingRoomPresenter = editorRoomPresenter
+        editorRoomWireframe.rootWireframe = rootWireframe
     }
     
     func installIntroToRootViewControllerIntoWindow(window: UIWindow){
@@ -126,5 +135,9 @@ class AppDependencies {
     }
     func installShareToRootViewControllerIntoWindow(window: UIWindow){
         shareWireframe.presentShareInterfaceFromWindow(window)
+    }
+    
+    func installEditorRoomToRootViewControllerIntoWindow(window: UIWindow){
+        editorRoomWireframe.presentEditingRoomInterfaceFromWindow(window)
     }
 }

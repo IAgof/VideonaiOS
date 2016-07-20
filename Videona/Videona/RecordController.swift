@@ -46,10 +46,12 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         print("Recorder view will appear")
         eventHandler?.viewWillAppear()
     }
+    
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         eventHandler?.viewWillDisappear()
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

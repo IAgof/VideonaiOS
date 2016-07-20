@@ -16,6 +16,11 @@
 		11A09EF76603C1D78D7F2930 /* FullScreenPlayerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A09FCDB7BB65E6250CB188 /* FullScreenPlayerInterface.swift */; };
 		11A09F45EE9D9D3904394BE7 /* AVQualityParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A097EE3ADB91072CDFAC41 /* AVQualityParse.swift */; };
 		11A09F4C51675AFF12840FA2 /* FullScreenPlayerPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A09B9EE9C6A55A53201AD8 /* FullScreenPlayerPresenterInterface.swift */; };
+		A90F82121D3E6FC700224F31 /* EditingRoomWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F82111D3E6FC700224F31 /* EditingRoomWireframe.swift */; };
+		A90F82161D3E6FFB00224F31 /* EditingRoomViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F82151D3E6FFB00224F31 /* EditingRoomViewInterface.swift */; };
+		A90F82181D3E702D00224F31 /* EditingRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F82171D3E702D00224F31 /* EditingRoomViewController.swift */; };
+		A90F821A1D3E704400224F31 /* EditingRoomPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F82191D3E704400224F31 /* EditingRoomPresenterInterface.swift */; };
+		A90F821C1D3E704C00224F31 /* EditingRoomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F821B1D3E704C00224F31 /* EditingRoomPresenter.swift */; };
 		A91AB0E51D22BCAF001DA3BB /* VideonaControllerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91AB0E41D22BCAF001DA3BB /* VideonaControllerInterface.swift */; };
 		A91AB0F21D22C7BC001DA3BB /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91AB0EF1D22C789001DA3BB /* GPUImage.framework */; };
 		A91AB0F31D22C7D2001DA3BB /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A91AB0EF1D22C789001DA3BB /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -249,6 +254,11 @@
 		11A09FCDB7BB65E6250CB188 /* FullScreenPlayerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenPlayerInterface.swift; sourceTree = "<group>"; };
 		7E695B9819A8E5071F983C35 /* Pods_Videona.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Videona.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D1DE05AFBAE78D866AF921E /* Pods-Videona.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Videona.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Videona/Pods-Videona.debug.xcconfig"; sourceTree = "<group>"; };
+		A90F82111D3E6FC700224F31 /* EditingRoomWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingRoomWireframe.swift; sourceTree = "<group>"; };
+		A90F82151D3E6FFB00224F31 /* EditingRoomViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingRoomViewInterface.swift; sourceTree = "<group>"; };
+		A90F82171D3E702D00224F31 /* EditingRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingRoomViewController.swift; sourceTree = "<group>"; };
+		A90F82191D3E704400224F31 /* EditingRoomPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingRoomPresenterInterface.swift; sourceTree = "<group>"; };
+		A90F821B1D3E704C00224F31 /* EditingRoomPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingRoomPresenter.swift; sourceTree = "<group>"; };
 		A91AB0E41D22BCAF001DA3BB /* VideonaControllerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideonaControllerInterface.swift; sourceTree = "<group>"; };
 		A91AB0E61D22C788001DA3BB /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = ../../GPUImageForVideonaApp/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		A91D25111CF876250006CB93 /* CameraInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraInteractorInterface.swift; sourceTree = "<group>"; };
@@ -519,6 +529,74 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		A90F82071D3E5C4500224F31 /* Editing room */ = {
+			isa = PBXGroup;
+			children = (
+				A90F820B1D3E5C5B00224F31 /* App Logic */,
+				A90F820A1D3E5C4F00224F31 /* User Interface */,
+			);
+			name = "Editing room";
+			sourceTree = "<group>";
+		};
+		A90F820A1D3E5C4F00224F31 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				A90F820E1D3E5C7000224F31 /* Presenter */,
+				A90F820D1D3E5C6900224F31 /* View */,
+				A90F820C1D3E5C6300224F31 /* Wireframe */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		A90F820B1D3E5C5B00224F31 /* App Logic */ = {
+			isa = PBXGroup;
+			children = (
+				A90F82101D3E5C7D00224F31 /* Interactor */,
+				A90F820F1D3E5C7900224F31 /* Model */,
+			);
+			name = "App Logic";
+			sourceTree = "<group>";
+		};
+		A90F820C1D3E5C6300224F31 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				A90F82111D3E6FC700224F31 /* EditingRoomWireframe.swift */,
+			);
+			name = Wireframe;
+			sourceTree = "<group>";
+		};
+		A90F820D1D3E5C6900224F31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A90F82151D3E6FFB00224F31 /* EditingRoomViewInterface.swift */,
+				A90F82171D3E702D00224F31 /* EditingRoomViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A90F820E1D3E5C7000224F31 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A90F82191D3E704400224F31 /* EditingRoomPresenterInterface.swift */,
+				A90F821B1D3E704C00224F31 /* EditingRoomPresenter.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		A90F820F1D3E5C7900224F31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A90F82101D3E5C7D00224F31 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
 		A91AB0E71D22C788001DA3BB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -784,6 +862,7 @@
 		A95B24631CD8895E00F78AAF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A90F82071D3E5C4500224F31 /* Editing room */,
 				A97FBDC31D0981F700942F8D /* DetailText */,
 				A95B24851CD8EA7500F78AAF /* Intro */,
 				A95B24641CD8896600F78AAF /* Recorder */,
@@ -1696,11 +1775,13 @@
 				A96733001CE630AD007BE340 /* SettingsInteractorInterface.swift in Sources */,
 				A94301701CE5DAA100DC0DF8 /* SocialNetworkProvider.swift in Sources */,
 				A97FBDD91D0984B600942F8D /* DetailTextInteractorInterface.swift in Sources */,
+				A90F821C1D3E704C00224F31 /* EditingRoomPresenter.swift in Sources */,
 				A965BDC31CDA1171002579CA /* IntroPresenterInterface.swift in Sources */,
 				A93846EE1CE47EF0007FB6BC /* FilterListInterface.swift in Sources */,
 				A971F5BB1CFC89AF004DC50D /* ClipsAlbum.swift in Sources */,
 				A95B24761CD8B90700F78AAF /* AppDependencies.swift in Sources */,
 				A971F5A31CFC21E4004DC50D /* CameraRecorderInterface.swift in Sources */,
+				A90F82181D3E702D00224F31 /* EditingRoomViewController.swift in Sources */,
 				A9F2517D1D05CDD900D8DC30 /* ShareYoutubeInteractor.swift in Sources */,
 				A9E066ED1CE4E4E200D4E11D /* ShareCell.swift in Sources */,
 				A95B24371CD8890900F78AAF /* RecordController.swift in Sources */,
@@ -1736,6 +1817,7 @@
 				A99278501CE3647B009DC364 /* SettingsPresenter.swift in Sources */,
 				A97FBDD71D09846A00942F8D /* DetailTextInteractor.swift in Sources */,
 				A9E066DF1CE4BA0700D4E11D /* EffectProvider.swift in Sources */,
+				A90F821A1D3E704400224F31 /* EditingRoomPresenterInterface.swift in Sources */,
 				A9E066E51CE4BB8300D4E11D /* AnalitycsConstants.swift in Sources */,
 				A94301781CE5EEED00DC0DF8 /* FilterListInteractorInterface.swift in Sources */,
 				A95D3BDE1CEB0320001F2272 /* SettingsContent.swift in Sources */,
@@ -1785,6 +1867,8 @@
 				11A092443FAC586CFAFA4D4B /* FullScreenPlayerWireframe.swift in Sources */,
 				11A09EF76603C1D78D7F2930 /* FullScreenPlayerInterface.swift in Sources */,
 				11A097E4ED3C457078681CCF /* VideonaTracker.swift in Sources */,
+				A90F82161D3E6FFB00224F31 /* EditingRoomViewInterface.swift in Sources */,
+				A90F82121D3E6FC700224F31 /* EditingRoomWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
