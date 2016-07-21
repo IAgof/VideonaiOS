@@ -25,10 +25,14 @@ class CameraRecorderInteractor{
     }
     
     func recordVideo(completion:(String)->Void){
-        
-        let clipPath = getNewClipPath()
+        let title = getNewTitle()
+        let clipPath = getNewClipPath(title)
         self.clipsArray.append(clipPath)
 
+        AddVideoToProjectUseCase.sharedInstance.add(clipPath,
+                                       title: title)
+        print("Number of clips in project :\n \(Project.sharedInstance.numberOfClips())")
+        
         let clipURL = NSURL.init(fileURLWithPath: clipPath)
         
         Utils().debugLog("PathToMovie: \(clipPath)")
@@ -59,7 +63,9 @@ class CameraRecorderInteractor{
                 let clipURL = NSURL.init(fileURLWithPath: self.clipsArray[(self.clipsArray.count - 1) ])
 
                 Utils().debugLog("Stop recording video")
+                
                 ClipsAlbum.sharedInstance.saveVideo(clipURL)
+                
                 self.movieWriter!.endProcessing()
                 self.movieWriter = nil
                 
@@ -87,16 +93,14 @@ class CameraRecorderInteractor{
         self.resolution = resolution
     }
     
-    func getNewClipPath()->String{
+    func getNewTitle() -> String {
+        return "\(Utils().giveMeTimeNow())videonaClip.m4v"
+    }
+    
+    func getNewClipPath(title:String)->String{
         var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
-        path =  path + "/\(Utils().giveMeTimeNow())videonaClip.m4v"
+        path =  path + "/\(title)"
         return path
     }
     
-    func getClipsArray() -> [String] {
-        return clipsArray
-    }
-    func resetClipsArray(){
-        clipsArray = []
-    }
 }

@@ -14,8 +14,8 @@ class ShareSocialNetworkInteractor:NSObject{
     var socialName:String = ""
     var alertController:UIAlertController?
     
-    init(moviePath:String,socialName:String){
-        self.moviePath = moviePath
+    init(socialName:String){
+        self.moviePath = Project.sharedInstance.getExportedPath()
         self.socialName = socialName
     }
     

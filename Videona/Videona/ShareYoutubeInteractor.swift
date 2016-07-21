@@ -12,8 +12,8 @@ import Alamofire
 class ShareYoutubeInteractor: ShareSocialNetworkInteractor{
     var viewControllerOnTop:UIViewController?
     
-    override init(moviePath: String, socialName: String) {
-        super.init(moviePath: moviePath, socialName: socialName)
+    override init(socialName: String) {
+        super.init(socialName: socialName)
         
         viewControllerOnTop = getViewControllerOnTop()
     }

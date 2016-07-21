@@ -66,12 +66,12 @@ class CameraInteractor:CameraRecorderDelegate,
         
     }
     
-    func getClipsArray() -> [String] {
-        return cameraRecorder.getClipsArray()
+    func startCamera() {
+        videoCamera.startCameraCapture()
     }
     
-    func resetClipsArray(){
-        cameraRecorder.resetClipsArray()
+    func stopCamera() {
+        videoCamera.stopCameraCapture()
     }
     
     //MARK: - Orientation
