@@ -32,6 +32,9 @@
 		A92793211D0AC6C8008E30BF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92793201D0AC6C8008E30BF /* FBSDKCoreKit.framework */; };
 		A92793231D0AC6D2008E30BF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92793221D0AC6D2008E30BF /* FBSDKLoginKit.framework */; };
 		A92793251D0AC6D8008E30BF /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92793241D0AC6D8008E30BF /* FBSDKShareKit.framework */; };
+		A93125BD1D40AB77001BCC82 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93125BC1D40AB77001BCC82 /* Video.swift */; };
+		A93125C11D40AD14001BCC82 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93125C01D40AD14001BCC82 /* Audio.swift */; };
+		A93125C41D40B1AA001BCC82 /* AddVideoToProjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93125C31D40B1AA001BCC82 /* AddVideoToProjectUseCase.swift */; };
 		A93846E81CE47E82007FB6BC /* FilterListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846E71CE47E82007FB6BC /* FilterListPresenter.swift */; };
 		A93846EA1CE47E9C007FB6BC /* FilterListPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846E91CE47E9C007FB6BC /* FilterListPresenterInterface.swift */; };
 		A93846EC1CE47EE2007FB6BC /* FilterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846EB1CE47EE2007FB6BC /* FilterListView.swift */; };
@@ -41,6 +44,9 @@
 		A93846F51CE480AA007FB6BC /* FilterListPresentationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93846F41CE480AA007FB6BC /* FilterListPresentationTransition.swift */; };
 		A93846F71CE49340007FB6BC /* FilterListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93846F61CE49340007FB6BC /* FilterListView.xib */; };
 		A93C52381D06CA11001C2755 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A93C52371D06CA11001C2755 /* GoogleService-Info.plist */; };
+		A942A46B1D3FC31C001E019F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A942A4691D3FC31C001E019F /* Profile.swift */; };
+		A942A46C1D3FC31C001E019F /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = A942A46A1D3FC31C001E019F /* Project.swift */; };
+		A942A49F1D3FCB41001E019F /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = A942A49E1D3FCB41001E019F /* Media.swift */; };
 		A943015F1CE5CF2000DC0DF8 /* PlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A943015E1CE5CF2000DC0DF8 /* PlayerPresenter.swift */; };
 		A94301611CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301601CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift */; };
 		A94301631CE5CF3900DC0DF8 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301621CE5CF3900DC0DF8 /* PlayerView.swift */; };
@@ -269,6 +275,9 @@
 		A92793201D0AC6C8008E30BF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A92793221D0AC6D2008E30BF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		A92793241D0AC6D8008E30BF /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		A93125BC1D40AB77001BCC82 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		A93125C01D40AD14001BCC82 /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
+		A93125C31D40B1AA001BCC82 /* AddVideoToProjectUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVideoToProjectUseCase.swift; sourceTree = "<group>"; };
 		A93846E71CE47E82007FB6BC /* FilterListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListPresenter.swift; sourceTree = "<group>"; };
 		A93846E91CE47E9C007FB6BC /* FilterListPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListPresenterInterface.swift; sourceTree = "<group>"; };
 		A93846EB1CE47EE2007FB6BC /* FilterListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListView.swift; sourceTree = "<group>"; };
@@ -278,6 +287,9 @@
 		A93846F41CE480AA007FB6BC /* FilterListPresentationTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListPresentationTransition.swift; sourceTree = "<group>"; };
 		A93846F61CE49340007FB6BC /* FilterListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterListView.xib; sourceTree = "<group>"; };
 		A93C52371D06CA11001C2755 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A942A4691D3FC31C001E019F /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		A942A46A1D3FC31C001E019F /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		A942A49E1D3FCB41001E019F /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		A943015E1CE5CF2000DC0DF8 /* PlayerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerPresenter.swift; sourceTree = "<group>"; };
 		A94301601CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerPresenterInterface.swift; sourceTree = "<group>"; };
 		A94301621CE5CF3900DC0DF8 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
@@ -614,6 +626,14 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		A93125C21D40B198001BCC82 /* Use case */ = {
+			isa = PBXGroup;
+			children = (
+				A93125C31D40B1AA001BCC82 /* AddVideoToProjectUseCase.swift */,
+			);
+			name = "Use case";
+			sourceTree = "<group>";
+		};
 		A93846E21CE47E57007FB6BC /* Filter List */ = {
 			isa = PBXGroup;
 			children = (
@@ -671,6 +691,26 @@
 				A93846F41CE480AA007FB6BC /* FilterListPresentationTransition.swift */,
 			);
 			name = Transition;
+			sourceTree = "<group>";
+		};
+		A942A4661D3FC30F001E019F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A942A49D1D3FCB38001E019F /* Media */,
+				A942A4691D3FC31C001E019F /* Profile.swift */,
+				A942A46A1D3FC31C001E019F /* Project.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A942A49D1D3FCB38001E019F /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				A942A49E1D3FCB41001E019F /* Media.swift */,
+				A93125BC1D40AB77001BCC82 /* Video.swift */,
+				A93125C01D40AD14001BCC82 /* Audio.swift */,
+			);
+			name = Media;
 			sourceTree = "<group>";
 		};
 		A94301591CE5CEE400DC0DF8 /* Player */ = {
@@ -949,6 +989,8 @@
 		A95B24771CD8B95800F78AAF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A93125C21D40B198001BCC82 /* Use case */,
+				A942A4661D3FC30F001E019F /* Model */,
 				A98AA17B1D1944DF00E196D0 /* ISO639-2 */,
 				A9686F941CFF129C00983540 /* AVResolutionParse.swift */,
 				A95D3BE21CEB6B77001F2272 /* Utils.swift */,
@@ -1793,6 +1835,7 @@
 				A98AA1821D19450C00E196D0 /* NSLocale+ISO639_2.m in Sources */,
 				A95D3BEA1CEB7158001F2272 /* PlayerProvider.swift in Sources */,
 				A94301611CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift in Sources */,
+				A942A46B1D3FC31C001E019F /* Profile.swift in Sources */,
 				A963F0681D14002D00F05C30 /* IntroTextConstants.swift in Sources */,
 				A99278531CE364E6009DC364 /* SettingsPresenterInterface.swift in Sources */,
 				A98A93BD1CF59155004E1DB7 /* ChangeFilterInteractor.swift in Sources */,
@@ -1802,6 +1845,7 @@
 				A9E066DB1CE4B4EE00D4E11D /* OverlayEffect.swift in Sources */,
 				A95B247A1CD8B96E00F78AAF /* RootWireframe.swift in Sources */,
 				A98A93BB1CF5903C004E1DB7 /* AddFilterInteractor.swift in Sources */,
+				A93125C11D40AD14001BCC82 /* Audio.swift in Sources */,
 				A99278591CE36524009DC364 /* SettingsWireframe.swift in Sources */,
 				A971F5BE1CFC8D10004DC50D /* ExporterInteractor.swift in Sources */,
 				A927931D1D0AB71D008E30BF /* RecorderConstants.swift in Sources */,
@@ -1843,9 +1887,11 @@
 				A93846F51CE480AA007FB6BC /* FilterListPresentationTransition.swift in Sources */,
 				A93846E81CE47E82007FB6BC /* FilterListPresenter.swift in Sources */,
 				A927931F1D0AB906008E30BF /* ShareConstants.swift in Sources */,
+				A942A46C1D3FC31C001E019F /* Project.swift in Sources */,
 				A95B247C1CD8B9F200F78AAF /* RecordPresenterInterfaceIO.swift in Sources */,
 				A9E066DD1CE4B4F500D4E11D /* ShaderEffect.swift in Sources */,
 				A9D76AE71CF5E9CB00F7FB47 /* RemoveFilterInteractor.swift in Sources */,
+				A93125BD1D40AB77001BCC82 /* Video.swift in Sources */,
 				A97FBDCB1D09823800942F8D /* DetailTextPresenter.swift in Sources */,
 				A93846F01CE47F67007FB6BC /* FilterListWireframe.swift in Sources */,
 				A95B246E1CD88C2D00F78AAF /* RecordViewInterface.swift in Sources */,
@@ -1853,8 +1899,10 @@
 				A99278571CE36517009DC364 /* SettingsInterface.swift in Sources */,
 				A9F251731D05CD8E00D8DC30 /* ShareWhatsappInteractor.swift in Sources */,
 				A9F251791D05CDB600D8DC30 /* ShareFacebookInteractor.swift in Sources */,
+				A93125C41D40B1AA001BCC82 /* AddVideoToProjectUseCase.swift in Sources */,
 				A965BDBC1CDA0758002579CA /* IntroPresenter.swift in Sources */,
 				A94301671CE5CF4F00DC0DF8 /* PlayerWireframe.swift in Sources */,
+				A942A49F1D3FCB41001E019F /* Media.swift in Sources */,
 				A97FBDD31D09828600942F8D /* DetailTextWireframe.swift in Sources */,
 				A91D25121CF876250006CB93 /* CameraInteractorInterface.swift in Sources */,
 				A9F9C20E1CF4665000AB310C /* VideonaController.swift in Sources */,

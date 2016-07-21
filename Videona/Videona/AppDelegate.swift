@@ -110,6 +110,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         }
     }
     
+    
+    func applicationWillEnterForeground(application: UIApplication) {
+        Utils().debugLog("\nEnter in applicationWillEnterForeground\n")
+        
+        if let viewControllers = self.window?.rootViewController?.childViewControllers {
+            for viewController in viewControllers {
+                if viewController.isKindOfClass(RecordController) {
+                    let myViewController = viewController as! RecordController
+                    myViewController.eventHandler?.viewWillAppear()
+                    Utils().debugLog("Found the view controller")
+                }
+            }
+        }
+    }
+    
     //MARK: - Google Sign In
     func application(application: UIApplication,
                      openURL url: NSURL,

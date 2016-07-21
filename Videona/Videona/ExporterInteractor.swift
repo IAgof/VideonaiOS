@@ -10,13 +10,11 @@ import Foundation
 import AVFoundation
 
 class ExporterInteractor:NSObject{
-    var videosArray: [String] = []
     var clipDuration = 0.0
     var exportedPresetQuality:String!
 
-    init(videosArray:[String]) {
+    override init() {
         super.init()
-        self.videosArray = videosArray
         exportedPresetQuality = initQuality()
     }
 
@@ -38,7 +36,9 @@ class ExporterInteractor:NSObject{
     }
     
     func exportVideos(completionHandler:(String,Double)->Void) {
-        let exportPath = self.getNewPathToExport()
+        Project.sharedInstance.setExportedPath()
+        
+        let exportPath = Project.sharedInstance.getExportedPath()
         
         var videoTotalTime:CMTime = kCMTimeZero
         
@@ -49,10 +49,11 @@ class ExporterInteractor:NSObject{
                                                                      preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
         let audioTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeAudio,preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
         
+        let videosArray = Project.sharedInstance.getVideoList()
         // - Add assets to the composition
-        for path in videosArray{
+        for video in videosArray{
             // 2 - Get Video asset
-            let videoURL: NSURL = NSURL.init(fileURLWithPath: path)
+            let videoURL: NSURL = NSURL.init(fileURLWithPath: video.getMediaPath())
             let videoAsset = AVAsset.init(URL: videoURL)
             
             

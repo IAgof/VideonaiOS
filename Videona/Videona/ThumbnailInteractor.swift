@@ -12,17 +12,17 @@ import AVFoundation
 
 class ThumbnailInteractor: NSObject {
     var thumbnailImageView: UIImageView!
-    var videosArray:[String] = []
+    var videoPath:String!
     var diameter:CGFloat = 40.0
 
-    init(videosArray:[String],diameter:CGFloat) {
-        self.videosArray = videosArray
+    init(videoPath:String,diameter:CGFloat) {
+        self.videoPath = videoPath
         self.thumbnailImageView = UIImageView.init(frame: CGRectMake(0, 0, diameter, diameter))
         self.diameter = diameter
     }
     
     func getThumbnailImageView()->UIImageView{
-        let asset = AVURLAsset(URL: NSURL(fileURLWithPath: videosArray[(videosArray.count - 1)]), options: nil)
+        let asset = AVURLAsset(URL: NSURL(fileURLWithPath: videoPath), options: nil)
         let imgGenerator = AVAssetImageGenerator(asset: asset)
         
         var cgImage:CGImage?

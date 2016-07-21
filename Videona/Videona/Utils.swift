@@ -9,6 +9,8 @@
 import Foundation
 
 class Utils{
+    static let sharedInstance = Utils()
+    
     let udid = UIDevice.currentDevice().identifierForVendor!.UUIDString
 
     func getDoubleHourAndMinutes() -> Double{

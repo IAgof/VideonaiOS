@@ -63,21 +63,21 @@ class ShareInteractor: NSObject,ShareInteractorInterface {
         switch socialNetworkTitle {
         case "Facebook":
             print("Share video on facebook")
-            ShareFacebookInteractor(moviePath: videoPath,socialName: socialNetworkTitle).share()
+            ShareFacebookInteractor(socialName: socialNetworkTitle).share()
         case "Instagram":
             print("Share video on Instagram")
-            ShareInstagramInteractor(moviePath: videoPath,socialName: socialNetworkTitle).share()
+            ShareInstagramInteractor(socialName: socialNetworkTitle).share()
         case "Twitter":
             print("Share video on Twitter")
-            ShareTwitterInteractor(moviePath: videoPath,socialName: socialNetworkTitle).share()
+            ShareTwitterInteractor(socialName: socialNetworkTitle).share()
         case "Whatsapp":
             print("Share video on Whatsapp")
-            ShareWhatsappInteractor(moviePath: videoPath,socialName: socialNetworkTitle).share()
+            ShareWhatsappInteractor(socialName: socialNetworkTitle).share()
         case "Youtube":
             print("Share video on Youtube")
             dispatch_async(dispatch_get_main_queue(), {
                 // update some UI
-                self.shareYoutubeInteractor =  ShareYoutubeInteractor(moviePath: videoPath,socialName: socialNetworkTitle)
+                self.shareYoutubeInteractor =  ShareYoutubeInteractor(socialName: socialNetworkTitle)
                 self.shareYoutubeInteractor!.share()
             });
         default:

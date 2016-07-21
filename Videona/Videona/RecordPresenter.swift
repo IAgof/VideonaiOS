@@ -47,6 +47,7 @@ class RecordPresenter: NSObject
     
     func viewWillDisappear() {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            self.cameraInteractor?.stopCamera()
             if self.isRecording{
                 self.stopRecord()
             }
@@ -59,8 +60,11 @@ class RecordPresenter: NSObject
     
     func viewWillAppear() {
         cameraInteractor!.setResolution()
+        cameraInteractor?.startCamera()
+        
         controller?.forceOrientation()
     }
+    
     
     func pushSettings() {
         print("Record presenter pushSettings")
@@ -77,7 +81,7 @@ class RecordPresenter: NSObject
         print("Record presenter pushShare")
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             
-            let exporter = ExporterInteractor.init(videosArray: (self.cameraInteractor?.getClipsArray())!)
+            let exporter = ExporterInteractor.init()
             exporter.exportVideos({ exportPath,videoTotalTime in
                 print("Export path response = \(exportPath)")
                 self.trackExported(videoTotalTime)
@@ -86,7 +90,7 @@ class RecordPresenter: NSObject
                     //wait to remove alert to present new Screeen
                     self.shareWireframe?.presentShareInterfaceFromViewController((self.controller?.getController())!,
                         videoPath: exportPath,
-                        numberOfClips: (self.cameraInteractor?.getClipsArray().count)!)
+                        numberOfClips: Project.sharedInstance.numberOfClips())
                 })
             })
         });
@@ -139,13 +143,14 @@ class RecordPresenter: NSObject
             // do some task
             self.cameraInteractor?.setIsRecording(false)
             
-            let videosArray = self.cameraInteractor?.getClipsArray()
-            let thumb = ThumbnailInteractor.init(videosArray: videosArray!,
+            let videoPath = Project.sharedInstance.getVideoList()[Project.sharedInstance.numberOfClips() - 1].getMediaPath()
+            
+            let thumb = ThumbnailInteractor.init(videoPath: videoPath,
                 diameter: (self.controller?.getRecordButtonSize())!).getThumbnailImageView()
             dispatch_async(dispatch_get_main_queue(), {
                 // update some UI
                 self.controller?.showRecordedVideoThumb(thumb)
-                self.controller?.showNumberVideos((videosArray?.count)!)
+                self.controller?.showNumberVideos(Project.sharedInstance.numberOfClips())
                 self.controller?.showStopButton()
                 self.controller?.enableShareButton()
             });
@@ -223,7 +228,7 @@ class RecordPresenter: NSObject
     
     func trackExported(videoTotalTime:Double) {
         self.controller?.getTrackerObject().sendExportedVideoMetadataTracking(videoTotalTime,
-                                                                              numberOfClips: (self.cameraInteractor?.getClipsArray().count)!)
+                                                                              numberOfClips: Project.sharedInstance.numberOfClips())
     }
     
     func trackStopRecord(){
@@ -383,8 +388,9 @@ class RecordPresenter: NSObject
         controller?.hideRecordedVideoThumb()
         controller?.disableShareButton()
         
-        cameraInteractor?.resetClipsArray()
         cameraInteractor?.removeFilters()
+        
+        Project.sharedInstance.clear()
     }
     
     func changeOrientationEvent(){
