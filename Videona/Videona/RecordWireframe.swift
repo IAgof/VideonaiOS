@@ -16,6 +16,7 @@ class RecordWireframe : NSObject {
     var recordViewController : RecordController?
     var recordPresenter : RecordPresenter?
     var filterListWireframe: FilterListWireframe?
+    var editorRoomWireframe: EditingRoomWireframe?
     
     func presentRecordInterfaceFromWindow(window: UIWindow) {
         let viewController = RecordViewControllerFromStoryboard()
@@ -68,6 +69,10 @@ class RecordWireframe : NSObject {
             print("Record Wireframe dismissFilterListInterface")
             completion(finished)
         })
+    }
+    
+    func presentEditorRoomInterface(){
+        editorRoomWireframe?.presentEditingRoomInterfaceFromViewController(recordViewController!)
     }
     
     func goBackToRecordView(prevController:UIViewController){

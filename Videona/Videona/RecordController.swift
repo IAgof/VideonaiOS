@@ -74,7 +74,17 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         pinchDisplay = UIPinchGestureRecognizer(target: self, action: #selector(RecordController.displayPinched))
         self.cameraView.addGestureRecognizer(pinchDisplay!)
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(self.thumbnailTapped))
+        thumbnailView.userInteractionEnabled = true
+        thumbnailView.addGestureRecognizer(tapGestureRecognizer)
+        
         self.thumbnailNumberClips.adjustsFontSizeToFitWidth = true
+    }
+    
+    func thumbnailTapped(){
+        Utils.sharedInstance.debugLog("Thumbnail has tapped")
+        
+        eventHandler?.thumbnailHasTapped()
     }
     
     func displayTapped(){

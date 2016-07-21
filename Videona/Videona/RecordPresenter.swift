@@ -171,6 +171,10 @@ class RecordPresenter: NSObject
         controller?.unlockScreenRotation()
     }
     
+    func thumbnailHasTapped() {
+        recordWireframe?.presentEditorRoomInterface()
+    }
+    
     func displayHasTapped(tapGesture:UIGestureRecognizer){
         cameraInteractor?.cameraViewTapAction(tapGesture)
     }

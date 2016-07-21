@@ -31,6 +31,7 @@ protocol RecordPresenterInterface{
     func setFiltersOnView(filter: String)
     func removeFilter(filterName: String)
     func resetRecorder()
+    func thumbnailHasTapped()
     func displayHasTapped(tapGesture:UIGestureRecognizer)
     func displayHasPinched(pinchGesture:UIPinchGestureRecognizer)
     func changeOrientationEvent()

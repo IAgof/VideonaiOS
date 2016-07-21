@@ -62,6 +62,7 @@ class AppDependencies {
         recordWireframe.recordPresenter = recordPresenter
         recordWireframe.rootWireframe = rootWireframe
         recordWireframe.filterListWireframe = filterListWireframe
+        recordWireframe.editorRoomWireframe = editorRoomWireframe
         
         //SETTINGS MODULE
         settingsPresenter.wireframe = settingsWireframe
