@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PermissionScope
 
 class IntroViewController: VideonaController,
     UIPageViewControllerDelegate,
@@ -26,6 +27,8 @@ IntroViewInterface {
 
     var pageArray = ["PageOne", "PageTwo", "PageThree"]
     var index = 0
+
+    var pscope = PermissionScope()
     
     //MARK: - Constants
     let NEXT_PAGE = "NEXT"
@@ -62,6 +65,26 @@ IntroViewInterface {
     override func viewDidLoad() {
         super.viewDidLoad()
         eventHandler?.viewDidLoad()
+        
+    }
+    
+    func setPermission(){
+        // Set up permissions
+        pscope.addPermission(CameraPermission(),
+                             message: "We use this to record\r\nyour videos")
+        pscope.addPermission(MicrophonePermission(),
+                             message: "We use this to record\r\nyour video audios")
+        pscope.addPermission(PhotosPermission(),
+                             message: "We use this to save\r\nyour videos")
+    }
+    
+    func showPermission(){
+        // Show dialog with callbacks
+        pscope.show({ finished, results in
+            print("got results \(results)")
+            }, cancelled: { (results) -> Void in
+                print("thing was cancelled")
+        })
     }
     
     func setUpView(){

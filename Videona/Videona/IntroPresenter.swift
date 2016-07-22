@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import PermissionScope
 
 class IntroPresenter:NSObject, IntroPresenterInterface {
     
@@ -29,6 +30,8 @@ class IntroPresenter:NSObject, IntroPresenterInterface {
         controller?.setUpView()
         controller?.changeNextFinishButtonTitle(nextTitle)
         controller?.changeSkipButtonTittle(skipTitle)
+        controller?.setPermission()
+        controller?.showPermission()
     }
     
     func checkOrientation(){
@@ -57,7 +60,26 @@ class IntroPresenter:NSObject, IntroPresenterInterface {
     
     func pushSkip(){
         print("Intro presenter onSkipPush")
-       recordWireframe?.setRecordViewControllerAsRootController()
+
+        let canGoToRecordView = allPermissionsAutorized()
+
+        if canGoToRecordView {
+            recordWireframe?.setRecordViewControllerAsRootController()
+        }else{
+            controller?.showPermission()
+        }
+    }
+    
+    func allPermissionsAutorized() -> Bool {
+        let permissionStatus = PermissionScope().permissionStatuses([PermissionType.Camera,PermissionType.Microphone,PermissionType.Photos])
+        
+        for permission in permissionStatus{
+            if  (permission.1 == PermissionStatus.Unauthorized || permission.1 == PermissionStatus.Disabled || permission.1 == PermissionStatus.Unknown)  {
+                return false
+            }
+        }
+        
+        return true
     }
     
 }
