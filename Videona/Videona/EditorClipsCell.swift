@@ -14,4 +14,13 @@ class EditorClipsCell: UICollectionViewCell {
     @IBOutlet weak var positionNumberLabel: UILabel!
     @IBOutlet weak var removeClipButton: UIButton!
     
+    var isClipSelected: Bool = false{
+        didSet {            
+            self.layer.borderWidth = (isClipSelected ? 3 : 0)
+            self.layer.borderColor = (isClipSelected ? UIColor.greenColor().CGColor : UIColor.clearColor().CGColor)
+            
+            self.removeClipButton.backgroundColor = (isClipSelected ? UIColor.greenColor() : UIColor.clearColor())
+        }
+    }
+        
 }

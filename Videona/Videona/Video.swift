@@ -10,7 +10,8 @@ import Foundation
 
 class Video: Media {
     
-    var isSplit:Bool!
+    private var isSplit:Bool!
+    private var position:Int!
     
     override init(title: String, mediaPath: String) {
         super.init(title: title, mediaPath: mediaPath)
@@ -24,5 +25,13 @@ class Video: Media {
     
     func setIsSplit(state:Bool){
         self.isSplit = state
+    }
+    
+    func getPosition()->Int{
+        return self.position
+    }
+    
+    func setPosition(position:Int){
+        self.position = position
     }
 }

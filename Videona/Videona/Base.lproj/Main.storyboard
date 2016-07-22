@@ -1626,7 +1626,7 @@
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ywJ-Vq-1Hz">
                                 <rect key="frame" x="151" y="404" width="240" height="128"/>
-                                <color key="backgroundColor" red="0.90588235289999997" green="0.2274509804" blue="0.2470588235" alpha="0.87615840519999999" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="fux-if-iS3">
                                         <variation key="heightClass=compact" constant="240"/>
