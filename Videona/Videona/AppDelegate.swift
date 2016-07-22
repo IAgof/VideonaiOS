@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     let appDependencies = AppDependencies()
     var mixpanel:Mixpanel?
     var initState = "firstTime"
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
        
@@ -64,13 +64,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             
             trackAppStartupProperties(false);
             
-            appDependencies.installRecordToRootViewControllerIntoWindow(window!)
+//            appDependencies.installRecordToRootViewControllerIntoWindow(window!)
 
             //            Test other views on root
 //            appDependencies.installIntroToRootViewControllerIntoWindow(window!)
 //            appDependencies.installSettingsToRootViewControllerIntoWindow(window!)
 //            appDependencies.installShareToRootViewControllerIntoWindow(window!)
-//            appDependencies.installEditorRoomToRootViewControllerIntoWindow(window!)
+            appDependencies.installEditorRoomToRootViewControllerIntoWindow(window!)
         } else {
             // other version
             defaults.setObject(currentAppVersion, forKey: "appVersion")

@@ -71,7 +71,7 @@ class EditingRoomWireframe : NSObject {
     }
     
     func showEditorInContainer(){
-        self.presentChildController("Editor")
+        self.presentChildController("EditorViewController")
     }
     
     func showMusicInContainer(){
