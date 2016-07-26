@@ -34,4 +34,12 @@ class Video: Media {
     func setPosition(position:Int){
         self.position = position
     }
+    
+//    func getThumbnailImage()->UIImageView{
+//        return self.thumbnailImage
+//    }
+//    
+//    func setThumbnailImage(imageView:UIImageView){
+//        self.thumbnailImage = imageView
+//    }
 }

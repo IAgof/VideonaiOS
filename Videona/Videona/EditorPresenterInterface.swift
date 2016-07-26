@@ -9,5 +9,12 @@
 import Foundation
 
 protocol EditorPresenterInterface {
-    
+    func viewDidLoad()
+    func viewWillDisappear()
+    func viewWillAppear()
+    func didSelectItemAtIndexPath(indexPath:NSIndexPath)
+    func cellForItemAtIndexPath(indexPath:NSIndexPath)
+    func moveItemAtIndexPath(sourceIndexPath: NSIndexPath,
+                             toIndexPath destinationIndexPath: NSIndexPath)
+    func removeVideoClip(position:Int)
 }

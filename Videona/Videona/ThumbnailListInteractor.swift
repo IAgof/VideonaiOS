@@ -1,8 +1,8 @@
 //
-//  ThumbnailInteractor.swift
+//  ThumbnailListInteractor.swift
 //  Videona
 //
-//  Created by Alejandro Arjonilla Garcia on 30/5/16.
+//  Created by Alejandro Arjonilla Garcia on 26/7/16.
 //  Copyright © 2016 Videona. All rights reserved.
 //
 
@@ -10,18 +10,20 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class ThumbnailInteractor: NSObject {
+class ThumbnailListInteractor: NSObject {
     var thumbnailImageView: UIImageView!
     var videoPath:String!
     var diameter:CGFloat = 40.0
-
-    init(videoPath:String,diameter:CGFloat) {
+    
+    init(videoPath:String,diameter:Int) {
         self.videoPath = videoPath
-        self.thumbnailImageView = UIImageView.init(frame: CGRectMake(0, 0, diameter, diameter))
-        self.diameter = diameter
+        
+        let newDiameter = CGFloat.init(diameter)
+        self.thumbnailImageView = UIImageView.init(frame: CGRectMake(0, 0, newDiameter, newDiameter))
+        self.diameter = newDiameter
     }
     
-    func getThumbnailImageView()->UIImageView{
+    func getThumbnailImage(completion:(UIImage)->Void){
         let asset = AVURLAsset(URL: NSURL(fileURLWithPath: videoPath), options: nil)
         let imgGenerator = AVAssetImageGenerator(asset: asset)
         
@@ -35,15 +37,11 @@ class ThumbnailInteractor: NSObject {
             thumbnail = self.resizeImage(thumbnail, newWidth: diameter)
             // lay out this image view, or if it already exists, set its image property to uiImage
             
-            thumbnailImageView.image = thumbnail
+            completion(thumbnail)
         } catch {
             print("Thumbnail error \nSomething went wrong!")
+            completion(UIImage())
         }
-
-        self.setCornerToThumbnail()
-        self.setBorderToThumb()
-        
-        return thumbnailImageView
     }
     
     func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
@@ -58,30 +56,4 @@ class ThumbnailInteractor: NSObject {
         return newImage
     }
     
-    func setCornerToThumbnail(){
-        diameter = diameter/2
-        
-        thumbnailImageView.layer.cornerRadius = diameter
-        thumbnailImageView.clipsToBounds = true
-    }
-    
-    func setBorderToThumb(){
-        let borderLayer = self.getBorderLayer()
-        thumbnailImageView.layer.addSublayer(borderLayer)
-    }
-    
-    func getBorderLayer() -> CALayer{
-        let borderLayer = CALayer.init()
-        let borderFrame = CGRectMake(0,0,thumbnailImageView.frame.size.width, thumbnailImageView.frame.size.height)
-        
-        //Set properties border layer
-        borderLayer.backgroundColor = UIColor.clearColor().CGColor
-        borderLayer.frame = borderFrame
-        borderLayer.cornerRadius = diameter
-        borderLayer.borderWidth = 3
-        borderLayer.borderColor = UIColor.whiteColor().CGColor
-        
-        return borderLayer
-    }
-
 }

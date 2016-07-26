@@ -11,6 +11,19 @@ import Foundation
 class Utils{
     static let sharedInstance = Utils()
     
+    var thumbnailEditorListDiameter:Int {
+        switch UIDevice.currentDevice().userInterfaceIdiom {
+        case .Phone:
+            return 80
+        case .Pad:
+            return 120
+        case .Unspecified:
+            return 50
+        default:
+            return 80
+        }
+    }
+    
     let udid = UIDevice.currentDevice().identifierForVendor!.UUIDString
 
     func getDoubleHourAndMinutes() -> Double{

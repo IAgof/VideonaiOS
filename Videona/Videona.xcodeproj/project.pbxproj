@@ -21,6 +21,10 @@
 		A90F82181D3E702D00224F31 /* EditingRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F82171D3E702D00224F31 /* EditingRoomViewController.swift */; };
 		A90F821A1D3E704400224F31 /* EditingRoomPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F82191D3E704400224F31 /* EditingRoomPresenterInterface.swift */; };
 		A90F821C1D3E704C00224F31 /* EditingRoomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F821B1D3E704C00224F31 /* EditingRoomPresenter.swift */; };
+		A91849D61D4786C2001B3505 /* RemoveVideoFromProjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91849D51D4786C2001B3505 /* RemoveVideoFromProjectUseCase.swift */; };
+		A91849D81D479462001B3505 /* ReloadPositionVideosProjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91849D71D479462001B3505 /* ReloadPositionVideosProjectUseCase.swift */; };
+		A91849DA1D4796F7001B3505 /* MoveVideoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91849D91D4796F7001B3505 /* MoveVideoUseCase.swift */; };
+		A91849DC1D479C7B001B3505 /* ThumbnailListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91849DB1D479C7B001B3505 /* ThumbnailListInteractor.swift */; };
 		A91AB0E51D22BCAF001DA3BB /* VideonaControllerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91AB0E41D22BCAF001DA3BB /* VideonaControllerInterface.swift */; };
 		A91AB0F21D22C7BC001DA3BB /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91AB0EF1D22C789001DA3BB /* GPUImage.framework */; };
 		A91AB0F31D22C7D2001DA3BB /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A91AB0EF1D22C789001DA3BB /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -271,6 +275,10 @@
 		A90F82171D3E702D00224F31 /* EditingRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingRoomViewController.swift; sourceTree = "<group>"; };
 		A90F82191D3E704400224F31 /* EditingRoomPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingRoomPresenterInterface.swift; sourceTree = "<group>"; };
 		A90F821B1D3E704C00224F31 /* EditingRoomPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingRoomPresenter.swift; sourceTree = "<group>"; };
+		A91849D51D4786C2001B3505 /* RemoveVideoFromProjectUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveVideoFromProjectUseCase.swift; sourceTree = "<group>"; };
+		A91849D71D479462001B3505 /* ReloadPositionVideosProjectUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReloadPositionVideosProjectUseCase.swift; sourceTree = "<group>"; };
+		A91849D91D4796F7001B3505 /* MoveVideoUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveVideoUseCase.swift; sourceTree = "<group>"; };
+		A91849DB1D479C7B001B3505 /* ThumbnailListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailListInteractor.swift; sourceTree = "<group>"; };
 		A91AB0E41D22BCAF001DA3BB /* VideonaControllerInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideonaControllerInterface.swift; sourceTree = "<group>"; };
 		A91AB0E61D22C788001DA3BB /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = ../../GPUImageForVideonaApp/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		A91D25111CF876250006CB93 /* CameraInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraInteractorInterface.swift; sourceTree = "<group>"; };
@@ -642,6 +650,9 @@
 			isa = PBXGroup;
 			children = (
 				A93125C31D40B1AA001BCC82 /* AddVideoToProjectUseCase.swift */,
+				A91849D91D4796F7001B3505 /* MoveVideoUseCase.swift */,
+				A91849D51D4786C2001B3505 /* RemoveVideoFromProjectUseCase.swift */,
+				A91849D71D479462001B3505 /* ReloadPositionVideosProjectUseCase.swift */,
 			);
 			name = "Use case";
 			sourceTree = "<group>";
@@ -1352,6 +1363,7 @@
 		A98AAC0B1D4117A3007D4F5B /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				A91849DB1D479C7B001B3505 /* ThumbnailListInteractor.swift */,
 			);
 			name = Interactor;
 			sourceTree = "<group>";
@@ -1916,6 +1928,7 @@
 				A98A93C41CF5BAF6004E1DB7 /* EffectDictionary.swift in Sources */,
 				A93846EC1CE47EE2007FB6BC /* FilterListView.swift in Sources */,
 				A98AA1821D19450C00E196D0 /* NSLocale+ISO639_2.m in Sources */,
+				A91849DA1D4796F7001B3505 /* MoveVideoUseCase.swift in Sources */,
 				A98AAC131D4117DB007D4F5B /* EditorPresenterInterface.swift in Sources */,
 				A95D3BEA1CEB7158001F2272 /* PlayerProvider.swift in Sources */,
 				A94301611CE5CF2700DC0DF8 /* PlayerPresenterInterface.swift in Sources */,
@@ -1931,6 +1944,7 @@
 				A98A93BB1CF5903C004E1DB7 /* AddFilterInteractor.swift in Sources */,
 				A93125C11D40AD14001BCC82 /* Audio.swift in Sources */,
 				A99278591CE36524009DC364 /* SettingsWireframe.swift in Sources */,
+				A91849D81D479462001B3505 /* ReloadPositionVideosProjectUseCase.swift in Sources */,
 				A971F5BE1CFC8D10004DC50D /* ExporterInteractor.swift in Sources */,
 				A927931D1D0AB71D008E30BF /* RecorderConstants.swift in Sources */,
 				A97FBDD11D09827900942F8D /* DetailTextInterface.swift in Sources */,
@@ -1939,9 +1953,11 @@
 				A95D3BE31CEB6B77001F2272 /* Utils.swift in Sources */,
 				A943016E1CE5D99E00DC0DF8 /* SocialNetwork.swift in Sources */,
 				A9B1181D1CE378DC001A1177 /* ShareInterface.swift in Sources */,
+				A91849D61D4786C2001B3505 /* RemoveVideoFromProjectUseCase.swift in Sources */,
 				A965C7EC1CF58467001E2D39 /* CameraInteractor.swift in Sources */,
 				A98AA14C1D22743A004E0869 /* TwitterVideoUpload.m in Sources */,
 				A92793161D0AB1FB008E30BF /* SettingsConstants.swift in Sources */,
+				A91849DC1D479C7B001B3505 /* ThumbnailListInteractor.swift in Sources */,
 				A99278501CE3647B009DC364 /* SettingsPresenter.swift in Sources */,
 				A97FBDD71D09846A00942F8D /* DetailTextInteractor.swift in Sources */,
 				A9E066DF1CE4BA0700D4E11D /* EffectProvider.swift in Sources */,

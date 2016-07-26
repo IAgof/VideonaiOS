@@ -28,6 +28,7 @@ class EditorWireframe : NSObject {
     func setEditorViewControllerAsRootController() {
         let appdelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let homeViewController =  editorViewControllerFromStoryboard()
+        
         let nav = UINavigationController(rootViewController: homeViewController)
         appdelegate.window!.rootViewController = nav
     }

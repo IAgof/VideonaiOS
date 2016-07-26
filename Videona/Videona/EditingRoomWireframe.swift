@@ -16,6 +16,10 @@ class EditingRoomWireframe : NSObject {
     var editingRoomViewController : EditingRoomViewController?
     var editingRoomPresenter : EditingRoomPresenter?
     
+    var editorWireframe: EditorWireframe?
+//    var musicWireframe: MusicWireframe?
+    var shareWireframe: ShareWireframe?
+    
     //MARK: - Variables
     weak var currentViewController: UIViewController?
     var prevController:UIViewController?
@@ -62,7 +66,7 @@ class EditingRoomWireframe : NSObject {
     }
     
     func goPrevController(){
-        editingRoomViewController?.navigationController?.popToViewController(prevController!, animated: true)
+            self.editingRoomViewController?.navigationController?.popToViewController(self.prevController!, animated: false)
     }
     
     func goBackToEditingRoomView(prevController:UIViewController){
@@ -71,31 +75,33 @@ class EditingRoomWireframe : NSObject {
     }
     
     func showEditorInContainer(){
-        self.presentChildController("EditorViewController")
+        let controller = editorWireframe?.editorViewControllerFromStoryboard()
+        self.presentChildController(controller!)
     }
     
     func showMusicInContainer(){
-        self.presentChildController("Music")
+        //        self.presentChildController("Music")
     }
     
     func showShareInContainer(){
-        self.presentChildController("ShareViewController")
+        let controller = shareWireframe?.shareViewControllerFromStoryboard()
+        self.presentChildController(controller!)
     }
     
-    func presentChildController(identifier:String){
-        let newViewController = mainStoryboard().instantiateViewControllerWithIdentifier(identifier)
-        newViewController.view.translatesAutoresizingMaskIntoConstraints = false
+    func presentChildController(controller:UIViewController){
+        
+        controller.view.translatesAutoresizingMaskIntoConstraints = false
        
         if currentViewController == nil {
-            self.currentViewController = mainStoryboard().instantiateViewControllerWithIdentifier(identifier)
+            self.currentViewController = controller
             self.currentViewController!.view.translatesAutoresizingMaskIntoConstraints = false
             editingRoomViewController!.addChildViewController(self.currentViewController!)
             self.addSubview(self.currentViewController!.view,
                             toView: editingRoomViewController!.containerView)
         }else{
             self.cycleFromViewController(self.currentViewController!,
-                                         toViewController: newViewController)
-            self.currentViewController = newViewController
+                                         toViewController: controller)
+            self.currentViewController = controller
         }
     }
     

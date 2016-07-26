@@ -321,7 +321,7 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         default:
             text="Another"
         }
-        NSLog("You have moved: \(text)")
+        NSLog("Orientation You have moved: \(text)")
     }
    
     func forceOrientation(){

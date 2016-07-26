@@ -18,6 +18,7 @@ class AddVideoToProjectUseCase: NSObject {
         
         let video = Video.init(title: title,
                                mediaPath: videoPath)
+        video.setPosition(videoList.count + 1)
         
         videoList.append(video)
         

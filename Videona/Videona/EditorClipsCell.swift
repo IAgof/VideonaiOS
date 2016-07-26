@@ -22,5 +22,13 @@ class EditorClipsCell: UICollectionViewCell {
             self.removeClipButton.backgroundColor = (isClipSelected ? UIColor.greenColor() : UIColor.clearColor())
         }
     }
-        
+    
+    var isMoving = false{
+        didSet{
+            UIView.animateWithDuration(0.25, animations:{
+                self.transform = CGAffineTransformMakeRotation(self.isMoving ? CGFloat(M_PI_4) : CGFloat(0))
+            })
+        }
+    }
+    
 }

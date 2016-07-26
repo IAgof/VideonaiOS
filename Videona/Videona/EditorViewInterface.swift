@@ -7,7 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
 protocol EditorViewInterface {
-    
+    func setUpGestureRecognizer()
+    func selectCell(indexPath:NSIndexPath)
+    func deselectCell(indexPath:NSIndexPath)
+    func reloadCollectionViewData()
+    func setPositionList(list:[Int])
+    func setVideoImagesList(list: [UIImage])
 }

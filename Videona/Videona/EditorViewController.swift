@@ -9,17 +9,21 @@
 import Foundation
 
 class EditorViewController: VideonaController,EditorViewInterface,
-UICollectionViewDataSource,UICollectionViewDelegate{
+UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     
     var eventHandler: EditorPresenterInterface?
     
     let reuseIdentifierCell = "editorCollectionViewCell"
     
-    //Esto no debe estar aqui, aqui no se debe manejar con objetos, es una clase tonta!
-//    let videosList = Project.sharedInstance.getVideoList()
-    var videosList = Project.sharedInstance.getVideoList()
-    
-    var selectedCellIndexPath:NSIndexPath?
+    var videoPositionList: [Int] = []
+
+    var videoImageList: [UIImage] = []{
+        didSet {
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.thumbnailClipsCollectionView.reloadData()
+            })
+        }
+    }
     
     //MARK: - Outlets
     @IBOutlet weak var thumbnailClipsCollectionView: UICollectionView!
@@ -32,27 +36,24 @@ UICollectionViewDataSource,UICollectionViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        eventHandler?.viewDidLoad()
+        
+    }
+    
+    func setUpGestureRecognizer(){
         longPressGesture = UILongPressGestureRecognizer(target: self, action: "handleLongGesture:")
         self.thumbnailClipsCollectionView.addGestureRecognizer(longPressGesture!)
-        
-        
-        //BORRAR
-        for i in 1...10{
-            let video = Video(title: "\(i)", mediaPath: "")
-            video.setPosition(i)
-            videosList.append(video)
-        }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-//        eventHandler?.viewWillAppear()
+        eventHandler?.viewWillAppear()
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-//        eventHandler?.viewWillDisappear()
+        eventHandler?.viewWillDisappear()
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,47 +63,66 @@ UICollectionViewDataSource,UICollectionViewDelegate{
     
     // MARK: - UICollectionViewDataSource protocol
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return videosList.count
+        return videoPositionList.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifierCell, forIndexPath: indexPath) as! EditorClipsCell
         
-        Utils.sharedInstance.debugLog("cell for item at indexPath:\(indexPath.item) \n videolist position\(videosList[indexPath.item].getPosition())")
-        cell.positionNumberLabel.text = "\(videosList[indexPath.item].getPosition())"
+        cell.positionNumberLabel.text = "\(videoPositionList[indexPath.item])"
         
-        cell.thumbnailImageView.backgroundColor = UIColor.blackColor()
-        
-        if indexPath == selectedCellIndexPath {
-            cell.isClipSelected = true
-        }else{
-            cell.isClipSelected = false
+        if  videoImageList.indices.contains(indexPath.item){
+            cell.thumbnailImageView.image = videoImageList[indexPath.item]
         }
         
+        eventHandler?.cellForItemAtIndexPath(indexPath)
+    
+        cell.removeClipButton.tag = indexPath.row
+        
+        cell.removeClipButton.addTarget(self, action: "pushRemoveVideoClip:", forControlEvents: UIControlEvents.TouchUpInside)
+
+        Utils.sharedInstance.debugLog("cell for item at indexPath:\(indexPath.item) \n videolist position\(videoPositionList[indexPath.item])\n cell isSelected\(cell.isClipSelected)")
+
         return cell
+    }
+    //MARK: - UICollectionViewDelegateFlowLayout
+    func collectionView(collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                               sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+       
+        let size = Utils.sharedInstance.thumbnailEditorListDiameter
+        
+        return CGSize(width: size,
+                      height: size)
     }
     
     // MARK: - UICollectionViewDelegate protocol
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         // handle tap events
         
-        // Deselect last cell
-        if (selectedCellIndexPath != nil){
-            if (thumbnailClipsCollectionView.cellForItemAtIndexPath(selectedCellIndexPath!) != nil){
-                
-                let lastCell = thumbnailClipsCollectionView.cellForItemAtIndexPath(selectedCellIndexPath!) as! EditorClipsCell
-                lastCell.isClipSelected = false
-            }
-        }
-        
-        // Select cell
-        let cell = thumbnailClipsCollectionView.cellForItemAtIndexPath(indexPath) as! EditorClipsCell
-        
-        cell.isClipSelected = !(cell.isClipSelected)
-        
-        selectedCellIndexPath = indexPath
+        eventHandler?.didSelectItemAtIndexPath(indexPath)
     }
     
+    @IBAction func pushRemoveVideoClip(sender:UIButton){
+        
+        eventHandler?.removeVideoClip(sender.tag)
+    }
+    
+    func deselectCell(indexPath:NSIndexPath) {
+        if (thumbnailClipsCollectionView.cellForItemAtIndexPath(indexPath) != nil){
+            let lastCell = thumbnailClipsCollectionView.cellForItemAtIndexPath(indexPath) as! EditorClipsCell
+            lastCell.isClipSelected = false
+        }
+    }
+    
+    func selectCell(indexPath:NSIndexPath) {
+        // Select cell
+        if let cell = (thumbnailClipsCollectionView.cellForItemAtIndexPath(indexPath)){
+            let editorCell = cell as! EditorClipsCell
+            
+            editorCell.isClipSelected = true
+        }
+    }
     
     //MARK: - Moving Items
     func collectionView(collectionView: UICollectionView,
@@ -110,38 +130,26 @@ UICollectionViewDataSource,UICollectionViewDelegate{
                                                      toIndexPath destinationIndexPath: NSIndexPath) {
         // move your data order
         
-        Utils.sharedInstance.debugLog("Move item at index \n sourceIndexPath: \(sourceIndexPath.item) \n destinationIndexPath \(destinationIndexPath.item)")
+        //        Utils.sharedInstance.debugLog("Move item at index \n sourceIndexPath: \(sourceIndexPath.item) \n destinationIndexPath \(destinationIndexPath.item)")
         
-        moveClipToPosition(sourceIndexPath.item,
-                           destionationPosition: destinationIndexPath.item)
-        
-        reloadPositionNumberAfterMovement()
-        
-        if selectedCellIndexPath == sourceIndexPath {
-            selectedCellIndexPath = destinationIndexPath
-        }
+        eventHandler?.moveItemAtIndexPath(sourceIndexPath,
+                                          toIndexPath: destinationIndexPath)
+
     }
     
-    func reloadPositionNumberAfterMovement() {
-        for videoPosition in 0...(videosList.count - 1) {
-            videosList[videoPosition].setPosition(videoPosition + 1)
-        }
-        
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            self.thumbnailClipsCollectionView.reloadData()
-        })
+    func reloadCollectionViewData() {
+        thumbnailClipsCollectionView.reloadData()
     }
     
-    func moveClipToPosition(sourcePosition:Int,
-                            destionationPosition:Int){
-        let videoToMove = videosList[sourcePosition]
-        
-        videosList.removeAtIndex(sourcePosition)
-        
-        videosList.insert(videoToMove, atIndex: destionationPosition)
+    func setPositionList(list: [Int]) {
+        self.videoPositionList = list
     }
     
-    //MARK: - Drag and Drop hangler
+    func setVideoImagesList(list: [UIImage]) {
+        self.videoImageList = list
+    }
+    
+    //MARK: - Drag and Drop handler
     func handleLongGesture(gesture: UILongPressGestureRecognizer) {
         
         switch(gesture.state) {
@@ -151,10 +159,21 @@ UICollectionViewDataSource,UICollectionViewDelegate{
                 break
             }
             thumbnailClipsCollectionView.beginInteractiveMovementForItemAtIndexPath(selectedIndexPath)
+            
+            let cell = thumbnailClipsCollectionView.cellForItemAtIndexPath(selectedIndexPath) as! EditorClipsCell
+            cell.isMoving = true
+        
         case UIGestureRecognizerState.Changed:
             thumbnailClipsCollectionView.updateInteractiveMovementTargetPosition(gesture.locationInView(gesture.view!))
+                     
         case UIGestureRecognizerState.Ended:
             thumbnailClipsCollectionView.endInteractiveMovement()
+           
+            guard let selectedIndexPath = self.thumbnailClipsCollectionView.indexPathForItemAtPoint(gesture.locationInView(self.thumbnailClipsCollectionView)) else {
+                break
+            }
+            let cell = thumbnailClipsCollectionView.cellForItemAtIndexPath(selectedIndexPath) as! EditorClipsCell
+            cell.isMoving = false
         default:
             thumbnailClipsCollectionView.cancelInteractiveMovement()
         }

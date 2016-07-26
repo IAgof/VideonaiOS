@@ -66,28 +66,31 @@ class PlayerView: UIView,PlayerInterface {
         //Test share interface
 //        movieURL =  NSURL.init(fileURLWithPath: NSBundle.mainBundle().pathForResource("test", ofType:"m4v")!)
         
-        let avAsset: AVURLAsset = AVURLAsset(URL: movieURL!, options: nil)
-        let playerItem: AVPlayerItem = AVPlayerItem(asset: avAsset)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PlayerView.onVideoStops),
-                                                         name: AVPlayerItemDidPlayToEndTimeNotification,
-                                                         object: playerItem)
-        player = AVPlayer.init(playerItem: playerItem)
-
-        player!.addPeriodicTimeObserverForInterval(CMTimeMake(1, 1000), queue: dispatch_get_main_queue()) { _ in
-            if self.player!.currentItem?.status == .ReadyToPlay {
-                self.eventHandler?.updateSeekBar()
+        if (movieURL != nil) {
+            let avAsset: AVURLAsset = AVURLAsset(URL: movieURL!, options: nil)
+            let playerItem: AVPlayerItem = AVPlayerItem(asset: avAsset)
+            
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PlayerView.onVideoStops),
+                                                             name: AVPlayerItemDidPlayToEndTimeNotification,
+                                                             object: playerItem)
+            player = AVPlayer.init(playerItem: playerItem)
+            
+            player!.addPeriodicTimeObserverForInterval(CMTimeMake(1, 1000), queue: dispatch_get_main_queue()) { _ in
+                if self.player!.currentItem?.status == .ReadyToPlay {
+                    self.eventHandler?.updateSeekBar()
+                }
             }
-        }
-        
-        playerLayer = AVPlayerLayer(player: player)
-        playerLayer!.frame = self.frame
-        player?.currentItem?.seekToTime(CMTime.init(value: 3, timescale: 10))
+            
+            playerLayer = AVPlayerLayer(player: player)
+            playerLayer!.frame = self.frame
+            player?.currentItem?.seekToTime(CMTime.init(value: 3, timescale: 10))
+            
+            self.playerContainer.layoutIfNeeded()
+            self.playerContainer.layer.addSublayer(playerLayer!)
+            
+            self.playerContainer.bringSubviewToFront(seekSlider)
 
-        self.playerContainer.layoutIfNeeded()
-        self.playerContainer.layer.addSublayer(playerLayer!)
-        
-        self.playerContainer.bringSubviewToFront(seekSlider)
+        }
     }
     
     func updateSeekBarOnUI(){
