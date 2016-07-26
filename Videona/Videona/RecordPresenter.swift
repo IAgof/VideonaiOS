@@ -73,27 +73,7 @@ class RecordPresenter: NSObject
     }
     
     func pushShare() {
-        controller?.createAlertWaitToExport()
-        controller?.getTrackerObject().mixpanel.timeEvent(AnalyticsConstants().VIDEO_EXPORTED);
-        
-        self.hideAnyFilterList()
-        
-        print("Record presenter pushShare")
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-            
-            let exporter = ExporterInteractor.init()
-            exporter.exportVideos({ exportPath,videoTotalTime in
-                print("Export path response = \(exportPath)")
-                self.trackExported(videoTotalTime)
-                
-                self.controller?.dissmissAlertWaitToExport({
-                    //wait to remove alert to present new Screeen
-                    self.shareWireframe?.presentShareInterfaceFromViewController((self.controller?.getController())!,
-                        videoPath: exportPath,
-                        numberOfClips: Project.sharedInstance.numberOfClips())
-                })
-            })
-        });
+        recordWireframe?.presentShareInterfaceInsideEditorRoom()
     }
     
     func pushFlash() {

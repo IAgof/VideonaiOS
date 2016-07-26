@@ -42,8 +42,17 @@ class EditingRoomPresenter: NSObject,EditingRoomPresenterInterface {
     func pushShare() {
         controller?.deselectAllButtons()
         controller?.selectShareButton()
+        controller?.createAlertWaitToExport()
         
-        wireframe?.showShareInContainer()
+        let exporter = ExporterInteractor.init()
+        exporter.exportVideos({
+            exportPath,videoTotalTime in
+            print("Export path response = \(exportPath)")
+            self.controller?.dissmissAlertWaitToExport({
+                
+                self.wireframe?.showShareInContainer(exportPath)
+            })
+        })
     }
     
     func pushEditor() {

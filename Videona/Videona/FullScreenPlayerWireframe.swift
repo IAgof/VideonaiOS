@@ -47,11 +47,10 @@ class FullScreenPlayerWireframe : NSObject {
 //    }
 
     func goPrevController(playerView:PlayerView){
-        fullScreenPlayerViewController?.navigationController?.popToViewController(prevController!, animated: true)
         if prevController!.isKindOfClass(ShareViewController) {
             let shareController = prevController as! ShareViewController
             shareController.cameFromFullScreenPlayer(playerView)
         }
-
-        }
+        fullScreenPlayerViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
 }

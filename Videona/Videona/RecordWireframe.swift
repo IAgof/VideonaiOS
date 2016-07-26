@@ -83,4 +83,8 @@ class RecordWireframe : NSObject {
         
         prevController.navigationController?.popToRootViewControllerAnimated(true)
     }
+    
+    func presentShareInterfaceInsideEditorRoom(){
+        editorRoomWireframe?.presentEditingRoomFromViewControllerAndExportVideo(recordViewController!)
+    }
 }

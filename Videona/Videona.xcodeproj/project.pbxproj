@@ -646,7 +646,7 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		A93125C21D40B198001BCC82 /* Use case */ = {
+		A93125C21D40B198001BCC82 /* Project Use case */ = {
 			isa = PBXGroup;
 			children = (
 				A93125C31D40B1AA001BCC82 /* AddVideoToProjectUseCase.swift */,
@@ -654,7 +654,7 @@
 				A91849D51D4786C2001B3505 /* RemoveVideoFromProjectUseCase.swift */,
 				A91849D71D479462001B3505 /* ReloadPositionVideosProjectUseCase.swift */,
 			);
-			name = "Use case";
+			name = "Project Use case";
 			sourceTree = "<group>";
 		};
 		A93846E21CE47E57007FB6BC /* Filter List */ = {
@@ -1013,7 +1013,7 @@
 		A95B24771CD8B95800F78AAF /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				A93125C21D40B198001BCC82 /* Use case */,
+				A93125C21D40B198001BCC82 /* Project Use case */,
 				A942A4661D3FC30F001E019F /* Model */,
 				A98AA17B1D1944DF00E196D0 /* ISO639-2 */,
 				A9686F941CFF129C00983540 /* AVResolutionParse.swift */,

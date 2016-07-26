@@ -20,6 +20,9 @@ class EditingRoomViewController: VideonaController,EditingRoomViewInterface {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var containerView: UIView!
 
+    //MARK: - Variables
+    var alertController:UIAlertController?
+
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,4 +84,26 @@ class EditingRoomViewController: VideonaController,EditingRoomViewInterface {
         self.shareButton.selected = true
     }
     
+    func createAlertWaitToExport(){
+        let title = Utils().getStringByKeyFromSettings(RecordConstants().WAIT_TITLE)
+        let message = Utils().getStringByKeyFromSettings(RecordConstants().WAIT_DESCRIPTION)
+        
+        alertController = UIAlertController(title:title,message:message,preferredStyle: .Alert)
+        
+        let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
+        
+        
+        activityIndicator.center = CGPointMake(130.5, 75.5);
+        activityIndicator.startAnimating()
+        
+        alertController?.view.addSubview(activityIndicator)
+        self.presentViewController(alertController!, animated: false, completion:{})
+    }
+    
+    func dissmissAlertWaitToExport(completion:()->Void){
+        alertController?.dismissViewControllerAnimated(true, completion: {
+            print("can go to next screen")
+            completion()
+        })
+    }
 }

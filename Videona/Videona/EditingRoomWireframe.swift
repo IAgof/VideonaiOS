@@ -49,6 +49,16 @@ class EditingRoomWireframe : NSObject {
         prevController.presentViewController(viewController, animated: true, completion: nil)
     }
     
+    func presentEditingRoomFromViewControllerAndExportVideo(prevController:UIViewController){
+        let viewController = EditingRoomViewControllerFromStoryboard()
+        
+        self.prevController = prevController
+        
+        prevController.presentViewController(viewController, animated: true, completion: {
+            self.editingRoomViewController?.eventHandler?.pushShare()
+        })
+    }
+    
     func EditingRoomViewControllerFromStoryboard() -> EditingRoomViewController {
         let storyboard = mainStoryboard()
         let viewController = storyboard.instantiateViewControllerWithIdentifier(EditingRoomViewControllerIdentifier) as! EditingRoomViewController
@@ -83,8 +93,11 @@ class EditingRoomWireframe : NSObject {
         //        self.presentChildController("Music")
     }
     
-    func showShareInContainer(){
+    func showShareInContainer(exportPath:String){
         let controller = shareWireframe?.shareViewControllerFromStoryboard()
+            controller?.exportPath = exportPath
+            controller?.numberOfClips = Project.sharedInstance.getVideoList().count
+        
         self.presentChildController(controller!)
     }
     

@@ -89,10 +89,6 @@ protocol RecordViewInterface:VideonaControllerInterface{
     
     func finishActivityForResult(path:String)
     
-    func createAlertWaitToExport()
-    
-    func dissmissAlertWaitToExport(completion:()->Void)
-    
     func resetView()
     
     func getRecordButtonSize()->CGFloat
