@@ -15,10 +15,12 @@ class ReloadPositionVideosProjectUseCase: NSObject {
     func reloadPositionNumberAfterMovement() {
         let videoList = Project.sharedInstance.getVideoList()
         
-        for videoPosition in 0...(videoList.count - 1) {
-            videoList[videoPosition].setPosition(videoPosition + 1)
+        if !videoList.isEmpty {
+            for videoPosition in 0...(videoList.count - 1) {
+                videoList[videoPosition].setPosition(videoPosition + 1)
+            }
+            
+            Project.sharedInstance.setVideoList(videoList)
         }
-        
-        Project.sharedInstance.setVideoList(videoList)
     }
 }

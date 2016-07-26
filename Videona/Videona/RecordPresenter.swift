@@ -63,6 +63,8 @@ class RecordPresenter: NSObject
         cameraInteractor?.startCamera()
         
         controller?.forceOrientation()
+        
+        self.updateThumbnail()
     }
     
     
@@ -123,14 +125,9 @@ class RecordPresenter: NSObject
             // do some task
             self.cameraInteractor?.setIsRecording(false)
             
-            let videoPath = Project.sharedInstance.getVideoList()[Project.sharedInstance.numberOfClips() - 1].getMediaPath()
+            self.updateThumbnail()
             
-            let thumb = ThumbnailInteractor.init(videoPath: videoPath,
-                diameter: (self.controller?.getRecordButtonSize())!).getThumbnailImageView()
             dispatch_async(dispatch_get_main_queue(), {
-                // update some UI
-                self.controller?.showRecordedVideoThumb(thumb)
-                self.controller?.showNumberVideos(Project.sharedInstance.numberOfClips())
                 self.controller?.showStopButton()
                 self.controller?.enableShareButton()
             });
@@ -139,6 +136,24 @@ class RecordPresenter: NSObject
         self.stopTimer()
     }
     
+    func updateThumbnail() {
+        let nClips = Project.sharedInstance.numberOfClips()
+        
+        if nClips > 0{
+            let videoPath = Project.sharedInstance.getVideoList()[nClips - 1].getMediaPath()
+            
+            let thumb = ThumbnailInteractor.init(videoPath: videoPath,
+                                                 diameter: (self.controller?.getRecordButtonSize())!).getThumbnailImageView()
+            
+            // update some UI
+            dispatch_async(dispatch_get_main_queue(), {
+                self.controller?.showRecordedVideoThumb(thumb)
+                self.controller?.showNumberVideos(Project.sharedInstance.numberOfClips())
+            });
+        }else{
+            self.controller?.hideRecordedVideoThumb()
+        }
+    }
     func pushRotateCamera() {
         cameraInteractor!.rotateCamera()
     }
