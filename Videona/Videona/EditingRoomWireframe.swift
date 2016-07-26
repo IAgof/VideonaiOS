@@ -66,7 +66,7 @@ class EditingRoomWireframe : NSObject {
     }
     
     func goPrevController(){
-            self.editingRoomViewController?.navigationController?.popToViewController(self.prevController!, animated: false)
+            self.editingRoomViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func goBackToEditingRoomView(prevController:UIViewController){
