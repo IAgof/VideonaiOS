@@ -5,9 +5,6 @@
 //  Created by Alejandro Arjonilla Garcia on 21/7/16.
 //  Copyright © 2016 Videona. All rights reserved.
 //
-
-import Foundation
-
 import Foundation
 import UIKit
 
@@ -24,13 +21,6 @@ class EditorWireframe : NSObject {
         let viewController = editorViewControllerFromStoryboard()
         
         rootWireframe?.showRootViewController(viewController, inWindow: window)
-    }
-    func setEditorViewControllerAsRootController() {
-        let appdelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let homeViewController =  editorViewControllerFromStoryboard()
-        
-        let nav = UINavigationController(rootViewController: homeViewController)
-        appdelegate.window!.rootViewController = nav
     }
     
     func presentEditorInterfaceFromViewController(prevController:UIViewController){
@@ -55,26 +45,5 @@ class EditorWireframe : NSObject {
     func mainStoryboard() -> UIStoryboard {
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         return storyboard
-    }
-    
-    func goPrevController(){
-        editorViewController?.navigationController?.popToViewController(prevController!, animated: true)
-    }
-    
-    func goToAppleStoreURL(url:NSURL){
-        if UIApplication.sharedApplication().canOpenURL(url){
-            UIApplication.sharedApplication().openURL(url)
-        }
-    }
-    
-    func goToTwitterUserPage(user:String){
-        let twitterURL = NSURL(string: "twitter://user?screen_name=\(user)")
-        
-        if UIApplication.sharedApplication().canOpenURL(twitterURL!){
-            UIApplication.sharedApplication().openURL(twitterURL!)
-        }else{
-            let twitterBrowserURL = NSURL(string: "http://www.twitter.com/\(user)")
-            UIApplication.sharedApplication().openURL(twitterBrowserURL!)
-        }
     }
 }

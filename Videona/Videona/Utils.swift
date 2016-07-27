@@ -73,4 +73,5 @@ class Utils{
     func getStringByKeyFromIntro(key:String) -> String {
         return NSBundle.mainBundle().localizedStringForKey(key,value: "",table: "Intro")
     }
+    
 }

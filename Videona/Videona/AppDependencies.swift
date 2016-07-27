@@ -21,6 +21,7 @@ class AppDependencies {
     var fullScreenPlayerWireframe = FullScreenPlayerWireframe()
     var editorRoomWireframe = EditingRoomWireframe()
     var editorWireframe = EditorWireframe()
+    var musicWireframe = MusicWireframe()
     
     init(){
         configureDependencies()
@@ -50,6 +51,9 @@ class AppDependencies {
         
         let editorPresenter = EditorPresenter()
         
+        let musicPresenter = MusicPresenter()
+        let musicInteractor = MusicInteractor()
+
         //INTRO MODULE
         introPresenter.introWireframe = introWireframe
         introPresenter.recordWireframe = recordWireframe
@@ -127,12 +131,22 @@ class AppDependencies {
         editorRoomWireframe.rootWireframe = rootWireframe
         editorRoomWireframe.editorWireframe = editorWireframe
         editorRoomWireframe.shareWireframe = shareWireframe
+        editorRoomWireframe.musicWireframe = musicWireframe
         
         //EDITOR MODULE
         editorPresenter.wireframe = editorWireframe
         
         editorWireframe.editorPresenter = editorPresenter
         editorWireframe.rootWireframe = rootWireframe
+        
+        //MUSIC MODULE
+        musicPresenter.wireframe = musicWireframe
+        musicPresenter.interactor = musicInteractor
+        
+        musicInteractor.delegate = musicPresenter
+        
+        musicWireframe.musicPresenter = musicPresenter
+        musicWireframe.rootWireframe = rootWireframe
     }
     
     func installIntroToRootViewControllerIntoWindow(window: UIWindow){

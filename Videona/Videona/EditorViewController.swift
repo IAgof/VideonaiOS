@@ -11,7 +11,12 @@ import Foundation
 class EditorViewController: VideonaController,EditorViewInterface,
 UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     
+    //MARK: - VIPER variables
     var eventHandler: EditorPresenterInterface?
+    
+    //MARK: - Variables
+    var longPressGesture: UILongPressGestureRecognizer?
+    var currentDragAndDropIndexPath: NSIndexPath?
     
     let reuseIdentifierCell = "editorCollectionViewCell"
     
@@ -28,9 +33,7 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
     //MARK: - Outlets
     @IBOutlet weak var thumbnailClipsCollectionView: UICollectionView!
 
-    //MARK: - Variables
-    var longPressGesture: UILongPressGestureRecognizer?
-    var currentDragAndDropIndexPath: NSIndexPath?
+
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -39,12 +42,7 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
         eventHandler?.viewDidLoad()
         
     }
-    
-    func setUpGestureRecognizer(){
-        longPressGesture = UILongPressGestureRecognizer(target: self, action: "handleLongGesture:")
-        self.thumbnailClipsCollectionView.addGestureRecognizer(longPressGesture!)
-    }
-    
+        
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -103,11 +101,26 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
         eventHandler?.didSelectItemAtIndexPath(indexPath)
     }
     
+    //MARK: - Moving Items
+    func collectionView(collectionView: UICollectionView,
+                        moveItemAtIndexPath sourceIndexPath: NSIndexPath,
+                                            toIndexPath destinationIndexPath: NSIndexPath) {
+        // move your data order
+        
+        //        Utils.sharedInstance.debugLog("Move item at index \n sourceIndexPath: \(sourceIndexPath.item) \n destinationIndexPath \(destinationIndexPath.item)")
+        
+        eventHandler?.moveItemAtIndexPath(sourceIndexPath,
+                                          toIndexPath: destinationIndexPath)
+        
+    }
+    
     @IBAction func pushRemoveVideoClip(sender:UIButton){
         
         eventHandler?.removeVideoClip(sender.tag)
     }
     
+    
+    //MARK: - Interface
     func deselectCell(indexPath:NSIndexPath) {
         if (thumbnailClipsCollectionView.cellForItemAtIndexPath(indexPath) != nil){
             let lastCell = thumbnailClipsCollectionView.cellForItemAtIndexPath(indexPath) as! EditorClipsCell
@@ -124,19 +137,6 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
         }
     }
     
-    //MARK: - Moving Items
-    func collectionView(collectionView: UICollectionView,
-                                 moveItemAtIndexPath sourceIndexPath: NSIndexPath,
-                                                     toIndexPath destinationIndexPath: NSIndexPath) {
-        // move your data order
-        
-        //        Utils.sharedInstance.debugLog("Move item at index \n sourceIndexPath: \(sourceIndexPath.item) \n destinationIndexPath \(destinationIndexPath.item)")
-        
-        eventHandler?.moveItemAtIndexPath(sourceIndexPath,
-                                          toIndexPath: destinationIndexPath)
-
-    }
-    
     func reloadCollectionViewData() {
         thumbnailClipsCollectionView.reloadData()
     }
@@ -147,6 +147,11 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
     
     func setVideoImagesList(list: [UIImage]) {
         self.videoImageList = list
+    }
+    
+    func setUpGestureRecognizer(){
+        longPressGesture = UILongPressGestureRecognizer(target: self, action: "handleLongGesture:")
+        self.thumbnailClipsCollectionView.addGestureRecognizer(longPressGesture!)
     }
     
     //MARK: - Drag and Drop handler
