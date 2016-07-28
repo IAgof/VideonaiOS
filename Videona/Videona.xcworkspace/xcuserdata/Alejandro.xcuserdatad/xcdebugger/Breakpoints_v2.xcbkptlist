@@ -2,4 +2,54 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Videona/MusicPresenter.swift"
+            timestampString = "491325429.620839"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "cancelDetailButtonPushed()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Videona.MusicPresenter.setTextList (Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "Videona"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alejandro/Desktop/Repos/VideonaiOS/Videona/Videona/MusicPresenter.swift"
+                  timestampString = "491325430.154954"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "protocol witness for Videona.MusicInteractorDelegate.setTextList (Swift.Array&lt;Swift.String&gt;) -&gt; () in conformance Videona.MusicPresenter : Videona.MusicInteractorDelegate in Videona"
+                  moduleName = "Videona"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alejandro/Desktop/Repos/VideonaiOS/Videona/Videona/MusicPresenter.swift"
+                  timestampString = "491325430.155135"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

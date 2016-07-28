@@ -129,6 +129,7 @@
 		A97D439E1D48BD400047484D /* MusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D439D1D48BD400047484D /* MusicCell.swift */; };
 		A97D43A11D48E3E70047484D /* MusicDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D43A01D48E3E70047484D /* MusicDetailView.xib */; };
 		A97D43A31D48E4B10047484D /* MusicDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D43A21D48E4B10047484D /* MusicDetailViewController.swift */; };
+		A97D43A81D4901BC0047484D /* AddMusicToProjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D43A71D4901BC0047484D /* AddMusicToProjectUseCase.swift */; };
 		A97FBDBE1D09781C00942F8D /* CompatibleResolutionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97FBDBD1D09781C00942F8D /* CompatibleResolutionsInteractor.swift */; };
 		A97FBDCB1D09823800942F8D /* DetailTextPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97FBDCA1D09823800942F8D /* DetailTextPresenter.swift */; };
 		A97FBDCD1D09824500942F8D /* DetailTextPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97FBDCC1D09824500942F8D /* DetailTextPresenterInterface.swift */; };
@@ -412,6 +413,7 @@
 		A97D439D1D48BD400047484D /* MusicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicCell.swift; sourceTree = "<group>"; };
 		A97D43A01D48E3E70047484D /* MusicDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicDetailView.xib; sourceTree = "<group>"; };
 		A97D43A21D48E4B10047484D /* MusicDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicDetailViewController.swift; sourceTree = "<group>"; };
+		A97D43A71D4901BC0047484D /* AddMusicToProjectUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMusicToProjectUseCase.swift; sourceTree = "<group>"; };
 		A97FBDBD1D09781C00942F8D /* CompatibleResolutionsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompatibleResolutionsInteractor.swift; sourceTree = "<group>"; };
 		A97FBDCA1D09823800942F8D /* DetailTextPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTextPresenter.swift; sourceTree = "<group>"; };
 		A97FBDCC1D09824500942F8D /* DetailTextPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTextPresenterInterface.swift; sourceTree = "<group>"; };
@@ -686,6 +688,7 @@
 				A91849D91D4796F7001B3505 /* MoveVideoUseCase.swift */,
 				A91849D51D4786C2001B3505 /* RemoveVideoFromProjectUseCase.swift */,
 				A91849D71D479462001B3505 /* ReloadPositionVideosProjectUseCase.swift */,
+				A97D43A71D4901BC0047484D /* AddMusicToProjectUseCase.swift */,
 			);
 			name = "Project Use case";
 			sourceTree = "<group>";
@@ -2162,6 +2165,7 @@
 				11A09F4C51675AFF12840FA2 /* FullScreenPlayerPresenterInterface.swift in Sources */,
 				11A096B391B3E78ACD1F710D /* FullScreenPlayerPresenter.swift in Sources */,
 				11A0932DDCF310739E0521A0 /* FullScreenPlayerViewController.swift in Sources */,
+				A97D43A81D4901BC0047484D /* AddMusicToProjectUseCase.swift in Sources */,
 				11A092443FAC586CFAFA4D4B /* FullScreenPlayerWireframe.swift in Sources */,
 				11A09EF76603C1D78D7F2930 /* FullScreenPlayerInterface.swift in Sources */,
 				11A097E4ED3C457078681CCF /* VideonaTracker.swift in Sources */,

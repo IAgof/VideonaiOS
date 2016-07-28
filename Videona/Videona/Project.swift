@@ -52,7 +52,7 @@ class Project: NSObject {
     /**
      * Music to add to export video ( may be nil)
      */
-    private var music: Audio?
+    private var music: Music?
     
     private override init() {
         self.title = "testTitle\(Utils().giveMeTimeNow())"
@@ -133,8 +133,13 @@ class Project: NSObject {
     func getExportedPath() -> String {
         return self.exportedPath
     }
-//    func getMusic() ->Audio{
-//        
-//        return music
-//    }
+    
+    func setMusic(music:Music){
+        self.music = music
+    }
+    
+    func getMusic() ->Music{
+        
+        return music!
+    }
 }

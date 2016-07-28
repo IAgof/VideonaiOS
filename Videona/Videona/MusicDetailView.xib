@@ -46,6 +46,10 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PiH-7b-pqe">
+                    <rect key="frame" x="125" y="302" width="51" height="30"/>
+                    <state key="normal" title="remove"/>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -53,6 +57,7 @@
                 <constraint firstItem="Fkh-td-DDL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Akw-qV-hu7"/>
                 <constraint firstItem="eED-nV-dui" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="Jjf-Xa-MAs"/>
                 <constraint firstAttribute="trailing" secondItem="JuB-TN-Waf" secondAttribute="trailing" constant="8" id="KXS-kA-hsm"/>
+                <constraint firstItem="PiH-7b-pqe" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="MCG-4l-g5n"/>
                 <constraint firstItem="Fkh-td-DDL" firstAttribute="top" relation="greaterThanOrEqual" secondItem="84S-zW-oLf" secondAttribute="bottom" constant="10" id="NWD-lF-Kvz"/>
                 <constraint firstItem="6La-Tv-Yr1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="VS0-Bx-hhN"/>
                 <constraint firstAttribute="bottom" secondItem="JuB-TN-Waf" secondAttribute="bottom" constant="8" id="WVl-Lu-Ca1"/>
@@ -62,6 +67,7 @@
                 <constraint firstItem="84S-zW-oLf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="f8Y-gj-zeM"/>
                 <constraint firstItem="JuB-TN-Waf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="84S-zW-oLf" secondAttribute="bottom" constant="10" id="hev-I7-ySf"/>
                 <constraint firstItem="eED-nV-dui" firstAttribute="top" secondItem="6La-Tv-Yr1" secondAttribute="bottom" constant="7" id="mP1-GQ-oXk"/>
+                <constraint firstAttribute="bottom" secondItem="PiH-7b-pqe" secondAttribute="bottom" constant="8" id="voO-EZ-fck"/>
                 <constraint firstItem="84S-zW-oLf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="wUH-Oz-efV"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -76,9 +82,10 @@
                 <outlet property="authorLabel" destination="eED-nV-dui" id="L5G-8P-9xz"/>
                 <outlet property="cancelButton" destination="Fkh-td-DDL" id="rKA-0k-KkE"/>
                 <outlet property="musicImage" destination="84S-zW-oLf" id="JX1-eC-uOT"/>
+                <outlet property="removeButton" destination="PiH-7b-pqe" id="cbA-WW-4ll"/>
                 <outlet property="titleLabel" destination="6La-Tv-Yr1" id="xgs-He-GbK"/>
             </connections>
-            <point key="canvasLocation" x="427" y="187"/>
+            <point key="canvasLocation" x="503" y="30"/>
         </view>
     </objects>
 </document>

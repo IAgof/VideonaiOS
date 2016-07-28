@@ -14,6 +14,8 @@ protocol MusicInteractorInterface {
     func getTitleFromIndexPath(index:Int)->String
     func getAuthorFromIndexPath(index:Int)->String
     func getImageFromIndexPath(index:Int)->UIImage
+    func setMusicToProject(index:Int)
+    func hasMusicSelectedInProject()->Bool
 }
 
 protocol MusicInteractorDelegate {

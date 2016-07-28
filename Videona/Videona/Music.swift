@@ -14,6 +14,7 @@ class Music: Audio {
     private var author:String!
     private var iconResourceId:String!
     private var musicResourceId:String!
+    private var musicSet:Bool! = false
     
     init(title:String,
                   author:String,
@@ -58,5 +59,13 @@ class Music: Audio {
     
     func setMusicResourceId(musicResource:String){
         self.musicResourceId = musicResource
+    }
+    
+    func getMusicStateSetOrNot()->Bool{
+        return self.musicSet
+    }
+    
+    func setMusicStateSetOrNot(state:Bool){
+        self.musicSet = state
     }
 }

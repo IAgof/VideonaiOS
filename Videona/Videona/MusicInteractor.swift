@@ -43,6 +43,23 @@ class MusicInteractor: MusicInteractorInterface {
         }
     }
     
+    func setMusicToProject(index: Int) {
+        let music = Music(title: "",
+                          author: "",
+                          iconResourceId: "",
+                          musicResourceId: "")
+        Project.sharedInstance.state
+        if index == -1 {
+            AddMusicToProjectUseCase.sharedInstance.addMusic(musicList[index])
+        }else{
+            AddMusicToProjectUseCase.sharedInstance.addMusic(musicList[index])
+        }
+    }
+    
+    func hasMusicSelectedInProject()->Bool{
+        return Project.sharedInstance.getMusic().getMusicStateSetOrNot()
+    }
+    
     //MARK: - Inner functions
     func getTitleList(list:[Music]) -> [String] {
         var titleList:[String] = []

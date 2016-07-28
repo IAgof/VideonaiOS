@@ -15,6 +15,7 @@ protocol MusicPresenterInterface {
     func didSelectMusicAtIndexPath(indexPath:NSIndexPath)
     func cancelDetailButtonPushed()
     func acceptDetailButtonPushed()
+    func removeDetailButtonPushed()
 }
 
 protocol MusicPresenterDelegate {
