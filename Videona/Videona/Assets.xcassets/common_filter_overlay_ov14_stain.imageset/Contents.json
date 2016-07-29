@@ -2,27 +2,27 @@
   "images" : [
     {
       "idiom" : "iphone",
-      "filename" : "common_filter_overlay_ov14_stain@1x.png",
+      "filename" : "common_filter_overlay_ovi001_stain@1x.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "iphone",
-      "filename" : "common_filter_overlay_ov14_stain@2x.png",
+      "filename" : "common_filter_overlay_ovi001_stain@2x.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "iphone",
-      "filename" : "common_filter_overlay_ov14_stain@3x.png",
+      "filename" : "common_filter_overlay_ovi001_stain@3x.jpg",
       "scale" : "3x"
     },
     {
       "idiom" : "ipad",
-      "filename" : "common_filter_overlay_ov14_stain@2x-1.png",
+      "filename" : "common_filter_overlay_ovi001_stain@2x-1.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "ipad",
-      "filename" : "common_filter_overlay_ov14_stain@3x-1.png",
+      "filename" : "common_filter_overlay_ovi001_stain@3x-1.jpg",
       "scale" : "2x"
     }
   ],
