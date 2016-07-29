@@ -64,10 +64,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             
             trackAppStartupProperties(false);
             
-            appDependencies.installRecordToRootViewControllerIntoWindow(window!)
+//            appDependencies.installRecordToRootViewControllerIntoWindow(window!)
 
             //            Test other views on root
-//            appDependencies.installIntroToRootViewControllerIntoWindow(window!)
+            appDependencies.installIntroToRootViewControllerIntoWindow(window!)
 //            appDependencies.installSettingsToRootViewControllerIntoWindow(window!)
 //            appDependencies.installShareToRootViewControllerIntoWindow(window!)
         } else {

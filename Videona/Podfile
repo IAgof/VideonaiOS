@@ -8,7 +8,7 @@ pod 'Google/SignIn'
 pod 'Google/Analytics'
 pod 'Alamofire', '~> 3.3'
 pod 'Mixpanel'
-
+pod 'PermissionScope'
 end
 
 target 'VideonaTests' do
