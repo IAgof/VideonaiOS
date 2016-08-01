@@ -11,13 +11,14 @@ import Foundation
 protocol MusicDetailViewDelegate {
     func cancelButtonPushed()
     func acceptButtonPushed()
+    func removeDetailButtonPushed()
 }
-protocol MusicDestailInterface {
+protocol MusicDetailInterface {
     func showAcceptOrCancelButton()
     func showRemoveButton()
 }
 
-class MusicDetailView: UIView,MusicDestailInterface {
+class MusicDetailView: UIView,MusicDetailInterface {
     
     //MARK: - Outlets
     @IBOutlet weak var musicImage: UIImageView!
@@ -70,6 +71,9 @@ class MusicDetailView: UIView,MusicDestailInterface {
     @IBAction func pushAcceptButton(sender: AnyObject) {
         delegate?.acceptButtonPushed()
     }
+    @IBAction func pushRemoveButton(sender: AnyObject) {
+        delegate?.removeDetailButtonPushed()
+    }
     
     //MARK: - Show Actions
     func showAcceptOrCancelButton(){
@@ -80,9 +84,9 @@ class MusicDetailView: UIView,MusicDestailInterface {
     }
     
     func showRemoveButton(){
-        acceptButton.hidden = false
-        cancelButton.hidden = false
+        acceptButton.hidden = true
+        cancelButton.hidden = true
         
-        removeButton.hidden = true
+        removeButton.hidden = false
     }
 }

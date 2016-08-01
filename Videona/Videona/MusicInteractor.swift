@@ -48,16 +48,17 @@ class MusicInteractor: MusicInteractorInterface {
                           author: "",
                           iconResourceId: "",
                           musicResourceId: "")
-        Project.sharedInstance.state
         if index == -1 {
-            AddMusicToProjectUseCase.sharedInstance.addMusic(musicList[index])
+            AddMusicToProjectUseCase.sharedInstance.addMusic(music)
+            Project.sharedInstance.isMusicSet = false
         }else{
             AddMusicToProjectUseCase.sharedInstance.addMusic(musicList[index])
+            Project.sharedInstance.isMusicSet = true
         }
     }
     
     func hasMusicSelectedInProject()->Bool{
-        return Project.sharedInstance.getMusic().getMusicStateSetOrNot()
+        return Project.sharedInstance.isMusicSet
     }
     
     //MARK: - Inner functions

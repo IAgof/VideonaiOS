@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ALt-Jl-1ZE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ALt-Jl-1ZE">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1510,7 +1510,7 @@
                                     <rect key="frame" x="20" y="8" width="322" height="182"/>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GIi-av-hRp">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GIi-av-hRp">
                                 <rect key="frame" x="12" y="268" width="240" height="128"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4yv-pa-KUs">
@@ -1570,13 +1570,16 @@
                                                 <include reference="Ylz-rN-m6x"/>
                                             </mask>
                                         </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="1" width="370" height="581"/>
+                                        </variation>
                                         <connections>
                                             <outlet property="dataSource" destination="Kjt-5M-7HS" id="1RG-cl-SdZ"/>
                                             <outlet property="delegate" destination="Kjt-5M-7HS" id="Uyw-ej-3oX"/>
                                         </connections>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.70196078429999997" green="0.76078431369999999" blue="0.1529411765" alpha="0.87931034480000003" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="4yv-pa-KUs" firstAttribute="leading" secondItem="GIi-av-hRp" secondAttribute="leading" id="DPE-n1-tBn"/>
                                     <constraint firstAttribute="trailing" secondItem="4yv-pa-KUs" secondAttribute="trailing" id="PQe-60-2rN"/>

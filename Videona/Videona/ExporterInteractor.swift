@@ -39,6 +39,7 @@ class ExporterInteractor:NSObject{
         Project.sharedInstance.setExportedPath()
         
         let exportPath = Project.sharedInstance.getExportedPath()
+        let isMusicSet = Project.sharedInstance.isMusicSet
         
         var videoTotalTime:CMTime = kCMTimeZero
         
@@ -47,7 +48,7 @@ class ExporterInteractor:NSObject{
         
         let videoTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeVideo,
                                                                      preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
-        let audioTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeAudio,preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
+        var audioTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeAudio,preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
         
         let videosArray = Project.sharedInstance.getVideoList()
         // - Add assets to the composition
@@ -62,9 +63,11 @@ class ExporterInteractor:NSObject{
                                                ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
                                                atTime: videoTotalTime)
                 
-                try audioTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoAsset.duration),
-                                               ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeAudio)[0] ,
-                                               atTime: videoTotalTime)
+                if isMusicSet == false {
+                    try audioTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoAsset.duration),
+                                                   ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeAudio)[0] ,
+                                                   atTime: videoTotalTime)
+                }
                 
                 Utils().debugLog("el tiempo total del video es: \(videoTotalTime.seconds)")
                 videoTotalTime = CMTimeAdd(videoTotalTime, videoAsset.duration)
@@ -74,8 +77,23 @@ class ExporterInteractor:NSObject{
             }
         }
         
+        if isMusicSet{
+            // 3.2 - Audio track
+            // Get Audio asset
+            let audioURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(Project.sharedInstance.getMusic().getMusicResourceId(), ofType: "m4a")!)
+            let audioAsset = AVAsset.init(URL: audioURL)
+            
+            audioTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeAudio, preferredTrackID: 0)
+            do {
+                try audioTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoTotalTime),
+                                               ofTrack: audioAsset.tracksWithMediaType(AVMediaTypeAudio)[0] ,
+                                               atTime: kCMTimeZero)
+            } catch _ {
+                Utils().debugLog("Error trying to create audioTrack")
+            }
+        }
+        
         // 4 - Get path
-
         let url = NSURL(fileURLWithPath: exportPath)
         
         // 5 - Create Exporter

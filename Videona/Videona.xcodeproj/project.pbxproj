@@ -36,6 +36,15 @@
 		A92793211D0AC6C8008E30BF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92793201D0AC6C8008E30BF /* FBSDKCoreKit.framework */; };
 		A92793231D0AC6D2008E30BF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92793221D0AC6D2008E30BF /* FBSDKLoginKit.framework */; };
 		A92793251D0AC6D8008E30BF /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92793241D0AC6D8008E30BF /* FBSDKShareKit.framework */; };
+		A928F79A1D4F59E10027D57E /* audio_ambiental.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A97D43941D48BCE40047484D /* audio_ambiental.m4a */; };
+		A928F79B1D4F59E80027D57E /* audio_birthday.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A97D43951D48BCE40047484D /* audio_birthday.m4a */; };
+		A928F79C1D4F59E80027D57E /* audio_bollywood.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A97D43961D48BCE40047484D /* audio_bollywood.m4a */; };
+		A928F79D1D4F59E80027D57E /* audio_clasica_flauta.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A97D43971D48BCE40047484D /* audio_clasica_flauta.m4a */; };
+		A928F79E1D4F59E80027D57E /* audio_clasica_piano.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A97D43981D48BCE40047484D /* audio_clasica_piano.m4a */; };
+		A928F79F1D4F59E80027D57E /* audio_clasica_violin.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A97D43991D48BCE40047484D /* audio_clasica_violin.m4a */; };
+		A928F7A01D4F59E80027D57E /* audio_folk.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A97D439A1D48BCE40047484D /* audio_folk.m4a */; };
+		A928F7A11D4F59E80027D57E /* audio_hiphop.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A97D439B1D48BCE40047484D /* audio_hiphop.m4a */; };
+		A928F7A21D4F59E80027D57E /* audio_rock.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A97D439C1D48BCE40047484D /* audio_rock.m4a */; };
 		A93125BD1D40AB77001BCC82 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93125BC1D40AB77001BCC82 /* Video.swift */; };
 		A93125C11D40AD14001BCC82 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93125C01D40AD14001BCC82 /* Audio.swift */; };
 		A93125C41D40B1AA001BCC82 /* AddVideoToProjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93125C31D40B1AA001BCC82 /* AddVideoToProjectUseCase.swift */; };
@@ -128,7 +137,7 @@
 		A97D43921D48B8580047484D /* MusicInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D43911D48B8580047484D /* MusicInteractorInterface.swift */; };
 		A97D439E1D48BD400047484D /* MusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D439D1D48BD400047484D /* MusicCell.swift */; };
 		A97D43A11D48E3E70047484D /* MusicDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A97D43A01D48E3E70047484D /* MusicDetailView.xib */; };
-		A97D43A31D48E4B10047484D /* MusicDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D43A21D48E4B10047484D /* MusicDetailViewController.swift */; };
+		A97D43A31D48E4B10047484D /* MusicDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D43A21D48E4B10047484D /* MusicDetailView.swift */; };
 		A97D43A81D4901BC0047484D /* AddMusicToProjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97D43A71D4901BC0047484D /* AddMusicToProjectUseCase.swift */; };
 		A97FBDBE1D09781C00942F8D /* CompatibleResolutionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97FBDBD1D09781C00942F8D /* CompatibleResolutionsInteractor.swift */; };
 		A97FBDCB1D09823800942F8D /* DetailTextPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97FBDCA1D09823800942F8D /* DetailTextPresenter.swift */; };
@@ -412,7 +421,7 @@
 		A97D439C1D48BCE40047484D /* audio_rock.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = audio_rock.m4a; sourceTree = "<group>"; };
 		A97D439D1D48BD400047484D /* MusicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicCell.swift; sourceTree = "<group>"; };
 		A97D43A01D48E3E70047484D /* MusicDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicDetailView.xib; sourceTree = "<group>"; };
-		A97D43A21D48E4B10047484D /* MusicDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicDetailViewController.swift; sourceTree = "<group>"; };
+		A97D43A21D48E4B10047484D /* MusicDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicDetailView.swift; sourceTree = "<group>"; };
 		A97D43A71D4901BC0047484D /* AddMusicToProjectUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMusicToProjectUseCase.swift; sourceTree = "<group>"; };
 		A97FBDBD1D09781C00942F8D /* CompatibleResolutionsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompatibleResolutionsInteractor.swift; sourceTree = "<group>"; };
 		A97FBDCA1D09823800942F8D /* DetailTextPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTextPresenter.swift; sourceTree = "<group>"; };
@@ -1347,7 +1356,7 @@
 		A97D43A41D48E7E60047484D /* MusicDetail */ = {
 			isa = PBXGroup;
 			children = (
-				A97D43A21D48E4B10047484D /* MusicDetailViewController.swift */,
+				A97D43A21D48E4B10047484D /* MusicDetailView.swift */,
 				A97D43A01D48E3E70047484D /* MusicDetailView.xib */,
 			);
 			name = MusicDetail;
@@ -1885,6 +1894,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A928F79B1D4F59E80027D57E /* audio_birthday.m4a in Resources */,
+				A928F79C1D4F59E80027D57E /* audio_bollywood.m4a in Resources */,
+				A928F79D1D4F59E80027D57E /* audio_clasica_flauta.m4a in Resources */,
+				A928F79E1D4F59E80027D57E /* audio_clasica_piano.m4a in Resources */,
+				A928F79F1D4F59E80027D57E /* audio_clasica_violin.m4a in Resources */,
+				A928F7A01D4F59E80027D57E /* audio_folk.m4a in Resources */,
+				A928F7A11D4F59E80027D57E /* audio_hiphop.m4a in Resources */,
+				A928F7A21D4F59E80027D57E /* audio_rock.m4a in Resources */,
+				A928F79A1D4F59E10027D57E /* audio_ambiental.m4a in Resources */,
 				A9E39FBF1D2658C200CCB8C8 /* test.m4v in Resources */,
 				A971F5B41CFC7F6C004DC50D /* Roboto-Regular.ttf in Resources */,
 				A95338E51D251B47006890E7 /* splash_ipad_vertical.jpg in Resources */,
@@ -2143,7 +2161,7 @@
 				A98AAC0F1D4117C3007D4F5B /* EditorViewInterface.swift in Sources */,
 				A97FBDCB1D09823800942F8D /* DetailTextPresenter.swift in Sources */,
 				A93846F01CE47F67007FB6BC /* FilterListWireframe.swift in Sources */,
-				A97D43A31D48E4B10047484D /* MusicDetailViewController.swift in Sources */,
+				A97D43A31D48E4B10047484D /* MusicDetailView.swift in Sources */,
 				A95B246E1CD88C2D00F78AAF /* RecordViewInterface.swift in Sources */,
 				A97D439E1D48BD400047484D /* MusicCell.swift in Sources */,
 				A971F5B11CFC5B98004DC50D /* ThumbnailInteractor.swift in Sources */,

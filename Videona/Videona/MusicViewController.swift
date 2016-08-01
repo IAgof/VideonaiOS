@@ -104,9 +104,11 @@ UITableViewDataSource,UITableViewDelegate{
     func acceptButtonPushed() {
         eventHandler?.acceptDetailButtonPushed()
     }
-    
     func cancelButtonPushed() {
         eventHandler?.cancelDetailButtonPushed()
+    }
+    func removeDetailButtonPushed() {
+        eventHandler?.removeDetailButtonPushed()
     }
     
     //MARK: - Change views
@@ -157,8 +159,11 @@ UITableViewDataSource,UITableViewDelegate{
                          image:UIImage){
         
         let view = MusicDetailView.instanceFromNib()
-        detailMusicView = view as? MusicDetailView
         
+        detailMusicView = view as? MusicDetailView
+                
+        eventHandler?.setMusicDetailInterface(detailMusicView!)
+
         detailMusicView?.delegate = self
         
         detailMusicView?.initParams(title,

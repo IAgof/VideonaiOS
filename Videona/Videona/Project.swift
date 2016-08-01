@@ -53,6 +53,7 @@ class Project: NSObject {
      * Music to add to export video ( may be nil)
      */
     private var music: Music?
+    var isMusicSet:Bool = false
     
     private override init() {
         self.title = "testTitle\(Utils().giveMeTimeNow())"
@@ -139,7 +140,13 @@ class Project: NSObject {
     }
     
     func getMusic() ->Music{
-        
-        return music!
+        if (music != nil) {
+            return music!
+        }else{
+            return Music(title: "",
+                         author: "",
+                         iconResourceId: "",
+                         musicResourceId: "")
+        }
     }
 }

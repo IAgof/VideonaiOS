@@ -15,7 +15,7 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
     var interactor: MusicInteractorInterface?
     var wireframe: MusicWireframe?
     
-    var detailEventHandler: MusicDestailInterface?
+    var detailEventHandler: MusicDetailInterface?
 
     //MARK: - Variables
     var lastMusicSelected:Int = -1
@@ -46,6 +46,10 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
         
     }
     
+    func setMusicDetailInterface(eventHandler: MusicDetailInterface) {
+        self.detailEventHandler = eventHandler
+    }
+    
     func didSelectMusicAtIndexPath(indexPath: NSIndexPath) {
         lastMusicSelected = indexPath.item
         
@@ -61,7 +65,7 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
     }
     
     func acceptDetailButtonPushed() {
-        delegate?.animateToShowTable()
+        detailEventHandler?.showRemoveButton()
         
         interactor?.setMusicToProject(lastMusicSelected)
     }

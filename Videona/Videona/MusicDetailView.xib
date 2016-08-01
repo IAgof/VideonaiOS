@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -18,16 +18,16 @@
                         <constraint firstAttribute="width" secondItem="84S-zW-oLf" secondAttribute="height" multiplier="20:15" id="UaJ-Cx-Gf0"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fkh-td-DDL">
-                    <rect key="frame" x="8" y="302" width="45" height="30"/>
-                    <state key="normal" title="cancel"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fkh-td-DDL">
+                    <rect key="frame" x="8" y="310" width="17" height="22"/>
+                    <state key="normal" image="common_icon_edit_cancel_normal"/>
                     <connections>
                         <action selector="pushCancelButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="gZk-Nb-6Fq"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JuB-TN-Waf">
-                    <rect key="frame" x="260" y="302" width="32" height="30"/>
-                    <state key="normal" title="okay"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JuB-TN-Waf">
+                    <rect key="frame" x="273" y="310" width="19" height="22"/>
+                    <state key="normal" image="common_icon_edit_accept_normal"/>
                     <connections>
                         <action selector="pushAcceptButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="s2D-J0-TGZ"/>
                     </connections>
@@ -46,9 +46,12 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PiH-7b-pqe">
-                    <rect key="frame" x="125" y="302" width="51" height="30"/>
-                    <state key="normal" title="remove"/>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PiH-7b-pqe">
+                    <rect key="frame" x="113" y="310" width="75" height="22"/>
+                    <state key="normal" title="remove" image="activity_edit_clip_delete"/>
+                    <connections>
+                        <action selector="pushRemoveButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="bUt-hY-Q7f"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -68,6 +71,7 @@
                 <constraint firstItem="JuB-TN-Waf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="84S-zW-oLf" secondAttribute="bottom" constant="10" id="hev-I7-ySf"/>
                 <constraint firstItem="eED-nV-dui" firstAttribute="top" secondItem="6La-Tv-Yr1" secondAttribute="bottom" constant="7" id="mP1-GQ-oXk"/>
                 <constraint firstAttribute="bottom" secondItem="PiH-7b-pqe" secondAttribute="bottom" constant="8" id="voO-EZ-fck"/>
+                <constraint firstItem="PiH-7b-pqe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="84S-zW-oLf" secondAttribute="bottom" constant="10" id="wIZ-PW-WRp"/>
                 <constraint firstItem="84S-zW-oLf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="wUH-Oz-efV"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -88,4 +92,9 @@
             <point key="canvasLocation" x="503" y="30"/>
         </view>
     </objects>
+    <resources>
+        <image name="activity_edit_clip_delete" width="15" height="15"/>
+        <image name="common_icon_edit_accept_normal" width="19" height="17"/>
+        <image name="common_icon_edit_cancel_normal" width="17" height="17"/>
+    </resources>
 </document>
