@@ -115,7 +115,7 @@ class CameraInteractor:CameraRecorderDelegate,
     //MARK: - Filters functions
     func addBlendFilterAtInit(){
         let blendFilter = GPUImageAlphaBlendFilter()
-        blendFilter.mix = 0.5
+        blendFilter.mix = 1.0
         filter.removeAllTargets()
         
         let image = UIImage.init(named: "filter_free")

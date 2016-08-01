@@ -36,6 +36,7 @@ var effectDictionary:[String:[FilterType:AnyObject]] =
      "Sunset": [.Blend:GPUImageGrayscaleFilter.init()],
      "Vintage": [.Blend:GPUImageGrayscaleFilter.init()],
      "Burn": [.Blend:GPUImageGrayscaleFilter.init()],
+     "Overlay": [.Blend:GPUImageGrayscaleFilter.init()],
 
      "Mirror": [.Shader:GPUImageFilter()],
      "Dent": [.Shader:GPUImageFilter()],

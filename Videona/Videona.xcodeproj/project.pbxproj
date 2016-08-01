@@ -117,6 +117,7 @@
 		A971F5BB1CFC89AF004DC50D /* ClipsAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F5BA1CFC89AF004DC50D /* ClipsAlbum.swift */; };
 		A971F5BE1CFC8D10004DC50D /* ExporterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F5BD1CFC8D10004DC50D /* ExporterInteractor.swift */; };
 		A971F5C01CFC8E1B004DC50D /* ExportedAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F5BF1CFC8E1B004DC50D /* ExportedAlbum.swift */; };
+		A9767B471D4F3074006BB5F0 /* filter_free.png in Resources */ = {isa = PBXBuildFile; fileRef = A9767B461D4F3074006BB5F0 /* filter_free.png */; };
 		A97FBDBE1D09781C00942F8D /* CompatibleResolutionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97FBDBD1D09781C00942F8D /* CompatibleResolutionsInteractor.swift */; };
 		A97FBDCB1D09823800942F8D /* DetailTextPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97FBDCA1D09823800942F8D /* DetailTextPresenter.swift */; };
 		A97FBDCD1D09824500942F8D /* DetailTextPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97FBDCC1D09824500942F8D /* DetailTextPresenterInterface.swift */; };
@@ -352,6 +353,7 @@
 		A971F5BA1CFC89AF004DC50D /* ClipsAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClipsAlbum.swift; sourceTree = "<group>"; };
 		A971F5BD1CFC8D10004DC50D /* ExporterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExporterInteractor.swift; sourceTree = "<group>"; };
 		A971F5BF1CFC8E1B004DC50D /* ExportedAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportedAlbum.swift; sourceTree = "<group>"; };
+		A9767B461D4F3074006BB5F0 /* filter_free.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter_free.png; sourceTree = "<group>"; };
 		A97FBDBD1D09781C00942F8D /* CompatibleResolutionsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompatibleResolutionsInteractor.swift; sourceTree = "<group>"; };
 		A97FBDCA1D09823800942F8D /* DetailTextPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTextPresenter.swift; sourceTree = "<group>"; };
 		A97FBDCC1D09824500942F8D /* DetailTextPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTextPresenterInterface.swift; sourceTree = "<group>"; };
@@ -1284,6 +1286,7 @@
 		A9D76AEF1CF5FB4B00F7FB47 /* FiltersOverlay */ = {
 			isa = PBXGroup;
 			children = (
+				A9767B461D4F3074006BB5F0 /* filter_free.png */,
 				A91A5C261D4B7B21006BC300 /* burn.png */,
 				A91A5C271D4B7B21006BC300 /* invaders.png */,
 				A91A5C281D4B7B21006BC300 /* kisscam.png */,
@@ -1576,6 +1579,7 @@
 				A91A5C301D4B7B21006BC300 /* burn.png in Resources */,
 				A9E066EB1CE4E13800D4E11D /* ShareCell.xib in Resources */,
 				A953392F1D2570BB006890E7 /* VideonaFooterView.xib in Resources */,
+				A9767B471D4F3074006BB5F0 /* filter_free.png in Resources */,
 				A91A5C311D4B7B21006BC300 /* invaders.png in Resources */,
 				A95B243A1CD8890900F78AAF /* Main.storyboard in Resources */,
 				A91A5C321D4B7B21006BC300 /* kisscam.png in Resources */,
@@ -1989,7 +1993,7 @@
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.videona.videona;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d0c492cd-e4ba-421a-afd0-eff2400d4811";
+				PROVISIONING_PROFILE = "47d6d2c6-4933-4a5d-929e-a25633f3904b";
 				SWIFT_OBJC_BRIDGING_HEADER = "Videona/Videona-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -2012,7 +2016,7 @@
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-DRELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.videona.videona;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d0c492cd-e4ba-421a-afd0-eff2400d4811";
+				PROVISIONING_PROFILE = "47d6d2c6-4933-4a5d-929e-a25633f3904b";
 				SWIFT_OBJC_BRIDGING_HEADER = "Videona/Videona-Bridging-Header.h";
 			};
 			name = Release;
