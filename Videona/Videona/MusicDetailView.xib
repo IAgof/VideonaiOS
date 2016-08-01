@@ -48,7 +48,9 @@
                 </label>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PiH-7b-pqe">
                     <rect key="frame" x="113" y="310" width="75" height="22"/>
-                    <state key="normal" title="remove" image="activity_edit_clip_delete"/>
+                    <state key="normal" title="remove" image="activity_edit_clip_delete">
+                        <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    </state>
                     <connections>
                         <action selector="pushRemoveButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="bUt-hY-Q7f"/>
                     </connections>

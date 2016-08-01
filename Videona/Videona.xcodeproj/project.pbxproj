@@ -45,6 +45,7 @@
 		A928F7A01D4F59E80027D57E /* audio_folk.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A97D439A1D48BCE40047484D /* audio_folk.m4a */; };
 		A928F7A11D4F59E80027D57E /* audio_hiphop.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A97D439B1D48BCE40047484D /* audio_hiphop.m4a */; };
 		A928F7A21D4F59E80027D57E /* audio_rock.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A97D439C1D48BCE40047484D /* audio_rock.m4a */; };
+		A928F7A41D4F5BD30027D57E /* GetActualProjectAVCompositionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A928F7A31D4F5BD30027D57E /* GetActualProjectAVCompositionUseCase.swift */; };
 		A93125BD1D40AB77001BCC82 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93125BC1D40AB77001BCC82 /* Video.swift */; };
 		A93125C11D40AD14001BCC82 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93125C01D40AD14001BCC82 /* Audio.swift */; };
 		A93125C41D40B1AA001BCC82 /* AddVideoToProjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93125C31D40B1AA001BCC82 /* AddVideoToProjectUseCase.swift */; };
@@ -311,6 +312,7 @@
 		A92793201D0AC6C8008E30BF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A92793221D0AC6D2008E30BF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		A92793241D0AC6D8008E30BF /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		A928F7A31D4F5BD30027D57E /* GetActualProjectAVCompositionUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetActualProjectAVCompositionUseCase.swift; sourceTree = "<group>"; };
 		A93125BC1D40AB77001BCC82 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		A93125C01D40AD14001BCC82 /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		A93125C31D40B1AA001BCC82 /* AddVideoToProjectUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVideoToProjectUseCase.swift; sourceTree = "<group>"; };
@@ -698,6 +700,7 @@
 				A91849D51D4786C2001B3505 /* RemoveVideoFromProjectUseCase.swift */,
 				A91849D71D479462001B3505 /* ReloadPositionVideosProjectUseCase.swift */,
 				A97D43A71D4901BC0047484D /* AddMusicToProjectUseCase.swift */,
+				A928F7A31D4F5BD30027D57E /* GetActualProjectAVCompositionUseCase.swift */,
 			);
 			name = "Project Use case";
 			sourceTree = "<group>";
@@ -2164,6 +2167,7 @@
 				A97D43A31D48E4B10047484D /* MusicDetailView.swift in Sources */,
 				A95B246E1CD88C2D00F78AAF /* RecordViewInterface.swift in Sources */,
 				A97D439E1D48BD400047484D /* MusicCell.swift in Sources */,
+				A928F7A41D4F5BD30027D57E /* GetActualProjectAVCompositionUseCase.swift in Sources */,
 				A971F5B11CFC5B98004DC50D /* ThumbnailInteractor.swift in Sources */,
 				A99278571CE36517009DC364 /* SettingsInterface.swift in Sources */,
 				A9F251731D05CD8E00D8DC30 /* ShareWhatsappInteractor.swift in Sources */,

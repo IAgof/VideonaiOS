@@ -1579,7 +1579,6 @@
                                         </connections>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.70196078429999997" green="0.76078431369999999" blue="0.1529411765" alpha="0.87931034480000003" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="4yv-pa-KUs" firstAttribute="leading" secondItem="GIi-av-hRp" secondAttribute="leading" id="DPE-n1-tBn"/>
                                     <constraint firstAttribute="trailing" secondItem="4yv-pa-KUs" secondAttribute="trailing" id="PQe-60-2rN"/>
