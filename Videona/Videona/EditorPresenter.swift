@@ -21,10 +21,13 @@ class EditorPresenter: NSObject,EditorPresenterInterface {
 
     //MARK: - Variables
     var videosList = Project.sharedInstance.getVideoList()
-    var selectedCellIndexPath:NSIndexPath?
+    var selectedCellIndexPath = NSIndexPath(forRow: 0, inSection: 0)
     
     //MARK: - Interface
     func viewDidLoad() {
+        //Auto select first item on first load
+        self.didSelectItemAtIndexPath(selectedCellIndexPath)
+        
         controller?.setUpGestureRecognizer()
         
         wireframe?.presentPlayerInterface()
@@ -86,20 +89,10 @@ class EditorPresenter: NSObject,EditorPresenterInterface {
     }
     
     func didSelectItemAtIndexPath(indexPath: NSIndexPath) {
-        if (selectedCellIndexPath != nil){
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.controller?.deselectCell(self.selectedCellIndexPath!)
-            })
-        }
-
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            if self.selectedCellIndexPath == indexPath {
-                self.controller?.deselectCell(indexPath)
-                self.selectedCellIndexPath = nil
-            }else{
+                self.controller?.deselectCell(self.selectedCellIndexPath)
                 self.controller?.selectCell(indexPath)
                 self.selectedCellIndexPath = indexPath
-            }
         })
     }
     
@@ -124,6 +117,18 @@ class EditorPresenter: NSObject,EditorPresenterInterface {
         }
         
         reloadPositionNumberAfterMovement()
+    }
+    
+    func pushTrimHandler() {
+        wireframe?.presentTrimController(selectedCellIndexPath.item)
+    }
+    
+    func pushDivideHandler() {
+        
+    }
+    
+    func pushDuplicateHandler() {
+        
     }
     
     //MARK: - Inner functions

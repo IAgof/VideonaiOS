@@ -58,8 +58,17 @@ class PlayerView: UIView,PlayerInterface {
         return self
     }
     
+    func removeSubviews(){
+        if let sublayers = self.playerContainer.layer.sublayers{
+            for layer in sublayers{
+                layer.removeFromSuperlayer()
+            }
+        }
+    }
     //MARK: - Player Interface
     func createVideoPlayer(){
+        removeSubviews()
+        
         self.setViewPlayerTappable()
         self.initSeekEvents()
         

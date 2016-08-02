@@ -35,12 +35,14 @@ PODS:
   - Mixpanel (2.9.9):
     - Mixpanel/Mixpanel (= 2.9.9)
   - Mixpanel/Mixpanel (2.9.9)
+  - NMRangeSlider (1.2.1)
 
 DEPENDENCIES:
   - Alamofire (~> 3.3)
   - Google/Analytics
   - Google/SignIn
   - Mixpanel
+  - NMRangeSlider (~> 1.2)
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
@@ -56,5 +58,6 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   Mixpanel: 818d1940c2d9402453b349545022a86968097f57
+  NMRangeSlider: 317ded652431eb90501c8421d9cddc3930d891e6
 
 COCOAPODS: 0.39.0

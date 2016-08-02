@@ -22,10 +22,12 @@ class AppDependencies {
     var editorRoomWireframe = EditingRoomWireframe()
     var editorWireframe = EditorWireframe()
     var musicWireframe = MusicWireframe()
+    var trimWireframe = TrimWireframe()
     
     init(){
         configureDependencies()
     }
+
     func configureDependencies(){
         let rootWireframe = RootWireframe()
         let introPresenter = IntroPresenter()
@@ -54,6 +56,9 @@ class AppDependencies {
         let musicPresenter = MusicPresenter()
         let musicInteractor = MusicInteractor()
 
+        let trimPresenter = TrimPresenter()
+        let trimInteractor = TrimInteractor()
+        
         //INTRO MODULE
         introPresenter.introWireframe = introWireframe
         introPresenter.recordWireframe = recordWireframe
@@ -141,6 +146,7 @@ class AppDependencies {
         editorWireframe.editorPresenter = editorPresenter
         editorWireframe.playerWireframe = playerWireframe
         editorWireframe.rootWireframe = rootWireframe
+        editorWireframe.trimWireframe = trimWireframe
         
         //MUSIC MODULE
         musicPresenter.wireframe = musicWireframe
@@ -153,6 +159,18 @@ class AppDependencies {
         musicWireframe.musicPresenter = musicPresenter
         musicWireframe.rootWireframe = rootWireframe
         musicWireframe.playerWireframe = playerWireframe
+        
+        //TRIM MODULE 
+        trimPresenter.wireframe = trimWireframe
+        trimPresenter.playerPresenter = playerPresenter
+        trimPresenter.playerWireframe = playerWireframe
+        trimPresenter.interactor = trimInteractor
+        
+        trimWireframe.playerWireframe = playerWireframe
+        trimWireframe.rootWireframe = rootWireframe
+        trimWireframe.trimPresenter = trimPresenter
+        
+        trimInteractor.delegate = trimPresenter
     }
     
     func installIntroToRootViewControllerIntoWindow(window: UIWindow){

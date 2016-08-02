@@ -9,5 +9,19 @@
 import Foundation
 
 protocol TrimPresenterInterface {
+    func viewDidLoad()
+    func viewWillDissappear()
+    func pushCancelHandler()
+    func pushAcceptHandler()
+    func pushBack()
     
+    func setLowerValue(value:Float)
+    func setUpperValue(value:Float)
+}
+
+protocol TrimPresenterDelegate {
+    func setMinRangeValue(text:String)
+    func setMaxRangeValue(text:String)
+    func setRangeValue(text:String)
+    func setTitleTrimLabel(text:String)
 }

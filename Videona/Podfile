@@ -8,6 +8,7 @@ pod 'Google/SignIn'
 pod 'Google/Analytics'
 pod 'Alamofire', '~> 3.3'
 pod 'Mixpanel'
+pod 'NMRangeSlider', '~> 1.2'
 
 end
 

@@ -49,6 +49,16 @@ class PlayerWireframe : NSObject{//, UIViewAnimationTransition {
             playerPresenter?.controller = playerView
             
             presentedView = playerView
+        }else if  viewController is TrimViewController
+        {
+            let shareViewController = viewController as! TrimViewController
+            let playerView = self.playerView()
+            shareViewController.playerView.addSubview(playerView)
+            
+            playerView.eventHandler = playerPresenter
+            playerPresenter?.controller = playerView
+            
+            presentedView = playerView
         }
 
     }

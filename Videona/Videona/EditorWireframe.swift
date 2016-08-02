@@ -18,6 +18,8 @@ class EditorWireframe : NSObject {
     var fullScreenPlayerWireframe: FullScreenPlayerWireframe?
 
     var prevController:UIViewController?
+
+    var trimWireframe:TrimWireframe?
     
     func presentEditorInterfaceFromWindow(window: UIWindow) {
         let viewController = editorViewControllerFromStoryboard()
@@ -51,5 +53,10 @@ class EditorWireframe : NSObject {
     func mainStoryboard() -> UIStoryboard {
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         return storyboard
+    }
+    
+    func presentTrimController(videoSelected:Int){
+        trimWireframe?.presentTrimInterfaceFromViewController(editorViewController!,
+                                                              videoSelected:videoSelected)
     }
 }

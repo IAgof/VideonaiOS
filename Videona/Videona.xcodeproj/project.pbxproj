@@ -21,6 +21,8 @@
 		A90F82181D3E702D00224F31 /* EditingRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F82171D3E702D00224F31 /* EditingRoomViewController.swift */; };
 		A90F821A1D3E704400224F31 /* EditingRoomPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F82191D3E704400224F31 /* EditingRoomPresenterInterface.swift */; };
 		A90F821C1D3E704C00224F31 /* EditingRoomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F821B1D3E704C00224F31 /* EditingRoomPresenter.swift */; };
+		A91156241D50D94400C73149 /* TrimInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91156231D50D94400C73149 /* TrimInteractor.swift */; };
+		A91156281D50D99000C73149 /* TrimInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91156271D50D99000C73149 /* TrimInteractorInterface.swift */; };
 		A91849D61D4786C2001B3505 /* RemoveVideoFromProjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91849D51D4786C2001B3505 /* RemoveVideoFromProjectUseCase.swift */; };
 		A91849D81D479462001B3505 /* ReloadPositionVideosProjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91849D71D479462001B3505 /* ReloadPositionVideosProjectUseCase.swift */; };
 		A91849DA1D4796F7001B3505 /* MoveVideoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91849D91D4796F7001B3505 /* MoveVideoUseCase.swift */; };
@@ -303,6 +305,8 @@
 		A90F82171D3E702D00224F31 /* EditingRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingRoomViewController.swift; sourceTree = "<group>"; };
 		A90F82191D3E704400224F31 /* EditingRoomPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingRoomPresenterInterface.swift; sourceTree = "<group>"; };
 		A90F821B1D3E704C00224F31 /* EditingRoomPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditingRoomPresenter.swift; sourceTree = "<group>"; };
+		A91156231D50D94400C73149 /* TrimInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimInteractor.swift; sourceTree = "<group>"; };
+		A91156271D50D99000C73149 /* TrimInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimInteractorInterface.swift; sourceTree = "<group>"; };
 		A91849D51D4786C2001B3505 /* RemoveVideoFromProjectUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveVideoFromProjectUseCase.swift; sourceTree = "<group>"; };
 		A91849D71D479462001B3505 /* ReloadPositionVideosProjectUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReloadPositionVideosProjectUseCase.swift; sourceTree = "<group>"; };
 		A91849D91D4796F7001B3505 /* MoveVideoUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveVideoUseCase.swift; sourceTree = "<group>"; };
@@ -766,6 +770,8 @@
 		A928F7AC1D4F94340027D57E /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				A91156231D50D94400C73149 /* TrimInteractor.swift */,
+				A91156271D50D99000C73149 /* TrimInteractorInterface.swift */,
 			);
 			name = Interactor;
 			sourceTree = "<group>";
@@ -2156,12 +2162,14 @@
 				A93846EE1CE47EF0007FB6BC /* FilterListInterface.swift in Sources */,
 				A971F5BB1CFC89AF004DC50D /* ClipsAlbum.swift in Sources */,
 				A95B24761CD8B90700F78AAF /* AppDependencies.swift in Sources */,
+				A91156241D50D94400C73149 /* TrimInteractor.swift in Sources */,
 				A971F5A31CFC21E4004DC50D /* CameraRecorderInterface.swift in Sources */,
 				A97D43891D4898270047484D /* MusicPresenter.swift in Sources */,
 				A90F82181D3E702D00224F31 /* EditingRoomViewController.swift in Sources */,
 				A9F2517D1D05CDD900D8DC30 /* ShareYoutubeInteractor.swift in Sources */,
 				A98AAC151D4117E2007D4F5B /* EditorPresenter.swift in Sources */,
 				A9E066ED1CE4E4E200D4E11D /* ShareCell.swift in Sources */,
+				A91156281D50D99000C73149 /* TrimInteractorInterface.swift in Sources */,
 				A95B24371CD8890900F78AAF /* RecordController.swift in Sources */,
 				A965BDC11CDA0F1D002579CA /* IntroViewInterface.swift in Sources */,
 				A9E066D91CE4B4E000D4E11D /* Effect.swift in Sources */,

@@ -9,5 +9,6 @@
 import Foundation
 
 protocol TrimViewInterface {
-    
+    func configureRangeSlider(lowerValue:Float,
+                              upperValue:Float)
 }

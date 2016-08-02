@@ -113,11 +113,26 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
         
     }
     
+    //MARK: - Actions
     @IBAction func pushRemoveVideoClip(sender:UIButton){
         
         eventHandler?.removeVideoClip(sender.tag)
     }
     
+    @IBAction func pushTrimClip(sender:UIButton){
+        
+        eventHandler?.pushTrimHandler()
+    }
+    
+    @IBAction func pushDuplicateClip(sender:UIButton){
+        
+        eventHandler?.pushDuplicateHandler()
+    }
+    
+    @IBAction func pushDivideClip(sender:UIButton){
+        
+        eventHandler?.pushDivideHandler()
+    }
     
     //MARK: - Interface
     func deselectCell(indexPath:NSIndexPath) {

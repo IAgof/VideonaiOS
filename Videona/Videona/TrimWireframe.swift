@@ -25,11 +25,13 @@ class TrimWireframe : NSObject {
         rootWireframe?.showRootViewController(viewController, inWindow: window)
     }
     
-    func presentTrimInterfaceFromViewController(prevController:UIViewController){
+    func presentTrimInterfaceFromViewController(prevController:UIViewController,
+                                                videoSelected:Int)
+    {
         let viewController = trimViewControllerFromStoryboard()
         
         self.prevController = prevController
-        
+        trimPresenter?.videoSelectedIndex = videoSelected
         prevController.showViewController(viewController, sender: nil)
     }
     
@@ -39,7 +41,8 @@ class TrimWireframe : NSObject {
         
         viewController.eventHandler = trimPresenter
         trimViewController = viewController
-        //        trimPresenter?.delegate = viewController
+        trimPresenter?.delegate = viewController
+        trimPresenter?.controller = viewController
         
         return viewController
     }
@@ -51,5 +54,9 @@ class TrimWireframe : NSObject {
     func mainStoryboard() -> UIStoryboard {
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         return storyboard
+    }
+    
+    func goPrevController(){
+        trimViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 }
