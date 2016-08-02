@@ -32,9 +32,8 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
     
     //MARK: - Outlets
     @IBOutlet weak var thumbnailClipsCollectionView: UICollectionView!
+    @IBOutlet weak var playerView: UIView!
 
-
-    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -183,4 +182,6 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
             thumbnailClipsCollectionView.cancelInteractiveMovement()
         }
     }
+    
+    
 }

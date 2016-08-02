@@ -32,7 +32,7 @@ class SharePresenter:NSObject,SharePresenterInterface{
         
         wireframe?.presentPlayerInterface()
         
-        playerPresenter?.createVideoPlayer(videoPath)
+        playerPresenter?.createVideoPlayer(GetActualProjectAVCompositionUseCase.sharedInstance.getComposition())
         self.getListData()
         
         controller?.bringToFrontExpandPlayerButton()
@@ -40,7 +40,7 @@ class SharePresenter:NSObject,SharePresenterInterface{
     }
     
     func viewWillDisappear() {
-        playerPresenter?.onVideoStops()
+        playerPresenter?.pauseVideo()
     }
     
     func setVideoExportedPath(path: String) {

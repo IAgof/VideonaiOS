@@ -135,18 +135,24 @@ class AppDependencies {
         
         //EDITOR MODULE
         editorPresenter.wireframe = editorWireframe
+        editorPresenter.playerPresenter = playerPresenter
+        editorPresenter.playerWireframe = playerWireframe
         
         editorWireframe.editorPresenter = editorPresenter
+        editorWireframe.playerWireframe = playerWireframe
         editorWireframe.rootWireframe = rootWireframe
         
         //MUSIC MODULE
         musicPresenter.wireframe = musicWireframe
         musicPresenter.interactor = musicInteractor
+        musicPresenter.playerPresenter = playerPresenter
+        musicPresenter.playerWireframe = playerWireframe
         
         musicInteractor.delegate = musicPresenter
         
         musicWireframe.musicPresenter = musicPresenter
         musicWireframe.rootWireframe = rootWireframe
+        musicWireframe.playerWireframe = playerWireframe
     }
     
     func installIntroToRootViewControllerIntoWindow(window: UIWindow){

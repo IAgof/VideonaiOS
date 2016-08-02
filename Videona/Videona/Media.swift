@@ -38,7 +38,9 @@ class Media: NSObject {
                   mediaPath:String) {
         self.title = title
         self.mediaPath = mediaPath
-
+    }
+    
+    func mediaRecordedFinished(){
         let urlAsset = NSURL(fileURLWithPath: mediaPath)
         let asset = AVAsset(URL: urlAsset)
         

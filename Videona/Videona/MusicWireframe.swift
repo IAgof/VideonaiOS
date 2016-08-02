@@ -15,7 +15,8 @@ class MusicWireframe : NSObject {
     var rootWireframe : RootWireframe?
     var musicViewController : MusicViewController?
     var musicPresenter : MusicPresenter?
-    
+    var playerWireframe: PlayerWireframe?
+
     var prevController:UIViewController?
     
     func presentMusicInterfaceFromWindow(window: UIWindow) {
@@ -41,6 +42,10 @@ class MusicWireframe : NSObject {
         musicPresenter?.delegate = viewController
         
         return viewController
+    }
+    
+    func presentPlayerInterface() {
+        playerWireframe?.presentPlayerInterfaceFromViewController(musicViewController!)
     }
     
     func mainStoryboard() -> UIStoryboard {

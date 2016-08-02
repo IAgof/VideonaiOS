@@ -74,6 +74,7 @@ GIDSignInUIDelegate,GIDSignInDelegate{
     func bringToFrontExpandPlayerButton(){
         self.playerView.bringSubviewToFront(expandPlayerButton)
     }
+    
     func setNavBarTitle(title:String){
         //        settingsNavBar.title = title
     }

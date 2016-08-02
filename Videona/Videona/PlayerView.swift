@@ -15,10 +15,10 @@ class PlayerView: UIView,PlayerInterface {
     var eventHandler: PlayerPresenterInterface?
     
     //MARK: - Variables
-    var movieURL:NSURL!
     var player:AVPlayer?
     var playerLayer: AVPlayerLayer?
-
+    var movieComposition:AVMutableComposition!
+    
     //MARK: - Outlets
     @IBOutlet weak var playOrPauseButton: UIButton!
     @IBOutlet weak var playerContainer: UIView!
@@ -35,8 +35,8 @@ class PlayerView: UIView,PlayerInterface {
         
     }
     
-    func setPlayerMovieURL(movieURL: NSURL) {
-        self.movieURL = movieURL
+    func setPlayerMovieComposition(composition: AVMutableComposition) {
+        self.movieComposition = composition
     }
     
     override func layoutSubviews() {
@@ -63,12 +63,11 @@ class PlayerView: UIView,PlayerInterface {
         self.setViewPlayerTappable()
         self.initSeekEvents()
         
-        //Test share interface
-//        movieURL =  NSURL.init(fileURLWithPath: NSBundle.mainBundle().pathForResource("test", ofType:"m4v")!)
-        
-        if (movieURL != nil) {
-            let avAsset: AVURLAsset = AVURLAsset(URL: movieURL!, options: nil)
-            let playerItem: AVPlayerItem = AVPlayerItem(asset: avAsset)
+        if (movieComposition != nil) {
+            
+            movieComposition = GetActualProjectAVCompositionUseCase.sharedInstance.getComposition()
+            
+            let playerItem: AVPlayerItem = AVPlayerItem(asset: movieComposition)
             
             NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PlayerView.onVideoStops),
                                                              name: AVPlayerItemDidPlayToEndTimeNotification,
@@ -117,6 +116,7 @@ class PlayerView: UIView,PlayerInterface {
     func videoPlayerViewTapped(){
         eventHandler?.videoPlayerViewTapped()
     }
+    
     @IBAction func pushPlayButton(sender: AnyObject) {
         eventHandler?.pushPlayButton()
     }

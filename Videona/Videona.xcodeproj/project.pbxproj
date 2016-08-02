@@ -46,6 +46,11 @@
 		A928F7A11D4F59E80027D57E /* audio_hiphop.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A97D439B1D48BCE40047484D /* audio_hiphop.m4a */; };
 		A928F7A21D4F59E80027D57E /* audio_rock.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A97D439C1D48BCE40047484D /* audio_rock.m4a */; };
 		A928F7A41D4F5BD30027D57E /* GetActualProjectAVCompositionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A928F7A31D4F5BD30027D57E /* GetActualProjectAVCompositionUseCase.swift */; };
+		A928F7AE1D4F946D0027D57E /* TrimWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A928F7AD1D4F946D0027D57E /* TrimWireframe.swift */; };
+		A928F7B01D4F94780027D57E /* TrimViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A928F7AF1D4F94780027D57E /* TrimViewInterface.swift */; };
+		A928F7B21D4F94880027D57E /* TrimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A928F7B11D4F94880027D57E /* TrimViewController.swift */; };
+		A928F7B41D4F94970027D57E /* TrimPresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A928F7B31D4F94970027D57E /* TrimPresenterInterface.swift */; };
+		A928F7B61D4F949E0027D57E /* TrimPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A928F7B51D4F949E0027D57E /* TrimPresenter.swift */; };
 		A93125BD1D40AB77001BCC82 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93125BC1D40AB77001BCC82 /* Video.swift */; };
 		A93125C11D40AD14001BCC82 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93125C01D40AD14001BCC82 /* Audio.swift */; };
 		A93125C41D40B1AA001BCC82 /* AddVideoToProjectUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93125C31D40B1AA001BCC82 /* AddVideoToProjectUseCase.swift */; };
@@ -313,6 +318,11 @@
 		A92793221D0AC6D2008E30BF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		A92793241D0AC6D8008E30BF /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		A928F7A31D4F5BD30027D57E /* GetActualProjectAVCompositionUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetActualProjectAVCompositionUseCase.swift; sourceTree = "<group>"; };
+		A928F7AD1D4F946D0027D57E /* TrimWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimWireframe.swift; sourceTree = "<group>"; };
+		A928F7AF1D4F94780027D57E /* TrimViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimViewInterface.swift; sourceTree = "<group>"; };
+		A928F7B11D4F94880027D57E /* TrimViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimViewController.swift; sourceTree = "<group>"; };
+		A928F7B31D4F94970027D57E /* TrimPresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimPresenterInterface.swift; sourceTree = "<group>"; };
+		A928F7B51D4F949E0027D57E /* TrimPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimPresenter.swift; sourceTree = "<group>"; };
 		A93125BC1D40AB77001BCC82 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		A93125C01D40AD14001BCC82 /* Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		A93125C31D40B1AA001BCC82 /* AddVideoToProjectUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVideoToProjectUseCase.swift; sourceTree = "<group>"; };
@@ -692,6 +702,74 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		A928F7A51D4F94010027D57E /* Trim */ = {
+			isa = PBXGroup;
+			children = (
+				A928F7A71D4F94180027D57E /* App Logic */,
+				A928F7A61D4F940D0027D57E /* User Interface */,
+			);
+			name = Trim;
+			sourceTree = "<group>";
+		};
+		A928F7A61D4F940D0027D57E /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				A928F7AA1D4F942A0027D57E /* Presenter */,
+				A928F7A91D4F94260027D57E /* View */,
+				A928F7A81D4F94220027D57E /* Wireframe */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		A928F7A71D4F94180027D57E /* App Logic */ = {
+			isa = PBXGroup;
+			children = (
+				A928F7AC1D4F94340027D57E /* Interactor */,
+				A928F7AB1D4F94300027D57E /* Model */,
+			);
+			name = "App Logic";
+			sourceTree = "<group>";
+		};
+		A928F7A81D4F94220027D57E /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				A928F7AD1D4F946D0027D57E /* TrimWireframe.swift */,
+			);
+			name = Wireframe;
+			sourceTree = "<group>";
+		};
+		A928F7A91D4F94260027D57E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A928F7AF1D4F94780027D57E /* TrimViewInterface.swift */,
+				A928F7B11D4F94880027D57E /* TrimViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A928F7AA1D4F942A0027D57E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A928F7B31D4F94970027D57E /* TrimPresenterInterface.swift */,
+				A928F7B51D4F949E0027D57E /* TrimPresenter.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		A928F7AB1D4F94300027D57E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A928F7AC1D4F94340027D57E /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
 		A93125C21D40B198001BCC82 /* Project Use case */ = {
 			isa = PBXGroup;
 			children = (
@@ -973,6 +1051,7 @@
 		A95B24631CD8895E00F78AAF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A928F7A51D4F94010027D57E /* Trim */,
 				A97D43761D4897960047484D /* Music */,
 				A98AAC021D411772007D4F5B /* Editor */,
 				A90F82071D3E5C4500224F31 /* Editing room */,
@@ -2065,6 +2144,7 @@
 				A97FBDBE1D09781C00942F8D /* CompatibleResolutionsInteractor.swift in Sources */,
 				A94301651CE5CF4600DC0DF8 /* PlayerInterface.swift in Sources */,
 				A9B1181F1CE378E8001A1177 /* ShareWireframe.swift in Sources */,
+				A928F7AE1D4F946D0027D57E /* TrimWireframe.swift in Sources */,
 				A9B1181B1CE378D3001A1177 /* ShareViewController.swift in Sources */,
 				A93846F31CE4809F007FB6BC /* FilterListDismissalTransition.swift in Sources */,
 				A96733001CE630AD007BE340 /* SettingsInteractorInterface.swift in Sources */,
@@ -2121,6 +2201,7 @@
 				A98AA14C1D22743A004E0869 /* TwitterVideoUpload.m in Sources */,
 				A92793161D0AB1FB008E30BF /* SettingsConstants.swift in Sources */,
 				A91849DC1D479C7B001B3505 /* ThumbnailListInteractor.swift in Sources */,
+				A928F7B21D4F94880027D57E /* TrimViewController.swift in Sources */,
 				A99278501CE3647B009DC364 /* SettingsPresenter.swift in Sources */,
 				A97FBDD71D09846A00942F8D /* DetailTextInteractor.swift in Sources */,
 				A9E066DF1CE4BA0700D4E11D /* EffectProvider.swift in Sources */,
@@ -2135,6 +2216,7 @@
 				A971F5C01CFC8E1B004DC50D /* ExportedAlbum.swift in Sources */,
 				A97D43831D4898010047484D /* MusicViewInterface.swift in Sources */,
 				A9686F951CFF129C00983540 /* AVResolutionParse.swift in Sources */,
+				A928F7B61D4F949E0027D57E /* TrimPresenter.swift in Sources */,
 				A9B118191CE378C2001A1177 /* SharePresenterInterface.swift in Sources */,
 				A9F251801D05D57800D8DC30 /* ShareSocialNetworkInteractor.swift in Sources */,
 				A96732FE1CE6309C007BE340 /* SettingsInteractor.swift in Sources */,
@@ -2152,6 +2234,7 @@
 				A971F5AB1CFC48D2004DC50D /* TimerInteractorInterface.swift in Sources */,
 				A9F2517B1D05CDC800D8DC30 /* ShareTwitterInteractor.swift in Sources */,
 				A93846F51CE480AA007FB6BC /* FilterListPresentationTransition.swift in Sources */,
+				A928F7B01D4F94780027D57E /* TrimViewInterface.swift in Sources */,
 				A97D438D1D48A1020047484D /* Music.swift in Sources */,
 				A93846E81CE47E82007FB6BC /* FilterListPresenter.swift in Sources */,
 				A927931F1D0AB906008E30BF /* ShareConstants.swift in Sources */,
@@ -2190,6 +2273,7 @@
 				A97D43A81D4901BC0047484D /* AddMusicToProjectUseCase.swift in Sources */,
 				11A092443FAC586CFAFA4D4B /* FullScreenPlayerWireframe.swift in Sources */,
 				11A09EF76603C1D78D7F2930 /* FullScreenPlayerInterface.swift in Sources */,
+				A928F7B41D4F94970027D57E /* TrimPresenterInterface.swift in Sources */,
 				11A097E4ED3C457078681CCF /* VideonaTracker.swift in Sources */,
 				A90F82161D3E6FFB00224F31 /* EditingRoomViewInterface.swift in Sources */,
 				A90F82121D3E6FC700224F31 /* EditingRoomWireframe.swift in Sources */,

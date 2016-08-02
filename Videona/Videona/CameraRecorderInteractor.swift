@@ -64,6 +64,7 @@ class CameraRecorderInteractor{
 
                 Utils().debugLog("Stop recording video")
                 
+                AddVideoToProjectUseCase.sharedInstance.updateVideoParams()
                 ClipsAlbum.sharedInstance.saveVideo(clipURL)
                 
                 self.movieWriter!.endProcessing()

@@ -29,6 +29,26 @@ class PlayerWireframe : NSObject{//, UIViewAnimationTransition {
             playerPresenter?.controller = playerView
             
             presentedView = playerView
+        }else if  viewController is EditorViewController
+        {
+            let shareViewController = viewController as! EditorViewController
+            let playerView = self.playerView()
+            shareViewController.playerView.addSubview(playerView)
+            
+            playerView.eventHandler = playerPresenter
+            playerPresenter?.controller = playerView
+            
+            presentedView = playerView
+        }else if  viewController is MusicViewController
+        {
+            let shareViewController = viewController as! MusicViewController
+            let playerView = self.playerView()
+            shareViewController.playerView.addSubview(playerView)
+            
+            playerView.eventHandler = playerPresenter
+            playerPresenter?.controller = playerView
+            
+            presentedView = playerView
         }
 
     }

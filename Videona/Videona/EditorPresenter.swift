@@ -15,7 +15,10 @@ class EditorPresenter: NSObject,EditorPresenterInterface {
 //    var interactor: EditorInteractorInterface?
     
     var wireframe: EditorWireframe?
-    
+    var playerPresenter: PlayerPresenterInterface?
+    var playerWireframe: PlayerWireframe?
+    var fullScreenPlayerWireframe: FullScreenPlayerWireframe?
+
     //MARK: - Variables
     var videosList = Project.sharedInstance.getVideoList()
     var selectedCellIndexPath:NSIndexPath?
@@ -24,6 +27,8 @@ class EditorPresenter: NSObject,EditorPresenterInterface {
     func viewDidLoad() {
         controller?.setUpGestureRecognizer()
         
+        wireframe?.presentPlayerInterface()
+
         loadVideoListFromProject()
         
 //        self.setTestVideoData()
@@ -77,7 +82,7 @@ class EditorPresenter: NSObject,EditorPresenterInterface {
     }
     
     func viewWillDisappear() {
-        
+        playerPresenter?.pauseVideo()
     }
     
     func didSelectItemAtIndexPath(indexPath: NSIndexPath) {
@@ -138,6 +143,8 @@ class EditorPresenter: NSObject,EditorPresenterInterface {
     
     func loadVideoListFromProject() {
         self.videosList = Project.sharedInstance.getVideoList()
+        
+        playerPresenter?.createVideoPlayer(GetActualProjectAVCompositionUseCase.sharedInstance.getComposition())
     }
     
     func removeVideoClip(position: Int) {

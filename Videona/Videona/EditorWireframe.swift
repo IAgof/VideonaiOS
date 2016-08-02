@@ -14,7 +14,9 @@ class EditorWireframe : NSObject {
     var rootWireframe : RootWireframe?
     var editorViewController : EditorViewController?
     var editorPresenter : EditorPresenter?
-    
+    var playerWireframe: PlayerWireframe?
+    var fullScreenPlayerWireframe: FullScreenPlayerWireframe?
+
     var prevController:UIViewController?
     
     func presentEditorInterfaceFromWindow(window: UIWindow) {
@@ -40,6 +42,10 @@ class EditorWireframe : NSObject {
         editorPresenter?.controller = viewController
         
         return viewController
+    }
+    
+    func presentPlayerInterface() {
+        playerWireframe?.presentPlayerInterfaceFromViewController(editorViewController!)
     }
     
     func mainStoryboard() -> UIStoryboard {

@@ -32,6 +32,7 @@ class RecordPresenter: NSObject
         var effectName:String
         var effectActive:Bool
     }
+    
     //MARK: - Variables
     var overlayActive:EffectOnView = EffectOnView(effectName: "", effectActive: false)
     var shaderActive:EffectOnView = EffectOnView(effectName: "", effectActive: false)

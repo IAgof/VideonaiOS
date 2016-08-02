@@ -33,20 +33,23 @@ class GetActualProjectAVCompositionUseCase: NSObject {
             let videoURL: NSURL = NSURL.init(fileURLWithPath: video.getMediaPath())
             let videoAsset = AVAsset.init(URL: videoURL)
             
-            
             do {
-                try videoTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoAsset.duration),
+                let stopTime = CMTimeMake(Int64(video.getStopTime() * 1000), 1000)
+                let startTime = CMTimeMake(Int64(video.getStartTime() * 1000), 1000)
+                Utils().debugLog("Video composition startTime: \(startTime) \nVideo composition stopTime: \(stopTime) ")
+
+                try videoTrack.insertTimeRange(CMTimeRangeMake(startTime,  stopTime),
                                                ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
                                                atTime: videoTotalTime)
                 
                 if isMusicSet == false {
-                    try audioTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoAsset.duration),
+                    try audioTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, stopTime),
                                                    ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeAudio)[0] ,
                                                    atTime: videoTotalTime)
                 }
                 
                 Utils().debugLog("el tiempo total del video es: \(videoTotalTime.seconds)")
-                videoTotalTime = CMTimeAdd(videoTotalTime, videoAsset.duration)
+                videoTotalTime = CMTimeAdd(videoTotalTime, (stopTime - startTime))
             } catch _ {
                 //                Utils().debugLog("Error trying to create videoTrack")
                 //                completionHandler("Error trying to create videoTrack",0.0)
@@ -68,8 +71,6 @@ class GetActualProjectAVCompositionUseCase: NSObject {
                 Utils().debugLog("Error trying to create audioTrack")
             }
         }
-
-        
         return mixComposition
     }
 }

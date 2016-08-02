@@ -17,6 +17,9 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
     
     var detailEventHandler: MusicDetailInterface?
 
+    var playerPresenter: PlayerPresenterInterface?
+    var playerWireframe: PlayerWireframe?
+    
     //MARK: - Variables
     var lastMusicSelected:Int = -1
     
@@ -27,6 +30,9 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
     func viewDidLoad() {
         interactor?.getMusicList()
         
+        wireframe?.presentPlayerInterface()
+        playerPresenter?.createVideoPlayer(GetActualProjectAVCompositionUseCase.sharedInstance.getComposition())
+
         if (interactor?.hasMusicSelectedInProject())! {
             let music = Project.sharedInstance.getMusic()
             
@@ -43,7 +49,7 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
     }
     
     func viewWillDisappear() {
-        
+        playerPresenter?.pauseVideo()
     }
     
     func setMusicDetailInterface(eventHandler: MusicDetailInterface) {
@@ -60,19 +66,22 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
     
     func cancelDetailButtonPushed() {
         delegate?.animateToShowTable()
-        
+        playerPresenter?.createVideoPlayer(GetActualProjectAVCompositionUseCase.sharedInstance.getComposition())
+
         lastMusicSelected = NO_MUSIC_SELECTED
     }
     
     func acceptDetailButtonPushed() {
         detailEventHandler?.showRemoveButton()
-        
+        playerPresenter?.createVideoPlayer(GetActualProjectAVCompositionUseCase.sharedInstance.getComposition())
+
         interactor?.setMusicToProject(lastMusicSelected)
     }
     
     func removeDetailButtonPushed() {
         delegate?.animateToShowTable()
-        
+        playerPresenter?.createVideoPlayer(GetActualProjectAVCompositionUseCase.sharedInstance.getComposition())
+
         interactor?.setMusicToProject(NO_MUSIC_SELECTED)
     }
     

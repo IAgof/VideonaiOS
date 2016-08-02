@@ -1920,6 +1920,7 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
+                                <exclude reference="HyJ-dx-zGa"/>
                                 <include reference="MbJ-7t-pLx"/>
                                 <include reference="QQa-bm-Az1"/>
                                 <include reference="ZpU-36-Y52"/>
@@ -1935,6 +1936,7 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="playerView" destination="KNK-nb-4UT" id="6xY-ux-4Ob"/>
                         <outlet property="thumbnailClipsCollectionView" destination="ywJ-Vq-1Hz" id="C0a-aI-bdF"/>
                     </connections>
                 </viewController>
@@ -1942,10 +1944,10 @@
             </objects>
             <point key="canvasLocation" x="4098" y="172"/>
         </scene>
-        <!--View Controller-->
+        <!--Trim View Controller-->
         <scene sceneID="Zfg-6P-fXm">
             <objects>
-                <viewController id="mnX-hg-09g" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrimViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mnX-hg-09g" customClass="TrimViewController" customModule="Videona" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s2I-G2-IJF"/>
                         <viewControllerLayoutGuide type="bottom" id="bqg-lv-PpR"/>
@@ -1960,11 +1962,34 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k9f-nj-Qyj" customClass="PlayerView" customModule="Videona" customModuleProvider="target">
+                                <rect key="frame" x="39" y="138" width="240" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0v-gf-YeL">
+                                        <rect key="frame" x="208" y="8" width="24" height="24"/>
+                                        <state key="normal" image="common_icon_expand"/>
+                                        <connections>
+                                            <action selector="pushExpandButton:" destination="0Ip-P7-Gfh" eventType="touchUpInside" id="jdz-7w-09P"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="j0v-gf-YeL" secondAttribute="trailing" constant="8" id="g55-5s-yOI"/>
+                                    <constraint firstAttribute="width" secondItem="k9f-nj-Qyj" secondAttribute="height" multiplier="16:9" id="n7p-QD-fqh"/>
+                                    <constraint firstItem="j0v-gf-YeL" firstAttribute="top" secondItem="k9f-nj-Qyj" secondAttribute="top" constant="8" id="qEd-gF-DDv"/>
+                                </constraints>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="8" width="299" height="169"/>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wAl-BX-QHO" firstAttribute="centerX" secondItem="CUl-8l-Bko" secondAttribute="centerX" id="AxA-oT-0vn"/>
                             <constraint firstItem="wAl-BX-QHO" firstAttribute="centerY" secondItem="CUl-8l-Bko" secondAttribute="centerY" id="C5G-xx-PPD"/>
+                            <constraint firstItem="k9f-nj-Qyj" firstAttribute="top" secondItem="CUl-8l-Bko" secondAttribute="topMargin" constant="16" id="YJm-Ag-z4y"/>
+                            <constraint firstItem="k9f-nj-Qyj" firstAttribute="leading" secondItem="CUl-8l-Bko" secondAttribute="leadingMargin" id="gse-nU-NWk"/>
+                            <constraint firstItem="k9f-nj-Qyj" firstAttribute="trailing" secondItem="CUl-8l-Bko" secondAttribute="trailingMargin" id="xmu-16-GzL"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -1973,6 +1998,9 @@
                             <mask key="constraints">
                                 <exclude reference="AxA-oT-0vn"/>
                                 <exclude reference="C5G-xx-PPD"/>
+                                <exclude reference="YJm-Ag-z4y"/>
+                                <exclude reference="gse-nU-NWk"/>
+                                <exclude reference="xmu-16-GzL"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -1982,6 +2010,13 @@
                             <mask key="constraints">
                                 <include reference="AxA-oT-0vn"/>
                                 <include reference="C5G-xx-PPD"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="YJm-Ag-z4y"/>
+                                <include reference="gse-nU-NWk"/>
+                                <include reference="xmu-16-GzL"/>
                             </mask>
                         </variation>
                     </view>
