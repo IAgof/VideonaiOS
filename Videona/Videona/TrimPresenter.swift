@@ -29,26 +29,32 @@ TrimInteractorDelegate {
     
     var lowerValue:Float!{
         didSet{
-            delegate?.setMinRangeValue("\(lowerValue)")
-            if upperValue != nil{
-                updateVideoParams()
-                updateRangeVal()
-            }
-        }
-    }
-    var upperValue:Float!{
-        didSet{
-            delegate?.setMaxRangeValue("\(upperValue)")
-            if lowerValue != nil{
-                updateVideoParams()
-                updateRangeVal()
+            if lowerValue != nil {
+                delegate?.setMinRangeValue(String.init(format: "%.02f", lowerValue))
+                if upperValue != nil{
+                    updateVideoParams()
+                    updateRangeVal()
+                }
             }
         }
     }
     
+    var upperValue:Float!{
+        didSet{
+            if  upperValue != nil {
+                delegate?.setMaxRangeValue(String.init(format: "%.02f", upperValue))
+                if  lowerValue != nil{
+                    updateVideoParams()
+                    updateRangeVal()
+                }
+            }
+        }
+    }
+    var maximumValue:Float!
+    
     var rangeVal:Float! = 0.0{
         didSet{
-            delegate?.setRangeValue("\(rangeVal)")
+            delegate?.setRangeValue(String.init(format: "%.02f", rangeVal))
         }
     }
 
@@ -57,8 +63,8 @@ TrimInteractorDelegate {
     }
     
     func updateVideoParams(){
-        interactor?.setParametersOnVideoSelectedOnProjectList(lowerValue,
-                                                              stopTime: upperValue)
+        interactor?.setParametersOnVideoSelected(lowerValue,
+                                                 stopTime: upperValue)
         updatePlayer()
     }
     
@@ -68,21 +74,29 @@ TrimInteractorDelegate {
 
         interactor?.getVideoParams()
         
-        controller?.configureRangeSlider(lowerValue,
-                                         upperValue: upperValue)
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.controller?.configureRangeSlider(self.lowerValue,
+                upperValue: self.upperValue,
+                maximumValue: self.maximumValue )
+        })
+        
         updatePlayer()
     }
     
     func viewWillDissappear() {
-        
+        upperValue = nil
+        lowerValue = nil
     }
     
     func pushAcceptHandler() {
+        interactor?.setParametersOnVideoSelectedOnProjectList(lowerValue,
+                                                              stopTime: upperValue)
         
+        wireframe?.goPrevController()
     }
     
     func pushCancelHandler() {
-        
+        wireframe?.goPrevController()
     }
     func pushBack() {
         wireframe?.goPrevController()
@@ -94,6 +108,10 @@ TrimInteractorDelegate {
     
     func setUpperValue(value: Float) {
         self.upperValue = value
+    }
+    
+    func setMaximumValue(value: Float) {
+        self.maximumValue = value
     }
     
     //MARK: - Inner functions

@@ -74,8 +74,6 @@ class PlayerView: UIView,PlayerInterface {
         
         if (movieComposition != nil) {
             
-            movieComposition = GetActualProjectAVCompositionUseCase.sharedInstance.getComposition()
-            
             let playerItem: AVPlayerItem = AVPlayerItem(asset: movieComposition)
             
             NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PlayerView.onVideoStops),

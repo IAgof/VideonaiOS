@@ -33,7 +33,8 @@ class Media: NSObject {
      */
     var fileStopTime:Double!
     
-
+    var duration:Double!
+    
     init(title:String,
                   mediaPath:String) {
         self.title = title
@@ -46,6 +47,7 @@ class Media: NSObject {
         
         fileStartTime = 0.0
         fileStopTime = asset.duration.seconds
+        duration = asset.duration.seconds
     }
     
     func getTitle() -> String {
@@ -81,6 +83,6 @@ class Media: NSObject {
     }
     
     func getDuration() -> Double {
-        return fileStopTime - fileStartTime
+        return self.duration
     }
 }

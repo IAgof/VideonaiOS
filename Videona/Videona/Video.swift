@@ -19,6 +19,12 @@ class Video: Media {
         isSplit = false
     }
     
+    func copyWithZone(zone: NSZone) -> AnyObject {
+        let copy = Video(title: title,
+                         mediaPath: mediaPath)
+        return copy
+    }
+    
     func getIsSplit() -> Bool {
         return isSplit
     }

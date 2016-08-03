@@ -8,13 +8,17 @@
 
 import Foundation
 import AVFoundation
+import AVKit
 
 class TrimInteractor: NSObject,TrimInteractorInterface {
     var delegate:TrimInteractorDelegate?
     
-    var videoSelected:Video?
     var videoPosition:Int?
-
+    var videoSelected:Video?
+    
+    var startTime:Float = 0.0
+    var stopTime:Float = 0.0
+    
     func setVideoPosition(position: Int) {
         self.videoPosition = position
     }
@@ -24,6 +28,7 @@ class TrimInteractor: NSObject,TrimInteractorInterface {
 
         delegate?.setLowerValue(Float(video.getStartTime()))
         delegate?.setUpperValue(Float(video.getStopTime()))
+        delegate?.setMaximumValue(Float(video.getDuration()))
     }
     
     func setParametersOnVideoSelectedOnProjectList(startTime:Float,
@@ -36,8 +41,22 @@ class TrimInteractor: NSObject,TrimInteractorInterface {
         Project.sharedInstance.setVideoList(videoList)
     }
     
-    func setUpComposition(videoSelectedIndex: Int,completion:(AVMutableComposition)->Void) {
-        let video = Project.sharedInstance.getVideoList()[videoPosition!]
+    func setParametersOnVideoSelected(startTime:Float,
+                                      stopTime:Float){
+        videoSelected = Project.sharedInstance.getVideoList()[videoPosition!].copy() as? Video
+        
+//        videoSelected!.setStopTime(Double(stopTime))
+//        videoSelected!.setStartTime(Double(startTime))
+        
+        self.startTime = startTime
+        self.stopTime = stopTime
+    }
+    
+    func setUpComposition(videoSelectedIndex: Int,
+                          completion:(AVMutableComposition)->Void) {
+        guard let video = videoSelected else{
+            return
+        }
         
         let mixComposition = AVMutableComposition()
 
@@ -51,20 +70,23 @@ class TrimInteractor: NSObject,TrimInteractorInterface {
         let videoAsset = AVAsset.init(URL: videoURL)
         
         do {
-            let stopTime = CMTimeMake(Int64(video.getStopTime() * 1000), 1000)
-            let startTime = CMTimeMake(Int64(video.getStartTime() * 1000), 1000)
+            let stopTime = CMTimeMake(Int64(self.stopTime * 1000), 1000)
+            let startTime = CMTimeMake(Int64(self.startTime * 1000), 1000)
             
-            try videoTrack.insertTimeRange(CMTimeRangeMake(startTime,  stopTime),
+            try videoTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoAsset.duration),
                                            ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
                                            atTime: kCMTimeZero)
-            try audioTrack.insertTimeRange(CMTimeRangeMake(startTime,  stopTime),
+            try audioTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoAsset.duration),
                                            ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
                                            atTime: kCMTimeZero)
+            mixComposition.removeTimeRange(CMTimeRangeMake(kCMTimeZero, startTime))
+            mixComposition.removeTimeRange(CMTimeRangeMake(stopTime, videoAsset.duration))
         } catch _ {
             Utils().debugLog("Error trying to create videoTrack")
             //                completionHandler("Error trying to create videoTrack",0.0)
         }
         
+        videoSelected = nil
         completion(mixComposition)
     }
 }
