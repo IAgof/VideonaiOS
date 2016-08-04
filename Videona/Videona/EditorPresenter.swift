@@ -81,7 +81,7 @@ class EditorPresenter: NSObject,EditorPresenterInterface {
     }
     
     func viewWillAppear() {
-        
+        self.viewDidLoad()
     }
     
     func viewWillDisappear() {
