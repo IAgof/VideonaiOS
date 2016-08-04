@@ -86,6 +86,8 @@ TrimInteractorDelegate {
     func viewWillDissappear() {
         upperValue = nil
         lowerValue = nil
+        
+        playerPresenter?.onVideoStops()
     }
     
     func pushAcceptHandler() {

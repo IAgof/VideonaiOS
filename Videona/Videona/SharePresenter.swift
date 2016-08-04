@@ -40,7 +40,7 @@ class SharePresenter:NSObject,SharePresenterInterface{
     }
     
     func viewWillDisappear() {
-        playerPresenter?.pauseVideo()
+        playerPresenter?.onVideoStops()
     }
     
     func setVideoExportedPath(path: String) {

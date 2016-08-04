@@ -100,10 +100,14 @@ class PlayerView: UIView,PlayerInterface {
     }
     
     func updateSeekBarOnUI(){
-        let duration = player?.currentItem?.duration.seconds
-        let currentTime = player?.currentTime().seconds
+        guard let duration = player?.currentItem?.duration.seconds else{
+            return
+        }
+        guard let currentTime = player?.currentTime().seconds else{
+            return 
+        }
         
-        seekSlider.setValue(Float((currentTime!/duration!)), animated: true)
+        seekSlider.setValue(Float((currentTime / duration)), animated: true)
     }
     
     func setViewPlayerTappable(){
@@ -148,8 +152,13 @@ class PlayerView: UIView,PlayerInterface {
     }
     
     func setUpVideoFinished(){
-        player?.currentItem?.seekToTime(CMTime.init(value: 1, timescale: 10))
-        playOrPauseButton.hidden = false
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            Utils().debugLog("Set up video finished")
+            
+            self.player?.pause()
+            self.player?.currentItem?.seekToTime(CMTime.init(value: 1, timescale: 10))
+            self.playOrPauseButton.hidden = false
+        })
     }
     
     func onVideoStops(){
