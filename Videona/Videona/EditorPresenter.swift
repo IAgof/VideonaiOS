@@ -37,6 +37,7 @@ class EditorPresenter: NSObject,EditorPresenterInterface {
 //        self.setTestVideoData()
         
         self.setVideoDataToView()
+        self.reloadPositionNumberAfterMovement()
     }
     
     func setTestVideoData()  {
@@ -128,7 +129,7 @@ class EditorPresenter: NSObject,EditorPresenterInterface {
     }
     
     func pushDuplicateHandler() {
-        
+        wireframe?.presentDuplicateController(selectedCellIndexPath.item)
     }
     
     //MARK: - Inner functions

@@ -23,6 +23,7 @@ class AppDependencies {
     var editorWireframe = EditorWireframe()
     var musicWireframe = MusicWireframe()
     var trimWireframe = TrimWireframe()
+    var duplicateWireframe = DuplicateWireframe()
     
     init(){
         configureDependencies()
@@ -58,6 +59,9 @@ class AppDependencies {
 
         let trimPresenter = TrimPresenter()
         let trimInteractor = TrimInteractor()
+        
+        let duplicatePresenter = DuplicatePresenter()
+        let duplicateInteractor = DuplicateInteractor()
         
         //INTRO MODULE
         introPresenter.introWireframe = introWireframe
@@ -147,7 +151,8 @@ class AppDependencies {
         editorWireframe.playerWireframe = playerWireframe
         editorWireframe.rootWireframe = rootWireframe
         editorWireframe.trimWireframe = trimWireframe
-        
+        editorWireframe.duplicateWireframe = duplicateWireframe
+
         //MUSIC MODULE
         musicPresenter.wireframe = musicWireframe
         musicPresenter.interactor = musicInteractor
@@ -171,6 +176,18 @@ class AppDependencies {
         trimWireframe.trimPresenter = trimPresenter
         
         trimInteractor.delegate = trimPresenter
+        
+        //DUPLICATE MODULE
+        duplicatePresenter.wireframe = duplicateWireframe
+        duplicatePresenter.playerPresenter = playerPresenter
+        duplicatePresenter.playerWireframe = playerWireframe
+        duplicatePresenter.interactor = duplicateInteractor
+        
+        duplicateWireframe.playerWireframe = playerWireframe
+        duplicateWireframe.rootWireframe = rootWireframe
+        duplicateWireframe.duplicatePresenter = duplicatePresenter
+        
+        duplicateInteractor.delegate = duplicatePresenter
     }
     
     func installIntroToRootViewControllerIntoWindow(window: UIWindow){
@@ -189,5 +206,8 @@ class AppDependencies {
     
     func installEditorRoomToRootViewControllerIntoWindow(window: UIWindow){
         editorRoomWireframe.presentEditingRoomInterfaceFromWindow(window)
+    }
+    func installDuplicateRoomToRootViewControllerIntoWindow(window: UIWindow){
+        duplicateWireframe.presentDuplicateInterfaceFromWindow(window)
     }
 }

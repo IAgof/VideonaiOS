@@ -22,6 +22,12 @@ class Video: Media {
     func copyWithZone(zone: NSZone) -> AnyObject {
         let copy = Video(title: title,
                          mediaPath: mediaPath)
+        copy.setIsSplit(isSplit)
+        copy.setPosition(position)
+        copy.setStopTime(fileStopTime)
+        copy.setStartTime(fileStartTime)
+        copy.duration = duration
+        
         return copy
     }
     

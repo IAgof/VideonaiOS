@@ -25,6 +25,16 @@ class AddVideoToProjectUseCase: NSObject {
         Project.sharedInstance.setVideoList(videoList)
     }
     
+    func add(video:Video,
+             position:Int){
+        
+        var videoList = Project.sharedInstance.getVideoList()
+        
+        videoList.insert(video, atIndex: position)
+        
+        Project.sharedInstance.setVideoList(videoList)
+    }
+    
     func updateVideoParams() {
         let videoList = Project.sharedInstance.getVideoList()
         videoList.last?.mediaRecordedFinished()

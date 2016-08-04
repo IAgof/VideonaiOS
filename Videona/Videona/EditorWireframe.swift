@@ -16,10 +16,11 @@ class EditorWireframe : NSObject {
     var editorPresenter : EditorPresenter?
     var playerWireframe: PlayerWireframe?
     var fullScreenPlayerWireframe: FullScreenPlayerWireframe?
-
+    
     var prevController:UIViewController?
 
     var trimWireframe:TrimWireframe?
+    var duplicateWireframe:DuplicateWireframe?
     
     func presentEditorInterfaceFromWindow(window: UIWindow) {
         let viewController = editorViewControllerFromStoryboard()
@@ -57,6 +58,11 @@ class EditorWireframe : NSObject {
     
     func presentTrimController(videoSelected:Int){
         trimWireframe?.presentTrimInterfaceFromViewController(editorViewController!,
+                                                              videoSelected:videoSelected)
+    }
+    
+    func presentDuplicateController(videoSelected:Int){
+        duplicateWireframe?.presentDuplicateInterfaceFromViewController(editorViewController!,
                                                               videoSelected:videoSelected)
     }
 }
