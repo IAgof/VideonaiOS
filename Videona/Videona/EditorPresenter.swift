@@ -124,8 +124,8 @@ class EditorPresenter: NSObject,EditorPresenterInterface {
         wireframe?.presentTrimController(selectedCellIndexPath.item)
     }
     
-    func pushDivideHandler() {
-        
+    func pushSplitHandler() {
+        wireframe?.presentSplitController(selectedCellIndexPath.item)
     }
     
     func pushDuplicateHandler() {

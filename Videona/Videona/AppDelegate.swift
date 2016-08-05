@@ -72,6 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 //            appDependencies.installShareToRootViewControllerIntoWindow(window!)
 //            appDependencies.installEditorRoomToRootViewControllerIntoWindow(window!)
 //            appDependencies.installDuplicateRoomToRootViewControllerIntoWindow(window!)
+//            appDependencies.installSplitRoomToRootViewControllerIntoWindow(window!)
         } else {
             // other version
             defaults.setObject(currentAppVersion, forKey: "appVersion")

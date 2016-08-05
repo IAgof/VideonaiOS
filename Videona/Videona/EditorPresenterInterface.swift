@@ -20,5 +20,5 @@ protocol EditorPresenterInterface {
     
     func pushTrimHandler()
     func pushDuplicateHandler()
-    func pushDivideHandler()
+    func pushSplitHandler()
 }

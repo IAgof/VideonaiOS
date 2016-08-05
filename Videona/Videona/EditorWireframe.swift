@@ -21,6 +21,7 @@ class EditorWireframe : NSObject {
 
     var trimWireframe:TrimWireframe?
     var duplicateWireframe:DuplicateWireframe?
+    var splitWireframe:SplitWireframe?
     
     func presentEditorInterfaceFromWindow(window: UIWindow) {
         let viewController = editorViewControllerFromStoryboard()
@@ -64,5 +65,10 @@ class EditorWireframe : NSObject {
     func presentDuplicateController(videoSelected:Int){
         duplicateWireframe?.presentDuplicateInterfaceFromViewController(editorViewController!,
                                                               videoSelected:videoSelected)
+    }
+    
+    func presentSplitController(videoSelected:Int){
+        splitWireframe?.presentSplitInterfaceFromViewController(editorViewController!,
+                                                                videoSelected: videoSelected)
     }
 }

@@ -56,6 +56,10 @@ class PlayerWireframe : NSObject{//, UIViewAnimationTransition {
             let duplicateViewController = viewController as! DuplicateViewController
             duplicateViewController.playerView.addSubview(playerView)
             
+        }else if  viewController is SplitViewController
+        {
+            let duplicateViewController = viewController as! SplitViewController
+            duplicateViewController.playerView.addSubview(playerView)            
         }
 
     }

@@ -24,6 +24,7 @@ class AppDependencies {
     var musicWireframe = MusicWireframe()
     var trimWireframe = TrimWireframe()
     var duplicateWireframe = DuplicateWireframe()
+    var splitWireframe = SplitWireframe()
     
     init(){
         configureDependencies()
@@ -62,6 +63,9 @@ class AppDependencies {
         
         let duplicatePresenter = DuplicatePresenter()
         let duplicateInteractor = DuplicateInteractor()
+        
+        let splitPresenter = SplitPresenter()
+        let splitInteractor = SplitInteractor()
         
         //INTRO MODULE
         introPresenter.introWireframe = introWireframe
@@ -152,7 +156,8 @@ class AppDependencies {
         editorWireframe.rootWireframe = rootWireframe
         editorWireframe.trimWireframe = trimWireframe
         editorWireframe.duplicateWireframe = duplicateWireframe
-
+        editorWireframe.splitWireframe = splitWireframe
+        
         //MUSIC MODULE
         musicPresenter.wireframe = musicWireframe
         musicPresenter.interactor = musicInteractor
@@ -188,6 +193,18 @@ class AppDependencies {
         duplicateWireframe.duplicatePresenter = duplicatePresenter
         
         duplicateInteractor.delegate = duplicatePresenter
+        
+        //SPLIT MODULE
+        splitPresenter.wireframe = splitWireframe
+        splitPresenter.playerPresenter = playerPresenter
+        splitPresenter.playerWireframe = playerWireframe
+        splitPresenter.interactor = splitInteractor
+        
+        splitWireframe.playerWireframe = playerWireframe
+        splitWireframe.rootWireframe = rootWireframe
+        splitWireframe.splitPresenter = splitPresenter
+        
+        splitInteractor.delegate = splitPresenter
     }
     
     func installIntroToRootViewControllerIntoWindow(window: UIWindow){
@@ -209,5 +226,9 @@ class AppDependencies {
     }
     func installDuplicateRoomToRootViewControllerIntoWindow(window: UIWindow){
         duplicateWireframe.presentDuplicateInterfaceFromWindow(window)
+    }
+    
+    func installSplitRoomToRootViewControllerIntoWindow(window: UIWindow){
+        splitWireframe.presentSplitInterfaceFromWindow(window)
     }
 }

@@ -131,7 +131,7 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
     
     @IBAction func pushDivideClip(sender:UIButton){
         
-        eventHandler?.pushDivideHandler()
+        eventHandler?.pushSplitHandler()
     }
     
     //MARK: - Interface
