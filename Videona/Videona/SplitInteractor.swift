@@ -21,8 +21,10 @@ class SplitInteractor: NSObject,SplitInteractorInterface {
     func getVideoParams() {
         let video = Project.sharedInstance.getVideoList()[videoPosition!]
         
-        delegate?.settSplitValue(Float(video.getStopTime()/2))
-        delegate?.setMaximumValue(Float(video.getDuration()))
+        let videoDuration = (video.getStopTime() - video.getStartTime())
+        
+        delegate?.settSplitValue(Float(videoDuration/2))
+        delegate?.setMaximumValue(Float(videoDuration))
     }
     
     func setUpComposition(completion:(AVMutableComposition)->Void) {
@@ -62,11 +64,10 @@ class SplitInteractor: NSObject,SplitInteractorInterface {
     
     func setSplitVideosToProject(splitTime:Double){
         var videoList = Project.sharedInstance.getVideoList()
-        
         //Create a copy and add to the list
         let videoCopy = videoList[videoPosition!].copy() as? Video
         
-        videoCopy?.setStartTime(splitTime)
+        videoCopy?.setStartTime((videoCopy?.getStartTime())! + splitTime)
         videoCopy?.setIsSplit(true)
         
         //Add video to the Project video list
@@ -77,7 +78,7 @@ class SplitInteractor: NSObject,SplitInteractorInterface {
             if (videoPosition != nil) {
                 let video = videoList[videoPosition!]
                 
-                video.setStopTime(splitTime)
+                video.setStopTime(video.getStopTime() - splitTime)
                 video.setIsSplit(true)
             }
         }
