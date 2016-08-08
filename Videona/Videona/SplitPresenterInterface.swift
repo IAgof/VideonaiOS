@@ -15,6 +15,7 @@ protocol SplitPresenterInterface{
     func pushAcceptHandler()
     func pushBack()
     func setSplitValue(value:Float)
+    func updateSplitValueByPlayer(value:Float)
 }
 
 protocol SplitPresenterDelegate {

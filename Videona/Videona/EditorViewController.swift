@@ -78,7 +78,7 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
         
         cell.removeClipButton.addTarget(self, action: "pushRemoveVideoClip:", forControlEvents: UIControlEvents.TouchUpInside)
 
-        Utils.sharedInstance.debugLog("cell for item at indexPath:\(indexPath.item) \n videolist position\(videoPositionList[indexPath.item])\n cell isSelected\(cell.isClipSelected)")
+//        Utils.sharedInstance.debugLog("cell for item at indexPath:\(indexPath.item) \n videolist position\(videoPositionList[indexPath.item])\n cell isSelected\(cell.isClipSelected)")
 
         return cell
     }

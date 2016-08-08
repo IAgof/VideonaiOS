@@ -18,6 +18,8 @@ protocol PlayerPresenterInterface {
     func videoPlayerViewTapped()
     func pushPlayButton()
     func updateSeekBar()
+    func seekToTime(time:Float)
+    func isPlayingVideo()->Bool
 }
 
 

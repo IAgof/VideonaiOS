@@ -26,12 +26,16 @@ class Media: NSObject {
     /**
      * The start time of the media resource within the file it represents.
      */
-    var fileStartTime:Double!
-    
+    var fileStartTime:Double = 0.0
     /**
      * The stop time of the media resource within the file it represents.
      */
-    var fileStopTime:Double!
+    var fileStopTime:Double = 0.0
+    
+    
+    var trimStartTime:Double = 0.0
+    
+    var trimStopTime:Double = 0.0
     
     var duration:Double!
     
@@ -47,6 +51,8 @@ class Media: NSObject {
         
         fileStartTime = 0.0
         fileStopTime = asset.duration.seconds
+        trimStartTime = fileStartTime
+        trimStopTime = fileStopTime
         duration = asset.duration.seconds
     }
     
@@ -67,19 +73,19 @@ class Media: NSObject {
     }
     
     func getStartTime() -> Double {
-        return fileStartTime
+        return trimStartTime
     }
     
     func setStartTime(time:Double) {
-        self.fileStartTime = time
+        self.trimStartTime = time
     }
     
     func getStopTime() -> Double {
-        return fileStopTime
+        return trimStopTime
     }
     
     func setStopTime(time:Double) {
-        self.fileStopTime = time
+        self.trimStopTime = time
     }
     
     func getDuration() -> Double {

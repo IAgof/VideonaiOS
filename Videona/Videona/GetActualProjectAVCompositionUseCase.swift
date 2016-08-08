@@ -12,11 +12,11 @@ import AVFoundation
 class GetActualProjectAVCompositionUseCase: NSObject {
     static let sharedInstance = GetActualProjectAVCompositionUseCase()
     
-    var videoTotalTime:CMTime = kCMTimeZero
+    var compositionInSeconds:Double = 0.0
     
     func getComposition() -> AVMutableComposition{
-        videoTotalTime = kCMTimeZero
-        
+        var videoTotalTime:CMTime = kCMTimeZero
+
         let isMusicSet = Project.sharedInstance.isMusicSet
         
         // - Create AVMutableComposition object. This object will hold your AVMutableCompositionTrack instances.
@@ -24,53 +24,62 @@ class GetActualProjectAVCompositionUseCase: NSObject {
         
         let videoTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeVideo,
                                                                      preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
-        var audioTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeAudio,preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
+        var audioTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeAudio,
+                                                                     preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
         
         let videosArray = Project.sharedInstance.getVideoList()
         // - Add assets to the composition
-        for video in videosArray{
-            // 2 - Get Video asset
-            let videoURL: NSURL = NSURL.init(fileURLWithPath: video.getMediaPath())
-            let videoAsset = AVAsset.init(URL: videoURL)
-            
-            do {
-                let stopTime = CMTimeMake(Int64(video.getStopTime() * 1000), 1000)
-                let startTime = CMTimeMake(Int64(video.getStartTime() * 1000), 1000)
-                Utils().debugLog("Video composition startTime: \(startTime) \nVideo composition stopTime: \(stopTime) ")
-
-                try videoTrack.insertTimeRange(CMTimeRangeMake(startTime,  stopTime),
-                                               ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
-                                               atTime: videoTotalTime)
+        if videosArray.count>0 {
+            for count in 0...(videosArray.count - 1){
+                let video = videosArray[count]
+                // 2 - Get Video asset
+                let videoURL: NSURL = NSURL.init(fileURLWithPath: video.getMediaPath())
+                let videoAsset = AVAsset.init(URL: videoURL)
                 
-                if isMusicSet == false {
-                    try audioTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, stopTime),
-                                                   ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeAudio)[0] ,
+                do {
+                    let startTime = CMTimeMake(Int64(video.getStartTime() * 30), 30)
+
+                    let stopTime = CMTimeMake(Int64(video.getStopTime() * 30), 30)
+                    
+                    try videoTrack.insertTimeRange(CMTimeRangeMake(startTime,  stopTime),
+                                                   ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
                                                    atTime: videoTotalTime)
+                    
+                    if isMusicSet == false {
+                        try audioTrack.insertTimeRange(CMTimeRangeMake(startTime, stopTime),
+                                                       ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeAudio)[0] ,
+                                                       atTime: videoTotalTime)
+                    }
+                    videoTotalTime = CMTimeAdd(videoTotalTime, (stopTime - startTime))
+
+                    mixComposition.removeTimeRange(CMTimeRangeMake((videoTotalTime), (stopTime + videoTotalTime)))
+                    Utils().debugLog("remove final range from (stopTime + videoTotalTime): \((stopTime.seconds + videoTotalTime.seconds)) \n to (videoAsset.duration + videoTotalTime): \((videoAsset.duration.seconds + videoTotalTime.seconds)) ")
+
+                    Utils().debugLog("el tiempo total del video es: \(videoTotalTime.seconds)")
+                } catch _ {
+                    Utils().debugLog("Error trying to create videoTrack")
+                    //                completionHandler("Error trying to create videoTrack",0.0)
                 }
                 
-                Utils().debugLog("el tiempo total del video es: \(videoTotalTime.seconds)")
-                videoTotalTime = CMTimeAdd(videoTotalTime, (stopTime - startTime))
-            } catch _ {
-                //                Utils().debugLog("Error trying to create videoTrack")
-                //                completionHandler("Error trying to create videoTrack",0.0)
+                compositionInSeconds = videoTotalTime.seconds
             }
-        }
-        
-        if isMusicSet{
-            // 3.2 - Audio track
-            // Get Audio asset
-            let audioURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(Project.sharedInstance.getMusic().getMusicResourceId(), ofType: "m4a")!)
-            let audioAsset = AVAsset.init(URL: audioURL)
             
-            audioTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeAudio, preferredTrackID: 0)
-            do {
-                try audioTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoTotalTime),
-                                               ofTrack: audioAsset.tracksWithMediaType(AVMediaTypeAudio)[0] ,
-                                               atTime: kCMTimeZero)
-            } catch _ {
-                Utils().debugLog("Error trying to create audioTrack")
+            if isMusicSet{
+                // 3.2 - Audio track
+                // Get Audio asset
+                let audioURL = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(Project.sharedInstance.getMusic().getMusicResourceId(), ofType: "m4a")!)
+                let audioAsset = AVAsset.init(URL: audioURL)
+                
+                audioTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeAudio, preferredTrackID: 0)
+                do {
+                    try audioTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoTotalTime),
+                                                   ofTrack: audioAsset.tracksWithMediaType(AVMediaTypeAudio)[0] ,
+                                                   atTime: kCMTimeZero)
+                } catch _ {
+                    Utils().debugLog("Error trying to create audioTrack")
+                }
             }
         }
-        return mixComposition
+               return mixComposition
     }
 }

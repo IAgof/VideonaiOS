@@ -76,4 +76,11 @@ class PlayerPresenter:NSObject,PlayerPresenterInterface{
     func updateSeekBar() {
         controller!.updateSeekBarOnUI()
     }
+    
+    func seekToTime(time:Float){
+        controller?.seekToTime(time)
+    }
+    func isPlayingVideo() -> Bool {
+        return self.isPlaying
+    }
 }

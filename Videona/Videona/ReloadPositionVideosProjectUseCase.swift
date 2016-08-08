@@ -16,8 +16,8 @@ class ReloadPositionVideosProjectUseCase: NSObject {
         let videoList = Project.sharedInstance.getVideoList()
         
         if !videoList.isEmpty {
-            for videoPosition in 0...(videoList.count - 1) {
-                videoList[videoPosition].setPosition(videoPosition + 1)
+            for videoPosition in 1...(videoList.count) {
+                videoList[videoPosition - 1].setPosition(videoPosition)
             }
             
             Project.sharedInstance.setVideoList(videoList)

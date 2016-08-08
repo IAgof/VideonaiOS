@@ -59,4 +59,29 @@ class SplitInteractor: NSObject,SplitInteractorInterface {
         }
         completion(mixComposition)
     }
+    
+    func setSplitVideosToProject(splitTime:Double){
+        var videoList = Project.sharedInstance.getVideoList()
+        
+        //Create a copy and add to the list
+        let videoCopy = videoList[videoPosition!].copy() as? Video
+        
+        videoCopy?.setStartTime(splitTime)
+        videoCopy?.setIsSplit(true)
+        
+        //Add video to the Project video list
+        
+        videoList.insert(videoCopy!, atIndex: (videoPosition! + 1))
+        
+        if videoList.indices.contains(videoPosition!){
+            if (videoPosition != nil) {
+                let video = videoList[videoPosition!]
+                
+                video.setStopTime(splitTime)
+                video.setIsSplit(true)
+            }
+        }
+        
+        Project.sharedInstance.setVideoList(videoList)
+    }
 }

@@ -24,8 +24,9 @@ class Video: Media {
                          mediaPath: mediaPath)
         copy.setIsSplit(isSplit)
         copy.setPosition(position)
-        copy.setStopTime(fileStopTime)
-        copy.setStartTime(fileStartTime)
+        copy.fileStopTime = fileStopTime
+        copy.setStopTime(trimStopTime)
+        copy.setStartTime(trimStartTime)
         copy.duration = duration
         
         return copy

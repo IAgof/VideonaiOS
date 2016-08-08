@@ -13,6 +13,7 @@ protocol SplitInteractorInterface {
     func setVideoPosition(position:Int)
     func getVideoParams()
     func setUpComposition(completion:(AVMutableComposition)->Void)
+    func setSplitVideosToProject(splitTime:Double)
 }
 
 protocol SplitInteractorDelegate {

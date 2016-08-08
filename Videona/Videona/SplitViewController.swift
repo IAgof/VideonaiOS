@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import NMRangeSlider
 
-class SplitViewController: VideonaController,SplitViewInterface,SplitPresenterDelegate {
+class SplitViewController: VideonaController,SplitViewInterface,SplitPresenterDelegate,PlayerViewDelegate {
     //MARK: - VIPER variables
     var eventHandler: SplitPresenterInterface?
     
@@ -70,10 +70,13 @@ class SplitViewController: VideonaController,SplitViewInterface,SplitPresenterDe
     func configureUIRangeSlider(){
 
         
-        let handleImage = UIImage(named: "button_edit_thumb_seekbar_over_advance_split")
+        var handleImage = UIImage(named: "button_edit_thumb_seekbar_advance_split_normal")
+        
+        let handleImagePressed = UIImage(named: "button_edit_thumb_seekbar_advance_split_normal")
+        
         splitRangeSlider.upperHandleImageNormal = handleImage
         
-        splitRangeSlider.upperHandleImageHighlighted = handleImage
+        splitRangeSlider.upperHandleImageHighlighted = handleImagePressed
     }
     
     func setSliderValue(value:Float){
@@ -84,4 +87,8 @@ class SplitViewController: VideonaController,SplitViewInterface,SplitPresenterDe
         self.timeToCutLabel.text = text
     }
     
+    //MARK: - Player view delegate
+    func seekBarUpdate(value: Float) {
+        eventHandler?.updateSplitValueByPlayer(value)
+    }
 }

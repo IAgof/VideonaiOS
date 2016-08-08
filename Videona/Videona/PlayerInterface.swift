@@ -20,4 +20,9 @@ protocol PlayerInterface {
     func pauseVideoPlayer()
     func playVideoPlayer()
     func updateSeekBarOnUI()
+    func seekToTime(time: Float) 
+}
+
+protocol PlayerViewDelegate {
+    func seekBarUpdate(value:Float)
 }

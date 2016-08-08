@@ -25,19 +25,18 @@ class EditorPresenter: NSObject,EditorPresenterInterface {
     
     //MARK: - Interface
     func viewDidLoad() {
+        self.reloadPositionNumberAfterMovement()
+        
         //Auto select first item on first load
         self.didSelectItemAtIndexPath(selectedCellIndexPath)
         
         controller?.setUpGestureRecognizer()
         
         wireframe?.presentPlayerInterface()
-
-        loadVideoListFromProject()
         
 //        self.setTestVideoData()
         
         self.setVideoDataToView()
-        self.reloadPositionNumberAfterMovement()
     }
     
     func setTestVideoData()  {

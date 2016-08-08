@@ -72,9 +72,10 @@ class DuplicateInteractor: NSObject,DuplicateInteractorInterface {
     }
     
     func setDuplicateVideoToProject(numberDuplicates: Int) {
-        let video = Project.sharedInstance.getVideoList()[videoPosition!].copy() as? Video
         
         for i in 1...(numberDuplicates - 1){
+            let video = Project.sharedInstance.getVideoList()[videoPosition!].copy() as? Video
+
             AddVideoToProjectUseCase.sharedInstance.add(video!,
                                                         position: videoPosition!)
         }

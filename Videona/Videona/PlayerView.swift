@@ -13,6 +13,7 @@ import AVFoundation
 class PlayerView: UIView,PlayerInterface {
     //MARK: - VIPER
     var eventHandler: PlayerPresenterInterface?
+    var delegate:PlayerViewDelegate?
     
     //MARK: - Variables
     var player:AVPlayer?
@@ -98,6 +99,7 @@ class PlayerView: UIView,PlayerInterface {
 
         }
     }
+    var oldSliderValue:Float = 0.0
     
     func updateSeekBarOnUI(){
         guard let duration = player?.currentItem?.duration.seconds else{
@@ -107,7 +109,13 @@ class PlayerView: UIView,PlayerInterface {
             return 
         }
         
-        seekSlider.setValue(Float((currentTime / duration)), animated: true)
+        let sliderValue = Float((currentTime / duration))
+        
+        seekSlider.setValue(sliderValue, animated: true)
+        if oldSliderValue != sliderValue {
+            self.delegate?.seekBarUpdate(sliderValue)
+        }
+        oldSliderValue = sliderValue
     }
     
     func setViewPlayerTappable(){
@@ -145,10 +153,15 @@ class PlayerView: UIView,PlayerInterface {
             if (self.playerRateBeforeSeek > 0) {
                 self.player!.play()
             }
+            
+            if completed{
+                self.delegate?.seekBarUpdate(Float(elapsedTime))
+            }
         }
     }
+    
     func sliderValueChanged(){
-
+ 
     }
     
     func setUpVideoFinished(){
@@ -182,4 +195,16 @@ class PlayerView: UIView,PlayerInterface {
 
         Utils().debugLog("Playing video")
     }
+    
+    func seekToTime(time: Float) {
+        Utils.sharedInstance.debugLog("Seek to time manually")
+        seekSlider.value = time
+        let videoDuration = CMTimeGetSeconds(player!.currentItem!.duration)
+        let elapsedTime: Float64 = videoDuration * Float64(seekSlider.value)
+        
+        player!.seekToTime(CMTimeMakeWithSeconds(elapsedTime, 10)) { (completed: Bool) -> Void in
+
+        }
+    }
+    
 }

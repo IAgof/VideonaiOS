@@ -54,6 +54,8 @@ class TrimInteractor: NSObject,TrimInteractorInterface {
     
     func setUpComposition(videoSelectedIndex: Int,
                           completion:(AVMutableComposition)->Void) {
+        var videoTotalTime:CMTime = kCMTimeZero
+
         guard let video = videoSelected else{
             return
         }
@@ -70,17 +72,18 @@ class TrimInteractor: NSObject,TrimInteractorInterface {
         let videoAsset = AVAsset.init(URL: videoURL)
         
         do {
-            let stopTime = CMTimeMake(Int64(self.stopTime * 1000), 1000)
-            let startTime = CMTimeMake(Int64(self.startTime * 1000), 1000)
+            let startTime = CMTimeMake(Int64(self.startTime * 30), 30)
+            let stopTime = CMTimeMake(Int64(self.stopTime * 30), 30)
             
-            try videoTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoAsset.duration),
+            try videoTrack.insertTimeRange(CMTimeRangeMake(startTime, stopTime),
                                            ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
                                            atTime: kCMTimeZero)
-            try audioTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoAsset.duration),
+            try audioTrack.insertTimeRange(CMTimeRangeMake(startTime, stopTime),
                                            ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
                                            atTime: kCMTimeZero)
-            mixComposition.removeTimeRange(CMTimeRangeMake(kCMTimeZero, startTime))
-            mixComposition.removeTimeRange(CMTimeRangeMake(stopTime, videoAsset.duration))
+            videoTotalTime = CMTimeAdd(videoTotalTime, (stopTime - startTime))
+
+            mixComposition.removeTimeRange(CMTimeRangeMake((videoTotalTime), (stopTime + videoTotalTime)))
         } catch _ {
             Utils().debugLog("Error trying to create videoTrack")
             //                completionHandler("Error trying to create videoTrack",0.0)
