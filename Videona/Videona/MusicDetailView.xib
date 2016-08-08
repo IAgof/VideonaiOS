@@ -18,7 +18,7 @@
                         <constraint firstAttribute="width" secondItem="84S-zW-oLf" secondAttribute="height" multiplier="20:15" id="UaJ-Cx-Gf0"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fkh-td-DDL">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fkh-td-DDL">
                     <rect key="frame" x="8" y="310" width="17" height="22"/>
                     <state key="normal" image="common_icon_edit_cancel_normal"/>
                     <connections>
@@ -46,11 +46,12 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PiH-7b-pqe">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PiH-7b-pqe">
                     <rect key="frame" x="113" y="310" width="75" height="22"/>
-                    <state key="normal" title="remove" image="activity_edit_clip_delete">
-                        <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    <state key="normal" image="common_icon_edit_delete_music_normal">
+                        <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <state key="highlighted" image="common_icon_edit_delete_music_pressed"/>
                     <connections>
                         <action selector="pushRemoveButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="bUt-hY-Q7f"/>
                     </connections>
@@ -95,8 +96,9 @@
         </view>
     </objects>
     <resources>
-        <image name="activity_edit_clip_delete" width="15" height="15"/>
         <image name="common_icon_edit_accept_normal" width="19" height="17"/>
         <image name="common_icon_edit_cancel_normal" width="17" height="17"/>
+        <image name="common_icon_edit_delete_music_normal" width="17" height="17"/>
+        <image name="common_icon_edit_delete_music_pressed" width="17" height="17"/>
     </resources>
 </document>
