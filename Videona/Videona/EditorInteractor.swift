@@ -21,6 +21,7 @@ class EditorInteractor: NSObject,EditorInteractorInterface {
         
         self.getPositionList()
         self.getImageList()
+        self.getStopTimeList()
     }
     
     func getPositionList(){
@@ -31,6 +32,19 @@ class EditorInteractor: NSObject,EditorInteractorInterface {
         }
         
         delegate?.setPositionList(positionList)
+    }
+    
+    
+    func getStopTimeList(){
+        var stopTimeList:[Double] = []
+        
+        var stopTimeAcumulator = 0.0
+        for video in videosList{
+            stopTimeAcumulator += (video.getStopTime() - video.getStartTime())
+            stopTimeList.append(stopTimeAcumulator)
+        }
+        
+        delegate?.setStopTimeList(stopTimeList)
     }
     
     func getImageList(){

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class EditorViewController: VideonaController,EditorViewInterface,
+class EditorViewController: VideonaController,EditorViewInterface,PlayerViewDelegate,
 UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     
     //MARK: - VIPER variables
@@ -202,5 +202,8 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
         }
     }
     
-    
+    //MARK: Player view delegate
+    func seekBarUpdate(value: Float) {
+        eventHandler?.seekBarUpdateHandler(value)
+    }
 }

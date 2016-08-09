@@ -21,4 +21,5 @@ protocol EditorPresenterInterface {
     func pushTrimHandler()
     func pushDuplicateHandler()
     func pushSplitHandler()
+    func seekBarUpdateHandler(value: Float)
 }

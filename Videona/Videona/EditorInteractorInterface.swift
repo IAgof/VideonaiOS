@@ -15,4 +15,6 @@ protocol EditorInteractorInterface {
 protocol EditorInteractorDelegate {
     func setPositionList(list:[Int])
     func setVideoImagesList(list:[UIImage])
+    func setStopTimeList(list:[Double])
+    
 }

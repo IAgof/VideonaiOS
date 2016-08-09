@@ -23,6 +23,7 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
     var selectedCellIndexPath = NSIndexPath(forRow: 0, inSection: 0)
     
     let NO_SELECTED_CELL = -1
+    var stopList:[Double] = []
     
     //MARK: - Interface
     func viewDidLoad() {
@@ -110,6 +111,23 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
         }
     }
     
+    func seekBarUpdateHandler(value: Float) {
+        let seekBarValue = Double(value) * getCompositionDuration()
+        var cellPosition = 0
+        
+        for time in stopList{
+            if (seekBarValue < time){
+                if cellPosition == selectedCellIndexPath.item {
+                    return
+                }else{
+                    self.didSelectItemAtIndexPath(NSIndexPath(forItem: cellPosition , inSection: 0))
+                    return
+                }
+            }
+            cellPosition += 1
+        }
+    }
+    
     //MARK: - Inner functions
     func moveClipToPosition(sourcePosition:Int,
                             destionationPosition:Int){
@@ -123,6 +141,8 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
         loadVideoListFromProject()
         
         self.setVideoDataToView()
+        
+        selectedCellIndexPath = NSIndexPath(forRow: 0, inSection: 0)
     }
     
     func loadVideoListFromProject() {
@@ -139,6 +159,11 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
         self.reloadPositionNumberAfterMovement()
     }
     
+    func getCompositionDuration()->Double{
+        
+        return stopList.last!
+    }
+    
     //MARK: - Interactor delegate
     func setPositionList(list: [Int]) {
         controller?.setPositionList(list)
@@ -149,4 +174,9 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
         self.controller?.setVideoImagesList(list)
         self.setVideoDataToView()
     }
+    
+    func setStopTimeList(list: [Double]) {
+        self.stopList = list
+    }
+    
 }

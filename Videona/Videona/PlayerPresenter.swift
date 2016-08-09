@@ -20,7 +20,6 @@ class PlayerPresenter:NSObject,PlayerPresenterInterface{
     var wireframe: PlayerWireframe?
     var recordWireframe: RecordWireframe?
 
-
     //MARK: - Variables
     var isPlaying = false
     
