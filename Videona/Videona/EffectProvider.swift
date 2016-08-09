@@ -140,38 +140,19 @@ public class EffectProvider {
     func getOverlayFilterList() -> Array<Effect> {
         var overlayList = [Effect]()
         
-        overlayList.append(OverlayEffect(identifier: "OV17", name: "Wasted", iconId: "common_filter_overlay_ov17_wasted", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_COLOR))
-        overlayList.append(OverlayEffect(identifier: "OV3", name: "Sunset", iconId: "common_filter_overlay_ov3_sunset", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        overlayList.append(OverlayEffect(identifier: "OV18", name: "Vintage", iconId: "common_filter_overlay_ov18_polaroid", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        overlayList.append(OverlayEffect(identifier: "ovh001", name: "Invaders", iconId: "common_filter_overlay_ovh001_invaders", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        overlayList.append(OverlayEffect(identifier: "OV14", name: "Stain", iconId: "common_filter_overlay_ov14_stain", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        overlayList.append(OverlayEffect(identifier: "OV22", name: "Rain", iconId: "common_filter_overlay_ov22_rain", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        overlayList.append(OverlayEffect(identifier: "ovp001", name: "KissCam", iconId: "common_filter_overlay_ovp001_kiss_cam", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        overlayList.append(OverlayEffect(identifier: "OV1", name: "Burn", iconId: "common_filter_overlay_ov1_burn", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        overlayList.append(OverlayEffect(identifier: "OV9", name: "Summer", iconId: "common_filter_overlay_ov9_summer", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        overlayList.append(OverlayEffect(identifier: "ovt001", name: "Monster", iconId: "common_filter_overlay_ovt001_monster", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        
-        
-        //        overlayList.append(OverlayEffect(identifier: "GIFT_OV", name: " ", iconId: "common_filter_overlay_gift", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        //        overlayList.append(OverlayEffect(identifier: "OV5", name: "Autumn", iconId: "common_filter_overlay_ov5_autumn", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        //        overlayList.append(OverlayEffect(identifier: "OV4", name: "Retrotv", iconId: "common_filter_overlay_ov4_retrotv", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        //        overlayList.append(OverlayEffect(identifier: "OV6", name: "Mist", iconId: "common_filter_overlay_ov6_mist", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        //
-        //        overlayList.append(OverlayEffect(identifier: "OV7", name: "Pride", iconId: "common_filter_overlay_ov7_pride", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        //        overlayList.append(OverlayEffect(identifier: "OV24", name: "Bokeh", iconId: "common_filter_overlay_ov24_bokeh", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        //        overlayList.append(OverlayEffect(identifier: "OV16", name: "Game", iconId: "common_filter_overlay_ov16_game", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        //        overlayList.append(OverlayEffect(identifier: "OV10", name: "CCTV", iconId: "common_filter_overlay_ov10_cctv", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        //        overlayList.append(OverlayEffect(identifier: "OV23", name: "Dark", iconId: "common_filter_overlay_ov23_dark", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        //        overlayList.append(OverlayEffect(identifier: "OV19", name: "Old", iconId: "common_filter_overlay_ov19_old", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        //        overlayList.append(OverlayEffect(identifier: "OV15", name: "Pastel", iconId: "common_filter_overlay_ov15_pastel", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        //        overlayList.append(OverlayEffect(identifier: "OV13", name: "Passion", iconId: "common_filter_overlay_ov13_passion", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
+        overlayList.append(OverlayEffect(identifier: "ovb003", name: "Dirty", iconId: "common_filter_overlay_ovb003_dirty", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_COLOR))
+        overlayList.append(OverlayEffect(identifier: "ovf003", name: "Retrogame", iconId: "common_filter_overlay_ovf003_retro_game", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
+        overlayList.append(OverlayEffect(identifier: "ovh002", name: "Game", iconId: "common_filter_overlay_ovh002_game", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
+        overlayList.append(OverlayEffect(identifier: "ovh003", name: "Tattoo", iconId: "common_filter_overlay_ovh003_tattoo", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
+        overlayList.append(OverlayEffect(identifier: "ovi003", name: "Unicorn", iconId: "common_filter_overlay_ovi003_unicorn", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
+        overlayList.append(OverlayEffect(identifier: "ovn003", name: "Hawai", iconId: "common_filter_overlay_ovn003_hawaii", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
+        overlayList.append(OverlayEffect(identifier: "ovp003", name: "Baby", iconId: "common_filter_overlay_ovp003_baby", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
+        overlayList.append(OverlayEffect(identifier: "ovr003", name: "NY", iconId: "common_filter_overlay_ovr003_ny", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
+        overlayList.append(OverlayEffect(identifier: "ovs003", name: "Holidays", iconId: "common_filter_overlay_ovs003_holidays", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
+        overlayList.append(OverlayEffect(identifier: "ovt002", name: "Olimpic", iconId: "common_filter_overlay_ovt002_olimpic", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
         
         return overlayList
     }
-    
-    //    func getOverlayFilterList() -> Effect{
-    //        return OverlayEffect(identifier: "OV25", name: "Spring", iconId: "", resourceId: "", type: AnalyticsConstants().FILTER_TYPE_COLOR)
-    //    }
     
     func getFilterByName(name:String) -> Effect {
         let colorsFilters = self.getOverlayFilterList()
