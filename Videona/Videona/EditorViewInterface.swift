@@ -16,4 +16,5 @@ protocol EditorViewInterface {
     func reloadCollectionViewData()
     func setPositionList(list:[Int])
     func setVideoImagesList(list: [UIImage])
+    func numberOfCellsInCollectionView()->Int
 }

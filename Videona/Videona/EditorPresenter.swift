@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-class EditorPresenter: NSObject,EditorPresenterInterface {
+class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegate {
     //MARK: - Variables VIPER
     var controller: EditorViewInterface?
-//    var interactor: EditorInteractorInterface?
+    var interactor: EditorInteractorInterface?
     
     var wireframe: EditorWireframe?
     var playerPresenter: PlayerPresenterInterface?
@@ -20,8 +20,9 @@ class EditorPresenter: NSObject,EditorPresenterInterface {
     var fullScreenPlayerWireframe: FullScreenPlayerWireframe?
 
     //MARK: - Variables
-    var videosList = Project.sharedInstance.getVideoList()
     var selectedCellIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+    
+    let NO_SELECTED_CELL = -1
     
     //MARK: - Interface
     func viewDidLoad() {
@@ -34,50 +35,13 @@ class EditorPresenter: NSObject,EditorPresenterInterface {
         
         wireframe?.presentPlayerInterface()
         
-//        self.setTestVideoData()
-        
         self.setVideoDataToView()
     }
     
-    func setTestVideoData()  {
-        for _ in 1...20 {
-            AddVideoToProjectUseCase.sharedInstance.add("", title: "")
-        }
-        
-        self.loadVideoListFromProject()
-    }
-    
     func setVideoDataToView(){
-        controller?.setPositionList(self.getPositionList())
-
-        self.controller?.setVideoImagesList(self.getImageList())
-        
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             self.controller?.reloadCollectionViewData()
         })
-    }
-    
-    func getPositionList() -> [Int] {
-        var positionList:[Int] = []
-        
-        for video in videosList{
-            positionList.append(video.getPosition())
-        }
-        
-        return positionList
-    }
-    
-    func getImageList() -> [UIImage] {
-        var imageList:[UIImage] = []
-        
-        for video in self.videosList{
-            ThumbnailListInteractor(videoPath: video.getMediaPath(),
-                diameter: Utils.sharedInstance.thumbnailEditorListDiameter).getThumbnailImage({
-                    thumb in
-                    imageList.append(thumb)
-                })
-        }
-        return imageList
     }
     
     func viewWillAppear() {
@@ -118,17 +82,32 @@ class EditorPresenter: NSObject,EditorPresenterInterface {
         
         reloadPositionNumberAfterMovement()
     }
+    func pushDuplicateHandler() {
+        if checkIfSelectedCellExits(){
+            wireframe?.presentDuplicateController(selectedCellIndexPath.item)
+        }
+    }
     
     func pushTrimHandler() {
-        wireframe?.presentTrimController(selectedCellIndexPath.item)
+        if checkIfSelectedCellExits(){
+            wireframe?.presentTrimController(selectedCellIndexPath.item)
+        }
     }
     
     func pushSplitHandler() {
-        wireframe?.presentSplitController(selectedCellIndexPath.item)
+        if checkIfSelectedCellExits(){
+            wireframe?.presentSplitController(selectedCellIndexPath.item)
+        }
     }
-    
-    func pushDuplicateHandler() {
-        wireframe?.presentDuplicateController(selectedCellIndexPath.item)
+
+    func checkIfSelectedCellExits()->Bool{
+        let numberOfCells = controller?.numberOfCellsInCollectionView()
+        
+        if numberOfCells >= selectedCellIndexPath.item {
+            return true
+        }else{
+            return false
+        }
     }
     
     //MARK: - Inner functions
@@ -147,7 +126,7 @@ class EditorPresenter: NSObject,EditorPresenterInterface {
     }
     
     func loadVideoListFromProject() {
-        self.videosList = Project.sharedInstance.getVideoList()
+        interactor?.getListData()
         
         playerPresenter?.createVideoPlayer(GetActualProjectAVCompositionUseCase.sharedInstance.getComposition())
     }
@@ -158,7 +137,16 @@ class EditorPresenter: NSObject,EditorPresenterInterface {
         RemoveVideoFromProjectUseCase.sharedInstance.remove(position)
         
         self.reloadPositionNumberAfterMovement()
-        
+    }
+    
+    //MARK: - Interactor delegate
+    func setPositionList(list: [Int]) {
+        controller?.setPositionList(list)
+        self.setVideoDataToView()
+    }
+    
+    func setVideoImagesList(list: [UIImage]) {
+        self.controller?.setVideoImagesList(list)
         self.setVideoDataToView()
     }
 }

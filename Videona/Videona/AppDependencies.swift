@@ -54,6 +54,7 @@ class AppDependencies {
         let editorRoomPresenter = EditingRoomPresenter()
         
         let editorPresenter = EditorPresenter()
+        let editorInteractor = EditorInteractor()
         
         let musicPresenter = MusicPresenter()
         let musicInteractor = MusicInteractor()
@@ -150,6 +151,7 @@ class AppDependencies {
         editorPresenter.wireframe = editorWireframe
         editorPresenter.playerPresenter = playerPresenter
         editorPresenter.playerWireframe = playerWireframe
+        editorPresenter.interactor = editorInteractor
         
         editorWireframe.editorPresenter = editorPresenter
         editorWireframe.playerWireframe = playerWireframe
@@ -157,6 +159,8 @@ class AppDependencies {
         editorWireframe.trimWireframe = trimWireframe
         editorWireframe.duplicateWireframe = duplicateWireframe
         editorWireframe.splitWireframe = splitWireframe
+        
+        editorInteractor.delegate = editorPresenter
         
         //MUSIC MODULE
         musicPresenter.wireframe = musicWireframe

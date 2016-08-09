@@ -168,6 +168,10 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
         self.thumbnailClipsCollectionView.addGestureRecognizer(longPressGesture!)
     }
     
+    func numberOfCellsInCollectionView() -> Int {
+        return self.thumbnailClipsCollectionView.numberOfItemsInSection(0)
+    }
+    
     //MARK: - Drag and Drop handler
     func handleLongGesture(gesture: UILongPressGestureRecognizer) {
         

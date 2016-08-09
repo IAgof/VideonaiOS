@@ -102,6 +102,8 @@
 		A953392F1D2570BB006890E7 /* VideonaFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A95339311D2570BB006890E7 /* VideonaFooterView.xib */; };
 		A95628CF1CF7049100EE4B85 /* VideonaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95628CE1CF7049100EE4B85 /* VideonaUITests.swift */; };
 		A95628D51CF734F900EE4B85 /* filter_free.png in Resources */ = {isa = PBXBuildFile; fileRef = A95628D41CF734F900EE4B85 /* filter_free.png */; };
+		A95AB3841D59DDDB00AFE43C /* EditorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95AB3831D59DDDB00AFE43C /* EditorInteractor.swift */; };
+		A95AB3861D59DDE700AFE43C /* EditorInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95AB3851D59DDE700AFE43C /* EditorInteractorInterface.swift */; };
 		A95B24351CD8890900F78AAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B24341CD8890900F78AAF /* AppDelegate.swift */; };
 		A95B24371CD8890900F78AAF /* RecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B24361CD8890900F78AAF /* RecordController.swift */; };
 		A95B243A1CD8890900F78AAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95B24381CD8890900F78AAF /* Main.storyboard */; };
@@ -391,6 +393,8 @@
 		A95339301D2570BB006890E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/VideonaFooterView.xib; sourceTree = "<group>"; };
 		A95628CE1CF7049100EE4B85 /* VideonaUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideonaUITests.swift; sourceTree = "<group>"; };
 		A95628D41CF734F900EE4B85 /* filter_free.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter_free.png; sourceTree = "<group>"; };
+		A95AB3831D59DDDB00AFE43C /* EditorInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorInteractor.swift; sourceTree = "<group>"; };
+		A95AB3851D59DDE700AFE43C /* EditorInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorInteractorInterface.swift; sourceTree = "<group>"; };
 		A95B24311CD8890900F78AAF /* Videona.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Videona.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A95B24341CD8890900F78AAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A95B24361CD8890900F78AAF /* RecordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordController.swift; sourceTree = "<group>"; };
@@ -1701,6 +1705,8 @@
 			isa = PBXGroup;
 			children = (
 				A91849DB1D479C7B001B3505 /* ThumbnailListInteractor.swift */,
+				A95AB3831D59DDDB00AFE43C /* EditorInteractor.swift */,
+				A95AB3851D59DDE700AFE43C /* EditorInteractorInterface.swift */,
 			);
 			name = Interactor;
 			sourceTree = "<group>";
@@ -2367,6 +2373,7 @@
 				A9E066DB1CE4B4EE00D4E11D /* OverlayEffect.swift in Sources */,
 				A95B247A1CD8B96E00F78AAF /* RootWireframe.swift in Sources */,
 				A98A93BB1CF5903C004E1DB7 /* AddFilterInteractor.swift in Sources */,
+				A95AB3861D59DDE700AFE43C /* EditorInteractorInterface.swift in Sources */,
 				A93125C11D40AD14001BCC82 /* Audio.swift in Sources */,
 				A99278591CE36524009DC364 /* SettingsWireframe.swift in Sources */,
 				A91849D81D479462001B3505 /* ReloadPositionVideosProjectUseCase.swift in Sources */,
@@ -2427,6 +2434,7 @@
 				A97D438D1D48A1020047484D /* Music.swift in Sources */,
 				A93846E81CE47E82007FB6BC /* FilterListPresenter.swift in Sources */,
 				A927931F1D0AB906008E30BF /* ShareConstants.swift in Sources */,
+				A95AB3841D59DDDB00AFE43C /* EditorInteractor.swift in Sources */,
 				A942A46C1D3FC31C001E019F /* Project.swift in Sources */,
 				A95B247C1CD8B9F200F78AAF /* RecordPresenterInterfaceIO.swift in Sources */,
 				A9E066DD1CE4B4F500D4E11D /* ShaderEffect.swift in Sources */,
