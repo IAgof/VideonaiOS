@@ -159,8 +159,6 @@ class EditorPresenter: NSObject,EditorPresenterInterface {
         
         self.reloadPositionNumberAfterMovement()
         
-        self.loadVideoListFromProject()
-        
         self.setVideoDataToView()
     }
 }

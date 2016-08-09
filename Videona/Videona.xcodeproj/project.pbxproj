@@ -651,13 +651,13 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		A904120C1D539299008F3E44 /* Divide */ = {
+		A904120C1D539299008F3E44 /* Split */ = {
 			isa = PBXGroup;
 			children = (
 				A90412101D5392A4008F3E44 /* App Logic */,
 				A904120F1D53929E008F3E44 /* User Interface */,
 			);
-			name = Divide;
+			name = Split;
 			sourceTree = "<group>";
 		};
 		A904120F1D53929E008F3E44 /* User Interface */ = {
@@ -1159,7 +1159,7 @@
 		A95B24631CD8895E00F78AAF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A904120C1D539299008F3E44 /* Divide */,
+				A904120C1D539299008F3E44 /* Split */,
 				A9CEAA331D532C4700675550 /* Duplicate */,
 				A928F7A51D4F94010027D57E /* Trim */,
 				A97D43761D4897960047484D /* Music */,

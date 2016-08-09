@@ -14,7 +14,6 @@ class SplitPresenter: NSObject,SplitPresenterInterface,SplitInteractorDelegate {
     var delegate:SplitPresenterDelegate?
     var interactor: SplitInteractorInterface?
     var wireframe: SplitWireframe?
-    
     var playerPresenter: PlayerPresenterInterface?
     var playerWireframe: PlayerWireframe?
     
@@ -31,16 +30,15 @@ class SplitPresenter: NSObject,SplitPresenterInterface,SplitInteractorDelegate {
         didSet{
             if splitValue != nil {
                 delegate?.setSplitValueText(String.init(format: "%.02f", splitValue))
-                if maximumValue != nil
-                    && !(playerPresenter?.isPlayingVideo())!
-                    && !isMovingByPlayer{
-                        playerPresenter?.seekToTime(splitValue/maximumValue)
-                        isMovingByPlayer = false
+                
+                if maximumValue != nil{
+                    if isMovingByPlayer{
+                        controller?.setSliderValue(splitValue)
+                    }else {
+                        self.playerPresenter?.seekToTime(splitValue/maximumValue)
+                        self.isMovingByPlayer = false
+                    }
                 }
-//                if upperValue != nil{
-//                    updateVideoParams()
-//                    updateRangeVal()
-//                }
             }
         }
     }
@@ -78,12 +76,13 @@ class SplitPresenter: NSObject,SplitPresenterInterface,SplitInteractorDelegate {
     }
     
     func setSplitValue(value:Float) {
+        isMovingByPlayer = false
         self.splitValue = value
     }
     
     func updateSplitValueByPlayer(value: Float) {
         isMovingByPlayer = true
-        self.splitValue = value
+        self.splitValue = value * maximumValue
     }
     
     //MARK: Interactor Delegate

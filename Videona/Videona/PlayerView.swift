@@ -19,7 +19,8 @@ class PlayerView: UIView,PlayerInterface {
     var player:AVPlayer?
     var playerLayer: AVPlayerLayer?
     var movieComposition:AVMutableComposition!
-    
+    var oldSliderValue:Float = 0.0
+
     //MARK: - Outlets
     @IBOutlet weak var playOrPauseButton: UIButton!
     @IBOutlet weak var playerContainer: UIView!
@@ -88,6 +89,7 @@ class PlayerView: UIView,PlayerInterface {
                 }
             }
             
+            
             playerLayer = AVPlayerLayer(player: player)
             playerLayer!.frame = self.frame
             player?.currentItem?.seekToTime(CMTime.init(value: 3, timescale: 10))
@@ -99,7 +101,6 @@ class PlayerView: UIView,PlayerInterface {
 
         }
     }
-    var oldSliderValue:Float = 0.0
     
     func updateSeekBarOnUI(){
         guard let duration = player?.currentItem?.duration.seconds else{
@@ -155,7 +156,7 @@ class PlayerView: UIView,PlayerInterface {
             }
             
             if completed{
-                self.delegate?.seekBarUpdate(Float(elapsedTime))
+                self.delegate?.seekBarUpdate(Float(self.seekSlider.value))
             }
         }
     }
