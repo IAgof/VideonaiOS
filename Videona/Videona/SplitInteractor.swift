@@ -46,39 +46,42 @@ class SplitInteractor: NSObject,SplitInteractorInterface {
         let videoAsset = AVAsset.init(URL: videoURL)
         
         do {
-            let stopTime = CMTimeMake(Int64(video.getStopTime() * 1000), 1000)
-            let startTime = CMTimeMake(Int64(video.getStartTime() * 1000), 1000)
-            
+            let stopTime = CMTimeMake(Int64(video.getStopTime() * 30), 30)
+            let startTime = CMTimeMake(Int64(video.getStartTime() * 30), 30)
+            let duration = CMTimeMake(Int64(video.getStartTime() * 30), 30)
+
             try videoTrack.insertTimeRange(CMTimeRangeMake(startTime, stopTime),
                                            ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
                                            atTime: kCMTimeZero)
             try audioTrack.insertTimeRange(CMTimeRangeMake(startTime, stopTime),
                                            ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
                                            atTime: kCMTimeZero)
+            
+            mixComposition.removeTimeRange(CMTimeRangeMake(stopTime,duration))
         } catch _ {
             Utils().debugLog("Error trying to create videoTrack")
             //                completionHandler("Error trying to create videoTrack",0.0)
         }
         completion(mixComposition)
     }
-    
+   
     func setSplitVideosToProject(splitTime:Double){
         var videoList = Project.sharedInstance.getVideoList()
-        //Create a copy and add to the list
-        let videoCopy = videoList[videoPosition!].copy() as? Video
-        
-        videoCopy?.setStartTime((videoCopy?.getStartTime())! + splitTime)
-        videoCopy?.setIsSplit(true)
-        
-        //Add video to the Project video list
-        
-        videoList.insert(videoCopy!, atIndex: (videoPosition! + 1))
-        
         if videoList.indices.contains(videoPosition!){
-            if (videoPosition != nil) {
+            if (videoPosition != nil) { //Create a copy and add to the list
+                let videoCopy = videoList[videoPosition!].copy() as? Video
+                
+                videoCopy?.setStartTime((videoCopy?.getStartTime())! + splitTime)
+                videoCopy?.setIsSplit(true)
+                
+                //Add video to the Project video list
+                
+                videoList.insert(videoCopy!, atIndex: (videoPosition! + 1))
+                
+                
                 let video = videoList[videoPosition!]
                 
-                video.setStopTime(video.getStopTime() - splitTime)
+                video.setStopTime(video.getStartTime() + splitTime)
                 video.setIsSplit(true)
             }
         }
