@@ -33,6 +33,9 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
         wireframe?.presentPlayerInterface()
         playerPresenter?.createVideoPlayer(GetActualProjectAVCompositionUseCase.sharedInstance.getComposition())
 
+    }
+    
+    func viewWillAppear() {
         if (interactor?.hasMusicSelectedInProject())! {
             let music = Project.sharedInstance.getMusic()
             
@@ -42,10 +45,6 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
             
             detailEventHandler?.showRemoveButton()
         }
-    }
-    
-    func viewWillAppear() {
-        
     }
     
     func viewWillDisappear() {

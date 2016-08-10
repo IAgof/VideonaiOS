@@ -166,6 +166,8 @@ UITableViewDataSource,UITableViewDelegate{
 
         detailMusicView?.delegate = self
         
+        Utils.sharedInstance.debugLog("Size of detail container:\(musicContainer.frame)")
+
         detailMusicView?.initParams(title,
                                     author: author,
                                     image: image,

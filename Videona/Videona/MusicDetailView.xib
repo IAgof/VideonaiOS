@@ -15,7 +15,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="84S-zW-oLf">
                     <rect key="frame" x="8" y="8" width="284" height="213"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="84S-zW-oLf" secondAttribute="height" multiplier="20:15" id="UaJ-Cx-Gf0"/>
+                        <constraint firstAttribute="width" secondItem="84S-zW-oLf" secondAttribute="height" multiplier="20:15" priority="750" id="UaJ-Cx-Gf0"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fkh-td-DDL">
@@ -59,22 +59,20 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="84S-zW-oLf" secondAttribute="bottom" constant="40" id="5Uu-pn-puO"/>
                 <constraint firstItem="eED-nV-dui" firstAttribute="top" secondItem="6La-Tv-Yr1" secondAttribute="bottom" constant="8" id="AWf-0M-edC"/>
                 <constraint firstItem="Fkh-td-DDL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Akw-qV-hu7"/>
                 <constraint firstItem="eED-nV-dui" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="Jjf-Xa-MAs"/>
                 <constraint firstAttribute="trailing" secondItem="JuB-TN-Waf" secondAttribute="trailing" constant="8" id="KXS-kA-hsm"/>
                 <constraint firstItem="PiH-7b-pqe" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="MCG-4l-g5n"/>
-                <constraint firstItem="Fkh-td-DDL" firstAttribute="top" relation="greaterThanOrEqual" secondItem="84S-zW-oLf" secondAttribute="bottom" constant="10" id="NWD-lF-Kvz"/>
                 <constraint firstItem="6La-Tv-Yr1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="VS0-Bx-hhN"/>
                 <constraint firstAttribute="bottom" secondItem="JuB-TN-Waf" secondAttribute="bottom" constant="8" id="WVl-Lu-Ca1"/>
                 <constraint firstAttribute="bottom" secondItem="Fkh-td-DDL" secondAttribute="bottom" constant="8" id="b4M-Wx-l5j"/>
                 <constraint firstItem="6La-Tv-Yr1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="blP-hQ-Rpw"/>
                 <constraint firstAttribute="trailing" secondItem="84S-zW-oLf" secondAttribute="trailing" constant="8" id="dds-IZ-C8b"/>
                 <constraint firstItem="84S-zW-oLf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="f8Y-gj-zeM"/>
-                <constraint firstItem="JuB-TN-Waf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="84S-zW-oLf" secondAttribute="bottom" constant="10" id="hev-I7-ySf"/>
                 <constraint firstItem="eED-nV-dui" firstAttribute="top" secondItem="6La-Tv-Yr1" secondAttribute="bottom" constant="7" id="mP1-GQ-oXk"/>
                 <constraint firstAttribute="bottom" secondItem="PiH-7b-pqe" secondAttribute="bottom" constant="8" id="voO-EZ-fck"/>
-                <constraint firstItem="PiH-7b-pqe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="84S-zW-oLf" secondAttribute="bottom" constant="10" id="wIZ-PW-WRp"/>
                 <constraint firstItem="84S-zW-oLf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="wUH-Oz-efV"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
