@@ -62,20 +62,17 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
         delegate?.animateToShowDetail((interactor?.getTitleFromIndexPath(lastMusicSelected))!,
                                   author: (interactor?.getAuthorFromIndexPath(lastMusicSelected))!,
                                   image: (interactor?.getImageFromIndexPath(lastMusicSelected))!)
+
+        interactor?.setMusicToProject(lastMusicSelected)
+        playerPresenter?.createVideoPlayer(GetActualProjectAVCompositionUseCase.sharedInstance.getComposition())
     }
     
     func cancelDetailButtonPushed() {
-        delegate?.animateToShowTable()
-        playerPresenter?.createVideoPlayer(GetActualProjectAVCompositionUseCase.sharedInstance.getComposition())
-
-        lastMusicSelected = NO_MUSIC_SELECTED
+        self.removeDetailButtonPushed()
     }
     
     func acceptDetailButtonPushed() {
         detailEventHandler?.showRemoveButton()
-        interactor?.setMusicToProject(lastMusicSelected)
-
-        playerPresenter?.createVideoPlayer(GetActualProjectAVCompositionUseCase.sharedInstance.getComposition())
     }
     
     func removeDetailButtonPushed() {
