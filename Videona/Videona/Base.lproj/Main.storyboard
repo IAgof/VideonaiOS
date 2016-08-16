@@ -2432,9 +2432,9 @@
                                         <exclude reference="bez-rq-EoQ"/>
                                         <exclude reference="Mwc-oX-2Mz"/>
                                         <exclude reference="rur-Dc-TGa"/>
-                                        <exclude reference="6um-LN-PgE"/>
                                         <exclude reference="b7t-Ni-gjt"/>
                                         <exclude reference="lU6-bW-D1S"/>
+                                        <exclude reference="6um-LN-PgE"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact">
@@ -2446,9 +2446,9 @@
                                     <mask key="constraints">
                                         <include reference="Mwc-oX-2Mz"/>
                                         <include reference="rur-Dc-TGa"/>
-                                        <include reference="6um-LN-PgE"/>
                                         <include reference="b7t-Ni-gjt"/>
                                         <include reference="lU6-bW-D1S"/>
+                                        <include reference="6um-LN-PgE"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -2628,15 +2628,6 @@
                                             <action selector="labelSliderPushed:" destination="3aO-aE-THX" eventType="touchUpInside" id="l6N-rA-yMJ"/>
                                         </connections>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Divide tu clip de video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w85-c7-77j">
-                                        <rect key="frame" x="98" y="38" width="181" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="296" y="86" width="169" height="21"/>
-                                        </variation>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="loi-s2-CN8">
                                         <rect key="frame" x="165" y="72" width="46" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -2644,6 +2635,15 @@
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                             <rect key="frame" x="357" y="209" width="46" height="21"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Divide tu clip de video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w85-c7-77j">
+                                        <rect key="frame" x="98" y="38" width="181" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="296" y="86" width="169" height="21"/>
                                         </variation>
                                     </label>
                                 </subviews>
@@ -2674,8 +2674,8 @@
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="HJR-Cm-1eK"/>
-                                        <include reference="w85-c7-77j"/>
                                         <include reference="loi-s2-CN8"/>
+                                        <include reference="w85-c7-77j"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="5hw-Is-a6a"/>

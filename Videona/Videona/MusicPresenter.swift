@@ -22,6 +22,7 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
     
     //MARK: - Variables
     var lastMusicSelected:Int = -1
+    var isMusicSet:Bool = false
     
     //MARK: - Constants
     let NO_MUSIC_SELECTED = -1
@@ -35,7 +36,7 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
     }
     
     func viewWillAppear() {
-
+        
     }
     
     func viewDidAppear() {
@@ -56,6 +57,10 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
     
     func viewWillDisappear() {
         playerPresenter?.pauseVideo()
+        
+        if !isMusicSet {
+            interactor?.setMusicToProject(NO_MUSIC_SELECTED)
+        }
     }
     
     func setMusicDetailInterface(eventHandler: MusicDetailInterface) {
@@ -79,6 +84,7 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
     
     func acceptDetailButtonPushed() {
         detailEventHandler?.showRemoveButton()
+        isMusicSet = true
     }
     
     func removeDetailButtonPushed() {
@@ -86,6 +92,8 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
         interactor?.setMusicToProject(NO_MUSIC_SELECTED)
 
         playerPresenter?.createVideoPlayer(GetActualProjectAVCompositionUseCase.sharedInstance.getComposition())
+        
+        isMusicSet = false
     }
     
     //MARK: - Interactor delegate

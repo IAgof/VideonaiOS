@@ -9,7 +9,7 @@
 "DuL-YK-lI5.text" = "0:00";
 
 /* Class = "UILabel"; text = "Clona tu clip de video"; ObjectID = "E1Q-KJ-Tbq"; */
-"E1Q-KJ-Tbq.text" = "Clona tu clip de video";
+"E1Q-KJ-Tbq.text" = "Clone your clip";
 
 /* Class = "UILabel"; text = "1"; ObjectID = "En6-R0-2Nl"; */
 "En6-R0-2Nl.text" = "1";
@@ -30,7 +30,7 @@
 "Z47-6C-PSW.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Recorta tu clip de video"; ObjectID = "aTr-8K-kQH"; */
-"aTr-8K-kQH.text" = "Recorta tu clip de video";
+"aTr-8K-kQH.text" = "Trim your clip";
 
 /* Class = "UILabel"; text = "00:00"; ObjectID = "acA-D2-1GX"; */
 "acA-D2-1GX.text" = "00:00";
@@ -51,7 +51,7 @@
 "pbo-kF-fRZ.text" = "Init";
 
 /* Class = "UILabel"; text = "Divide tu clip de video"; ObjectID = "w85-c7-77j"; */
-"w85-c7-77j.text" = "Divide tu clip de video";
+"w85-c7-77j.text" = "Split your clip";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "ylD-dR-oSR"; */
 "ylD-dR-oSR.text" = "Title";
