@@ -32,10 +32,17 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
         
         wireframe?.presentPlayerInterface()
         playerPresenter?.createVideoPlayer(GetActualProjectAVCompositionUseCase.sharedInstance.getComposition())
-
     }
     
     func viewWillAppear() {
+
+    }
+    
+    func viewDidAppear() {
+        self.checkIfHasMusicSelected()
+    }
+    
+    func checkIfHasMusicSelected(){
         if (interactor?.hasMusicSelectedInProject())! {
             let music = Project.sharedInstance.getMusic()
             

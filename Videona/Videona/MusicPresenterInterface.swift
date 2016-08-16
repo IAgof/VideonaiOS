@@ -12,6 +12,7 @@ protocol MusicPresenterInterface {
     func viewDidLoad()
     func viewWillDisappear()
     func viewWillAppear()
+    func viewDidAppear()
     func didSelectMusicAtIndexPath(indexPath:NSIndexPath)
     func cancelDetailButtonPushed()
     func acceptDetailButtonPushed()
