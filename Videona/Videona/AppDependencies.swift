@@ -117,6 +117,8 @@ class AppDependencies {
         filterListWireframe.filterListPresenter = filterListPresenter
         filterListWireframe.rootWireframe = rootWireframe
         
+        filterListInteractor.delegate = filterListPresenter
+
         //PLAYER MODULE
         playerPresenter.wireframe = playerWireframe
         playerPresenter.recordWireframe = recordWireframe

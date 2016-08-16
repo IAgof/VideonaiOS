@@ -11,25 +11,21 @@ import UIKit
 
 class FilterListInteractor: NSObject,FilterListInteractorInterface {
     
-    func findColorFilters()-> (Array<UIImage>,Array<String>){
+    var delegate:FilterListInteractorDelegate?
+    func findColorFilters(){
 //        let colorFilters = EffectProvider().getColorEffectList()
         let colorFilters = EffectProvider().getOverlayFilterList()
         
-        let socialNetworkImage = self.setArrayEffectUIImageAndTitle(colorFilters)
-        
-        return socialNetworkImage
+        self.setArrayEffectUIImageAndTitle(colorFilters)
     }
     
-    func findShaderFilters()-> (Array<UIImage>,Array<String>){
+    func findShaderFilters(){
         let shaderFilters = EffectProvider().getShaderEffectList()
         
-        let socialNetworkImageAndImage = self.setArrayEffectUIImageAndTitle(shaderFilters)
-        
-        return socialNetworkImageAndImage
+        self.setArrayEffectUIImageAndTitle(shaderFilters)
     }
     
-    
-    func setArrayEffectUIImageAndTitle(sNArray:Array<Effect>)->(Array<UIImage>,Array<String>){
+    func setArrayEffectUIImageAndTitle(sNArray:Array<Effect>){
         var imageArray = Array<UIImage>()
         var titleArray = Array<String>()
         
@@ -40,7 +36,9 @@ class FilterListInteractor: NSObject,FilterListInteractorInterface {
             titleArray.append(title)
         }
         
-        return (imageArray,titleArray)
+        delegate?.setFilterImageList(imageArray)
+        delegate?.setFilterTitleList(titleArray)
     }
+    
     
 }

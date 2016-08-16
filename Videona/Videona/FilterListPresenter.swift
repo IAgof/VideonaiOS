@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class FilterListPresenter:NSObject,FilterListPresenterInterface{
+class FilterListPresenter:NSObject,FilterListPresenterInterface,FilterListInteractorDelegate{
     
     //MARK: - VIPER
     var interactor: FilterListInteractorInterface?
@@ -20,8 +20,21 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
     var recordWireframe: RecordWireframe?
 
     //MARK: - Variables
-    var filtersImage:Array<UIImage> = []
-    var filtersTitle:Array<String> = []
+    var filtersImage:Array<UIImage> = []{
+        didSet{
+            if !filtersTitle.isEmpty  && !filtersImage.isEmpty{
+                setFiltersToView()
+            }
+        }
+    }
+    var filtersTitle:Array<String> = []{
+        didSet{
+            if !filtersTitle.isEmpty  && !filtersImage.isEmpty{
+                setFiltersToView()
+            }
+        }
+    }
+
     var filterShowing = -1
     
     var lastShaderItemSelected:Int = -1
@@ -38,25 +51,18 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
         let index = NSIndexPath.init(forItem: lastOverlayItemSelected, inSection: 0)
         controller?.setSelectedCellIndexPath(index)
         
-        filtersImage = (interactor?.findColorFilters().0)!
-        filtersTitle = (interactor?.findColorFilters().1)!
+        interactor?.findColorFilters()
 
         self.setFilterShowin(FILTERS_SHOWING_IS_COLOR)
-        self.setFiltersToView()
-        
     }
     
     func getShaderFilterList() {
         let index = NSIndexPath.init(forItem: lastShaderItemSelected, inSection: 0)
         controller?.setSelectedCellIndexPath(index)
         
-        filtersImage = (interactor?.findShaderFilters().0)!
-        filtersTitle = (interactor?.findShaderFilters().1)!
+        interactor?.findShaderFilters()
         
         self.setFilterShowin(FILTERS_SHOWING_IS_SHADER)
-        self.setFiltersToView()
-        
- 
     }
     
     //MARK: - Filters Actions
@@ -65,7 +71,8 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
     }
     
     func setFiltersToView(){
-        controller?.setUpFiltersOnView(filtersImage,filtersTitle: filtersTitle)
+        controller?.setUpFiltersOnView(filtersImage,
+                                       filtersTitle: filtersTitle)
     }
     
     func configureUserInterfaceForPresentation(addViewUserInterface: FilterListInterface) {
@@ -75,6 +82,7 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
     func filterListSelectedFilters(filter: String) {
         filterListDelegate?.setFiltersOnView(filter)
     }
+    
     func removeFilter(filterName:String) {
         filterListDelegate?.removeFilter(filterName)
     }
@@ -125,5 +133,14 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
                 lastCell.isSelectedCell = false
             }
         }
+    }
+    
+    //MARK: Interactor delegate
+    func setFilterTitleList(list: [String]) {
+        filtersTitle = list
+    }
+    
+    func setFilterImageList(list: [UIImage]) {
+        filtersImage = list
     }
 }

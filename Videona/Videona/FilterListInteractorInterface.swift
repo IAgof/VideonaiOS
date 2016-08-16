@@ -10,6 +10,11 @@ import Foundation
 
 
 protocol FilterListInteractorInterface{
-    func findColorFilters()-> (Array<UIImage>,Array<String>)
-    func findShaderFilters()-> (Array<UIImage>,Array<String>)
+    func findColorFilters()
+    func findShaderFilters()
+}
+
+protocol FilterListInteractorDelegate {
+    func setFilterImageList(list:[UIImage])
+    func setFilterTitleList(list:[String])
 }
