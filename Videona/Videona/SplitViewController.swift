@@ -51,6 +51,11 @@ class SplitViewController: VideonaController,SplitViewInterface,SplitPresenterDe
         eventHandler?.setSplitValue(splitRangeSlider.upperValue)
     }
     
+    @IBAction func labelSliderPushed(sender: NMRangeSlider) {
+        
+        eventHandler?.setSplitValue(splitRangeSlider.upperValue)
+    }
+    
     //MARK: - Interface
     //MARK: - Interface
     func configureRangeSlider(splitValue: Float,
@@ -82,6 +87,7 @@ class SplitViewController: VideonaController,SplitViewInterface,SplitPresenterDe
     func setSliderValue(value:Float){
         splitRangeSlider.upperValue = value
     }
+    
     //MARK: - Presenter delegate
     func setSplitValueText(text: String) {
         self.timeToCutLabel.text = text
