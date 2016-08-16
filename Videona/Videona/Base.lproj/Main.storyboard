@@ -2451,6 +2451,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="es6-ki-Z0W" firstAttribute="top" secondItem="C58-Jd-u2Z" secondAttribute="bottom" constant="44" id="2tj-4r-KE6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="es6-ki-Z0W" secondAttribute="trailing" constant="-20" id="8et-w8-ktA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9Q9-gh-xWj" secondAttribute="trailing" constant="-20" id="8yi-CN-oBj"/>
                             <constraint firstItem="cFY-M4-LFM" firstAttribute="leading" secondItem="Aby-xi-ydN" secondAttribute="leadingMargin" constant="-20" id="CSL-So-E72"/>
@@ -2481,6 +2482,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="2tj-4r-KE6"/>
                                 <exclude reference="8et-w8-ktA"/>
                                 <exclude reference="OKI-lb-yOp"/>
                                 <exclude reference="QGk-n9-rdv"/>
@@ -2526,6 +2528,7 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="constraints">
+                                <include reference="2tj-4r-KE6"/>
                                 <include reference="OKI-lb-yOp"/>
                                 <include reference="Rvp-dk-6mY"/>
                                 <include reference="bDH-40-HhT"/>
