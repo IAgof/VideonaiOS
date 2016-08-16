@@ -46,6 +46,10 @@ UITableViewDataSource,UITableViewDelegate{
         eventHandler?.viewWillAppear()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        eventHandler?.viewDidAppear()
+    }
+    
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         eventHandler?.viewWillDisappear()
@@ -166,8 +170,6 @@ UITableViewDataSource,UITableViewDelegate{
 
         detailMusicView?.delegate = self
         
-        Utils.sharedInstance.debugLog("Size of detail container:\(musicContainer.frame)")
-
         detailMusicView?.initParams(title,
                                     author: author,
                                     image: image,
