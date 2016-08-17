@@ -8,8 +8,9 @@
 
 import Foundation
 import UIKit
+import GPUImage
 
-class FilterListPresenter:NSObject,FilterListPresenterInterface{
+class FilterListPresenter:NSObject,FilterListPresenterInterface,FilterListInteractorDelegate{
     
     //MARK: - VIPER
     var interactor: FilterListInteractorInterface?
@@ -18,10 +19,23 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
     var wireframe: FilterListWireframe?
     var controller: FilterListInterface?
     var recordWireframe: RecordWireframe?
-
+    
     //MARK: - Variables
-    var filtersImage:Array<UIImage> = []
-    var filtersTitle:Array<String> = []
+    var filtersImage:Array<UIImage> = []{
+        didSet{
+            if !filtersTitle.isEmpty  && !filtersImage.isEmpty{
+                setFiltersToView()
+            }
+        }
+    }
+    var filtersTitle:Array<String> = []{
+        didSet{
+            if !filtersTitle.isEmpty  && !filtersImage.isEmpty{
+                setFiltersToView()
+            }
+        }
+    }
+    
     var filterShowing = -1
     
     var lastShaderItemSelected:Int = -1
@@ -31,32 +45,25 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
     let FILTERS_SHOWING_IS_NONE = -1
     let FILTERS_SHOWING_IS_COLOR = 0
     let FILTERS_SHOWING_IS_SHADER = 1
-
-
+    
+    
     //MARK: - Get Filters list
     func getColorFilterList() {
         let index = NSIndexPath.init(forItem: lastOverlayItemSelected, inSection: 0)
         controller?.setSelectedCellIndexPath(index)
         
-        filtersImage = (interactor?.findColorFilters().0)!
-        filtersTitle = (interactor?.findColorFilters().1)!
-
-        self.setFilterShowin(FILTERS_SHOWING_IS_COLOR)
-        self.setFiltersToView()
+        interactor?.findColorFilters()
         
+        self.setFilterShowin(FILTERS_SHOWING_IS_COLOR)
     }
     
     func getShaderFilterList() {
         let index = NSIndexPath.init(forItem: lastShaderItemSelected, inSection: 0)
         controller?.setSelectedCellIndexPath(index)
         
-        filtersImage = (interactor?.findShaderFilters().0)!
-        filtersTitle = (interactor?.findShaderFilters().1)!
+        interactor?.findShaderFilters()
         
         self.setFilterShowin(FILTERS_SHOWING_IS_SHADER)
-        self.setFiltersToView()
-        
- 
     }
     
     //MARK: - Filters Actions
@@ -65,18 +72,33 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
     }
     
     func setFiltersToView(){
-        controller?.setUpFiltersOnView(filtersImage,filtersTitle: filtersTitle)
+        controller?.setUpFiltersOnView(filtersImage,
+                                       filtersTitle: filtersTitle)
     }
     
     func configureUserInterfaceForPresentation(addViewUserInterface: FilterListInterface) {
         
     }
     
-    func filterListSelectedFilters(filter: String) {
-        filterListDelegate?.setFiltersOnView(filter)
+    func selectedFilter(filterItem: Int) {
+        if(filterShowing == FILTERS_SHOWING_IS_SHADER){
+            interactor?.getShader(filterItem)
+        }else if (filterShowing == FILTERS_SHOWING_IS_COLOR){
+            interactor?.getOverlay(filterItem)
+        }
     }
-    func removeFilter(filterName:String) {
-        filterListDelegate?.removeFilter(filterName)
+    
+    func removeFilter() {
+        if filterShowing == FILTERS_SHOWING_IS_SHADER {
+            filterListDelegate?.removeShader()
+        }else if filterShowing == FILTERS_SHOWING_IS_COLOR{
+            filterListDelegate?.removeOverlay()
+        }
+    }
+    
+    func removeBothFilters() {
+        filterListDelegate?.removeOverlay()
+        filterListDelegate?.removeShader()
     }
     
     func cancelFilterListAction() {
@@ -85,10 +107,9 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
         }else if (filterShowing == FILTERS_SHOWING_IS_COLOR){
             filterListDelegate!.pushShowHideColorFilters()
         }
-       
-        self.removeFilter("Overlay")
-        self.removeFilter("Shader")
-
+        
+        self.removeBothFilters()
+        
         lastShaderItemSelected = -1
         lastOverlayItemSelected = -1
         
@@ -98,12 +119,13 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
     func toggleSelectedCell(cell: FilterViewCell,item: Int) {
         if (cell.isSelectedCell){
             cell.isSelectedCell = false
-            self.removeFilter(cell.filterTitle.text!)
+            self.removeFilter()
             self.handleIndexPathFiltersView(-1)
         }else{
             cell.isSelectedCell = true
-            let filter = cell.filterTitle.text
-            self.filterListSelectedFilters(filter!)
+            
+            self.selectedFilter(item)
+            
             self.handleIndexPathFiltersView(item)
         }
     }
@@ -114,10 +136,12 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
         }else if (filterShowing == FILTERS_SHOWING_IS_COLOR){
             lastOverlayItemSelected = item
         }
-
+        
     }
     
-    func checkOtherCellSelected(indexPath: NSIndexPath,lastSelectedIndexPath:NSIndexPath, collectionView: UICollectionView) {
+    func checkOtherCellSelected(indexPath: NSIndexPath,
+                                lastSelectedIndexPath:NSIndexPath,
+                                collectionView: UICollectionView) {
         
         if lastSelectedIndexPath != indexPath {
             if let cell = collectionView.cellForItemAtIndexPath(lastSelectedIndexPath) {
@@ -125,5 +149,24 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface{
                 lastCell.isSelectedCell = false
             }
         }
+    }
+    
+    //MARK: Interactor delegate
+    func setFilterTitleList(list: [String]) {
+        filtersTitle = list
+    }
+    
+    func setFilterImageList(list: [UIImage]) {
+        filtersImage = list
+    }
+    
+    func setOverlayToView(filterName: String) {
+        filterListDelegate?.setOverlay(filterName)
+    }
+    
+    func setShaderToView(filter: GPUImageFilter
+        , filterName: String) {
+        filterListDelegate?.setShader(filter,
+                                      filterName: filterName)
     }
 }
