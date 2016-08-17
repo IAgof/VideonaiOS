@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import GPUImage
 
 class FilterListPresenter:NSObject,FilterListPresenterInterface,FilterListInteractorDelegate{
     
@@ -79,12 +80,25 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface,FilterListIntera
         
     }
     
-    func filterListSelectedFilters(filter: String) {
-        filterListDelegate?.setFiltersOnView(filter)
+    func selectedFilter(filterItem: Int) {
+        if(filterShowing == FILTERS_SHOWING_IS_SHADER){
+            interactor?.getShader(filterItem)
+        }else if (filterShowing == FILTERS_SHOWING_IS_COLOR){
+            interactor?.getOverlay(filterItem)
+        }
     }
     
-    func removeFilter(filterName:String) {
-        filterListDelegate?.removeFilter(filterName)
+    func removeFilter() {
+        if filterShowing == FILTERS_SHOWING_IS_SHADER {
+            filterListDelegate?.removeShader()
+        }else if filterShowing == FILTERS_SHOWING_IS_COLOR{
+            filterListDelegate?.removeOverlay()
+        }
+    }
+    
+    func removeBothFilters() {
+        filterListDelegate?.removeOverlay()
+        filterListDelegate?.removeShader()
     }
     
     func cancelFilterListAction() {
@@ -93,10 +107,9 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface,FilterListIntera
         }else if (filterShowing == FILTERS_SHOWING_IS_COLOR){
             filterListDelegate!.pushShowHideColorFilters()
         }
-       
-        self.removeFilter("Overlay")
-        self.removeFilter("Shader")
 
+        self.removeBothFilters()
+        
         lastShaderItemSelected = -1
         lastOverlayItemSelected = -1
         
@@ -106,12 +119,13 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface,FilterListIntera
     func toggleSelectedCell(cell: FilterViewCell,item: Int) {
         if (cell.isSelectedCell){
             cell.isSelectedCell = false
-            self.removeFilter(cell.filterTitle.text!)
+            self.removeFilter()
             self.handleIndexPathFiltersView(-1)
         }else{
             cell.isSelectedCell = true
-            let filter = cell.filterTitle.text
-            self.filterListSelectedFilters(filter!)
+            
+            self.selectedFilter(item)
+            
             self.handleIndexPathFiltersView(item)
         }
     }
@@ -125,7 +139,9 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface,FilterListIntera
 
     }
     
-    func checkOtherCellSelected(indexPath: NSIndexPath,lastSelectedIndexPath:NSIndexPath, collectionView: UICollectionView) {
+    func checkOtherCellSelected(indexPath: NSIndexPath,
+                                lastSelectedIndexPath:NSIndexPath,
+                                collectionView: UICollectionView) {
         
         if lastSelectedIndexPath != indexPath {
             if let cell = collectionView.cellForItemAtIndexPath(lastSelectedIndexPath) {
@@ -142,5 +158,15 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface,FilterListIntera
     
     func setFilterImageList(list: [UIImage]) {
         filtersImage = list
+    }
+    
+    func setOverlayToView(filterName: String) {
+        filterListDelegate?.setOverlay(filterName)
+    }
+    
+    func setShaderToView(filter: GPUImageFilter
+        , filterName: String) {
+        filterListDelegate?.setShader(filter,
+                                      filterName: filterName)
     }
 }

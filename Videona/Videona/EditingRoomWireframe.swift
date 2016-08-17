@@ -36,7 +36,7 @@ class EditingRoomWireframe : NSObject {
     
     func setEditingRoomViewControllerAsRootController() {
         let appdelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        var homeViewController =  EditingRoomViewControllerFromStoryboard()
+        let homeViewController =  EditingRoomViewControllerFromStoryboard()
         let nav = UINavigationController(rootViewController: homeViewController)
         appdelegate.window!.rootViewController = nav
     }

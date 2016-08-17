@@ -28,8 +28,6 @@ protocol RecordPresenterInterface{
     func pushRecord()
     func pushFlash()
     func pushRotateCamera()
-    func setFiltersOnView(filter: String)
-    func removeFilter(filterName: String)
     func resetRecorder()
     func thumbnailHasTapped()
     func displayHasTapped(tapGesture:UIGestureRecognizer)
