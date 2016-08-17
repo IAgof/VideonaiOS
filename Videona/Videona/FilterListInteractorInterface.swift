@@ -7,9 +7,19 @@
 //
 
 import Foundation
-
+import GPUImage
 
 protocol FilterListInteractorInterface{
-    func findColorFilters()-> (Array<UIImage>,Array<String>)
-    func findShaderFilters()-> (Array<UIImage>,Array<String>)
+    func findColorFilters()
+    func findShaderFilters()
+    func getShader(item:Int)
+    func getOverlay(item:Int)
+}
+
+protocol FilterListInteractorDelegate {
+    func setFilterImageList(list:[UIImage])
+    func setFilterTitleList(list:[String])
+    func setShaderToView(filter:GPUImageFilter,
+                         filterName:String)
+    func setOverlayToView(filterName:String)
 }

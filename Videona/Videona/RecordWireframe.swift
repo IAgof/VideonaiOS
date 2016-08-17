@@ -30,7 +30,7 @@ class RecordWireframe : NSObject {
     
     func setRecordViewControllerAsRootController() {
         let appdelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        var homeViewController =  RecordViewControllerFromStoryboard()
+        let homeViewController =  RecordViewControllerFromStoryboard()
         let nav = UINavigationController(rootViewController: homeViewController)
         appdelegate.window!.rootViewController = nav
     }

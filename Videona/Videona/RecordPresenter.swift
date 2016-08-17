@@ -328,60 +328,32 @@ class RecordPresenter: NSObject
             return
         }
     }
-    
-    func setFiltersOnView(filterName: String) {
-        let filterDic = effectDictionary
+   
+    func setOverlay(filterName:String) {
+        cameraInteractor?.changeBlendImage(UIImage.init(named: filterName.lowercaseString)!)
         
-        if (filterDic[filterName]?.indexForKey(FilterType.Blend)) != nil{
-            print("setFiltersOnView   blendFilter")
-            cameraInteractor?.changeBlendImage(UIImage.init(named: filterName.lowercaseString)!)
-            
-            self.setOverlayActive(filterName)
-            self.trackFilterSelected(filterName)
-        }else if ((filterDic[filterName]?.indexForKey(FilterType.SingleInput)) != nil){
-            print("setFiltersOnView   SingleInputFilter")
-            let newFilter = filterDic[filterName]?[FilterType.SingleInput]!
-            cameraInteractor?.changeFilter(newFilter! as! GPUImageFilter)
-            
-            self.setShaderActive(filterName)
-            self.trackFilterSelected(filterName)
-        }else if (filterDic[filterName]?.indexForKey(FilterType.Shader)) != nil{
-            print("setFiltersOnView   Shader")
-            let newFilter = GPUImageFilter(fragmentShaderFromFile: filterName)
-            cameraInteractor?.changeFilter(newFilter!)
-            
-            self.setShaderActive(filterName)
-            self.trackFilterSelected(filterName)
-        }else if (filterDic[filterName]?.indexForKey(FilterType.Other)) != nil{
-            print("setFiltersOnView   Other")
-            cameraInteractor?.removeFilters()
-            self.SetShaderAndOverlayToInactive()
-        }
+        self.setOverlayActive(filterName)
+        self.trackFilterSelected(filterName)
     }
     
-    func removeFilter(filterName: String) {
-        let filterDic = effectDictionary
+    func setShader(filter:GPUImageFilter,
+                   filterName:String) {
+        cameraInteractor?.changeFilter(filter)
         
-        if (filterDic[filterName]?.indexForKey(FilterType.Blend)) != nil{
-            print("setFiltersOnView   blendFilter")
-            cameraInteractor?.removeOverlay()
-            
-            setOverlayToInactive()
-        }else if ((filterDic[filterName]?.indexForKey(FilterType.SingleInput)) != nil){
-            print("setFiltersOnView   SingleInputFilter")
-            cameraInteractor?.removeShaders()
-            
-            setShaderToInactive()
-        }else if (filterDic[filterName]?.indexForKey(FilterType.Shader)) != nil{
-            print("setFiltersOnView   Shader")
-            cameraInteractor?.removeShaders()
-            
-            setShaderToInactive()
-        }else if (filterDic[filterName]?.indexForKey(FilterType.Other)) != nil{
-            print("setFiltersOnView   Other")
-            cameraInteractor?.removeFilters()
-            SetShaderAndOverlayToInactive()
-        }
+        self.setShaderActive(filterName)
+        self.trackFilterSelected(filterName)
+    }
+    
+    func removeShader() {
+        cameraInteractor?.removeShaders()
+        
+        setShaderToInactive()
+    }
+    
+    func removeOverlay() {
+        cameraInteractor?.removeOverlay()
+        
+        setOverlayToInactive()
     }
     
     func resetRecorder() {
