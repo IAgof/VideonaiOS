@@ -1,0 +1,10 @@
+/* 
+  Editor.strings
+  Videona
+
+  Created by Alejandro Arjonilla Garcia on 18/8/16.
+  Copyright © 2016 Videona. All rights reserved.
+*/
+"yes" = "Si";
+"remove_clip_alert_title" = "Borrar clip";
+"remove_clip_alert_message" = "¿Estas seguro de borrar este clip?";

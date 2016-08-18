@@ -19,4 +19,7 @@ protocol EditorViewInterface {
     func numberOfCellsInCollectionView()->Int
     func configurePickerController()
     func presentPickerController()
+    func showAlertRemove(title:String,
+                         message:String,
+                         yesString:String)
 }

@@ -17,6 +17,7 @@ protocol EditorPresenterInterface {
     func moveItemAtIndexPath(sourceIndexPath: NSIndexPath,
                              toIndexPath destinationIndexPath: NSIndexPath)
     func removeVideoClip(position:Int)
+    func removeVideoClipAfterConfirmation()
     
     func pushTrimHandler()
     func pushDuplicateHandler()

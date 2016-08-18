@@ -73,5 +73,8 @@ class Utils{
     func getStringByKeyFromIntro(key:String) -> String {
         return NSBundle.mainBundle().localizedStringForKey(key,value: "",table: "Intro")
     }
+    func getStringByKeyFromEditor(key:String) -> String {
+        return NSBundle.mainBundle().localizedStringForKey(key,value: "",table: "Editor")
+    }
     
 }

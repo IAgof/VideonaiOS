@@ -187,6 +187,26 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
+    func showAlertRemove(title:String,
+                         message:String,
+                         yesString:String) {
+       
+        let alertController = UIAlertController(title:title,
+                                                message:message,
+                                                preferredStyle: .Alert)
+        
+        let yesAction = UIAlertAction(title: yesString,
+                                      style: .Default,
+                                      handler: {alert -> Void in
+            self.eventHandler?.removeVideoClipAfterConfirmation()
+        })
+        let noAction = UIAlertAction(title: "No", style: .Default, handler: nil)
+        
+        alertController.addAction(noAction)
+        alertController.addAction(yesAction)
+        self.presentViewController(alertController, animated: false, completion:{})
+    }
+    
     //MARK: - Drag and Drop handler
     func handleLongGesture(gesture: UILongPressGestureRecognizer) {
         

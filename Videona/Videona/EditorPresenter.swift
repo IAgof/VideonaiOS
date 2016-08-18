@@ -21,7 +21,7 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
 
     //MARK: - Variables
     var selectedCellIndexPath = NSIndexPath(forRow: 0, inSection: 0)
-    
+    var videoToRemove = -1
     let NO_SELECTED_CELL = -1
     var stopList:[Double] = []
     
@@ -139,6 +139,20 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
         interactor?.saveVideoToDocuments(url)
     }
     
+    func removeVideoClip(position: Int) {
+        videoToRemove = position
+        
+        controller?.showAlertRemove(Utils().getStringByKeyFromEditor(EditorTextConstants.REMOVE_CLIP_ALERT_TITLE),
+                                    message: Utils().getStringByKeyFromEditor(EditorTextConstants.REMOVE_CLIP_ALERT_MESSAGE),
+                                    yesString: Utils().getStringByKeyFromEditor(EditorTextConstants.YES_ACTION))
+    }
+    
+    func removeVideoClipAfterConfirmation() {
+        RemoveVideoFromProjectUseCase.sharedInstance.remove(videoToRemove)
+        
+        self.reloadPositionNumberAfterMovement()
+    }
+    
     //MARK: - Inner functions
     func moveClipToPosition(sourcePosition:Int,
                             destionationPosition:Int){
@@ -160,14 +174,6 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
         interactor?.getListData()
         
         playerPresenter?.createVideoPlayer(GetActualProjectAVCompositionUseCase.sharedInstance.getComposition())
-    }
-    
-    func removeVideoClip(position: Int) {
-        Utils().debugLog("remove button pushed in position \(position)")
-        
-        RemoveVideoFromProjectUseCase.sharedInstance.remove(position)
-        
-        self.reloadPositionNumberAfterMovement()
     }
     
     func getCompositionDuration()->Double{
