@@ -22,4 +22,6 @@ protocol EditorPresenterInterface {
     func pushDuplicateHandler()
     func pushSplitHandler()
     func seekBarUpdateHandler(value: Float)
+    func pushAddVideoHandler()
+    func saveVideoToDocuments(url:NSURL)
 }

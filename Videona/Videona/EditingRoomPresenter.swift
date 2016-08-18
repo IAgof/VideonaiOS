@@ -12,8 +12,16 @@ class EditingRoomPresenter: NSObject,EditingRoomPresenterInterface {
     
     //MARK: - Variables VIPER
     var controller: EditingRoomViewInterface?
-    
     var wireframe: EditingRoomWireframe?
+    
+    //MARK: Variables
+    enum controllerVisible {
+        case Editor
+        case Music
+        case Share
+    }
+    
+    var whatControllerIsVisible:controllerVisible?
     
     //MARK: - Event handler
     func viewDidLoad(){
@@ -33,33 +41,43 @@ class EditingRoomPresenter: NSObject,EditingRoomPresenterInterface {
     }
     
     func pushMusic() {
-        controller?.deselectAllButtons()
-        controller?.selectMusicButton()
-        
-        wireframe?.showMusicInContainer()
+        if whatControllerIsVisible != .Music{
+            whatControllerIsVisible = .Music
+            
+            controller?.deselectAllButtons()
+            controller?.selectMusicButton()
+            
+            wireframe?.showMusicInContainer()
+        }
     }
     
     func pushShare() {
-        controller?.deselectAllButtons()
-        controller?.selectShareButton()
-        controller?.createAlertWaitToExport()
-        
-        let exporter = ExporterInteractor.init()
-        exporter.exportVideos({
-            exportPath,videoTotalTime in
-            print("Export path response = \(exportPath)")
-            self.controller?.dissmissAlertWaitToExport({
-                
-                self.wireframe?.showShareInContainer(exportPath)
+        if whatControllerIsVisible != .Share{
+            whatControllerIsVisible = .Share
+            controller?.deselectAllButtons()
+            controller?.selectShareButton()
+            controller?.createAlertWaitToExport()
+            
+            let exporter = ExporterInteractor.init()
+            exporter.exportVideos({
+                exportPath,videoTotalTime in
+                print("Export path response = \(exportPath)")
+                self.controller?.dissmissAlertWaitToExport({
+                    
+                    self.wireframe?.showShareInContainer(exportPath)
+                })
             })
-        })
+        }
     }
     
     func pushEditor() {
-        controller?.deselectAllButtons()
-        controller?.selectEditorButton()
-        
-        wireframe?.showEditorInContainer()
+        if whatControllerIsVisible != .Editor{
+            whatControllerIsVisible = .Editor
+            controller?.deselectAllButtons()
+            controller?.selectEditorButton()
+            
+            wireframe?.showEditorInContainer()
+        }
     }
     
     func pushSettings() {

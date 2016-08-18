@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditingRoomViewController: VideonaController,EditingRoomViewInterface {
+class EditingRoomViewController: VideonaController,EditingRoomViewInterface,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     //MARK: - Variables VIPER
     var eventHandler: EditingRoomPresenterInterface?
     
@@ -28,9 +28,7 @@ class EditingRoomViewController: VideonaController,EditingRoomViewInterface {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
         
-        // Do any additional setup after loading the view, typically from a nib.
         eventHandler?.viewDidLoad()
-        
     }
     
     override func viewWillAppear(animated: Bool) {

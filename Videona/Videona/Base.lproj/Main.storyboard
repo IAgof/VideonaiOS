@@ -446,7 +446,7 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJq-D2-hzP">
                                         <rect key="frame" x="16" y="11" width="18" height="22"/>
-                                        <state key="normal" image="activity_edit_back_normal"/>
+                                        <state key="normal" image="activity_edit_clip_record"/>
                                         <connections>
                                             <action selector="pushBackButton:" destination="eG7-7e-NKH" eventType="touchUpInside" id="ZN4-XU-3X4"/>
                                         </connections>
@@ -464,16 +464,26 @@
                                     <constraint firstAttribute="height" constant="44" id="15e-2A-r81"/>
                                     <constraint firstItem="DxU-NW-vBo" firstAttribute="centerY" secondItem="SW6-LF-Q8A" secondAttribute="centerY" id="7E0-9h-hKd"/>
                                     <constraint firstAttribute="trailing" secondItem="FNc-5u-Wzr" secondAttribute="trailing" constant="50" id="PN6-4e-YYM"/>
+                                    <constraint firstItem="FNc-5u-Wzr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mJq-D2-hzP" secondAttribute="trailing" constant="10" id="QQk-qc-b74"/>
                                     <constraint firstItem="FNc-5u-Wzr" firstAttribute="centerY" secondItem="SW6-LF-Q8A" secondAttribute="centerY" id="Se0-6G-RT4"/>
                                     <constraint firstItem="mJq-D2-hzP" firstAttribute="leading" secondItem="SW6-LF-Q8A" secondAttribute="leading" constant="16" id="XcI-0r-BWG"/>
                                     <constraint firstItem="mJq-D2-hzP" firstAttribute="centerY" secondItem="SW6-LF-Q8A" secondAttribute="centerY" id="YvS-4r-1g1"/>
-                                    <constraint firstItem="FNc-5u-Wzr" firstAttribute="leading" secondItem="SW6-LF-Q8A" secondAttribute="leading" constant="50" id="gWW-u8-H3a"/>
+                                    <constraint firstItem="FNc-5u-Wzr" firstAttribute="leading" secondItem="SW6-LF-Q8A" secondAttribute="leading" constant="60" id="gWW-u8-H3a"/>
                                     <constraint firstItem="DxU-NW-vBo" firstAttribute="top" secondItem="FNc-5u-Wzr" secondAttribute="bottom" constant="-26" id="oEu-DD-Fyy"/>
                                     <constraint firstAttribute="trailing" secondItem="DxU-NW-vBo" secondAttribute="trailing" constant="16" id="sfO-N9-Iyx"/>
+                                    <constraint firstItem="DxU-NW-vBo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FNc-5u-Wzr" secondAttribute="trailing" constant="10" id="v0a-Fe-l86"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="QQk-qc-b74"/>
                                         <exclude reference="oEu-DD-Fyy"/>
+                                        <exclude reference="v0a-Fe-l86"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="QQk-qc-b74"/>
+                                        <include reference="v0a-Fe-l86"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -1827,6 +1837,13 @@
                                     <outlet property="delegate" destination="otL-uI-YQv" id="oKJ-fY-5Ue"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svO-bi-Ovc">
+                                <rect key="frame" x="306" y="538" width="40" height="42"/>
+                                <state key="normal" image="button_edit_add_video"/>
+                                <connections>
+                                    <action selector="pushAddVideo:" destination="otL-uI-YQv" eventType="touchUpInside" id="ucn-6p-50T"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="KNK-nb-4UT" firstAttribute="centerX" secondItem="vDj-FM-Utb" secondAttribute="centerX" id="1ax-3H-0z2"/>
@@ -1869,7 +1886,9 @@
                             <constraint firstItem="xXm-YB-YYZ" firstAttribute="leading" secondItem="vDj-FM-Utb" secondAttribute="leadingMargin" id="eqg-bg-Oe4"/>
                             <constraint firstItem="ywJ-Vq-1Hz" firstAttribute="top" secondItem="FeU-Rc-Bzk" secondAttribute="bottom" constant="20" id="fuV-Dw-LPK"/>
                             <constraint firstItem="xXm-YB-YYZ" firstAttribute="top" secondItem="KNK-nb-4UT" secondAttribute="bottom" constant="8" id="h5s-0J-l0k"/>
+                            <constraint firstItem="VbJ-gn-0Bo" firstAttribute="top" secondItem="svO-bi-Ovc" secondAttribute="bottom" constant="20" id="lSp-Zm-h7z"/>
                             <constraint firstItem="ywJ-Vq-1Hz" firstAttribute="trailing" secondItem="vDj-FM-Utb" secondAttribute="trailingMargin" id="v3I-AZ-7Qf"/>
+                            <constraint firstItem="svO-bi-Ovc" firstAttribute="centerX" secondItem="vDj-FM-Utb" secondAttribute="centerX" id="wkz-QU-Xcy"/>
                             <constraint firstItem="ywJ-Vq-1Hz" firstAttribute="top" secondItem="xXm-YB-YYZ" secondAttribute="bottom" constant="16" id="xqw-cK-qHi"/>
                         </constraints>
                         <variation key="default">
@@ -2808,6 +2827,7 @@
         <image name="activity_edit_clip_duplicate_pressed" width="42" height="42"/>
         <image name="activity_edit_clip_normal" width="30" height="30"/>
         <image name="activity_edit_clip_pressed" width="30" height="30"/>
+        <image name="activity_edit_clip_record" width="35" height="25"/>
         <image name="activity_edit_clip_trim_normal" width="39" height="36"/>
         <image name="activity_edit_clip_trim_pressed" width="39" height="36"/>
         <image name="activity_edit_menu_normal" width="6" height="23"/>
@@ -2830,6 +2850,7 @@
         <image name="activity_record_rec_circle.png" width="40" height="40"/>
         <image name="activity_record_share_normal" width="27" height="29"/>
         <image name="activity_record_share_pressed" width="27" height="29"/>
+        <image name="button_edit_add_video" width="59" height="62"/>
         <image name="button_edit_decrement_clips_normal" width="33" height="33"/>
         <image name="button_edit_decrement_clips_pressed" width="33" height="33"/>
         <image name="button_edit_increment_clips_normal" width="41" height="41"/>

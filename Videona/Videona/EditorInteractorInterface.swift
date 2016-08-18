@@ -10,6 +10,7 @@ import Foundation
 
 protocol EditorInteractorInterface {
     func getListData()
+    func saveVideoToDocuments(url:NSURL)
 }
 
 protocol EditorInteractorDelegate {

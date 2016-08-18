@@ -25,8 +25,11 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
     let NO_SELECTED_CELL = -1
     var stopList:[Double] = []
     
+
     //MARK: - Interface
     func viewDidLoad() {
+        controller?.configurePickerController()
+        
         self.reloadPositionNumberAfterMovement()
         
         //Auto select first item on first load
@@ -100,7 +103,11 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
             wireframe?.presentSplitController(selectedCellIndexPath.item)
         }
     }
-
+    
+    func pushAddVideoHandler() {
+        controller?.presentPickerController()
+    }
+    
     func checkIfSelectedCellExits()->Bool{
         let numberOfCells = controller?.numberOfCellsInCollectionView()
         
@@ -126,6 +133,10 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
             }
             cellPosition += 1
         }
+    }
+    
+    func saveVideoToDocuments(url: NSURL) {
+        interactor?.saveVideoToDocuments(url)
     }
     
     //MARK: - Inner functions

@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import AssetsLibrary
 
 class EditorInteractor: NSObject,EditorInteractorInterface {
     
     //MARK: - Variables VIPER
     var delegate:EditorInteractorDelegate?
-    
+
     var videosList = Project.sharedInstance.getVideoList()
 
     
@@ -58,5 +59,33 @@ class EditorInteractor: NSObject,EditorInteractorInterface {
                 })
         }
         delegate?.setVideoImagesList(imageList)
+    }
+    
+    func saveVideoToDocuments(url:NSURL) {
+        
+        let videoData = NSData(contentsOfURL: url)
+        let title = getNewTitle()
+        let path = getNewClipPath(title)
+        
+        videoData?.writeToFile(path, atomically: false)
+        
+        AddVideoToProjectUseCase.sharedInstance.add(path,
+                                                    title: title)
+        
+        self.updateNewVideoValues()
+    }
+    
+    func updateNewVideoValues(){
+        let videoList = Project.sharedInstance.getVideoList()
+        videoList.last?.mediaRecordedFinished()
+    }
+    func getNewTitle() -> String {
+        return "\(Utils().giveMeTimeNow())videonaClip.m4v"
+    }
+    
+    func getNewClipPath(title:String)->String{
+        var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        path =  path + "/\(title)"
+        return path
     }
 }

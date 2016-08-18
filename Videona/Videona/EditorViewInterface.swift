@@ -17,4 +17,6 @@ protocol EditorViewInterface {
     func setPositionList(list:[Int])
     func setVideoImagesList(list: [UIImage])
     func numberOfCellsInCollectionView()->Int
+    func configurePickerController()
+    func presentPickerController()
 }

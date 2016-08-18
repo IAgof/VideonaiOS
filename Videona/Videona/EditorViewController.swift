@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import MobileCoreServices
 
 class EditorViewController: VideonaController,EditorViewInterface,PlayerViewDelegate,
-UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
+UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     //MARK: - VIPER variables
     var eventHandler: EditorPresenterInterface?
@@ -17,7 +18,8 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
     //MARK: - Variables
     var longPressGesture: UILongPressGestureRecognizer?
     var currentDragAndDropIndexPath: NSIndexPath?
-    
+    let imagePicker = UIImagePickerController()
+
     let reuseIdentifierCell = "editorCollectionViewCell"
     
     var videoPositionList: [Int] = []
@@ -39,9 +41,8 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
         super.viewDidLoad()
         
         eventHandler?.viewDidLoad()
-        
     }
-        
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -76,9 +77,7 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
     
         cell.removeClipButton.tag = indexPath.row
         
-        cell.removeClipButton.addTarget(self, action: "pushRemoveVideoClip:", forControlEvents: UIControlEvents.TouchUpInside)
-
-//        Utils.sharedInstance.debugLog("cell for item at indexPath:\(indexPath.item) \n videolist position\(videoPositionList[indexPath.item])\n cell isSelected\(cell.isClipSelected)")
+        cell.removeClipButton.addTarget(self, action: #selector(EditorViewController.pushRemoveVideoClip(_:)), forControlEvents: UIControlEvents.TouchUpInside)
 
         return cell
     }
@@ -134,6 +133,10 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
         eventHandler?.pushSplitHandler()
     }
     
+    @IBAction func pushAddVideo(sender:UIButton){
+        eventHandler?.pushAddVideoHandler()
+    }
+    
     //MARK: - Interface
     func deselectCell(indexPath:NSIndexPath) {
         if (thumbnailClipsCollectionView.cellForItemAtIndexPath(indexPath) != nil){
@@ -164,12 +167,24 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
     }
     
     func setUpGestureRecognizer(){
-        longPressGesture = UILongPressGestureRecognizer(target: self, action: "handleLongGesture:")
+        longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(EditorViewController.handleLongGesture(_:)))
         self.thumbnailClipsCollectionView.addGestureRecognizer(longPressGesture!)
     }
     
     func numberOfCellsInCollectionView() -> Int {
         return self.thumbnailClipsCollectionView.numberOfItemsInSection(0)
+    }
+    
+    func configurePickerController() {
+        imagePicker.delegate = self
+    }
+    
+    func presentPickerController() {
+        // Display Photo Library
+        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        imagePicker.mediaTypes = [kUTTypeMovie as String]
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
     }
     
     //MARK: - Drag and Drop handler
@@ -206,4 +221,43 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
     func seekBarUpdate(value: Float) {
         eventHandler?.seekBarUpdateHandler(value)
     }
+    
+    // MARK: - UIImagePickerControllerDelegate Methods
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
+        
+        // 1
+        let mediaType:AnyObject? = info[UIImagePickerControllerMediaType]
+        
+        if let type:AnyObject = mediaType {
+            if type is String {
+                let stringType = type as! String
+                if stringType == kUTTypeMovie as String {
+                    let urlOfVideo = info[UIImagePickerControllerMediaURL] as? NSURL
+                    if let url = urlOfVideo {
+                        
+                        eventHandler?.saveVideoToDocuments(url)
+
+                    }
+                }
+                
+            }
+        }
+        
+        // 3
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
+        print("navigationController willShowViewController ")
+    }
+    
+    func navigationController(navigationController: UINavigationController, didShowViewController viewController: UIViewController, animated: Bool) {
+        print("navigationController didShowViewController ")
+    }
+    
+    
 }

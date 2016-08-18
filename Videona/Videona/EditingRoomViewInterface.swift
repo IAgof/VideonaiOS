@@ -15,4 +15,5 @@ protocol EditingRoomViewInterface:VideonaControllerInterface{
     func selectShareButton()
     func createAlertWaitToExport()
     func dissmissAlertWaitToExport(completion:()->Void)
+
 }

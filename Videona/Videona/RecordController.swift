@@ -327,7 +327,11 @@ extension UINavigationController {
         }
     }
     public override func shouldAutorotate() -> Bool {
-        return visibleViewController!.shouldAutorotate()
+        if visibleViewController != nil{
+            return visibleViewController!.shouldAutorotate()
+        }else{
+            return true
+        }
     }
 }
 

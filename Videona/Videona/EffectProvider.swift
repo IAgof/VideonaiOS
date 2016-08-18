@@ -128,63 +128,63 @@ public class EffectProvider {
         //
         
         overlayList.append(OverlayEffect(identifier: "ovh004",
-            name: "",
+            name: "Surf",
             iconId: "common_filter_overlay_ovh004_surf",
             resourceId: "overlay_filter_surf",
             type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
         
         overlayList.append(OverlayEffect(identifier: "ovw001",
-            name: "",
+            name: "Mexico",
             iconId: "common_filter_overlay_ovw001_mexico",
             resourceId: "overlay_filter_mexico",
             type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
         
         overlayList.append(OverlayEffect(identifier: "ovs003",
-            name: "",
+            name: "Holidays",
             iconId: "common_filter_overlay_ovs003_holidays",
             resourceId: "overlay_filter_holidays",
             type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
         
         overlayList.append(OverlayEffect(identifier: "ovt002",
-            name: "",
+            name: "Pixel",
             iconId: "common_filter_overlay_ovt002_pixel",
             resourceId: "overlay_filter_pixel",
             type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
         
         overlayList.append(OverlayEffect(identifier: "ovt002",
-            name: "",
+            name: "Olimpic",
             iconId: "common_filter_overlay_ovt002_olimpic",
             resourceId: "overlay_filter_olimpic",
             type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
         
         overlayList.append(OverlayEffect(identifier: "ovp004",
-            name: "",
+            name: "Dog",
             iconId: "common_filter_overlay_ovp004_dog",
             resourceId: "overlay_filter_dog",
             type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
         
         
         overlayList.append(OverlayEffect(identifier: "ovh004",
-            name: "",
+            name: "Disco",
             iconId: "common_filter_overlay_ovh004_disco",
             resourceId: "overlay_filter_disco",
             type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
         
         
         overlayList.append(OverlayEffect(identifier: "ovb004",
-            name: "",
+            name: "Birthday",
             iconId: "common_filter_overlay_ovb004_birthday",
             resourceId: "overlay_filter_birthday",
             type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
         
         overlayList.append(OverlayEffect(identifier: "ovr004",
-            name: "",
+            name: "Polygon",
             iconId: "common_filter_overlay_ovr004_polygon",
             resourceId: "overlay_filter_polygon",
             type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
         
         overlayList.append(OverlayEffect(identifier: "ovi004",
-            name: "",
+            name: "Steampunk",
             iconId: "common_filter_overlay_ovi004_steampunk",
             resourceId: "overlay_filter_steampunk",
             type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
