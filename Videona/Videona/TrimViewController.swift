@@ -100,3 +100,15 @@ class TrimViewController: VideonaController,TrimViewInterface,TrimPresenterDeleg
         self.trimTitleLabel.text = text
     }
 }
+
+//Force Portrait to iPad
+extension TrimViewController{
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad
+        {
+            return UIInterfaceOrientationMask.Portrait
+        }else{
+            return UIInterfaceOrientationMask.All
+        }
+    }
+}

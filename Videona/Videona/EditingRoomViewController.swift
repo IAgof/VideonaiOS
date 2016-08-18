@@ -106,4 +106,14 @@ class EditingRoomViewController: VideonaController,EditingRoomViewInterface,UIIm
     }
 }
 
-
+//Force Portrait to iPad
+extension EditingRoomViewController{
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad
+        {
+          return UIInterfaceOrientationMask.Portrait
+        }else{
+            return UIInterfaceOrientationMask.All
+        }
+    }
+}

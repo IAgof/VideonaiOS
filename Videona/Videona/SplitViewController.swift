@@ -98,3 +98,15 @@ class SplitViewController: VideonaController,SplitViewInterface,SplitPresenterDe
         eventHandler?.updateSplitValueByPlayer(value)
     }
 }
+
+//Force Portrait to iPad
+extension SplitViewController{
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad
+        {
+            return UIInterfaceOrientationMask.Portrait
+        }else{
+            return UIInterfaceOrientationMask.All
+        }
+    }
+}
