@@ -10,11 +10,14 @@ import Foundation
 import UIKit
 import Mixpanel
 
+
+let VIDEONA_GREEN_UICOLOR = UIColor.init(red: 0.7843, green: 0.8588, blue: 0.2039, alpha: 1.0)
+
 class VideonaController: UIViewController,
 VideonaControllerInterface {
 
     let tracker = VideonaTracker()
-
+    
     override func viewDidLoad() {
         print("View did load in \n \(self)")
         self.prefersStatusBarHidden()

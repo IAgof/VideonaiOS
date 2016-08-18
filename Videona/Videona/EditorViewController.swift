@@ -194,12 +194,14 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
         let alertController = UIAlertController(title:title,
                                                 message:message,
                                                 preferredStyle: .Alert)
-        
+        alertController.view.tintColor = VIDEONA_GREEN_UICOLOR
+
         let yesAction = UIAlertAction(title: yesString,
                                       style: .Default,
                                       handler: {alert -> Void in
             self.eventHandler?.removeVideoClipAfterConfirmation()
         })
+        
         let noAction = UIAlertAction(title: "No", style: .Default, handler: nil)
         
         alertController.addAction(noAction)

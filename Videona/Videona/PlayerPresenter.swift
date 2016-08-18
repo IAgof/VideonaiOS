@@ -53,8 +53,11 @@ class PlayerPresenter:NSObject,PlayerPresenterInterface{
     }
     
     func pushPlayButton() {
-        if isPlaying == false {
-            self.playPlayer()
+        if(isPlaying){
+            controller?.pauseVideoPlayer()
+            isPlaying = false
+        }else{
+            playPlayer()
         }
     }
     

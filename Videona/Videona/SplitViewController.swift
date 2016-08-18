@@ -75,10 +75,10 @@ class SplitViewController: VideonaController,SplitViewInterface,SplitPresenterDe
     func configureUIRangeSlider(){
 
         
-        let handleImage = UIImage(named: "button_edit_thumb_seekbar_advance_split_normal")
+        let handleImage = UIImage(named: "button_edit_thumb_seekbar_over_advance_split")
         
-        let handleImagePressed = UIImage(named: "button_edit_thumb_seekbar_advance_split_normal")
-        
+        let handleImagePressed = UIImage(named: "button_edit_thumb_seekbar_over_advance_split")
+                
         splitRangeSlider.upperHandleImageNormal = handleImage
         
         splitRangeSlider.upperHandleImageHighlighted = handleImagePressed

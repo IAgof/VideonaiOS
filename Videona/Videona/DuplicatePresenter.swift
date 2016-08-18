@@ -43,10 +43,12 @@ class DuplicatePresenter: NSObject,DuplicatePresenterInterface,DuplicateInteract
         
         interactor?.getThumbnail((controller?.getThumbSize())!)
         
-        interactor?.setUpComposition(videoSelectedIndex!    ,
-                                     completion: {composition in
-                                        self.playerPresenter?.createVideoPlayer(composition)
-        })
+        if let index = videoSelectedIndex {
+            interactor?.setUpComposition(index,
+                                         completion: {composition in
+                                            self.playerPresenter?.createVideoPlayer(composition)
+            })
+        }
     }
     
     func viewWillDissappear() {

@@ -14,7 +14,7 @@ class EditorClipsCell: UICollectionViewCell {
     @IBOutlet weak var positionNumberLabel: UILabel!
     @IBOutlet weak var removeClipButton: UIButton!
     
-    let cellColor = UIColor(red: 179/256, green: 194/256, blue: 39/256, alpha: 0.88)
+    let cellColor = VIDEONA_GREEN_UICOLOR
     
     var isClipSelected: Bool = false{
         didSet {            
