@@ -47,8 +47,8 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
         if (interactor?.hasMusicSelectedInProject())! {
             let music = Project.sharedInstance.getMusic()
             
-            delegate?.animateToShowDetail(music.getTitle(),
-                                          author: music.getAuthor(),
+            delegate?.animateToShowDetail(" \(music.getTitle()) ",
+                                          author: " \(music.getAuthor()) ",
                                           image: UIImage(named: music.getIconResourceId())!)
             
             detailEventHandler?.showRemoveButton()
@@ -70,8 +70,8 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
     func didSelectMusicAtIndexPath(indexPath: NSIndexPath) {
         lastMusicSelected = indexPath.item
         
-        delegate?.animateToShowDetail((interactor?.getTitleFromIndexPath(lastMusicSelected))!,
-                                  author: (interactor?.getAuthorFromIndexPath(lastMusicSelected))!,
+        delegate?.animateToShowDetail(" \((interactor?.getTitleFromIndexPath(lastMusicSelected))!) ",
+                                  author: " \((interactor?.getAuthorFromIndexPath(lastMusicSelected))!) ",
                                   image: (interactor?.getImageFromIndexPath(lastMusicSelected))!)
 
         interactor?.setMusicToProject(lastMusicSelected)

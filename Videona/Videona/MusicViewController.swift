@@ -80,7 +80,7 @@ UITableViewDataSource,UITableViewDelegate{
         
         if titleList.indices.contains(indexPath.item){
             let text = titleList[indexPath.item]
-            cell.titleLabel.text = text
+            cell.titleLabel.text = " \(text) "
         }
                 
         return cell

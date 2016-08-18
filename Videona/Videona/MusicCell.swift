@@ -16,7 +16,7 @@ class MusicCell: UITableViewCell {
     
     override func awakeFromNib() {
         self.applyPlainShadow()
-
+        titleLabel.adjustsFontSizeToFitWidth = true
     }
     
     func applyPlainShadow() {

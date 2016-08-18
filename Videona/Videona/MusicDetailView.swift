@@ -45,7 +45,8 @@ class MusicDetailView: UIView,MusicDetailInterface {
         titleLabel.text = title
         authorLabel.text = author
         
-        self.frame = CGRectMake(0, 0, frame.width, (frame.height - 10) )
+        let offset = CGFloat(10)
+        self.frame = CGRectMake((offset/2), 0, (frame.width - offset), (frame.height - offset) )
         
         self.applyPlainShadow()
     }

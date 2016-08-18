@@ -17,7 +17,7 @@
                 </view>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cww-rs-SeF">
                     <rect key="frame" x="6" y="147" width="308" height="31"/>
-                    <color key="minimumTrackTintColor" red="0.70196078429999997" green="0.76078431369999999" blue="0.1529411765" alpha="0.87931034480000003" colorSpace="calibratedRGB"/>
+                    <color key="minimumTrackTintColor" red="0.70196078429999997" green="0.76078431369999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                 </slider>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8f9-Er-ZVm">
                     <rect key="frame" x="143" y="76" width="34" height="34"/>

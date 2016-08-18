@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -11,8 +11,8 @@
             <rect key="frame" x="0.0" y="0.0" width="420" height="114"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="uwB-H5-a1f">
-                    <rect key="frame" x="35" y="8" width="345" height="98"/>
+                <collectionView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="uwB-H5-a1f">
+                    <rect key="frame" x="35" y="0.0" width="377" height="114"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pSs-wC-Lsn">
                         <size key="itemSize" width="77" height="90"/>
@@ -34,9 +34,9 @@
                 <constraint firstItem="uwB-H5-a1f" firstAttribute="leading" secondItem="qbO-zX-lSq" secondAttribute="trailing" constant="8" id="Jye-eW-iOY"/>
                 <constraint firstItem="qbO-zX-lSq" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="V4W-46-LoX"/>
                 <constraint firstItem="qbO-zX-lSq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XTO-XW-ogk"/>
-                <constraint firstAttribute="bottom" secondItem="uwB-H5-a1f" secondAttribute="bottom" constant="8" id="eRF-P4-bL5"/>
+                <constraint firstAttribute="bottom" secondItem="uwB-H5-a1f" secondAttribute="bottom" id="eRF-P4-bL5"/>
                 <constraint firstAttribute="trailing" secondItem="uwB-H5-a1f" secondAttribute="trailing" constant="8" id="rCM-1o-V3K"/>
-                <constraint firstItem="uwB-H5-a1f" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="z0h-04-Wf4"/>
+                <constraint firstItem="uwB-H5-a1f" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="z0h-04-Wf4"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
