@@ -18,6 +18,7 @@ class DuplicateViewController: VideonaController,DuplicateInterface,DuplicatePre
     @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var acceptButton: UIButton!
+    @IBOutlet weak var minusButton: UIButton!
     
     @IBOutlet weak var cloneYourClipLabel: UILabel!
     @IBOutlet weak var numberOfDuplicates: UILabel!
@@ -28,6 +29,7 @@ class DuplicateViewController: VideonaController,DuplicateInterface,DuplicatePre
     //MARK: - LifeCycle
     override func viewDidLoad() {
         eventHandler?.viewDidLoad()
+        numberOfDuplicates.adjustsFontSizeToFitWidth = true
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -59,6 +61,15 @@ class DuplicateViewController: VideonaController,DuplicateInterface,DuplicatePre
     func getThumbSize()->CGRect{
         return thumbLeft.frame
     }
+    
+    func hideMinusButton(){
+        minusButton.hidden = true
+    }
+    
+    func showMinusButton(){
+        minusButton.hidden = false
+    }
+    
     //MARK: - Presenter delegate
     func setNumberDuplicates(text: String) {
         self.numberOfDuplicates.text = text

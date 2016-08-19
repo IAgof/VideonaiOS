@@ -29,8 +29,9 @@ TrimInteractorDelegate {
     
     var lowerValue:Float!{
         didSet{
-            if lowerValue != nil {
-                delegate?.setMinRangeValue(String.init(format: "%.02f", lowerValue))
+            if lowerValue != nil {                
+                let text = Utils.sharedInstance.hourToString(Double(lowerValue))
+                delegate?.setMinRangeValue(text)
                 if upperValue != nil{
                     updateVideoParams()
                     updateRangeVal()
@@ -42,7 +43,8 @@ TrimInteractorDelegate {
     var upperValue:Float!{
         didSet{
             if  upperValue != nil {
-                delegate?.setMaxRangeValue(String.init(format: "%.02f", upperValue))
+                let text = Utils.sharedInstance.hourToString(Double(upperValue))
+                delegate?.setMaxRangeValue(text)
                 if  lowerValue != nil{
                     updateVideoParams()
                     updateRangeVal()
@@ -54,7 +56,8 @@ TrimInteractorDelegate {
     
     var rangeVal:Float! = 0.0{
         didSet{
-            delegate?.setRangeValue(String.init(format: "%.02f", rangeVal))
+            let text = Utils.sharedInstance.hourToString(Double(rangeVal))
+            delegate?.setRangeValue(text)
         }
     }
 

@@ -29,7 +29,8 @@ class SplitPresenter: NSObject,SplitPresenterInterface,SplitInteractorDelegate {
     var splitValue:Float!{
         didSet{
             if splitValue != nil {
-                delegate?.setSplitValueText(String.init(format: "%.02f", splitValue))
+                let text = Utils.sharedInstance.hourToString(Double(splitValue))
+                delegate?.setSplitValueText(text)
                 
                 if maximumValue != nil{
                     if isMovingByPlayer{

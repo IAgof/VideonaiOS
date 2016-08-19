@@ -16,6 +16,10 @@ class EditorClipsCell: UICollectionViewCell {
     
     let cellColor = VIDEONA_GREEN_UICOLOR
     
+    override func awakeFromNib() {
+        positionNumberLabel.adjustsFontSizeToFitWidth = true
+    }
+    
     var isClipSelected: Bool = false{
         didSet {            
             self.layer.borderWidth = (isClipSelected ? 3 : 0)

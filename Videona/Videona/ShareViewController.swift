@@ -117,6 +117,17 @@ GIDSignInUIDelegate,GIDSignInDelegate{
         return cell
     }
 
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let height = listImages[indexPath.item].size.height
+        Utils.sharedInstance.debugLog("Height for social = \(height)")
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad
+        {
+            return height*2
+        }else{
+            return height*2
+        }
+    }
+    
     //MARK: - UITableView Delegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         

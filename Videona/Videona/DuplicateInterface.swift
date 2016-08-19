@@ -11,4 +11,6 @@ import Foundation
 protocol DuplicateInterface{
 
     func getThumbSize()->CGRect
+    func showMinusButton()
+    func hideMinusButton()
 }

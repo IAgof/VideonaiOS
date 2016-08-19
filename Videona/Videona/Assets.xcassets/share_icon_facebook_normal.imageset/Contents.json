@@ -7,7 +7,7 @@
     },
     {
       "idiom" : "iphone",
-      "filename" : "share_icon_facebook_normal@2x.png",
+      "filename" : "share_icon_facebook_normal@2-1.png",
       "scale" : "2x"
     },
     {
@@ -17,12 +17,12 @@
     },
     {
       "idiom" : "ipad",
-      "filename" : "share_icon_facebook_normal@2x-1.png",
+      "filename" : "share_icon_facebook_normal~ipad-1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "ipad",
-      "filename" : "share_icon_facebook_normal@3x-1.png",
+      "filename" : "share_icon_facebook_normal@2x~ipad-1.png",
       "scale" : "2x"
     }
   ],

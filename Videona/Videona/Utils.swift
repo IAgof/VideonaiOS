@@ -76,5 +76,20 @@ class Utils{
     func getStringByKeyFromEditor(key:String) -> String {
         return NSBundle.mainBundle().localizedStringForKey(key,value: "",table: "Editor")
     }
-    
+    func hourToString(time:Double) -> String {
+        let hours = Int(floor(time/3600))
+        let mins = Int(floor(time % 3600) / 60)
+        let secs = Int(floor(time % 3600) % 60)
+        
+        let x:Double = (time % 3600) % 60
+        let numberOfPlaces:Double = 4.0
+        let powerOfTen:Double = pow(10.0, numberOfPlaces)
+        let targetedDecimalPlaces:Double = round((x % 1.0) * powerOfTen) / powerOfTen
+        
+        let decimals = Int(targetedDecimalPlaces * 100)
+        
+//        return String(format:"%d:%02d:%02d,%02d", hours, mins, secs,decimals)
+//        return String(format:"%02d:%02d,%02d", mins, secs,decimals)
+        return String(format:"%02d:%02d", mins, secs)
+    }
 }

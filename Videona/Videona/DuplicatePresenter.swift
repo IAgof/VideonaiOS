@@ -27,8 +27,11 @@ class DuplicatePresenter: NSObject,DuplicatePresenterInterface,DuplicateInteract
     
     var numberOfDuplicates:Int = 2 {
         didSet{
-            if numberOfDuplicates<2{
+            if numberOfDuplicates<=2{
                 numberOfDuplicates = 2
+                controller?.hideMinusButton()
+            }else if numberOfDuplicates == 3{
+                controller?.showMinusButton()
             }
             
             delegate?.setNumberDuplicates("x\(numberOfDuplicates)")

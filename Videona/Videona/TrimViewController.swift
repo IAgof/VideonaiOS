@@ -71,13 +71,11 @@ class TrimViewController: VideonaController,TrimViewInterface,TrimPresenterDeleg
     }
     
     func configureUIRangeSlider(){
-        let trackBackground = UIImage(named: "button_edit_thumb_seekbar_over_advance_split")
-        trimRangeSlider.trackBackgroundImage = trackBackground
         
         let trackImage = UIImage(named: "button_edit_thumb_seekbar_trim_normal")
         trimRangeSlider.trackImage = trackImage
         
-        let handleImage = UIImage(named: "button_edit_thumb_seekbar_trim_pressed")
+        let handleImage = UIImage(named: "button_edit_thumb_seekbar_over_advance_split-1")
         trimRangeSlider.lowerHandleImageNormal = handleImage
         trimRangeSlider.upperHandleImageNormal = handleImage
         
