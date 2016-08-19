@@ -81,6 +81,6 @@ class EditingRoomPresenter: NSObject,EditingRoomPresenterInterface {
     }
     
     func pushSettings() {
-        
+        wireframe?.presentSettingsInterface()
     }
 }

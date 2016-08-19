@@ -19,6 +19,7 @@ class EditingRoomWireframe : NSObject {
     var editorWireframe: EditorWireframe?
     var musicWireframe: MusicWireframe?
     var shareWireframe: ShareWireframe?
+    var settingsWireframe:SettingsWireframe?
     
     //MARK: - Variables
     weak var currentViewController: UIViewController?
@@ -149,5 +150,9 @@ class EditingRoomWireframe : NSObject {
             options: [], metrics: nil, views: viewBindingsDict))
         parentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[subView]|",
             options: [], metrics: nil, views: viewBindingsDict))
+    }
+    
+    func presentSettingsInterface(){
+        settingsWireframe?.presentSettingsInterfaceFromViewController(editingRoomViewController!)
     }
 }

@@ -148,6 +148,7 @@ class AppDependencies {
         editorRoomWireframe.editorWireframe = editorWireframe
         editorRoomWireframe.shareWireframe = shareWireframe
         editorRoomWireframe.musicWireframe = musicWireframe
+        editorRoomWireframe.settingsWireframe = settingsWireframe
         
         //EDITOR MODULE
         editorPresenter.wireframe = editorWireframe
