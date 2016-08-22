@@ -1526,7 +1526,7 @@
                                         <rect key="frame" x="208" y="8" width="24" height="24"/>
                                         <state key="normal" image="common_icon_expand"/>
                                         <connections>
-                                            <action selector="pushExpandButton:" destination="0Ip-P7-Gfh" eventType="touchUpInside" id="EIt-EQ-fdr"/>
+                                            <action selector="pushExpandButton:" destination="Kjt-5M-7HS" eventType="touchUpInside" id="kzf-qM-Oza"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1721,6 +1721,7 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="expandPlayerButton" destination="4GI-ae-aeF" id="mhG-yv-IlP"/>
                         <outlet property="musicContainer" destination="GIi-av-hRp" id="byj-Ko-oz8"/>
                         <outlet property="musicTableView" destination="4yv-pa-KUs" id="XaG-ED-ymm"/>
                         <outlet property="playerView" destination="apF-7P-0Jz" id="Dzb-ro-kbA"/>

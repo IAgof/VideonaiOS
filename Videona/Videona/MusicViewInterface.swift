@@ -9,5 +9,6 @@
 import Foundation
 
 protocol MusicViewInterface {
-    
+    func cameFromFullScreenPlayer(playerView:PlayerView)
+    func bringToFrontExpandPlayerButton()
 }

@@ -16,6 +16,7 @@ class MusicWireframe : NSObject {
     var musicViewController : MusicViewController?
     var musicPresenter : MusicPresenter?
     var playerWireframe: PlayerWireframe?
+    var fullScreenPlayerWireframe: FullScreenPlayerWireframe?
 
     var prevController:UIViewController?
     
@@ -40,6 +41,7 @@ class MusicWireframe : NSObject {
         viewController.eventHandler = musicPresenter
         musicViewController = viewController
         musicPresenter?.delegate = viewController
+        musicPresenter?.controller = viewController
         
         return viewController
     }
@@ -51,5 +53,14 @@ class MusicWireframe : NSObject {
     func mainStoryboard() -> UIStoryboard {
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         return storyboard
+    }
+    
+    func presentExpandPlayer(){
+        if let controller = musicViewController{
+            if let player = playerWireframe?.presentedView{
+                fullScreenPlayerWireframe?.presentFullScreenPlayerFromViewController(controller,
+                                                                                     playerView:player)
+            }
+        }
     }
 }

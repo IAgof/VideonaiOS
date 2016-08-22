@@ -19,6 +19,9 @@ protocol MusicPresenterInterface {
     func removeDetailButtonPushed()
     
     func setMusicDetailInterface(eventHandler:MusicDetailInterface)
+    
+    func expandPlayer()
+    func updatePlayerLayer()
 }
 
 protocol MusicPresenterDelegate {

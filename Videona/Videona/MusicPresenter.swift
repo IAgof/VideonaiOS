@@ -36,7 +36,7 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
     }
     
     func viewWillAppear() {
-        
+        controller?.bringToFrontExpandPlayerButton()
     }
     
     func viewDidAppear() {
@@ -94,6 +94,14 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
         playerPresenter?.createVideoPlayer(GetActualProjectAVCompositionUseCase.sharedInstance.getComposition())
         
         isMusicSet = false
+    }
+    
+    func expandPlayer() {
+        wireframe?.presentExpandPlayer()
+    }
+    
+    func updatePlayerLayer() {
+        playerPresenter!.layoutSubViews()
     }
     
     //MARK: - Interactor delegate

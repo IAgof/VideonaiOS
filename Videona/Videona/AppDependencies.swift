@@ -177,6 +177,7 @@ class AppDependencies {
         musicWireframe.musicPresenter = musicPresenter
         musicWireframe.rootWireframe = rootWireframe
         musicWireframe.playerWireframe = playerWireframe
+        musicWireframe.fullScreenPlayerWireframe = fullScreenPlayerWireframe
         
         //TRIM MODULE 
         trimPresenter.wireframe = trimWireframe

@@ -49,6 +49,9 @@ class FullScreenPlayerWireframe : NSObject {
         }else if prevController!.isKindOfClass(EditorViewController) {
             let controller = prevController as! EditorViewController
             controller.cameFromFullScreenPlayer(playerView)
+        }else if prevController!.isKindOfClass(MusicViewController) {
+            let controller = prevController as! MusicViewController
+            controller.cameFromFullScreenPlayer(playerView)
         }
         fullScreenPlayerViewController?.dismissViewControllerAnimated(true, completion: nil)
     }

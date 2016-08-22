@@ -18,7 +18,8 @@ UITableViewDataSource,UITableViewDelegate{
     @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var musicTableView: UITableView!
     @IBOutlet weak var musicContainer: UIView!
-    
+    @IBOutlet weak var expandPlayerButton: UIButton!
+
     //MARK: - Variables and constants
     let cellIdentifier = "musicCell"
     
@@ -58,6 +59,22 @@ UITableViewDataSource,UITableViewDelegate{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+   
+    //MARK: Actions
+    @IBAction func pushExpandButton(sender: AnyObject) {
+        eventHandler?.expandPlayer()
+    }
+    
+    //MARK: Interface
+    func bringToFrontExpandPlayerButton(){
+        self.playerView.bringSubviewToFront(expandPlayerButton)
+    }
+    
+    func cameFromFullScreenPlayer(playerView:PlayerView){
+        self.playerView.addSubview(playerView)
+        self.playerView.bringSubviewToFront(expandPlayerButton)
+        eventHandler?.updatePlayerLayer()
     }
     
     //MARK: - Tableview delegate
