@@ -24,6 +24,8 @@ class SplitViewController: VideonaController,SplitViewInterface,SplitPresenterDe
     
     @IBOutlet weak var splitRangeSlider: NMRangeSlider!
 
+    @IBOutlet weak var expandPlayerButton: UIButton!
+
     //MARK: - LifeCycle
     override func viewDidLoad() {
         eventHandler?.viewDidLoad()
@@ -56,7 +58,10 @@ class SplitViewController: VideonaController,SplitViewInterface,SplitPresenterDe
         eventHandler?.setSplitValue(splitRangeSlider.upperValue)
     }
     
-    //MARK: - Interface
+    @IBAction func pushExpandButton(sender: AnyObject) {
+        eventHandler?.expandPlayer()
+    }
+    
     //MARK: - Interface
     func configureRangeSlider(splitValue: Float,
                               maximumValue:Float) {
@@ -86,6 +91,16 @@ class SplitViewController: VideonaController,SplitViewInterface,SplitPresenterDe
     
     func setSliderValue(value:Float){
         splitRangeSlider.upperValue = value
+    }
+    
+    func bringToFrontExpandPlayerButton(){
+        self.playerView.bringSubviewToFront(expandPlayerButton)
+    }
+    
+    func cameFromFullScreenPlayer(playerView:PlayerView){
+        self.playerView.addSubview(playerView)
+        self.playerView.bringSubviewToFront(expandPlayerButton)
+        eventHandler?.updatePlayerLayer()
     }
     
     //MARK: - Presenter delegate

@@ -11,5 +11,7 @@ import Foundation
 protocol TrimViewInterface {
     func configureRangeSlider(lowerValue: Float,
                               upperValue: Float,
-                              maximumValue:Float)
+                              maximumValue:Float)    
+    func bringToFrontExpandPlayerButton()
+    func cameFromFullScreenPlayer(playerView:PlayerView)
 }

@@ -188,7 +188,8 @@ class AppDependencies {
         trimWireframe.playerWireframe = playerWireframe
         trimWireframe.rootWireframe = rootWireframe
         trimWireframe.trimPresenter = trimPresenter
-        
+        trimWireframe.fullScreenPlayerWireframe = fullScreenPlayerWireframe
+
         trimInteractor.delegate = trimPresenter
         
         //DUPLICATE MODULE
@@ -200,7 +201,8 @@ class AppDependencies {
         duplicateWireframe.playerWireframe = playerWireframe
         duplicateWireframe.rootWireframe = rootWireframe
         duplicateWireframe.duplicatePresenter = duplicatePresenter
-        
+        duplicateWireframe.fullScreenPlayerWireframe = fullScreenPlayerWireframe
+
         duplicateInteractor.delegate = duplicatePresenter
         
         //SPLIT MODULE
@@ -212,6 +214,7 @@ class AppDependencies {
         splitWireframe.playerWireframe = playerWireframe
         splitWireframe.rootWireframe = rootWireframe
         splitWireframe.splitPresenter = splitPresenter
+        splitWireframe.fullScreenPlayerWireframe = fullScreenPlayerWireframe
         
         splitInteractor.delegate = splitPresenter
     }

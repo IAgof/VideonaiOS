@@ -17,6 +17,8 @@ protocol TrimPresenterInterface {
     
     func setLowerValue(value:Float)
     func setUpperValue(value:Float)
+    func expandPlayer()
+    func updatePlayerLayer()
 }
 
 protocol TrimPresenterDelegate {

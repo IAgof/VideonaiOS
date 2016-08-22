@@ -12,4 +12,6 @@ protocol SplitViewInterface{
     func configureRangeSlider(splitValue: Float,
                               maximumValue:Float)
     func setSliderValue(value:Float)
+    func bringToFrontExpandPlayerButton()
+    func cameFromFullScreenPlayer(playerView:PlayerView)
 }

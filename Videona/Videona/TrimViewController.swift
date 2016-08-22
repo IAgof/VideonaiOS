@@ -25,7 +25,8 @@ class TrimViewController: VideonaController,TrimViewInterface,TrimPresenterDeleg
     @IBOutlet weak var rangeLabel: UILabel!
 
     @IBOutlet weak var trimTitleLabel:   UILabel!
-    
+    @IBOutlet weak var expandPlayerButton: UIButton!
+
     //MARK: - LifeCycle
     override func viewDidLoad() {
         eventHandler?.viewDidLoad()
@@ -51,6 +52,10 @@ class TrimViewController: VideonaController,TrimViewInterface,TrimPresenterDeleg
     }
     @IBAction func pushBackBarButton(sender: AnyObject) {
         eventHandler?.pushBack()
+    }
+   
+    @IBAction func pushExpandButton(sender: AnyObject) {
+        eventHandler?.expandPlayer()
     }
     
     //MARK: - Interface
@@ -81,6 +86,16 @@ class TrimViewController: VideonaController,TrimViewInterface,TrimPresenterDeleg
         
         trimRangeSlider.lowerHandleImageHighlighted = handleImage
         trimRangeSlider.upperHandleImageHighlighted = handleImage
+    }
+    
+    func bringToFrontExpandPlayerButton(){
+        self.playerView.bringSubviewToFront(expandPlayerButton)
+    }
+    
+    func cameFromFullScreenPlayer(playerView:PlayerView){
+        self.playerView.addSubview(playerView)
+        self.playerView.bringSubviewToFront(expandPlayerButton)
+        eventHandler?.updatePlayerLayer()
     }
     
     //MARK: - Presenter delegate

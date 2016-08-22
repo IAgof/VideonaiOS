@@ -2117,24 +2117,6 @@
                                     <action selector="pushAcceptButton:" destination="mnX-hg-09g" eventType="touchUpInside" id="A4Z-bB-QNd"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k9f-nj-Qyj" customClass="PlayerView" customModule="Videona" customModuleProvider="target">
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="k9f-nj-Qyj" secondAttribute="height" multiplier="16:9" id="MQk-df-Jru"/>
-                                    <constraint firstAttribute="width" secondItem="k9f-nj-Qyj" secondAttribute="height" multiplier="16:9" id="n7p-QD-fqh"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="MQk-df-Jru"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="MQk-df-Jru"/>
-                                        <exclude reference="n7p-QD-fqh"/>
-                                    </mask>
-                                </variation>
-                            </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KYU-Ke-UlI">
                                 <rect key="frame" x="-8" y="57" width="20" height="0.0"/>
                                 <subviews>
@@ -2270,6 +2252,36 @@
                                         <include reference="lm6-MM-rWE"/>
                                         <include reference="L8U-gO-rLx"/>
                                         <include reference="VNF-2R-rcm"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k9f-nj-Qyj" customClass="PlayerView" customModule="Videona" customModuleProvider="target">
+                                <rect key="frame" x="36" y="102" width="264" height="217"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDg-m3-Tlf">
+                                        <rect key="frame" x="232" y="8" width="24" height="24"/>
+                                        <state key="normal" image="common_icon_expand"/>
+                                        <connections>
+                                            <action selector="pushExpandButton:" destination="mnX-hg-09g" eventType="touchUpInside" id="TvJ-3p-8SU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="k9f-nj-Qyj" secondAttribute="height" multiplier="16:9" id="MQk-df-Jru"/>
+                                    <constraint firstAttribute="width" secondItem="k9f-nj-Qyj" secondAttribute="height" multiplier="16:9" id="n7p-QD-fqh"/>
+                                    <constraint firstItem="dDg-m3-Tlf" firstAttribute="top" secondItem="k9f-nj-Qyj" secondAttribute="top" constant="8" id="pvz-mb-RSw"/>
+                                    <constraint firstAttribute="trailing" secondItem="dDg-m3-Tlf" secondAttribute="trailing" constant="8" id="qAq-fI-eez"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="MQk-df-Jru"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="MQk-df-Jru"/>
+                                        <exclude reference="n7p-QD-fqh"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -2410,6 +2422,7 @@
                     <connections>
                         <outlet property="acceptButton" destination="0Zl-0I-DqE" id="Fb0-Sa-nhh"/>
                         <outlet property="cancelButton" destination="GC8-zD-0hM" id="3Kp-wS-3Uz"/>
+                        <outlet property="expandPlayerButton" destination="dDg-m3-Tlf" id="CJG-kO-j3e"/>
                         <outlet property="maxRangeLabel" destination="AEc-jl-ZMM" id="4iP-dz-MzA"/>
                         <outlet property="minRangeLabel" destination="pbo-kF-fRZ" id="PP9-VM-QWV"/>
                         <outlet property="playerView" destination="k9f-nj-Qyj" id="Hp7-Dw-elG"/>
@@ -2453,21 +2466,30 @@
                                 <state key="normal" image="common_icon_edit_accept_normal"/>
                                 <connections>
                                     <action selector="pushAcceptButton:" destination="vla-eH-4z5" eventType="touchUpInside" id="4mF-dt-aGO"/>
-                                    <action selector="pushAcceptButton:" destination="mnX-hg-09g" eventType="touchUpInside" id="AcS-h3-MEb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5h-YG-WUF">
                                 <rect key="frame" x="20" y="556" width="24" height="24"/>
                                 <state key="normal" image="common_icon_edit_cancel_normal"/>
                                 <connections>
-                                    <action selector="pushCancelButton:" destination="mnX-hg-09g" eventType="touchUpInside" id="TnY-P6-R4K"/>
                                     <action selector="pushCancelButton:" destination="vla-eH-4z5" eventType="touchUpInside" id="Zay-6w-Ptu"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="es6-ki-Z0W" customClass="PlayerView" customModule="Videona" customModuleProvider="target">
                                 <rect key="frame" x="5" y="58" width="240" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mor-6E-2yz">
+                                        <rect key="frame" x="208" y="8" width="24" height="24"/>
+                                        <state key="normal" image="common_icon_expand"/>
+                                        <connections>
+                                            <action selector="pushExpandButton:" destination="vla-eH-4z5" eventType="touchUpInside" id="GhR-o1-Iee"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="Mor-6E-2yz" firstAttribute="top" secondItem="es6-ki-Z0W" secondAttribute="top" constant="8" id="Fde-Qi-gee"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mor-6E-2yz" secondAttribute="trailing" constant="8" id="XKG-ev-FNY"/>
                                     <constraint firstAttribute="width" secondItem="es6-ki-Z0W" secondAttribute="height" multiplier="15:8" id="ehu-u0-6cc"/>
                                 </constraints>
                             </view>
@@ -2748,6 +2770,7 @@
                         <outlet property="acceptButton" destination="gkA-qE-RvX" id="Dh1-7m-M1X"/>
                         <outlet property="cancelButton" destination="V5h-YG-WUF" id="kzC-Rv-kH3"/>
                         <outlet property="cloneYourClipLabel" destination="E1Q-KJ-Tbq" id="qh4-zY-Rq1"/>
+                        <outlet property="expandPlayerButton" destination="Mor-6E-2yz" id="KEe-OH-L3O"/>
                         <outlet property="minusButton" destination="2AU-gf-ROR" id="FIP-3b-ceq"/>
                         <outlet property="numberOfDuplicates" destination="faF-YT-Hme" id="LUB-dh-Sel"/>
                         <outlet property="playerView" destination="es6-ki-Z0W" id="Kne-Un-pnW"/>
@@ -2776,7 +2799,6 @@
                                 <state key="normal" image="common_icon_edit_cancel_normal"/>
                                 <connections>
                                     <action selector="pushCancelButton:" destination="3aO-aE-THX" eventType="touchUpInside" id="1hF-Ru-kmr"/>
-                                    <action selector="pushCancelButton:" destination="mnX-hg-09g" eventType="touchUpInside" id="LG7-X8-cYr"/>
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Iy-GN-dfd">
@@ -2797,15 +2819,25 @@
                                 <rect key="frame" x="553" y="557" width="27" height="23"/>
                                 <state key="normal" image="common_icon_edit_accept_normal"/>
                                 <connections>
-                                    <action selector="pushAcceptButton:" destination="mnX-hg-09g" eventType="touchUpInside" id="5hA-jd-ZBk"/>
                                     <action selector="pushAcceptButton:" destination="3aO-aE-THX" eventType="touchUpInside" id="NHW-57-wT2"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zyL-Kh-8ea" customClass="PlayerView" customModule="Videona" customModuleProvider="target">
                                 <rect key="frame" x="20" y="64" width="288" height="194"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pmr-zv-13y">
+                                        <rect key="frame" x="256" y="8" width="24" height="24"/>
+                                        <state key="normal" image="common_icon_expand"/>
+                                        <connections>
+                                            <action selector="pushExpandButton:" destination="3aO-aE-THX" eventType="touchUpInside" id="6uh-BJ-HYf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zyL-Kh-8ea" secondAttribute="height" multiplier="16:9" id="2oV-LP-0N6"/>
+                                    <constraint firstItem="Pmr-zv-13y" firstAttribute="top" secondItem="zyL-Kh-8ea" secondAttribute="top" constant="8" id="XQt-hG-BpY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pmr-zv-13y" secondAttribute="trailing" constant="8" id="vRi-WD-fQq"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vdd-8b-Nb9">
@@ -3024,6 +3056,7 @@
                     <connections>
                         <outlet property="acceptButton" destination="Ntp-ky-ZtD" id="UHW-cy-VlR"/>
                         <outlet property="cancelButton" destination="m2b-TE-wI7" id="cib-ZC-phc"/>
+                        <outlet property="expandPlayerButton" destination="Pmr-zv-13y" id="iBX-d9-dle"/>
                         <outlet property="playerView" destination="zyL-Kh-8ea" id="pCU-Z1-Kgz"/>
                         <outlet property="splitRangeSlider" destination="HJR-Cm-1eK" id="JqY-zc-SzS"/>
                         <outlet property="splitYourClipLabel" destination="w85-c7-77j" id="beU-5E-XG9"/>

@@ -50,6 +50,7 @@ class SplitPresenter: NSObject,SplitPresenterInterface,SplitInteractorDelegate {
     func viewDidLoad() {
         
         wireframe?.presentPlayerInterface()
+        controller?.bringToFrontExpandPlayerButton()
         
         interactor?.getVideoParams()
         
@@ -84,6 +85,14 @@ class SplitPresenter: NSObject,SplitPresenterInterface,SplitInteractorDelegate {
     func updateSplitValueByPlayer(value: Float) {
         isMovingByPlayer = true
         self.splitValue = value * maximumValue
+    }
+    
+    func expandPlayer() {
+        wireframe?.presentExpandPlayer()
+    }
+    
+    func updatePlayerLayer() {
+        playerPresenter!.layoutSubViews()
     }
     
     //MARK: Interactor Delegate

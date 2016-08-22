@@ -43,7 +43,8 @@ class DuplicatePresenter: NSObject,DuplicatePresenterInterface,DuplicateInteract
         numberOfDuplicates = 2
 
         wireframe?.presentPlayerInterface()
-        
+        controller?.bringToFrontExpandPlayerButton()
+
         interactor?.getThumbnail((controller?.getThumbSize())!)
         
         if let index = videoSelectedIndex {
@@ -76,6 +77,14 @@ class DuplicatePresenter: NSObject,DuplicatePresenterInterface,DuplicateInteract
     
     func pushPlusClips() {
         numberOfDuplicates += 1
+    }
+    
+    func expandPlayer() {
+        wireframe?.presentExpandPlayer()
+    }
+    
+    func updatePlayerLayer() {
+        playerPresenter!.layoutSubViews()
     }
     
     //MARK: Interactor Delegate

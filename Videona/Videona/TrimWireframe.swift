@@ -16,7 +16,8 @@ class TrimWireframe : NSObject {
     var trimViewController : TrimViewController?
     var trimPresenter : TrimPresenter?
     var playerWireframe: PlayerWireframe?
-    
+    var fullScreenPlayerWireframe: FullScreenPlayerWireframe?
+
     var prevController:UIViewController?
     
     func presentTrimInterfaceFromWindow(window: UIWindow) {
@@ -58,5 +59,14 @@ class TrimWireframe : NSObject {
     
     func goPrevController(){
         trimViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func presentExpandPlayer(){
+        if let controller = trimViewController{
+            if let player = playerWireframe?.presentedView{
+                fullScreenPlayerWireframe?.presentFullScreenPlayerFromViewController(controller,
+                                                                                     playerView:player)
+            }
+        }
     }
 }

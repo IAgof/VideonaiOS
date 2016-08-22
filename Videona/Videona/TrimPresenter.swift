@@ -74,6 +74,7 @@ TrimInteractorDelegate {
     //MARK: - Interface
     func viewDidLoad() {
         wireframe?.presentPlayerInterface()
+        controller?.bringToFrontExpandPlayerButton()
 
         interactor?.getVideoParams()
         
@@ -119,6 +120,13 @@ TrimInteractorDelegate {
         self.maximumValue = value
     }
     
+    func expandPlayer() {
+        wireframe?.presentExpandPlayer()
+    }
+    
+    func updatePlayerLayer() {
+        playerPresenter!.layoutSubViews()
+    }
     //MARK: - Inner functions
     func updatePlayer(){
         interactor?.setUpComposition(videoSelectedIndex!    ,

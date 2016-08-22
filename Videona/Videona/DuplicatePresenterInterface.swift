@@ -17,6 +17,8 @@ protocol DuplicatePresenterInterface {
     
     func pushLessClips()
     func pushPlusClips()
+    func expandPlayer()
+    func updatePlayerLayer()
 }
 
 protocol DuplicatePresenterDelegate {

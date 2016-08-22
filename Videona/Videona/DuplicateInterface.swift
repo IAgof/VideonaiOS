@@ -13,4 +13,6 @@ protocol DuplicateInterface{
     func getThumbSize()->CGRect
     func showMinusButton()
     func hideMinusButton()
+    func bringToFrontExpandPlayerButton()
+    func cameFromFullScreenPlayer(playerView:PlayerView)
 }

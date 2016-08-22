@@ -25,7 +25,8 @@ class DuplicateViewController: VideonaController,DuplicateInterface,DuplicatePre
 
     @IBOutlet weak var thumbRight: UIImageView!
     @IBOutlet weak var thumbLeft: UIImageView!
-    
+    @IBOutlet weak var expandPlayerButton: UIButton!
+
     //MARK: - LifeCycle
     override func viewDidLoad() {
         eventHandler?.viewDidLoad()
@@ -57,6 +58,10 @@ class DuplicateViewController: VideonaController,DuplicateInterface,DuplicatePre
         eventHandler?.pushLessClips()
     }
     
+    @IBAction func pushExpandButton(sender: AnyObject) {
+        eventHandler?.expandPlayer()
+    }
+    
     //MARK: - Interface
     func getThumbSize()->CGRect{
         return thumbLeft.frame
@@ -68,6 +73,16 @@ class DuplicateViewController: VideonaController,DuplicateInterface,DuplicatePre
     
     func showMinusButton(){
         minusButton.hidden = false
+    }
+    
+    func bringToFrontExpandPlayerButton(){
+        self.playerView.bringSubviewToFront(expandPlayerButton)
+    }
+    
+    func cameFromFullScreenPlayer(playerView:PlayerView){
+        self.playerView.addSubview(playerView)
+        self.playerView.bringSubviewToFront(expandPlayerButton)
+        eventHandler?.updatePlayerLayer()
     }
     
     //MARK: - Presenter delegate

@@ -16,7 +16,8 @@ class DuplicateWireframe : NSObject {
     var duplicateViewController : DuplicateViewController?
     var duplicatePresenter : DuplicatePresenter?
     var playerWireframe: PlayerWireframe?
-    
+    var fullScreenPlayerWireframe: FullScreenPlayerWireframe?
+
     var prevController:UIViewController?
     
     func presentDuplicateInterfaceFromWindow(window: UIWindow) {
@@ -59,7 +60,17 @@ class DuplicateWireframe : NSObject {
     func goPrevController(){
         duplicateViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
+   
+    func presentExpandPlayer(){
+        if let controller = duplicateViewController{
+            if let player = playerWireframe?.presentedView{
+                fullScreenPlayerWireframe?.presentFullScreenPlayerFromViewController(controller,
+                                                                                     playerView:player)
+            }
+        }
+    }
 }
+
 //Force Portrait to iPad
 extension DuplicateViewController{
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {

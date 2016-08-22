@@ -18,7 +18,8 @@ class SplitWireframe : NSObject {
     var splitViewController : SplitViewController?
     var splitPresenter : SplitPresenter?
     var playerWireframe: PlayerWireframe?
-    
+    var fullScreenPlayerWireframe: FullScreenPlayerWireframe?
+
     var prevController:UIViewController?
     
     func presentSplitInterfaceFromWindow(window: UIWindow) {
@@ -60,5 +61,14 @@ class SplitWireframe : NSObject {
     
     func goPrevController(){
         splitViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func presentExpandPlayer(){
+        if let controller = splitViewController{
+            if let player = playerWireframe?.presentedView{
+                fullScreenPlayerWireframe?.presentFullScreenPlayerFromViewController(controller,
+                                                                                     playerView:player)
+            }
+        }
     }
 }
