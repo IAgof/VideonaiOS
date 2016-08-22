@@ -42,14 +42,13 @@ class FullScreenPlayerWireframe : NSObject {
         return storyboard
     }
 
-//    func presentPlayerInterface() {
-//        playerWireframe?.presentPlayerInterfaceFromViewController(fullScreenPlayerViewController!)
-//    }
-
     func goPrevController(playerView:PlayerView){
         if prevController!.isKindOfClass(ShareViewController) {
-            let shareController = prevController as! ShareViewController
-            shareController.cameFromFullScreenPlayer(playerView)
+            let controller = prevController as! ShareViewController
+            controller.cameFromFullScreenPlayer(playerView)
+        }else if prevController!.isKindOfClass(EditorViewController) {
+            let controller = prevController as! EditorViewController
+            controller.cameFromFullScreenPlayer(playerView)
         }
         fullScreenPlayerViewController?.dismissViewControllerAnimated(true, completion: nil)
     }

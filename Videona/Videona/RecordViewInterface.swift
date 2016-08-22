@@ -93,4 +93,5 @@ protocol RecordViewInterface:VideonaControllerInterface{
     
     func getRecordButtonSize()->CGFloat
 
+    func showFocusAtPoint(point:CGPoint)
 }

@@ -15,6 +15,7 @@ protocol CameraInteractorDelegate {
     func flashOff()
     func cameraFront()
     func cameraRear()
+    func showFocus(center:CGPoint)
 }
 
 protocol CameraInteractorInterface {

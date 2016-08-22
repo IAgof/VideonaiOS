@@ -28,6 +28,7 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     @IBOutlet weak var chronometrerContainer: UIView!
     @IBOutlet weak var thumbnailView: UIView!
     @IBOutlet weak var thumbnailNumberClips: UILabel!
+    @IBOutlet weak var focusImageView: UIImageView!
     
     var alertController:UIAlertController?
     var tapDisplay:UIGestureRecognizer?
@@ -273,6 +274,16 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     
     func getRecordButtonSize()->CGFloat{
         return self.recordButton.frame.size.height
+    }
+    
+    func showFocusAtPoint(point: CGPoint) {
+        
+        focusImageView.center = point
+        focusImageView.hidden = false
+        
+        Utils.sharedInstance.delay(0.5, closure: {
+            self.focusImageView.hidden = true
+        })
     }
     
     //MARK: - Landscape Orientation

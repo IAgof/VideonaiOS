@@ -929,10 +929,18 @@
                                             </mask>
                                         </variation>
                                     </view>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="activity_record_icon_focus_focused" translatesAutoresizingMaskIntoConstraints="NO" id="uOa-8R-Lrp">
+                                        <rect key="frame" x="266" y="266" width="68" height="68"/>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="80" y="544" width="240" height="128"/>
+                                        </variation>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="uOa-8R-Lrp" firstAttribute="centerY" secondItem="W5f-W9-LcA" secondAttribute="centerY" id="Qs0-ir-Jrm"/>
                                     <constraint firstItem="635-Ax-Ugk" firstAttribute="top" secondItem="W5f-W9-LcA" secondAttribute="top" constant="21" id="iEC-bc-pyz"/>
+                                    <constraint firstItem="uOa-8R-Lrp" firstAttribute="centerX" secondItem="W5f-W9-LcA" secondAttribute="centerX" id="jNO-eu-3tA"/>
                                     <constraint firstAttribute="trailing" secondItem="635-Ax-Ugk" secondAttribute="trailing" constant="8" id="yAR-DR-tGL"/>
                                 </constraints>
                             </view>
@@ -950,7 +958,7 @@
                                 </connections>
                             </button>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="common_icon_spin" translatesAutoresizingMaskIntoConstraints="NO" id="ZbW-HU-PsB">
-                                <rect key="frame" x="266" y="266" width="68" height="68"/>
+                                <rect key="frame" x="249" y="249" width="103" height="103"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEm-SA-vNt">
                                 <rect key="frame" x="542" y="319" width="47" height="47"/>
@@ -1140,6 +1148,7 @@
                         <outlet property="chronometrer" destination="DuL-YK-lI5" id="cp1-I8-3gz"/>
                         <outlet property="chronometrerContainer" destination="635-Ax-Ugk" id="chG-R9-Rrc"/>
                         <outlet property="flashButton" destination="AjE-cu-Yc0" id="2eQ-Sj-Rk3"/>
+                        <outlet property="focusImageView" destination="uOa-8R-Lrp" id="Iie-Wt-OiU"/>
                         <outlet property="overlayFilterButton" destination="RPx-WN-iT2" id="CL1-nD-UrQ"/>
                         <outlet property="recordButton" destination="pEm-SA-vNt" id="VmT-Sm-qpk"/>
                         <outlet property="settingsButton" destination="Z23-qB-2qp" id="y3z-dq-dDx"/>
@@ -1874,8 +1883,19 @@
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KNK-nb-4UT" customClass="PlayerView" customModule="Videona" customModuleProvider="target">
                                 <rect key="frame" x="101" y="61" width="240" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3De-BU-PHM">
+                                        <rect key="frame" x="208" y="8" width="24" height="24"/>
+                                        <state key="normal" image="common_icon_expand"/>
+                                        <connections>
+                                            <action selector="pushExpandButton:" destination="otL-uI-YQv" eventType="touchUpInside" id="Uhh-4h-W29"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="3De-BU-PHM" secondAttribute="trailing" constant="8" id="791-X7-zSc"/>
                                     <constraint firstAttribute="width" secondItem="KNK-nb-4UT" secondAttribute="height" multiplier="16:9" id="Kzq-6g-6wO"/>
+                                    <constraint firstItem="3De-BU-PHM" firstAttribute="top" secondItem="KNK-nb-4UT" secondAttribute="top" constant="8" id="kG5-R1-4ah"/>
                                 </constraints>
                                 <variation key="heightClass=compact">
                                     <mask key="constraints">
@@ -2044,6 +2064,7 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="expandPlayerButton" destination="3De-BU-PHM" id="aJx-hv-kk2"/>
                         <outlet property="playerView" destination="KNK-nb-4UT" id="6xY-ux-4Ob"/>
                         <outlet property="thumbnailClipsCollectionView" destination="ywJ-Vq-1Hz" id="C0a-aI-bdF"/>
                     </connections>
@@ -2148,8 +2169,9 @@
                                         <variation key="heightClass=compact" misplaced="YES">
                                             <rect key="frame" x="102" y="83" width="46" height="21"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular">
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                             <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                            <rect key="frame" x="343" y="102" width="75" height="33"/>
                                         </variation>
                                     </label>
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P9t-Ki-uxo" customClass="NMRangeSlider">
@@ -2180,8 +2202,9 @@
                                         <variation key="heightClass=compact" misplaced="YES">
                                             <rect key="frame" x="35" y="49" width="181" height="21"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular">
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <rect key="frame" x="224" y="53" width="313" height="36"/>
                                         </variation>
                                     </label>
                                 </subviews>
@@ -2427,9 +2450,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkA-qE-RvX">
                                 <rect key="frame" x="553" y="557" width="27" height="23"/>
                                 <state key="normal" image="common_icon_edit_accept_normal"/>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="753" y="760" width="27" height="20"/>
-                                </variation>
                                 <connections>
                                     <action selector="pushAcceptButton:" destination="vla-eH-4z5" eventType="touchUpInside" id="4mF-dt-aGO"/>
                                     <action selector="pushAcceptButton:" destination="mnX-hg-09g" eventType="touchUpInside" id="AcS-h3-MEb"/>
@@ -2459,24 +2479,21 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="fcH-tc-Sgc" secondAttribute="height" multiplier="169:95" id="nyY-xV-rX9"/>
                                         </constraints>
-                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="710" y="148" width="0.0" height="1"/>
-                                        </variation>
                                     </view>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2AU-gf-ROR">
-                                        <rect key="frame" x="168" y="243" width="33" height="33"/>
+                                        <rect key="frame" x="115" y="352" width="43" height="44"/>
                                         <state key="normal" image="button_edit_decrement_clips_normal"/>
                                         <state key="selected" image="button_edit_decrement_clips_pressed"/>
                                         <state key="highlighted" image="button_edit_decrement_clips_pressed"/>
                                         <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="318" y="254" width="33" height="33"/>
+                                            <rect key="frame" x="300" y="247" width="43" height="44"/>
                                         </variation>
                                         <connections>
                                             <action selector="pushLessClips:" destination="vla-eH-4z5" eventType="touchUpInside" id="4gJ-42-gYh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hoz-MY-KZZ">
-                                        <rect key="frame" x="209" y="239" width="41" height="41"/>
+                                        <rect key="frame" x="174" y="347" width="53" height="53"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="hoz-MY-KZZ" secondAttribute="height" multiplier="1:1" id="hRW-bE-qdy"/>
                                         </constraints>
@@ -2488,7 +2505,7 @@
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="359" y="250" width="41" height="41"/>
+                                            <rect key="frame" x="359" y="249" width="41" height="40"/>
                                             <mask key="constraints">
                                                 <include reference="hRW-bE-qdy"/>
                                             </mask>
@@ -2519,9 +2536,8 @@
                                         <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="217" y="170" width="19" height="22"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                        <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                            <rect key="frame" x="355" y="129" width="50" height="42"/>
                                         </variation>
                                     </label>
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AqI-Md-P87" customClass="UIImageView">
@@ -2530,9 +2546,6 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="AqI-Md-P87" secondAttribute="height" multiplier="167:94" id="aAa-MQ-wl2"/>
                                         </constraints>
-                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="50" y="81" width="237" height="134"/>
-                                        </variation>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -2610,8 +2623,7 @@
                                         <include reference="g5V-Oq-Jmf"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="20" y="458" width="760" height="296"/>
+                                <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
                                         <include reference="Mwc-oX-2Mz"/>
                                         <include reference="rur-Dc-TGa"/>
@@ -2638,6 +2650,7 @@
                             <constraint firstItem="es6-ki-Z0W" firstAttribute="leading" secondItem="Aby-xi-ydN" secondAttribute="leadingMargin" constant="90" id="OKI-lb-yOp">
                                 <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="EUy-xa-YzN" firstAttribute="top" secondItem="9Q9-gh-xWj" secondAttribute="bottom" constant="46" id="PtF-GZ-BFV"/>
                             <constraint firstItem="es6-ki-Z0W" firstAttribute="top" secondItem="cFY-M4-LFM" secondAttribute="bottom" id="QGk-n9-rdv">
                                 <variation key="heightClass=compact" constant="8"/>
                             </constraint>
@@ -2688,6 +2701,7 @@
                                 <exclude reference="ihI-bd-OZX"/>
                                 <exclude reference="mXK-cZ-Y58"/>
                                 <exclude reference="zcs-io-MFs"/>
+                                <exclude reference="PtF-GZ-BFV"/>
                                 <exclude reference="Inq-Sk-0xS"/>
                                 <exclude reference="iKc-tO-p24"/>
                                 <exclude reference="y9c-ex-BG5"/>
@@ -2723,7 +2737,8 @@
                                 <include reference="a5O-rb-bbv"/>
                                 <include reference="ihI-bd-OZX"/>
                                 <include reference="mXK-cZ-Y58"/>
-                                <include reference="y9c-ex-BG5"/>
+                                <include reference="PtF-GZ-BFV"/>
+                                <exclude reference="y9c-ex-BG5"/>
                             </mask>
                         </variation>
                     </view>
@@ -2834,8 +2849,9 @@
                                         <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="117" y="91" width="168" height="21"/>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular">
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <rect key="frame" x="234" y="61" width="293" height="36"/>
                                         </variation>
                                     </label>
                                 </subviews>
@@ -3028,8 +3044,8 @@
         <image name="activity_edit_clip_normal" width="30" height="30"/>
         <image name="activity_edit_clip_pressed" width="30" height="30"/>
         <image name="activity_edit_clip_record" width="40" height="25"/>
-        <image name="activity_edit_clip_trim_normal" width="39" height="36"/>
-        <image name="activity_edit_clip_trim_pressed" width="39" height="36"/>
+        <image name="activity_edit_clip_trim_normal" width="40" height="30"/>
+        <image name="activity_edit_clip_trim_pressed" width="40" height="30"/>
         <image name="activity_edit_menu_normal" width="6" height="23"/>
         <image name="activity_edit_music_normal" width="27" height="30"/>
         <image name="activity_edit_music_pressed" width="27" height="30"/>
@@ -3044,6 +3060,7 @@
         <image name="activity_record_flash_camera_pressed" width="20" height="35"/>
         <image name="activity_record_fx_pressed" width="34" height="35"/>
         <image name="activity_record_icon_flash_camera_normal" width="20" height="35"/>
+        <image name="activity_record_icon_focus_focused" width="68" height="68"/>
         <image name="activity_record_icon_rec_circle" width="110" height="153"/>
         <image name="activity_record_icon_rec_normal" width="47" height="47"/>
         <image name="activity_record_icon_stop_normal" width="47" height="47"/>
@@ -3051,15 +3068,15 @@
         <image name="activity_record_share_normal" width="27" height="29"/>
         <image name="activity_record_share_pressed" width="27" height="29"/>
         <image name="button_edit_add_video" width="59" height="62"/>
-        <image name="button_edit_decrement_clips_normal" width="33" height="33"/>
-        <image name="button_edit_decrement_clips_pressed" width="33" height="33"/>
-        <image name="button_edit_increment_clips_normal" width="41" height="41"/>
-        <image name="button_edit_increment_clips_pressed" width="41" height="41"/>
+        <image name="button_edit_decrement_clips_normal" width="43" height="44"/>
+        <image name="button_edit_decrement_clips_pressed" width="43" height="44"/>
+        <image name="button_edit_increment_clips_normal" width="53" height="53"/>
+        <image name="button_edit_increment_clips_pressed" width="53" height="53"/>
         <image name="common_icon_edit_accept_normal" width="27" height="23"/>
         <image name="common_icon_edit_cancel_normal" width="24" height="24"/>
         <image name="common_icon_expand" width="24" height="24"/>
         <image name="common_icon_shrink" width="24" height="24"/>
-        <image name="common_icon_spin" width="68" height="68"/>
+        <image name="common_icon_spin" width="103" height="103"/>
         <image name="imagebutton_music_background_electronic" width="282" height="93"/>
         <image name="intro_horizontal_1.jpg" width="2208" height="1242"/>
         <image name="intro_horizontal_2.jpg" width="2208" height="1242"/>

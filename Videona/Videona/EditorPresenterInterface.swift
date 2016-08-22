@@ -27,4 +27,8 @@ protocol EditorPresenterInterface {
     func saveVideoToDocuments(url:NSURL)
     
     func pickerControllerDidCancel()
+   
+    func expandPlayer()
+    func updatePlayerLayer()
+
 }

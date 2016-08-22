@@ -25,4 +25,7 @@ protocol EditorViewInterface {
     
     func createAlertWaitToImport()
     func dissmissAlertController()
+    func bringToFrontExpandPlayerButton()
+    func cameFromFullScreenPlayer(playerView:PlayerView)
+
 }

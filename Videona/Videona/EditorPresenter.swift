@@ -38,7 +38,8 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
         controller?.setUpGestureRecognizer()
         
         wireframe?.presentPlayerInterface()
-        
+        controller?.bringToFrontExpandPlayerButton()
+
         self.setVideoDataToView()
     }
     
@@ -106,6 +107,14 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
     
     func pushAddVideoHandler() {        
         controller?.presentPickerController()
+    }
+    
+    func expandPlayer() {
+        wireframe?.presentExpandPlayer()
+    }
+    
+    func updatePlayerLayer() {
+        playerPresenter!.layoutSubViews()
     }
     
     func checkIfSelectedCellExits()->Bool{

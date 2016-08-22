@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "iphone",
-      "filename" : "activity_edit_clip_trim_normal@1x.png",
+      "filename" : "activity_edit_clip_trim_normal.png",
       "scale" : "1x"
     },
     {
@@ -17,12 +17,12 @@
     },
     {
       "idiom" : "ipad",
-      "filename" : "activity_edit_clip_trim_normal@2x-1.png",
+      "filename" : "activity_edit_clip_trim_normal~ipad.png",
       "scale" : "1x"
     },
     {
       "idiom" : "ipad",
-      "filename" : "activity_edit_clip_trim_normal@3x-1.png",
+      "filename" : "activity_edit_clip_trim_normal@2x~ipad.png",
       "scale" : "2x"
     }
   ],

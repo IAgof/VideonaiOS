@@ -244,6 +244,8 @@ class CameraInteractor:CameraRecorderDelegate,
         if (tapDisplay.state == UIGestureRecognizerState.Recognized) {
             var location = tapDisplay.locationInView(self.displayView)
             
+            cameraDelegate.showFocus(location)
+            
             let device = videoCamera.inputCamera
             do {
                 try device.lockForConfiguration()

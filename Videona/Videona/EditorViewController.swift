@@ -37,6 +37,7 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
     //MARK: - Outlets
     @IBOutlet weak var thumbnailClipsCollectionView: UICollectionView!
     @IBOutlet weak var playerView: UIView!
+    @IBOutlet weak var expandPlayerButton: UIButton!
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -139,6 +140,10 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
         eventHandler?.pushAddVideoHandler()
     }
     
+    @IBAction func pushExpandButton(sender: AnyObject) {
+        eventHandler?.expandPlayer()
+    }
+    
     //MARK: - Interface
     func deselectCell(indexPath:NSIndexPath) {
         if (thumbnailClipsCollectionView.cellForItemAtIndexPath(indexPath) != nil){
@@ -229,6 +234,15 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
     
     func dissmissAlertController(){
         alertController?.dismissViewControllerAnimated(true, completion: {})
+    }
+    func bringToFrontExpandPlayerButton(){
+        self.playerView.bringSubviewToFront(expandPlayerButton)
+    }
+    
+    func cameFromFullScreenPlayer(playerView:PlayerView){
+        self.playerView.addSubview(playerView)
+        self.playerView.bringSubviewToFront(expandPlayerButton)
+        eventHandler?.updatePlayerLayer()
     }
     
     //MARK: - Drag and Drop handler

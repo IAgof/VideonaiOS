@@ -23,6 +23,7 @@ class RecordPresenter: NSObject
     var recordWireframe: RecordWireframe?
     var settingsWireframe: SettingsWireframe?
     var shareWireframe: ShareWireframe?
+    
     //MARK: - Constants
     var colorFilterViewIsShowin = false
     var shaderFilterViewIsShowin = false
@@ -412,6 +413,10 @@ class RecordPresenter: NSObject
         controller?.hideChronometer()
         
         timerInteractor?.stop()
+    }
+    
+    func showFocus(center: CGPoint) {
+        controller?.showFocusAtPoint(center)
     }
     
     //MARK: - Timer delegate

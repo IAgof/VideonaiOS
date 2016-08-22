@@ -162,6 +162,7 @@ class AppDependencies {
         editorWireframe.trimWireframe = trimWireframe
         editorWireframe.duplicateWireframe = duplicateWireframe
         editorWireframe.splitWireframe = splitWireframe
+        editorWireframe.fullScreenPlayerWireframe = fullScreenPlayerWireframe
         
         editorInteractor.delegate = editorPresenter
         

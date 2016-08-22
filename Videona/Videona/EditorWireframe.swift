@@ -22,7 +22,7 @@ class EditorWireframe : NSObject {
     var trimWireframe:TrimWireframe?
     var duplicateWireframe:DuplicateWireframe?
     var splitWireframe:SplitWireframe?
-    
+
     func presentEditorInterfaceFromWindow(window: UIWindow) {
         let viewController = editorViewControllerFromStoryboard()
         
@@ -70,5 +70,14 @@ class EditorWireframe : NSObject {
     func presentSplitController(videoSelected:Int){
         splitWireframe?.presentSplitInterfaceFromViewController(editorViewController!,
                                                                 videoSelected: videoSelected)
+    }
+    
+    func presentExpandPlayer(){
+        if let controller = editorViewController{
+            if let player = playerWireframe?.presentedView{
+                fullScreenPlayerWireframe?.presentFullScreenPlayerFromViewController(controller,
+                                                                                     playerView:player)
+            }
+        }
     }
 }
