@@ -104,7 +104,7 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
         }
     }
     
-    func pushAddVideoHandler() {
+    func pushAddVideoHandler() {        
         controller?.presentPickerController()
     }
     
@@ -153,6 +153,10 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
         self.reloadPositionNumberAfterMovement()
     }
     
+    func pickerControllerDidCancel() {
+        controller?.dissmissAlertController()
+    }
+    
     //MARK: - Inner functions
     func moveClipToPosition(sourcePosition:Int,
                             destionationPosition:Int){
@@ -196,4 +200,9 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
         self.stopList = list
     }
     
+    func updateViewList() {
+        controller?.dissmissAlertController()
+        
+        self.loadVideoListFromProject()
+    }
 }

@@ -25,4 +25,6 @@ protocol EditorPresenterInterface {
     func seekBarUpdateHandler(value: Float)
     func pushAddVideoHandler()
     func saveVideoToDocuments(url:NSURL)
+    
+    func pickerControllerDidCancel()
 }

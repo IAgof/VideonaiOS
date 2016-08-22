@@ -231,6 +231,7 @@
 		A9E066E91CE4C85900D4E11D /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9E066E81CE4C85900D4E11D /* FilterCell.xib */; };
 		A9E066EB1CE4E13800D4E11D /* ShareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9E066EA1CE4E13800D4E11D /* ShareCell.xib */; };
 		A9E066ED1CE4E4E200D4E11D /* ShareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E066EC1CE4E4E200D4E11D /* ShareCell.swift */; };
+		A9E436181D6AFD910033DBDA /* GetFromPhotosToDocumentsWithWatermark.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E436171D6AFD910033DBDA /* GetFromPhotosToDocumentsWithWatermark.swift */; };
 		A9E5ED0F1D21631D002258D9 /* DetailTextInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5ED0E1D21631D002258D9 /* DetailTextInteractorTest.swift */; };
 		A9E5ED131D216ABB002258D9 /* ThumbnailInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5ED121D216ABB002258D9 /* ThumbnailInteractorTest.swift */; };
 		A9E5ED151D216C30002258D9 /* FilterListInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5ED141D216C30002258D9 /* FilterListInteractorTest.swift */; };
@@ -539,6 +540,7 @@
 		A9E066EC1CE4E4E200D4E11D /* ShareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareCell.swift; sourceTree = "<group>"; };
 		A9E39FBC1D264EB500CCB8C8 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/VideonaFooterView.xib; sourceTree = "<group>"; };
 		A9E39FBD1D264EC700CCB8C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/VideonaFooterView.xib; sourceTree = "<group>"; };
+		A9E436171D6AFD910033DBDA /* GetFromPhotosToDocumentsWithWatermark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFromPhotosToDocumentsWithWatermark.swift; sourceTree = "<group>"; };
 		A9E5ED0E1D21631D002258D9 /* DetailTextInteractorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTextInteractorTest.swift; sourceTree = "<group>"; };
 		A9E5ED121D216ABB002258D9 /* ThumbnailInteractorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailInteractorTest.swift; sourceTree = "<group>"; };
 		A9E5ED141D216C30002258D9 /* FilterListInteractorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListInteractorTest.swift; sourceTree = "<group>"; };
@@ -1115,6 +1117,7 @@
 			isa = PBXGroup;
 			children = (
 				A95B24491CD8890A00F78AAF /* VideonaTests.swift */,
+				A9E436171D6AFD910033DBDA /* GetFromPhotosToDocumentsWithWatermark.swift */,
 				A967F4891D586CCB00BF4DB6 /* SplitVideoTests.swift */,
 				A967F48D1D588A4000BF4DB6 /* TrimVideoTests.swift */,
 				A9E5ED0E1D21631D002258D9 /* DetailTextInteractorTest.swift */,
@@ -2453,6 +2456,7 @@
 			files = (
 				A9E5ED0F1D21631D002258D9 /* DetailTextInteractorTest.swift in Sources */,
 				A95B244A1CD8890A00F78AAF /* VideonaTests.swift in Sources */,
+				A9E436181D6AFD910033DBDA /* GetFromPhotosToDocumentsWithWatermark.swift in Sources */,
 				A9E5ED151D216C30002258D9 /* FilterListInteractorTest.swift in Sources */,
 				A967F48A1D586CCB00BF4DB6 /* SplitVideoTests.swift in Sources */,
 				A9E5ED131D216ABB002258D9 /* ThumbnailInteractorTest.swift in Sources */,

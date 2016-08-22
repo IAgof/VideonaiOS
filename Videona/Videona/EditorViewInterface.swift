@@ -22,4 +22,7 @@ protocol EditorViewInterface {
     func showAlertRemove(title:String,
                          message:String,
                          yesString:String)
+    
+    func createAlertWaitToImport()
+    func dissmissAlertController()
 }

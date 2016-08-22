@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "iphone",
-      "filename" : "share_icon_facebook_normal@1x.png",
+      "filename" : "share_icon_facebook_normal.png",
       "scale" : "1x"
     },
     {
       "idiom" : "iphone",
-      "filename" : "share_icon_facebook_normal@2-1.png",
+      "filename" : "share_icon_facebook_normal@2x.png",
       "scale" : "2x"
     },
     {

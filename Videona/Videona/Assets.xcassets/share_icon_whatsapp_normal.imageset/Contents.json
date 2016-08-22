@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "iphone",
-      "filename" : "share_icon_whatsapp_normal@1x.png",
+      "filename" : "share_icon_whatsapp_normal.png",
       "scale" : "1x"
     },
     {
@@ -17,12 +17,12 @@
     },
     {
       "idiom" : "ipad",
-      "filename" : "share_icon_whatsapp_normal@2x-1.png",
+      "filename" : "share_icon_whatsapp_normal~ipad.png",
       "scale" : "1x"
     },
     {
       "idiom" : "ipad",
-      "filename" : "share_icon_whatsapp_normal@3x-1.png",
+      "filename" : "share_icon_whatsapp_normal@2x~ipad.png",
       "scale" : "2x"
     }
   ],

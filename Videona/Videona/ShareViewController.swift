@@ -122,9 +122,9 @@ GIDSignInUIDelegate,GIDSignInDelegate{
         Utils.sharedInstance.debugLog("Height for social = \(height)")
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad
         {
-            return height*2
+            return CGFloat(90)
         }else{
-            return height*2
+            return CGFloat(50)
         }
     }
     

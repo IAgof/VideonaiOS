@@ -32,6 +32,8 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
         }
     }
     
+    var alertController:UIAlertController?
+    
     //MARK: - Outlets
     @IBOutlet weak var thumbnailClipsCollectionView: UICollectionView!
     @IBOutlet weak var playerView: UIView!
@@ -209,6 +211,26 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
         self.presentViewController(alertController, animated: false, completion:{})
     }
     
+    func createAlertWaitToImport(){
+        let title = Utils().getStringByKeyFromEditor(EditorTextConstants.IMPORT_VIDEO_FROM_PHOTO_LIBRARY_TITLE)
+        let message = Utils().getStringByKeyFromEditor(EditorTextConstants.IMPORT_VIDEO_FROM_PHOTO_LIBRARY_MESSAGE)
+        
+        alertController = UIAlertController(title:title,message:message,preferredStyle: .Alert)
+        
+        let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
+        
+        
+        activityIndicator.center = CGPointMake(130.5, 70.0);
+        activityIndicator.startAnimating()
+        
+        alertController?.view.addSubview(activityIndicator)
+        self.presentViewController(alertController!, animated: false, completion:{})
+    }
+    
+    func dissmissAlertController(){
+        alertController?.dismissViewControllerAnimated(true, completion: {})
+    }
+    
     //MARK: - Drag and Drop handler
     func handleLongGesture(gesture: UILongPressGestureRecognizer) {
         
@@ -256,7 +278,10 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
                 if stringType == kUTTypeMovie as String {
                     let urlOfVideo = info[UIImagePickerControllerMediaURL] as? NSURL
                     if let url = urlOfVideo {
-                        
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            self.createAlertWaitToImport()
+                        })
+
                         eventHandler?.saveVideoToDocuments(url)
 
                     }
@@ -271,6 +296,8 @@ UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlow
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         picker.dismissViewControllerAnimated(true, completion: nil)
+        
+        eventHandler?.pickerControllerDidCancel()
     }
     
     func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {

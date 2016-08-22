@@ -8,3 +8,6 @@
 "yes" = "Yes";
 "remove_clip_alert_title" = "Remove clip";
 "remove_clip_alert_message" = "Are you sure to remove this clip?";
+
+"import_video_from_photo_library_title" = "Import video";
+"import_video_from_photo_library_message" = "Importing video, please wait";
