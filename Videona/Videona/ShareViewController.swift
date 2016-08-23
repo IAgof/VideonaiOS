@@ -116,7 +116,22 @@ GIDSignInUIDelegate,GIDSignInDelegate{
         
         return cell
     }
-
+    
+    func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! ShareCell
+        
+        cell.shareTitle!.textColor = VIDEONA_GREEN_UICOLOR
+        cell.shareImage!.image = listImagesPressed[indexPath.item]
+    }
+    
+    func tableView(tableView: UITableView, didUnhighlightRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! ShareCell
+        
+        cell.shareTitle!.textColor = UIColor.darkGrayColor()
+        cell.shareImage!.image = listImages[indexPath.item]
+        
+    }
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let height = listImages[indexPath.item].size.height
         Utils.sharedInstance.debugLog("Height for social = \(height)")

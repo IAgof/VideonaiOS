@@ -25,7 +25,7 @@ class SocialNetworkProvider:NSObject{
         socialNetworks.append(SocialNetwork(iconId: "share_icon_whatsapp_normal",
             iconIdPressed: "share_icon_whatsapp_pressed",
             title: "Whatsapp"))
-        socialNetworks.append(SocialNetwork(iconId: "share_icon_youtube_norma",
+        socialNetworks.append(SocialNetwork(iconId: "share_icon_youtube_normal",
             iconIdPressed: "share_icon_youtube_pressed",
             title: "Youtube"))
         
