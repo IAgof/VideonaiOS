@@ -37,9 +37,9 @@ class GetActualProjectAVCompositionUseCase: NSObject {
                 let videoAsset = AVAsset.init(URL: videoURL)
                 
                 do {
-                    let startTime = CMTimeMake(Int64(video.getStartTime() * 30), 30)
+                    let startTime = CMTimeMake(Int64(video.getStartTime() * 1000), 1000)
 
-                    let stopTime = CMTimeMake(Int64(video.getStopTime() * 30), 30)
+                    let stopTime = CMTimeMake(Int64(video.getStopTime() * 1000), 1000)
                     
                     try videoTrack.insertTimeRange(CMTimeRangeMake(startTime,  stopTime),
                                                    ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,

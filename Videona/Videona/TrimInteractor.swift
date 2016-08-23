@@ -77,8 +77,8 @@ class TrimInteractor: NSObject,TrimInteractorInterface {
         let videoAsset = AVAsset.init(URL: videoURL)
         
         do {
-            let startTime = CMTimeMake(Int64(self.startTime * 30), 30)
-            let stopTime = CMTimeMake(Int64(self.stopTime * 30), 30)
+            let startTime = CMTimeMake(Int64(self.startTime * 1000), 1000)
+            let stopTime = CMTimeMake(Int64(self.stopTime * 1000), 1000)
             
             try videoTrack.insertTimeRange(CMTimeRangeMake(startTime, stopTime),
                                            ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
