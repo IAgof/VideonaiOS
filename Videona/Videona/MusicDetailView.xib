@@ -18,12 +18,13 @@
                         <constraint firstAttribute="width" secondItem="84S-zW-oLf" secondAttribute="height" multiplier="20:15" priority="750" id="UaJ-Cx-Gf0"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fkh-td-DDL">
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fkh-td-DDL">
                     <rect key="frame" x="8" y="300" width="24" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Fkh-td-DDL" secondAttribute="height" multiplier="1:1" id="hVY-UB-kFS"/>
                     </constraints>
                     <state key="normal" image="common_icon_edit_cancel_normal"/>
+                    <state key="highlighted" image="common_icon_edit_cancel_pressed"/>
                     <connections>
                         <action selector="pushCancelButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="gZk-Nb-6Fq"/>
                     </connections>
@@ -34,6 +35,7 @@
                         <constraint firstAttribute="width" secondItem="JuB-TN-Waf" secondAttribute="height" multiplier="27:23" id="Uun-vd-0Ad"/>
                     </constraints>
                     <state key="normal" image="common_icon_edit_accept_normal"/>
+                    <state key="highlighted" image="common_icon_edit_accept_pressed"/>
                     <connections>
                         <action selector="pushAcceptButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="s2D-J0-TGZ"/>
                     </connections>
@@ -139,6 +141,8 @@
         <image name="activity_edit_clip_delete_music_normal" width="32" height="32"/>
         <image name="activity_edit_clip_delete_music_pressed" width="32" height="32"/>
         <image name="common_icon_edit_accept_normal" width="27" height="23"/>
+        <image name="common_icon_edit_accept_pressed" width="24" height="24"/>
         <image name="common_icon_edit_cancel_normal" width="24" height="24"/>
+        <image name="common_icon_edit_cancel_pressed" width="24" height="24"/>
     </resources>
 </document>
