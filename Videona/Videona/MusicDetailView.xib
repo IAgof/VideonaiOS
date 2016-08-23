@@ -43,7 +43,9 @@
                     <state key="normal" image="activity_edit_clip_delete_music_normal">
                         <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
-                    <state key="highlighted" image="common_icon_edit_delete_music_pressed"/>
+                    <state key="selected" image="activity_edit_clip_delete_music_pressed"/>
+                    <state key="highlighted" image="activity_edit_clip_delete_music_pressed"/>
+                    <state key="focused" image="activity_edit_clip_delete_music_pressed"/>
                     <variation key="heightClass=compact" misplaced="YES">
                         <rect key="frame" x="135" y="300" width="32" height="32"/>
                     </variation>
@@ -81,12 +83,16 @@
             <constraints>
                 <constraint firstItem="84S-zW-oLf" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" priority="250" constant="-20" id="1EC-g6-uJ5"/>
                 <constraint firstItem="eED-nV-dui" firstAttribute="top" secondItem="6La-Tv-Yr1" secondAttribute="bottom" constant="8" id="AWf-0M-edC"/>
-                <constraint firstItem="Fkh-td-DDL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Akw-qV-hu7"/>
+                <constraint firstItem="Fkh-td-DDL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Akw-qV-hu7">
+                    <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                </constraint>
                 <constraint firstItem="84S-zW-oLf" firstAttribute="top" secondItem="6La-Tv-Yr1" secondAttribute="bottom" constant="-39" id="Grq-Kn-grS"/>
                 <constraint firstItem="eED-nV-dui" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="Jjf-Xa-MAs">
                     <variation key="heightClass=regular-widthClass=regular" constant="60"/>
                 </constraint>
-                <constraint firstAttribute="trailing" secondItem="JuB-TN-Waf" secondAttribute="trailing" constant="8" id="KXS-kA-hsm"/>
+                <constraint firstAttribute="trailing" secondItem="JuB-TN-Waf" secondAttribute="trailing" constant="8" id="KXS-kA-hsm">
+                    <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                </constraint>
                 <constraint firstItem="PiH-7b-pqe" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="MCG-4l-g5n"/>
                 <constraint firstAttribute="bottom" secondItem="JuB-TN-Waf" secondAttribute="bottom" constant="16" id="WVl-Lu-Ca1"/>
                 <constraint firstAttribute="bottom" secondItem="Fkh-td-DDL" secondAttribute="bottom" constant="16" id="b4M-Wx-l5j"/>
@@ -131,8 +137,8 @@
     </objects>
     <resources>
         <image name="activity_edit_clip_delete_music_normal" width="32" height="32"/>
+        <image name="activity_edit_clip_delete_music_pressed" width="32" height="32"/>
         <image name="common_icon_edit_accept_normal" width="27" height="23"/>
         <image name="common_icon_edit_cancel_normal" width="24" height="24"/>
-        <image name="common_icon_edit_delete_music_pressed" width="17" height="17"/>
     </resources>
 </document>

@@ -12,7 +12,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="uwB-H5-a1f">
-                    <rect key="frame" x="35" y="0.0" width="377" height="114"/>
+                    <rect key="frame" x="43" y="0.0" width="369" height="114"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pSs-wC-Lsn">
                         <size key="itemSize" width="77" height="90"/>
@@ -22,7 +22,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbO-zX-lSq">
-                    <rect key="frame" x="0.0" y="43" width="27" height="27"/>
+                    <rect key="frame" x="0.0" y="40" width="27" height="27"/>
                     <state key="normal" image="activity_record_icon_remove_filters_normal"/>
                     <connections>
                         <action selector="pushDismissView:" destination="iN0-l3-epB" eventType="touchUpInside" id="lne-Ys-QXM"/>
@@ -31,8 +31,8 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="uwB-H5-a1f" firstAttribute="leading" secondItem="qbO-zX-lSq" secondAttribute="trailing" constant="8" id="Jye-eW-iOY"/>
-                <constraint firstItem="qbO-zX-lSq" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="V4W-46-LoX"/>
+                <constraint firstItem="uwB-H5-a1f" firstAttribute="leading" secondItem="qbO-zX-lSq" secondAttribute="trailing" constant="16" id="Jye-eW-iOY"/>
+                <constraint firstItem="qbO-zX-lSq" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-4" id="V4W-46-LoX"/>
                 <constraint firstItem="qbO-zX-lSq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XTO-XW-ogk"/>
                 <constraint firstAttribute="bottom" secondItem="uwB-H5-a1f" secondAttribute="bottom" id="eRF-P4-bL5"/>
                 <constraint firstAttribute="trailing" secondItem="uwB-H5-a1f" secondAttribute="trailing" constant="8" id="rCM-1o-V3K"/>

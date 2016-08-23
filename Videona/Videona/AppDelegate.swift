@@ -56,6 +56,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             trackCreatedSuperProperty();
             trackAppStartupProperties(true);
             
+            self.configureQualityOnFirstIteration()
+            
             appDependencies.installIntroToRootViewControllerIntoWindow(window!)
         } else if previousVersion == currentAppVersion {
             // same version
@@ -87,6 +89,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         }
     }
     
+    func configureQualityOnFirstIteration(){
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        defaults.setObject(Utils().getStringByKeyFromSettings("high_quality_name"), forKey: SettingsConstants().SETTINGS_QUALITY)
+    }
     
     func configureGoogleSignIn() {
         // Initialize sign-in
