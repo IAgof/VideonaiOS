@@ -148,9 +148,13 @@ class PlayerView: UIView,PlayerInterface {
     
     func sliderEndedTracking(){
         let videoDuration = CMTimeGetSeconds(player!.currentItem!.duration)
-        let elapsedTime: Float64 = videoDuration * Float64(seekSlider.value)
+        let elapsedTime: Int64 = Int64(videoDuration * 1000 * Float64(seekSlider.value))
         
-        player!.seekToTime(CMTimeMakeWithSeconds(elapsedTime, 10)) { (completed: Bool) -> Void in
+        let timeToGo = CMTimeMake(elapsedTime, 1000)
+        let tolerance = CMTimeMake(1, 100)
+        
+        player?.seekToTime(timeToGo, toleranceBefore: tolerance, toleranceAfter: tolerance, completionHandler: {
+            completed in
             if (self.playerRateBeforeSeek > 0) {
                 self.player!.play()
             }
@@ -158,7 +162,7 @@ class PlayerView: UIView,PlayerInterface {
             if completed{
                 self.delegate?.seekBarUpdate(Float(self.seekSlider.value))
             }
-        }
+        })
     }
     
     func sliderValueChanged(){
@@ -198,14 +202,15 @@ class PlayerView: UIView,PlayerInterface {
     }
     
     func seekToTime(time: Float) {
-        Utils.sharedInstance.debugLog("Seek to time manually")
+        Utils.sharedInstance.debugLog("Seek to time manually to --\(time)")
         seekSlider.value = time
         let videoDuration = CMTimeGetSeconds(player!.currentItem!.duration)
-        let elapsedTime: Float64 = videoDuration * Float64(seekSlider.value)
+        let elapsedTime: Int64 = Int64(videoDuration * 1000 * Float64(seekSlider.value))
         
-        player!.seekToTime(CMTimeMakeWithSeconds(elapsedTime, 10)) { (completed: Bool) -> Void in
-
-        }
+        let timeToGo = CMTimeMake(elapsedTime, 1000)
+        let tolerance = CMTimeMake(1, 100)
+        player?.seekToTime(timeToGo, toleranceBefore: tolerance, toleranceAfter: tolerance)
+        
     }
     
 }

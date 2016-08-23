@@ -26,9 +26,15 @@ class TrimInteractor: NSObject,TrimInteractorInterface {
     func getVideoParams() {
         let video = Project.sharedInstance.getVideoList()[videoPosition!]
 
-        delegate?.setLowerValue(Float(video.getStartTime()))
-        delegate?.setUpperValue(Float(video.getStopTime()))
+        startTime = Float(video.getStartTime())
+        stopTime = Float(video.getStopTime())
+        
+        delegate?.setLowerValue(startTime)
+        delegate?.setUpperValue(stopTime)
         delegate?.setMaximumValue(Float(video.getDuration()))
+        
+        
+        delegate?.updateParamsFinished()
     }
     
     func setParametersOnVideoSelectedOnProjectList(startTime:Float,
@@ -52,8 +58,7 @@ class TrimInteractor: NSObject,TrimInteractorInterface {
         self.stopTime = stopTime
     }
     
-    func setUpComposition(videoSelectedIndex: Int,
-                          completion:(AVMutableComposition)->Void) {
+    func setUpComposition(completion:(AVMutableComposition)->Void) {
         var videoTotalTime:CMTime = kCMTimeZero
 
         guard let video = videoSelected else{

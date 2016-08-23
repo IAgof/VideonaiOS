@@ -27,27 +27,35 @@ TrimInteractorDelegate {
         }
     }
     
+    var lowerValueOld:Float! = -1.0
     var lowerValue:Float!{
         didSet{
             if lowerValue != nil {                
                 let text = Utils.sharedInstance.hourToString(Double(lowerValue))
                 delegate?.setMinRangeValue(text)
                 if upperValue != nil{
-                    updateVideoParams()
                     updateRangeVal()
+                    if lowerValue != lowerValueOld {
+                        lowerValueOld = lowerValue
+                        self.seekToTimeInPlayer(lowerValue)
+                    }
                 }
             }
         }
     }
     
+    var upperValueOld:Float! = -1.0
     var upperValue:Float!{
         didSet{
             if  upperValue != nil {
                 let text = Utils.sharedInstance.hourToString(Double(upperValue))
                 delegate?.setMaxRangeValue(text)
                 if  lowerValue != nil{
-                    updateVideoParams()
                     updateRangeVal()
+                    if upperValue != upperValueOld {
+                        upperValueOld = upperValue
+                        self.seekToTimeInPlayer(upperValue)
+                    }
                 }
             }
         }
@@ -63,6 +71,12 @@ TrimInteractorDelegate {
 
     func updateRangeVal(){
         rangeVal = upperValue - lowerValue
+    }
+    
+    func seekToTimeInPlayer(time:Float){
+        if maximumValue != nil {
+            self.playerPresenter?.seekToTime(time/maximumValue)
+        }
     }
     
     func updateVideoParams(){
@@ -83,8 +97,6 @@ TrimInteractorDelegate {
                 upperValue: self.upperValue,
                 maximumValue: self.maximumValue )
         })
-        
-        updatePlayer()
     }
     
     func viewWillDissappear() {
@@ -104,10 +116,12 @@ TrimInteractorDelegate {
     func pushCancelHandler() {
         wireframe?.goPrevController()
     }
+    
     func pushBack() {
         wireframe?.goPrevController()
     }
     
+    //MARK: - interactor delegate
     func setLowerValue(value: Float) {
         self.lowerValue = value
     }
@@ -120,6 +134,10 @@ TrimInteractorDelegate {
         self.maximumValue = value
     }
     
+    func updateParamsFinished() {
+        updateVideoParams()
+    }
+    
     func expandPlayer() {
         wireframe?.presentExpandPlayer()
     }
@@ -127,11 +145,22 @@ TrimInteractorDelegate {
     func updatePlayerLayer() {
         playerPresenter!.layoutSubViews()
     }
+    
+    func trimSliderEnded() {
+        updateVideoParams()
+    }
+    
+    func trimSliderBegan() {
+        interactor?.setParametersOnVideoSelected(0,
+                                                 stopTime: maximumValue)
+        updatePlayer()
+    }
+    
     //MARK: - Inner functions
     func updatePlayer(){
-        interactor?.setUpComposition(videoSelectedIndex!    ,
-                                     completion: {composition in
-                                        self.playerPresenter?.createVideoPlayer(composition)
+        interactor?.setUpComposition({composition in
+            
+            self.playerPresenter?.createVideoPlayer(composition)
         })
     }
 }

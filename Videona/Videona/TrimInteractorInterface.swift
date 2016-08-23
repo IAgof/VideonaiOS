@@ -14,7 +14,7 @@ protocol TrimInteractorInterface {
                                                    stopTime:Float)
     func setParametersOnVideoSelected(startTime:Float,
                                       stopTime:Float)
-    func setUpComposition(videoSelectedIndex: Int,completion:(AVMutableComposition)->Void)
+    func setUpComposition(completion:(AVMutableComposition)->Void)
     func setVideoPosition(position:Int)
     
     func getVideoParams()
@@ -24,4 +24,5 @@ protocol TrimInteractorDelegate {
     func setLowerValue(value:Float)
     func setUpperValue(value:Float)
     func setMaximumValue(value:Float)
+    func updateParamsFinished()
 }

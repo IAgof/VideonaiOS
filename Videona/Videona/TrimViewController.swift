@@ -30,6 +30,11 @@ class TrimViewController: VideonaController,TrimViewInterface,TrimPresenterDeleg
     //MARK: - LifeCycle
     override func viewDidLoad() {
         eventHandler?.viewDidLoad()
+        
+        trimRangeSlider.addTarget(self, action: #selector(TrimViewController.sliderBeganTracking),
+                             forControlEvents: UIControlEvents.TouchDown)
+        trimRangeSlider.addTarget(self, action: #selector(TrimViewController.sliderEndedTracking),
+                                  forControlEvents: UIControlEvents.TouchUpInside)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -46,10 +51,10 @@ class TrimViewController: VideonaController,TrimViewInterface,TrimPresenterDeleg
     }
     
     @IBAction func labelSliderChanged(sender: NMRangeSlider) {
-        
         eventHandler?.setLowerValue(trimRangeSlider.lowerValue)
         eventHandler?.setUpperValue(trimRangeSlider.upperValue)
     }
+    
     @IBAction func pushBackBarButton(sender: AnyObject) {
         eventHandler?.pushBack()
     }
@@ -111,6 +116,14 @@ class TrimViewController: VideonaController,TrimViewInterface,TrimPresenterDeleg
     
     func setTitleTrimLabel(text:String){
         self.trimTitleLabel.text = text
+    }
+    
+    //MARK: Inner functions
+    func sliderBeganTracking(){
+        eventHandler?.trimSliderBegan()
+    }
+    func sliderEndedTracking(){
+        eventHandler?.trimSliderEnded()
     }
 }
 

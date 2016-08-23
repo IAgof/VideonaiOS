@@ -3156,7 +3156,7 @@
         <image name="navigator_edit_button_pressed" width="850" height="850"/>
         <image name="navigator_game_button_normal" width="850" height="850"/>
         <image name="navigator_game_button_pressed" width="850" height="850"/>
-        <image name="navigator_record_button_normal" width="2208" height="1242"/>
+        <image name="navigator_record_button_normal" width="24" height="24"/>
         <image name="navigator_record_button_pressed" width="850" height="850"/>
         <image name="navigator_settings_button_normal" width="501" height="441"/>
         <image name="navigator_share_button_normal-1" width="850" height="850"/>
