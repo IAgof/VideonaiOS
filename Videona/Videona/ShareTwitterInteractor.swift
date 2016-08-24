@@ -17,7 +17,12 @@ class ShareTwitterInteractor: ShareSocialNetworkInteractor {
         let accountStore:ACAccountStore = ACAccountStore.init()
         let accountType:ACAccountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
         accountStore.requestAccessToAccountsWithType(accountType, options: nil) { (let granted, let error) in
-            let accounts = accountStore.accountsWithAccountType(accountType)
+            guard let accounts = accountStore.accountsWithAccountType(accountType) else{
+                let message = Utils().getStringByKeyFromShare(ShareConstants().NO_TWITTER_ACCESS)
+                Utils().debugLog(message)
+                self.setAlertCompletionMessageOnTopView(message)
+                return
+            }
             if accounts.count > 0 {//HAS ACCESS TO TWITTER
                 
                 if self.canUploadVideoToTwitter(videoURL) {
