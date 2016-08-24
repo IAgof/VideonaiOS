@@ -71,6 +71,7 @@ class CameraInteractor:CameraRecorderDelegate,
     }
     
     func stopCamera() {
+        Utils.sharedInstance.debugLog("Stop camera capture")
         videoCamera.stopCameraCapture()
     }
     

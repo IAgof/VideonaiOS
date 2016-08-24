@@ -21,7 +21,7 @@ class SplitVideoTests: XCTestCase {
         video.setPosition(0)
         
         video.setStartTime(0.0)
-        video.setStopTime(5)
+        video.setStopTime(10)
         
         AddVideoToProjectUseCase.sharedInstance.add(video, position: 0)
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -65,7 +65,7 @@ class SplitVideoTests: XCTestCase {
         setSpitVideo(splitTimeFirst,
                      videoPosition: 0)
         
-        let splitTimeSecond = 3.0
+        let splitTimeSecond = 6.0
         setSpitVideo(splitTimeSecond,
                      videoPosition: 1)
         
@@ -81,9 +81,9 @@ class SplitVideoTests: XCTestCase {
         let videoThree = videoList[2]
         
         XCTAssertEqual(videoTwo.getStartTime(), splitTimeFirst)
-        XCTAssertEqual(videoTwo.getStopTime(),splitTimeSecond)
+        XCTAssertEqual(videoTwo.getStopTime(),(splitTimeSecond + splitTimeFirst))
         
-        XCTAssertEqual(videoThree.getStartTime(), splitTimeSecond)
-        XCTAssertNotEqual(videoThree.getStopTime(),splitTimeFirst)
+        XCTAssertEqual(videoThree.getStartTime(), (splitTimeSecond + splitTimeFirst))
+        XCTAssertNotEqual(videoThree.getStopTime(),splitTimeSecond)
     }
 }

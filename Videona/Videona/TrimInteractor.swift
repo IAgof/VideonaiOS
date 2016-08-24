@@ -61,9 +61,11 @@ class TrimInteractor: NSObject,TrimInteractorInterface {
     func setUpComposition(completion:(AVMutableComposition)->Void) {
         var videoTotalTime:CMTime = kCMTimeZero
         
-        guard let video = videoSelected else{
+        guard let videoPos = videoPosition else {
             return
         }
+        
+        let video = Project.sharedInstance.getVideoList()[videoPos]
         
         let mixComposition = AVMutableComposition()
 

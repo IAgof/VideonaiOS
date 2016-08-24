@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Videona/PlayerView.swift"
-            timestampString = "493641371.571093"
+            timestampString = "493724679.751352"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "seekToTime(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -41,13 +41,172 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Videona/TrimInteractor.swift"
-            timestampString = "493643637.207739"
+            filePath = "Videona/EditingRoomWireframe.swift"
+            timestampString = "493650407.556726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "setUpComposition(_:)"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "presentEditingRoomFromViewControllerAndExportVideo(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Videona/ExporterInteractor.swift"
+            timestampString = "493650827.10101"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "exportVideos(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Videona.ExporterInteractor.exportVideos ((Swift.String, Swift.Double) -&gt; ()) -&gt; ()"
+                  moduleName = "Videona"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alejandro/Desktop/Repos/VideonaiOS/Videona/Videona/ExporterInteractor.swift"
+                  timestampString = "493723028.356376"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "1152">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Videona.ExporterInteractor.(exportVideos ((Swift.String, Swift.Double) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "Videona"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/usr/include/dispatch/queue.h"
+                  timestampString = "493723028.356581"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "325"
+                  endingLineNumber = "325"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Videona/GetActualProjectAVCompositionUseCase.swift"
+            timestampString = "493650954.458274"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "getCompositionAndVideoComposition()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideonaTests/SplitVideoTests.swift"
+            timestampString = "493722705.799775"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "testSplitVideoWhenIsSplitted()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VideonaTests.SplitVideoTests.testSplitVideoWhenIsSplitted () -&gt; ()"
+                  moduleName = "VideonaTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alejandro/Desktop/Repos/VideonaiOS/Videona/VideonaTests/SplitVideoTests.swift"
+                  timestampString = "493723029.425933"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "1188">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VideonaTests.SplitVideoTests.(testSplitVideoWhenIsSplitted () -&gt; ()).(implicit closure #5)"
+                  moduleName = "VideonaTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alejandro/Desktop/Repos/VideonaiOS/Videona/VideonaTests/SplitVideoTests.swift"
+                  timestampString = "493723029.426215"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VideonaTests.SplitVideoTests.(testSplitVideoWhenIsSplitted () -&gt; ()).(implicit closure #6)"
+                  moduleName = "VideonaTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alejandro/Desktop/Repos/VideonaiOS/Videona/VideonaTests/SplitVideoTests.swift"
+                  timestampString = "493723029.426485"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideonaTests/SplitVideoTests.swift"
+            timestampString = "493722908.310511"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "testSplitVideoWhenIsSplitted()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideonaTests/SplitVideoTests.swift"
+            timestampString = "493723138.71322"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "testSplitVideoWhenIsSplitted()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

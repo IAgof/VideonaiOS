@@ -18,7 +18,7 @@
                         <constraint firstAttribute="width" secondItem="84S-zW-oLf" secondAttribute="height" multiplier="20:15" priority="750" id="UaJ-Cx-Gf0"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fkh-td-DDL">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fkh-td-DDL">
                     <rect key="frame" x="8" y="300" width="24" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Fkh-td-DDL" secondAttribute="height" multiplier="1:1" id="hVY-UB-kFS"/>
@@ -64,9 +64,8 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
-                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                    <variation key="heightClass=regular-widthClass=regular">
                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                        <rect key="frame" x="45" y="99" width="71" height="21"/>
                     </variation>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eED-nV-dui">
@@ -75,9 +74,8 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
-                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                    <variation key="heightClass=regular-widthClass=regular">
                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                        <rect key="frame" x="45" y="128" width="52" height="21"/>
                     </variation>
                 </label>
             </subviews>
@@ -92,6 +90,7 @@
                 <constraint firstItem="eED-nV-dui" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="Jjf-Xa-MAs">
                     <variation key="heightClass=regular-widthClass=regular" constant="60"/>
                 </constraint>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eED-nV-dui" secondAttribute="trailing" constant="15" id="KId-GR-2GD"/>
                 <constraint firstAttribute="trailing" secondItem="JuB-TN-Waf" secondAttribute="trailing" constant="8" id="KXS-kA-hsm">
                     <variation key="heightClass=regular-widthClass=regular" constant="40"/>
                 </constraint>
@@ -106,6 +105,7 @@
                 </constraint>
                 <constraint firstItem="84S-zW-oLf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="f8Y-gj-zeM"/>
                 <constraint firstItem="eED-nV-dui" firstAttribute="top" secondItem="6La-Tv-Yr1" secondAttribute="bottom" constant="7" id="mP1-GQ-oXk"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6La-Tv-Yr1" secondAttribute="trailing" constant="15" id="qbP-Nf-FHJ"/>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="84S-zW-oLf" secondAttribute="bottom" constant="90" id="tI1-95-dlJ"/>
                 <constraint firstItem="JuB-TN-Waf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="84S-zW-oLf" secondAttribute="bottom" constant="25" id="vm3-sV-MhC"/>
                 <constraint firstAttribute="bottom" secondItem="PiH-7b-pqe" secondAttribute="bottom" constant="8" id="voO-EZ-fck"/>
@@ -141,7 +141,7 @@
         <image name="activity_edit_clip_delete_music_normal" width="32" height="32"/>
         <image name="activity_edit_clip_delete_music_pressed" width="32" height="32"/>
         <image name="common_icon_edit_accept_normal" width="27" height="23"/>
-        <image name="common_icon_edit_accept_pressed" width="24" height="24"/>
+        <image name="common_icon_edit_accept_pressed" width="27" height="23"/>
         <image name="common_icon_edit_cancel_normal" width="24" height="24"/>
         <image name="common_icon_edit_cancel_pressed" width="24" height="24"/>
     </resources>

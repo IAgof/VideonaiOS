@@ -62,7 +62,7 @@ class BlueFilter:NSObject{
 }
 
 class PosterizebwFilter:NSObject{
-    var posterizebwFilter:GPUImageFilter?
+    var posterizebwFilter:GPUImageFilter
     
     override init(){
         let filterMask = GPUImageFilter()

@@ -45,6 +45,9 @@ class MusicDetailView: UIView,MusicDetailInterface {
         titleLabel.text = title
         authorLabel.text = author
         
+        titleLabel.adjustsFontSizeToFitWidth = true
+        authorLabel.adjustsFontSizeToFitWidth = true
+        
         let offset = CGFloat(10)
         self.frame = CGRectMake((offset/2), 0, (frame.width - offset), (frame.height - offset) )
         

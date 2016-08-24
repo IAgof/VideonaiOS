@@ -102,6 +102,7 @@
 		A94B34D41D533ADA00D99539 /* DuplicateInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B34D31D533ADA00D99539 /* DuplicateInteractorInterface.swift */; };
 		A94B34D81D533AE400D99539 /* DuplicateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B34D71D533AE400D99539 /* DuplicateInteractor.swift */; };
 		A94CBDFD1D6D7F7300810C55 /* UserEventTrackerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94CBDFC1D6D7F7300810C55 /* UserEventTrackerTest.swift */; };
+		A94CBE011D6D99B600810C55 /* overlay_filter_cooking.png in Resources */ = {isa = PBXBuildFile; fileRef = A94CBE001D6D99B600810C55 /* overlay_filter_cooking.png */; };
 		A95338E51D251B47006890E7 /* splash_ipad_vertical.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A95338E41D251B47006890E7 /* splash_ipad_vertical.jpg */; };
 		A95338E71D251B4D006890E7 /* splash_ipad_horizontal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A95338E61D251B4D006890E7 /* splash_ipad_horizontal.jpg */; };
 		A95338E91D251B72006890E7 /* splashVertical.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A95338E81D251B72006890E7 /* splashVertical.jpg */; };
@@ -387,6 +388,7 @@
 		A94B34D31D533ADA00D99539 /* DuplicateInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuplicateInteractorInterface.swift; sourceTree = "<group>"; };
 		A94B34D71D533AE400D99539 /* DuplicateInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuplicateInteractor.swift; sourceTree = "<group>"; };
 		A94CBDFC1D6D7F7300810C55 /* UserEventTrackerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEventTrackerTest.swift; sourceTree = "<group>"; };
+		A94CBE001D6D99B600810C55 /* overlay_filter_cooking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay_filter_cooking.png; sourceTree = "<group>"; };
 		A95338E41D251B47006890E7 /* splash_ipad_vertical.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = splash_ipad_vertical.jpg; sourceTree = "<group>"; };
 		A95338E61D251B4D006890E7 /* splash_ipad_horizontal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = splash_ipad_horizontal.jpg; sourceTree = "<group>"; };
 		A95338E81D251B72006890E7 /* splashVertical.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = splashVertical.jpg; sourceTree = "<group>"; };
@@ -1896,6 +1898,7 @@
 				A93C28611D646AF800078EEC /* overlay_filter_surf.png */,
 				A93C286A1D646E1D00078EEC /* overlay_filter_holidays.png */,
 				A93C286C1D646E9200078EEC /* overlay_filter_olimpic.png */,
+				A94CBE001D6D99B600810C55 /* overlay_filter_cooking.png */,
 			);
 			name = FiltersOverlay;
 			sourceTree = "<group>";
@@ -2164,6 +2167,7 @@
 				A9D257C41CF82BE600A618B0 /* Emboss.fsh in Resources */,
 				A925E8FB1D01C8AA000BB684 /* water_mark.png in Resources */,
 				A9D257C31CF82BE600A618B0 /* Mirror.fsh in Resources */,
+				A94CBE011D6D99B600810C55 /* overlay_filter_cooking.png in Resources */,
 				A95338E71D251B4D006890E7 /* splash_ipad_horizontal.jpg in Resources */,
 				A9D257C91CF82BE600A618B0 /* Twirl.fsh in Resources */,
 				A97D43A11D48E3E70047484D /* MusicDetailView.xib in Resources */,

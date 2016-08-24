@@ -28,11 +28,13 @@ class SplitInteractor: NSObject,SplitInteractorInterface {
     }
     
     func setUpComposition(completion:(AVMutableComposition)->Void) {
-        if videoPosition == nil {
+        var videoTotalTime:CMTime = kCMTimeZero
+        
+        guard let videoPos = videoPosition else {
             return
         }
         
-        let video = Project.sharedInstance.getVideoList()[videoPosition!]
+        let video = Project.sharedInstance.getVideoList()[videoPos]
         
         let mixComposition = AVMutableComposition()
         
@@ -46,22 +48,26 @@ class SplitInteractor: NSObject,SplitInteractorInterface {
         let videoAsset = AVAsset.init(URL: videoURL)
         
         do {
-            let stopTime = CMTimeMake(Int64(video.getStopTime() * 1000), 1000)
             let startTime = CMTimeMake(Int64(video.getStartTime() * 1000), 1000)
-            let duration = CMTimeMake(Int64(video.getStartTime() * 1000), 1000)
-
-            try videoTrack.insertTimeRange(CMTimeRangeMake(startTime, stopTime),
-                                           ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
-                                           atTime: kCMTimeZero)
-            try audioTrack.insertTimeRange(CMTimeRangeMake(startTime, stopTime),
+            let stopTime = CMTimeMake(Int64(video.getStopTime() * 1000), 1000)
+            
+            let timeRangeInsert = CMTimeRangeMake(startTime, stopTime)
+            
+            try videoTrack.insertTimeRange(timeRangeInsert,
                                            ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
                                            atTime: kCMTimeZero)
             
-            mixComposition.removeTimeRange(CMTimeRangeMake(stopTime,duration))
+            try audioTrack.insertTimeRange(timeRangeInsert,
+                                           ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
+                                           atTime: kCMTimeZero)
+            videoTotalTime = CMTimeAdd(videoTotalTime, (stopTime - startTime))
+            
+            mixComposition.removeTimeRange(CMTimeRangeMake((videoTotalTime), (stopTime + videoTotalTime)))
         } catch _ {
             Utils().debugLog("Error trying to create videoTrack")
             //                completionHandler("Error trying to create videoTrack",0.0)
         }
+        
         completion(mixComposition)
     }
    
@@ -77,7 +83,6 @@ class SplitInteractor: NSObject,SplitInteractorInterface {
                 //Add video to the Project video list
                 
                 videoList.insert(videoCopy!, atIndex: (videoPosition! + 1))
-                
                 
                 let video = videoList[videoPosition!]
                 

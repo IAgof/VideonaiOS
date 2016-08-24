@@ -147,6 +147,25 @@ class PlayerView: UIView,PlayerInterface {
     }
     
     func sliderEndedTracking(){
+//        let videoDuration = CMTimeGetSeconds(player!.currentItem!.duration)
+//        let elapsedTime: Int64 = Int64(videoDuration * 1000 * Float64(seekSlider.value))
+//        
+//        let timeToGo = CMTimeMake(elapsedTime, 1000)
+//        let tolerance = CMTimeMake(1, 100)
+//        
+//        player?.seekToTime(timeToGo, toleranceBefore: tolerance, toleranceAfter: tolerance, completionHandler: {
+//            completed in
+//            if (self.playerRateBeforeSeek > 0) {
+//                self.player!.play()
+//            }
+//            
+//            if completed{
+//                self.delegate?.seekBarUpdate(Float(self.seekSlider.value))
+//            }
+//        })
+    }
+    
+    func sliderValueChanged(){
         let videoDuration = CMTimeGetSeconds(player!.currentItem!.duration)
         let elapsedTime: Int64 = Int64(videoDuration * 1000 * Float64(seekSlider.value))
         
@@ -163,10 +182,6 @@ class PlayerView: UIView,PlayerInterface {
                 self.delegate?.seekBarUpdate(Float(self.seekSlider.value))
             }
         })
-    }
-    
-    func sliderValueChanged(){
- 
     }
     
     func setUpVideoFinished(){

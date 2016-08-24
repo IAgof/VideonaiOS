@@ -29,7 +29,7 @@ public class EffectProvider {
             iconId: "common_filter_color_ad7_whiteboard",
             resourceId: "",
             type: AnalyticsConstants().FILTER_TYPE_COLOR,
-            effect:PosterizebwFilter().posterizebwFilter!))
+            effect:GPUImagePosterizeFilter()))
         
         shaderEffects.append(ShaderEffect(
             identifier: "FX2",
@@ -45,7 +45,7 @@ public class EffectProvider {
             iconId: "common_filter_distortion_fx1_fisheye",
             resourceId: "",
             type: AnalyticsConstants().FILTER_TYPE_DISTORTION,
-            effect: GPUImageFilter(fragmentShaderFromFile: "Stretch")))
+            effect: GPUImageFilter(fragmentShaderFromFile: "Fisheye")))
         
         shaderEffects.append(ShaderEffect(
             identifier: "FX7",
@@ -61,7 +61,7 @@ public class EffectProvider {
             iconId: "common_filter_distortion_fx6_tunnel",
             resourceId: "",
             type: AnalyticsConstants().FILTER_TYPE_DISTORTION,
-            effect: GPUImageFilter(fragmentShaderFromFile: "Mirror")))
+            effect: GPUImageFilter(fragmentShaderFromFile: "Tunnel")))
         
         shaderEffects.append(ShaderEffect(
             identifier: "AD5",
@@ -189,6 +189,11 @@ public class EffectProvider {
             resourceId: "overlay_filter_steampunk",
             type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
         
+        overlayList.append(OverlayEffect(identifier: "ovh006",
+            name: "Cooking",
+            iconId: "common_filter_overlay_ovh006_cooking",
+            resourceId: "overlay_filter_cooking",
+            type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
         
         return overlayList
     }
