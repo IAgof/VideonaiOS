@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MusicViewInterface {
+protocol MusicViewInterface:VideonaControllerInterface {
     func cameFromFullScreenPlayer(playerView:PlayerView)
     func bringToFrontExpandPlayerButton()
 }

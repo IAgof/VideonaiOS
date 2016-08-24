@@ -111,6 +111,9 @@ TrimInteractorDelegate {
                                                               stopTime: upperValue)
         
         wireframe?.goPrevController()
+        
+        let project = Project.sharedInstance
+        controller?.getTrackerObject().trackClipTrimmed(project)
     }
     
     func pushCancelHandler() {

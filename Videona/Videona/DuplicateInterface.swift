@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol DuplicateInterface{
+protocol DuplicateInterface:VideonaControllerInterface{
 
     func getThumbSize()->CGRect
     func showMinusButton()

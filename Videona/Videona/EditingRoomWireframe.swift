@@ -56,7 +56,9 @@ class EditingRoomWireframe : NSObject {
         self.prevController = prevController
         
         prevController.presentViewController(viewController, animated: true, completion: {
-            self.editingRoomViewController?.eventHandler?.pushShare()
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.editingRoomViewController?.eventHandler?.pushShare()
+            })
         })
     }
     

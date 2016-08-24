@@ -86,6 +86,10 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
         }
         
         reloadPositionNumberAfterMovement()
+        
+        
+        let project = Project.sharedInstance
+        controller?.getTrackerObject().trackClipsReordered(project)
     }
     func pushDuplicateHandler() {
         if checkIfSelectedCellExits(){

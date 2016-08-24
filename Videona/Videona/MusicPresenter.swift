@@ -85,6 +85,9 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
     func acceptDetailButtonPushed() {
         detailEventHandler?.showRemoveButton()
         isMusicSet = true
+        
+        let project = Project.sharedInstance
+        controller?.getTrackerObject().trackMusicSet(project)
     }
     
     func removeDetailButtonPushed() {
@@ -94,6 +97,9 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
         playerPresenter?.createVideoPlayer(GetActualProjectAVCompositionUseCase.sharedInstance.getComposition())
         
         isMusicSet = false
+        
+        let project = Project.sharedInstance
+        controller?.getTrackerObject().trackMusicSet(project)
     }
     
     func expandPlayer() {

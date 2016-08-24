@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol TrimViewInterface {
+protocol TrimViewInterface :VideonaControllerInterface{
     func configureRangeSlider(lowerValue: Float,
                               upperValue: Float,
                               maximumValue:Float)    

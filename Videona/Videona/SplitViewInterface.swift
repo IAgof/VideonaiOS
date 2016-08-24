@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol SplitViewInterface{
+protocol SplitViewInterface:VideonaControllerInterface{
     func configureRangeSlider(splitValue: Float,
                               maximumValue:Float)
     func setSliderValue(value:Float)

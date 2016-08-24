@@ -62,6 +62,9 @@ class DuplicatePresenter: NSObject,DuplicatePresenterInterface,DuplicateInteract
     func pushAcceptHandler() {
         interactor?.setDuplicateVideoToProject(numberOfDuplicates)
         wireframe?.goPrevController()
+        
+        let project = Project.sharedInstance
+        controller?.getTrackerObject().trackClipDuplicated(numberOfDuplicates, project: project)
     }
     
     func pushCancelHandler() {

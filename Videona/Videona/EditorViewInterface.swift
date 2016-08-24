@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol EditorViewInterface {
+protocol EditorViewInterface:VideonaControllerInterface {
     func setUpGestureRecognizer()
     func selectCell(indexPath:NSIndexPath)
     func deselectCell(indexPath:NSIndexPath)

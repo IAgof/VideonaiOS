@@ -29,7 +29,7 @@ class EditingRoomPresenter: NSObject,EditingRoomPresenterInterface {
     }
     
     func viewWillDisappear() {
-
+        whatControllerIsVisible = nil
     }
     
     func viewWillAppear() {

@@ -68,6 +68,9 @@ class SplitPresenter: NSObject,SplitPresenterInterface,SplitInteractorDelegate {
     func pushAcceptHandler() {
         interactor?.setSplitVideosToProject(Double(splitValue))
         wireframe?.goPrevController()
+        
+        let project = Project.sharedInstance
+        controller?.getTrackerObject().trackClipSplitted(project)
     }
     
     func pushCancelHandler() {

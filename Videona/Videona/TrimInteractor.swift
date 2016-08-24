@@ -60,7 +60,7 @@ class TrimInteractor: NSObject,TrimInteractorInterface {
     
     func setUpComposition(completion:(AVMutableComposition)->Void) {
         var videoTotalTime:CMTime = kCMTimeZero
-
+        
         guard let video = videoSelected else{
             return
         }
@@ -80,10 +80,13 @@ class TrimInteractor: NSObject,TrimInteractorInterface {
             let startTime = CMTimeMake(Int64(self.startTime * 1000), 1000)
             let stopTime = CMTimeMake(Int64(self.stopTime * 1000), 1000)
             
-            try videoTrack.insertTimeRange(CMTimeRangeMake(startTime, stopTime),
+            let timeRangeInsert = CMTimeRangeMake(startTime, stopTime)
+            
+            try videoTrack.insertTimeRange(timeRangeInsert,
                                            ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
                                            atTime: kCMTimeZero)
-            try audioTrack.insertTimeRange(CMTimeRangeMake(startTime, stopTime),
+            
+            try audioTrack.insertTimeRange(timeRangeInsert,
                                            ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
                                            atTime: kCMTimeZero)
             videoTotalTime = CMTimeAdd(videoTotalTime, (stopTime - startTime))
