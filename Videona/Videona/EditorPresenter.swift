@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegate {
     //MARK: - Variables VIPER
@@ -58,11 +59,13 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
     }
     
     func didSelectItemAtIndexPath(indexPath: NSIndexPath) {
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.controller?.deselectCell(self.selectedCellIndexPath)
-                self.controller?.selectCell(indexPath)
-                self.selectedCellIndexPath = indexPath
-        })
+        updateSelectedCellUI(indexPath)
+        
+        self.seekToSelectedItem(indexPath.item)
+    }
+    
+    func seekToSelectedItem(videoPosition:Int){
+        interactor?.seekToSelectedItemHandler(videoPosition)
     }
     
     func cellForItemAtIndexPath(indexPath: NSIndexPath) {
@@ -140,13 +143,16 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
                 if cellPosition == selectedCellIndexPath.item {
                     return
                 }else{
-                    self.didSelectItemAtIndexPath(NSIndexPath(forItem: cellPosition , inSection: 0))
+                    updateSelectedCellUI(NSIndexPath(forItem: cellPosition, inSection: 0))
+                    
                     return
                 }
             }
             cellPosition += 1
         }
     }
+    
+
     
     func saveVideoToDocuments(url: NSURL) {
         interactor?.saveVideoToDocuments(url)
@@ -198,6 +204,14 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
         return stopList.last!
     }
     
+    func updateSelectedCellUI(indexPath:NSIndexPath){
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.controller?.deselectCell(self.selectedCellIndexPath)
+            self.controller?.selectCell(indexPath)
+            self.selectedCellIndexPath = indexPath
+        })
+    }
+    
     //MARK: - Interactor delegate
     func setPositionList(list: [Int]) {
         controller?.setPositionList(list)
@@ -217,5 +231,9 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
         controller?.dissmissAlertController()
         
         self.loadVideoListFromProject()
+    }
+    
+    func seekToTimeOfVideoSelectedReceiver(time:Float){
+        playerPresenter?.seekToTime(time)
     }
 }

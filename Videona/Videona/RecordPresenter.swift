@@ -98,21 +98,18 @@ class RecordPresenter: NSObject
         self.trackStartRecord()
         
         controller?.recordButtonEnable(false)
-        
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-            self.cameraInteractor?.setIsRecording(true)
-            
-            self.cameraInteractor?.startRecordVideo({answer in
-                print("Record Presenter \(answer)")
-                self.controller?.recordButtonEnable(true)
-            })
-            
             dispatch_async(dispatch_get_main_queue(), {
+                self.cameraInteractor?.setIsRecording(true)
+                
+                self.cameraInteractor?.startRecordVideo({answer in
+                    print("Record Presenter \(answer)")
+                    self.controller?.recordButtonEnable(true)
+                })
                 // update some UI
                 self.controller?.showRecordButton()
                 self.controller?.disableShareButton()
             })
-        })
+        
         isRecording = true
         
         self.startTimer()

@@ -14,6 +14,7 @@ class EditorInteractor: NSObject,EditorInteractorInterface {
     
     //MARK: - Variables VIPER
     var delegate:EditorInteractorDelegate?
+    
     enum QUWatermarkPosition {
         case TopLeft
         case TopRight
@@ -250,5 +251,35 @@ class EditorInteractor: NSObject,EditorInteractorInterface {
                 })
             }
         })
+    }
+    
+    func seekToSelectedItemHandler(videoPosition: Int) {
+        let time = getSeekTimePercentForSelectedVideo(videoPosition)
+        
+        delegate?.seekToTimeOfVideoSelectedReceiver(time)
+    }
+    
+    func getSeekTimePercentForSelectedVideo(videoPosition:Int) -> Float {
+        let videoList = Project.sharedInstance.getVideoList()
+        
+        var timeFloat = 0.0
+        var totalTimeComposition = 0.0
+        
+        if (videoPosition <= (videoList.count - 1)) && videoPosition != 0{
+            for count in 0...(videoList.count - 1) {
+                let video = videoList[count]
+                let duration = video.getDuration()
+                if(count < videoPosition){
+                    print("duration of seek video:\(duration)")
+                    timeFloat += duration
+                }
+                totalTimeComposition += duration
+            }
+            timeFloat = timeFloat/totalTimeComposition
+            let timeOffSet = 0.1
+            timeFloat = ((round(100*timeFloat)/100) + timeOffSet)
+        }
+
+        return Float(timeFloat)
     }
 }

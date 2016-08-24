@@ -78,6 +78,8 @@ class Media: NSObject {
     
     func setStartTime(time:Double) {
         self.trimStartTime = time
+        
+        self.duration = trimStopTime - trimStartTime
     }
     
     func getStopTime() -> Double {
@@ -86,6 +88,8 @@ class Media: NSObject {
     
     func setStopTime(time:Double) {
         self.trimStopTime = time
+        
+        self.duration = trimStopTime - trimStartTime
     }
     
     func getDuration() -> Double {

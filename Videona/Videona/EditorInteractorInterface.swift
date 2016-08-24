@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import AVFoundation
 
 protocol EditorInteractorInterface {
     func getListData()
     func saveVideoToDocuments(url:NSURL)
+    func seekToSelectedItemHandler(videoPosition:Int)
 }
 
 protocol EditorInteractorDelegate {
@@ -18,5 +20,5 @@ protocol EditorInteractorDelegate {
     func setVideoImagesList(list:[UIImage])
     func setStopTimeList(list:[Double])
     func updateViewList()
-    
+    func seekToTimeOfVideoSelectedReceiver(time:Float)
 }
