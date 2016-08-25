@@ -103,7 +103,9 @@ class RecordPresenter: NSObject
                 
                 self.cameraInteractor?.startRecordVideo({answer in
                     print("Record Presenter \(answer)")
-                    self.controller?.recordButtonEnable(true)
+                    Utils.sharedInstance.delay(1, closure: {
+                        self.controller?.recordButtonEnable(true)
+                    })
                 })
                 // update some UI
                 self.controller?.showRecordButton()

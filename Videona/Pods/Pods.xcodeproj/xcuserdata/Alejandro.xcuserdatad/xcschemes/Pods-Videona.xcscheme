@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '2F213D7B95D7B6648DC3AAD3'
+               BlueprintIdentifier = 'A667F98B52DD03600572E750'
                BlueprintName = 'Pods-Videona'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_Videona.framework'>

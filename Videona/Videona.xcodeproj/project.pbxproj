@@ -2027,6 +2027,7 @@
 				75AC14413F902EB7D10DEA13 /* Embed Pods Frameworks */,
 				AEEBF3C285A831D90BF429BE /* Copy Pods Resources */,
 				A91AB0E21D229072001DA3BB /* ShellScript */,
+				A90638451D6EDAB900A97859 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -2244,6 +2245,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Videona/Pods-Videona-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		A90638451D6EDAB900A97859 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 245a1998989c434deb37967cfa33882e5f169410 a4aace077e673d7b8bbb959e93125b49664db2b0da0cfb30de69381be101c379";
 		};
 		A91AB0E21D229072001DA3BB /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2666,6 +2680,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

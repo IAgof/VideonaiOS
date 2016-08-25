@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (3.4.0)
+  - Crashlytics (3.7.3):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.8)
   - FirebaseAnalytics (3.2.0):
     - FirebaseInstanceID (~> 1.0)
     - GoogleInterchangeUtilities (~> 1.2)
@@ -40,6 +43,8 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 3.3)
+  - Crashlytics
+  - Fabric
   - Google/Analytics
   - Google/SignIn
   - Mixpanel
@@ -48,6 +53,8 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  Crashlytics: 76f6beaff70acf226139582c09c78461597c2b98
+  Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
   FirebaseAnalytics: 6f75b04e6bfb8e0b6e9ef298e04c24eea3b13863
   FirebaseInstanceID: d014d574053a2fe84478f12f7bae96979e7051bb
   Google: 813c467362eabc11385f5a5cc9ad0cb651a58f4e

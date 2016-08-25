@@ -8,6 +8,8 @@
 
 import UIKit
 import Mixpanel
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -35,6 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         let gai = GAI.sharedInstance()
         gai.trackUncaughtExceptions = true  // report uncaught exceptions
         gai.logger.logLevel = GAILogLevel.Verbose  // remove before app release
+        
+        //CRASHLYTICS
+        Fabric.with([Crashlytics.self])
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }

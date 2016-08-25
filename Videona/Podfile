@@ -11,7 +11,8 @@ pod 'Alamofire', '~> 3.3'
 pod 'Mixpanel'
 pod 'NMRangeSlider', '~> 1.2'
 pod 'PermissionScope'
-
+pod 'Fabric'
+pod 'Crashlytics'
 end
 
 target 'VideonaTests' do
