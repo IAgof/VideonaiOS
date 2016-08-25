@@ -168,7 +168,13 @@ class RecordPresenter: NSObject
     }
     
     func thumbnailHasTapped() {
-        recordWireframe?.presentEditorRoomInterface()
+        let nClips = Project.sharedInstance.numberOfClips()
+        
+        if nClips > 0{
+            recordWireframe?.presentEditorRoomInterface()
+        }else{
+            recordWireframe?.presentGalleryInsideEditorRoomInterface()
+        }
     }
     
     func displayHasTapped(tapGesture:UIGestureRecognizer){

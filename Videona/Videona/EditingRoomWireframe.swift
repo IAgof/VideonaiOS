@@ -62,6 +62,18 @@ class EditingRoomWireframe : NSObject {
         })
     }
     
+    func presentEditingRoomFromViewControllerShowGallery(prevController:UIViewController){
+        let viewController = EditingRoomViewControllerFromStoryboard()
+        
+        self.prevController = prevController
+        
+        prevController.presentViewController(viewController, animated: true, completion: {
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.editorWireframe?.editorPresenter?.pushAddVideoHandler()
+            })
+        })
+    }
+    
     func EditingRoomViewControllerFromStoryboard() -> EditingRoomViewController {
         let storyboard = mainStoryboard()
         let viewController = storyboard.instantiateViewControllerWithIdentifier(EditingRoomViewControllerIdentifier) as! EditingRoomViewController

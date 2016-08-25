@@ -75,12 +75,14 @@ class RecordWireframe : NSObject {
         editorRoomWireframe?.presentEditingRoomInterfaceFromViewController(recordViewController!)
     }
     
+    func presentGalleryInsideEditorRoomInterface(){
+        editorRoomWireframe?.presentEditingRoomFromViewControllerShowGallery(recordViewController!)
+    }
+    
     func goBackToRecordView(prevController:UIViewController){
         if prevController.isKindOfClass(ShareViewController) {
             recordViewController?.resetView()
-        }
-//        recordViewController?.hideFilterList()
-        
+        }        
         prevController.navigationController?.popToRootViewControllerAnimated(true)
     }
     
