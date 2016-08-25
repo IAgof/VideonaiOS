@@ -313,11 +313,8 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     }
    
     func forceOrientation(){
-        if UIDevice.currentDevice().orientation == .Portrait
-            ||  UIDevice.currentDevice().orientation == .PortraitUpsideDown {
             let value = UIInterfaceOrientation.LandscapeRight.rawValue
             UIDevice.currentDevice().setValue(value, forKey: "orientation")
-        }
     }
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {

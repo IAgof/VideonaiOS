@@ -28,10 +28,11 @@ class TrimInteractor: NSObject,TrimInteractorInterface {
 
         startTime = Float(video.getStartTime())
         stopTime = Float(video.getStopTime())
+        let duration = video.fileStopTime
         
         delegate?.setLowerValue(startTime)
         delegate?.setUpperValue(stopTime)
-        delegate?.setMaximumValue(Float(video.getDuration()))
+        delegate?.setMaximumValue(Float(duration))
         
         
         delegate?.updateParamsFinished()
