@@ -98,7 +98,8 @@ class PlayerView: UIView,PlayerInterface {
             self.playerContainer.layer.addSublayer(playerLayer!)
             
             self.playerContainer.bringSubviewToFront(seekSlider)
-
+            
+            self.seekToTime(0)
         }
     }
     
