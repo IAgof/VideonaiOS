@@ -19,10 +19,17 @@ class AppDependencies {
     var playerWireframe = PlayerWireframe()
     var detailTextWireframe = DetailTextWireframe()
     var fullScreenPlayerWireframe = FullScreenPlayerWireframe()
-
+    var editorRoomWireframe = EditingRoomWireframe()
+    var editorWireframe = EditorWireframe()
+    var musicWireframe = MusicWireframe()
+    var trimWireframe = TrimWireframe()
+    var duplicateWireframe = DuplicateWireframe()
+    var splitWireframe = SplitWireframe()
+    
     init(){
         configureDependencies()
     }
+
     func configureDependencies(){
         let rootWireframe = RootWireframe()
         let introPresenter = IntroPresenter()
@@ -44,6 +51,23 @@ class AppDependencies {
 
         let fullScreenPlayerPresenter = FullScreenPlayerPresenter()
 
+        let editorRoomPresenter = EditingRoomPresenter()
+        
+        let editorPresenter = EditorPresenter()
+        let editorInteractor = EditorInteractor()
+        
+        let musicPresenter = MusicPresenter()
+        let musicInteractor = MusicInteractor()
+
+        let trimPresenter = TrimPresenter()
+        let trimInteractor = TrimInteractor()
+        
+        let duplicatePresenter = DuplicatePresenter()
+        let duplicateInteractor = DuplicateInteractor()
+        
+        let splitPresenter = SplitPresenter()
+        let splitInteractor = SplitInteractor()
+        
         //INTRO MODULE
         introPresenter.introWireframe = introWireframe
         introPresenter.recordWireframe = recordWireframe
@@ -59,6 +83,7 @@ class AppDependencies {
         recordWireframe.recordPresenter = recordPresenter
         recordWireframe.rootWireframe = rootWireframe
         recordWireframe.filterListWireframe = filterListWireframe
+        recordWireframe.editorRoomWireframe = editorRoomWireframe
         
         //SETTINGS MODULE
         settingsPresenter.wireframe = settingsWireframe
@@ -93,7 +118,7 @@ class AppDependencies {
         filterListWireframe.rootWireframe = rootWireframe
         
         filterListInteractor.delegate = filterListPresenter
-        
+
         //PLAYER MODULE
         playerPresenter.wireframe = playerWireframe
         playerPresenter.recordWireframe = recordWireframe
@@ -114,6 +139,85 @@ class AppDependencies {
 
         fullScreenPlayerWireframe.fullScreenPlayerPresenter = fullScreenPlayerPresenter
         fullScreenPlayerWireframe.rootWireframe = rootWireframe
+        
+        //EDITOR ROOM MODULE
+        editorRoomPresenter.wireframe = editorRoomWireframe
+        
+        editorRoomWireframe.editingRoomPresenter = editorRoomPresenter
+        editorRoomWireframe.rootWireframe = rootWireframe
+        editorRoomWireframe.editorWireframe = editorWireframe
+        editorRoomWireframe.shareWireframe = shareWireframe
+        editorRoomWireframe.musicWireframe = musicWireframe
+        editorRoomWireframe.settingsWireframe = settingsWireframe
+        
+        //EDITOR MODULE
+        editorPresenter.wireframe = editorWireframe
+        editorPresenter.playerPresenter = playerPresenter
+        editorPresenter.playerWireframe = playerWireframe
+        editorPresenter.interactor = editorInteractor
+        
+        editorWireframe.editorPresenter = editorPresenter
+        editorWireframe.playerWireframe = playerWireframe
+        editorWireframe.rootWireframe = rootWireframe
+        editorWireframe.trimWireframe = trimWireframe
+        editorWireframe.duplicateWireframe = duplicateWireframe
+        editorWireframe.splitWireframe = splitWireframe
+        editorWireframe.fullScreenPlayerWireframe = fullScreenPlayerWireframe
+        
+        editorInteractor.delegate = editorPresenter
+        
+        //MUSIC MODULE
+        musicPresenter.wireframe = musicWireframe
+        musicPresenter.interactor = musicInteractor
+        musicPresenter.playerPresenter = playerPresenter
+        musicPresenter.playerWireframe = playerWireframe
+        
+        musicInteractor.delegate = musicPresenter
+        
+        musicWireframe.musicPresenter = musicPresenter
+        musicWireframe.rootWireframe = rootWireframe
+        musicWireframe.playerWireframe = playerWireframe
+        musicWireframe.fullScreenPlayerWireframe = fullScreenPlayerWireframe
+        musicWireframe.editorRoomWireframe = editorRoomWireframe
+        
+        //TRIM MODULE 
+        trimPresenter.wireframe = trimWireframe
+        trimPresenter.playerPresenter = playerPresenter
+        trimPresenter.playerWireframe = playerWireframe
+        trimPresenter.interactor = trimInteractor
+        
+        trimWireframe.playerWireframe = playerWireframe
+        trimWireframe.rootWireframe = rootWireframe
+        trimWireframe.trimPresenter = trimPresenter
+        trimWireframe.fullScreenPlayerWireframe = fullScreenPlayerWireframe
+
+        trimInteractor.delegate = trimPresenter
+        
+        //DUPLICATE MODULE
+        duplicatePresenter.wireframe = duplicateWireframe
+        duplicatePresenter.playerPresenter = playerPresenter
+        duplicatePresenter.playerWireframe = playerWireframe
+        duplicatePresenter.interactor = duplicateInteractor
+        
+        duplicateWireframe.playerWireframe = playerWireframe
+        duplicateWireframe.rootWireframe = rootWireframe
+        duplicateWireframe.duplicatePresenter = duplicatePresenter
+        duplicateWireframe.fullScreenPlayerWireframe = fullScreenPlayerWireframe
+
+        duplicateInteractor.delegate = duplicatePresenter
+        
+        //SPLIT MODULE
+        splitPresenter.wireframe = splitWireframe
+        splitPresenter.playerPresenter = playerPresenter
+        splitPresenter.playerWireframe = playerWireframe
+        splitPresenter.interactor = splitInteractor
+        
+        splitWireframe.playerWireframe = playerWireframe
+        splitWireframe.rootWireframe = rootWireframe
+        splitWireframe.splitPresenter = splitPresenter
+        splitWireframe.fullScreenPlayerWireframe = fullScreenPlayerWireframe
+        
+        splitInteractor.delegate = splitPresenter
     }
     
     func installIntroToRootViewControllerIntoWindow(window: UIWindow){
@@ -128,5 +232,16 @@ class AppDependencies {
     }
     func installShareToRootViewControllerIntoWindow(window: UIWindow){
         shareWireframe.presentShareInterfaceFromWindow(window)
+    }
+    
+    func installEditorRoomToRootViewControllerIntoWindow(window: UIWindow){
+        editorRoomWireframe.presentEditingRoomInterfaceFromWindow(window)
+    }
+    func installDuplicateRoomToRootViewControllerIntoWindow(window: UIWindow){
+        duplicateWireframe.presentDuplicateInterfaceFromWindow(window)
+    }
+    
+    func installSplitRoomToRootViewControllerIntoWindow(window: UIWindow){
+        splitWireframe.presentSplitInterfaceFromWindow(window)
     }
 }

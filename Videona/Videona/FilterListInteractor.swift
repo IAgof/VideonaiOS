@@ -6,7 +6,6 @@
 //  Copyright © 2016 Videona. All rights reserved.
 //
 
-
 import Foundation
 import UIKit
 

@@ -74,8 +74,9 @@ GIDSignInUIDelegate,GIDSignInDelegate{
     func bringToFrontExpandPlayerButton(){
         self.playerView.bringSubviewToFront(expandPlayerButton)
     }
+    
     func setNavBarTitle(title:String){
-        settingsNavBar.title = title
+        //        settingsNavBar.title = title
     }
     
     func setTitleList(titleList: Array<String>) {
@@ -115,7 +116,33 @@ GIDSignInUIDelegate,GIDSignInDelegate{
         
         return cell
     }
-
+    
+    func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! ShareCell
+        
+        cell.shareTitle!.textColor = VIDEONA_GREEN_UICOLOR
+        cell.shareImage!.image = listImagesPressed[indexPath.item]
+    }
+    
+    func tableView(tableView: UITableView, didUnhighlightRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! ShareCell
+        
+        cell.shareTitle!.textColor = UIColor.darkGrayColor()
+        cell.shareImage!.image = listImages[indexPath.item]
+        
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let height = listImages[indexPath.item].size.height
+        Utils.sharedInstance.debugLog("Height for social = \(height)")
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad
+        {
+            return CGFloat(90)
+        }else{
+            return CGFloat(50)
+        }
+    }
+    
     //MARK: - UITableView Delegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         

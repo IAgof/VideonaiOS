@@ -13,7 +13,8 @@ class RecordPresenter: NSObject
     , RecordPresenterInterface
     ,FilterListDelegate
     ,CameraInteractorDelegate
-,TimerInteractorDelegate{
+,TimerInteractorDelegate,
+ThumbnailDelegate{
     
     //MARK: - Variables VIPER
     var controller: RecordViewInterface?
@@ -23,6 +24,8 @@ class RecordPresenter: NSObject
     var recordWireframe: RecordWireframe?
     var settingsWireframe: SettingsWireframe?
     var shareWireframe: ShareWireframe?
+    var thumbnailInteractor:ThumbnailInteractor?
+    
     //MARK: - Constants
     var colorFilterViewIsShowin = false
     var shaderFilterViewIsShowin = false
@@ -32,6 +35,7 @@ class RecordPresenter: NSObject
         var effectName:String
         var effectActive:Bool
     }
+    
     //MARK: - Variables
     var overlayActive:EffectOnView = EffectOnView(effectName: "", effectActive: false)
     var shaderActive:EffectOnView = EffectOnView(effectName: "", effectActive: false)
@@ -47,12 +51,12 @@ class RecordPresenter: NSObject
     
     func viewWillDisappear() {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-            self.cameraInteractor?.stopCamera()
             if self.isRecording{
                 self.stopRecord()
             }
             FlashInteractor().turnOffWhenViewWillDissappear()
             dispatch_async(dispatch_get_main_queue(), {
+                self.cameraInteractor?.stopCamera()
                 self.controller?.showFlashOn(false)
             })
         })
@@ -63,6 +67,8 @@ class RecordPresenter: NSObject
         cameraInteractor?.startCamera()
         
         controller?.forceOrientation()
+        
+        self.updateThumbnail()
     }
     
     
@@ -73,27 +79,7 @@ class RecordPresenter: NSObject
     }
     
     func pushShare() {
-        controller?.createAlertWaitToExport()
-        controller?.getTrackerObject().mixpanel.timeEvent(AnalyticsConstants().VIDEO_EXPORTED);
-        
-        self.hideAnyFilterList()
-        
-        print("Record presenter pushShare")
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-            
-            let exporter = ExporterInteractor.init()
-            exporter.exportVideos({ exportPath,videoTotalTime in
-                print("Export path response = \(exportPath)")
-                self.trackExported(videoTotalTime)
-                
-                self.controller?.dissmissAlertWaitToExport({
-                    //wait to remove alert to present new Screeen
-                    self.shareWireframe?.presentShareInterfaceFromViewController((self.controller?.getController())!,
-                        videoPath: exportPath,
-                        numberOfClips: Project.sharedInstance.numberOfClips())
-                })
-            })
-        });
+        recordWireframe?.presentShareInterfaceInsideEditorRoom()
     }
     
     func pushFlash() {
@@ -114,21 +100,20 @@ class RecordPresenter: NSObject
         self.trackStartRecord()
         
         controller?.recordButtonEnable(false)
-        
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-            self.cameraInteractor?.setIsRecording(true)
-            
-            self.cameraInteractor?.startRecordVideo({answer in
-                print("Record Presenter \(answer)")
-                self.controller?.recordButtonEnable(true)
-            })
-            
             dispatch_async(dispatch_get_main_queue(), {
+                self.cameraInteractor?.setIsRecording(true)
+                
+                self.cameraInteractor?.startRecordVideo({answer in
+                    print("Record Presenter \(answer)")
+                    Utils.sharedInstance.delay(1, closure: {
+                        self.controller?.recordButtonEnable(true)
+                    })
+                })
                 // update some UI
                 self.controller?.showRecordButton()
                 self.controller?.disableShareButton()
             })
-        })
+        
         isRecording = true
         
         self.startTimer()
@@ -143,14 +128,9 @@ class RecordPresenter: NSObject
             // do some task
             self.cameraInteractor?.setIsRecording(false)
             
-            let videoPath = Project.sharedInstance.getVideoList()[Project.sharedInstance.numberOfClips() - 1].getMediaPath()
+            self.updateThumbnail()
             
-            let thumb = ThumbnailInteractor.init(videoPath: videoPath,
-                diameter: (self.controller?.getRecordButtonSize())!).getThumbnailImageView()
             dispatch_async(dispatch_get_main_queue(), {
-                // update some UI
-                self.controller?.showRecordedVideoThumb(thumb)
-                self.controller?.showNumberVideos(Project.sharedInstance.numberOfClips())
                 self.controller?.showStopButton()
                 self.controller?.enableShareButton()
             });
@@ -159,6 +139,22 @@ class RecordPresenter: NSObject
         self.stopTimer()
     }
     
+    func updateThumbnail() {
+        let nClips = Project.sharedInstance.numberOfClips()
+        
+        if nClips > 0{
+            let videoPath = Project.sharedInstance.getVideoList()[nClips - 1].getMediaPath()
+            
+           thumbnailInteractor = ThumbnailInteractor.init(videoPath: videoPath,
+                                                 diameter: (self.controller?.getThumbnailSize())!)
+            if thumbnailInteractor != nil {
+                thumbnailInteractor?.delegate = self
+                thumbnailInteractor?.getthumbnailImage()
+            }
+        }else{
+            self.controller?.hideRecordedVideoThumb()
+        }
+    }
     func pushRotateCamera() {
         cameraInteractor!.rotateCamera()
     }
@@ -169,6 +165,16 @@ class RecordPresenter: NSObject
     
     func hideWarningOrientationImage(){
         controller?.unlockScreenRotation()
+    }
+    
+    func thumbnailHasTapped() {
+        let nClips = Project.sharedInstance.numberOfClips()
+        
+        if nClips > 0{
+            recordWireframe?.presentEditorRoomInterface()
+        }else{
+            recordWireframe?.presentGalleryInsideEditorRoomInterface()
+        }
     }
     
     func displayHasTapped(tapGesture:UIGestureRecognizer){
@@ -328,7 +334,7 @@ class RecordPresenter: NSObject
             return
         }
     }
-    
+   
     func setOverlay(filterName:String) {
         cameraInteractor?.changeBlendImage(UIImage.init(named: filterName.lowercaseString)!)
         
@@ -414,9 +420,21 @@ class RecordPresenter: NSObject
         timerInteractor?.stop()
     }
     
+    func showFocus(center: CGPoint) {
+        controller?.showFocusAtPoint(center)
+    }
+    
     //MARK: - Timer delegate
     func updateTimer(time: String) {
         controller?.updateChronometer(time)
+    }
+    //MARK: - Thumbnail delegate
+    func setThumbToView(image: UIImage) {
+        // update some UI
+        dispatch_async(dispatch_get_main_queue(), {
+            self.controller?.showRecordedVideoThumb(image)
+            self.controller?.showNumberVideos(Project.sharedInstance.numberOfClips())
+        });
     }
     
     //MARK: - Set Overlay/Shader effects

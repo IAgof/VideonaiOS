@@ -9,48 +9,36 @@
 import XCTest
 @testable import Videona
 class FilterListInteractorTest: XCTestCase {
-    let filtersOverlay = FilterListInteractor().findColorFilters()
-    let filtersShader = FilterListInteractor().findShaderFilters()
+    let overlayList = EffectProvider().getOverlayFilterList()
+    let shaderList = EffectProvider().getShaderEffectList()
     
     override func setUp() {
         super.setUp()
-        
+        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
-    func testGetOverlayFiltersIsNotEmpty(){
-        XCTAssert(filtersOverlay.0.count != 0)
-        XCTAssert(filtersOverlay.1.count != 0)
+    override func tearDown() {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
     }
     
-    func testOverlayHaveBothTextAndImage(){
-        for text in filtersOverlay.1{
-            XCTAssertNotNil(text.isEmpty)
-        }
-        
-        for image in filtersOverlay.0 {
-            XCTAssertNotNil(image.images?.count != 0)
-        }
-    }
-    
-    func testGetShaderFiltersIsNotEmpty(){
-        XCTAssert(filtersShader.0.count != 0)
-        XCTAssert(filtersShader.1.count != 0)
-    }
-    
-    func testShaderHaveBothTextAndImage(){
-        for text in filtersShader.1{
-            XCTAssertNotNil(text.isEmpty)
-        }
-        
-        for image in filtersShader.0 {
-            XCTAssertNotNil(image.images?.count != 0)
-        }
-    }
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
+    func testOverlayResourcesAreOk(){
+        for filter in overlayList{
+            let overlay = filter as! OverlayEffect
+            let resourceImage = UIImage(named: overlay.getResourceId())
+            let iconImage = UIImage(named: overlay.getIconId())
+            
+            XCTAssertNotNil(iconImage)
+            XCTAssertNotNil(resourceImage)
         }
     }
     
+    func testShaderResourcesAreOk(){
+        for filter in shaderList{
+            let overlay = filter as! ShaderEffect
+            let iconImage = UIImage(named: overlay.getIconId())
+            
+            XCTAssertNotNil(iconImage)
+        }
+    }
 }

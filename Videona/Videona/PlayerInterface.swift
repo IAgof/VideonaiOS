@@ -8,15 +8,21 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 protocol PlayerInterface {
  
     func createVideoPlayer()
-    func setPlayerMovieURL(movieURL:NSURL)
+    func setPlayerMovieComposition(composition:AVMutableComposition)
     func updateLayers()
     func getView()->UIView
     func setUpVideoFinished()
     func pauseVideoPlayer()
     func playVideoPlayer()
     func updateSeekBarOnUI()
+    func seekToTime(time: Float) 
+}
+
+protocol PlayerViewDelegate {
+    func seekBarUpdate(value:Float)
 }

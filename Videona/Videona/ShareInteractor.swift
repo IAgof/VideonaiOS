@@ -22,7 +22,7 @@ class ShareInteractor: NSObject,ShareInteractorInterface {
         let socialNetworks = SocialNetworkProvider().getSocialNetworks()
         
         let socialNetworkImage = self.setArraySocialNetworksUIImage(socialNetworks)
-        let socialNetworkImagePressed = self.setArraySocialNetworksUIImage(socialNetworks)
+        let socialNetworkImagePressed = self.setArraySocialNetworksUIImagePressed(socialNetworks)
         let socialNetworkTitle = self.setArraySocialNetworksTitle(socialNetworks)
         
         return (socialNetworkTitle,socialNetworkImage,socialNetworkImagePressed)

@@ -17,7 +17,7 @@ class FilterViewCell: UICollectionViewCell {
     var isSelectedCell: Bool = false{
         didSet {
             if isSelectedCell {
-                backgroundColor = UIColor.init(red: 0.7411, green: 0.854, blue: 0.074, alpha: 0.8)
+                backgroundColor = VIDEONA_GREEN_UICOLOR
             }else{
                 backgroundColor = UIColor.clearColor()
             }

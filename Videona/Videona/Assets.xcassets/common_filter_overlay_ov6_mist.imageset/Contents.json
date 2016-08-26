@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "iphone",
-      "filename" : "common_filter_overlay_ov6_mist@1x.png",
+      "filename" : "common_filter_overlay_ov6_mist.png",
       "scale" : "1x"
     },
     {
@@ -17,12 +17,12 @@
     },
     {
       "idiom" : "ipad",
-      "filename" : "common_filter_overlay_ov6_mist@2x-1.png",
+      "filename" : "common_filter_overlay_ov6_mist~ipad.png",
       "scale" : "1x"
     },
     {
       "idiom" : "ipad",
-      "filename" : "common_filter_overlay_ov6_mist@3x-1.png",
+      "filename" : "common_filter_overlay_ov6_mist@2x~ipad.png",
       "scale" : "2x"
     }
   ],

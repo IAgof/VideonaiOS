@@ -26,12 +26,19 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     @IBOutlet weak var cameraView: GPUImageView!
     @IBOutlet weak var chronometrer: UILabel!
     @IBOutlet weak var chronometrerContainer: UIView!
-    @IBOutlet weak var thumbnailView: UIView!
+    @IBOutlet weak var thumbnailView: UIImageView!
     @IBOutlet weak var thumbnailNumberClips: UILabel!
+    @IBOutlet weak var focusImageView: UIImageView!
     
     var alertController:UIAlertController?
     var tapDisplay:UIGestureRecognizer?
     var pinchDisplay:UIPinchGestureRecognizer?
+    var defaultThumbImage:UIImage{
+        guard let image = UIImage(named: "activity_record_gallery_normal") else{
+            return UIImage()
+        }
+        return image
+    }
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -46,10 +53,12 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         print("Recorder view will appear")
         eventHandler?.viewWillAppear()
     }
+    
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         eventHandler?.viewWillDisappear()
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -72,7 +81,17 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         pinchDisplay = UIPinchGestureRecognizer(target: self, action: #selector(RecordController.displayPinched))
         self.cameraView.addGestureRecognizer(pinchDisplay!)
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(self.thumbnailTapped))
+        thumbnailView.userInteractionEnabled = true
+        thumbnailView.addGestureRecognizer(tapGestureRecognizer)
+        
         self.thumbnailNumberClips.adjustsFontSizeToFitWidth = true
+    }
+    
+    func thumbnailTapped(){
+        Utils.sharedInstance.debugLog("Thumbnail has tapped")
+        
+        eventHandler?.thumbnailHasTapped()
     }
     
     func displayTapped(){
@@ -150,17 +169,59 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     func updateChronometer(time: String) {
         self.chronometrer.text = time
     }
-    func showRecordedVideoThumb(imageView: UIImageView) {
-        thumbnailView.hidden = false
-        thumbnailView.addSubview(imageView)
-        thumbnailView.bringSubviewToFront(thumbnailNumberClips)
+    
+    func showRecordedVideoThumb(image: UIImage) {
+        thumbnailView.image = image
+        
+        setCornerToThumbnail()
+        setBorderToThumb()
     }
+    
     func showNumberVideos(nClips:Int){
         thumbnailNumberClips.text = "\(nClips)"
         thumbnailNumberClips.adjustsFontSizeToFitWidth = true
     }
+    
+    //Customize the thumnailImageView
+    
+    func setCornerToThumbnail(){
+        let diameter = thumbnailView.frame.height/2
+        
+        thumbnailView.layer.cornerRadius = diameter
+        thumbnailView.clipsToBounds = true
+    }
+    
+    func setBorderToThumb(){
+        let borderLayer = self.getBorderLayer()
+        thumbnailView.layer.addSublayer(borderLayer)
+    }
+    
+    func getBorderLayer() -> CALayer{
+        let diameter = thumbnailView.frame.width/2
+        let borderLayer = CALayer.init()
+        let borderFrame = CGRectMake(0,0,thumbnailView.frame.height, thumbnailView.frame.height)
+        
+        //Set properties border layer
+        borderLayer.backgroundColor = UIColor.clearColor().CGColor
+        borderLayer.frame = borderFrame
+        borderLayer.cornerRadius = diameter
+        borderLayer.borderWidth = 3
+        borderLayer.borderColor = UIColor.whiteColor().CGColor
+        
+        return borderLayer
+    }
+    
+    ///////////////////////////////
     func hideRecordedVideoThumb(){
-        thumbnailView.hidden = true
+        thumbnailView.image = defaultThumbImage
+        thumbnailNumberClips.text = ""
+        
+        guard let sublayers = thumbnailView.layer.sublayers else{
+            return
+        }
+        for layer in sublayers{
+            layer.removeFromSuperlayer()
+        }
     }
     
     func showVideosRecordedNumber(numberOfVideos:Int){
@@ -255,35 +316,22 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         
     }
     
-    func createAlertWaitToExport(){
-        let title = Utils().getStringByKeyFromSettings(RecordConstants().WAIT_TITLE)
-        let message = Utils().getStringByKeyFromSettings(RecordConstants().WAIT_DESCRIPTION)
-        
-        alertController = UIAlertController(title:title,message:message,preferredStyle: .Alert)
-        
-        let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
-        
-
-        activityIndicator.center = CGPointMake(130.5, 75.5);
-        activityIndicator.startAnimating()
-
-        alertController?.view.addSubview(activityIndicator)
-        self.presentViewController(alertController!, animated: false, completion:{})
-    }
-    
-    func dissmissAlertWaitToExport(completion:()->Void){
-        alertController?.dismissViewControllerAnimated(true, completion: {
-            print("can go to next screen")
-            completion()
-        })
-    }
-    
     func resetView() {
         eventHandler?.resetRecorder()
     }
     
-    func getRecordButtonSize()->CGFloat{
-        return self.recordButton.frame.size.height
+    func getThumbnailSize()->CGFloat{
+        return self.thumbnailView.frame.size.height
+    }
+    
+    func showFocusAtPoint(point: CGPoint) {
+        
+        focusImageView.center = point
+        focusImageView.hidden = false
+        
+        Utils.sharedInstance.delay(0.5, closure: {
+            self.focusImageView.hidden = true
+        })
     }
     
     //MARK: - Landscape Orientation
@@ -309,15 +357,20 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         default:
             text="Another"
         }
-        NSLog("You have moved: \(text)")
+        Utils.sharedInstance.debugLog("Orientation You have moved: \(text)")
     }
    
     func forceOrientation(){
-        if UIDevice.currentDevice().orientation == .Portrait
-            ||  UIDevice.currentDevice().orientation == .PortraitUpsideDown {
+        switch UIDevice.currentDevice().orientation{
+        case .Portrait,.PortraitUpsideDown:
             let value = UIInterfaceOrientation.LandscapeRight.rawValue
             UIDevice.currentDevice().setValue(value, forKey: "orientation")
+            Utils.sharedInstance.debugLog("Force orientation to landscape right)")
+            break
+        default:
+            break
         }
+
     }
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
@@ -338,7 +391,11 @@ extension UINavigationController {
         }
     }
     public override func shouldAutorotate() -> Bool {
-        return visibleViewController!.shouldAutorotate()
+        if visibleViewController != nil{
+            return visibleViewController!.shouldAutorotate()
+        }else{
+            return true
+        }
     }
 }
 

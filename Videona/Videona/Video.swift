@@ -10,12 +10,26 @@ import Foundation
 
 class Video: Media {
     
-    var isSplit:Bool!
+    private var isSplit:Bool!
+    private var position:Int!
     
     override init(title: String, mediaPath: String) {
         super.init(title: title, mediaPath: mediaPath)
         
         isSplit = false
+    }
+    
+    func copyWithZone(zone: NSZone) -> AnyObject {
+        let copy = Video(title: title,
+                         mediaPath: mediaPath)
+        copy.setIsSplit(isSplit)
+        copy.setPosition(position)
+        copy.fileStopTime = fileStopTime
+        copy.setStopTime(trimStopTime)
+        copy.setStartTime(trimStartTime)
+        copy.duration = duration
+        
+        return copy
     }
     
     func getIsSplit() -> Bool {
@@ -25,4 +39,20 @@ class Video: Media {
     func setIsSplit(state:Bool){
         self.isSplit = state
     }
+    
+    func getPosition()->Int{
+        return self.position
+    }
+    
+    func setPosition(position:Int){
+        self.position = position
+    }
+    
+//    func getThumbnailImage()->UIImageView{
+//        return self.thumbnailImage
+//    }
+//    
+//    func setThumbnailImage(imageView:UIImageView){
+//        self.thumbnailImage = imageView
+//    }
 }

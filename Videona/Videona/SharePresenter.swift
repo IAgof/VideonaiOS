@@ -24,7 +24,8 @@ class SharePresenter:NSObject,SharePresenterInterface{
     
     var videoPath = ""
     var numberOfClips = 0
-    
+    var isGoingToExpandPlayer = false
+
     //LifeCicle
     func viewDidLoad() {
         controller!.createShareInterface()
@@ -32,7 +33,7 @@ class SharePresenter:NSObject,SharePresenterInterface{
         
         wireframe?.presentPlayerInterface()
         
-        playerPresenter?.createVideoPlayer(videoPath)
+        playerPresenter?.createVideoPlayer(GetActualProjectAVCompositionUseCase.sharedInstance.getComposition())
         self.getListData()
         
         controller?.bringToFrontExpandPlayerButton()
@@ -40,7 +41,9 @@ class SharePresenter:NSObject,SharePresenterInterface{
     }
     
     func viewWillDisappear() {
-
+        if !isGoingToExpandPlayer{
+            playerPresenter?.onVideoStops()
+        }
     }
     
     func setVideoExportedPath(path: String) {
@@ -63,6 +66,7 @@ class SharePresenter:NSObject,SharePresenterInterface{
     
     func expandPlayer(){
         fullScreenPlayerWireframe?.presentFullScreenPlayerFromViewController((controller?.getController())!,playerView: (playerWireframe?.presentedView)!)
+        isGoingToExpandPlayer = true
     }
     
     func getListData (){

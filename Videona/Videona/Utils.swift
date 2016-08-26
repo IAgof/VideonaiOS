@@ -11,6 +11,19 @@ import Foundation
 class Utils{
     static let sharedInstance = Utils()
     
+    var thumbnailEditorListDiameter:Int {
+        switch UIDevice.currentDevice().userInterfaceIdiom {
+        case .Phone:
+            return 80
+        case .Pad:
+            return 120
+        case .Unspecified:
+            return 50
+        default:
+            return 80
+        }
+    }
+    
     let udid = UIDevice.currentDevice().identifierForVendor!.UUIDString
 
     func getDoubleHourAndMinutes() -> Double{
@@ -59,5 +72,35 @@ class Utils{
     
     func getStringByKeyFromIntro(key:String) -> String {
         return NSBundle.mainBundle().localizedStringForKey(key,value: "",table: "Intro")
+    }
+    func getStringByKeyFromEditor(key:String) -> String {
+        return NSBundle.mainBundle().localizedStringForKey(key,value: "",table: "Editor")
+    }
+    func hourToString(time:Double) -> String {
+        let hours = Int(floor(time/3600))
+        let mins = Int(floor(time % 3600) / 60)
+        let secs = Int(floor(time % 3600) % 60)
+        
+        let x:Double = (time % 3600) % 60
+        let numberOfPlaces:Double = 4.0
+        let powerOfTen:Double = pow(10.0, numberOfPlaces)
+        let targetedDecimalPlaces:Double = round((x % 1.0) * powerOfTen) / powerOfTen
+        
+        let decimals = Int(targetedDecimalPlaces * 1000)
+        
+//        return String(format:"%d:%02d:%02d,%02d", hours, mins, secs,decimals)
+        return String(format:"%02d:%02d:%02d", mins, secs,decimals)
+//        return String(format:"%02d:%02d", mins, secs)
+    }
+    
+    func delay(delay: Double, closure: ()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(),
+            closure
+        )
     }
 }

@@ -32,6 +32,7 @@ class AnalyticsConstants {
     let VIDEO_RECORDED = "Video Recorded"
     let VIDEO_EXPORTED = "Video Exported"
     let VIDEO_SHARED = "Video Shared"
+    let VIDEO_EDITED = "Video Edited"
     let USER_INTERACTED = "User Interacted"
     let FILTER_SELECTED = "Filter Selected"
     let TIME_IN_ACTIVITY = "Time in Activity"
@@ -120,5 +121,17 @@ class AnalyticsConstants {
     let SOURCE_APP_VIDEONA = "Videona"
     let DESTINATION_KAMARADA_PLAY = "Kamarada Google Play"
     let DESTINATION_KAMARADA_ITUNES = "Kamarada Itunes"
+    
+    /**
+     * Edit Events properties and values
+     */
+    let EDIT_ACTION = "editAction"
+    let EDIT_ACTION_REORDER = "Reorder"
+    let EDIT_ACTION_TRIM = "Trim"
+    let EDIT_ACTION_SPLIT = "Split"
+    let EDIT_ACTION_DUPLICATE = "Duplicate"
+    let EDIT_ACTION_MUSIC_SET = "Music set"
+    let NUMBER_OF_DUPLICATES = "numberOfDuplicates"
+    let MUSIC_TITLE = "musicTitle"
 }
 

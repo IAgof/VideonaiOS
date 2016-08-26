@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 class PlayerPresenter:NSObject,PlayerPresenterInterface{
     
@@ -19,13 +20,12 @@ class PlayerPresenter:NSObject,PlayerPresenterInterface{
     var wireframe: PlayerWireframe?
     var recordWireframe: RecordWireframe?
 
-
     //MARK: - Variables
     var isPlaying = false
     
     //MARK: - Init
-    func createVideoPlayer(videoPath:String) {
-        controller?.setPlayerMovieURL(NSURL.init(fileURLWithPath: videoPath))
+    func createVideoPlayer(composition:AVMutableComposition) {
+        controller?.setPlayerMovieComposition(composition)
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.controller?.createVideoPlayer()
@@ -53,8 +53,11 @@ class PlayerPresenter:NSObject,PlayerPresenterInterface{
     }
     
     func pushPlayButton() {
-        if isPlaying == false {
-            self.playPlayer()
+        if(isPlaying){
+            controller?.pauseVideoPlayer()
+            isPlaying = false
+        }else{
+            playPlayer()
         }
     }
     
@@ -74,5 +77,12 @@ class PlayerPresenter:NSObject,PlayerPresenterInterface{
     
     func updateSeekBar() {
         controller!.updateSeekBarOnUI()
+    }
+    
+    func seekToTime(time:Float){
+        controller?.seekToTime(time)
+    }
+    func isPlayingVideo() -> Bool {
+        return self.isPlaying
     }
 }

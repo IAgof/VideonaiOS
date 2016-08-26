@@ -71,6 +71,7 @@ class CameraInteractor:CameraRecorderDelegate,
     }
     
     func stopCamera() {
+        Utils.sharedInstance.debugLog("Stop camera capture")
         videoCamera.stopCameraCapture()
     }
     
@@ -115,7 +116,7 @@ class CameraInteractor:CameraRecorderDelegate,
     //MARK: - Filters functions
     func addBlendFilterAtInit(){
         let blendFilter = GPUImageAlphaBlendFilter()
-        blendFilter.mix = 1.0
+        blendFilter.mix = 1
         filter.removeAllTargets()
         
         let image = UIImage.init(named: "filter_free")
@@ -190,7 +191,7 @@ class CameraInteractor:CameraRecorderDelegate,
         
         print("\n maskFilterOutput targets \n \(maskFilterOutput.targets())\n\n\n")
         let blendFilter = GPUImageAlphaBlendFilter()
-        blendFilter.mix = 0.5
+        blendFilter.mix = 1
 
         let image = UIImage.init(named: "water_mark")
         
@@ -243,6 +244,8 @@ class CameraInteractor:CameraRecorderDelegate,
         
         if (tapDisplay.state == UIGestureRecognizerState.Recognized) {
             var location = tapDisplay.locationInView(self.displayView)
+            
+            cameraDelegate.showFocus(location)
             
             let device = videoCamera.inputCamera
             do {

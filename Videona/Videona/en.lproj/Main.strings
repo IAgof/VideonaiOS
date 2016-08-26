@@ -2,11 +2,17 @@
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "9rL-1E-65k"; */
 "9rL-1E-65k.normalTitle" = "Button";
 
+/* Class = "UILabel"; text = "finish"; ObjectID = "AEc-jl-ZMM"; */
+"AEc-jl-ZMM.text" = "finish";
+
 /* Class = "UILabel"; text = "0:00"; ObjectID = "DuL-YK-lI5"; */
 "DuL-YK-lI5.text" = "0:00";
 
-/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "Iqy-2a-OtQ"; */
-"Iqy-2a-OtQ.normalTitle" = "Next";
+/* Class = "UILabel"; text = "Clona tu clip de video"; ObjectID = "E1Q-KJ-Tbq"; */
+"E1Q-KJ-Tbq.text" = "Clone your clip";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "En6-R0-2Nl"; */
+"En6-R0-2Nl.text" = "1";
 
 /* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "T5V-hi-ibx"; */
 "T5V-hi-ibx.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
@@ -14,14 +20,38 @@
 /* Class = "UIButton"; normalTitle = "navigator_common_icon_drawer_back_pressed"; ObjectID = "U1A-91-Hgd"; */
 "U1A-91-Hgd.normalTitle" = "navigator_common_icon_drawer_back_pressed";
 
-/* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "VAE-Jt-vzw"; */
-"VAE-Jt-vzw.normalTitle" = "Skip";
+/* Class = "UILabel"; text = "Music title"; ObjectID = "WVe-5g-Ifl"; */
+"WVe-5g-Ifl.text" = "Music title";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "YmL-nK-vl6"; */
 "YmL-nK-vl6.normalTitle" = "Button";
 
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Z47-6C-PSW"; */
+"Z47-6C-PSW.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Recorta tu clip de video"; ObjectID = "aTr-8K-kQH"; */
+"aTr-8K-kQH.text" = "Trim your clip";
+
+/* Class = "UILabel"; text = "00:00"; ObjectID = "acA-D2-1GX"; */
+"acA-D2-1GX.text" = "00:00";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "amu-af-eG1"; */
+"amu-af-eG1.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "x2"; ObjectID = "faF-YT-Hme"; */
+"faF-YT-Hme.text" = "x2";
+
 /* Class = "UILabel"; text = "Detail"; ObjectID = "j8r-VL-6S0"; */
 "j8r-VL-6S0.text" = "Detail";
+
+/* Class = "UILabel"; text = "00:00"; ObjectID = "loi-s2-CN8"; */
+"loi-s2-CN8.text" = "00:00";
+
+/* Class = "UILabel"; text = "Init"; ObjectID = "pbo-kF-fRZ"; */
+"pbo-kF-fRZ.text" = "Init";
+
+/* Class = "UILabel"; text = "Divide tu clip de video"; ObjectID = "w85-c7-77j"; */
+"w85-c7-77j.text" = "Split your clip";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "ylD-dR-oSR"; */
 "ylD-dR-oSR.text" = "Title";

@@ -72,6 +72,13 @@ UICollectionViewDelegate {
         }
     }
 
+    func scrollToNextElement() {
+        let visibleItems = self.filtersCollectionView.indexPathsForSelectedItems()
+        let currentItem = visibleItems![0]
+        
+        self.filtersCollectionView.scrollToItemAtIndexPath(currentItem, atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: true)
+    }
+    
     //MARK: - Navigation
     @IBAction func pushDismissView(sender: AnyObject) {
         eventHandler?.cancelFilterListAction()
@@ -105,7 +112,6 @@ UICollectionViewDelegate {
     }
     
     // MARK: - UICollectionViewDelegate protocol
-    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         // handle tap events
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! FilterViewCell
@@ -115,5 +121,7 @@ UICollectionViewDelegate {
         eventHandler?.checkOtherCellSelected(indexPath, lastSelectedIndexPath: lastSelectedIndexPath, collectionView: filtersCollectionView)
         
         lastSelectedIndexPath = indexPath
+        
+        self.scrollToNextElement()
     }
 }

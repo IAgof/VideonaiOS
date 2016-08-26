@@ -56,6 +56,7 @@ class SettingsWireframe : NSObject {
     
     func goPrevController(){
         settingsViewController?.navigationController?.popToViewController(prevController!, animated: true)
+        settingsViewController?.dismissViewControllerAnimated(false, completion: nil)
     }
     
     func goToAppleStoreURL(url:NSURL){

@@ -13,11 +13,13 @@ import AVFoundation
 class PlayerView: UIView,PlayerInterface {
     //MARK: - VIPER
     var eventHandler: PlayerPresenterInterface?
+    var delegate:PlayerViewDelegate?
     
     //MARK: - Variables
-    var movieURL:NSURL!
     var player:AVPlayer?
     var playerLayer: AVPlayerLayer?
+    var movieComposition:AVMutableComposition!
+    var oldSliderValue:Float = 0.0
 
     //MARK: - Outlets
     @IBOutlet weak var playOrPauseButton: UIButton!
@@ -35,8 +37,8 @@ class PlayerView: UIView,PlayerInterface {
         
     }
     
-    func setPlayerMovieURL(movieURL: NSURL) {
-        self.movieURL = movieURL
+    func setPlayerMovieComposition(composition: AVMutableComposition) {
+        self.movieComposition = composition
     }
     
     override func layoutSubviews() {
@@ -58,43 +60,64 @@ class PlayerView: UIView,PlayerInterface {
         return self
     }
     
+    func removeSubviews(){
+        if let sublayers = self.playerContainer.layer.sublayers{
+            for layer in sublayers{
+                layer.removeFromSuperlayer()
+            }
+        }
+    }
     //MARK: - Player Interface
     func createVideoPlayer(){
+        removeSubviews()
+        
         self.setViewPlayerTappable()
         self.initSeekEvents()
         
-        //Test share interface
-//        movieURL =  NSURL.init(fileURLWithPath: NSBundle.mainBundle().pathForResource("test", ofType:"m4v")!)
-        
-        let avAsset: AVURLAsset = AVURLAsset(URL: movieURL!, options: nil)
-        let playerItem: AVPlayerItem = AVPlayerItem(asset: avAsset)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PlayerView.onVideoStops),
-                                                         name: AVPlayerItemDidPlayToEndTimeNotification,
-                                                         object: playerItem)
-        player = AVPlayer.init(playerItem: playerItem)
-
-        player!.addPeriodicTimeObserverForInterval(CMTimeMake(1, 1000), queue: dispatch_get_main_queue()) { _ in
-            if self.player!.currentItem?.status == .ReadyToPlay {
-                self.eventHandler?.updateSeekBar()
+        if (movieComposition != nil) {
+            
+            let playerItem: AVPlayerItem = AVPlayerItem(asset: movieComposition)
+            
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PlayerView.onVideoStops),
+                                                             name: AVPlayerItemDidPlayToEndTimeNotification,
+                                                             object: playerItem)
+            player = AVPlayer.init(playerItem: playerItem)
+            
+            player!.addPeriodicTimeObserverForInterval(CMTimeMake(1, 1000), queue: dispatch_get_main_queue()) { _ in
+                if self.player!.currentItem?.status == .ReadyToPlay {
+                    self.eventHandler?.updateSeekBar()
+                }
             }
+            
+            
+            playerLayer = AVPlayerLayer(player: player)
+            playerLayer!.frame = self.frame
+            player?.currentItem?.seekToTime(CMTime.init(value: 3, timescale: 10))
+            
+            self.playerContainer.layoutIfNeeded()
+            self.playerContainer.layer.addSublayer(playerLayer!)
+            
+            self.playerContainer.bringSubviewToFront(seekSlider)
+            
+            self.seekToTime(0.1)
         }
-        
-        playerLayer = AVPlayerLayer(player: player)
-        playerLayer!.frame = self.frame
-        player?.currentItem?.seekToTime(CMTime.init(value: 3, timescale: 10))
-
-        self.playerContainer.layoutIfNeeded()
-        self.playerContainer.layer.addSublayer(playerLayer!)
-        
-        self.playerContainer.bringSubviewToFront(seekSlider)
     }
     
     func updateSeekBarOnUI(){
-        let duration = player?.currentItem?.duration.seconds
-        let currentTime = player?.currentTime().seconds
+        guard let duration = player?.currentItem?.duration.seconds else{
+            return
+        }
+        guard let currentTime = player?.currentTime().seconds else{
+            return 
+        }
         
-        seekSlider.setValue(Float((currentTime!/duration!)), animated: true)
+        let sliderValue = Float((currentTime / duration))
+        
+        seekSlider.setValue(sliderValue, animated: true)
+        if oldSliderValue != sliderValue {
+            self.delegate?.seekBarUpdate(sliderValue)
+        }
+        oldSliderValue = sliderValue
     }
     
     func setViewPlayerTappable(){
@@ -114,6 +137,7 @@ class PlayerView: UIView,PlayerInterface {
     func videoPlayerViewTapped(){
         eventHandler?.videoPlayerViewTapped()
     }
+    
     @IBAction func pushPlayButton(sender: AnyObject) {
         eventHandler?.pushPlayButton()
     }
@@ -124,22 +148,36 @@ class PlayerView: UIView,PlayerInterface {
     }
     
     func sliderEndedTracking(){
-        let videoDuration = CMTimeGetSeconds(player!.currentItem!.duration)
-        let elapsedTime: Float64 = videoDuration * Float64(seekSlider.value)
-        
-        player!.seekToTime(CMTimeMakeWithSeconds(elapsedTime, 10)) { (completed: Bool) -> Void in
-            if (self.playerRateBeforeSeek > 0) {
-                self.player!.play()
-            }
-        }
-    }
-    func sliderValueChanged(){
 
     }
     
+    func sliderValueChanged(){
+        let videoDuration = CMTimeGetSeconds(player!.currentItem!.duration)
+        let elapsedTime: Int64 = Int64(videoDuration * 1000 * Float64(seekSlider.value))
+        
+        let timeToGo = CMTimeMake(elapsedTime, 1000)
+        let tolerance = CMTimeMake(1, 100)
+        
+        player?.seekToTime(timeToGo, toleranceBefore: tolerance, toleranceAfter: tolerance, completionHandler: {
+            completed in
+            if (self.playerRateBeforeSeek > 0) {
+                self.player!.play()
+            }
+            
+            if completed{
+                self.delegate?.seekBarUpdate(Float(self.seekSlider.value))
+            }
+        })
+    }
+    
     func setUpVideoFinished(){
-        player?.currentItem?.seekToTime(CMTime.init(value: 1, timescale: 10))
-        playOrPauseButton.hidden = false
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            Utils().debugLog("Set up video finished")
+            
+            self.player?.pause()
+            self.player?.currentItem?.seekToTime(CMTime.init(value: 1, timescale: 10))
+            self.playOrPauseButton.hidden = false
+        })
     }
     
     func onVideoStops(){
@@ -147,7 +185,10 @@ class PlayerView: UIView,PlayerInterface {
     }
     
     func pauseVideoPlayer(){
-        player!.pause()
+        guard let player = self.player else{
+            return
+        }
+        player.pause()
         
         playOrPauseButton.hidden = false
         
@@ -155,7 +196,10 @@ class PlayerView: UIView,PlayerInterface {
     }
     
     func playVideoPlayer(){
-        player!.play()
+        guard let player = self.player else{
+            return
+        }
+        player.play()
         
         playOrPauseButton.hidden = true
         
@@ -163,4 +207,20 @@ class PlayerView: UIView,PlayerInterface {
 
         Utils().debugLog("Playing video")
     }
+    
+    func seekToTime(time: Float) {
+        Utils.sharedInstance.debugLog("Seek to time manually to --\(time)")
+        seekSlider.value = time
+        guard let player = self.player else{
+            return
+        }
+        let videoDuration = CMTimeGetSeconds(player.currentItem!.duration)
+        let elapsedTime: Int64 = Int64(videoDuration * 1000 * Float64(seekSlider.value))
+        
+        let timeToGo = CMTimeMake(elapsedTime, 1000)
+        let tolerance = CMTimeMake(1, 100)
+        player.seekToTime(timeToGo, toleranceBefore: tolerance, toleranceAfter: tolerance)
+        
+    }
+    
 }

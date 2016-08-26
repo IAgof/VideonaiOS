@@ -10,21 +10,46 @@ import Foundation
 import Social
 
 class ShareWhatsappInteractor: ShareSocialNetworkInteractor {
-
+    
     var documentationInteractionController:UIDocumentInteractionController!
-
+    
     func share(){
-        
+        var debug = false
+        #if DEBUG
+            debug = true
+        #endif
         //NSURL(string: urlString!) {
-        if UIApplication.sharedApplication().canOpenURL(NSURL(string: "whatsapp://app")!) {
+        if (UIApplication.sharedApplication().canOpenURL(NSURL(string: "whatsapp://app")!)) || debug {
             
             let movie:NSURL = NSURL.fileURLWithPath(moviePath)
             
-            documentationInteractionController = UIDocumentInteractionController.init(URL: movie)
+            //            documentationInteractionController = UIDocumentInteractionController.init(URL: movie)
+            //
+            //            documentationInteractionController.UTI = "public.movie"
+            //
+            //            documentationInteractionController.presentOpenInMenuFromRect(CGRectZero, inView: self.getViewOnTop(), animated: true)
             
-            documentationInteractionController.UTI = "net.whatsapp.movie"
+            let objectsToShare = [movie] //comment!, imageData!, myWebsite!]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
             
-            documentationInteractionController.presentOpenInMenuFromRect(CGRectZero, inView: self.getViewOnTop(), animated: true)
+            activityVC.setValue("Video", forKey: "subject")
+            
+            
+            //New Excluded Activities Code
+            if #available(iOS 9.0, *) {
+                activityVC.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList, UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypeMail, UIActivityTypeMessage, UIActivityTypeOpenInIBooks, UIActivityTypePostToTencentWeibo, UIActivityTypePostToVimeo, UIActivityTypePostToWeibo, UIActivityTypePrint]
+            } else {
+                // Fallback on earlier versions
+                activityVC.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList, UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypeMail, UIActivityTypeMessage, UIActivityTypePostToTencentWeibo, UIActivityTypePostToVimeo, UIActivityTypePostToWeibo, UIActivityTypePrint ]
+            }
+            
+            if (activityVC.popoverPresentationController != nil) {
+                activityVC.popoverPresentationController!.sourceView = self.getViewOnTop()
+            }
+            
+            self.getViewControllerOnTop().presentViewController(activityVC, animated: false, completion: nil)
+            
+            
         }else{
             self.setAlertCompletionMessageOnTopView(Utils().getStringByKeyFromSettings(ShareConstants().NO_WHATSAPP_INSTALLED))
         }
