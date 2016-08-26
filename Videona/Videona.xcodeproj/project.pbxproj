@@ -2746,7 +2746,7 @@
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.videona.videona;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d0c492cd-e4ba-421a-afd0-eff2400d4811";
+				PROVISIONING_PROFILE = "47d6d2c6-4933-4a5d-929e-a25633f3904b";
 				SWIFT_OBJC_BRIDGING_HEADER = "Videona/Videona-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -2769,7 +2769,7 @@
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-DRELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.videona.videona;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d0c492cd-e4ba-421a-afd0-eff2400d4811";
+				PROVISIONING_PROFILE = "47d6d2c6-4933-4a5d-929e-a25633f3904b";
 				SWIFT_OBJC_BRIDGING_HEADER = "Videona/Videona-Bridging-Header.h";
 			};
 			name = Release;

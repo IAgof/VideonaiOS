@@ -25,8 +25,8 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
     var videoToRemove = -1
     let NO_SELECTED_CELL = -1
     var stopList:[Double] = []
+    var isGoingToExpandPlayer = false
     
-
     //MARK: - Interface
     func viewDidLoad() {
         controller?.configurePickerController()
@@ -51,11 +51,19 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
     }
     
     func viewWillAppear() {
-        self.viewDidLoad()
+        if !isGoingToExpandPlayer{
+            self.viewDidLoad()
+            
+            playerPresenter?.onVideoStops()
+        }else{
+            isGoingToExpandPlayer = false
+        }
     }
     
     func viewWillDisappear() {
-        playerPresenter?.pauseVideo()
+        if !isGoingToExpandPlayer{
+            playerPresenter?.onVideoStops()
+        }
     }
     
     func didSelectItemAtIndexPath(indexPath: NSIndexPath) {
@@ -127,6 +135,8 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
     }
     
     func expandPlayer() {
+        isGoingToExpandPlayer = true
+        
         wireframe?.presentExpandPlayer()
     }
     

@@ -25,7 +25,8 @@ class SplitPresenter: NSObject,SplitPresenterInterface,SplitInteractorDelegate {
     }
     
     var isMovingByPlayer = false
-    
+    var isGoingToExpandPlayer = false
+
     var splitValue:Float!{
         didSet{
             if splitValue != nil {
@@ -62,7 +63,9 @@ class SplitPresenter: NSObject,SplitPresenterInterface,SplitInteractorDelegate {
     }
     
     func viewWillDissappear() {
-        playerPresenter?.onVideoStops()
+        if !isGoingToExpandPlayer{
+            playerPresenter?.onVideoStops()
+        }
     }
     
     func pushAcceptHandler() {
@@ -92,6 +95,8 @@ class SplitPresenter: NSObject,SplitPresenterInterface,SplitInteractorDelegate {
     
     func expandPlayer() {
         wireframe?.presentExpandPlayer()
+        
+        isGoingToExpandPlayer = true
     }
     
     func updatePlayerLayer() {

@@ -26,7 +26,8 @@ TrimInteractorDelegate {
             interactor?.setVideoPosition(videoSelectedIndex)
         }
     }
-    
+    var isGoingToExpandPlayer = false
+
     var lowerValueOld:Float! = -1.0
     var lowerValue:Float!{
         didSet{
@@ -100,10 +101,12 @@ TrimInteractorDelegate {
     }
     
     func viewWillDissappear() {
-        upperValue = nil
-        lowerValue = nil
-        
-        playerPresenter?.onVideoStops()
+        if !isGoingToExpandPlayer{
+            upperValue = nil
+            lowerValue = nil
+            
+            playerPresenter?.onVideoStops()
+        }
     }
     
     func pushAcceptHandler() {
@@ -143,6 +146,8 @@ TrimInteractorDelegate {
     
     func expandPlayer() {
         wireframe?.presentExpandPlayer()
+        
+        isGoingToExpandPlayer = true
     }
     
     func updatePlayerLayer() {

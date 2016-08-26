@@ -37,6 +37,7 @@ class DuplicatePresenter: NSObject,DuplicatePresenterInterface,DuplicateInteract
             delegate?.setNumberDuplicates("x\(numberOfDuplicates)")
         }
     }
+    var isGoingToExpandPlayer = false
     
     //MARK: - Interface
     func viewDidLoad() {
@@ -56,7 +57,9 @@ class DuplicatePresenter: NSObject,DuplicatePresenterInterface,DuplicateInteract
     }
     
     func viewWillDissappear() {
-        playerPresenter?.onVideoStops()
+        if !isGoingToExpandPlayer{
+            playerPresenter?.onVideoStops()
+        }
     }
     
     func pushAcceptHandler() {
@@ -84,6 +87,8 @@ class DuplicatePresenter: NSObject,DuplicatePresenterInterface,DuplicateInteract
     
     func expandPlayer() {
         wireframe?.presentExpandPlayer()
+        
+        isGoingToExpandPlayer = true
     }
     
     func updatePlayerLayer() {

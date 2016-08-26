@@ -99,7 +99,7 @@ class PlayerView: UIView,PlayerInterface {
             
             self.playerContainer.bringSubviewToFront(seekSlider)
             
-            self.seekToTime(0)
+            self.seekToTime(0.1)
         }
     }
     
@@ -148,22 +148,7 @@ class PlayerView: UIView,PlayerInterface {
     }
     
     func sliderEndedTracking(){
-//        let videoDuration = CMTimeGetSeconds(player!.currentItem!.duration)
-//        let elapsedTime: Int64 = Int64(videoDuration * 1000 * Float64(seekSlider.value))
-//        
-//        let timeToGo = CMTimeMake(elapsedTime, 1000)
-//        let tolerance = CMTimeMake(1, 100)
-//        
-//        player?.seekToTime(timeToGo, toleranceBefore: tolerance, toleranceAfter: tolerance, completionHandler: {
-//            completed in
-//            if (self.playerRateBeforeSeek > 0) {
-//                self.player!.play()
-//            }
-//            
-//            if completed{
-//                self.delegate?.seekBarUpdate(Float(self.seekSlider.value))
-//            }
-//        })
+
     }
     
     func sliderValueChanged(){
@@ -200,7 +185,10 @@ class PlayerView: UIView,PlayerInterface {
     }
     
     func pauseVideoPlayer(){
-        player!.pause()
+        guard let player = self.player else{
+            return
+        }
+        player.pause()
         
         playOrPauseButton.hidden = false
         
@@ -208,7 +196,10 @@ class PlayerView: UIView,PlayerInterface {
     }
     
     func playVideoPlayer(){
-        player!.play()
+        guard let player = self.player else{
+            return
+        }
+        player.play()
         
         playOrPauseButton.hidden = true
         

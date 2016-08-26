@@ -23,7 +23,8 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
     //MARK: - Variables
     var lastMusicSelected:Int = -1
     var isMusicSet:Bool = false
-    
+    var isGoingToExpandPlayer = false
+
     //MARK: - Constants
     let NO_MUSIC_SELECTED = -1
 
@@ -56,7 +57,9 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
     }
     
     func viewWillDisappear() {
-        playerPresenter?.pauseVideo()
+        if !isGoingToExpandPlayer{
+            playerPresenter?.onVideoStops()
+        }
         
         if !isMusicSet {
             interactor?.setMusicToProject(NO_MUSIC_SELECTED)
@@ -88,6 +91,8 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
         
         let project = Project.sharedInstance
         controller?.getTrackerObject().trackMusicSet(project)
+        
+        wireframe?.presentEditor()
     }
     
     func removeDetailButtonPushed() {
@@ -104,6 +109,8 @@ class MusicPresenter: MusicPresenterInterface,MusicInteractorDelegate {
     
     func expandPlayer() {
         wireframe?.presentExpandPlayer()
+        
+        isGoingToExpandPlayer = true
     }
     
     func updatePlayerLayer() {
