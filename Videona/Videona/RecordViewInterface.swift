@@ -33,7 +33,7 @@ protocol RecordViewInterface:VideonaControllerInterface{
     
     func updateChronometer(time:String)
 
-    func showRecordedVideoThumb(imageView:UIImageView)
+    func showRecordedVideoThumb(image: UIImage)
 
     func showNumberVideos(nClips:Int)
 
@@ -91,7 +91,7 @@ protocol RecordViewInterface:VideonaControllerInterface{
     
     func resetView()
     
-    func getRecordButtonSize()->CGFloat
+    func getThumbnailSize()->CGFloat
 
     func showFocusAtPoint(point:CGPoint)
 }

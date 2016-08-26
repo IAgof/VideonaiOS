@@ -74,7 +74,7 @@
                   moduleName = "Videona"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Alejandro/Desktop/Repos/VideonaiOS/Videona/Videona/ExporterInteractor.swift"
-                  timestampString = "493723028.356376"
+                  timestampString = "493888254.652327"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "54"
@@ -89,7 +89,7 @@
                   moduleName = "Videona"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/usr/include/dispatch/queue.h"
-                  timestampString = "493723028.356581"
+                  timestampString = "493888254.652433"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "325"
@@ -129,53 +129,6 @@
             endingLineNumber = "84"
             landmarkName = "testSplitVideoWhenIsSplitted()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideonaTests.SplitVideoTests.testSplitVideoWhenIsSplitted () -&gt; ()"
-                  moduleName = "VideonaTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Alejandro/Desktop/Repos/VideonaiOS/Videona/VideonaTests/SplitVideoTests.swift"
-                  timestampString = "493723029.425933"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "84"
-                  endingLineNumber = "84"
-                  offsetFromSymbolStart = "1188">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideonaTests.SplitVideoTests.(testSplitVideoWhenIsSplitted () -&gt; ()).(implicit closure #5)"
-                  moduleName = "VideonaTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Alejandro/Desktop/Repos/VideonaiOS/Videona/VideonaTests/SplitVideoTests.swift"
-                  timestampString = "493723029.426215"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "84"
-                  endingLineNumber = "84"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideonaTests.SplitVideoTests.(testSplitVideoWhenIsSplitted () -&gt; ()).(implicit closure #6)"
-                  moduleName = "VideonaTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Alejandro/Desktop/Repos/VideonaiOS/Videona/VideonaTests/SplitVideoTests.swift"
-                  timestampString = "493723029.426485"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "84"
-                  endingLineNumber = "84"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -207,6 +160,38 @@
             startingLineNumber = "81"
             endingLineNumber = "81"
             landmarkName = "testSplitVideoWhenIsSplitted()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Videona/RecordController.swift"
+            timestampString = "493830418.598572"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "366"
+            endingLineNumber = "366"
+            landmarkName = "forceOrientation()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Videona/ThumbnailInteractor.swift"
+            timestampString = "493888038.241078"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "getthumbnailImage()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

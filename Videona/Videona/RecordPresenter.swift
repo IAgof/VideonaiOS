@@ -13,7 +13,8 @@ class RecordPresenter: NSObject
     , RecordPresenterInterface
     ,FilterListDelegate
     ,CameraInteractorDelegate
-,TimerInteractorDelegate{
+,TimerInteractorDelegate,
+ThumbnailDelegate{
     
     //MARK: - Variables VIPER
     var controller: RecordViewInterface?
@@ -23,6 +24,7 @@ class RecordPresenter: NSObject
     var recordWireframe: RecordWireframe?
     var settingsWireframe: SettingsWireframe?
     var shareWireframe: ShareWireframe?
+    var thumbnailInteractor:ThumbnailInteractor?
     
     //MARK: - Constants
     var colorFilterViewIsShowin = false
@@ -143,14 +145,12 @@ class RecordPresenter: NSObject
         if nClips > 0{
             let videoPath = Project.sharedInstance.getVideoList()[nClips - 1].getMediaPath()
             
-            let thumb = ThumbnailInteractor.init(videoPath: videoPath,
-                                                 diameter: (self.controller?.getRecordButtonSize())!).getThumbnailImageView()
-            
-            // update some UI
-            dispatch_async(dispatch_get_main_queue(), {
-                self.controller?.showRecordedVideoThumb(thumb)
-                self.controller?.showNumberVideos(Project.sharedInstance.numberOfClips())
-            });
+           thumbnailInteractor = ThumbnailInteractor.init(videoPath: videoPath,
+                                                 diameter: (self.controller?.getThumbnailSize())!)
+            if thumbnailInteractor != nil {
+                thumbnailInteractor?.delegate = self
+                thumbnailInteractor?.getthumbnailImage()
+            }
         }else{
             self.controller?.hideRecordedVideoThumb()
         }
@@ -427,6 +427,14 @@ class RecordPresenter: NSObject
     //MARK: - Timer delegate
     func updateTimer(time: String) {
         controller?.updateChronometer(time)
+    }
+    //MARK: - Thumbnail delegate
+    func setThumbToView(image: UIImage) {
+        // update some UI
+        dispatch_async(dispatch_get_main_queue(), {
+            self.controller?.showRecordedVideoThumb(image)
+            self.controller?.showNumberVideos(Project.sharedInstance.numberOfClips())
+        });
     }
     
     //MARK: - Set Overlay/Shader effects

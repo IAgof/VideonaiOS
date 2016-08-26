@@ -95,20 +95,30 @@ class EditorPresenter: NSObject,EditorPresenterInterface,EditorInteractorDelegat
         controller?.getTrackerObject().trackClipsReordered(project)
     }
     func pushDuplicateHandler() {
-        if checkIfSelectedCellExits(){
+        if checkIfSelectedCellExits() && canGoToAnyEditorAction(){
             wireframe?.presentDuplicateController(selectedCellIndexPath.item)
         }
     }
     
     func pushTrimHandler() {
-        if checkIfSelectedCellExits(){
+        if checkIfSelectedCellExits() && canGoToAnyEditorAction(){
             wireframe?.presentTrimController(selectedCellIndexPath.item)
         }
     }
     
     func pushSplitHandler() {
-        if checkIfSelectedCellExits(){
+        if checkIfSelectedCellExits() && canGoToAnyEditorAction(){
             wireframe?.presentSplitController(selectedCellIndexPath.item)
+        }
+    }
+    
+    func canGoToAnyEditorAction() -> Bool {
+        let nClips = Project.sharedInstance.numberOfClips()
+        
+        if nClips != 0 {
+            return true
+        }else{
+            return false
         }
     }
     
