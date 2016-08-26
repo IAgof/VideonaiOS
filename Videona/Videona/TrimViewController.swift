@@ -85,7 +85,7 @@ class TrimViewController: VideonaController,TrimViewInterface,TrimPresenterDeleg
         let trackImage = UIImage(named: "button_edit_thumb_seekbar_trim_normal")
         trimRangeSlider.trackImage = trackImage
         
-        let handleImage = UIImage(named: "button_edit_thumb_seekbar_over_advance_split-1")
+        let handleImage = UIImage(named: "button_edit_thumb_seekbar_trim_pressed")
         trimRangeSlider.lowerHandleImageNormal = handleImage
         trimRangeSlider.upperHandleImageNormal = handleImage
         

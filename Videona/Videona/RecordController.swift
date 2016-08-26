@@ -357,7 +357,7 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         default:
             text="Another"
         }
-        NSLog("Orientation You have moved: \(text)")
+        Utils.sharedInstance.debugLog("Orientation You have moved: \(text)")
     }
    
     func forceOrientation(){
@@ -365,6 +365,7 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
         case .Portrait,.PortraitUpsideDown:
             let value = UIInterfaceOrientation.LandscapeRight.rawValue
             UIDevice.currentDevice().setValue(value, forKey: "orientation")
+            Utils.sharedInstance.debugLog("Force orientation to landscape right)")
             break
         default:
             break
