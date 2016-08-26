@@ -25,26 +25,29 @@ class CameraRecorderInteractor{
     }
     
     func recordVideo(completion:(String)->Void){
-        let title = getNewTitle()
-        let clipPath = getNewClipPath(title)
-        self.clipsArray.append(clipPath)
-
-        AddVideoToProjectUseCase.sharedInstance.add(clipPath,
-                                       title: title)
-        print("Number of clips in project :\n \(Project.sharedInstance.numberOfClips())")
-        
-        let clipURL = NSURL.init(fileURLWithPath: clipPath)
-        
-        Utils().debugLog("PathToMovie: \(clipPath)")
-        self.movieWriter = GPUImageMovieWriter.init(movieURL: clipURL, size: CGSizeMake((resolutionSize?.width)!,(resolutionSize?.height)!))
-        self.movieWriter!.encodingLiveVideo = true
-        self.videoCamera?.audioEncodingTarget = movieWriter
-        
-        self.movieWriter!.startRecording()
-        
-        Utils().debugLog("Recording movie starts")
-        filterToWriter?.addTarget(movieWriter)
-        
+        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+        dispatch_async(dispatch_get_global_queue(priority, 0)) {
+            let title = self.getNewTitle()
+            let clipPath = self.getNewClipPath(title)
+            self.clipsArray.append(clipPath)
+            
+            AddVideoToProjectUseCase.sharedInstance.add(clipPath,
+                                                        title: title)
+            print("Number of clips in project :\n \(Project.sharedInstance.numberOfClips())")
+            
+            let clipURL = NSURL.init(fileURLWithPath: clipPath)
+            
+            Utils().debugLog("PathToMovie: \(clipPath)")
+            self.movieWriter = GPUImageMovieWriter.init(movieURL: clipURL, size: CGSizeMake((self.resolutionSize?.width)!,(self.resolutionSize?.height)!))
+            
+            self.movieWriter!.encodingLiveVideo = true
+            self.videoCamera?.audioEncodingTarget = self.movieWriter
+            
+            self.movieWriter!.startRecording()
+            
+            Utils().debugLog("Recording movie starts")
+            self.filterToWriter?.addTarget(self.movieWriter)
+        }
         completion("Record Starts")
     }
     
