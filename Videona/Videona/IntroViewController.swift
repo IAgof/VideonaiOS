@@ -96,8 +96,7 @@ IntroViewInterface {
         
         self.pageControl.numberOfPages = pageArray.count
     }
-    
-    
+        
     func setSubViewsOnTop(){
         self.view.bringSubviewToFront(self.pageControl)
         self.view.bringSubviewToFront(self.nextFinishButton)

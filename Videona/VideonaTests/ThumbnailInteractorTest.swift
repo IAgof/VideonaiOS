@@ -21,13 +21,5 @@ class ThumbnailInteractorTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-
-    func testGetThumbNoNil() {
-        let path = NSBundle.mainBundle().pathForResource("video", ofType:"mp4")
-        let thumbImageView = ThumbnailInteractor.init(videosArray: [path!]).getThumbnailImageView()
         
-        XCTAssertNotNil(thumbImageView)
-    }
-    
 }

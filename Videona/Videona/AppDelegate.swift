@@ -8,6 +8,8 @@
 
 import UIKit
 import Mixpanel
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -16,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     let appDependencies = AppDependencies()
     var mixpanel:Mixpanel?
     var initState = "firstTime"
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
        
@@ -35,6 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         let gai = GAI.sharedInstance()
         gai.trackUncaughtExceptions = true  // report uncaught exceptions
         gai.logger.logLevel = GAILogLevel.Verbose  // remove before app release
+        
+        //CRASHLYTICS
+        Fabric.with([Crashlytics.self])
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
@@ -56,6 +61,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             trackCreatedSuperProperty();
             trackAppStartupProperties(true);
             
+            self.configureQualityOnFirstIteration()
+            
             appDependencies.installIntroToRootViewControllerIntoWindow(window!)
         } else if previousVersion == currentAppVersion {
             // same version
@@ -70,6 +77,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 //            appDependencies.installIntroToRootViewControllerIntoWindow(window!)
 //            appDependencies.installSettingsToRootViewControllerIntoWindow(window!)
 //            appDependencies.installShareToRootViewControllerIntoWindow(window!)
+//            appDependencies.installEditorRoomToRootViewControllerIntoWindow(window!)
+//            appDependencies.installDuplicateRoomToRootViewControllerIntoWindow(window!)
+//            appDependencies.installSplitRoomToRootViewControllerIntoWindow(window!)
         } else {
             // other version
             defaults.setObject(currentAppVersion, forKey: "appVersion")
@@ -84,6 +94,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         }
     }
     
+    func configureQualityOnFirstIteration(){
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        defaults.setObject(Utils().getStringByKeyFromSettings("high_quality_name"), forKey: SettingsConstants().SETTINGS_QUALITY)
+    }
     
     func configureGoogleSignIn() {
         // Initialize sign-in

@@ -29,6 +29,7 @@ protocol RecordPresenterInterface{
     func pushFlash()
     func pushRotateCamera()
     func resetRecorder()
+    func thumbnailHasTapped()
     func displayHasTapped(tapGesture:UIGestureRecognizer)
     func displayHasPinched(pinchGesture:UIPinchGestureRecognizer)
     func changeOrientationEvent()

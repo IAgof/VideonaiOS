@@ -18,17 +18,50 @@ class PlayerWireframe : NSObject{//, UIViewAnimationTransition {
     var rootWireframe : RootWireframe?
     
     func presentPlayerInterfaceFromViewController(viewController: UIViewController) {
+        let playerView : PlayerView
+        
+        if presentedView == nil{
+            playerView = self.playerView()
+        }else{
+            playerView = presentedView!
+        }
+        
+        playerView.eventHandler = playerPresenter
+        playerPresenter?.controller = playerView
+        
+        presentedView = playerView
         
         if  viewController is ShareViewController
         {
-            let shareViewController = viewController as! ShareViewController
-            let playerView = self.playerView()
-            shareViewController.playerView.addSubview(playerView)
+            let controller = viewController as! ShareViewController
+            controller.playerView.addSubview(playerView)
             
-            playerView.eventHandler = playerPresenter
-            playerPresenter?.controller = playerView
+        }else if  viewController is EditorViewController
+        {
+            let controller = viewController as! EditorViewController
+            controller.playerView.addSubview(playerView)
+            playerView.delegate = controller
             
-            presentedView = playerView
+        }else if  viewController is MusicViewController
+        {
+            let controller = viewController as! MusicViewController
+            controller.playerView.addSubview(playerView)
+            
+        }else if  viewController is TrimViewController
+        {
+            let controller = viewController as! TrimViewController
+            controller.playerView.addSubview(playerView)
+    
+        }else if  viewController is DuplicateViewController
+        {
+            let controller = viewController as! DuplicateViewController
+            controller.playerView.addSubview(playerView)
+            
+        }else if  viewController is SplitViewController
+        {
+            let controller = viewController as! SplitViewController
+            controller.playerView.addSubview(playerView)
+            playerView.delegate = controller
         }
 
     }

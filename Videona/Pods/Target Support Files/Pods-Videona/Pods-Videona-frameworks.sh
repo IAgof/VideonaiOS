@@ -86,10 +86,12 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Videona/Alamofire.framework"
   install_framework "Pods-Videona/Mixpanel.framework"
+  install_framework "Pods-Videona/NMRangeSlider.framework"
   install_framework "Pods-Videona/PermissionScope.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Videona/Alamofire.framework"
   install_framework "Pods-Videona/Mixpanel.framework"
+  install_framework "Pods-Videona/NMRangeSlider.framework"
   install_framework "Pods-Videona/PermissionScope.framework"
 fi

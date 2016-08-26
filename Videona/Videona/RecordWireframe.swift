@@ -16,6 +16,7 @@ class RecordWireframe : NSObject {
     var recordViewController : RecordController?
     var recordPresenter : RecordPresenter?
     var filterListWireframe: FilterListWireframe?
+    var editorRoomWireframe: EditingRoomWireframe?
     
     func presentRecordInterfaceFromWindow(window: UIWindow) {
         let viewController = RecordViewControllerFromStoryboard()
@@ -29,7 +30,7 @@ class RecordWireframe : NSObject {
     
     func setRecordViewControllerAsRootController() {
         let appdelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        var homeViewController =  RecordViewControllerFromStoryboard()
+        let homeViewController =  RecordViewControllerFromStoryboard()
         let nav = UINavigationController(rootViewController: homeViewController)
         appdelegate.window!.rootViewController = nav
     }
@@ -70,12 +71,22 @@ class RecordWireframe : NSObject {
         })
     }
     
+    func presentEditorRoomInterface(){
+        editorRoomWireframe?.presentEditingRoomInterfaceFromViewController(recordViewController!)
+    }
+    
+    func presentGalleryInsideEditorRoomInterface(){
+        editorRoomWireframe?.presentEditingRoomFromViewControllerShowGallery(recordViewController!)
+    }
+    
     func goBackToRecordView(prevController:UIViewController){
         if prevController.isKindOfClass(ShareViewController) {
             recordViewController?.resetView()
-        }
-//        recordViewController?.hideFilterList()
-        
+        }        
         prevController.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    func presentShareInterfaceInsideEditorRoom(){
+        editorRoomWireframe?.presentEditingRoomFromViewControllerAndExportVideo(recordViewController!)
     }
 }

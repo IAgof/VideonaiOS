@@ -32,22 +32,37 @@ class ShareSocialNetworkInteractor:NSObject{
     }
     func setAlertCompletionMessageOnTopView(message:String){
         // create the alert
-        let alert = UIAlertController(title: socialName, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController = UIAlertController(title: socialName, message: message, preferredStyle: .Alert)
         
         // add the actions (buttons)
-        alert.addAction(UIAlertAction(title: Utils().getStringByKeyFromShare(ShareConstants().OK),
+        alertController!.addAction(UIAlertAction(title: Utils().getStringByKeyFromShare(ShareConstants().OK),
             style: .Default, handler: nil))
         
         // show the alert
-        self.getViewControllerOnTop().presentViewController(alert, animated: true, completion: nil)
+        self.getViewControllerOnTop().presentViewController(alertController!, animated: false, completion:{})
     }
     
     func getViewOnTop()->UIView{
-        return (UIApplication.sharedApplication().keyWindow!.rootViewController?.view)!
-    }
+        if var topController = UIApplication.sharedApplication().keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            return topController.view
+            // topController should now be your topmost view controller
+        }else{
+            return (UIApplication.sharedApplication().keyWindow?.rootViewController)!.view
+        }    }
     
     func getViewControllerOnTop()->UIViewController{
-        return UIApplication.sharedApplication().keyWindow!.rootViewController!
+        if var topController = UIApplication.sharedApplication().keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            return topController
+            // topController should now be your topmost view controller
+        }else{
+            return (UIApplication.sharedApplication().keyWindow?.rootViewController)!
+        }
     }
     
     func createAlertWaitToExport(){

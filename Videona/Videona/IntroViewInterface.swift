@@ -18,4 +18,5 @@ protocol IntroViewInterface {
     func updateConstaintsOnView()
     func setPermission()
     func showPermission()
+
 }

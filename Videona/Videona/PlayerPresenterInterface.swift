@@ -7,16 +7,19 @@
 //
 
 import Foundation
+import AVFoundation
 
 protocol PlayerPresenterInterface {
     
-    func createVideoPlayer(videoPath:String)
+    func createVideoPlayer(composition:AVMutableComposition)
     func layoutSubViews()
     func onVideoStops()
     func pauseVideo() 
     func videoPlayerViewTapped()
     func pushPlayButton()
     func updateSeekBar()
+    func seekToTime(time:Float)
+    func isPlayingVideo()->Bool
 }
 
 

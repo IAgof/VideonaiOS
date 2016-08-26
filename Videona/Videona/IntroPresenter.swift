@@ -32,6 +32,7 @@ class IntroPresenter:NSObject, IntroPresenterInterface {
         controller?.changeSkipButtonTittle(skipTitle)
         controller?.setPermission()
         controller?.showPermission()
+
     }
     
     func checkOrientation(){
@@ -60,9 +61,9 @@ class IntroPresenter:NSObject, IntroPresenterInterface {
     
     func pushSkip(){
         print("Intro presenter onSkipPush")
-
+        
         let canGoToRecordView = allPermissionsAutorized()
-
+        
         if canGoToRecordView {
             recordWireframe?.setRecordViewControllerAsRootController()
         }else{

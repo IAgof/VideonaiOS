@@ -39,43 +39,9 @@ class ExporterInteractor:NSObject{
         Project.sharedInstance.setExportedPath()
         
         let exportPath = Project.sharedInstance.getExportedPath()
-        
-        var videoTotalTime:CMTime = kCMTimeZero
-        
-        // - Create AVMutableComposition object. This object will hold your AVMutableCompositionTrack instances.
-        let mixComposition = AVMutableComposition()
-        
-        let videoTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeVideo,
-                                                                     preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
-        let audioTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeAudio,preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
-        
-        let videosArray = Project.sharedInstance.getVideoList()
-        // - Add assets to the composition
-        for video in videosArray{
-            // 2 - Get Video asset
-            let videoURL: NSURL = NSURL.init(fileURLWithPath: video.getMediaPath())
-            let videoAsset = AVAsset.init(URL: videoURL)
-            
-            
-            do {
-                try videoTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoAsset.duration),
-                                               ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
-                                               atTime: videoTotalTime)
-                
-                try audioTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoAsset.duration),
-                                               ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeAudio)[0] ,
-                                               atTime: videoTotalTime)
-                
-                Utils().debugLog("el tiempo total del video es: \(videoTotalTime.seconds)")
-                videoTotalTime = CMTimeAdd(videoTotalTime, videoAsset.duration)
-            } catch _ {
-//                Utils().debugLog("Error trying to create videoTrack")
-                completionHandler("Error trying to create videoTrack",0.0)
-            }
-        }
+        let mixComposition = GetActualProjectAVCompositionUseCase().getComposition()
         
         // 4 - Get path
-
         let url = NSURL(fileURLWithPath: exportPath)
         
         // 5 - Create Exporter
@@ -87,9 +53,10 @@ class ExporterInteractor:NSObject{
         // 6 - Perform the Export
         exporter!.exportAsynchronouslyWithCompletionHandler() {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.clipDuration = videoTotalTime.seconds
+                self.clipDuration = GetActualProjectAVCompositionUseCase.sharedInstance.compositionInSeconds
+                
                 Utils().debugLog("la duracion del clip es \(self.clipDuration)")
-                completionHandler(exportPath,videoTotalTime.seconds)
+                completionHandler(exportPath,self.clipDuration)
 
                 ExportedAlbum.sharedInstance.saveVideo(NSURL.init(fileURLWithPath: exportPath))
             })

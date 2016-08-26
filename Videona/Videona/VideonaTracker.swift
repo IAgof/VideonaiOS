@@ -252,6 +252,66 @@ class VideonaTracker {
         
     }
     
+    //MARK: - Editor
+    func trackClipsReordered(project:Project) {
+        let eventProperties =
+            [
+                AnalyticsConstants().EDIT_ACTION: AnalyticsConstants().EDIT_ACTION_REORDER,
+                AnalyticsConstants().NUMBER_OF_CLIPS: project.numberOfClips(),
+                AnalyticsConstants().VIDEO_LENGTH: project.getDuration()
+                ]
+        
+        mixpanel.track(AnalyticsConstants().VIDEO_EDITED, properties: eventProperties as [NSObject : AnyObject])
+    }
+    
+    func trackClipTrimmed(project:Project) {
+        let eventProperties =
+            [
+                AnalyticsConstants().EDIT_ACTION: AnalyticsConstants().EDIT_ACTION_TRIM,
+                AnalyticsConstants().NUMBER_OF_CLIPS: project.numberOfClips(),
+                AnalyticsConstants().VIDEO_LENGTH: project.getDuration()
+        ]
+        
+        mixpanel.track(AnalyticsConstants().VIDEO_EDITED, properties: eventProperties as [NSObject : AnyObject])
+    }
+
+    func trackClipSplitted(project:Project) {
+        let eventProperties =
+            [
+                AnalyticsConstants().EDIT_ACTION: AnalyticsConstants().EDIT_ACTION_SPLIT,
+                AnalyticsConstants().NUMBER_OF_CLIPS: project.numberOfClips(),
+                AnalyticsConstants().VIDEO_LENGTH: project.getDuration()
+        ]
+        
+        mixpanel.track(AnalyticsConstants().VIDEO_EDITED, properties: eventProperties as [NSObject : AnyObject])
+    }
+
+    func trackClipDuplicated(nDuplicates:Int,project:Project) {
+        let eventProperties =
+            [
+                AnalyticsConstants().EDIT_ACTION: AnalyticsConstants().EDIT_ACTION_DUPLICATE,
+                AnalyticsConstants().NUMBER_OF_DUPLICATES: nDuplicates,
+                AnalyticsConstants().VIDEO_LENGTH: project.getDuration()
+        ]
+        
+        mixpanel.track(AnalyticsConstants().VIDEO_EDITED, properties: eventProperties as [NSObject : AnyObject])
+    }
+    
+    func trackMusicSet(project:Project) {
+
+        let musicTitle = project.getMusic().getTitle();
+
+        let eventProperties =
+            [
+                AnalyticsConstants().EDIT_ACTION: AnalyticsConstants().EDIT_ACTION_MUSIC_SET,
+                AnalyticsConstants().NUMBER_OF_CLIPS: project.numberOfClips(),
+                AnalyticsConstants().VIDEO_LENGTH: project.getDuration(),
+                AnalyticsConstants().MUSIC_TITLE: musicTitle
+        ]
+        
+        mixpanel.track(AnalyticsConstants().VIDEO_EDITED, properties: eventProperties as [NSObject : AnyObject])
+    }
+    
     //MARK: - Google Analytics
     func sendControllerGAITracker(controllerName:String){
         Utils().debugLog("Send controller GoogleAnalytics Tracking")

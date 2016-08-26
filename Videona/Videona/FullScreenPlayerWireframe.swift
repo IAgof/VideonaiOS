@@ -42,16 +42,26 @@ class FullScreenPlayerWireframe : NSObject {
         return storyboard
     }
 
-//    func presentPlayerInterface() {
-//        playerWireframe?.presentPlayerInterfaceFromViewController(fullScreenPlayerViewController!)
-//    }
-
     func goPrevController(playerView:PlayerView){
-        fullScreenPlayerViewController?.navigationController?.popToViewController(prevController!, animated: true)
         if prevController!.isKindOfClass(ShareViewController) {
-            let shareController = prevController as! ShareViewController
-            shareController.cameFromFullScreenPlayer(playerView)
+            let controller = prevController as! ShareViewController
+            controller.cameFromFullScreenPlayer(playerView)
+        }else if prevController!.isKindOfClass(EditorViewController) {
+            let controller = prevController as! EditorViewController
+            controller.cameFromFullScreenPlayer(playerView)
+        }else if prevController!.isKindOfClass(MusicViewController) {
+            let controller = prevController as! MusicViewController
+            controller.cameFromFullScreenPlayer(playerView)
+        }else if prevController!.isKindOfClass(SplitViewController) {
+            let controller = prevController as! SplitViewController
+            controller.cameFromFullScreenPlayer(playerView)
+        }else if prevController!.isKindOfClass(TrimViewController) {
+            let controller = prevController as! TrimViewController
+            controller.cameFromFullScreenPlayer(playerView)
+        }else if prevController!.isKindOfClass(DuplicateViewController) {
+            let controller = prevController as! DuplicateViewController
+            controller.cameFromFullScreenPlayer(playerView)
         }
-
-        }
+        fullScreenPlayerViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
 }

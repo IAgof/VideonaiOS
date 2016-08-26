@@ -19,7 +19,7 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface,FilterListIntera
     var wireframe: FilterListWireframe?
     var controller: FilterListInterface?
     var recordWireframe: RecordWireframe?
-    
+
     //MARK: - Variables
     var filtersImage:Array<UIImage> = []{
         didSet{
@@ -35,7 +35,7 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface,FilterListIntera
             }
         }
     }
-    
+
     var filterShowing = -1
     
     var lastShaderItemSelected:Int = -1
@@ -45,15 +45,15 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface,FilterListIntera
     let FILTERS_SHOWING_IS_NONE = -1
     let FILTERS_SHOWING_IS_COLOR = 0
     let FILTERS_SHOWING_IS_SHADER = 1
-    
-    
+
+
     //MARK: - Get Filters list
     func getColorFilterList() {
         let index = NSIndexPath.init(forItem: lastOverlayItemSelected, inSection: 0)
         controller?.setSelectedCellIndexPath(index)
         
         interactor?.findColorFilters()
-        
+
         self.setFilterShowin(FILTERS_SHOWING_IS_COLOR)
     }
     
@@ -107,7 +107,7 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface,FilterListIntera
         }else if (filterShowing == FILTERS_SHOWING_IS_COLOR){
             filterListDelegate!.pushShowHideColorFilters()
         }
-        
+
         self.removeBothFilters()
         
         lastShaderItemSelected = -1
@@ -136,7 +136,7 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface,FilterListIntera
         }else if (filterShowing == FILTERS_SHOWING_IS_COLOR){
             lastOverlayItemSelected = item
         }
-        
+
     }
     
     func checkOtherCellSelected(indexPath: NSIndexPath,
