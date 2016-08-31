@@ -199,13 +199,17 @@ class SettingsViewController: VideonaController,SettingsInterface ,
     
     func createActiviyVCShareVideona(text:String){
         var whatsAppText:String = "whatsapp://send?text="
-        whatsAppText.appendContentsOf(text)
         
-        let whatsAppTextCoded = whatsAppText.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
+        guard let whatsAppTextCoded = text.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet()) else{
+            return
+        }
+        
+        whatsAppText.appendContentsOf(whatsAppTextCoded)
+        let whatsappURL = NSURL(string: whatsAppText)
+      
+//        let whatsappURL = NSURL.init(string: "whatsapp://send?text=Hello%2C%20World!")
 
-        let whatsappURL = NSURL.init(string: whatsAppTextCoded!)
-            
-        if UIApplication.sharedApplication().canOpenURL(whatsappURL!){
+        if (UIApplication.sharedApplication().canOpenURL(whatsappURL!)){
             UIApplication.sharedApplication().openURL(whatsappURL!)
         }else{
             self.createAlertViewError("OK",

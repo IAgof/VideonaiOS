@@ -17,7 +17,7 @@ class SettingsConstants: NSObject {
     let SHARE_VIDEONA_TITLE = "shareVideona"
     let WHATSAPP_NOT_INSTALLED = "whatsAppNotInstalled"
     let SHARE_WITH_TITLE = "shareWith"
-    let WHATSAPP_SHARE_TEXT = "Divirtiéndome con Videona, la mejor app para editar vídeos!!! Pruébala!!!\nhttps://goo.gl/YudZYP"
+    let WHATSAPP_SHARE_TEXT = "whatsAppSharedText"
     let FOLLOW_US_ON_TWITTER_TITLE = "followUsInTwitter"
     let VIDEONA_TWITTER = "videonaTwitter"
     let VIDEONA_TWITTER_USER = "videonaUser"
