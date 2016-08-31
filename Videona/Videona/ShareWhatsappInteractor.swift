@@ -15,20 +15,14 @@ class ShareWhatsappInteractor: ShareSocialNetworkInteractor {
     
     func share(){
         var debug = false
-        #if DEBUG
-            debug = true
-        #endif
+//        #if DEBUG
+//            debug = true
+//        #endif
         //NSURL(string: urlString!) {
         if (UIApplication.sharedApplication().canOpenURL(NSURL(string: "whatsapp://app")!)) || debug {
             
             let movie:NSURL = NSURL.fileURLWithPath(moviePath)
-            
-            //            documentationInteractionController = UIDocumentInteractionController.init(URL: movie)
-            //
-            //            documentationInteractionController.UTI = "public.movie"
-            //
-            //            documentationInteractionController.presentOpenInMenuFromRect(CGRectZero, inView: self.getViewOnTop(), animated: true)
-            
+
             let objectsToShare = [movie] //comment!, imageData!, myWebsite!]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
             
