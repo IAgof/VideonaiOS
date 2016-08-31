@@ -2,27 +2,27 @@
   "images" : [
     {
       "idiom" : "iphone",
-      "filename" : "common_filter_overlay_ovh006_cooking.png",
+      "filename" : "common_filter_overlay_ovf004_news.png",
       "scale" : "1x"
     },
     {
       "idiom" : "iphone",
-      "filename" : "common_filter_overlay_ovh006_cooking@2x.png",
+      "filename" : "common_filter_overlay_ovf004_news@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "iphone",
-      "filename" : "common_filter_overlay_ovh006_cooking@3x.png",
+      "filename" : "common_filter_overlay_ovf004_news@3x.png",
       "scale" : "3x"
     },
     {
       "idiom" : "ipad",
-      "filename" : "common_filter_overlay_ovh006_cooking~ipad.png",
+      "filename" : "common_filter_overlay_ovf004_news~ipad.png",
       "scale" : "1x"
     },
     {
       "idiom" : "ipad",
-      "filename" : "common_filter_overlay_ovh006_cooking@2x~ipad.png",
+      "filename" : "common_filter_overlay_ovf004_news@2x~ipad.png",
       "scale" : "2x"
     }
   ],
