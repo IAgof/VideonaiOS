@@ -165,6 +165,7 @@
 		A967F48A1D586CCB00BF4DB6 /* SplitVideoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A967F4891D586CCB00BF4DB6 /* SplitVideoTests.swift */; };
 		A967F48E1D588A4000BF4DB6 /* TrimVideoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A967F48D1D588A4000BF4DB6 /* TrimVideoTests.swift */; };
 		A9686F951CFF129C00983540 /* AVResolutionParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9686F941CFF129C00983540 /* AVResolutionParse.swift */; };
+		A96941421D7EE1320037E680 /* overlay_filter_pop.png in Resources */ = {isa = PBXBuildFile; fileRef = A96941411D7EE1320037E680 /* overlay_filter_pop.png */; };
 		A971F5A01CFC1A16004DC50D /* CameraRecorderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F59F1CFC1A16004DC50D /* CameraRecorderInteractor.swift */; };
 		A971F5A31CFC21E4004DC50D /* CameraRecorderInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F5A21CFC21E4004DC50D /* CameraRecorderInterface.swift */; };
 		A971F5A91CFC4756004DC50D /* TimerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A971F5A81CFC4756004DC50D /* TimerInteractor.swift */; };
@@ -251,7 +252,6 @@
 		A9E5ED0F1D21631D002258D9 /* DetailTextInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5ED0E1D21631D002258D9 /* DetailTextInteractorTest.swift */; };
 		A9E5ED131D216ABB002258D9 /* ThumbnailInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5ED121D216ABB002258D9 /* ThumbnailInteractorTest.swift */; };
 		A9E5ED151D216C30002258D9 /* FilterListInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E5ED141D216C30002258D9 /* FilterListInteractorTest.swift */; };
-		A9E9509F1D775A5900FFB017 /* overlay_filter_news.png in Resources */ = {isa = PBXBuildFile; fileRef = A9E9509E1D775A5900FFB017 /* overlay_filter_news.png */; };
 		A9F251731D05CD8E00D8DC30 /* ShareWhatsappInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F251721D05CD8E00D8DC30 /* ShareWhatsappInteractor.swift */; };
 		A9F251771D05CDA900D8DC30 /* ShareInstagramInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F251761D05CDA900D8DC30 /* ShareInstagramInteractor.swift */; };
 		A9F251791D05CDB600D8DC30 /* ShareFacebookInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F251781D05CDB600D8DC30 /* ShareFacebookInteractor.swift */; };
@@ -473,6 +473,7 @@
 		A967F4891D586CCB00BF4DB6 /* SplitVideoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitVideoTests.swift; sourceTree = "<group>"; };
 		A967F48D1D588A4000BF4DB6 /* TrimVideoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimVideoTests.swift; sourceTree = "<group>"; };
 		A9686F941CFF129C00983540 /* AVResolutionParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVResolutionParse.swift; sourceTree = "<group>"; };
+		A96941411D7EE1320037E680 /* overlay_filter_pop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay_filter_pop.png; sourceTree = "<group>"; };
 		A96B25E11D6350CB0041E88D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		A96B25E31D6350D00041E88D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		A971F59F1CFC1A16004DC50D /* CameraRecorderInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraRecorderInteractor.swift; sourceTree = "<group>"; };
@@ -577,7 +578,6 @@
 		A9E5ED0E1D21631D002258D9 /* DetailTextInteractorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTextInteractorTest.swift; sourceTree = "<group>"; };
 		A9E5ED121D216ABB002258D9 /* ThumbnailInteractorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailInteractorTest.swift; sourceTree = "<group>"; };
 		A9E5ED141D216C30002258D9 /* FilterListInteractorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListInteractorTest.swift; sourceTree = "<group>"; };
-		A9E9509E1D775A5900FFB017 /* overlay_filter_news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay_filter_news.png; sourceTree = "<group>"; };
 		A9F251721D05CD8E00D8DC30 /* ShareWhatsappInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareWhatsappInteractor.swift; sourceTree = "<group>"; };
 		A9F251761D05CDA900D8DC30 /* ShareInstagramInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareInstagramInteractor.swift; sourceTree = "<group>"; };
 		A9F251781D05CDB600D8DC30 /* ShareFacebookInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareFacebookInteractor.swift; sourceTree = "<group>"; };
@@ -1918,6 +1918,7 @@
 		A9D76AEF1CF5FB4B00F7FB47 /* FiltersOverlay */ = {
 			isa = PBXGroup;
 			children = (
+				A96941411D7EE1320037E680 /* overlay_filter_pop.png */,
 				A901A7AF1D702DF100C83BC3 /* overlay_filter_baby.png */,
 				A901A7B01D702DF100C83BC3 /* overlay_filter_birthday.png */,
 				A901A7B11D702DF100C83BC3 /* overlay_filter_bokeh.png */,
@@ -1931,7 +1932,6 @@
 				A901A7BA1D702DF100C83BC3 /* overlay_filter_kiss_cam.png */,
 				A901A7BB1D702DF100C83BC3 /* overlay_filter_mexico.png */,
 				A901A7BC1D702DF100C83BC3 /* overlay_filter_mist.png */,
-				A9E9509E1D775A5900FFB017 /* overlay_filter_news.png */,
 				A901A7BD1D702DF100C83BC3 /* overlay_filter_party.png */,
 				A901A7BE1D702DF100C83BC3 /* overlay_filter_polygon.png */,
 				A901A7BF1D702DF100C83BC3 /* overlay_filter_rain.png */,
@@ -2191,7 +2191,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A901A7AC1D70225F00C83BC3 /* black_image.png in Resources */,
-				A9E9509F1D775A5900FFB017 /* overlay_filter_news.png in Resources */,
 				A901A7CC1D702DF100C83BC3 /* overlay_filter_crash.png in Resources */,
 				A901A7C81D702DF100C83BC3 /* overlay_filter_birthday.png in Resources */,
 				A901A7D61D702DF100C83BC3 /* overlay_filter_polygon.png in Resources */,
@@ -2260,6 +2259,7 @@
 				A95F670E1D12E7D400A25EDD /* Share.strings in Resources */,
 				A9831CDA1D241B8E00362F5C /* FilterListView~ipad.xib in Resources */,
 				A95339021D2520BE006890E7 /* intro_vertical_5.jpg in Resources */,
+				A96941421D7EE1320037E680 /* overlay_filter_pop.png in Resources */,
 				A901A7D51D702DF100C83BC3 /* overlay_filter_party.png in Resources */,
 				A95338EB1D251B78006890E7 /* splashHorizontal.jpg in Resources */,
 				A9D257C11CF82BE600A618B0 /* Squeeze.fsh in Resources */,

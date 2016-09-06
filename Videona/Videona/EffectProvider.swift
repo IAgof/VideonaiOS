@@ -126,10 +126,10 @@ public class EffectProvider {
 //            resourceId: "",
 //            type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
         
-        overlayList.append(OverlayEffect(identifier: "ovf004",
-            name: "News",
-            iconId: "common_filter_overlay_ovf004_news",
-            resourceId: "overlay_filter_news",
+        overlayList.append(OverlayEffect(identifier: "ovc005",
+            name: "Pop",
+            iconId: "common_filter_overlay_ovc005_pop",
+            resourceId: "overlay_filter_pop",
             type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
         
         
