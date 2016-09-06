@@ -90,7 +90,7 @@ class TrimInteractor: NSObject,TrimInteractorInterface {
                                            atTime: kCMTimeZero)
             
             try audioTrack.insertTimeRange(timeRangeInsert,
-                                           ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
+                                           ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeAudio)[0] ,
                                            atTime: kCMTimeZero)
             videoTotalTime = CMTimeAdd(videoTotalTime, (stopTime - startTime))
 

@@ -59,7 +59,7 @@ class DuplicateInteractor: NSObject,DuplicateInteractorInterface {
                                            ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
                                            atTime: kCMTimeZero)
             try audioTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, videoAsset.duration),
-                                           ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo)[0] ,
+                                           ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeAudio)[0] ,
                                            atTime: kCMTimeZero)
             mixComposition.removeTimeRange(CMTimeRangeMake(kCMTimeZero, startTime))
             mixComposition.removeTimeRange(CMTimeRangeMake(stopTime, videoAsset.duration))

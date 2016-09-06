@@ -67,17 +67,17 @@ class TrimViewController: VideonaController,TrimViewInterface,TrimPresenterDeleg
     func configureRangeSlider(lowerValue: Float,
                               upperValue: Float,
                               maximumValue:Float) {
-        
-        self.configureUIRangeSlider()
-        
         trimRangeSlider.maximumValue = maximumValue
         trimRangeSlider.minimumValue = 0.0
         
-        trimRangeSlider.lowerValue = lowerValue
-        trimRangeSlider.upperValue = upperValue
         
-        Utils.sharedInstance.debugLog("maximum value\(trimRangeSlider.maximumValue) \n upper value\(trimRangeSlider.upperValue)")
-        Utils.sharedInstance.debugLog("maximum value\(trimRangeSlider.minimumValue) \nlower value\(trimRangeSlider.lowerValue)")
+        trimRangeSlider.upperValue = upperValue
+        trimRangeSlider.lowerValue = lowerValue
+        
+        self.configureUIRangeSlider()
+
+//        Utils.sharedInstance.debugLog("maximum value\(trimRangeSlider.maximumValue) \n upper value\(trimRangeSlider.upperValue) \n Value to set upper\(upperValue)")
+//        Utils.sharedInstance.debugLog("minimum value\(trimRangeSlider.minimumValue) \nlower value\(trimRangeSlider.lowerValue) \n Value to set lower\(upperValue)")
     }
     
     func configureUIRangeSlider(){

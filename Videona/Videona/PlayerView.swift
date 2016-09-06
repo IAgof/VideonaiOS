@@ -92,14 +92,15 @@ class PlayerView: UIView,PlayerInterface {
             
             playerLayer = AVPlayerLayer(player: player)
             playerLayer!.frame = self.frame
-            player?.currentItem?.seekToTime(CMTime.init(value: 3, timescale: 10))
+//            player?.currentItem?.seekToTime(CMTime.init(value: 3, timescale: 10))
             
             self.playerContainer.layoutIfNeeded()
             self.playerContainer.layer.addSublayer(playerLayer!)
             
             self.playerContainer.bringSubviewToFront(seekSlider)
             
-            self.seekToTime(0.1)
+            self.seekToTime(0.0)
+            eventHandler?.pauseVideo()
         }
     }
     

@@ -92,12 +92,6 @@ TrimInteractorDelegate {
         controller?.bringToFrontExpandPlayerButton()
 
         interactor?.getVideoParams()
-        
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            self.controller?.configureRangeSlider(self.lowerValue,
-                upperValue: self.upperValue,
-                maximumValue: self.maximumValue )
-        })
     }
     
     func viewWillDissappear() {
@@ -142,6 +136,12 @@ TrimInteractorDelegate {
     
     func updateParamsFinished() {
         updateVideoParams()
+        
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.controller?.configureRangeSlider(self.lowerValue,
+                upperValue: self.upperValue,
+                maximumValue: self.maximumValue )
+        })
     }
     
     func expandPlayer() {
