@@ -14,6 +14,7 @@ protocol FilterListInteractorInterface{
     func findShaderFilters()
     func getShader(item:Int)
     func getOverlay(item:Int)
+    
 }
 
 protocol FilterListInteractorDelegate {
@@ -22,4 +23,5 @@ protocol FilterListInteractorDelegate {
     func setShaderToView(filter:GPUImageFilter,
                          filterName:String)
     func setOverlayToView(filterName:String)
+    func forceToSetShader(item:Int)
 }

@@ -169,4 +169,10 @@ class FilterListPresenter:NSObject,FilterListPresenterInterface,FilterListIntera
         filterListDelegate?.setShader(filter,
                                       filterName: filterName)
     }
+    
+    func forceToSetShader(item: Int) {
+        lastShaderItemSelected = item
+
+        interactor?.getShader(item)
+    }
 }

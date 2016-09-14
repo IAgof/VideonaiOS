@@ -66,6 +66,14 @@ class FilterListInteractor: NSObject,FilterListInteractorInterface {
         if overlayFilters?.indices.contains(item) == true{
             let effect = overlayFilters![item] as! OverlayEffect
             
+            if let shaderCombinedAssociation = effect.shaderCombinedWith{
+                if shaderFilters == nil{
+                    shaderFilters = EffectProvider().getShaderEffectList()
+                }
+
+                delegate?.forceToSetShader(shaderCombinedAssociation)
+            }
+            
             delegate?.setOverlayToView(effect.getResourceId())
         }
     }
