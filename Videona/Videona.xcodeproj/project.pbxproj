@@ -25,7 +25,6 @@
 		A901A7CD1D702DF100C83BC3 /* overlay_filter_diving.png in Resources */ = {isa = PBXBuildFile; fileRef = A901A7B51D702DF100C83BC3 /* overlay_filter_diving.png */; };
 		A901A7CE1D702DF100C83BC3 /* overlay_filter_dog.png in Resources */ = {isa = PBXBuildFile; fileRef = A901A7B61D702DF100C83BC3 /* overlay_filter_dog.png */; };
 		A901A7CF1D702DF100C83BC3 /* overlay_filter_gamer.png in Resources */ = {isa = PBXBuildFile; fileRef = A901A7B71D702DF100C83BC3 /* overlay_filter_gamer.png */; };
-		A901A7D01D702DF100C83BC3 /* overlay_filter_holidays.png in Resources */ = {isa = PBXBuildFile; fileRef = A901A7B81D702DF100C83BC3 /* overlay_filter_holidays.png */; };
 		A901A7D11D702DF100C83BC3 /* overlay_filter_invaders.png in Resources */ = {isa = PBXBuildFile; fileRef = A901A7B91D702DF100C83BC3 /* overlay_filter_invaders.png */; };
 		A901A7D21D702DF100C83BC3 /* overlay_filter_kiss_cam.png in Resources */ = {isa = PBXBuildFile; fileRef = A901A7BA1D702DF100C83BC3 /* overlay_filter_kiss_cam.png */; };
 		A901A7D31D702DF100C83BC3 /* overlay_filter_mexico.png in Resources */ = {isa = PBXBuildFile; fileRef = A901A7BB1D702DF100C83BC3 /* overlay_filter_mexico.png */; };
@@ -262,6 +261,7 @@
 		A9F9C2101CF4857700AB310C /* Logo_Splash_Horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F9C20F1CF4857700AB310C /* Logo_Splash_Horizontal.png */; };
 		A9F9C2121CF485C600AB310C /* Logo_Splash_Vertical.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F9C2111CF485C600AB310C /* Logo_Splash_Vertical.png */; };
 		A9F9C2491CF49F5D00AB310C /* FlashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F9C2481CF49F5D00AB310C /* FlashInteractor.swift */; };
+		A9FBE14C1D88466E00CF61D4 /* overlay_filter_panoramic.png in Resources */ = {isa = PBXBuildFile; fileRef = A9FBE14B1D88466E00CF61D4 /* overlay_filter_panoramic.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -334,7 +334,6 @@
 		A901A7B51D702DF100C83BC3 /* overlay_filter_diving.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay_filter_diving.png; sourceTree = "<group>"; };
 		A901A7B61D702DF100C83BC3 /* overlay_filter_dog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay_filter_dog.png; sourceTree = "<group>"; };
 		A901A7B71D702DF100C83BC3 /* overlay_filter_gamer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay_filter_gamer.png; sourceTree = "<group>"; };
-		A901A7B81D702DF100C83BC3 /* overlay_filter_holidays.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay_filter_holidays.png; sourceTree = "<group>"; };
 		A901A7B91D702DF100C83BC3 /* overlay_filter_invaders.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay_filter_invaders.png; sourceTree = "<group>"; };
 		A901A7BA1D702DF100C83BC3 /* overlay_filter_kiss_cam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay_filter_kiss_cam.png; sourceTree = "<group>"; };
 		A901A7BB1D702DF100C83BC3 /* overlay_filter_mexico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay_filter_mexico.png; sourceTree = "<group>"; };
@@ -589,6 +588,7 @@
 		A9F9C20F1CF4857700AB310C /* Logo_Splash_Horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_Splash_Horizontal.png; sourceTree = "<group>"; };
 		A9F9C2111CF485C600AB310C /* Logo_Splash_Vertical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_Splash_Vertical.png; sourceTree = "<group>"; };
 		A9F9C2481CF49F5D00AB310C /* FlashInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashInteractor.swift; sourceTree = "<group>"; };
+		A9FBE14B1D88466E00CF61D4 /* overlay_filter_panoramic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay_filter_panoramic.png; sourceTree = "<group>"; };
 		AC37DF744460D4CE24EC5226 /* Pods-Videona.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Videona.release.xcconfig"; path = "Pods/Target Support Files/Pods-Videona/Pods-Videona.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1927,11 +1927,11 @@
 				A901A7B51D702DF100C83BC3 /* overlay_filter_diving.png */,
 				A901A7B61D702DF100C83BC3 /* overlay_filter_dog.png */,
 				A901A7B71D702DF100C83BC3 /* overlay_filter_gamer.png */,
-				A901A7B81D702DF100C83BC3 /* overlay_filter_holidays.png */,
 				A901A7B91D702DF100C83BC3 /* overlay_filter_invaders.png */,
 				A901A7BA1D702DF100C83BC3 /* overlay_filter_kiss_cam.png */,
 				A901A7BB1D702DF100C83BC3 /* overlay_filter_mexico.png */,
 				A901A7BC1D702DF100C83BC3 /* overlay_filter_mist.png */,
+				A9FBE14B1D88466E00CF61D4 /* overlay_filter_panoramic.png */,
 				A901A7BD1D702DF100C83BC3 /* overlay_filter_party.png */,
 				A901A7BE1D702DF100C83BC3 /* overlay_filter_polygon.png */,
 				A901A7BF1D702DF100C83BC3 /* overlay_filter_rain.png */,
@@ -2213,6 +2213,7 @@
 				A9F9C2121CF485C600AB310C /* Logo_Splash_Vertical.png in Resources */,
 				A9F9C2101CF4857700AB310C /* Logo_Splash_Horizontal.png in Resources */,
 				A9D257C61CF82BE600A618B0 /* Stretch.fsh in Resources */,
+				A9FBE14C1D88466E00CF61D4 /* overlay_filter_panoramic.png in Resources */,
 				A95338FE1D2520BE006890E7 /* intro_vertical_1.jpg in Resources */,
 				A95338F51D2520B3006890E7 /* intro_horizontal_2.jpg in Resources */,
 				A901A7D71D702DF100C83BC3 /* overlay_filter_rain.png in Resources */,
@@ -2239,7 +2240,6 @@
 				A9D257CD1CF8455600A618B0 /* Posterize.fsh in Resources */,
 				A93846F71CE49340007FB6BC /* FilterListView.xib in Resources */,
 				A940BDB91D65EA7F001FCB42 /* Editor.strings in Resources */,
-				A901A7D01D702DF100C83BC3 /* overlay_filter_holidays.png in Resources */,
 				A9D257C71CF82BE600A618B0 /* Tunnel.fsh in Resources */,
 				A95338F81D2520B3006890E7 /* intro_horizontal_5.jpg in Resources */,
 				A97FBDE21D09B6B500942F8D /* Settings.strings in Resources */,

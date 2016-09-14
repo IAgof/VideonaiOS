@@ -119,12 +119,19 @@ public class EffectProvider {
     func getOverlayFilterList() -> Array<Effect> {
         var overlayList = [Effect]()
         
-//        Example
-//        overlayList.append(OverlayEffect(identifier: "",
-//            name: "",
-//            iconId: "",
-//            resourceId: "",
-//            type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
+        //        Example
+        //        overlayList.append(OverlayEffect(identifier: "",
+        //            name: "",
+        //            iconId: "",
+        //            resourceId: "",
+        //            type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
+        
+        overlayList.append(OverlayEffect(identifier: "ovf007",
+            name: "Retro Style",
+            iconId: "common_filter_overlay_ovf007_panoramic",
+            resourceId: "overlay_filter_panoramic",
+            type: AnalyticsConstants().FILTER_TYPE_OVERLAY,
+            shaderCombinedPos: 7))
         
         overlayList.append(OverlayEffect(identifier: "ovc005",
             name: "Pop",
@@ -222,12 +229,6 @@ public class EffectProvider {
             name: "Steampunk",
             iconId: "common_filter_overlay_ovi004_steampunk",
             resourceId: "overlay_filter_steampunk",
-            type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        
-        overlayList.append(OverlayEffect(identifier: "ovs003",
-            name: "Holidays",
-            iconId: "common_filter_overlay_ovs003_holidays",
-            resourceId: "overlay_filter_holidays",
             type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
         
         overlayList.append(OverlayEffect(identifier: "ovb001",

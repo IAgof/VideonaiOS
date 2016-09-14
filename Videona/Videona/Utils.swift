@@ -93,6 +93,22 @@ class Utils{
 //        return String(format:"%02d:%02d", mins, secs)
     }
     
+    func removeAllTempFiles(){
+        print("Remove all temporally files")
+        
+        let fm = NSFileManager.defaultManager()
+        do {
+            let folderPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+            let paths = try fm.contentsOfDirectoryAtPath(folderPath)
+            for path in paths
+            {
+                try fm.removeItemAtPath("\(folderPath)/\(path)")
+            }
+        } catch{
+            print("error removeAllTempFiles ")
+        }
+    }
+    
     func delay(delay: Double, closure: ()->()) {
         dispatch_after(
             dispatch_time(

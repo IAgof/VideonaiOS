@@ -56,6 +56,8 @@ class Project: NSObject {
     var isMusicSet:Bool = false
     
     private override init() {
+        Utils.sharedInstance.removeAllTempFiles()
+
         self.title = "testTitle\(Utils().giveMeTimeNow())"
         self.projectPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
         self.profile = Profile(resolution: "", videoQuality: "", maxDuration: 0, type: Profile.ProfileType.free)
@@ -102,6 +104,8 @@ class Project: NSObject {
     }
     
     func clear() {
+        Utils.sharedInstance.removeAllTempFiles()
+        
         self.title = "testTitle\(Utils().giveMeTimeNow())"
         self.projectPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
         self.profile = Profile(resolution: "", videoQuality: "", maxDuration: 0, type: Profile.ProfileType.free)

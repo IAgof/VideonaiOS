@@ -12,6 +12,7 @@ class OverlayEffect : Effect {
     
     var resourcePath:String?
     var resourceId:String?
+    var shaderCombinedWith:Int?
     
     init (identifier:String ,name:String ,iconPath:String ,resourcePath:String,
     type:String) {
@@ -35,6 +36,15 @@ class OverlayEffect : Effect {
 
         self.resourcePath = nil
         self.resourceId = resourceId
+    }
+    
+    init(identifier:String ,name:String ,iconId:String ,resourceId:String,
+         type:String,shaderCombinedPos:Int) {
+        super.init(identifier: identifier, name: name, iconId: iconId, type: type)
+        
+        self.resourcePath = nil
+        self.resourceId = resourceId
+        self.shaderCombinedWith = shaderCombinedPos
     }
     
     func getResourcePath() ->String{

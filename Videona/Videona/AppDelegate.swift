@@ -261,23 +261,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     //MARK: - Application Terminate
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-        self.removeAllTempFiles()
-    }
-    
-    func removeAllTempFiles(){
-        print("Remove all temporally files")
-        
-        let fm = NSFileManager.defaultManager()
-        do {
-            let folderPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
-            let paths = try fm.contentsOfDirectoryAtPath(folderPath)
-            for path in paths
-            {
-                try fm.removeItemAtPath("\(folderPath)/\(path)")
-            }
-        } catch{
-            print("error removeAllTempFiles ")
-        }
+        Utils.sharedInstance.removeAllTempFiles()
     }
 }
 

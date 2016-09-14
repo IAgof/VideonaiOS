@@ -80,9 +80,9 @@ class RecordWireframe : NSObject {
     }
     
     func goBackToRecordView(prevController:UIViewController){
-        if prevController.isKindOfClass(ShareViewController) {
-            recordViewController?.resetView()
-        }        
+//        if prevController.isKindOfClass(ShareViewController) {
+//            recordViewController?.resetView()
+//        }        
         prevController.navigationController?.popToRootViewControllerAnimated(true)
     }
     

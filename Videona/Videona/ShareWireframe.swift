@@ -61,9 +61,9 @@ class ShareWireframe : NSObject {
     }
     
     func goPrevController(){
-        if prevController!.isKindOfClass(RecordController) {
-            (prevController as! RecordController).resetView()
-        }
+//        if prevController!.isKindOfClass(RecordController) {
+//            (prevController as! RecordController).resetView()
+//        }
         
         shareViewController?.navigationController?.popToViewController(prevController!, animated: true)
     }
