@@ -125,6 +125,11 @@ public class EffectProvider {
         //            iconId: "",
         //            resourceId: "",
         //            type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
+        overlayList.append(OverlayEffect(identifier: "ovt003",
+            name: "Oktoberfest",
+            iconId: "common_filter_overlay_ovt003_oktoberfest",
+            resourceId: "overlay_filter_oktoberfest",
+            type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
         
         overlayList.append(OverlayEffect(identifier: "ovf007",
             name: "Retro Style",
@@ -181,12 +186,6 @@ public class EffectProvider {
             name: "Vintage",
             iconId: "common_filter_overlay_ov18_polaroid",
             resourceId: "overlay_filter_vintage",
-            type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        
-        overlayList.append(OverlayEffect(identifier: "ovs002",
-            name: "Dive",
-            iconId: "common_filter_overlay_ovs002_dive",
-            resourceId: "overlay_filter_diving",
             type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
         
         overlayList.append(OverlayEffect(identifier: "ovh002",

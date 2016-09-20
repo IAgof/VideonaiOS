@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "iphone",
-      "filename" : "common_icon_play@1x.png",
+      "filename" : "common_icon_play-1.png",
       "scale" : "1x"
     },
     {
@@ -17,12 +17,12 @@
     },
     {
       "idiom" : "ipad",
-      "filename" : "common_icon_play@2x-1.png",
+      "filename" : "common_icon_play~ipad.png",
       "scale" : "1x"
     },
     {
       "idiom" : "ipad",
-      "filename" : "common_icon_play@3x-1.png",
+      "filename" : "common_icon_play@2x~ipad.png",
       "scale" : "2x"
     }
   ],
