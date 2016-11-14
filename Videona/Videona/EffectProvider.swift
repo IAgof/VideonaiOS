@@ -125,17 +125,11 @@ public class EffectProvider {
         //            iconId: "",
         //            resourceId: "",
         //            type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        
-        overlayList.append(OverlayEffect(identifier: "ovt005",
-            name: "Halloween",
-            iconId: "common_filter_overlay_ovt005_halloween",
-            resourceId: "overlay_filter_halloween",
-            type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
-        
-        overlayList.append(OverlayEffect(identifier: "ovt004",
-            name: "Pink Fight",
-            iconId: "common_filter_overlay_ovt004_cancer",
-            resourceId: "overlay_filter_cancer",
+
+        overlayList.append(OverlayEffect(identifier: "ovt006",
+            name: "Autumn",
+            iconId: "common_filter_overlay_ovt006_autumn",
+            resourceId: "overlay_filter_autumn",
             type: AnalyticsConstants().FILTER_TYPE_OVERLAY))
         
         overlayList.append(OverlayEffect(identifier: "ovf007",
