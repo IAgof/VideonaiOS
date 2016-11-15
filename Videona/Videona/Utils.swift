@@ -78,7 +78,7 @@ class Utils{
         return NSBundle.mainBundle().localizedStringForKey(key,value: "",table: "Editor")
     }
     func hourToString(time:Double) -> String {
-        let hours = Int(floor(time/3600))
+//        let hours = Int(floor(time/3600))
         let mins = Int(floor(time % 3600) / 60)
         let secs = Int(floor(time % 3600) % 60)
         
