@@ -30,43 +30,44 @@ class ShareYoutubeInteractor: ShareSocialNetworkInteractor{
         
         GIDSignIn.sharedInstance().signIn()
     }
-    
-    
-    
+            
     //MARK: - Youtube upload
     func postVideoToYouTube( token:String, callback: Bool -> Void){
-        
-        let headers = ["Authorization": "Bearer \(token)"]
-        
-        let title = "Videona-\(Utils().giveMeTimeNow())"
-        let description = Utils().getStringByKeyFromShare(ShareConstants().YOUTUBE_DESCRIPTION)
-        
-        let videoData = NSData.init(contentsOfFile: moviePath)
-        Alamofire.upload(
-            .POST,
-            "https://www.googleapis.com/upload/youtube/v3/videos?part=snippet",
-            headers: headers,
-            multipartFormData: { multipartFormData in
-                multipartFormData.appendBodyPart(data:"{'snippet':{'title' : '\(title)', 'description': '\(description)'}}".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!, name :"snippet", mimeType: "application/json")
-                
-                multipartFormData.appendBodyPart(data: videoData!, name: "video", fileName: "video.mp4", mimeType: "application/octet-stream")
-                
-            },
-            encodingCompletion: { encodingResult in
-                switch encodingResult {
-                case .Success(let upload, _, _):
-                    upload.responseJSON { response in
-                        print(response)
-                        callback(true)
-                        
-                        let message = Utils().getStringByKeyFromShare(ShareConstants().UPLOAD_SUCCESFULL)
+        AddShareTitleUseCase().addTextOnShare(.Youtube, completion: {
+            title in
+
+            let headers = ["Authorization": "Bearer \(token)"]
+            
+            let description = Utils().getStringByKeyFromShare(ShareConstants().YOUTUBE_DESCRIPTION)
+            
+            let videoData = NSData.init(contentsOfFile: self.moviePath)
+            Alamofire.upload(
+                .POST,
+                "https://www.googleapis.com/upload/youtube/v3/videos?part=snippet",
+                headers: headers,
+                multipartFormData: { multipartFormData in
+                    multipartFormData.appendBodyPart(data:"{'snippet':{'title' : '\(title!)', 'description': '\(description)'}}".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!, name :"snippet", mimeType: "application/json")
+                    
+                    multipartFormData.appendBodyPart(data: videoData!, name: "video", fileName: "video.mp4", mimeType: "application/octet-stream")
+                    
+                },
+                encodingCompletion: { encodingResult in
+                    switch encodingResult {
+                    case .Success(let upload, _, _):
+                        upload.responseJSON { response in
+                            print(response)
+                            callback(true)
+                            
+                            let message = Utils().getStringByKeyFromShare(ShareConstants().UPLOAD_SUCCESFULL)
+                            self.setAlertCompletionMessageOnTopView(message)
+                        }
+                    case .Failure(_):
+                        callback(false)
+                        let message = Utils().getStringByKeyFromShare(ShareConstants().UPLOAD_FAIL)
                         self.setAlertCompletionMessageOnTopView(message)
                     }
-                case .Failure(_):
-                    callback(false)
-                    let message = Utils().getStringByKeyFromShare(ShareConstants().UPLOAD_FAIL)
-                    self.setAlertCompletionMessageOnTopView(message)
-                }
+            })
         })
+
     }
 }

@@ -51,7 +51,6 @@ GIDSignInUIDelegate,GIDSignInDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         print("ViewDid Load")
-        configureNavigationBarWithBackButton()
         eventHandler?.viewDidLoad()
     }
     
@@ -66,6 +65,10 @@ GIDSignInUIDelegate,GIDSignInDelegate{
     
     func pushBack(){
         eventHandler?.pushBack()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        configureNavigationBarWithBackButton()
     }
     
     override func viewWillDisappear(animated: Bool) {

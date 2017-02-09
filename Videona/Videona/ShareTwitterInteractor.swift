@@ -24,33 +24,42 @@ class ShareTwitterInteractor: ShareSocialNetworkInteractor {
                 return
             }
             if accounts.count > 0 {//HAS ACCESS TO TWITTER
-                
-                if self.canUploadVideoToTwitter(videoURL) {
-                    let videoData = self.getVideoData(videoURL)
-                    var status = TwitterVideoUpload.instance().setVideoData(videoData)
-                    TwitterVideoUpload.instance().statusContent = Utils().getStringByKeyFromShare(ShareConstants().VIDEONATIME_HASTAGH)
-                    
-                    if status == false {
-                        self.createAlert(Utils().getStringByKeyFromShare(ShareConstants().TWITTER_MAX_SIZE))
-                        return
-                    }
-                    
-                    status = TwitterVideoUpload.instance().upload({
-                        errorString in
-                        var messageToPrintOnView = ""
-                        
-                        if (errorString != nil){
-                            let codeAndMessage = self.convertStringToCodeAndMessage(errorString)
-                            messageToPrintOnView = "Error with code: \(codeAndMessage.0) \n description: \(codeAndMessage.1) "
+                AddShareTitleUseCase().addTextOnShare(.Twitter, completion: {
+                    tweetText in
+                    if self.canUploadVideoToTwitter(videoURL) {
+                        let videoData = self.getVideoData(videoURL)
+                        var status = TwitterVideoUpload.instance().setVideoData(videoData)
+                        let hasttagh = Utils().getStringByKeyFromShare(ShareConstants().VIDEONATIME_HASTAGH)
+                        if tweetText != nil{
+                            var statusContent = tweetText!
+                            statusContent = statusContent.stringByAppendingString(" \(hasttagh)")
+                            TwitterVideoUpload.instance().statusContent = statusContent
                         }else{
-                            messageToPrintOnView = Utils().getStringByKeyFromShare(ShareConstants().UPLOAD_SUCCESFULL)
+                            TwitterVideoUpload.instance().statusContent = hasttagh
                         }
                         
-                        self.createAlert(messageToPrintOnView)
-                    })
-                }else{
-                    self.createAlert(Utils().getStringByKeyFromShare(ShareConstants().TWITTER_MAX_LENGHT))
-                }
+                        if status == false {
+                            self.createAlert(Utils().getStringByKeyFromShare(ShareConstants().TWITTER_MAX_SIZE))
+                            return
+                        }
+                        
+                        status = TwitterVideoUpload.instance().upload({
+                            errorString in
+                            var messageToPrintOnView = ""
+                            
+                            if (errorString != nil){
+                                let codeAndMessage = self.convertStringToCodeAndMessage(errorString)
+                                messageToPrintOnView = "Error with code: \(codeAndMessage.0) \n description: \(codeAndMessage.1) "
+                            }else{
+                                messageToPrintOnView = Utils().getStringByKeyFromShare(ShareConstants().UPLOAD_SUCCESFULL)
+                            }
+                            
+                            self.createAlert(messageToPrintOnView)
+                        })
+                    }else{
+                        self.createAlert(Utils().getStringByKeyFromShare(ShareConstants().TWITTER_MAX_LENGHT))
+                    }
+                })
             }else{
                 let message = Utils().getStringByKeyFromShare(ShareConstants().NO_TWITTER_ACCESS)
                 Utils().debugLog(message)
