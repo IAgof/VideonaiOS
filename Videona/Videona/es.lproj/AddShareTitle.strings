@@ -1,0 +1,14 @@
+/* 
+  AddShareTitle.strings
+  Videona
+
+  Created by Alejandro Arjonilla Garcia on 9/2/17.
+  Copyright © 2017 Videona. All rights reserved.
+*/
+
+"add_youtube_title" = "Titulo";
+"add_youtube_message" = "Añade el titulo de tu vídeo";
+"add_twitter_title" = "Tweet";
+"add_twitter_message" = "Añade el texto a tu tweet";
+"save" = "Guardar";
+"cancel" = "Cancelar";

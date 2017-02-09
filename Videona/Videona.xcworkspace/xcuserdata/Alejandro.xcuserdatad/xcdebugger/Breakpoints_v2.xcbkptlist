@@ -41,22 +41,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Videona/ExporterInteractor.swift"
-            timestampString = "494421188.107406"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "exportVideos(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Videona/EditingRoomWireframe.swift"
             timestampString = "494421436.94048"
             startingColumnNumber = "9223372036854775807"
@@ -119,102 +103,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Videona/RecordPresenter.swift"
-            timestampString = "508327276.067223"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "startRecord()"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Videona.RecordPresenter.(startRecord () -&gt; ()).(closure #1)"
-                  moduleName = "Videona"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Alejandro/Desktop/Repos/VideonaiOS/Videona/Videona/RecordPresenter.swift"
-                  timestampString = "508329270.299073"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "106"
-                  endingLineNumber = "106"
-                  offsetFromSymbolStart = "372">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Videona.RecordPresenter.(startRecord () -&gt; ()).(closure #1).(closure #1)"
-                  moduleName = "Videona"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Alejandro/Desktop/Repos/VideonaiOS/Videona/Videona/RecordPresenter.swift"
-                  timestampString = "508329270.299258"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "107"
-                  endingLineNumber = "107"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Videona/CameraInteractor.swift"
-            timestampString = "508327319.820422"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "stopCamera()"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Videona.CameraInteractor.stopCamera () -&gt; ()"
-                  moduleName = "Videona"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Alejandro/Desktop/Repos/VideonaiOS/Videona/Videona/CameraInteractor.swift"
-                  timestampString = "508329270.299973"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "protocol witness for Videona.CameraInteractorInterface.stopCamera () -&gt; () in conformance Videona.CameraInteractor : Videona.CameraInteractorInterface in Videona"
-                  moduleName = "Videona"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Alejandro/Desktop/Repos/VideonaiOS/Videona/Videona/CameraInteractor.swift"
-                  timestampString = "508329270.300087"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "73"
-                  endingLineNumber = "73"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Videona/AppDelegate.swift"
             timestampString = "508328002.925335"
             startingColumnNumber = "9223372036854775807"
@@ -247,14 +135,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Videona/RecordPresenter.swift"
-            timestampString = "508329228.958427"
+            filePath = "Videona/ShareYoutubeInteractor.swift"
+            timestampString = "508333310.127068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
-            landmarkName = "thumbnailHasTapped()"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "postVideoToYouTube(_:callback:)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Videona.ShareYoutubeInteractor.postVideoToYouTube (Swift.String, callback : (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "Videona"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alejandro/Desktop/Repos/VideonaiOS/Videona/Videona/ShareYoutubeInteractor.swift"
+                  timestampString = "508334759.36485"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Videona.ShareYoutubeInteractor.(postVideoToYouTube (Swift.String, callback : (Swift.Bool) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "Videona"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alejandro/Desktop/Repos/VideonaiOS/Videona/Videona/ShareYoutubeInteractor.swift"
+                  timestampString = "508334759.364965"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -263,13 +183,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Videona/ShareViewController.swift"
-            timestampString = "508330201.278696"
+            filePath = "Videona/AddShareTitleUseCase.swift"
+            timestampString = "508334899.249148"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "addTextOnShare(_:completion:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

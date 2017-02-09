@@ -115,6 +115,10 @@
 		A94301781CE5EEED00DC0DF8 /* FilterListInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94301771CE5EEED00DC0DF8 /* FilterListInteractorInterface.swift */; };
 		A94B34D41D533ADA00D99539 /* DuplicateInteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B34D31D533ADA00D99539 /* DuplicateInteractorInterface.swift */; };
 		A94B34D81D533AE400D99539 /* DuplicateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94B34D71D533AE400D99539 /* DuplicateInteractor.swift */; };
+		A94C8C2E1E4C84810003D245 /* UIApplicationExtensionGetTopController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94C8C2D1E4C84810003D245 /* UIApplicationExtensionGetTopController.swift */; };
+		A94C8C321E4C86310003D245 /* AddShareTitleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94C8C311E4C86310003D245 /* AddShareTitleUseCase.swift */; };
+		A94C8C361E4C88750003D245 /* AddShareTitle.strings in Resources */ = {isa = PBXBuildFile; fileRef = A94C8C381E4C88750003D245 /* AddShareTitle.strings */; };
+		A94C8C3B1E4C88AD0003D245 /* AddShareTitleTextConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94C8C3A1E4C88AD0003D245 /* AddShareTitleTextConstants.swift */; };
 		A94CBDFD1D6D7F7300810C55 /* UserEventTrackerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94CBDFC1D6D7F7300810C55 /* UserEventTrackerTest.swift */; };
 		A94CBE031D6DAC5000810C55 /* EditorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94CBE021D6DAC5000810C55 /* EditorTests.swift */; };
 		A94E75521DB8DCF3006C24BA /* splash_ipad_horizontal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A94E754E1DB8DCF3006C24BA /* splash_ipad_horizontal.jpg */; };
@@ -414,6 +418,11 @@
 		A94301771CE5EEED00DC0DF8 /* FilterListInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListInteractorInterface.swift; sourceTree = "<group>"; };
 		A94B34D31D533ADA00D99539 /* DuplicateInteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuplicateInteractorInterface.swift; sourceTree = "<group>"; };
 		A94B34D71D533AE400D99539 /* DuplicateInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuplicateInteractor.swift; sourceTree = "<group>"; };
+		A94C8C2D1E4C84810003D245 /* UIApplicationExtensionGetTopController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensionGetTopController.swift; sourceTree = "<group>"; };
+		A94C8C311E4C86310003D245 /* AddShareTitleUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddShareTitleUseCase.swift; sourceTree = "<group>"; };
+		A94C8C371E4C88750003D245 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/AddShareTitle.strings; sourceTree = "<group>"; };
+		A94C8C391E4C88770003D245 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/AddShareTitle.strings; sourceTree = "<group>"; };
+		A94C8C3A1E4C88AD0003D245 /* AddShareTitleTextConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddShareTitleTextConstants.swift; sourceTree = "<group>"; };
 		A94CBDFC1D6D7F7300810C55 /* UserEventTrackerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEventTrackerTest.swift; sourceTree = "<group>"; };
 		A94CBE021D6DAC5000810C55 /* EditorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorTests.swift; sourceTree = "<group>"; };
 		A94E754E1DB8DCF3006C24BA /* splash_ipad_horizontal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = splash_ipad_horizontal.jpg; sourceTree = "<group>"; };
@@ -1065,6 +1074,16 @@
 			name = Interactor;
 			sourceTree = "<group>";
 		};
+		A94C8C331E4C87F40003D245 /* AddShareTitle */ = {
+			isa = PBXGroup;
+			children = (
+				A94C8C311E4C86310003D245 /* AddShareTitleUseCase.swift */,
+				A94C8C3A1E4C88AD0003D245 /* AddShareTitleTextConstants.swift */,
+				A94C8C381E4C88750003D245 /* AddShareTitle.strings */,
+			);
+			name = AddShareTitle;
+			sourceTree = "<group>";
+		};
 		A95338E11D251B3A006890E7 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
@@ -1284,6 +1303,7 @@
 				A9E066E11CE4BB6B00D4E11D /* Constants */,
 				A95B24781CD8B96200F78AAF /* View */,
 				11A097EE3ADB91072CDFAC41 /* AVQualityParse.swift */,
+				A94C8C2D1E4C84810003D245 /* UIApplicationExtensionGetTopController.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -1988,6 +2008,7 @@
 		A9F2517E1D05CF7200D8DC30 /* ShareSocialNetworksInteractor */ = {
 			isa = PBXGroup;
 			children = (
+				A94C8C331E4C87F40003D245 /* AddShareTitle */,
 				A98AA14D1D22743E004E0869 /* TwitterVideoUpload */,
 				A9F2517F1D05D57800D8DC30 /* ShareSocialNetworkInteractor.swift */,
 				A9F251721D05CD8E00D8DC30 /* ShareWhatsappInteractor.swift */,
@@ -2250,6 +2271,7 @@
 				A95339021D2520BE006890E7 /* intro_vertical_5.jpg in Resources */,
 				A96941421D7EE1320037E680 /* overlay_filter_pop.png in Resources */,
 				A901A7D51D702DF100C83BC3 /* overlay_filter_party.png in Resources */,
+				A94C8C361E4C88750003D245 /* AddShareTitle.strings in Resources */,
 				A9D257C11CF82BE600A618B0 /* Squeeze.fsh in Resources */,
 				A901A7D21D702DF100C83BC3 /* overlay_filter_kiss_cam.png in Resources */,
 				A95628D51CF734F900EE4B85 /* filter_free.png in Resources */,
@@ -2424,6 +2446,7 @@
 				A943016E1CE5D99E00DC0DF8 /* SocialNetwork.swift in Sources */,
 				A9B1181D1CE378DC001A1177 /* ShareInterface.swift in Sources */,
 				A91849D61D4786C2001B3505 /* RemoveVideoFromProjectUseCase.swift in Sources */,
+				A94C8C3B1E4C88AD0003D245 /* AddShareTitleTextConstants.swift in Sources */,
 				A965C7EC1CF58467001E2D39 /* CameraInteractor.swift in Sources */,
 				A9CEAA421D532CBF00675550 /* DuplicateInterface.swift in Sources */,
 				A98AA14C1D22743A004E0869 /* TwitterVideoUpload.m in Sources */,
@@ -2459,6 +2482,7 @@
 				A9F9C2491CF49F5D00AB310C /* FlashInteractor.swift in Sources */,
 				A971F5A01CFC1A16004DC50D /* CameraRecorderInteractor.swift in Sources */,
 				A97D438B1D48A0600047484D /* MusicProvider.swift in Sources */,
+				A94C8C2E1E4C84810003D245 /* UIApplicationExtensionGetTopController.swift in Sources */,
 				A94301761CE5EEE200DC0DF8 /* FilterListInteractor.swift in Sources */,
 				A971F5A91CFC4756004DC50D /* TimerInteractor.swift in Sources */,
 				A95D3BE81CEB7141001F2272 /* PlayerItem.swift in Sources */,
@@ -2484,6 +2508,7 @@
 				A97D43A31D48E4B10047484D /* MusicDetailView.swift in Sources */,
 				A95B246E1CD88C2D00F78AAF /* RecordViewInterface.swift in Sources */,
 				A97D439E1D48BD400047484D /* MusicCell.swift in Sources */,
+				A94C8C321E4C86310003D245 /* AddShareTitleUseCase.swift in Sources */,
 				A928F7A41D4F5BD30027D57E /* GetActualProjectAVCompositionUseCase.swift in Sources */,
 				A971F5B11CFC5B98004DC50D /* ThumbnailInteractor.swift in Sources */,
 				A99278571CE36517009DC364 /* SettingsInterface.swift in Sources */,
@@ -2570,6 +2595,15 @@
 				A940BDBE1D65EA8B001FCB42 /* en */,
 			);
 			name = Editor.strings;
+			sourceTree = "<group>";
+		};
+		A94C8C381E4C88750003D245 /* AddShareTitle.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A94C8C371E4C88750003D245 /* Base */,
+				A94C8C391E4C88770003D245 /* es */,
+			);
+			name = AddShareTitle.strings;
 			sourceTree = "<group>";
 		};
 		A95339311D2570BB006890E7 /* VideonaFooterView.xib */ = {
