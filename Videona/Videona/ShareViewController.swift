@@ -49,16 +49,29 @@ GIDSignInUIDelegate,GIDSignInDelegate{
     
     
     override func viewDidLoad() {
-
         super.viewDidLoad()
         print("ViewDid Load")
-
+        configureNavigationBarWithBackButton()
         eventHandler?.viewDidLoad()
+    }
+    
+    func configureNavigationBarWithBackButton(){
+        self.navigationController?.navigationBarHidden = false
+        let backIcon = UIImage(named: "activity_edit_back_normal")
+        
+        let backItem = UIBarButtonItem(image: backIcon, style: .Plain, target: self, action:#selector(pushBack))
+        self.navigationController?.navigationBar.tintColor = UIColor.lightGrayColor()
+        self.navigationItem.leftBarButtonItem = backItem
+    }
+    
+    func pushBack(){
+        eventHandler?.pushBack()
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        
+        self.navigationController?.navigationBarHidden = true
+
         eventHandler?.viewWillDisappear()
     }
     

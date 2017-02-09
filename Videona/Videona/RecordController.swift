@@ -172,6 +172,7 @@ class RecordController: VideonaController,RecordViewInterface,UINavigationContro
     
     func showRecordedVideoThumb(image: UIImage) {
         thumbnailView.image = image
+        thumbnailView.hidden = false
         
         setCornerToThumbnail()
         setBorderToThumb()

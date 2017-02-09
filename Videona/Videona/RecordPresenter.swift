@@ -170,11 +170,13 @@ ThumbnailDelegate{
     func thumbnailHasTapped() {
         let nClips = Project.sharedInstance.numberOfClips()
         
-        if nClips > 0{
-            recordWireframe?.presentEditorRoomInterface()
-        }else{
-            recordWireframe?.presentGalleryInsideEditorRoomInterface()
-        }
+//        if nClips > 0{
+//            recordWireframe?.presentEditorRoomInterface()
+//        }else{
+//            recordWireframe?.presentGalleryInsideEditorRoomInterface()
+//        }
+        
+        recordWireframe?.presentShareInterface()
     }
     
     func displayHasTapped(tapGesture:UIGestureRecognizer){

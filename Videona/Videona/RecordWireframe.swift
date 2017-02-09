@@ -17,6 +17,7 @@ class RecordWireframe : NSObject {
     var recordPresenter : RecordPresenter?
     var filterListWireframe: FilterListWireframe?
     var editorRoomWireframe: EditingRoomWireframe?
+    var shareWireframe: ShareWireframe?
     
     func presentRecordInterfaceFromWindow(window: UIWindow) {
         let viewController = RecordViewControllerFromStoryboard()
@@ -88,5 +89,16 @@ class RecordWireframe : NSObject {
     
     func presentShareInterfaceInsideEditorRoom(){
         editorRoomWireframe?.presentEditingRoomFromViewControllerAndExportVideo(recordViewController!)
+    }
+    
+    func presentShareInterface(){
+        let exporter = ExporterInteractor.init()
+        exporter.exportVideos({
+            exportPath,videoTotalTime in
+            print("Export path response = \(exportPath)")
+                self.shareWireframe?.presentShareInterfaceFromViewController(self.recordViewController!,
+                    videoPath: exportPath,
+                    numberOfClips: 3)
+            })
     }
 }
