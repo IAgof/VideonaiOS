@@ -109,22 +109,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().delegate = self
     }
     
-    func applicationWillResignActive(application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-        Utils().debugLog("\nEnter in applicationWillResignActive\n")
-        if let viewControllers = self.window?.rootViewController?.childViewControllers {
-            for viewController in viewControllers {
-                if viewController.isKindOfClass(RecordController) {
-                    let myViewController = viewController as! RecordController
-                    myViewController.eventHandler?.viewWillDisappear()
-                    Utils().debugLog("Found the view controller")
-                }
-            }
-        }
-    }
-    
-    
     func applicationWillEnterForeground(application: UIApplication) {
         Utils().debugLog("\nEnter in applicationWillEnterForeground\n")
         
