@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -22,7 +22,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashHorizontal.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="a7u-iW-9nI">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashVertical.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="WBQ-Yz-iZu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashVertical.png" translatesAutoresizingMaskIntoConstraints="NO" id="WBQ-Yz-iZu">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_ipad_horizontal.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="c2p-jL-HFu">
@@ -106,7 +106,7 @@
     </scenes>
     <resources>
         <image name="splashHorizontal.jpg" width="2208" height="1242"/>
-        <image name="splashVertical.jpg" width="1242" height="2208"/>
+        <image name="splashVertical.png" width="414" height="736"/>
         <image name="splash_ipad_horizontal.jpg" width="2048" height="1536"/>
     </resources>
 </document>
